@@ -2,7 +2,7 @@
 
   <meta charset="utf-8" />
   <title>{% if page.title %}{{ page.title }} - {% endif %}Webstoemp: Delicious websites from Brussels</title>
-  <meta name="description" content="{{ site.html_description }}" />
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.html_description }}{% endif %}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- CSS -->

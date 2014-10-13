@@ -3975,7 +3975,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 
 @keyframes slidetop {
   0% {
-    transform: translate3d(0, -1em, 0);
+    transform: translate3d(0, -0.5em, 0);
     opacity: 0;
   }
 
