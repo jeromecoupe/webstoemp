@@ -46,7 +46,7 @@ When dealing with international websites, you might have to cater for linguistic
 
 Having each linguistic versions as a separate site also makes it a lot easier for the developer to add or remove a language. Just delete an entire site or duplicate an existing one, change field labels, instructions and global variables (they are copied as well, even if you use more powerful add-ons like [Low Variables](http://devot-ee.com/add-ons/low-variables)) and you are ready to roll within a couple of hours. That can prove a lot more difficult to do with more entangled multilingual setups.
 
-That being said, if you use a lot of custom fieldtypes like Playa, Matrix and Assets, data duplication from site to site might not be as easy as I make it sound (more on that later)
+That being said, if you use a lot of custom fieldtypes like [Playa](http://devot-ee.com/add-ons/playa), [Matrix](http://devot-ee.com/add-ons/matrix) and [Assets](http://devot-ee.com/add-ons/assets), data duplication from site to site might not be as easy as I make it sound (more on that later).
 
 #### SEO and URL structure
 
@@ -74,6 +74,6 @@ If you want to use the images of a gallery you just uploaded in the French versi
 
 Configuration-wise, MSM is a little bit finicky. Getting your head around what needs to be in the various index.php files versus what needs to be in your main (and only) config.php file can prove to be difficult. While the big add-ons generally play nice with MSM, some add-ons do not.
 
-Be aware that, if you use a lot of custom fieldtypes like Playa, Assets, Matrix, etc., you might be in for some raw MySQL data transfer. While MSM allows you to duplicate "regular" entries easily, everything outside of the `channel_data` and `channel_titles` table will not be copied from one site to the other.
+Be aware that, if you use a lot of custom fieldtypes you might be in for some raw MySQL data transfer. While MSM can duplicate "regular" entries easily when copying a site, everything outside of the `channel_data` and `channel_titles` tables will not be copied from one site to the other.
 
 Despite those shortcomings, I still think MSM is a solution to be considered when developping a multilingual website with ExpressionEngine. I hope the few points I have made in this article will at least get some of you to think about it for your next multilingual project.
