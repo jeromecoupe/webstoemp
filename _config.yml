@@ -2,7 +2,7 @@
 html_description: "The blog and portfolio of Jérôme Coupé, a web designer from Brussels, Belgium"
 
 # Build settings
-url: "http://www.webstoemp.dev"
+url: "http://www.webstoemp.com"
 exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
 permalink: blog/:title.html # permalink for blogposts
 collections:
