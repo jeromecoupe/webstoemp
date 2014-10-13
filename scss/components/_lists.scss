@@ -1,0 +1,44 @@
+/*------------------------------------*\
+=spaced lists
+\*------------------------------------*/
+
+/*
+ *
+ * adding bottom margin to lis
+ *
+**/
+
+.list-spaced
+{
+	& > li
+	{
+		margin-bottom:2.5em;
+
+		&:last-child
+		{
+			margin-bottom:0;
+		}
+	}
+}
+
+
+/*
+ *
+ * adding just a slight bottom margin to lis
+ *
+**/
+
+.list-compact
+{
+	@extend %list-bare;
+
+	& > li
+	{
+		margin-bottom:.25em;
+
+		&:last-child
+		{
+			margin-bottom:0;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+# Mac files
+*.DS_Store
+
+# Cache files
+.sass-cache/
+
+# Node packages
+node_modules/
+
+# Site Directory
+_site/

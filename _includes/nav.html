@@ -1,0 +1,12 @@
+<nav>
+  <p class="mainnav-compact  js-mainnav-compact"><a href="#">Menu</a></p>
+
+  <p class="mainnav-cta{% if page.current_nav == 'contact' %}  mainnav-cta--current{% endif %}"><a href="/contact/"><i class="icon  icon--email"></i>Contact</a></p>
+
+  <ul class="mainnav  js-mainnav">
+    <li class="mainnav__item  mainnav__item--work{% if page.current_nav == 'work' %}  mainnav__item--current{% endif %}"><a href="/work/">Work</a></li><!--
+ --><li class="mainnav__item  mainnav__item--blog{% if page.current_nav == 'blog' %}  mainnav__item--current{% endif %}"><a href="/blog/">Blog</a></li><!--
+ --><li class="mainnav__item  mainnav__item--about{% if page.current_nav == 'about' %}  mainnav__item--current{% endif %}"><a href="/about/">About</a></li><!--
+ --><li class="mainnav__item  mainnav__item--contact{% if page.current_nav == 'contact' %}  mainnav__item--current{% endif %}"><a href="/contact/">Contact</a></li>
+  </ul>
+</nav>

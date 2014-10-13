@@ -1,0 +1,471 @@
+/*------------------------------------*\
+=navbar
+\*------------------------------------*/
+
+/*
+ * .logo and .mainnav-cta are floated
+ * .mainnav is display-inline-block and centered by container
+ * .clearfix on the .container div for float clearing
+ *
+**/
+
+.siteheader__navbar
+{
+	padding:1em 0;
+	background:$color-main-dark2;
+	color:$color-main-light2;
+
+	text-align:center;
+
+	@include mq(medium)
+	{
+		padding:2em 0;
+	}
+}
+
+/*------------------------------------*\
+=logo
+\*------------------------------------*/
+
+/*
+ * simple image replacement with svg / png fallback
+ * - svg file converted to data-uri by build process
+ *
+**/
+
+.logo
+{
+	float:left;
+	margin:0;
+	padding:0;
+
+	& > a
+	{
+		display:block;
+		width:122px;
+		height:16px;
+		padding:.7em 0;
+		@extend %hidecontent;
+		background-position:0 50%;
+		background-repeat:no-repeat;
+		background-image:url(../img/logo_web.svg);
+
+		transition:opacity .1s linear;
+
+		.no-svg &
+		{
+			background-image:url(../img/logo_web.png);
+		}
+
+		&:hover
+		{
+			opacity:.7;
+		}
+	}
+}
+
+
+/*------------------------------------*\
+=main navigation
+\*------------------------------------*/
+
+/*
+ * .mainnav-compact: button for mobile nav
+ * .mainnav: main navigation interface
+ * .mainnav-cta: contact call to action
+ *
+ * RWD NOTE:
+ * - At small screen sizes, only .mainnav-compact is displayed.
+ * At large screen sizes, .mainnav is.
+ *
+ * - there is a "contact" item in .mainnav that's just used by
+ * the small size nav interface (hidden at large screen sizes)
+ *
+**/
+
+// button mobile nav
+.mainnav-compact
+{
+	float:right;
+	margin:0;
+	padding:0;
+	width:37px;
+	height:37px;
+
+	& > a
+	{
+		display:block;
+		@extend %hidecontent;
+		width:100%;
+		height:100%;
+		background-position:50% 50%;
+		background-repeat:no-repeat;
+		background-image:url(../img/btn_nav.svg);
+
+		transition:opacity .1s linear;
+
+		.no-svg &
+		{
+			background-image:url(../img/btn_nav.png);
+		}
+
+		&:hover
+		{
+			opacity:.7;
+		}
+	}
+
+	@include mq(small)
+	{
+		display:none;
+	}
+}
+
+// main navigation
+.mainnav
+{
+	@extend %list-bare;
+	display:block;
+	clear:both;
+
+	@include mq(small)
+	{
+		display:inline-block;
+		clear:none;
+	}
+}
+
+	.mainnav__item
+	{
+		border-bottom:1px solid lighten($color-main-dark1,5%);
+
+		&:first-child
+		{
+			margin-top:2em; //creates margin before menu
+			border-top:1px solid lighten($color-main-dark1,5%);
+		}
+
+		&:last-child
+		{
+			margin-bottom:1.5em; //creates margin after menu
+		}
+
+
+
+		@include mq(small)
+		{
+			display:inline-block;
+			border:none; //override
+
+			&:first-child
+			{
+				margin-top:0; //override
+				border:none; //override
+			}
+
+			&:last-child
+			{
+				margin-bottom:0; //override
+			}
+		}
+	}
+
+		.mainnav__item > a
+		{
+			display:block;
+			padding:1em 0;
+
+			@include rem-size(14px);
+			line-height:1;
+			font-weight:500;
+			color:#fff;
+			text-transform:uppercase;
+			text-align:left;
+
+			background-position:100% 50%;
+			background-repeat:no-repeat;
+			background-image:url(../img/bkg_mainnav_mobile.svg);
+
+			.no-svg &
+			{
+				background-image:url(../img/bkg_mainnav_mobile.png);
+			}
+
+			transition:all .1s linear;
+
+			&:hover
+			{
+				text-decoration:none;
+				color:lighten($color-main,50%);
+			}
+
+			@include mq(small)
+			{
+				display:inline-block;
+				padding:.85em .75em;
+				border:none; //override
+				background:none; //override
+
+				.no-svg &
+				{
+					background:none; //override
+				}
+			}
+		}
+
+		.mainnav__item--current > a,
+		.mainnav__item--current > a:hover
+		{
+			color:$color-accent-light;
+		}
+
+		// dealing with the contact item in the menu
+		.mainnav__item--contact
+		{
+			display:block;
+
+			@include mq(small)
+			{
+				display:none;
+			}
+		}
+
+		// adding separators
+		.mainnav__item--work:after,
+		.mainnav__item--blog:after
+		{
+			@include mq(small)
+			{
+				content:"/";
+				display:inline;
+				padding:0;
+				color:lighten($color-main,5%);
+			}
+		}
+
+// call to action (contact button)
+.mainnav-cta
+{
+	display:none;
+	float:right;
+	margin:0;
+	padding:0;
+
+	& > a
+	{
+		display:block;
+		padding:.8em 1em;
+		border:1px solid lighten($color-main,5%);
+		border-radius:.25em;
+		@include rem-size(14px);
+		line-height:1;
+		font-weight:500;
+		color:#fff;
+		text-transform:uppercase;
+
+		transition:all .1s linear;
+
+		&:hover
+		{
+			text-decoration:none;
+			border-color:lighten($color-main,25%);
+		}
+	}
+
+	@include mq(small)
+	{
+		display:block;
+	}
+}
+
+.mainnav-cta--current
+{
+	& > a, & > a:hover
+	{
+		border-color:$color-accent;
+	}
+}
+
+
+/*
+ * visibility of .mainnav managed through .js-is-hidden and .js-is-visible
+ * classes added dynamically.
+ *
+ * max-height and overflow to hide and show + animate
+ *
+**/
+
+@include mq(under-small)
+{
+	.mainnav
+	{
+		overflow:hidden;
+		transition:all .5s ease;
+	}
+
+	.mainnav.js-is-hidden
+	{
+		max-height:0;
+	}
+
+	.mainnav.js-is-visible
+	{
+		max-height:14em; //must equal at least the height of the menu
+	}
+}
+
+
+/*
+ * if no JS support, nav visible always
+ *
+**/
+
+.no-js .mainnav
+{
+	max-height:14em; //must equal at least the height of the menu
+}
+
+
+/*------------------------------------*\
+=banner
+\*------------------------------------*/
+
+.siteheader__banner
+{
+	padding:3em 0;
+	background-color:$color-main-dark2;
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	background-size:cover;
+	text-align:center;
+
+	@include mq(medium)
+	{
+		padding:6em 0;
+	}
+
+	@include mq(xlarge)
+	{
+		padding:9em 0;
+	}
+}
+
+	// various banner images
+	@for $i from 1 through 5
+	{
+		.siteheader__banner--#{$i}
+		{
+			background-image:url(../img/banners/banner#{$i}_600.jpg);
+
+			@include mq(small) //600
+			{
+				background-image:url(../img/banners/banner#{$i}_800.jpg);
+			}
+
+			@include mq(medium) //760
+			{
+				background-image:url(../img/banners/banner#{$i}_1024.jpg);
+			}
+
+			@include mq(large) //1024
+			{
+				background-image:url(../img/banners/banner#{$i}_1500.jpg);
+			}
+		}
+	}
+
+	@keyframes slidetop
+	{
+		0%
+		{
+			transform:translate3d(0,-1em,0);
+			opacity:0;
+		}
+
+		100%
+		{
+			transform:translate3d(0,0,0);
+			opacity:1;
+		}
+	}
+
+	.banner-title
+	{
+		margin:0;
+		padding:0;
+		text-shadow:0 0 5px rgba(0,0,0,.5),
+								1px 1px 0 rgba(0,0,0,.75);
+		@include rem-size(31px);
+		font-family:$fontstack-alt;
+		font-weight:400;
+		line-height:1.1;
+		color:#fff;
+		animation:slidetop .5s ease-in .1s;
+
+		@include mq(medium)
+		{
+			@include rem-size(36px);
+		}
+	}
+
+	.banner-tagline
+	{
+		margin:-.25em 0 1.5em;
+		padding:0;
+		text-shadow:0 0 5px rgba(0,0,0,.5),
+								1px 1px 0 rgba(0,0,0,.75);
+		font-family:$fontstack-alt;
+		@include rem-size(18px);
+		font-weight:400;
+		line-height:1.4;
+		font-style:italic;
+		color:#fff;
+
+		& > p
+		{
+			margin:0;
+			padding:0;
+		}
+
+		@include mq(medium)
+		{
+			@include rem-size(21px);
+		}
+	}
+
+		.amperstand
+		{
+		  position:relative;
+		  left:-.05em;
+		  top:.25em;
+			font-family: Baskerville, Palatino, Constantia, "Book Antiqua", serif;
+		  @include rem-size(48px);
+		  font-weight:400;
+		  font-style: italic;
+		  color:$color-accent;
+		}
+
+	.banner-button
+	{
+		display:inline-block;
+		padding:.75em 2em;
+		border-radius:50em;
+		border:none;
+
+		@include rem-size(14px);
+		font-weight:600;
+		text-decoration:none;
+		text-transform:uppercase;
+		color:$color-main-dark2;
+		background:#fff;
+		background:rgba(255,255,255,.8);
+
+		transition:all .1s linear;
+
+		&:hover
+		{
+			color:$color-accent;
+			text-decoration:none;
+			background:#fff;
+		}
+	}

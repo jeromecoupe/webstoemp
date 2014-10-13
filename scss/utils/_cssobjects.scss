@@ -1,0 +1,36 @@
+/*------------------------------------*\
+=media object
+\*------------------------------------*/
+
+.media
+{
+	@extend %clearfix;
+}
+
+	.media__img
+	{
+		float:left;
+		margin-right:1.25em;
+	}
+
+		.media--reverse .media__img
+		{
+			float:right;
+			margin-left:1.25em;
+		}
+
+	.media__body
+	{
+		overflow:hidden;
+	}
+
+
+.list-h
+{
+	@extend %list-bare;
+
+	& > li
+	{
+		display:inline-block;
+	}
+}

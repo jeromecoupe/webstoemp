@@ -1,0 +1,15 @@
+# Site variables
+html_description: "The blog and portfolio of Jérôme Coupé, a web designer from Brussels, Belgium"
+
+# Build settings
+url: "http://www.webstoemp.dev"
+exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
+permalink: blog/:title.html # permalink for blogposts
+collections:
+  projects:
+    output: true
+    permalink: /work/:title.html
+highlighter: pygments
+markdown: kramdown
+kramdown:
+  input: GFM

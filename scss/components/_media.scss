@@ -1,0 +1,127 @@
+/*------------------------------------*\
+=image containers
+\*------------------------------------*/
+
+/**
+ * Anything holding an image (<p>, <div>)
+ */
+
+.imgcontainer
+{
+	margin:0;
+	padding:0;
+
+	img
+	{
+		display:block;
+	}
+}
+
+	.imgcontainer--border
+	{
+		padding:1px;
+		background:$color-main-light3;
+	}
+
+	.imgcontainer--hero
+	{
+		margin-bottom:calc-em(40px);
+
+		@include mq(medium)
+		{
+			margin-bottom:calc-em(60px);
+		}
+	}
+
+/*------------------------------------*\
+=fluid images
+\*------------------------------------*/
+
+.imgfluid
+{
+	max-width:100%;
+}
+
+.imgsvg
+{
+	width:100%;
+}
+
+
+/*------------------------------------*\
+=figures
+\*------------------------------------*/
+
+.figure
+{
+	position:relative;
+	margin:2em 0;
+	padding:0;
+
+	& > figcaption
+	{
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:100%;
+
+		margin:0;
+		padding:0;
+
+		background:$color-main-dark2;
+		background:rgba(0,0,0,.5);
+		font-family:$fontstack-alt;
+		@include rem-size(14px);
+		color:$color-main-light3;
+		text-align:center;
+	}
+
+	img
+	{
+		display:block;
+	}
+}
+
+	.figure--full
+	{
+
+		@include mq(medium)
+		{
+			margin-left:percentage(-95/910);
+			margin-right:percentage(-95/910);
+		}
+
+		@include mq(large)
+		{
+			margin-left:percentage(-190/720);
+			margin-right:percentage(-190/720);
+		}
+	}
+
+
+/*------------------------------------*\
+=fluid videos
+\*------------------------------------*/
+
+/**
+* preserving a 16/9 ratio
+*/
+
+.videocontainer
+{
+	position:relative; /*positioning context*/
+	width:100%;
+	padding-top:56.25%;
+	margin:0;
+	background:#000;
+}
+
+	.videocontainer > iframe
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border:none;
+	}
