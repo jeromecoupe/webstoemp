@@ -1,16 +1,19 @@
 <head>
 
-  <meta charset="utf-8" />
-  <title>{% if page.title %}{{ page.title }} - {% endif %}Webstoemp: Delicious websites from Brussels</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.html_description }}{% endif %}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}Webstoemp</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.html_description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/screen.min.css" media="screen" />
-  <!-- <link rel="stylesheet" href="/css/print.min.css" media="screen" /> -->
+  <link rel="stylesheet" href="/css/screen.min.css" media="screen">
+  <!-- <link rel="stylesheet" href="/css/print.min.css" media="screen"> -->
 
   <!-- DNS Prefetch -->
   <link rel="dns-prefetch" href="//use.typekit.net">
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" href="https://pixelandtonic.com/blog/feed.rss" title="Webstoemp Blog">
 
   <!-- Modernizr & Picturefill -->
   <script src="/js/vendors/modernizr.min.js"></script>
