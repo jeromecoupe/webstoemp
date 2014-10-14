@@ -33,7 +33,7 @@ When I started working for the Foundation, they were using a custom Content Mana
 
 Like many organisations the International Polar Foundation was recently confronted with the increased variety of devices and screen resolutions.
 
-In 2012, we decided to take a mobile-first and reponsive web design approach. The templates and the CSS were refactored and vectorial SVG graphics were used to keep things crisp on high resulotion screens.
+In 2012, we decided to take a mobile-first and reponsive web design approach. The templates and the CSS were refactored and vectorial SVG graphics were used to keep things crisp on high resolution screens.
 
 ## A long term relationship
 

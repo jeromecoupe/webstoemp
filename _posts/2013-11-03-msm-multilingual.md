@@ -10,7 +10,7 @@ tags:
 - Multilingual
 ---
 
-There have been [many](http://eeinsider.com/articles/multi-language-solutions-for-expressionengine/) [talks](http://cwcrawley.co.uk/2010/01/multi-lingual-websites-in-expressionengine/), at [conferences](https://speakerdeck.com/stevieg_83/intro-to-multi-lingual-sites-in-expressionengine) and [elsewhere](http://www.slideshare.net/vinnyio/multilanguage-websites-in-expressionengine), about developing multilingual websites with ExpressionEngine. Because of the very flexible nature of the CMS, multiple solutions are always mentioned:
+There have been [many](http://eeinsider.com/articles/multi-language-solutions-for-expressionengine/) [talks](http://cwcrawley.co.uk/2010/01/multi-lingual-websites-in-expressionengine/), at [conferences](https://speakerdeck.com/stevieg_83/intro-to-multi-lingual-sites-in-expressionengine) and [elsewhere](http://www.slideshare.net/vinnyio/multilanguage-websites-in-expressionengine), about developing multilingual websites with [ExpressionEngine](http://ellislab.com/expressionengine/). Because of the very flexible nature of the CMS, multiple solutions are always mentioned:
 
 - putting all languages in a single post, using custom fields, publish layouts and tabs to create manageable forms
 - duplicating posts to cater for the various languages and using categories to display the correct posts on the front end.
@@ -40,7 +40,7 @@ For content creators, such an architecture allows people to publish content in a
 
 As a developer it is certainly possible to allow for this with other setups (language specific custom fields or template groups), but working with different websites altogether greatly helps content publishers and reviewers to wrap their heads around the concept that the content they publish doesn't necessarily have to be published in all languages.
 
-These days, the lifespan of a website will be around three or four years. Even if the linguistic versions were thought of as carbon copies of one another when the site was launched, this often changes over time. The client focuses on one language more than on the others, local needs arise that demand new sections or functions of the site to be developed for one linguistic version only.
+These days, the lifespan of a website will be around three or four years. Even if the linguistic versions were thought of as carbon copies of one another when the site was launched, this often changes over time. The client focuses on one language more than on the others, local needs arise and new sections or functions of the site have to be developed for one linguistic version only, etc.
 
 When dealing with international websites, you might have to cater for linguistic versions reading from right to left, while other are being read from left to right. In that context, having independent websites, templates and template groups might be a bonus (charsets in templates, variations of general layout, etc.)
 
@@ -72,7 +72,7 @@ I also think it's safe to say that MSM is mainly geared towards having it poweri
 
 If you want to use the images of a gallery you just uploaded in the French version of your site and want to publish a version of the same gallery in the English version of your site, you first have to sync your upload location in the Control Panel for the English website to have those files available for use.
 
-Configuration-wise, MSM is a little bit finicky. Getting your head around what needs to be in the various index.php files versus what needs to be in your main (and only) config.php file can prove to be difficult. While the big add-ons generally play nice with MSM, some add-ons do not.
+Configuration-wise, MSM is a little bit finicky. Getting your head around what needs to be in the various `index.php` files versus what needs to be in your main (and only) `config.php` file can prove to be difficult. While the big add-ons generally play nice with MSM, some add-ons do not.
 
 Be aware that, if you use a lot of custom fieldtypes you might be in for some raw MySQL data transfer. While MSM can duplicate "regular" entries easily when copying a site, everything outside of the `channel_data` and `channel_titles` tables will not be copied from one site to the other.
 

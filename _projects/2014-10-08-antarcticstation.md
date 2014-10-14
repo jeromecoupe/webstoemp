@@ -35,10 +35,10 @@ The content of the website revolves around three main objectives:
 
 We decided that the first two objectives would be best served through the creation of rich modular pages drawing the visitors in.
 
-Using [ExpressionEngine](https://ellislab.com/expressionengine), the client can create content modules that can then be assembled into pages. With a minimal set of modules, they are able to produce a wide diversity of rich pages, tailor made to the content that needs to be communicated. Content modules can also be shared by multiple pages if needed.
+Using [ExpressionEngine](https://ellislab.com/expressionengine) and [Playa](http://devot-ee.com/add-ons/playa), the client can create content modules that can then be assembled into pages. With a minimal set of modules, they are able to produce a wide diversity of rich pages, tailor made to the content that needs to be communicated. Content modules can also be shared by multiple pages if needed.
 
 ## Navigating through a wealth of content
 
-The website was overhauled recently to a mobile-first responsive approach and we took that opportunity to make the site as easy to use as possible by keeping the main navigation very simple and working on the main landing pages.
+The website was overhauled recently to a mobile-first responsive approach. We took that opportunity to make the site as easy to use as possible by keeping the main navigation very simple and working on the main landing pages.
 
 With archives dating back to 2007, part of the work was devoted to making that legacy content work with the new responsive environment.

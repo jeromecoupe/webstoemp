@@ -202,23 +202,23 @@ gulp.task('css', function() {
 The first line tells gulp-plumber to enter the game and to prevent this task from quitting upon error. I frequently make typos in my CSS during development and don't want my watch tasks to stop every time.
 
 {% highlight javascript %}
-.pipe(sass({ style: 'expanded', }))
-.pipe(gulp.dest('./public_html/assets/css/'))
+	.pipe(sass({ style: 'expanded', }))
+	.pipe(gulp.dest('./public_html/assets/css/'))
 {% endhighlight %}
 
 This compile my Sass in expanded mode and save the file in my css/ folder.
 
 {% highlight javascript %}
-.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+	.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 {% endhighlight %}
 
 I then pipe in [Autoprefixer](https://github.com/postcss/autoprefixer). That tool allows me to focus on writing spec-compliant CSS code and takes care of adding in the vendor prefixes for me. It also generates the CSS variations for things like gradients or flexbox when multiple implementations have seen the light of day. I just find it easier to have all my autoprefixer browsers config out of the task itself.
 
 {% highlight javascript %}
-.pipe(base64({ extensions:['svg'] }))
-.pipe(rename({ suffix: '.min' }))
-.pipe(minifycss())
-.pipe(gulp.dest('./public_html/assets/css/'))
+	.pipe(base64({ extensions:['svg'] }))
+	.pipe(rename({ suffix: '.min' }))
+	.pipe(minifycss())
+	.pipe(gulp.dest('./public_html/assets/css/'))
 {% endhighlight %}
 
 The first line encodes my SVG as base64. This will save some http requests. Make sure you have a .png fallback using Modernizr. I generally use this only for icons. Depending on the project, I might change this and have Gulp do the Base 64 encoding only on one or two of my sass files for more granularity.
@@ -266,7 +266,7 @@ gulp.task('cachebust', function() {
 
 I've never worked with [LiveReload](http://livereload.com/) because I found dealing with a browser extension a bit of a pain, especially when you need to test with browsers for which there is no extension.
 
-I have used Vanamco's Ghostlab (which I like a lot) but have recently found about [BrowserSync](http://www.browsersync.io/) which does Live reloads, css injections and syncs clicks, form completions and scroll across multiple devices.
+I have used [Vanamco's Ghostlab](http://vanamco.com/ghostlab/) (which I like a lot) but have recently found about [BrowserSync](http://www.browsersync.io/) which does Live reloads, css injections and syncs clicks, form completions and scroll across multiple devices.
 
 It's quite easy to install and to integrate to your gulp workflow:
 
@@ -285,7 +285,7 @@ This wraps my virtual host (www.webstoemp.dev) with a proxy URL to view my site.
 {% highlight javascript %}
 // BrowserSync reload all Browsers
 gulp.task('browsersync-reload', function () {
-    browsersync.reload();
+	browsersync.reload();
 });
 {% endhighlight %}
 

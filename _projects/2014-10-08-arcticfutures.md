@@ -23,7 +23,7 @@ tags:
 
 [Arctic Futures](https://www.arcticfutures.org) is a free symposium but, seats being available in limited numbers, the organisers wanted attendees to register prior to the symposium. I built a system allowing them to easily control whether registrations are open or closed: flicking a switch in the control panel triggers a few changes on the front end and activate or deactivate the registration form.
 
-I worked with [Craft](http://www.buildwithcraft.com) as the Content Management System for the website and Sprout forms and Sprout email by [Barrel Strength Design](http://barrelstrengthdesign.com/) allowed me to create a modular registration form using email notifications in no time.
+I worked with [Craft](http://www.buildwithcraft.com) as the Content Management System for the website and [Sprout forms](http://sprout.barrelstrengthdesign.com/craft-plugins/forms) and [Sprout email](http://sprout.barrelstrengthdesign.com/craft-plugins/email) by [Barrel Strength Design](http://barrelstrengthdesign.com/) allowed me to create a modular registration form using email notifications in no time.
 
 ## An evolving schedule
 

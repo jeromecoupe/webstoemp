@@ -13,11 +13,11 @@ tags:
 
 ## Feeding the teacher
 
-The very fast pace at which our industry is evolving is something you have to cope with as a teacher. The last thing I want is to become some old rusty teacher repeating the same stuff and giving the same courses every year. I also don't want my students to learn outdated technologies.
+The very fast pace at which our industry is evolving is something you have to cope with as a teacher. The last thing I want is to become some old rusty teacher giving the same courses every year. I also don't want my students to learn outdated technologies.
 
 On that front, beeing a freelancer and staying active in the field for half of my time offers my students, the school and myself some guarantee that I will at least try to stay current.
 
-To help myself update my courses, I have put them all on Github.
+To help myself update my courses, [I have put them all on Github](https://github.com/jeromecoupe).
 
 - This very flexible system reduces the friction as much as possible to update the courses.
 - It allows my students to see when things where edited and why.
@@ -28,7 +28,7 @@ To help myself update my courses, I have put them all on Github.
 
 Because all of my income doesn't come from freelance gigs, I am more comfortable beeing a bit pickier with the projects and clients I take on. Hopefully, it will also allow me to cope with the endless sucession of feast and famine experienced by many freelancers I have talked to.
 
-It also helps with reducing my stress levels. I really admire "full freelancers" who can put up with the pressure and are able to strike a healthy work-life balance. I don't think I could do it, so I hope that balancing freelancing with teaching will help me.
+I really admire "full freelancers" who can put up with the pressure and are able to strike a healthy work-life balance. I'm not sure I could do it. I hope that balancing freelancing with teaching will help me.
 
 Rather than working on a wide variety of small projects at the same time, I intend to try one of those two things:
 

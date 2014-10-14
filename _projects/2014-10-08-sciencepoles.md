@@ -27,9 +27,9 @@ The design uses a proportional grid and white space to keep the pages structured
 
 ## Creating relations between content pieces
 
-The site uses ExpressionEngine as a CMS. I worked very closely with a seasoned journalist to define all the various use cases and content channels (web, mobile, RSS, Facebook, Twitter, etc) and to develop solid data structures for both articles and interviews.
+The site runs on [ExpressionEngine](https://ellislab.com/expressionengine). I worked very closely with a seasoned journalist to define all the various use cases and content channels (web, mobile, RSS, Facebook, Twitter, etc) and to develop solid data structures for both articles and interviews.
 
-On of his demand was to be able to easily create relations between different articles and interviews, which was easily accomplished using Playa by Pixel&Tonic. On top of using categories, articles and interviews can be related to one another in a more organic fashion.
+On of his demand was to be able to easily create relations between different articles and interviews, which was easily accomplished using [Playa](http://devot-ee.com/add-ons/playa) by [Pixel&Tonic](http://pixelandtonic.com/). On top of using categories, articles and interviews can be related to one another in a more organic fashion.
 
 ## Archives and access
 
