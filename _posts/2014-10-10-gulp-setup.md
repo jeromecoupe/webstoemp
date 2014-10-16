@@ -266,21 +266,21 @@ gulp.task('cachebust', function() {
 
 I've never worked with [LiveReload](http://livereload.com/) because I found dealing with a browser extension a bit of a pain, especially when you need to test with browsers for which there is no extension.
 
-I have used [Vanamco's Ghostlab](http://vanamco.com/ghostlab/) (which I like a lot) but have recently found about [BrowserSync](http://www.browsersync.io/) which does Live reloads, css injections and syncs clicks, form completions and scroll across multiple devices.
+I have used [Vanamco's Ghostlab](http://vanamco.com/ghostlab/) (which I like a lot) but have recently discovered [BrowserSync](http://www.browsersync.io/) which does Live reloads, CSS injections and syncs clicks, form completions and scroll across multiple devices.
 
-It's quite easy to install and to integrate to your gulp workflow:
+It's quite easy to install and to integrate to your Gulp workflow:
 
 {% highlight javascript %}
 //Browsersync server
 gulp.task('browser-sync', function() {
 	browsersync({
-		proxy: "www.webstoemp.dev",
+		proxy: 'www.webstoemp.dev',
 		port: 3000
 	});
 });
 {% endhighlight %}
 
-This wraps my virtual host (www.webstoemp.dev) with a proxy URL to view my site. That's the configuration you need to use with dynamic websites.
+This wraps my virtual host (www.webstoemp.dev) with a proxy URL allowing me to view my site.
 
 {% highlight javascript %}
 // BrowserSync reload all Browsers
@@ -295,11 +295,17 @@ Simple task to reload all browsers with BrowserSync (used when my HTML / Templat
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
 	gulp.watch('./public_html/assets/scss/**/*', ['css']);
-	gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts']);
+	gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
 	gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
 });
 {% endhighlight %}
 
-Here, I launch the BrowserSync task when my watch task starts so that it injects any new styles in my pages when my CSS files are modified. I also force a reload every time one of my templates is modified.
+Here, I launch the BrowserSync task when my watch task starts and I force a browser reload every time one of my templates or scripts are modified.
+
+BrowserSync will inject any new styles in my pages when my CSS files are modified because of this line in my CSS task:
+
+{% highlight javascript %}
+.pipe(browsersync.reload({ stream:true }))
+{% endhighlight %}
 
 Well, that's it. I just walked you through my current default setup for build automation with Gulp. I hope you found something useful in there. If you have suggestions or optimisations, don't hesitate to get in touch on twitter, I love to nerd out on such things.
