@@ -16,6 +16,7 @@ var plumber = require('gulp-plumber');
 var gutil = require('gulp-util');
 var base64 = require('gulp-base64');
 var imagemin = require('gulp-imagemin');
+var browsersync = require('browser-sync');
 
 // error function for plumber
 var onError = function (err) {
@@ -31,6 +32,34 @@ var AUTOPREFIXER_BROWSERS = [
 	'android >= 4.4',
 	'bb >= 10'
 ];
+
+//build datestamp for cache busting
+var getStamp = function() {
+	var myDate = new Date();
+
+	var myYear = myDate.getFullYear().toString();
+	var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
+	var myDay = ('0' + myDate.getDate()).slice(-2);
+	var mySeconds = myDate.getSeconds().toString();
+
+	var myFullDate = myYear + myMonth + myDay + mySeconds;
+
+	return myFullDate;
+};
+
+// BrowserSync proxy
+gulp.task('browser-sync', function() {
+	browsersync({
+		files: ['./_site/**/*.css'],
+		proxy: 'www.webstoemp.dev',
+		port: 3000
+	});
+});
+
+// BrowserSync reload all Browsers
+gulp.task('browsersync-reload', function () {
+    browsersync.reload();
+});
 
 // Optimize Images task
 gulp.task('img', function() {
@@ -76,12 +105,22 @@ gulp.task('scripts', function() {
 		.pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Cache busting task
+gulp.task('cachebust', function() {
+	return gulp.src('./_includes/**/*.html')
+		.pipe(replace(/screen.min.css\?v=([0-9]*)/g, 'screen.min.css?v=' + getStamp()))
+		.pipe(replace(/print.min.css\?v=([0-9]*)/g, 'print.min.css?v=' + getStamp()))
+		.pipe(replace(/webstoemp.min.js\?v=([0-9]*)/g, 'webstoemp.min.js?v=' + getStamp()))
+		.pipe(gulp.dest('./_includes/'))
+		.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+});
+
 // Watch task
-gulp.task('watch', function () {
-	gulp.watch('./scss/**/*', ['css']);
-	gulp.watch('./js/modules/**/*', ['jslint', 'scripts']);
+gulp.task('watch', ['browser-sync'], function () {
+	gulp.watch('./scss/**/*', ['css', 'cachebust']);
+	gulp.watch('./js/modules/**/*', ['jslint', 'scripts', 'cachebust']);
 });
 
 //tasks
-gulp.task('default', ['css', 'jslint', 'scripts']);
+gulp.task('default', ['css', 'jslint', 'scripts', 'cachebust']);
 gulp.task('images', ['img']);

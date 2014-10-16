@@ -382,7 +382,7 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 	@if ($breakpoint-grid == true)
 	{
-		@media only screen and #{$breakpoint-param}
+		@media all and #{$breakpoint-param}
 		{
 			@include make-grid("#{$breakpoint-name}-");
 			@if ($use-pushclasses == true)

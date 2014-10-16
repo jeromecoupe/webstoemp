@@ -34,7 +34,7 @@
 		{
 			$isdefined:true;
 
-			@media only screen and #{$mq-param}
+			@media all and #{$mq-param}
 			{
 				@content;
 			}

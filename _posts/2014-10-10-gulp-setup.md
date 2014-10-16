@@ -70,7 +70,7 @@ var getStamp = function() {
 // BrowserSync proxy
 gulp.task('browser-sync', function() {
 	browsersync({
-		proxy: "www.webstoemp.dev",
+		proxy: 'www.webstoemp.dev',
 		port: 3000
 	});
 });
@@ -100,7 +100,7 @@ gulp.task('css', function() {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minifycss())
 		.pipe(gulp.dest('./public_html/assets/css/'))
-		.pipe(browsersync.reload({stream:true}))
+		.pipe(browsersync.reload({ stream:true }))
 		.pipe(notify({ message: 'Styles task complete' }));
 });
 
