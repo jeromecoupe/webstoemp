@@ -1,0 +1,30 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.webstoemp.com/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.webstoemp.com/about/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.webstoemp.com/contact/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.webstoemp.com/blog/index.html</loc>
+  </url>
+  {% for item in site.posts %}
+    <url>
+      <loc>{{ item.url | prepend: site.url }}</loc>
+    </url>
+  {% endfor %}
+  <url>
+    <loc>http://www.webstoemp.com/work/index.html</loc>
+  </url>
+  {% for item in site.projects %}
+    <url>
+      <loc>{{ item.url | prepend: site.url }}</loc>
+    </url>
+  {% endfor %}
+</urlset>
