@@ -9,3 +9,6 @@ node_modules/
 
 # Site Directory
 _site/
+
+# Drafts Directory
+_drafts/

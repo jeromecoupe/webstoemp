@@ -1,5 +1,4 @@
 ---
-layout: portfolio
 title: "SciencePoles Magazine"
 excerpt: "SciencePoles is an online magasine publishing in-depth articles and interviews about Polar Science and research. Designing for long form content was definitely the main challenge for this project."
 project_url: http://www.sciencepoles.org
@@ -10,7 +9,6 @@ project_thumbnail: sciencepoles_thumb.jpg
 project_image_small: sciencepoles_600.jpg
 project_image_medium: sciencepoles_1024.jpg
 project_image_large: sciencepoles_1500.jpg
-current_nav: work
 categories:
 - Web
 tags:

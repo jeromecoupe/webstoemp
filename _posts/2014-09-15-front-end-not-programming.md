@@ -1,9 +1,7 @@
 ---
-layout: blogpost
 title: "Are you telling me front-end is not programming?"
 excerpt: "Recently, a fellow teacher dismissively stated that front-end development is not programming. After a brief flash of anger, his words triggered a few thoughts I'd like to share."
 publication_year: 2014
-current_nav: blog
 categories:
 - Teaching
 - Life

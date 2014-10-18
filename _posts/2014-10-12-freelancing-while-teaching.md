@@ -1,9 +1,7 @@
 ---
-layout: blogpost
 title: "Going freelance while teaching"
 excerpt: "I have been teaching front-end developement for the last 7 years. Last year I was offically appointed as a part time teacher and have decided to go back to freelancing for the other half of my working life."
 publication_year: 2014
-current_nav: blog
 categories:
 - Teaching
 - Life
@@ -27,8 +25,6 @@ To help myself update my courses, [I have put them all on Github](https://github
 ## Make freelancing less crazy
 
 Because all of my income doesn't come from freelance gigs, I am more comfortable beeing a bit pickier with the projects and clients I take on. Hopefully, it will also allow me to cope with the endless sucession of feast and famine experienced by many freelancers I have talked to.
-
-I really admire "full freelancers" who can put up with the pressure and are able to strike a healthy work-life balance. I'm not sure I could do it. I hope that balancing freelancing with teaching will help me.
 
 Rather than working on a wide variety of small projects at the same time, I intend to try one of those two things:
 

@@ -1,5 +1,4 @@
 ---
-layout: portfolio
 title: "Gare des Glaciers"
 excerpt: "The “Gare des Glaciers” is a small Bed & Breakfast in Chamonix. I built a multilingual website to showcase and promote the B&B, its surroundings and services offered to guests.."
 project_url: http://www.garedesglaciers.com
@@ -10,7 +9,6 @@ project_thumbnail: garedesglaciers_thumb.jpg
 project_image_small: garedesglaciers_600.jpg
 project_image_medium: garedesglaciers_1024.jpg
 project_image_large: garedesglaciers_1500.jpg
-current_nav: work
 categories:
 - Web
 tags:

@@ -4,12 +4,32 @@ html_description: "The blog and portfolio of Jérôme Coupé, a web designer fro
 # Build settings
 url: "http://www.webstoemp.com"
 exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
-permalink: /blog/:title/
-collections:
-  projects:
-    output: true
-    permalink: /work/:title/
 highlighter: pygments
 markdown: kramdown
 kramdown:
   input: GFM
+
+permalink: /blog/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /work/:title/
+
+# Defaults front matter variables for various types
+# http://jekyllrb.com/docs/configuration/#front-matter-defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "blogpost"
+      current_nav: "blog"
+  -
+    scope:
+      path: "work"
+      type: "projects"
+    values:
+      layout: "portfolio"
+      current_nav: "work"

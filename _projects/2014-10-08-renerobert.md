@@ -1,5 +1,4 @@
 ---
-layout: portfolio
 title: "Rene Robert Photography"
 excerpt: "René Robert is a French Outdoor Photographer. After working together for the International Polar Foundation, he asked me to work with him on his online portfolio. I couldn't resist working with such amazing pictures."
 project_url: http://www.renerobert.net
@@ -10,7 +9,6 @@ project_thumbnail: renerobert_thumb.jpg
 project_image_small: renerobert_600.jpg
 project_image_medium: renerobert_1024.jpg
 project_image_large: renerobert_1500.jpg
-current_nav: work
 categories:
 - Web
 tags:

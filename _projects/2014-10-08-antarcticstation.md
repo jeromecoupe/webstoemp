@@ -1,5 +1,4 @@
 ---
-layout: portfolio
 title: "Princess Elisabeth Antartica"
 excerpt: "While the International Polar Foundation was busy building the first “zero emission” research station in Antarctica, I got to build the website for it."
 project_url: http://www.antarcticstation.org
@@ -10,7 +9,6 @@ project_thumbnail: antarcticstation_thumb.jpg
 project_image_small: antarcticstation_600.jpg
 project_image_medium: antarcticstation_1024.jpg
 project_image_large: antarcticstation_1500.jpg
-current_nav: work
 categories:
 - Web
 tags:

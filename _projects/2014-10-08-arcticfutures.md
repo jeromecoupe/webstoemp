@@ -1,5 +1,4 @@
 ---
-layout: portfolio
 title: "Arctic Futures Symposium"
 excerpt: "Arctic Futures is an annual international symposium promoting dialog on Arctic-related issues. I was hired to develop a website and had just 3 weeks to design and build it from scratch. A relatively small project on a tight deadline."
 project_url: http://www.arcticfutures.org
@@ -10,7 +9,6 @@ project_thumbnail: arcticfutures_thumb.jpg
 project_image_small: arcticfutures_600.jpg
 project_image_medium: arcticfutures_1024.jpg
 project_image_large: arcticfutures_1500.jpg
-current_nav: work
 categories:
 - Web
 tags:

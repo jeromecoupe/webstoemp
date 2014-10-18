@@ -1,5 +1,4 @@
 ---
-layout: portfolio
 title: "International Polar Foundation"
 excerpt: "The International Polar Foundation needed to create, maintain and run a series of websites. Rather than hiring an external agency, they wanted a long term partnership with a designer / developer."
 project_url: http://www.polarfoundation.org
@@ -10,7 +9,6 @@ project_thumbnail: polarfoundation_thumb.jpg
 project_image_small: polarfoundation_600.jpg
 project_image_medium: polarfoundation_1024.jpg
 project_image_large: polarfoundation_1500.jpg
-current_nav: work
 categories:
 - Web
 tags:
