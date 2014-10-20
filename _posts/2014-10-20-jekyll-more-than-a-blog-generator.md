@@ -109,7 +109,7 @@ For this blog, I wanted an archives of blogposts grouped by year and, since Gith
 
 The `where` filter allows you to select all objects in an array where the key has a given value. Posts can be filtered by category or by any custom value we set in the YAML Front Matter.
 
-The `sort` filter will let you sort arrays by any property. The `reverse filter can then be used to sort things in ascending or descending order.
+The `sort` filter will let you sort arrays by any property. The `reverse` filter can then be used to sort things in ascending or descending order.
 
 ## Edit your content with Prose.io
 
