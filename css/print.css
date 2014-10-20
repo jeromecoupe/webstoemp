@@ -981,6 +981,30 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 /*------------------------------------*\
+=code and codeblocks
+\*------------------------------------*/
+/* =code
+--------------------------------------*/
+code {
+  background: #F6F6F6;
+  padding: 0 .25em;
+  border: 1px solid #EEEEEE;
+  border-radius: .15em;
+}
+
+/* =code blocks
+--------------------------------------*/
+.highlight code {
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/*
+	handled by pygments and scss/vendors/syntax-highlighting.scss
+*/
+/*------------------------------------*\
 =grid
 \*------------------------------------*/
 /**
@@ -4123,12 +4147,6 @@ form {
   border-bottom: 1px solid #ececec;
 }
 
-/*------------------------------------*\
-=codeblocks
-\*------------------------------------*/
-/*
-	handled by pygments and scss/vendors/syntax-highlighting.scss
-*/
 .icon:before {
   content: "";
   display: inline-block;
