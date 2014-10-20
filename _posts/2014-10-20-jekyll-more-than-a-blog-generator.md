@@ -7,8 +7,8 @@ categories:
 - CMS
 tags:
 - Jekyll
-- Static
-- Generator
+- Collections
+- Data
 ---
 
 ## In the beginning
@@ -46,7 +46,7 @@ So there you have it, custom post types in Jekyll. Collections are post types an
 
 ## Data
 
-Jekyll now also supports [formatted data](http://jekyllrb.com/docs/datafiles/) in the form of JSON, YAML or CSV files. Data are used for items having a spreadsheet-like nature and not needing their own URLs or page. These data files are stored in the `_data` folder by default and outputted in templates using `site.data.filename`.
+Jekyll now also supports [formatted data](http://jekyllrb.com/docs/datafiles/) in the form of JSON, YAML or CSV files. Data are used for items having a spreadsheet-like nature and not needing their own URL or page. These data files are stored in the `_data` folder by default and output in templates using `site.data.filename`.
 
 Let's say we create a file hosting all your social media accounts and usernames. Once stored in `/_data/socialmedia.yml`, we can then access the data using `site.data.socialmedia` and use it in our templates, most notably through a `for` loop.
 
