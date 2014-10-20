@@ -89,17 +89,19 @@ For this blog, I wanted an archives of blogposts grouped by year and, since Gith
   {% if forloop.first %}<ul class="yearlyarchive">{% endif %}
 
   <li class="yearlyarchive__year">
+
     <h2 class="yearlyarchive__title">{{ postsInYear.name }}</h2>
 
-      {% for item in postsInYear.items %}
-        {% if forloop.first %}<ul class="yearlyarchive__list">{% endif %}
+    {% for item in postsInYear.items %}
+      {% if forloop.first %}<ul class="yearlyarchive__list">{% endif %}
 
-          <li class="yearlyarchive__item">
-            {{ item.title }}
-          </li>
+        <li class="yearlyarchive__item">
+          {{ item.title }}
+        </li>
 
-        {% if forloop.last %}</ul>{% endif %}
-      {% endfor %}
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
+
   </li>
 
   {% if forloop.last %}</ul>{% endif %}
