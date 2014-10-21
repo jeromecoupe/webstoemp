@@ -738,6 +738,7 @@ html {
 
 body {
   color: #333333;
+  background: #fff;
 }
 
 /*------------------------------------*\
@@ -4029,12 +4030,12 @@ code {
 }
 
 .banner-tagline {
-  margin: -.25em 0 1.5em;
+  margin: -.55em 0 1.5em;
   padding: 0;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.75);
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: 400;
   line-height: 1.4;
   font-style: italic;
@@ -4046,8 +4047,8 @@ code {
 }
 @media all and (min-width: 47.5em) {
   .banner-tagline {
-    font-size: 21px;
-    font-size: 1.3125rem;
+    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 
@@ -4060,7 +4061,7 @@ code {
   font-size: 3rem;
   font-weight: 400;
   font-style: italic;
-  color: #d35400;
+  color: #ec5e00;
 }
 
 .banner-button {

@@ -410,12 +410,12 @@
 
 	.banner-tagline
 	{
-		margin:-.25em 0 1.5em;
+		margin:-.55em 0 1.5em;
 		padding:0;
 		text-shadow:0 0 5px rgba(0,0,0,.5),
 								1px 1px 0 rgba(0,0,0,.75);
 		font-family:$fontstack-alt;
-		@include rem-size(18px);
+		@include rem-size(21px);
 		font-weight:400;
 		line-height:1.4;
 		font-style:italic;
@@ -429,7 +429,7 @@
 
 		@include mq(medium)
 		{
-			@include rem-size(21px);
+			@include rem-size(24px);
 		}
 	}
 
@@ -442,7 +442,7 @@
 		  @include rem-size(48px);
 		  font-weight:400;
 		  font-style: italic;
-		  color:$color-accent;
+		  color:lighten($color-accent,5%);
 		}
 
 	.banner-button
