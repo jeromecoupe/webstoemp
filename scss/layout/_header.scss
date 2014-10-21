@@ -374,21 +374,6 @@
 		}
 	}
 
-	@keyframes slidetop
-	{
-		0%
-		{
-			transform:translate3d(0,-.5em,0);
-			opacity:0;
-		}
-
-		100%
-		{
-			transform:translate3d(0,0,0);
-			opacity:1;
-		}
-	}
-
 	.banner-title
 	{
 		margin:0;
@@ -400,7 +385,6 @@
 		font-weight:400;
 		line-height:1.1;
 		color:#fff;
-		animation:slidetop .5s ease-in .1s;
 
 		@include mq(medium)
 		{
@@ -415,7 +399,7 @@
 		text-shadow:0 0 5px rgba(0,0,0,.5),
 								1px 1px 0 rgba(0,0,0,.75);
 		font-family:$fontstack-alt;
-		@include rem-size(21px);
+		@include rem-size(18px);
 		font-weight:400;
 		line-height:1.4;
 		font-style:italic;
