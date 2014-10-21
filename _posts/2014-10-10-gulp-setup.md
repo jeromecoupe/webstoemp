@@ -193,6 +193,7 @@ gulp.task('css', function() {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minifycss())
 		.pipe(gulp.dest('./public_html/assets/css/'))
+		.pipe(browsersync.reload({ stream:true }))
 		.pipe(notify({ message: 'Styles task complete' }));
 });
 {% endhighlight %}
@@ -287,7 +288,7 @@ gulp.task('browsersync-reload', function () {
 });
 {% endhighlight %}
 
-Simple task to reload all browsers with BrowserSync (used when my HTML / Template files are modified).
+Simple task to reload all browsers with BrowserSync (used when my HTML / Template or script files are modified).
 
 {% highlight javascript %}
 // Watch task
