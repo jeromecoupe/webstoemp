@@ -79,7 +79,7 @@ defaults:
 
 Those [filters](http://jekyllrb.com/docs/templates/#filters) help you filter, sort or group items in posts, collections and data really easily.
 
-For this blog, I wanted an archives of blogposts grouped by year and, since Github pages do not support them, I didn't want to use plugins. All I had to do was to create a `publication_year` variable in the YAML front matter of all my blogposts and use the group filter. Easy.
+For this blog, I wanted an archive of blogposts grouped by year and, since Github pages do not support them, I didn't want to use plugins. All I had to do was to create a `publication_year` variable in the YAML front matter of all my blogposts and use the group filter. Easy.
 
 {% highlight liquid %}
 {% raw %}
@@ -117,7 +117,7 @@ The `sort` filter will let you sort arrays by any property. The `reverse` filter
 
 One of the main drawbacks about Jekyll is that it is relatively difficult for clients to use, mainly because it lacks a backend / control panel to manage, create and edit posts.
 
-Enter [Prose](http://prose.io/), a free online editor written in node.js by [Development Seed](http://www.developmentseed.org/) (I told you I was a fan). Prose can connect to any github account and repository and offers a simple and fast WYSIWYG editor for your Markdown files, including the YAML Front Matter.
+Enter [Prose](http://prose.io/), a free online editor written in node.js by [Development Seed](http://www.developmentseed.org/) (I told you I was a fan). Prose can connect to any GitHub account and repository and offers a simple and fast WYSIWYG editor for your Markdown files, including the YAML Front Matter.
 
 Prose can be hosted on your own server or used as a service. It can be [configured](https://github.com/prose/prose/wiki) on a per project basis via your `_config.yml` file to suit your client's and site's needs.
 
