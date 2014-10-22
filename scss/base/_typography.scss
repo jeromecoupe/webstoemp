@@ -76,13 +76,8 @@ body
 .h4
 {
 	@extend %title;
-	@include rem-size(16px);
+	@include rem-size(18px);
 	margin-bottom:-.25em;
-
-	@include mq(medium)
-	{
-		@include rem-size(18px);
-	}
 }
 
 	.h1--notop, .h2--notop, .h3--notop, .h4--notop

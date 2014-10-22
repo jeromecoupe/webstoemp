@@ -799,15 +799,9 @@ body {
 }
 
 .h4 {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: -.25em;
-}
-@media all and (min-width: 47.5em) {
-  .h4 {
-    font-size: 18px;
-    font-size: 1.125rem;
-  }
 }
 
 .h1--notop, .h2--notop, .h3--notop, .h4--notop {
