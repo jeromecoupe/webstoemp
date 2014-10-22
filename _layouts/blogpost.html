@@ -7,18 +7,20 @@ layout: default
   <div class="grid  grid--center">
     <div class="grid__unit  medium-span-10of12  large-span-8of12">
 
-      <article class="item  wysiwyg">
+      <!-- Using h-entry microformats: http://microformats.org/wiki/h-entry  -->
+      <article class="item  h-entry">
 
         <header class="item__header">
-          <p class="item-info  item-info--big">{{ page.date|date: "%B %-d, %Y" }}</p>
+          <p class="item-info  item-info--big"><time datetime="{{ page.date|date: '%Y-%m-%d' }}" class="dt-published">{{ page.date|date: "%B %-d, %Y" }}</time></p>
           <h1 class="h1  h1--notop">{{ page.title }}</h1>
         </header>
 
-        <div class="intro">
+        <div class="item__summary  intro  p-summary">
           <p>{{ page.excerpt }}</p>
         </div>
-
-        {{ content }}
+        <div class="item__body  wysiwyg  e-content">
+          {{ content }}
+        </div>
 
       </article>
 
