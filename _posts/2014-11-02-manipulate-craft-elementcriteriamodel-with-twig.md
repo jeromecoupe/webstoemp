@@ -1,6 +1,6 @@
 ---
-title: "Manipulate Craft's ElementCriteriaModel with Twig"
-excerpt: "When working with Craft CMS, manipulating ElementCriteriaModel with Twig makes for leaner and meaner templates. Relatively complex functionalities can also be created pretty easily."
+title: "Manipulating Craft's ElementCriteriaModel objects with Twig"
+excerpt: "When working with Craft CMS, manipulating ElementCriteriaModel objects with Twig makes for leaner and meaner templates. Relatively complex functionalities can also be built pretty easily."
 publication_year: 2014
 categories:
 - Craft
@@ -13,7 +13,7 @@ tags:
 
 While working on the templates of the latest websites I developed with [Craft CMS](http://buildwithcraft.com/), I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently. It saved me a lot of time and efforts and made my templates easier to read.
 
-It is a very simple technique but one that is quite flexible and can be used in a wide variety of contexts to solve problems or answer feature requests. Here are the basic steps:
+It is a very simple technique but one that is quite flexible and can be used in a wide variety of contexts to solve common problems. Here are the basic steps:
 
 1. Create an empty array.
 2. Use `craft.entries.ids()` several times to get the IDs of the entries you need to display.
