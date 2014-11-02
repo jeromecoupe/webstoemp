@@ -11,9 +11,9 @@ tags:
 
 ## Introduction
 
-While working on the templates of my latest [Craft CMS](http://buildwithcraft.com/) projects, I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently.
+While working on the templates of my latest [Craft CMS](http://buildwithcraft.com/) projects, I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently. It is a very simple technique but one that is quite flexible and can be used in a wide variety of contexts to solve common problems.
 
-It is a very simple technique but one that is quite flexible and can be used in a wide variety of contexts to solve common problems. Here are the basic steps:
+Here are the basic steps:
 
 1. Create an empty array.
 2. Use `craft.entries.ids()` several times to get the IDs of the entries you need to display.
@@ -24,7 +24,7 @@ Let's go through a few use cases for that pattern.
 
 ## Complement user-selected entries with recent entries
 
-This is a very commn use case. On the homepage of a website, we let administrators choose six projects to highlight using an [entries field](http://buildwithcraft.com/docs/entries-fields). In the event they do not choose six of them, we want to complement that list with the most recent projects to fill the rest of our slots. We don't want any duplicates in that list.
+This is a very common use case. On the homepage of a website, we let administrators choose six projects to highlight using an [entries field](http://buildwithcraft.com/docs/entries-fields). In the event they do not pick six of them, we want to complement that list with the most recent projects. We don't want any duplicates in that list.
 
 Using the simple method described above, that's how we can implement this:
 
@@ -53,9 +53,7 @@ Using the simple method described above, that's how we can implement this:
 
 Here is another albeit similar scenario. On an entry page, we want to display 5 related entries. Related entries are specified manually by administrators using an entries field.
 
-When no related entries have been found or when all slots are not used, we want to complement our list using entries sharing at least one category with the currently viewed entry.
-
-If that's still not enough entries to complete the list, we will just use the most recent articles.
+When no related entries have been found or when all slots are not used, we want to complement our list using entries sharing at least one category with the currently viewed entry. If that's still not enough entries to complete the list, we will just use the most recent articles.
 
 Again, no duplicates allowed and the currently viewed entry should never appear in that list.
 
