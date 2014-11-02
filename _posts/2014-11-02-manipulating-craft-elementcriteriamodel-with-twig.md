@@ -65,6 +65,7 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
  # 3. If not up to 5 items, get the 6 most recent entries
  # 4. No duplicates allowed. Current entry should never appear in that list
 ##}
+
 {% set articlesIds = entry.articleRelated.ids() %}
 
 {% if articlesIds | length < 5 %}
