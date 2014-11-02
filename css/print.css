@@ -725,15 +725,13 @@ th {
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #000;
 }
 
 /*------------------------------------*\
 =typography main
 \*------------------------------------*/
 html {
-  font: normal 100%/1.5 "jaf-bernino-sans", Helvetica, Arial, sans-serif;
+  font: normal 100%/1.5 "jaf-bernina-sans", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -4104,7 +4102,7 @@ form {
   font-size: 16px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "jaf-bernino-sans", Helvetica, Arial, sans-serif;
+  font-family: "jaf-bernina-sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: #242424;
 }
