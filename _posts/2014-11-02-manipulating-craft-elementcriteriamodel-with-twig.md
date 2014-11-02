@@ -86,9 +86,9 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
 
 {% endif %}
 
-{% set relatedNews = craft.entries.section('news').id(newsIds).fixedOrder(true).find() %}
+{% set relatedArticles = craft.entries.section('articles').id(articlesIds).fixedOrder(true).find() %}
 
-{# use 'relatedNews' in a for loop for display #}
+{# use 'relatedArticles' in a for loop for display #}
 {% endraw %}
 {% endhighlight %}
 
