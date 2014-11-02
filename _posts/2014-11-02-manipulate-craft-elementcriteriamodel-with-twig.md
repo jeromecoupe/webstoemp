@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-While working on the templates of the latest websites I developed with [Craft CMS](http://buildwithcraft.com/), I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently. It saved me a lot of time and efforts and made my templates easier to read.
+While working on the templates of the latest websites I developed with [Craft CMS](http://buildwithcraft.com/), I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently.
 
 It is a very simple technique but one that is quite flexible and can be used in a wide variety of contexts to solve common problems. Here are the basic steps:
 
@@ -20,7 +20,7 @@ It is a very simple technique but one that is quite flexible and can be used in 
 3. Use Twig's array filters [merge](http://twig.sensiolabs.org/doc/filters/merge.html) and [slice](http://twig.sensiolabs.org/doc/filters/slice.html) to assemble those arrays of ids into a single one using the array we created in step one.
 4. Use `craft.entries.id(myCustomArray).fixedOrder(true).find()` to output exactly the entries you want using your newly created array of entry ids.
 
-Let's go through a few use cases for that technique.
+Let's go through a few use cases for that pattern.
 
 ## Complement user-selected entries with recent entries
 
