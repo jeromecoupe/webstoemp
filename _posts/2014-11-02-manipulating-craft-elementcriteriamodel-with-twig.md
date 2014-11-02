@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-While working on the templates my latest [Craft CMS](http://buildwithcraft.com/) projects, I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently.
+While working on the templates of my latest [Craft CMS](http://buildwithcraft.com/) projects, I found myself manipulating [ElementCriteriaModel](http://buildwithcraft.com/docs/templating/elementcriteriamodel) objects with [Twig](http://twig.sensiolabs.org/) rather frequently.
 
 It is a very simple technique but one that is quite flexible and can be used in a wide variety of contexts to solve common problems. Here are the basic steps:
 
