@@ -34,7 +34,7 @@ Using the simple method described above, that's how we can implement this:
  # 1. Create array containing Ids of chosen projects
  # 2. If not up to 6 items, get the Ids of the 6 most recent projects and remove chosen projects Ids from that list
  # 3. Get your final ElementCriteria model using your list of Ids
-#}
+##}
 
 {% set projectsIds = entry.homeProjects.ids() %}
 
@@ -45,7 +45,7 @@ Using the simple method described above, that's how we can implement this:
 
 {% set projects = craft.entries.section('projects').status('live').id(projectsIds).fixedOrder(true).find() %}
 
-{# you can now use 'projects' in a for loop for display #}
+{# use 'projects' in a for loop for display #}
 {% endraw %}
 {% endhighlight %}
 
@@ -64,7 +64,7 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
  # 2. If not up to 5 items, get 6 entries sharing categories w/ the current entry
  # 3. If not up to 5 items, get the 6 most recent entries
  # 4. No duplicates allowed. Current entry should never appear in that list
-#}
+##}
 {% set articlesIds = entry.articleRelated.ids() %}
 
 {% if articlesIds | length < 5 %}
@@ -86,6 +86,8 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
 {% endif %}
 
 {% set relatedNews = craft.entries.section('news').id(newsIds).fixedOrder(true).find() %}
+
+{# use 'relatedNews' in a for loop for display #}
 {% endraw %}
 {% endhighlight %}
 
@@ -105,6 +107,7 @@ We want to list the sponsor levels (categories) and preserve the order they have
  # - For each category, get a list of entry ids related to that category
  # - Merge each of those arrays with the "sponsors" array
 ##}
+
 {% set sponsors = [] %}
 {% set sponsorsCategories = craft.categories.group('sponsorLevels').find() %}
 {% for category in sponsorsCategories %}
@@ -114,7 +117,7 @@ We want to list the sponsor levels (categories) and preserve the order they have
 
 {% set sponsors = craft.entries.section('sponsors').status('live').id(sponsorsIds).fixedOrder(true).find() %}
 
-{# you can now use 'sponsors' in a for loop for display #}
+{# use 'sponsors' in a for loop for display #}
 {% endraw %}
 {% endhighlight %}
 
