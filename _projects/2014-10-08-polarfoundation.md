@@ -35,4 +35,4 @@ In 2012, we decided to take a mobile-first and reponsive web design approach. Th
 
 ## A long term relationship
 
-What you currently see is the third incarnation of the International Polar Foundation's website. As a freelancer, I work for them a couple of days a week. I am considered as beeing part of the team. For me this is a great aspect of such long term partnerships: you get to make the website grow and evolve with the organisation.
+What you currently see is the third incarnation of the International Polar Foundation's website. As a freelancer, I work for them a couple of days a week. I am considered as being part of the team. Such long term partnerships allow you to make the website grow and evolve with the organisation.
