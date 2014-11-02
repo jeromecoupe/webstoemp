@@ -51,7 +51,7 @@ Using the simple method described above, that's how we can implement this:
 
 ## Display related items on an entry pages
 
-Here is another albeit similar scenario. On an entry page, we want to display 5 related entries. Related entries are specified manually by administrators.
+Here is another albeit similar scenario. On an entry page, we want to display 5 related entries. Related entries are specified manually by administrators using an entries field.
 
 When no related entries have been found or when all slots are not used, we want to complement our list using entries sharing at least one category with the currently viewed entry.
 
@@ -93,9 +93,9 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
 
 ## Order entries by categories
 
-Another use case would be to display entries sorted by categories and reflect the order these have in our category group. An example: sponsors and levels of sponsorship.
+Another use case would be to display entries sorted by categories and reflect the order these have in our category group. An example that came up in a recent project: sponsors and levels of sponsorship.
 
-We want to list the sponsor levels (categories) and preserve the order they have in the control panel. Then, we want to list all sponsors under each category. The client will be able to easily add a sponsor level and assign new sponsors to it. The client will also be able to reorder his sponsorship levels easily.
+We want to list the sponsor levels (categories) and preserve the order they have in the control panel. Then, we want to list all sponsors under each category. The client will be able to easily add a sponsor level and assign new sponsors to it. The client will also be able to reorder his sponsorship levels easily if needed.
 
 {% highlight jinja %}
 {% raw %}
@@ -120,4 +120,4 @@ We want to list the sponsor levels (categories) and preserve the order they have
 {% endraw %}
 {% endhighlight %}
 
-There you go, three use cases for a simple but powerful technique. Next time you work on a project, you will have this trick in your arsenal.
+There you go, three use cases for a simple but powerful technique. I hope you'll find this little trick useful when working on your next Craft project.
