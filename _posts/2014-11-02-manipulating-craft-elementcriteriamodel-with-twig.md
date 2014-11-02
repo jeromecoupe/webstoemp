@@ -39,7 +39,7 @@ Using the simple method described above, that's how we can implement this:
 {% set projectsIds = entry.homeProjects.ids() %}
 
 {% if projectsIds | length < 6 %}
-    {% set recentProjectsIds = craft.entries.section('projects').status('live').order('postDate desc').limit(6).ids() | without(projectsIds) %}
+    {% set recentProjectsIds = craft.entries.section('projects').limit(6).ids() | without(projectsIds) %}
     {% set projectsIds = projectsIds | merge(recentProjectsIds) | slice(0,6) %}
 {% endif %}
 
@@ -69,21 +69,16 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
 {% set articlesIds = entry.articleRelated.ids() %}
 
 {% if articlesIds | length < 5 %}
-
   {% set currentCategories = entry.articleCategories %}
-
   {% if currentCategories | length %}
     {% set sameCategoryIds = craft.entries.section('articles').relatedTo(currentCategories).limit(6).ids() | without(articlesIds) | without(entry.id) %}
     {% set articlesIds = articlesIds | merge(sameCategoryIds) | slice(0,5) %}
   {% endif %}
-
 {% endif %}
 
 {% if articlesIds | length < 5 %}
-
   {% set recentIds = craft.entries.section('articles').limit(6).ids() | without(articlesIds) | without(entry.id) %}
   {% set articlesIds = articlesIds | merge(recentIds) | slice(0,5) %}
-
 {% endif %}
 
 {% set relatedArticles = craft.entries.section('articles').id(articlesIds).fixedOrder(true).find() %}
