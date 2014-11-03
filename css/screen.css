@@ -4815,5 +4815,6 @@ form {
 }
 
 .animation-slide-in {
+  transform: translate3d(0, 0, 0);
   animation: slidetop .75s ease-out .1s;
 }
