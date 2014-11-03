@@ -983,6 +983,7 @@ code {
   padding: 0 .25em;
   border: 1px solid #EEEEEE;
   border-radius: .15em;
+  word-wrap: break-word;
 }
 
 /* =code blocks
