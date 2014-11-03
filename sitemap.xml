@@ -4,27 +4,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.webstoemp.com/index.html</loc>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>http://www.webstoemp.com/about/index.html</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>http://www.webstoemp.com/contact/index.html</loc>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>http://www.webstoemp.com/blog/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   {% for item in site.posts %}
     <url>
-      <loc>{{ item.url | prepend: site.url }}</loc>
+      <loc>{{ item.url | prepend:site.url }}</loc>
+      <lastmod>{{ item.date | date_to_xmlschema }}</lastmod>
+      <priority>0.8</priority>
     </url>
   {% endfor %}
   <url>
     <loc>http://www.webstoemp.com/work/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   {% for item in site.projects %}
     <url>
-      <loc>{{ item.url | prepend: site.url }}</loc>
+      <loc>{{ item.url | prepend:site.url }}</loc>
+      <lastmod>{{ item.date | date_to_xmlschema }}</lastmod>
+      <priority>0.8</priority>
     </url>
   {% endfor %}
 </urlset>

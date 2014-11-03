@@ -1,5 +1,6 @@
 ---
 title: "SciencePoles Magazine"
+date: 2013-12-08 00:00:00
 excerpt: "SciencePoles is an online magasine publishing in-depth articles and interviews about Polar Science and research. Designing for long form content was definitely the main challenge for this project."
 project_url: http://www.sciencepoles.org
 project_website: www.sciencepoles.org

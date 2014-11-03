@@ -15,7 +15,7 @@ current_nav: work
 			</div>
 		</div>
 
-		{% for item in site.projects limit:6 %}
+		{% for item in site.projects reversed limit:6 %}
 
 			{% if forloop.first %}<ul class="grid  grid--spaced"><li class="grid__unit  medium-span-1of2  large-span-1of3">{% endif %}
 
