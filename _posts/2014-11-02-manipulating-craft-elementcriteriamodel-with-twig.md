@@ -43,7 +43,7 @@ Using the simple method described above, that's how we can implement this:
     {% set projectsIds = projectsIds | merge(recentProjectsIds) | slice(0,6) %}
 {% endif %}
 
-{% set projects = craft.entries.section('projects').status('live').id(projectsIds).fixedOrder(true).find() %}
+{% set projects = craft.entries.section('projects').id(projectsIds).fixedOrder(true).find() %}
 
 {# use 'projects' in a for loop for display #}
 {% endraw %}
@@ -111,7 +111,7 @@ We want to list the sponsor levels (categories) and preserve the order they have
   {% set sponsorsIds = sponsorsIds | merge(categorySponsorsIds) %}
 {% endfor %}
 
-{% set sponsors = craft.entries.section('sponsors').status('live').id(sponsorsIds).fixedOrder(true).find() %}
+{% set sponsors = craft.entries.section('sponsors').id(sponsorsIds).fixedOrder(true).find() %}
 
 {# use 'sponsors' in a for loop for display #}
 {% endraw %}
