@@ -101,14 +101,14 @@ We want to list the sponsor levels (categories) and preserve the order they have
  # - Create an empty array to hold our entries ids
  # - Get the list of categories in the order they are in in the CP
  # - For each category, get a list of entry ids related to that category
- # - Merge each of those arrays with the "sponsors" array
+ # - Merge those arrays together
 ##}
 
-{% set sponsors = [] %}
+{% set sponsorsIds = [] %}
 {% set sponsorsCategories = craft.categories.group('sponsorLevels').find() %}
 {% for category in sponsorsCategories %}
-  {% set categorySponsors = craft.entries.section('sponsors').relatedTo(category).ids() %}
-  {% set sponsorsIds = sponsors | merge(categorySponsors) %}
+  {% set categorySponsorsIds = craft.entries.section('sponsors').relatedTo(category).ids() %}
+  {% set sponsorsIds = sponsorsIds | merge(categorySponsorsIds) %}
 {% endfor %}
 
 {% set sponsors = craft.entries.section('sponsors').status('live').id(sponsorsIds).fixedOrder(true).find() %}
