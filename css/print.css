@@ -812,7 +812,7 @@ body {
  *
 **/
 .wysiwyg h2, .wysiwyg h3, .wysiwyg h4 {
-  margin: 1em 0 .75em;
+  margin: 1.25em 0 .75em;
   padding: 0;
   line-height: 1.2;
   color: #242424;

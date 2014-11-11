@@ -257,6 +257,7 @@
 		padding:.8em 1em;
 		border:1px solid lighten($color-main,5%);
 		border-radius:.25em;
+
 		@include rem-size(14px);
 		line-height:1;
 		font-weight:500;

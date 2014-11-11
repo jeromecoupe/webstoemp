@@ -49,7 +49,7 @@ Using the simple method described above, that's how we can implement this:
 {% endraw %}
 {% endhighlight %}
 
-## Display related items on an entry pages
+## Display related items on an entry page
 
 Here is another albeit similar scenario. On an entry page, we want to display 5 related entries. Related entries are specified manually by administrators using an entries field.
 
