@@ -379,11 +379,11 @@
 	{
 		margin:0;
 		padding:0;
-		text-shadow:0 0 5px rgba(0,0,0,.5),
+		text-shadow:0 0 1em rgba(0,0,0,.9),
 								1px 1px 0 rgba(0,0,0,.75);
 		@include rem-size(31px);
-		font-family:$fontstack-alt;
-		font-weight:400;
+		font-family:$fontstack-main;
+		font-weight:700;
 		line-height:1.1;
 		color:#fff;
 
@@ -395,7 +395,7 @@
 
 	.banner-tagline
 	{
-		margin:-.55em 0 1.5em;
+		margin:-.2em 0 1.5em;
 		padding:0;
 		text-shadow:0 0 5px rgba(0,0,0,.5),
 								1px 1px 0 rgba(0,0,0,.75);
@@ -420,11 +420,10 @@
 
 		.amperstand
 		{
-		  position:relative;
-		  left:-.05em;
-		  top:.25em;
+		  display:inline-block;
+		  vertical-align:middle;
 			font-family: Baskerville, Palatino, Constantia, "Book Antiqua", serif;
-		  @include rem-size(48px);
+		  font-size:170%;
 		  font-weight:400;
 		  font-style: italic;
 		  color:lighten($color-accent,5%);
