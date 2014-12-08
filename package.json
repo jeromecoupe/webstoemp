@@ -1,10 +1,10 @@
 {
   "name": "webstoemp",
-  "description": "Personnal website of Jérôme Coupé",
+  "description": "Personal website of Jérôme Coupé",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://jeromecoupe.git.beanstalkapp.com/webstoemp.git"
+    "url": "https://github.com/jeromecoupe/jeromecoupe.github.io"
   },
   "devDependencies": {
     "browser-sync": "1.5.x",
