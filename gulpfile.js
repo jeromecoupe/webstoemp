@@ -66,7 +66,7 @@ gulp.task('img', function() {
 	return gulp.src('./img/**/*')
 	.pipe(imagemin({
 		progressive: true,
-		svgoPlugins: [ {removeViewBox:false} ]
+		svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
 	}))
   .pipe(gulp.dest('./img/'))
 });
