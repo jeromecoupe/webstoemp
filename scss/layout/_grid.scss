@@ -176,54 +176,26 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 {
 	#{$class-type}#{$namespace}span-full { width:100%; }
 
-	#{$class-type}#{$namespace}span-1of2 { width:1/2 * 100%; }
-
-	#{$class-type}#{$namespace}span-1of3 { width:1/3 * 100%; }
-	#{$class-type}#{$namespace}span-2of3 { width:2/3 * 100%; }
-
-	#{$class-type}#{$namespace}span-1of4 { width:1/4 * 100%; }
-	#{$class-type}#{$namespace}span-2of4 { @extend #{$class-type}#{$namespace}span-1of2; }
-	#{$class-type}#{$namespace}span-3of4 { width:3/4 * 100%; }
-
-	#{$class-type}#{$namespace}span-1of5 { width:1/5 * 100%; }
-	#{$class-type}#{$namespace}span-2of5 { width:2/5 * 100%; }
-	#{$class-type}#{$namespace}span-3of5 { width:3/5 * 100%; }
-	#{$class-type}#{$namespace}span-4of5 { width:4/5 * 100%; }
-
-	#{$class-type}#{$namespace}span-1of6 { width:1/6 * 100%; }
-	#{$class-type}#{$namespace}span-2of6 { @extend #{$class-type}#{$namespace}span-1of3; }
-	#{$class-type}#{$namespace}span-3of6 { @extend #{$class-type}#{$namespace}span-1of2; }
-	#{$class-type}#{$namespace}span-4of6 { @extend #{$class-type}#{$namespace}span-2of3; }
-	#{$class-type}#{$namespace}span-5of6 { width:5/6 * 100%; }
-
-	#{$class-type}#{$namespace}span-1of8 { width:1/8 * 100%; }
-	#{$class-type}#{$namespace}span-2of8 { @extend #{$class-type}#{$namespace}span-1of4; }
-	#{$class-type}#{$namespace}span-3of8 { width:3/8 * 100%; }
-	#{$class-type}#{$namespace}span-4of8 { @extend #{$class-type}#{$namespace}span-1of2; }
-	#{$class-type}#{$namespace}span-5of8 { width:5/8 * 100%; }
-	#{$class-type}#{$namespace}span-6of8 { @extend #{$class-type}#{$namespace}span-3of4; }
-	#{$class-type}#{$namespace}span-7of8 { width:7/8 * 100%; }
-
 	#{$class-type}#{$namespace}span-1of10 { width:1/10 * 100%; }
-	#{$class-type}#{$namespace}span-2of10 { @extend #{$class-type}#{$namespace}span-1of5; }
+	#{$class-type}#{$namespace}span-2of10 { width:2/10 * 100%; }
 	#{$class-type}#{$namespace}span-3of10 { width:3/10 * 100%; }
-	#{$class-type}#{$namespace}span-4of10 { @extend #{$class-type}#{$namespace}span-2of5; }
-	#{$class-type}#{$namespace}span-5of10 { @extend #{$class-type}#{$namespace}span-1of2; }
-	#{$class-type}#{$namespace}span-6of10 { @extend #{$class-type}#{$namespace}span-3of5; }
+	#{$class-type}#{$namespace}span-4of10 { width:4/10 * 100%; }
+	#{$class-type}#{$namespace}span-5of10 { width:5/10 * 100%; }
+	#{$class-type}#{$namespace}span-6of10 { width:6/10 * 100%; }
 	#{$class-type}#{$namespace}span-7of10 { width:7/10 * 100%; }
-	#{$class-type}#{$namespace}span-8of10 { @extend #{$class-type}#{$namespace}span-4of5; }
+	#{$class-type}#{$namespace}span-8of10 { width:8/10 * 100%; }
 	#{$class-type}#{$namespace}span-9of10 { width:9/10 * 100%; }
 
 	#{$class-type}#{$namespace}span-1of12 { width:1/12 * 100%; }
-	#{$class-type}#{$namespace}span-2of12 { @extend #{$class-type}#{$namespace}span-1of6; }
-	#{$class-type}#{$namespace}span-3of12 { @extend #{$class-type}#{$namespace}span-1of4; }
-	#{$class-type}#{$namespace}span-4of12 { @extend #{$class-type}#{$namespace}span-1of3; }
+	#{$class-type}#{$namespace}span-2of12 { width:2/12 * 100%; }
+	#{$class-type}#{$namespace}span-3of12 { width:3/12 * 100%; }
+	#{$class-type}#{$namespace}span-4of12 { width:4/12 * 100%; }
 	#{$class-type}#{$namespace}span-5of12 { width:5/12 * 100%; }
-	#{$class-type}#{$namespace}span-6of12 { @extend #{$class-type}#{$namespace}span-1of2; }
+	#{$class-type}#{$namespace}span-6of12 { @extend #{$class-type}#{$namespace}span-5of10; }
 	#{$class-type}#{$namespace}span-7of12 { width:7/12 * 100%; }
-	#{$class-type}#{$namespace}span-8of12 { @extend #{$class-type}#{$namespace}span-2of3; }
-	#{$class-type}#{$namespace}span-9of12 { @extend #{$class-type}#{$namespace}span-3of4; }
-	#{$class-type}#{$namespace}span-10of12 { @extend #{$class-type}#{$namespace}span-5of6; }
+	#{$class-type}#{$namespace}span-8of12 { width:8/12 * 100%; }
+	#{$class-type}#{$namespace}span-9of12 { width:9/12 * 100%; }
+	#{$class-type}#{$namespace}span-10of12 { width:10/12 * 100%; }
 	#{$class-type}#{$namespace}span-11of12 { width:11/12 * 100%; }
 }
 
@@ -238,54 +210,26 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 {
 	#{$class-type}#{$namespace}push-full { position:relative; left:100%; }
 
-	#{$class-type}#{$namespace}push-1of2 { position:relative; left:1/2 * 100%; }
-
-	#{$class-type}#{$namespace}push-1of3 { position:relative; left:1/3 * 100%; }
-	#{$class-type}#{$namespace}push-2of3 { position:relative; left:2/3 * 100%; }
-
-	#{$class-type}#{$namespace}push-1of4 { position:relative; left:1/4 * 100%; }
-	#{$class-type}#{$namespace}push-2of4 { position:relative; @extend #{$class-type}#{$namespace}push-1of2; }
-	#{$class-type}#{$namespace}push-3of4 { position:relative; left:3/4 * 100%; }
-
-	#{$class-type}#{$namespace}push-1of5 { position:relative; left:1/5 * 100%; }
-	#{$class-type}#{$namespace}push-2of5 { position:relative; left:2/5 * 100%; }
-	#{$class-type}#{$namespace}push-3of5 { position:relative; left:3/5 * 100%; }
-	#{$class-type}#{$namespace}push-4of5 { position:relative; left:4/5 * 100%; }
-
-	#{$class-type}#{$namespace}push-1of6 { position:relative; left:1/6 * 100%; }
-	#{$class-type}#{$namespace}push-2of6 { position:relative; @extend #{$class-type}#{$namespace}push-1of3; }
-	#{$class-type}#{$namespace}push-3of6 { position:relative; @extend #{$class-type}#{$namespace}push-1of2; }
-	#{$class-type}#{$namespace}push-4of6 { position:relative; @extend #{$class-type}#{$namespace}push-2of3; }
-	#{$class-type}#{$namespace}push-5of6 { position:relative; left:5/6 * 100%; }
-
-	#{$class-type}#{$namespace}push-1of8 { position:relative; left:1/8 * 100%; }
-	#{$class-type}#{$namespace}push-2of8 { position:relative; @extend #{$class-type}#{$namespace}push-1of4; }
-	#{$class-type}#{$namespace}push-3of8 { position:relative; left:3/8 * 100%; }
-	#{$class-type}#{$namespace}push-4of8 { position:relative; @extend #{$class-type}#{$namespace}push-1of2; }
-	#{$class-type}#{$namespace}push-5of8 { position:relative; left:5/8 * 100%; }
-	#{$class-type}#{$namespace}push-6of8 { position:relative; @extend #{$class-type}#{$namespace}push-3of4; }
-	#{$class-type}#{$namespace}push-7of8 { position:relative; left:7/8 * 100%; }
-
 	#{$class-type}#{$namespace}push-1of10 { position:relative; left:1/10 * 100%; }
-	#{$class-type}#{$namespace}push-2of10 { position:relative; @extend #{$class-type}#{$namespace}push-1of5; }
+	#{$class-type}#{$namespace}push-2of10 { position:relative; left:2/10 * 100%; }
 	#{$class-type}#{$namespace}push-3of10 { position:relative; left:3/10 * 100%; }
-	#{$class-type}#{$namespace}push-4of10 { position:relative; @extend #{$class-type}#{$namespace}push-2of5; }
-	#{$class-type}#{$namespace}push-5of10 { position:relative; @extend #{$class-type}#{$namespace}push-1of2; }
-	#{$class-type}#{$namespace}push-6of10 { position:relative; @extend #{$class-type}#{$namespace}push-3of5; }
+	#{$class-type}#{$namespace}push-4of10 { position:relative; left:4/10 * 100%; }
+	#{$class-type}#{$namespace}push-5of10 { position:relative; left:5/10 * 100%; }
+	#{$class-type}#{$namespace}push-6of10 { position:relative; left:6/10 * 100%; }
 	#{$class-type}#{$namespace}push-7of10 { position:relative; left:7/10 * 100%; }
-	#{$class-type}#{$namespace}push-8of10 { position:relative; @extend #{$class-type}#{$namespace}push-4of5; }
+	#{$class-type}#{$namespace}push-8of10 { position:relative; left:8/10 * 100%; }
 	#{$class-type}#{$namespace}push-9of10 { position:relative; left:9/10 * 100%; }
 
 	#{$class-type}#{$namespace}push-1of12 { position:relative; left:1/12 * 100%; }
-	#{$class-type}#{$namespace}push-2of12 { position:relative; @extend #{$class-type}#{$namespace}push-1of6; }
-	#{$class-type}#{$namespace}push-3of12 { position:relative; @extend #{$class-type}#{$namespace}push-1of4; }
-	#{$class-type}#{$namespace}push-4of12 { position:relative; @extend #{$class-type}#{$namespace}push-1of3; }
+	#{$class-type}#{$namespace}push-2of12 { position:relative; left:2/12 * 100%; }
+	#{$class-type}#{$namespace}push-3of12 { position:relative; left:3/12 * 100%; }
+	#{$class-type}#{$namespace}push-4of12 { position:relative; left:4/12 * 100%; }
 	#{$class-type}#{$namespace}push-5of12 { position:relative; left:5/12 * 100%; }
-	#{$class-type}#{$namespace}push-6of12 { position:relative; @extend #{$class-type}#{$namespace}push-1of2; }
+	#{$class-type}#{$namespace}push-6of12 { @extend #{$class-type}#{$namespace}push-5of10; }
 	#{$class-type}#{$namespace}push-7of12 { position:relative; left:7/12 * 100%; }
-	#{$class-type}#{$namespace}push-8of12 { position:relative; @extend #{$class-type}#{$namespace}push-2of3; }
-	#{$class-type}#{$namespace}push-9of12 { position:relative; @extend #{$class-type}#{$namespace}push-3of4; }
-	#{$class-type}#{$namespace}push-10of12 { position:relative; @extend #{$class-type}#{$namespace}push-5of6; }
+	#{$class-type}#{$namespace}push-8of12 { position:relative; left:8/12 * 100%; }
+	#{$class-type}#{$namespace}push-9of12 { position:relative; left:9/12 * 100%; }
+	#{$class-type}#{$namespace}push-10of12 { position:relative; left:10/12 * 100%; }
 	#{$class-type}#{$namespace}push-11of12 { position:relative; left:11/12 * 100%; }
 }
 
@@ -300,54 +244,26 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 {
 	#{$class-type}#{$namespace}pull-full { position:relative; right:100%; }
 
-	#{$class-type}#{$namespace}pull-1of2 { position:relative; right:1/2 * 100%; }
-
-	#{$class-type}#{$namespace}pull-1of3 { position:relative; right:1/3 * 100%; }
-	#{$class-type}#{$namespace}pull-2of3 { position:relative; right:2/3 * 100%; }
-
-	#{$class-type}#{$namespace}pull-1of4 { position:relative; right:1/4 * 100%; }
-	#{$class-type}#{$namespace}pull-2of4 { position:relative; @extend #{$class-type}#{$namespace}pull-1of2; }
-	#{$class-type}#{$namespace}pull-3of4 { position:relative; right:3/4 * 100%; }
-
-	#{$class-type}#{$namespace}pull-1of5 { position:relative; right:1/5 * 100%; }
-	#{$class-type}#{$namespace}pull-2of5 { position:relative; right:2/5 * 100%; }
-	#{$class-type}#{$namespace}pull-3of5 { position:relative; right:3/5 * 100%; }
-	#{$class-type}#{$namespace}pull-4of5 { position:relative; right:4/5 * 100%; }
-
-	#{$class-type}#{$namespace}pull-1of6 { position:relative; right:1/6 * 100%; }
-	#{$class-type}#{$namespace}pull-2of6 { position:relative; @extend #{$class-type}#{$namespace}pull-1of3; }
-	#{$class-type}#{$namespace}pull-3of6 { position:relative; @extend #{$class-type}#{$namespace}pull-1of2; }
-	#{$class-type}#{$namespace}pull-4of6 { position:relative; @extend #{$class-type}#{$namespace}pull-2of3; }
-	#{$class-type}#{$namespace}pull-5of6 { position:relative; right:5/6 * 100%; }
-
-	#{$class-type}#{$namespace}pull-1of8 { position:relative; right:1/8 * 100%; }
-	#{$class-type}#{$namespace}pull-2of8 { position:relative; @extend #{$class-type}#{$namespace}pull-1of4; }
-	#{$class-type}#{$namespace}pull-3of8 { position:relative; right:3/8 * 100%; }
-	#{$class-type}#{$namespace}pull-4of8 { position:relative; @extend #{$class-type}#{$namespace}pull-1of2; }
-	#{$class-type}#{$namespace}pull-5of8 { position:relative; right:5/8 * 100%; }
-	#{$class-type}#{$namespace}pull-6of8 { position:relative; @extend #{$class-type}#{$namespace}pull-3of4; }
-	#{$class-type}#{$namespace}pull-7of8 { position:relative; right:7/8 * 100%; }
-
 	#{$class-type}#{$namespace}pull-1of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-2of10 { position:relative; @extend #{$class-type}#{$namespace}pull-1of5; }
+	#{$class-type}#{$namespace}pull-2of10 { position:relative; right:1/10 * 100%; }
 	#{$class-type}#{$namespace}pull-3of10 { position:relative; right:3/10 * 100%; }
-	#{$class-type}#{$namespace}pull-4of10 { position:relative; @extend #{$class-type}#{$namespace}pull-2of5; }
-	#{$class-type}#{$namespace}pull-5of10 { position:relative; @extend #{$class-type}#{$namespace}pull-1of2; }
-	#{$class-type}#{$namespace}pull-6of10 { position:relative; @extend #{$class-type}#{$namespace}pull-3of5; }
+	#{$class-type}#{$namespace}pull-4of10 { position:relative; right:1/10 * 100%; }
+	#{$class-type}#{$namespace}pull-5of10 { position:relative; right:1/10 * 100%; }
+	#{$class-type}#{$namespace}pull-6of10 { position:relative; right:1/10 * 100%; }
 	#{$class-type}#{$namespace}pull-7of10 { position:relative; right:7/10 * 100%; }
-	#{$class-type}#{$namespace}pull-8of10 { position:relative; @extend #{$class-type}#{$namespace}pull-4of5; }
+	#{$class-type}#{$namespace}pull-8of10 { position:relative; right:1/10 * 100%; }
 	#{$class-type}#{$namespace}pull-9of10 { position:relative; right:9/10 * 100%; }
 
 	#{$class-type}#{$namespace}pull-1of12 { position:relative; right:1/12 * 100%; }
-	#{$class-type}#{$namespace}pull-2of12 { position:relative; @extend #{$class-type}#{$namespace}pull-1of6; }
-	#{$class-type}#{$namespace}pull-3of12 { position:relative; @extend #{$class-type}#{$namespace}pull-1of4; }
-	#{$class-type}#{$namespace}pull-4of12 { position:relative; @extend #{$class-type}#{$namespace}pull-1of3; }
+	#{$class-type}#{$namespace}pull-2of12 { position:relative; right:2/12 * 100%; }
+	#{$class-type}#{$namespace}pull-3of12 { position:relative; right:3/12 * 100%; }
+	#{$class-type}#{$namespace}pull-4of12 { position:relative; right:4/12 * 100%; }
 	#{$class-type}#{$namespace}pull-5of12 { position:relative; right:5/12 * 100%; }
-	#{$class-type}#{$namespace}pull-6of12 { position:relative; @extend #{$class-type}#{$namespace}pull-1of2; }
+	#{$class-type}#{$namespace}pull-6of12 { @extend #{$class-type}#{$namespace}pull-6of10; }
 	#{$class-type}#{$namespace}pull-7of12 { position:relative; right:7/12 * 100%; }
-	#{$class-type}#{$namespace}pull-8of12 { position:relative; @extend #{$class-type}#{$namespace}pull-2of3; }
-	#{$class-type}#{$namespace}pull-9of12 { position:relative; @extend #{$class-type}#{$namespace}pull-3of4; }
-	#{$class-type}#{$namespace}pull-10of12 { position:relative; @extend #{$class-type}#{$namespace}pull-5of6; }
+	#{$class-type}#{$namespace}pull-8of12 { position:relative; right:8/12 * 100%; }
+	#{$class-type}#{$namespace}pull-9of12 { position:relative; right:9/12 * 100%; }
+	#{$class-type}#{$namespace}pull-10of12 { position:relative; right:10/12 * 100%; }
 	#{$class-type}#{$namespace}pull-11of12 { position:relative; right:11/12 * 100%; }
 }
 
