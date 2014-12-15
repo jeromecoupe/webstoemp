@@ -58,61 +58,62 @@ gulp.task('browser-sync', function() {
 
 // BrowserSync reload all Browsers
 gulp.task('browsersync-reload', function () {
-    browsersync.reload();
+  browsersync.reload();
 });
 
 // Optimize Images task
 gulp.task('img', function() {
-	return gulp.src('./img/**/*.{gif,jpg,png}')
-    .pipe(imagemin({
-        progressive: true,
-    }))
-    .pipe(gulp.dest('./img/'))
+	return gulp.src('./img/**/*')
+	.pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [ {removeViewBox:false} ]
+	}))
+  .pipe(gulp.dest('./img/'))
 });
 
 // CSS task
 gulp.task('css', function() {
 	return gulp.src('./scss/**/*.scss')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(sass({ style: 'expanded', }))
-		.pipe(gulp.dest('./css/'))
-		.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-		.pipe(base64({ extensions:['svg'] }))
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(minifycss())
-		.pipe(gulp.dest('./css/'))
-		.pipe(notify({ message: 'Styles task complete' }));
+	.pipe(plumber({ errorHandler: onError }))
+	.pipe(sass({ style: 'expanded', }))
+	.pipe(gulp.dest('./css/'))
+	.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+	.pipe(base64({ extensions:['svg'] }))
+	.pipe(rename({ suffix: '.min' }))
+	.pipe(minifycss())
+	.pipe(gulp.dest('./css/'))
+	.pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Lint JS task
 gulp.task('jslint', function() {
 	return gulp.src('./js/modules/**/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
-		.pipe(jshint.reporter('fail'))
-		.pipe(notify({ message: 'Lint task complete' }));
+	.pipe(jshint())
+	.pipe(jshint.reporter('default'))
+	.pipe(jshint.reporter('fail'))
+	.pipe(notify({ message: 'Lint task complete' }));
 });
 
 //Concatenate and Minify JS task
 gulp.task('scripts', function() {
 	return gulp.src('./js/modules/**/*.js')
-		.pipe(concat('webstoemp.js'))
-		.pipe(gulp.dest('./js/'))
-		.pipe(rename('webstoemp.min.js'))
-		.pipe(stripdebug())
-		.pipe(uglify())
-		.pipe(gulp.dest('./js/'))
-		.pipe(notify({ message: 'Scripts task complete' }));
+	.pipe(concat('webstoemp.js'))
+	.pipe(gulp.dest('./js/'))
+	.pipe(rename('webstoemp.min.js'))
+	.pipe(stripdebug())
+	.pipe(uglify())
+	.pipe(gulp.dest('./js/'))
+	.pipe(notify({ message: 'Scripts task complete' }));
 });
 
 // Cache busting task
 gulp.task('cachebust', function() {
 	return gulp.src('./_includes/**/*.html')
-		.pipe(replace(/screen.min.css\?v=([0-9]*)/g, 'screen.min.css?v=' + getStamp()))
-		.pipe(replace(/print.min.css\?v=([0-9]*)/g, 'print.min.css?v=' + getStamp()))
-		.pipe(replace(/webstoemp.min.js\?v=([0-9]*)/g, 'webstoemp.min.js?v=' + getStamp()))
-		.pipe(gulp.dest('./_includes/'))
-		.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+	.pipe(replace(/screen.min.css\?v=([0-9]*)/g, 'screen.min.css?v=' + getStamp()))
+	.pipe(replace(/print.min.css\?v=([0-9]*)/g, 'print.min.css?v=' + getStamp()))
+	.pipe(replace(/webstoemp.min.js\?v=([0-9]*)/g, 'webstoemp.min.js?v=' + getStamp()))
+	.pipe(gulp.dest('./_includes/'))
+	.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
 });
 
 // Watch task
