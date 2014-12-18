@@ -20,7 +20,8 @@
     "gulp-rename": "1.2.x",
     "gulp-replace": "0.4.x",
     "gulp-ruby-sass": "0.7.x",
-    "gulp-strip-debug": "^1.0.1",
+    "gulp-shell": "0.2.x",
+    "gulp-strip-debug": "1.0.x",
     "gulp-uglify": "1.0.x",
     "gulp-util": "3.0.x"
   }

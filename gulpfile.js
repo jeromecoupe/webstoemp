@@ -1,22 +1,23 @@
 'use strict';
 
 // Load plugins
-var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var jshint = require('gulp-jshint');
-var stripdebug = require('gulp-strip-debug');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var replace = require('gulp-replace');
-var concat = require('gulp-concat');
-var notify = require('gulp-notify');
-var minifycss = require('gulp-minify-css');
-var plumber = require('gulp-plumber');
-var gutil = require('gulp-util');
-var base64 = require('gulp-base64');
-var imagemin = require('gulp-imagemin');
-var browsersync = require('browser-sync');
+var gulp					= require('gulp');
+var sass					= require('gulp-ruby-sass');
+var autoprefixer	= require('gulp-autoprefixer');
+var jshint				= require('gulp-jshint');
+var stripdebug		= require('gulp-strip-debug');
+var uglify				= require('gulp-uglify');
+var rename				= require('gulp-rename');
+var replace				= require('gulp-replace');
+var concat				= require('gulp-concat');
+var notify				= require('gulp-notify');
+var minifycss			= require('gulp-minify-css');
+var plumber				= require('gulp-plumber');
+var gutil					= require('gulp-util');
+var base64				= require('gulp-base64');
+var imagemin			= require('gulp-imagemin');
+var shell					= require('gulp-shell');
+var browsersync		= require('browser-sync');
 
 // error function for plumber
 var onError = function (err) {
@@ -50,7 +51,7 @@ var getStamp = function() {
 // BrowserSync proxy
 gulp.task('browser-sync', function() {
 	browsersync({
-		files: ['./_site/**/*.css'],
+		files: ['./_site/css/**/*','./_site/js/**/*'],
 		proxy: 'www.webstoemp.dev',
 		port: 3000
 	});
@@ -77,11 +78,13 @@ gulp.task('css', function() {
 	.pipe(plumber({ errorHandler: onError }))
 	.pipe(sass({ style: 'expanded', }))
 	.pipe(gulp.dest('./css/'))
+	.pipe(gulp.dest('./_site/css/'))
 	.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 	.pipe(base64({ extensions:['svg'] }))
 	.pipe(rename({ suffix: '.min' }))
 	.pipe(minifycss())
 	.pipe(gulp.dest('./css/'))
+	.pipe(gulp.dest('./_site/css/'))
 	.pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -99,10 +102,12 @@ gulp.task('scripts', function() {
 	return gulp.src('./js/modules/**/*.js')
 	.pipe(concat('webstoemp.js'))
 	.pipe(gulp.dest('./js/'))
+	.pipe(gulp.dest('./_site/js/'))
 	.pipe(rename('webstoemp.min.js'))
 	.pipe(stripdebug())
 	.pipe(uglify())
 	.pipe(gulp.dest('./js/'))
+	.pipe(gulp.dest('./_site/js/'))
 	.pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -116,10 +121,16 @@ gulp.task('cachebust', function() {
 	.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
 });
 
+//Jekyll build task
+gulp.task('jekyll', shell.task([
+	'jekyll build'
+]));
+
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
 	gulp.watch('./scss/**/*', ['css', 'cachebust']);
 	gulp.watch('./js/modules/**/*', ['jslint', 'scripts', 'cachebust']);
+	gulp.watch(['./_includes/**/*','./_layouts/**/*','./_posts/**/*','./_projects/**/*'], ['jekyll']);
 });
 
 //tasks
