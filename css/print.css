@@ -725,6 +725,8 @@ th {
 body {
   margin: 0;
   padding: 0;
+  color: #333333;
+  background: #fff;
 }
 
 /*------------------------------------*\
@@ -732,11 +734,6 @@ body {
 \*------------------------------------*/
 html {
   font: normal 100%/1.5 "jaf-bernina-sans", Helvetica, Arial, sans-serif;
-}
-
-body {
-  color: #333333;
-  background: #fff;
 }
 
 /*------------------------------------*\
