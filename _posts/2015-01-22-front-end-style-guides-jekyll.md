@@ -1,6 +1,6 @@
 ---
-title: "Creating style guides with Jekyll"
-excerpt: "Style guides are a great tool to present responsive design systems. More often than not, I use Jekyll for producing HTML/CSS/JS prototypes these days. Here is my approach for quickly creating style guides for clients using Jekyll."
+title: "Front-end style guides with Jekyll"
+excerpt: "Style guides are a great tool to present responsive design systems. More often than not, I use Jekyll to produce HTML/CSS/JS prototypes these days. Here is my current approach to quickly create style guides for clients with Jekyll."
 publication_year: 2015
 categories:
 - Jekyll
@@ -25,7 +25,7 @@ As front-end developers, our toolset has become relatively complex. For most pro
 
 ## Jekyll boilerplate for style guides
 
-I use a very simple setup and decided to [put it on Github](https://github.com/jeromecoupe/jekyllstyleguide) after a few conversations with [Jan Cornelissen](http://www.jansburo.be/) who also uses Jekyll for prototyping. It revolves around a simple collection called `components` for which I set the output to `false` in the `_config.yml` file. Each component is simply an HTML file in that directory.
+I currently use a [very simple Jekyll setup](https://github.com/jeromecoupe/jekyllstyleguide). It revolves around a simple collection called `_components` for which I set the output to `false` in the `_config.yml` file. Each component is simply an HTML file in that directory.
 
 The YAML front matter for each of those files contains:
 
@@ -69,7 +69,7 @@ Alternatively, you can group your components by type using a straightforward `gr
 
 Some style guides, like [Rizzo from Lonely Planet](http://rizzo.lonelyplanet.com/styleguide/design-elements/colours), use a more detailed structure, with one page per component type and a navigation interface to navigate from page to page. You can easily use pages and [a simple data file to create the navigation](http://www.tournemille.com/blog/How-to-create-data-driven-navigation-in-Jekyll/).
 
-The only thing left to do is include all components belonging to one type on the corresponding page. That's where the `type` variable we have set in each of our components YAML Front Matter combined with the `where` filter come in handy. On the buttons page for example, you will just have to add:
+The only thing left to do is include all components belonging to one type on the corresponding page. That's where the `type` variable in each of our components YAML Front Matter combined with the `where` filter come in handy. On the buttons page for example, you will just have to add:
 
 {% highlight liquid %}
 {% raw %}
@@ -80,4 +80,4 @@ The only thing left to do is include all components belonging to one type on the
 {% endraw %}
 {% endhighlight %}
 
-I really enjoy using Jekyll for creating style guides. What tool do you use ?
+I really like the simplicity and flexibility of Jekyll to create style guides. What tool do you use ?
