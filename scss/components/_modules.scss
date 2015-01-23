@@ -321,12 +321,6 @@
 	.item__header
 	{
 		margin-bottom:1em;
-
-		@include mq(medium)
-		{
-			text-align:center;
-			margin-bottom:1.5em;
-		}
 	}
 
 	/* no specific styles for item__summary or item___body at the moment */

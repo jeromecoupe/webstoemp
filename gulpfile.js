@@ -48,6 +48,12 @@ var getStamp = function() {
 	return myFullDate;
 };
 
+//create random number for banner swap
+//between min (inclusive) and max (exclusive)
+var getRandomInt = function(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
 // BrowserSync proxy
 gulp.task('browser-sync', function() {
 	browsersync({
@@ -113,12 +119,20 @@ gulp.task('scripts', function() {
 
 // Cache busting task
 gulp.task('cachebust', function() {
-	return gulp.src('./_includes/**/*.html')
+	return gulp.src(['./_includes/html_head.html', './_includes/footer.html'])
 	.pipe(replace(/screen.min.css\?v=([0-9]*)/g, 'screen.min.css?v=' + getStamp()))
 	.pipe(replace(/print.min.css\?v=([0-9]*)/g, 'print.min.css?v=' + getStamp()))
 	.pipe(replace(/webstoemp.min.js\?v=([0-9]*)/g, 'webstoemp.min.js?v=' + getStamp()))
 	.pipe(gulp.dest('./_includes/'))
 	.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+});
+
+// Display random image on homepage
+gulp.task('bannerimage', function() {
+	return gulp.src('./_includes/header.html')
+	.pipe(replace(/siteheader__banner--([0-9]*)/g, 'siteheader__banner--' +  getRandomInt(1,6)))
+	.pipe(gulp.dest('./_includes/'))
+	.pipe(notify({ message: 'Random banner for homepage chosen' }));
 });
 
 //Jekyll build task
@@ -130,9 +144,9 @@ gulp.task('jekyll', shell.task([
 gulp.task('watch', ['browser-sync'], function () {
 	gulp.watch('./scss/**/*', ['css', 'cachebust']);
 	gulp.watch('./js/modules/**/*', ['jslint', 'scripts', 'cachebust']);
-	gulp.watch(['./_includes/**/*','./_layouts/**/*','./_posts/**/*','./_projects/**/*'], ['jekyll']);
+	gulp.watch(['./_includes/**/*','./_layouts/**/*','./_posts/**/*','./_projects/**/*'], ['bannerimage','jekyll']);
 });
 
 //tasks
-gulp.task('default', ['css', 'jslint', 'scripts', 'cachebust']);
+gulp.task('default', ['css', 'jslint', 'scripts', 'cachebust', 'bannerimage']);
 gulp.task('images', ['img']);

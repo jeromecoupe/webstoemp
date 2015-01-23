@@ -7,21 +7,20 @@ layout: default
   <div class="grid  grid--center">
     <div class="grid__unit  medium-span-10of12  large-span-8of12">
 
-      <!-- Using h-entry microformats: http://microformats.org/wiki/h-entry  -->
-      <article class="item  h-entry">
+      <article class="item">
 
         <header class="item__header">
-          <p class="item-info  item-info--big">
+          <p class="item-info  item-info--big  aligncenter">
             {% if page.project_url and page.project_website %}
               <a href="{{ page.project_url }}">{{ page.project_website }}</a>
             {% else %}
               project no longer online
             {% endif %}
           </p>
-          <h1 class="h1  h1--notop">{{ page.title }}</h1>
+          <h1 class="h1  h1--notop  aligncenter">{{ page.title }}</h1>
         </header>
 
-        <div class="item__summary  intro  p-summary">
+        <div class="item__summary  intro">
           {{ page.excerpt }}
         </div>
 
@@ -34,7 +33,7 @@ layout: default
                 alt="{{ page.title }}" class="imgfluid">
         </figure>
 
-        <div class="item__body  wysiwyg  e-content">
+        <div class="item__body  wysiwyg">
           {{ content }}
         </div>
 

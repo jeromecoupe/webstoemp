@@ -31,6 +31,7 @@ html
 .h1
 {
 	@extend %title;
+	margin:1em 0 .35em 0;
 	@include rem-size(24px);
 
 	@include mq(medium)
@@ -262,7 +263,7 @@ h1, h2, h3, h4, h5, h6
 {
 	@include rem-size(18px);
 	line-height:1.4;
-	color:$color-main;
+	color: mix($color-main-light1, #000, 90%);
 
 	@include mq(medium)
 	{
