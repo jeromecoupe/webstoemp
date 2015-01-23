@@ -25,7 +25,7 @@ As front-end developers, our toolset has become relatively complex. For most pro
 
 ## Jekyll boilerplate for style guides
 
-I currently use a [very simple Jekyll setup](https://github.com/jeromecoupe/jekyllstyleguide). It revolves around a simple collection called `_components` for which I set the output to `false` in the `_config.yml` file. Each component is simply an HTML file in that directory.
+I currently use a very simple Jekyll boilerplate ([available on Github](https://github.com/jeromecoupe/jekyllstyleguide)). It revolves around a simple collection called `_components` for which I set the output to `false` in the `_config.yml` file. Each component is simply an HTML file in that directory.
 
 The YAML front matter for each of those files contains:
 
@@ -65,7 +65,7 @@ Alternatively, you can group your components by type using a straightforward `gr
 {% endraw %}
 {% endhighlight %}
 
-### Option 2: a more complex styleguide
+### Option 2: a more complex style guide
 
 Some style guides, like [Rizzo from Lonely Planet](http://rizzo.lonelyplanet.com/styleguide/design-elements/colours), use a more detailed structure, with one page per component type and a navigation interface to navigate from page to page. You can easily use pages and [a simple data file to create the navigation](http://www.tournemille.com/blog/How-to-create-data-driven-navigation-in-Jekyll/).
 
