@@ -16,5 +16,7 @@
 .animation-slide-in
 {
   transform:translate3d(0,0,0);
-  animation:slidetop .75s ease-out .1s;
+  animation:slidetop .75s ease-out;
+  animation-delay:.75s;
+  animation-fill-mode:backwards;
 }
