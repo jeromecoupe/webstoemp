@@ -34,20 +34,6 @@ var AUTOPREFIXER_BROWSERS = [
 	'bb >= 10'
 ];
 
-//build datestamp for cache busting
-var getStamp = function() {
-	var myDate = new Date();
-
-	var myYear = myDate.getFullYear().toString();
-	var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
-	var myDay = ('0' + myDate.getDate()).slice(-2);
-	var mySeconds = myDate.getSeconds().toString();
-
-	var myFullDate = myYear + myMonth + myDay + mySeconds;
-
-	return myFullDate;
-};
-
 //create random number for banner swap
 //between min (inclusive) and max (exclusive)
 var getRandomInt = function(min, max) {
@@ -57,15 +43,9 @@ var getRandomInt = function(min, max) {
 // BrowserSync proxy
 gulp.task('browser-sync', function() {
 	browsersync({
-		files: ['./_site/css/**/*','./_site/js/**/*'],
 		proxy: 'www.webstoemp.dev',
 		port: 3000
 	});
-});
-
-// BrowserSync reload all Browsers
-gulp.task('browsersync-reload', function () {
-  browsersync.reload();
 });
 
 // Optimize Images task
@@ -75,14 +55,14 @@ gulp.task('img', function() {
 		progressive: true,
 		svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
 	}))
-  .pipe(gulp.dest('./img/'))
+	.pipe(gulp.dest('./img/'))
 });
 
 // CSS task
 gulp.task('css', function() {
 	return gulp.src('./scss/**/*.scss')
 	.pipe(plumber({ errorHandler: onError }))
-	.pipe(sass({ style: 'expanded', }))
+	.pipe(sass({ style: 'expanded' }))
 	.pipe(gulp.dest('./css/'))
 	.pipe(gulp.dest('./_site/css/'))
 	.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
@@ -91,7 +71,8 @@ gulp.task('css', function() {
 	.pipe(minifycss())
 	.pipe(gulp.dest('./css/'))
 	.pipe(gulp.dest('./_site/css/'))
-	.pipe(notify({ message: 'Styles task complete' }));
+	.pipe(browsersync.reload({stream:true}))
+	.pipe(notify({ message: 'Styles task done' }));
 });
 
 // Lint JS task
@@ -100,7 +81,7 @@ gulp.task('jslint', function() {
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'))
 	.pipe(jshint.reporter('fail'))
-	.pipe(notify({ message: 'Lint task complete' }));
+	.pipe(notify({ message: 'Lint task done' }));
 });
 
 //Concatenate and Minify JS task
@@ -114,17 +95,8 @@ gulp.task('scripts', function() {
 	.pipe(uglify())
 	.pipe(gulp.dest('./js/'))
 	.pipe(gulp.dest('./_site/js/'))
-	.pipe(notify({ message: 'Scripts task complete' }));
-});
-
-// Cache busting task
-gulp.task('cachebust', function() {
-	return gulp.src(['./_includes/html_head.html', './_includes/footer.html'])
-	.pipe(replace(/screen.min.css\?v=([0-9]*)/g, 'screen.min.css?v=' + getStamp()))
-	.pipe(replace(/print.min.css\?v=([0-9]*)/g, 'print.min.css?v=' + getStamp()))
-	.pipe(replace(/webstoemp.min.js\?v=([0-9]*)/g, 'webstoemp.min.js?v=' + getStamp()))
-	.pipe(gulp.dest('./_includes/'))
-	.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+	.pipe(browsersync.reload({stream:true}))
+	.pipe(notify({ message: 'Scripts task done' }));
 });
 
 // Display random image on homepage
@@ -132,21 +104,25 @@ gulp.task('bannerimage', function() {
 	return gulp.src('./_includes/header.html')
 	.pipe(replace(/siteheader__banner--([0-9]*)/g, 'siteheader__banner--' +  getRandomInt(1,6)))
 	.pipe(gulp.dest('./_includes/'))
-	.pipe(notify({ message: 'Random banner for homepage chosen' }));
+	.pipe(notify({ message: 'Random banner for homepage done' }));
 });
 
-//Jekyll build task
-gulp.task('jekyll', shell.task([
-	'jekyll build'
-]));
+// Jekyll build
+gulp.task('jekyll', function () {
+	return gulp.src('')
+	.pipe(shell(['jekyll build']))
+	.pipe(browsersync.reload({ stream:true }))
+	.pipe(notify({ message: 'Jekyll task done' }));
+})
 
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
-	gulp.watch('./scss/**/*', ['css', 'cachebust']);
-	gulp.watch('./js/modules/**/*', ['jslint', 'scripts', 'cachebust']);
-	gulp.watch(['./_includes/**/*','./_layouts/**/*','./_posts/**/*','./_projects/**/*'], ['bannerimage','jekyll']);
+	gulp.watch('./scss/**/*', ['css']);
+	gulp.watch('./js/modules/**/*', ['jslint', 'scripts']);
+	gulp.watch(['./_posts/**/*','./_projects/**/*'], ['bannerimage']);
+	gulp.watch(['_includes/**/*','_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','index.html'], ['jekyll']);
 });
 
-//tasks
-gulp.task('default', ['css', 'jslint', 'scripts', 'cachebust', 'bannerimage']);
+// Tasks
+gulp.task('default', ['css', 'jslint', 'scripts', 'bannerimage', 'jekyll']);
 gulp.task('images', ['img']);
