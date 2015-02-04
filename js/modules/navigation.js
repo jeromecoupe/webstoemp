@@ -4,7 +4,7 @@ if ('querySelector' in document && 'addEventListener' in window) {
 
 		'use strict';
 
-		//set vars test
+		//set vars
 		var menuLink = document.querySelector('.js-mainnav-compact > a'),
 				menu = document.querySelector('.js-mainnav'),
 				menuState = 'closed';
