@@ -1,24 +1,24 @@
 if ('querySelector' in document && 'addEventListener' in window) {
 
-	var myNavigation = (function(){
+	var myNavigation = (function () {
 
 		'use strict';
 
-		//set vars
+		//set vars test
 		var menuLink = document.querySelector('.js-mainnav-compact > a'),
 				menu = document.querySelector('.js-mainnav'),
 				menuState = 'closed';
 
 		// initiate navigation
-		function initNav(){
+		var initNav = function() {
 
 			apollo.addClass(menu, 'js-is-hidden');
 			bindActions();
 
-		}
+		};
 
 		//bind navigation actions
-		function bindActions(){
+		var bindActions = function() {
 
 			menuLink.addEventListener('click', function(e) {
 
@@ -28,10 +28,10 @@ if ('querySelector' in document && 'addEventListener' in window) {
 
 			}, false);
 
-		}
+		};
 
 		//toggle menu
-		function toggleMenu(state){
+		var toggleMenu = function(state) {
 
 			//swap classes
 			if (state === 'closed' ){
@@ -45,15 +45,15 @@ if ('querySelector' in document && 'addEventListener' in window) {
 			// toggle menu state
 			menuState = (state === 'closed') ? 'open' : 'closed';
 
-		}
+		};
 
 		//make init publicly accessible
 		return {
-			init:initNav
+			initNav:initNav
 		};
 
 	}());
 
-	myNavigation.init();
+	myNavigation.initNav();
 
 }
