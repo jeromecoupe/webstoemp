@@ -23,6 +23,7 @@ var browsersync		= require('browser-sync');
 var onError = function (err) {
 	gutil.beep();
 	console.log(err);
+	this.emit('end');
 };
 
 // Browser definitions for autoprefixer
@@ -56,6 +57,7 @@ gulp.task('img', function() {
 		svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
 	}))
 	.pipe(gulp.dest('./img/'))
+	.pipe(notify({ message: 'Images task done' }));
 });
 
 // CSS task
