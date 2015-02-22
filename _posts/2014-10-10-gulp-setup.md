@@ -80,10 +80,12 @@ gulp.task('browsersync-reload', function () {
 });
 
 // Optimize Images task
-gulp.task('img', function() {
+gulp.task('images', function() {
   return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
     .pipe(imagemin({
         progressive: true,
+        interlaced: true,
+        svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
     }))
     .pipe(gulp.dest('./public_html/assets/img/'))
 });
@@ -159,8 +161,6 @@ You can find all of the plugins I am using on the [npm website](https://www.npmj
 ## Images
 
 I use the gulp-imagemin plugin for optimising my images. It comes bundled with plugins to optimise jpg, gif and png so it suits most of my needs perfectly. The only options I use are for making progressive JPEG, interlaced GIFs and optimise SVG. Setting `removeViewBox` and `removeUselessStrokeAndFill` to `false` prevent SVGO from borking some complex SVG files.
-
-I need to investigate SVGO a bit more. Last time I tried it, it borked the complex SVGs I exported from sketch a bit too much for my liking.
 
 {% highlight javascript %}
 // Optimize Images task
