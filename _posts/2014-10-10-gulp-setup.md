@@ -38,40 +38,40 @@ var browsersync = require('browser-sync');
 
 // error function for plumber
 var onError = function (err) {
-	gutil.beep();
-	console.log(err);
-	this.emit('end');
+  gutil.beep();
+  console.log(err);
+  this.emit('end');
 };
 
 // Browser definitions for autoprefixer
 var AUTOPREFIXER_BROWSERS = [
-	'last 3 versions',
-	'ie >= 8',
-	'ios >= 7',
-	'android >= 4.4',
-	'bb >= 10'
+  'last 3 versions',
+  'ie >= 8',
+  'ios >= 7',
+  'android >= 4.4',
+  'bb >= 10'
 ];
 
 //build datestamp for cache busting
 var getStamp = function() {
-	var myDate = new Date();
+  var myDate = new Date();
 
-	var myYear = myDate.getFullYear().toString();
-	var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
-	var myDay = ('0' + myDate.getDate()).slice(-2);
-	var mySeconds = myDate.getSeconds().toString();
+  var myYear = myDate.getFullYear().toString();
+  var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
+  var myDay = ('0' + myDate.getDate()).slice(-2);
+  var mySeconds = myDate.getSeconds().toString();
 
-	var myFullDate = myYear + myMonth + myDay + mySeconds;
+  var myFullDate = myYear + myMonth + myDay + mySeconds;
 
-	return myFullDate;
+  return myFullDate;
 };
 
 // BrowserSync proxy
 gulp.task('browser-sync', function() {
-	browsersync({
-		proxy: 'www.webstoemp.dev',
-		port: 3000
-	});
+  browsersync({
+    proxy: 'www.webstoemp.dev',
+    port: 3000
+  });
 });
 
 // BrowserSync reload all Browsers
@@ -81,7 +81,7 @@ gulp.task('browsersync-reload', function () {
 
 // Optimize Images task
 gulp.task('img', function() {
-	return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
+  return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
     .pipe(imagemin({
         progressive: true,
     }))
@@ -90,55 +90,55 @@ gulp.task('img', function() {
 
 // CSS task
 gulp.task('css', function() {
-	return gulp.src('./public_html/assets/scss/*.scss')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(sass({ style: 'expanded', }))
-		.pipe(gulp.dest('./public_html/assets/css/'))
-		.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-		.pipe(base64({ extensions:['svg'] }))
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(minifycss())
-		.pipe(gulp.dest('./public_html/assets/css/'))
-		.pipe(browsersync.reload({ stream:true }))
-		.pipe(notify({ message: 'Styles task complete' }));
+  return gulp.src('./public_html/assets/scss/*.scss')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(sass({ style: 'expanded', }))
+    .pipe(gulp.dest('./public_html/assets/css/'))
+    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(base64({ extensions:['svg'] }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(minifycss())
+    .pipe(gulp.dest('./public_html/assets/css/'))
+    .pipe(browsersync.reload({ stream:true }))
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Lint JS task
 gulp.task('jslint', function() {
-	return gulp.src('./public_html/assets/js/modules/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
-		.pipe(jshint.reporter('fail'))
-		.pipe(notify({ message: 'Lint task complete' }));
+  return gulp.src('./public_html/assets/js/modules/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter('fail'))
+    .pipe(notify({ message: 'Lint task complete' }));
 });
 
 //Concatenate and Minify JS task
 gulp.task('scripts', function() {
-	return gulp.src('./public_html/assets/js/modules/*.js')
-		.pipe(concat('webstoemp.js'))
-		.pipe(gulp.dest('./public_html/assets/js/build'))
-		.pipe(rename('webstoemp.min.js'))
-		.pipe(stripdebug())
-		.pipe(uglify())
-		.pipe(gulp.dest('./public_html/assets/js/build'))
-		.pipe(notify({ message: 'Scripts task complete' }));
+  return gulp.src('./public_html/assets/js/modules/*.js')
+    .pipe(concat('webstoemp.js'))
+    .pipe(gulp.dest('./public_html/assets/js/build'))
+    .pipe(rename('webstoemp.min.js'))
+    .pipe(stripdebug())
+    .pipe(uglify())
+    .pipe(gulp.dest('./public_html/assets/js/build'))
+    .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 // Cache busting task
 gulp.task('cachebust', function() {
-	return gulp.src('./craft/templates/_layouts/*.html')
-		.pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
-		.pipe(replace(/print.min.css\?([0-9]*)/g, 'print.min.css?' + getStamp()))
-		.pipe(replace(/webstoemp.min.js\?([0-9]*)/g, 'webstoemp.min.js?' + getStamp()))
-		.pipe(gulp.dest('./craft/templates/_layouts/'))
-		.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+  return gulp.src('./craft/templates/_layouts/*.html')
+    .pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
+    .pipe(replace(/print.min.css\?([0-9]*)/g, 'print.min.css?' + getStamp()))
+    .pipe(replace(/webstoemp.min.js\?([0-9]*)/g, 'webstoemp.min.js?' + getStamp()))
+    .pipe(gulp.dest('./craft/templates/_layouts/'))
+    .pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
 });
 
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
-	gulp.watch('./public_html/assets/scss/**/*', ['css']);
-	gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
-	gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
+  gulp.watch('./public_html/assets/scss/**/*', ['css']);
+  gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
+  gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
 });
 
 //tasks
@@ -165,11 +165,11 @@ I need to investigate SVGO a bit more. Last time I tried it, it borked the compl
 {% highlight javascript %}
 // Optimize Images task
 gulp.task('images', function() {
-	return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
+  return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
     .pipe(imagemin({
         progressive: true,
         interlaced: true,
-				svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
+        svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
     }))
     .pipe(gulp.dest('./public_html/assets/img/'))
 });
@@ -186,40 +186,40 @@ Generally, may main Sass file is just a bunch of imports and my partials live in
 {% highlight javascript %}
 // CSS task
 gulp.task('css', function() {
-	return gulp.src('./public_html/assets/scss/*.scss')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(sass({ style: 'expanded', }))
-		.pipe(gulp.dest('./public_html/assets/css/'))
-		.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-		.pipe(base64({ extensions:['svg'] }))
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(minifycss())
-		.pipe(gulp.dest('./public_html/assets/css/'))
-		.pipe(browsersync.reload({ stream:true }))
-		.pipe(notify({ message: 'Styles task complete' }));
+  return gulp.src('./public_html/assets/scss/*.scss')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(sass({ style: 'expanded', }))
+    .pipe(gulp.dest('./public_html/assets/css/'))
+    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(base64({ extensions:['svg'] }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(minifycss())
+    .pipe(gulp.dest('./public_html/assets/css/'))
+    .pipe(browsersync.reload({ stream:true }))
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 {% endhighlight %}
 
 The first line tells gulp-plumber to enter the game and to prevent this task from quitting upon error. I frequently make typos in my CSS during development and don't want my watch tasks to stop every time.
 
 {% highlight javascript %}
-	.pipe(sass({ style: 'expanded', }))
-	.pipe(gulp.dest('./public_html/assets/css/'))
+  .pipe(sass({ style: 'expanded', }))
+  .pipe(gulp.dest('./public_html/assets/css/'))
 {% endhighlight %}
 
 This compile my Sass in expanded mode and save the file in my css/ folder.
 
 {% highlight javascript %}
-	.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+  .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 {% endhighlight %}
 
 I then pipe in [Autoprefixer](https://github.com/postcss/autoprefixer). That tool allows me to focus on writing spec-compliant CSS code and takes care of adding in the vendor prefixes for me. It also generates the CSS variations for things like gradients or flexbox when multiple implementations have seen the light of day. I just find it easier to have all my autoprefixer browsers config out of the task itself.
 
 {% highlight javascript %}
-	.pipe(base64({ extensions:['svg'] }))
-	.pipe(rename({ suffix: '.min' }))
-	.pipe(minifycss())
-	.pipe(gulp.dest('./public_html/assets/css/'))
+  .pipe(base64({ extensions:['svg'] }))
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(minifycss())
+  .pipe(gulp.dest('./public_html/assets/css/'))
 {% endhighlight %}
 
 The first line encodes my SVG as base64. This will save some http requests. Make sure you have a .png fallback using Modernizr. I generally use this only for icons. Depending on the project, I might change this and have Gulp do the Base 64 encoding only on one or two of my sass files for more granularity.
@@ -254,12 +254,12 @@ Nevertheless, I went with query string, constructed my own timestamp as a query 
 
 {% highlight javascript %}
 gulp.task('cachebust', function() {
-	return gulp.src('./craft/templates/_layouts/*.html')
-		.pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
-		.pipe(replace(/print.min.css\?([0-9]*)/g, 'print.min.css?' + getStamp()))
-		.pipe(replace(/webstoemp.min.js\?([0-9]*)/g, 'webstoemp.min.js?' + getStamp()))
-		.pipe(gulp.dest('./craft/templates/_layouts/'))
-		.pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+  return gulp.src('./craft/templates/_layouts/*.html')
+    .pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
+    .pipe(replace(/print.min.css\?([0-9]*)/g, 'print.min.css?' + getStamp()))
+    .pipe(replace(/webstoemp.min.js\?([0-9]*)/g, 'webstoemp.min.js?' + getStamp()))
+    .pipe(gulp.dest('./craft/templates/_layouts/'))
+    .pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
 });
 {% endhighlight %}
 
@@ -274,10 +274,10 @@ It's quite easy to install and to integrate to your Gulp workflow:
 {% highlight javascript %}
 //Browsersync server
 gulp.task('browser-sync', function() {
-	browsersync({
-		proxy: 'www.webstoemp.dev',
-		port: 3000
-	});
+  browsersync({
+    proxy: 'www.webstoemp.dev',
+    port: 3000
+  });
 });
 {% endhighlight %}
 
@@ -286,7 +286,7 @@ This wraps my virtual host (www.webstoemp.dev) with a proxy URL allowing me to v
 {% highlight javascript %}
 // BrowserSync reload all Browsers
 gulp.task('browsersync-reload', function () {
-	browsersync.reload();
+  browsersync.reload();
 });
 {% endhighlight %}
 
@@ -295,9 +295,9 @@ Simple task to reload all browsers with BrowserSync (used when my HTML / Templat
 {% highlight javascript %}
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
-	gulp.watch('./public_html/assets/scss/**/*', ['css']);
-	gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
-	gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
+  gulp.watch('./public_html/assets/scss/**/*', ['css']);
+  gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
+  gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
 });
 {% endhighlight %}
 
