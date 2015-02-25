@@ -4,15 +4,15 @@
 
 .pagemodule + .pagemodule
 {
-	margin-top:3em;
-	border-top:1px solid $color-main-light3;
-	padding-top:3em;
+  margin-top:3em;
+  border-top:1px solid $color-main-light3;
+  padding-top:3em;
 
-	@include mq(medium)
-	{
-		margin-top:calc-em(100px);
-		padding-top:calc-em(100px);
-	}
+  @include mq(medium)
+  {
+    margin-top:calc-em(100px);
+    padding-top:calc-em(100px);
+  }
 }
 
 
@@ -22,36 +22,36 @@
 
 .intromodule
 {
-	margin-bottom:calc-em(60px);
-	text-align:center;
+  margin-bottom:calc-em(60px);
+  text-align:center;
 
-	@include mq(medium)
-	{
-		padding:0 percentage(80/920);
-	}
+  @include mq(medium)
+  {
+    padding:0 percentage(80/920);
+  }
 }
 
-	.intromodule__title
-	{
-		margin:0 0 1em;
-		padding:0;
-		@include rem-size(16px);
-		font-weight:600;
-		text-transform:uppercase;
-		color:$color-accent;
-	}
+  .intromodule__title
+  {
+    margin:0 0 1em;
+    padding:0;
+    @include rem-size(16px);
+    font-weight:600;
+    text-transform:uppercase;
+    color:$color-accent;
+  }
 
-	.intromodule__text
-	{
-		@include rem-size(18px);
-		font-family:$fontstack-alt;
-		color:$color-main-dark1;
+  .intromodule__text
+  {
+    @include rem-size(18px);
+    font-family:$fontstack-alt;
+    color:$color-main-dark1;
 
-		@include mq(medium)
-		{
-			@include rem-size(20px);
-		}
-	}
+    @include mq(medium)
+    {
+      @include rem-size(20px);
+    }
+  }
 
 
 /*------------------------------------*\
@@ -60,61 +60,61 @@
 
 .yearlyarchive
 {
-	@extend %list-bare;
+  @extend %list-bare;
 }
 
-	.yearlyarchive__year
-	{
-		@extend %clearfix;
-		padding-bottom:5em;
-		border-bottom:1px solid $color-main-light3;
-		margin-bottom:5em;
+  .yearlyarchive__year
+  {
+    @extend %clearfix;
+    padding-bottom:5em;
+    border-bottom:1px solid $color-main-light3;
+    margin-bottom:5em;
 
-		&:last-of-type
-		{
-			padding-bottom:0;
-			margin-bottom:0;
-			border:none;
-		}
-	}
+    &:last-of-type
+    {
+      padding-bottom:0;
+      margin-bottom:0;
+      border:none;
+    }
+  }
 
-		.yearlyarchive__title
-		{
-			margin:0 0 1em 0;
-			padding:0;
-			font-family:$fontstack-alt;
-			font-weight:400;
-			line-height:1;
-			@include rem-size(24px);
-			color:$color-main-dark1;
+    .yearlyarchive__title
+    {
+      margin:0 0 1em 0;
+      padding:0;
+      font-family:$fontstack-alt;
+      font-weight:400;
+      line-height:1;
+      @include rem-size(24px);
+      color:$color-main-dark1;
 
-			@include mq(large)
-			{
-				float:left;
-				width:percentage(150/815);
-			}
-		}
+      @include mq(large)
+      {
+        float:left;
+        width:percentage(150/815);
+      }
+    }
 
-		.yearlyarchive__list
-		{
-			@extend %list-bare;
+    .yearlyarchive__list
+    {
+      @extend %list-bare;
 
-			@include mq(large)
-			{
-				float:right;
-				width:percentage(625/815);
-			}
-		}
+      @include mq(large)
+      {
+        float:right;
+        width:percentage(625/815);
+      }
+    }
 
-			.yearlyarchive__item
-			{
-				margin-bottom:2.5em;
+      .yearlyarchive__item
+      {
+        margin-bottom:2.5em;
 
-				&:last-child
-				{
-					margin-bottom:0;
-				}
-			}
+        &:last-child
+        {
+          margin-bottom:0;
+        }
+      }
 
 
 /*------------------------------------*\
@@ -130,12 +130,12 @@
 
 .bio__image, .bio__text
 {
-	margin-bottom:2em;
+  margin-bottom:2em;
 
-	@include mq(large)
-	{
-		margin-bottom:0;
-	}
+  @include mq(large)
+  {
+    margin-bottom:0;
+  }
 }
 
 
@@ -145,20 +145,20 @@
 
 .categories
 {
-	@extend %list-bare;
-	margin-bottom:1em;
-	color:$color-main-dark1;
+  @extend %list-bare;
+  margin-bottom:1em;
+  color:$color-main-dark1;
 }
 
-	.categories__item
-	{
-		margin-bottom:.5em;
+  .categories__item
+  {
+    margin-bottom:.5em;
 
-		&:last-child
-		{
-			margin-bottom:0;
-		}
-	}
+    &:last-child
+    {
+      margin-bottom:0;
+    }
+  }
 
 
 /*------------------------------------*\
@@ -167,79 +167,79 @@
 
 .project a
 {
-	text-decoration:none;
-	display:block;
+  text-decoration:none;
+  display:block;
 }
 
-	.project__image
-	{
-		position:relative;
-		overflow:hidden;
+  .project__image
+  {
+    position:relative;
+    overflow:hidden;
 
-		& > img
-		{
-			display:block;
-		}
-	}
+    & > img
+    {
+      display:block;
+    }
+  }
 
-	.project__overlay
-	{
-		position:absolute;
-		width:100%;
-		height:100%;
-		background-image:url(../img/icon_more_overlay.svg);
-		background-position:center center;
-		background-repeat:no-repeat;
-		color:#fff;
+  .project__overlay
+  {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:url(../img/icon_more_overlay.svg);
+    background-position:center center;
+    background-repeat:no-repeat;
+    color:#fff;
 
-		opacity:0;
+    opacity:0;
 
-		.no-svg &
-		{
-			background-image:url(../img/icon_more_overlay.png);
-		}
-	}
+    .no-svg &
+    {
+      background-image:url(../img/icon_more_overlay.png);
+    }
+  }
 
-	.project__title
-	{
-		@extend %title;
-		text-align:center;
-		@include rem-size(18px);
-		font-weight:600;
-	}
+  .project__title
+  {
+    @extend %title;
+    text-align:center;
+    @include rem-size(18px);
+    font-weight:600;
+  }
 
-	.project__description
-	{
-		text-align:center;
-		margin:-.5em 0 1em 0;
-		color:$color-main-light2;
-	}
+  .project__description
+  {
+    text-align:center;
+    margin:-.5em 0 1em 0;
+    color:$color-main-light2;
+  }
 
-	.project__image img, .project__overlay, .project__title
-	{
-		transition:all .35s ease-in;
-	}
+  .project__image img, .project__overlay, .project__title
+  {
+    transition:all .35s ease-in;
+  }
 
-	.project a:hover
-	{
-		img
-		{
-			display:block;
-			transform:scale(1.02);
-			z-index:5;
-		}
+  .project a:hover
+  {
+    img
+    {
+      display:block;
+      transform:scale(1.02);
+      z-index:5;
+    }
 
-		.project__overlay
-		{
-			opacity:1;
-			z-index:10;
-		}
+    .project__overlay
+    {
+      opacity:1;
+      z-index:10;
+    }
 
-		.project__title
-		{
-			color:$color-accent;
-		}
-	}
+    .project__title
+    {
+      color:$color-accent;
+    }
+  }
 
 
 /*------------------------------------*\
@@ -248,23 +248,23 @@
 
 .numbered-item
 {
-	padding-left:70px;
-	background-position:0 0;
-	background-repeat:no-repeat;
+  padding-left:70px;
+  background-position:0 0;
+  background-repeat:no-repeat;
 }
 
-	@for $i from 1 through 6
-	{
-		.numbered-item--#{$i}
-		{
-			background-image:url(../img/icon_step_#{$i}.svg);
+  @for $i from 1 through 6
+  {
+    .numbered-item--#{$i}
+    {
+      background-image:url(../img/icon_step_#{$i}.svg);
 
-			.no-svg &
-			{
-				background-image:url(../img/icon_step_#{$i}.png);
-			}
-		}
-	}
+      .no-svg &
+      {
+        background-image:url(../img/icon_step_#{$i}.png);
+      }
+    }
+  }
 
 
 /*------------------------------------*\
@@ -279,32 +279,32 @@
 
 .widget + .widget
 {
-	margin-top:2.5em;
-	border-top:1px solid $color-main-light3;
-	padding-top:2.5em;
+  margin-top:2.5em;
+  border-top:1px solid $color-main-light3;
+  padding-top:2.5em;
 }
 
-	.widget__title
-	{
-		margin:0 0 1em 0;
-		padding:0;
-		@include rem-size(16px);
-		font-weight:600;
-		font-family:$fontstack-main;
-		text-transform:uppercase;
-		color:$color-main-dark1;
-	}
+  .widget__title
+  {
+    margin:0 0 1em 0;
+    padding:0;
+    @include rem-size(16px);
+    font-weight:600;
+    font-family:$fontstack-main;
+    text-transform:uppercase;
+    color:$color-main-dark1;
+  }
 
-	.widget__content
-	{
-		color:$color-main-light1;
+  .widget__content
+  {
+    color:$color-main-light1;
 
-		strong
-		{
-			font-weight:normal;
-			color:$color-main;
-		}
-	}
+    strong
+    {
+      font-weight:normal;
+      color:$color-main;
+    }
+  }
 
 
 /*------------------------------------*\
@@ -318,16 +318,16 @@
  *
 **/
 
-	.item__header
-	{
-		margin-bottom:1em;
-	}
+  .item__header
+  {
+    margin-bottom:1em;
+  }
 
-	/* no specific styles for item__summary or item___body at the moment */
+  /* no specific styles for item__summary or item___body at the moment */
 
-	.item__footer
-	{
-		margin:2em 0 1em;
-		border-top:1px solid $color-main-light3;
-		border-bottom:1px solid $color-main-light3;
-	}
+  .item__footer
+  {
+    margin:2em 0 1em;
+    border-top:1px solid $color-main-light3;
+    border-bottom:1px solid $color-main-light3;
+  }

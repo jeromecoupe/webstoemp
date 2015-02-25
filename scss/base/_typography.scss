@@ -4,7 +4,7 @@
 
 html
 {
-	font:normal 100%/1.5 $fontstack-main;
+  font:normal 100%/1.5 $fontstack-main;
 }
 
 /*------------------------------------*\
@@ -20,65 +20,64 @@ html
 
 %title
 {
-	margin:1em 0 .5em 0;
-	padding:0;
-	line-height:1.3;
-	color:$color-main-dark1;
-	font-family:$fontstack-alt;
-	font-weight:600;
+  margin:1em 0 .5em 0;
+  padding:0;
+  line-height:1.3;
+  color:$color-main-dark1;
+  font-family:$fontstack-alt;
+  font-weight:600;
 }
 
 .h1
 {
-	@extend %title;
-	margin:1em 0 .35em 0;
-	@include rem-size(24px);
+  @extend %title;
+  margin:1em 0 .35em 0;
+  @include rem-size(24px);
 
-	@include mq(medium)
-	{
-		@include rem-size(31px);
-	}
+  @include mq(medium)
+  {
+    @include rem-size(31px);
+  }
 
-	@include mq(large)
-	{
-		@include rem-size(36px);
-	}
-
+  @include mq(large)
+  {
+    @include rem-size(36px);
+  }
 }
 
 .h2
 {
-	@extend %title;
-	@include rem-size(21px);
+  @extend %title;
+  @include rem-size(21px);
 
-	@include mq(medium)
-	{
-		@include rem-size(24px);
-	}
+  @include mq(medium)
+  {
+    @include rem-size(24px);
+  }
 }
 
 .h3
 {
-	@extend %title;
-	@include rem-size(18px);
+  @extend %title;
+  @include rem-size(18px);
 
-	@include mq(medium)
-	{
-		@include rem-size(21px);
-	}
+  @include mq(medium)
+  {
+    @include rem-size(21px);
+  }
 }
 
 .h4
 {
-	@extend %title;
-	@include rem-size(18px);
-	margin-bottom:-.25em;
+  @extend %title;
+  @include rem-size(18px);
+  margin-bottom:-.25em;
 }
 
-	.h1--notop, .h2--notop, .h3--notop, .h4--notop
-	{
-		margin-top:0;
-	}
+  .h1--notop, .h2--notop, .h3--notop, .h4--notop
+  {
+    margin-top:0;
+  }
 
 /*
  *
@@ -89,55 +88,55 @@ html
 .wysiwyg
 {
 
-	h2,h3,h4
-	{
-		margin:1.25em 0 .75em;
-		padding:0;
-		line-height:1.2;
-		color:$color-main-dark1;
-		font-family:$fontstack-alt;
-		font-weight:600;
-	}
+  h2,h3,h4
+  {
+    margin:1.25em 0 .75em;
+    padding:0;
+    line-height:1.2;
+    color:$color-main-dark1;
+    font-family:$fontstack-alt;
+    font-weight:600;
+  }
 
-	h2
-	{
-		@include rem-size(21px);
+  h2
+  {
+    @include rem-size(21px);
 
-		@include mq(medium)
-		{
-			@include rem-size(24px);
-		}
-	}
+    @include mq(medium)
+    {
+      @include rem-size(24px);
+    }
+  }
 
-	h3
-	{
-		@include rem-size(18px);
+  h3
+  {
+    @include rem-size(18px);
 
-		@include mq(medium)
-		{
-			@include rem-size(21px);
-		}
-	}
+    @include mq(medium)
+    {
+      @include rem-size(21px);
+    }
+  }
 
-	h4
-	{
-		@include rem-size(16px);
+  h4
+  {
+    @include rem-size(16px);
 
-		@include mq(medium)
-		{
-			@include rem-size(18px);
-		}
-	}
+    @include mq(medium)
+    {
+      @include rem-size(18px);
+    }
+  }
 
-	li
-	{
-		margin-bottom:.5em;
+  li
+  {
+    margin-bottom:.5em;
 
-		&:last-child
-		{
-			margin-bottom:0;
-		}
-	}
+    &:last-child
+    {
+      margin-bottom:0;
+    }
+  }
 }
 
 /*
@@ -148,12 +147,12 @@ html
 
 .title-footer
 {
-	margin:0 0 1em 0;
-	padding:0;
-	@include rem-size(16px);
-	font-weight:500;
-	text-transform:uppercase;
-	color:#fff;
+  margin:0 0 1em 0;
+  padding:0;
+  @include rem-size(16px);
+  font-weight:500;
+  text-transform:uppercase;
+  color:#fff;
 }
 
 /*------------------------------------*\
@@ -161,14 +160,14 @@ html
 \*------------------------------------*/
 a
 {
-	color:$color-accent;
-	text-decoration:none;
+  color:$color-accent;
+  text-decoration:none;
 
-	&:hover
-	{
-		color:$color-accent-light;
-		text-decoration:underline;
-	}
+  &:hover
+  {
+    color:$color-accent-light;
+    text-decoration:underline;
+  }
 }
 
 /*
@@ -179,10 +178,10 @@ a
 
 h1, h2, h3, h4, h5, h6
 {
-	a:hover
-	{
-		text-decoration:none;
-	}
+  a:hover
+  {
+    text-decoration:none;
+  }
 }
 
 /*
@@ -193,7 +192,7 @@ h1, h2, h3, h4, h5, h6
 
 .more:after
 {
-	content:"\00A0\2192";
+  content:"\00A0\2192";
 }
 
 /*
@@ -204,7 +203,7 @@ h1, h2, h3, h4, h5, h6
 
 .email-link
 {
-	color:$color-main-light1;
+  color:$color-main-light1;
 }
 
 
@@ -214,31 +213,31 @@ h1, h2, h3, h4, h5, h6
 
 .button
 {
-	display:inline-block;
-	padding:.75em 2em;
-	border-radius:.25em;
-	border:2px solid $color-main-dark1;
+  display:inline-block;
+  padding:.75em 2em;
+  border-radius:.25em;
+  border:2px solid $color-main-dark1;
 
-	@include rem-size(14px);
-	font-weight:600;
-	text-decoration:none;
-	text-transform:uppercase;
-	color:$color-main-dark1;
+  @include rem-size(14px);
+  font-weight:600;
+  text-decoration:none;
+  text-transform:uppercase;
+  color:$color-main-dark1;
 
-	transition:all .1s linear;
+  transition:all .1s linear;
 
-	&:hover
-	{
-		border-color:$color-accent;
-		color:$color-accent;
-		text-decoration:none;
-	}
+  &:hover
+  {
+    border-color:$color-accent;
+    color:$color-accent;
+    text-decoration:none;
+  }
 }
 
 .buttoncontainer
 {
-	margin:0;
-	padding:0;
+  margin:0;
+  padding:0;
 }
 
 /*------------------------------------*\
@@ -247,34 +246,34 @@ h1, h2, h3, h4, h5, h6
 
 .item-info
 {
-	margin:0 0 .25em 0;
-	padding:0;
-	@include rem-size(14px);
-	color:$color-main-light1;
+  margin:0 0 .25em 0;
+  padding:0;
+  @include rem-size(14px);
+  color:$color-main-light1;
 }
 
-	.item-info--big
-	{
-		@include rem-size(16px);
-		color:$color-accent;
-	}
+  .item-info--big
+  {
+    @include rem-size(16px);
+    color:$color-accent;
+  }
 
 .intro
 {
-	@include rem-size(18px);
-	line-height:1.4;
-	color: mix($color-main-light1, #000, 90%);
+  @include rem-size(18px);
+  line-height:1.4;
+  color: mix($color-main-light1, #000, 90%);
 
-	@include mq(medium)
-	{
-		@include rem-size(20px);
-	}
+  @include mq(medium)
+  {
+    @include rem-size(20px);
+  }
 }
 
 .smalltext
 {
-	@include rem-size(14px);
-	color:$color-main-light1;
+  @include rem-size(14px);
+  color:$color-main-light1;
 }
 
 /*------------------------------------*\
@@ -285,9 +284,9 @@ h1, h2, h3, h4, h5, h6
 --------------------------------------*/
 code
 {
-	background:#F6F6F6;
-	padding:0 .25em;
-	border:1px solid #EEEEEE;
+  background:#F6F6F6;
+  padding:0 .25em;
+  border:1px solid #EEEEEE;
   border-radius:.15em;
   word-wrap:break-word;
 }
@@ -296,12 +295,12 @@ code
 --------------------------------------*/
 .highlight code
 {
-	background:none;
-	padding:0;
-	border:none;
+  background:none;
+  padding:0;
+  border:none;
   border-radius:0;
   word-wrap:initial;
 }
 /*
-	handled by pygments and scss/vendors/syntax-highlighting.scss
+  handled by pygments and scss/vendors/syntax-highlighting.scss
 */

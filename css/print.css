@@ -85,10 +85,10 @@
  * - Third param: is the query used for grids or not
  *
  * Dimensions
- * - small: 	600px		37.5em
- * - medium: 	760px		47.5em
- * - large: 	1024px	64em
- * - xlarge: 	1140px	71.25em
+ * - small:   600px   37.5em
+ * - medium:  760px   47.5em
+ * - large:   1024px  64em
+ * - xlarge:  1140px  71.25em
  */
 /*------------------------------------*\
 =grid config
@@ -995,7 +995,7 @@ code {
 }
 
 /*
-	handled by pygments and scss/vendors/syntax-highlighting.scss
+  handled by pygments and scss/vendors/syntax-highlighting.scss
 */
 /*------------------------------------*\
 =grid
@@ -1030,10 +1030,10 @@ code {
  * - Third param: is the query used for grids or not
  *
  * Dimensions
- * - small: 	600px	37.5em
- * - medium: 	760px	47.5em
- * - large: 	1024px	64em
- * - xlarge: 	1140px	71.25em
+ * - small:   600px 37.5em
+ * - medium:  760px 47.5em
+ * - large:   1024px  64em
+ * - xlarge:  1140px  71.25em
  */
 /**
  *
@@ -2588,7 +2588,7 @@ code {
 \*------------------------------------*/
 /**
  *
- *	.maincontent already has side margins from main.scss
+ *  .maincontent already has side margins from main.scss
  * .maincontent__primary and .maincontent__secondary are using inline-block grid (just margins here)
  *
 */

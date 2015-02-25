@@ -4,25 +4,25 @@
 
 .sitefooter
 {
-		color:$color-main-light1;
+    color:$color-main-light1;
 }
 
-	.sitefooter__top
-	{
-		background:$color-accent;
-		text-align:center;
-	}
+  .sitefooter__top
+  {
+    background:$color-accent;
+    text-align:center;
+  }
 
-	.sitefooter__bottom
-	{
-		padding-top:3em;
-		background:$color-main-dark2;
+  .sitefooter__bottom
+  {
+    padding-top:3em;
+    background:$color-main-dark2;
 
-		@include mq(medium)
-		{
-			padding-top:4em;
-		}
-	}
+    @include mq(medium)
+    {
+      padding-top:4em;
+    }
+  }
 
 
 /*------------------------------------*\
@@ -30,38 +30,38 @@
 \*------------------------------------*/
 .footer-invite
 {
-	margin:0;
-	padding:0;
-	@include rem-size(21px);
-	font-family:$fontstack-alt;
-	font-weight:400;
-	line-height:1.5;
-	color:#fff;
+  margin:0;
+  padding:0;
+  @include rem-size(21px);
+  font-family:$fontstack-alt;
+  font-weight:400;
+  line-height:1.5;
+  color:#fff;
 
-	@include mq(medium)
-	{
-		@include rem-size(24px);
-	}
+  @include mq(medium)
+  {
+    @include rem-size(24px);
+  }
 
-	a
-	{
-		display:block;
-		padding:1.5em 5%;
-		color:#fff;
+  a
+  {
+    display:block;
+    padding:1.5em 5%;
+    color:#fff;
 
-		transition:background .2s linear;
+    transition:background .2s linear;
 
-		&:hover
-		{
-			background:$color-accent-light;
-			text-decoration:none;
-		}
-	}
+    &:hover
+    {
+      background:$color-accent-light;
+      text-decoration:none;
+    }
+  }
 
-	span
-	{
-		color: $color-main-dark2;
-	}
+  span
+  {
+    color: $color-main-dark2;
+  }
 }
 
 
@@ -70,7 +70,7 @@
 \*------------------------------------*/
 .sitefooter__me, .sitefooter__elsewhere, .sitefooter__contact
 {
-	margin-bottom:2em;
+  margin-bottom:2em;
 }
 
 
@@ -80,25 +80,25 @@
 
 .list-social
 {
-	@extend %list-bare;
-	margin:1em 0;
+  @extend %list-bare;
+  margin:1em 0;
 }
 
-	.list-social__item
-	{
-		margin:.5em 0;
+  .list-social__item
+  {
+    margin:.5em 0;
 
-		a
-		{
-			color:$color-main-light1;
-		}
+    a
+    {
+      color:$color-main-light1;
+    }
 
-		a:hover
-		{
-			color:$color-accent-light;
-			text-decoration:none;
-		}
-	}
+    a:hover
+    {
+      color:$color-accent-light;
+      text-decoration:none;
+    }
+  }
 
 
 /*------------------------------------*\
@@ -107,13 +107,13 @@
 
 .thecook
 {
-	display:none;
-	border-radius:500px;
+  display:none;
+  border-radius:500px;
 
-	@include mq(medium)
-	{
-		display:block;
-	}
+  @include mq(medium)
+  {
+    display:block;
+  }
 }
 
 /*------------------------------------*\
@@ -121,14 +121,14 @@
 \*------------------------------------*/
 .sitefooter__copyright
 {
-	padding:1.5em 0;
-	border-top:1px solid lighten($color-main-dark1,5%);
+  padding:1.5em 0;
+  border-top:1px solid lighten($color-main-dark1,5%);
 
-	& > p
-	{
-		margin:0;
-		padding:0;
-		@include rem-size(14px);
-		text-align:center;
-	}
+  & > p
+  {
+    margin:0;
+    padding:0;
+    @include rem-size(14px);
+    text-align:center;
+  }
 }

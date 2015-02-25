@@ -10,15 +10,15 @@
 
 .list-spaced
 {
-	& > li
-	{
-		margin-bottom:2.5em;
+  & > li
+  {
+    margin-bottom:2.5em;
 
-		&:last-child
-		{
-			margin-bottom:0;
-		}
-	}
+    &:last-child
+    {
+      margin-bottom:0;
+    }
+  }
 }
 
 
@@ -30,15 +30,15 @@
 
 .list-compact
 {
-	@extend %list-bare;
+  @extend %list-bare;
 
-	& > li
-	{
-		margin-bottom:.25em;
+  & > li
+  {
+    margin-bottom:.25em;
 
-		&:last-child
-		{
-			margin-bottom:0;
-		}
-	}
+    &:last-child
+    {
+      margin-bottom:0;
+    }
+  }
 }

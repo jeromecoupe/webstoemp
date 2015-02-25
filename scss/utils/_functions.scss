@@ -1,4 +1,4 @@
 @function calc-em($target, $context:16px)
 {
-	@return ($target / $context) * 1em;
+  @return ($target / $context) * 1em;
 }

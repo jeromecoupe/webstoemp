@@ -4,8 +4,8 @@
 
 @mixin rem-size($number:16px)
 {
-	font-size:$number;
-	font-size:($number / 16px) + rem;
+  font-size:$number;
+  font-size:($number / 16px) + rem;
 }
 
 
@@ -23,26 +23,26 @@
 @mixin mq($breakpoint)
 {
 
-	$isdefined:false;
+  $isdefined:false;
 
-	@each $mq in $mq-list
-	{
-		$mq-name: 	nth($mq, 1);
-		$mq-param: 	nth($mq, 2);
+  @each $mq in $mq-list
+  {
+    $mq-name:   nth($mq, 1);
+    $mq-param:  nth($mq, 2);
 
-		@if (unquote($breakpoint) == $mq-name)
-		{
-			$isdefined:true;
+    @if (unquote($breakpoint) == $mq-name)
+    {
+      $isdefined:true;
 
-			@media all and #{$mq-param}
-			{
-				@content;
-			}
-		}
-	}
+      @media all and #{$mq-param}
+      {
+        @content;
+      }
+    }
+  }
 
-	@if ($isdefined == false)
-	{
-		@warn "Breakpoint ‘#{$breakpoint}’ is not defined";
-	}
+  @if ($isdefined == false)
+  {
+    @warn "Breakpoint ‘#{$breakpoint}’ is not defined";
+  }
 }

@@ -23,7 +23,7 @@ $class-type:unquote(".");
 
 @if ($silent-classes == true)
 {
-	$class-type:unquote("%");
+  $class-type:unquote("%");
 }
 
 
@@ -50,16 +50,16 @@ $use-pullclasses:false!default;
  * - Third param: is the query used for grids or not
  *
  * Dimensions
- * - small: 	600px	37.5em
- * - medium: 	760px	47.5em
- * - large: 	1024px	64em
- * - xlarge: 	1140px	71.25em
+ * - small:   600px 37.5em
+ * - medium:  760px 47.5em
+ * - large:   1024px  64em
+ * - xlarge:  1140px  71.25em
  */
 
-$mq-list:		"small"      		"(min-width:37.5em)"       true,
-            "medium"     		"(min-width:46.875em)"     true,
-            "large"      		"(min-width:64em)"         true,
-            "xlarge"     		"(min-width:71.25em)"      true!default;
+$mq-list:   "small"         "(min-width:37.5em)"       true,
+            "medium"        "(min-width:46.875em)"     true,
+            "large"         "(min-width:64em)"         true,
+            "xlarge"        "(min-width:71.25em)"      true!default;
 
 
 /**
@@ -71,78 +71,78 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 #{$class-type}grid
 {
-	list-style:none;	// [1]
-	margin:0; 				// [1]
-	padding:0;				// [1]
-	display:block;
-	margin-left:($grid-gutter * -1); // [2]
+  list-style:none;  // [1]
+  margin:0;         // [1]
+  padding:0;        // [1]
+  display:block;
+  margin-left:($grid-gutter * -1); // [2]
 }
 
 
-	/**
-	 *
-	 * grid aligned center
-	 *
-	 */
+  /**
+   *
+   * grid aligned center
+   *
+   */
 
-	#{$class-type}grid--center
-	{
-		text-align:center;
+  #{$class-type}grid--center
+  {
+    text-align:center;
 
-		& > #{$class-type}grid__unit
-		{
-			text-align:left;
-		}
-	}
-
-
-	/**
-	 *
-	 * grid aligned right
-	 *
-	 */
-
-	#{$class-type}grid--right
-	{
-		text-align:right;
-
-		& > #{$class-type}grid__unit
-		{
-			text-align:left;
-		}
-	}
+    & > #{$class-type}grid__unit
+    {
+      text-align:left;
+    }
+  }
 
 
-	/**
-	 *
-	 * grid bottom-margins
-	 *
-	 */
+  /**
+   *
+   * grid aligned right
+   *
+   */
 
-	 #{$class-type}grid--spaced
-	{
+  #{$class-type}grid--right
+  {
+    text-align:right;
 
-		& > #{$class-type}grid__unit
-		{
-			margin-bottom:$grid-gutter;
-		}
-	}
+    & > #{$class-type}grid__unit
+    {
+      text-align:left;
+    }
+  }
 
-	/**
-	 *
-	 * grid gutterless
-	 *
-	 */
 
-	 #{$class-type}grid--gutterless
-	{
-		margin-left:0;
+  /**
+   *
+   * grid bottom-margins
+   *
+   */
 
-		& > #{$class-type}grid__unit
-		{
-			padding-left:0;
-		}
-	}
+   #{$class-type}grid--spaced
+  {
+
+    & > #{$class-type}grid__unit
+    {
+      margin-bottom:$grid-gutter;
+    }
+  }
+
+  /**
+   *
+   * grid gutterless
+   *
+   */
+
+   #{$class-type}grid--gutterless
+  {
+    margin-left:0;
+
+    & > #{$class-type}grid__unit
+    {
+      padding-left:0;
+    }
+  }
 
 
 
@@ -156,13 +156,13 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 #{$class-type}grid__unit
 {
-	margin:0;
-	padding:0;
-	display:inline-block;
-	vertical-align:top;
-	box-sizing:border-box;
-	width:100%;
-	padding-left:$grid-gutter;
+  margin:0;
+  padding:0;
+  display:inline-block;
+  vertical-align:top;
+  box-sizing:border-box;
+  width:100%;
+  padding-left:$grid-gutter;
 }
 
 /**
@@ -174,29 +174,29 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 @mixin make-grid($namespace:"")
 {
-	#{$class-type}#{$namespace}span-full { width:100%; }
+  #{$class-type}#{$namespace}span-full { width:100%; }
 
-	#{$class-type}#{$namespace}span-1of10 { width:1/10 * 100%; }
-	#{$class-type}#{$namespace}span-2of10 { width:2/10 * 100%; }
-	#{$class-type}#{$namespace}span-3of10 { width:3/10 * 100%; }
-	#{$class-type}#{$namespace}span-4of10 { width:4/10 * 100%; }
-	#{$class-type}#{$namespace}span-5of10 { width:5/10 * 100%; }
-	#{$class-type}#{$namespace}span-6of10 { width:6/10 * 100%; }
-	#{$class-type}#{$namespace}span-7of10 { width:7/10 * 100%; }
-	#{$class-type}#{$namespace}span-8of10 { width:8/10 * 100%; }
-	#{$class-type}#{$namespace}span-9of10 { width:9/10 * 100%; }
+  #{$class-type}#{$namespace}span-1of10 { width:1/10 * 100%; }
+  #{$class-type}#{$namespace}span-2of10 { width:2/10 * 100%; }
+  #{$class-type}#{$namespace}span-3of10 { width:3/10 * 100%; }
+  #{$class-type}#{$namespace}span-4of10 { width:4/10 * 100%; }
+  #{$class-type}#{$namespace}span-5of10 { width:5/10 * 100%; }
+  #{$class-type}#{$namespace}span-6of10 { width:6/10 * 100%; }
+  #{$class-type}#{$namespace}span-7of10 { width:7/10 * 100%; }
+  #{$class-type}#{$namespace}span-8of10 { width:8/10 * 100%; }
+  #{$class-type}#{$namespace}span-9of10 { width:9/10 * 100%; }
 
-	#{$class-type}#{$namespace}span-1of12 { width:1/12 * 100%; }
-	#{$class-type}#{$namespace}span-2of12 { width:2/12 * 100%; }
-	#{$class-type}#{$namespace}span-3of12 { width:3/12 * 100%; }
-	#{$class-type}#{$namespace}span-4of12 { width:4/12 * 100%; }
-	#{$class-type}#{$namespace}span-5of12 { width:5/12 * 100%; }
-	#{$class-type}#{$namespace}span-6of12 { @extend #{$class-type}#{$namespace}span-5of10; }
-	#{$class-type}#{$namespace}span-7of12 { width:7/12 * 100%; }
-	#{$class-type}#{$namespace}span-8of12 { width:8/12 * 100%; }
-	#{$class-type}#{$namespace}span-9of12 { width:9/12 * 100%; }
-	#{$class-type}#{$namespace}span-10of12 { width:10/12 * 100%; }
-	#{$class-type}#{$namespace}span-11of12 { width:11/12 * 100%; }
+  #{$class-type}#{$namespace}span-1of12 { width:1/12 * 100%; }
+  #{$class-type}#{$namespace}span-2of12 { width:2/12 * 100%; }
+  #{$class-type}#{$namespace}span-3of12 { width:3/12 * 100%; }
+  #{$class-type}#{$namespace}span-4of12 { width:4/12 * 100%; }
+  #{$class-type}#{$namespace}span-5of12 { width:5/12 * 100%; }
+  #{$class-type}#{$namespace}span-6of12 { @extend #{$class-type}#{$namespace}span-5of10; }
+  #{$class-type}#{$namespace}span-7of12 { width:7/12 * 100%; }
+  #{$class-type}#{$namespace}span-8of12 { width:8/12 * 100%; }
+  #{$class-type}#{$namespace}span-9of12 { width:9/12 * 100%; }
+  #{$class-type}#{$namespace}span-10of12 { width:10/12 * 100%; }
+  #{$class-type}#{$namespace}span-11of12 { width:11/12 * 100%; }
 }
 
 /**
@@ -208,29 +208,29 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 @mixin pushclasses($namespace:"")
 {
-	#{$class-type}#{$namespace}push-full { position:relative; left:100%; }
+  #{$class-type}#{$namespace}push-full { position:relative; left:100%; }
 
-	#{$class-type}#{$namespace}push-1of10 { position:relative; left:1/10 * 100%; }
-	#{$class-type}#{$namespace}push-2of10 { position:relative; left:2/10 * 100%; }
-	#{$class-type}#{$namespace}push-3of10 { position:relative; left:3/10 * 100%; }
-	#{$class-type}#{$namespace}push-4of10 { position:relative; left:4/10 * 100%; }
-	#{$class-type}#{$namespace}push-5of10 { position:relative; left:5/10 * 100%; }
-	#{$class-type}#{$namespace}push-6of10 { position:relative; left:6/10 * 100%; }
-	#{$class-type}#{$namespace}push-7of10 { position:relative; left:7/10 * 100%; }
-	#{$class-type}#{$namespace}push-8of10 { position:relative; left:8/10 * 100%; }
-	#{$class-type}#{$namespace}push-9of10 { position:relative; left:9/10 * 100%; }
+  #{$class-type}#{$namespace}push-1of10 { position:relative; left:1/10 * 100%; }
+  #{$class-type}#{$namespace}push-2of10 { position:relative; left:2/10 * 100%; }
+  #{$class-type}#{$namespace}push-3of10 { position:relative; left:3/10 * 100%; }
+  #{$class-type}#{$namespace}push-4of10 { position:relative; left:4/10 * 100%; }
+  #{$class-type}#{$namespace}push-5of10 { position:relative; left:5/10 * 100%; }
+  #{$class-type}#{$namespace}push-6of10 { position:relative; left:6/10 * 100%; }
+  #{$class-type}#{$namespace}push-7of10 { position:relative; left:7/10 * 100%; }
+  #{$class-type}#{$namespace}push-8of10 { position:relative; left:8/10 * 100%; }
+  #{$class-type}#{$namespace}push-9of10 { position:relative; left:9/10 * 100%; }
 
-	#{$class-type}#{$namespace}push-1of12 { position:relative; left:1/12 * 100%; }
-	#{$class-type}#{$namespace}push-2of12 { position:relative; left:2/12 * 100%; }
-	#{$class-type}#{$namespace}push-3of12 { position:relative; left:3/12 * 100%; }
-	#{$class-type}#{$namespace}push-4of12 { position:relative; left:4/12 * 100%; }
-	#{$class-type}#{$namespace}push-5of12 { position:relative; left:5/12 * 100%; }
-	#{$class-type}#{$namespace}push-6of12 { @extend #{$class-type}#{$namespace}push-5of10; }
-	#{$class-type}#{$namespace}push-7of12 { position:relative; left:7/12 * 100%; }
-	#{$class-type}#{$namespace}push-8of12 { position:relative; left:8/12 * 100%; }
-	#{$class-type}#{$namespace}push-9of12 { position:relative; left:9/12 * 100%; }
-	#{$class-type}#{$namespace}push-10of12 { position:relative; left:10/12 * 100%; }
-	#{$class-type}#{$namespace}push-11of12 { position:relative; left:11/12 * 100%; }
+  #{$class-type}#{$namespace}push-1of12 { position:relative; left:1/12 * 100%; }
+  #{$class-type}#{$namespace}push-2of12 { position:relative; left:2/12 * 100%; }
+  #{$class-type}#{$namespace}push-3of12 { position:relative; left:3/12 * 100%; }
+  #{$class-type}#{$namespace}push-4of12 { position:relative; left:4/12 * 100%; }
+  #{$class-type}#{$namespace}push-5of12 { position:relative; left:5/12 * 100%; }
+  #{$class-type}#{$namespace}push-6of12 { @extend #{$class-type}#{$namespace}push-5of10; }
+  #{$class-type}#{$namespace}push-7of12 { position:relative; left:7/12 * 100%; }
+  #{$class-type}#{$namespace}push-8of12 { position:relative; left:8/12 * 100%; }
+  #{$class-type}#{$namespace}push-9of12 { position:relative; left:9/12 * 100%; }
+  #{$class-type}#{$namespace}push-10of12 { position:relative; left:10/12 * 100%; }
+  #{$class-type}#{$namespace}push-11of12 { position:relative; left:11/12 * 100%; }
 }
 
 /**
@@ -242,29 +242,29 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 @mixin pullclasses($namespace:"")
 {
-	#{$class-type}#{$namespace}pull-full { position:relative; right:100%; }
+  #{$class-type}#{$namespace}pull-full { position:relative; right:100%; }
 
-	#{$class-type}#{$namespace}pull-1of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-2of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-3of10 { position:relative; right:3/10 * 100%; }
-	#{$class-type}#{$namespace}pull-4of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-5of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-6of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-7of10 { position:relative; right:7/10 * 100%; }
-	#{$class-type}#{$namespace}pull-8of10 { position:relative; right:1/10 * 100%; }
-	#{$class-type}#{$namespace}pull-9of10 { position:relative; right:9/10 * 100%; }
+  #{$class-type}#{$namespace}pull-1of10 { position:relative; right:1/10 * 100%; }
+  #{$class-type}#{$namespace}pull-2of10 { position:relative; right:1/10 * 100%; }
+  #{$class-type}#{$namespace}pull-3of10 { position:relative; right:3/10 * 100%; }
+  #{$class-type}#{$namespace}pull-4of10 { position:relative; right:1/10 * 100%; }
+  #{$class-type}#{$namespace}pull-5of10 { position:relative; right:1/10 * 100%; }
+  #{$class-type}#{$namespace}pull-6of10 { position:relative; right:1/10 * 100%; }
+  #{$class-type}#{$namespace}pull-7of10 { position:relative; right:7/10 * 100%; }
+  #{$class-type}#{$namespace}pull-8of10 { position:relative; right:1/10 * 100%; }
+  #{$class-type}#{$namespace}pull-9of10 { position:relative; right:9/10 * 100%; }
 
-	#{$class-type}#{$namespace}pull-1of12 { position:relative; right:1/12 * 100%; }
-	#{$class-type}#{$namespace}pull-2of12 { position:relative; right:2/12 * 100%; }
-	#{$class-type}#{$namespace}pull-3of12 { position:relative; right:3/12 * 100%; }
-	#{$class-type}#{$namespace}pull-4of12 { position:relative; right:4/12 * 100%; }
-	#{$class-type}#{$namespace}pull-5of12 { position:relative; right:5/12 * 100%; }
-	#{$class-type}#{$namespace}pull-6of12 { @extend #{$class-type}#{$namespace}pull-6of10; }
-	#{$class-type}#{$namespace}pull-7of12 { position:relative; right:7/12 * 100%; }
-	#{$class-type}#{$namespace}pull-8of12 { position:relative; right:8/12 * 100%; }
-	#{$class-type}#{$namespace}pull-9of12 { position:relative; right:9/12 * 100%; }
-	#{$class-type}#{$namespace}pull-10of12 { position:relative; right:10/12 * 100%; }
-	#{$class-type}#{$namespace}pull-11of12 { position:relative; right:11/12 * 100%; }
+  #{$class-type}#{$namespace}pull-1of12 { position:relative; right:1/12 * 100%; }
+  #{$class-type}#{$namespace}pull-2of12 { position:relative; right:2/12 * 100%; }
+  #{$class-type}#{$namespace}pull-3of12 { position:relative; right:3/12 * 100%; }
+  #{$class-type}#{$namespace}pull-4of12 { position:relative; right:4/12 * 100%; }
+  #{$class-type}#{$namespace}pull-5of12 { position:relative; right:5/12 * 100%; }
+  #{$class-type}#{$namespace}pull-6of12 { @extend #{$class-type}#{$namespace}pull-6of10; }
+  #{$class-type}#{$namespace}pull-7of12 { position:relative; right:7/12 * 100%; }
+  #{$class-type}#{$namespace}pull-8of12 { position:relative; right:8/12 * 100%; }
+  #{$class-type}#{$namespace}pull-9of12 { position:relative; right:9/12 * 100%; }
+  #{$class-type}#{$namespace}pull-10of12 { position:relative; right:10/12 * 100%; }
+  #{$class-type}#{$namespace}pull-11of12 { position:relative; right:11/12 * 100%; }
 }
 
 /**
@@ -276,11 +276,11 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 @include make-grid();
 @if ($use-pushclasses == true)
 {
-	@include pushclasses();
+  @include pushclasses();
 }
 @if ($use-pullclasses == true)
 {
-	@include pullclasses();
+  @include pullclasses();
 }
 
 /**
@@ -292,23 +292,23 @@ $mq-list:		"small"      		"(min-width:37.5em)"       true,
 
 @each $breakpoint in $mq-list
 {
-	$breakpoint-name: 	nth($breakpoint, 1);
-	$breakpoint-param: 	nth($breakpoint, 2);
-	$breakpoint-grid: 	nth($breakpoint, 3);
+  $breakpoint-name:   nth($breakpoint, 1);
+  $breakpoint-param:  nth($breakpoint, 2);
+  $breakpoint-grid:   nth($breakpoint, 3);
 
-	@if ($breakpoint-grid == true)
-	{
-		@media all and #{$breakpoint-param}
-		{
-			@include make-grid("#{$breakpoint-name}-");
-			@if ($use-pushclasses == true)
-			{
-				@include pushclasses("#{$breakpoint-name}-");
-			}
-			@if ($use-pullclasses == true)
-			{
-				@include pullclasses("#{$breakpoint-name}-");
-			}
-		}
-	}
+  @if ($breakpoint-grid == true)
+  {
+    @media all and #{$breakpoint-param}
+    {
+      @include make-grid("#{$breakpoint-name}-");
+      @if ($use-pushclasses == true)
+      {
+        @include pushclasses("#{$breakpoint-name}-");
+      }
+      @if ($use-pullclasses == true)
+      {
+        @include pullclasses("#{$breakpoint-name}-");
+      }
+    }
+  }
 }

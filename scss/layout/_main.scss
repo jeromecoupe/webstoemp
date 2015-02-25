@@ -13,31 +13,31 @@
 
 .siteheader, .sitefooter
 {
-	width:100%;
+  width:100%;
 }
 
 .maincontent
 {
-	margin:3em auto;
-	max-width:1100px;
-	padding:0 5%;
+  margin:3em auto;
+  max-width:1100px;
+  padding:0 5%;
 
-	@include mq(medium)
-	{
-		margin-top:calc-em(60px);
-		margin-bottom:calc-em(60px);
-	}
+  @include mq(medium)
+  {
+    margin-top:calc-em(60px);
+    margin-bottom:calc-em(60px);
+  }
 
-	@include mq(large)
-	{
-		margin-top:calc-em(100px);
-		margin-bottom:calc-em(100px);
-	}
+  @include mq(large)
+  {
+    margin-top:calc-em(100px);
+    margin-bottom:calc-em(100px);
+  }
 }
 
 .container
 {
-	margin:0 auto;
-	max-width:1100px;
-	padding:0 5%;
+  margin:0 auto;
+  max-width:1100px;
+  padding:0 5%;
 }

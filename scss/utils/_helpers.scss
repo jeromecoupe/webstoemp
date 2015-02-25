@@ -4,21 +4,21 @@
 
 %clearfix, .clearfix
 {
-	&:before, &:after
-	{
-		content:"";
-		display:table;
-	}
+  &:before, &:after
+  {
+    content:"";
+    display:table;
+  }
 
-	&:after
-	{
-		clear:both;
-	}
+  &:after
+  {
+    clear:both;
+  }
 
-	.lt-ie8 &
-	{
-		min-height:1%;
-	}
+  .lt-ie8 &
+  {
+    min-height:1%;
+  }
 }
 
 
@@ -27,7 +27,7 @@
 \*------------------------------------*/
 %aligncenter, .aligncenter
 {
-	text-align:center;
+  text-align:center;
 }
 
 
@@ -37,9 +37,9 @@
 
 %list-bare, .list-bare
 {
-	list-style:none;
-	margin:0;
-	padding:0;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
 
 
@@ -49,18 +49,18 @@
 
 %visuallyhidden, .visuallyhidden
 {
-	position:absolute;
-	overflow:hidden;
-	clip:rect(0 0 0 0);
-	height:1px;
-	width:1px;
-	margin:-1px;
-	padding:0;
-	border:0;
+  position:absolute;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  height:1px;
+  width:1px;
+  margin:-1px;
+  padding:0;
+  border:0;
 }
 
 %hidecontent, .hidecontent //works on block or inline-block elements
 {
-	text-indent:-500px;
-	overflow:hidden;
+  text-indent:-500px;
+  overflow:hidden;
 }
