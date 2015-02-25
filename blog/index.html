@@ -7,74 +7,74 @@ current_nav: blog
 
 <main class="maincontent" role="main">
 
-	<div class="intromodule">
-		<h2 class="intromodule__title">Thoughts &amp; Ramblings</h2>
-		<div class="intromodule__text">
-			<p>I write about whatever piques my interest at the moment. It usually revolves around the web but not exclusively. Read on if you feel so inclined.</p>
-		</div>
-	</div>
+  <div class="intromodule">
+    <h2 class="intromodule__title">Thoughts &amp; Ramblings</h2>
+    <div class="intromodule__text">
+      <p>I write about whatever piques my interest at the moment. It usually revolves around the web but not exclusively. Read on if you feel so inclined.</p>
+    </div>
+  </div>
 
-	<!--
-	<form action="search.php" class="searchform">
-		<div>
-			<label for="q" class="visuallyhidden">Search the blog</label>
-			<input type="search" id="q" name="q" class="searchform__field">
-			<input type="submit" value="Search" class="searchform__button  formbutton">
-		</div>
-	</form>
-	-->
+  <!--
+  <form action="search.php" class="searchform">
+    <div>
+      <label for="q" class="visuallyhidden">Search the blog</label>
+      <input type="search" id="q" name="q" class="searchform__field">
+      <input type="submit" value="Search" class="searchform__button  formbutton">
+    </div>
+  </form>
+  -->
 
-	<div class="grid">
+  <div class="grid">
 
-		<div class="maincontent__primary  grid__unit  medium-span-9of12">
+    <div class="maincontent__primary  grid__unit  medium-span-9of12">
 
-			{% assign postsByYear = site.posts | group_by:"publication_year" %}
+      {% assign postsByYear = site.posts | group_by:"publication_year" %}
 
-			{% for postsInYear in postsByYear %}
+      {% for postsInYear in postsByYear %}
 
-				{% if forloop.first %}<ul class="yearlyarchive">{% endif %}
+        {% if forloop.first %}<ul class="yearlyarchive">{% endif %}
 
-				<li class="yearlyarchive__year">
+        <li class="yearlyarchive__year">
 
-					<h2 class="yearlyarchive__title">{{ postsInYear.name }}</h2>
+          <h2 class="yearlyarchive__title">{{ postsInYear.name }}</h2>
 
-				    {% for item in postsInYear.items %}
+            {% for item in postsInYear.items %}
 
-				    	{% if forloop.first %}<ul class="yearlyarchive__list">{% endif %}
+              {% if forloop.first %}<ul class="yearlyarchive__list">{% endif %}
 
-				    		<li class="yearlyarchive__item">
-									<article>
-										<p class="item-info"><time datetime="{{ item.date|date:'%Y-%m-%d' }}">{{ item.date|date:"%B %-d, %Y" }}</time></p>
-										<h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
-										<p>{{ item.excerpt }}</p>
-										<p><a href="{{ item.url }}" class="more">Read More</a></p>
-									</article>
-								</li>
+                <li class="yearlyarchive__item">
+                  <article>
+                    <p class="item-info"><time datetime="{{ item.date|date:'%Y-%m-%d' }}">{{ item.date|date:"%B %-d, %Y" }}</time></p>
+                    <h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+                    <p>{{ item.excerpt }}</p>
+                    <p><a href="{{ item.url }}" class="more">Read More</a></p>
+                  </article>
+                </li>
 
-				    	{% if forloop.last %}</ul>{% endif %}
+              {% if forloop.last %}</ul>{% endif %}
 
-				    {% endfor %}
+            {% endfor %}
 
-				</li>
+        </li>
 
-				{% if forloop.last %}</ul>{% endif %}
+        {% if forloop.last %}</ul>{% endif %}
 
-			{% endfor %}
+      {% endfor %}
 
-		</div><!--
+    </div><!--
 
  --><aside class="maincontent__secondary  grid__unit  medium-span-3of12">
 
-			<div class="widget">
-				<h2 class="widget__title">RSS Feed</h2>
-				<div class="widget__content">
-					<p>If, like me, you are still using RSS, here is a little feed for your favourite reader to chew on.</p>
-					<p><a href="/feed.xml"><i class="icon  icon--rss"></i>Blogposts feed</a></p>
-				</div>
-			</div>
+      <div class="widget">
+        <h2 class="widget__title">RSS Feed</h2>
+        <div class="widget__content">
+          <p>If, like me, you are still using RSS, here is a little feed for your favourite reader to chew on.</p>
+          <p><a href="/feed.xml"><i class="icon  icon--rss"></i>Blogposts feed</a></p>
+        </div>
+      </div>
 
-		</aside>
+    </aside>
 
-	</div>
+  </div>
 
 </main>

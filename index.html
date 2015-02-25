@@ -7,64 +7,64 @@ banner: true
 
 <main class="maincontent" role="main">
 
-	<section class="pagemodule">
+  <section class="pagemodule">
 
-		<div class="intromodule">
-			<h2 class="intromodule__title">A la carte</h2>
-			<div class="intromodule__text">
-				<p>There is no predefined menu. We will work together to define your business needs, target audiences and objectives in order to create a tailor-made solution.</p>
-			</div>
-		</div>
+    <div class="intromodule">
+      <h2 class="intromodule__title">A la carte</h2>
+      <div class="intromodule__text">
+        <p>There is no predefined menu. We will work together to define your business needs, target audiences and objectives in order to create a tailor-made solution.</p>
+      </div>
+    </div>
 
-		<ul class="grid  grid--spaced">
-			<li class="grid__unit  medium-span-4of12">
-				<p class="imgcontainer"><img src="/img/icon_plate.svg" alt="Web Design" class="imgfluid  imgsvg"></p>
-				<h2 class="h4  aligncenter">Web design</h2>
-				<p class="aligncenter">Great content &amp; clear business objectives are the main ingredients of web projects but a good dressing will also enhance your meal.</p>
-			</li><!--
-	 --><li class="grid__unit  medium-span-4of12">
-				<p class="imgcontainer"><img src="/img/icon_casseroles.svg" alt="Front-end Development" class="imgfluid  imgsvg"></p>
-				<h2 class="h4  aligncenter">Front-end Development</h2>
-				<p class="aligncenter">HTML, CSS &amp; JavaScript are my bread and butter. Responsive web design is baked in. Great web experience on every device.</p>
-			</li><!--
-	 --><li class="grid__unit  medium-span-4of12">
-				<p class="imgcontainer"><img src="/img/icon_robot.svg" alt="Content Management Systems" class="imgfluid  imgsvg"></p>
-				<h2 class="h4  aligncenter">CMS Integration</h2>
-				<p class="aligncenter">Even complex websites can be maintained &amp; updated easily when Craft, ExpressionEngine and Statamic are on the menu.</p>
-			</li>
-		</ul>
+    <ul class="grid  grid--spaced">
+      <li class="grid__unit  medium-span-4of12">
+        <p class="imgcontainer"><img src="/img/icon_plate.svg" alt="Web Design" class="imgfluid  imgsvg"></p>
+        <h2 class="h4  aligncenter">Web design</h2>
+        <p class="aligncenter">Great content &amp; clear business objectives are the main ingredients of web projects but a good dressing will also enhance your meal.</p>
+      </li><!--
+   --><li class="grid__unit  medium-span-4of12">
+        <p class="imgcontainer"><img src="/img/icon_casseroles.svg" alt="Front-end Development" class="imgfluid  imgsvg"></p>
+        <h2 class="h4  aligncenter">Front-end Development</h2>
+        <p class="aligncenter">HTML, CSS &amp; JavaScript are my bread and butter. Responsive web design is baked in. Great web experience on every device.</p>
+      </li><!--
+   --><li class="grid__unit  medium-span-4of12">
+        <p class="imgcontainer"><img src="/img/icon_robot.svg" alt="Content Management Systems" class="imgfluid  imgsvg"></p>
+        <h2 class="h4  aligncenter">CMS Integration</h2>
+        <p class="aligncenter">Even complex websites can be maintained &amp; updated easily when Craft, ExpressionEngine and Statamic are on the menu.</p>
+      </li>
+    </ul>
 
-		<p class="buttoncontainer  aligncenter"><a href="/work/" class="button">Portfolio &amp; Process</a></p>
+    <p class="buttoncontainer  aligncenter"><a href="/work/" class="button">Portfolio &amp; Process</a></p>
 
-	</section>
+  </section>
 
 
-	<section class="pagemodule">
+  <section class="pagemodule">
 
-		<div class="intromodule">
-			<h2 class="intromodule__title">From the Blog</h2>
-			<div class="intromodule__text">
-				<p>My latest thoughts &amp; ramblings. I mostly write to remember all of this when I am old and nodding by the fire. Read on if you feel so inclined.</p>
-			</div>
-		</div>
+    <div class="intromodule">
+      <h2 class="intromodule__title">From the Blog</h2>
+      <div class="intromodule__text">
+        <p>My latest thoughts &amp; ramblings. I mostly write to remember all of this when I am old and nodding by the fire. Read on if you feel so inclined.</p>
+      </div>
+    </div>
 
-		{% for item in site.posts limit:2 %}
+    {% for item in site.posts limit:2 %}
 
-			{% if forloop.first %}<ul class="grid  grid--spaced"><li class="grid__unit  medium-span-6of12">{% endif %}
+      {% if forloop.first %}<ul class="grid  grid--spaced"><li class="grid__unit  medium-span-6of12">{% endif %}
 
-			<article>
-				<p class="item-info"><time datetime="{{ item.date|date:'%Y-%m-%d' }}">{{ item.date|date:"%B %-d, %Y" }}</time></p>
-				<h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
-				<p>{{ item.excerpt }}</p>
-				<p><a href="{{ item.url }}" class="more">Read More</a></p>
-			</article>
+      <article>
+        <p class="item-info"><time datetime="{{ item.date|date:'%Y-%m-%d' }}">{{ item.date|date:"%B %-d, %Y" }}</time></p>
+        <h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+        <p>{{ item.excerpt }}</p>
+        <p><a href="{{ item.url }}" class="more">Read More</a></p>
+      </article>
 
-			{% if forloop.last %}</li></ul>{% else %}</li><li class="grid__unit  medium-span-6of12">{% endif %}
+      {% if forloop.last %}</li></ul>{% else %}</li><li class="grid__unit  medium-span-6of12">{% endif %}
 
-		{% endfor %}
+    {% endfor %}
 
-		<p class="buttoncontainer  aligncenter"><a href="/blog/" class="button">All blogposts</a></p>
+    <p class="buttoncontainer  aligncenter"><a href="/blog/" class="button">All blogposts</a></p>
 
-	</section>
+  </section>
 
 </main>
