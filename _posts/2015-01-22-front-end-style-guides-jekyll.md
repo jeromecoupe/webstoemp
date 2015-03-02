@@ -31,7 +31,7 @@ The YAML front matter for each of those files contains:
 
 - the title of the component
 - a link to the sass file for that component
-- a type variale that we will use to filter or group components by type (more on that later)
+- a type variable that we will use to filter or group components by type (more on that later)
 
 In the `_include` folder I have a single file called `component.html` which contains the code to display components. Using an include is just a way to be DRY when using the display code multiple times. That include basically displays the code of the component twice:
 
