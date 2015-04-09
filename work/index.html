@@ -15,7 +15,8 @@ current_nav: work
       </div>
     </div>
 
-    {% for item in site.projects reversed limit:6 %}
+    {% assign projects = site.projects | sort: 'date' | reverse %}
+    {% for item in projects limit:6 %}
 
       {% if forloop.first %}<ul class="grid  grid--spaced"><li class="grid__unit  medium-span-6of12  large-span-4of12">{% endif %}
 
