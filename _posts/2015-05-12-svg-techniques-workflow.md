@@ -40,7 +40,7 @@ Browsers that do not support SVG will fallback to the PNG image. For the moment,
 
 Next up are what I call static design elements. A prime example here would be icons that do not need any kind of animation, the type of assets you would previously have handled with iconfonts.
 
-For those, I currently use external SVG spritemaps that will get cached by browsers and thus only downloaded once. They are perfect for a simple icon system. As with anythig SVG related these days, the one and only [Sara Soueidan](http://sarasoueidan.com/) has written [a great article on SVG sprites](http://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/) for the 2014 edition of 24 ways. I have settled on referencing an external SVG sprite with `<use>` and IDs (or fragment identifiers).
+For those, I currently use external SVG spritemaps that will get cached by browsers and thus only downloaded once. They are perfect for a simple icon system. As with anything SVG related these days, the one and only [Sara Soueidan](http://sarasoueidan.com/) has written [a great article on SVG sprites](http://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/) for the 2014 edition of 24 ways. I have settled on referencing an external SVG sprite with `<use>` and IDs (or fragment identifiers).
 
 Workflow-wise, this is a very simple technique if you already use some kind of build tool (I currently use Gulp). The only thing you have to do is to use a plugin called [svg-store](https://github.com/w0rm/gulp-svgstore) and to configure a task similar to this one for the magic to happen.
 
@@ -68,7 +68,7 @@ The only thing left to do is to add the handy [SVG for Everybody](https://github
 
 Next up are more complex icons or UI elements where you want to use CSS animations or transitions coupled with SVG-specific CSS properties. For those, I typically use inline SVG files and manage transitions and animations in my CSS.
 
-After exorting the SVG from Sketch, I use SVGO (part of gulp-imagemin) with the following settings to to clean them up:
+After exorting the SVG from Sketch, I use SVGO (part of gulp-imagemin) with the following settings to clean them up:
 
 {% highlight javascript %}
 gulp.task('img', function() {
@@ -120,11 +120,11 @@ Here is a small example of what you would write in your CSS / Sass
 
 ## Bigger and more complex animations
 
-There are times when you will want to use SVG to create bigger, more complex animations. If those are purely decorative and you are ok with them not beeing supported by any flavour of Internet Explorer (which will get the static version of your SVG), then SMIL animations are a good option.
+There are times when you will want to use SVG to create bigger, more complex animations. If those are purely decorative and you are ok with them not being supported by any flavour of Internet Explorer (which will get the static version of your SVG), then SMIL animations are a good option.
 
-If you want to dabble into SMIL, [Sara Soueidan wrote a detailed guide for CSS-tricks](https://css-tricks.com/guide-svg-animations-smil/ "The SVG princess strikes again") that I cannot recommend anough. Worth it as well are the [SMIL guide by the fine folks at MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL) and, if you are feeling a bit more adventurous, [the SMIL spec at the W3C](http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AdditiveAnim).
+If you want to dabble into SMIL, [Sara Soueidan wrote a detailed guide for CSS-tricks](https://css-tricks.com/guide-svg-animations-smil/ "The SVG princess strikes again") that I cannot recommend enough. Worth it as well are the [SMIL guide by the fine folks at MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL) and, if you are feeling a bit more adventurous, [the SMIL spec at the W3C](http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AdditiveAnim).
 
-The two gotchas that tripped my up with SMIL animations:
+The two gotchas that tripped me up with SMIL animations:
 
 - if you want to animate the same element in two different ways, you have to explicitely say that your animations sould be cumulative using [the `additive="sum"` attribute](http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AdditiveAnim).
 - The way the SVG coordinate system works was not very intuitive to me. Luckily, the inavoidable Sara Soueidan [comes to our rescue again](http://sarasoueidan.com/blog/svg-coordinate-systems/) with [a "trifecta"](http://sarasoueidan.com/blog/svg-transformations/) on the [subject](http://sarasoueidan.com/blog/nesting-svgs/).
