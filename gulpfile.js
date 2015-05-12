@@ -2,7 +2,7 @@
 
 // Load plugins
 var gulp					= require('gulp');
-var sass					= require('gulp-ruby-sass');
+var sass					= require('gulp-sass');
 var autoprefixer	= require('gulp-autoprefixer');
 var jshint				= require('gulp-jshint');
 var stripdebug		= require('gulp-strip-debug');
@@ -16,6 +16,7 @@ var plumber				= require('gulp-plumber');
 var gutil					= require('gulp-util');
 var base64				= require('gulp-base64');
 var imagemin			= require('gulp-imagemin');
+var svgstore			= require('gulp-svgstore');
 var shell					= require('gulp-shell');
 var browsersync		= require('browser-sync');
 
@@ -51,7 +52,7 @@ gulp.task('browser-sync', function() {
 
 // Optimize Images task
 gulp.task('img', function() {
-	return gulp.src('./img/**/*')
+	return gulp.src(['./img/**/*','!./img/svg_sprite/svgsprite.svg'])
 	.pipe(imagemin({
 		progressive: true,
 		svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
@@ -109,6 +110,15 @@ gulp.task('bannerimage', function() {
 	.pipe(notify({ message: 'Random banner for homepage done' }));
 });
 
+// SVG sprite task
+gulp.task('svgsprite', function () {
+  return gulp.src('./img/svg_sprite/sources/*.svg')
+  .pipe(svgstore())
+  .pipe(rename("svgsprite.svg"))
+  .pipe(gulp.dest('./img/svg_sprite/'))
+  .pipe(notify({ message: 'SVG sprite created' }));
+});
+
 // Jekyll build
 gulp.task('jekyll', function () {
 	return gulp.src('')
@@ -128,3 +138,4 @@ gulp.task('watch', ['browser-sync'], function () {
 // Tasks
 gulp.task('default', ['css', 'jslint', 'scripts', 'bannerimage', 'jekyll']);
 gulp.task('images', ['img']);
+gulp.task('svg', ['svgsprite']);

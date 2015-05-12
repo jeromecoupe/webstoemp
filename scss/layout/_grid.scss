@@ -144,6 +144,22 @@ $mq-list:   "small"         "(min-width:37.5em)"       true,
     }
   }
 
+  /**
+   *
+   * grid gutter double
+   *
+   */
+
+   #{$class-type}grid--gutterdouble
+  {
+    margin-left:(($grid-gutter * 2) * -1);
+
+    & > #{$class-type}grid__unit
+    {
+      padding-left:($grid-gutter * 2);
+    }
+  }
+
 
 
 /**

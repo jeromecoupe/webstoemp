@@ -243,29 +243,45 @@
 
 
 /*------------------------------------*\
-=steps
+=workflow
 \*------------------------------------*/
 
-.numbered-item
+.workflow > li
 {
-  padding-left:70px;
-  background-position:0 0;
-  background-repeat:no-repeat;
-}
+  margin-bottom: 1em;
 
-  @for $i from 1 through 6
+  &:last-child
   {
-    .numbered-item--#{$i}
-    {
-      background-image:url(../img/icon_step_#{$i}.svg);
-
-      .no-svg &
-      {
-        background-image:url(../img/icon_step_#{$i}.png);
-      }
-    }
+    margin-bottom: 0;
   }
 
+  @include mq(medium)
+  {
+    margin-bottom: 0;
+  }
+}
+
+.workflow > li:nth-child(odd)
+{
+  @include mq(medium)
+  {
+    text-align: right;
+  }
+}
+
+.workflow > li:nth-child(even)
+{
+  @include mq(medium)
+  {
+    margin-top: 5em;
+  }
+}
+
+.workflow__tagline
+{
+  margin-top: 0.5em;
+  color: $color-main-light1;
+}
 
 /*------------------------------------*\
 =widgets
