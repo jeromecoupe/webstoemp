@@ -1,6 +1,6 @@
 ---
-title: "Current SVG techniques and workflows"
-excerpt: "SVG is certainly one of the new hotness to get to grips with in the front-end world. Let's look at various use cases and techniques for using SVG today."
+title: "Current SVG techniques and workflow"
+excerpt: "SVG is certainly the new hotness to get to grips with in the front-end world. Here are various use cases I encountered and the techniques and workflow I use with SVG today."
 publication_year: 2015
 categories:
 - Front-end
@@ -14,7 +14,7 @@ Given the multi-devices, multi-screen-resolutions web we currently live in, the 
 
 Whether you use a database-driven system like Craft or a file-based one like [Statamic](http://statamic.com/) or [Jekyll](http://jekyllrb.com/), the first use case that always comes up is how to deal with user uploaded content.
 
-I tend to use a deceivingly (boringly) simple approach based on custom fields and on the source swapping capabilities of [the new `<picture> element](http://responsiveimages.org/). Whenever I need to cater for user-uploaded fiels that would benefit from an SVG format, I create a data structure where the client has to upload both an SVG and a PNG files.
+I tend to use a deceivingly (boringly) simple approach based on custom fields and on the source swapping capabilities of [the new `<picture> element](http://responsiveimages.org/). Whenever I need to cater for user-uploaded files that would benefit from an SVG format, I create a data structure where the client has to upload both an SVG and a PNG files.
 
 Then, I just use the `<picture>` element and the source-swapping capabilities it offers via the `<source>` elements.
 
@@ -83,6 +83,40 @@ gulp.task('img', function() {
 {% endhighlight %}
 
 For convenience's sake I usually keep the exported and optimised SVG around but store the SVG code as partials / includes in my CMS. That allows for easy inclusion anywhere in my code base, keeps the bloat of SVG files out of my templates and preserve the [accessibility-related enhancements](http://www.sitepoint.com/tips-accessible-svg/) I make when SVGO cleans the files. If I modify those, I just copy the paths and shapes from the cleaned up sources back to my partials.
+
+Using CSS animations and transitions with inline SVGs is trivial. All it takes is adding some classes to svg paths, elements or groups and then referencing those classes in your CSS files, using SVG specific properties.
+
+Here is a small example of what you would write in your CSS / Sass
+
+{% highlight scss %}
+.icon
+{
+  display: inline-block;
+}
+
+.icon__background
+{
+  stroke: black;
+  fill: transparent;
+  transition: all 0.2s linear;
+
+  a:hover &
+  {
+    stroke: red;
+  }
+}
+
+.icon__content
+{
+  fill: black;
+  transition: all 0.2s linear;
+
+  a:hover &
+  {
+    fill: red;
+  }
+}
+{% endhighlight %}
 
 ## Bigger and more complex animations
 
