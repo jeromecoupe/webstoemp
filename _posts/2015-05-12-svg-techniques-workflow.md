@@ -14,7 +14,7 @@ Given the multi-devices, multi-screen-resolutions web we currently live in, the 
 
 Whether you use a database-driven system like [Craft](http://buildwithcraft.com) or a file-based one like [Statamic](http://statamic.com/) or [Jekyll](http://jekyllrb.com/), the first use case that always comes up is how to deal with user uploaded content.
 
-I tend to use a deceivingly (boringly) simple approach based on custom fields and on the source swapping capabilities of [the new `<picture> element](http://responsiveimages.org/). Whenever I need to cater for user-uploaded files that would benefit from an SVG format, I create a data structure where the client has to upload both an SVG and a PNG files.
+I tend to use a deceivingly (boringly) simple approach based on custom fields and on the source swapping capabilities of [the new `<picture>` element](http://responsiveimages.org/). Whenever I need to cater for user-uploaded files that would benefit from an SVG format, I create a data structure where the client has to upload both an SVG and a PNG files.
 
 Then, I just use the `<picture>` element and the source-swapping capabilities it offers via the `<source>` elements.
 
