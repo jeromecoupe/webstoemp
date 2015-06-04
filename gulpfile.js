@@ -89,7 +89,7 @@ gulp.task('jslint', function() {
 
 //Concatenate and Minify JS task
 gulp.task('scripts', function() {
-	return gulp.src('./js/modules/**/*.js')
+	return gulp.src(['./js/modules/**/*.js','./js/vendors/svg4everybody.min.js'])
 	.pipe(concat('webstoemp.js'))
 	.pipe(gulp.dest('./js/'))
 	.pipe(gulp.dest('./_site/js/'))
