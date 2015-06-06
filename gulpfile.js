@@ -105,7 +105,7 @@ gulp.task('scripts', function() {
 // Display random image on homepage
 gulp.task('bannerimage', function() {
 	return gulp.src('./_includes/header.html')
-	.pipe(replace(/siteheader__banner--([0-9]*)/g, 'siteheader__banner--' +  getRandomInt(1,6)))
+	.pipe(replace(/siteheader__banner--([0-9]*)/g, 'siteheader__banner--' + getRandomInt(1,6)))
 	.pipe(gulp.dest('./_includes/'))
 	.pipe(notify({ message: 'Random banner for homepage done' }));
 });
