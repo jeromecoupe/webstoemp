@@ -28,7 +28,7 @@ Craft support is so responsive, you sometimes wonder when these people sleep.
 
 ## Security
 
-Of course no software is perfect, but Craft takes security [very seriously](http://craftcms.stackexchange.com/questions/4448/how-secure-is-craft-and-why-is-it-secure). Very frequent [updates](http://buildwithcraft.com/updates) and [one-click updating](http://buildwithcraft.com/features/one-click-updating) make it easy to always have an up to date installation.
+Of course no software is perfect, but Craft takes security [very seriously](http://craftcms.stackexchange.com/questions/4448/how-secure-is-craft-and-why-is-it-secure). Frequent [updates](http://buildwithcraft.com/updates) and [one-click updating](http://buildwithcraft.com/features/one-click-updating) make it easy to always have an up to date installation.
 
 Some CMS need many third party add-ons to be fully functional. These add-ons can sometimes create security problems (no maintenance or updates, bugs in the code, etc.). Craft's extensive core feature set reduces the dependency on add-ons and third party solutions, which reduces risks.
 
