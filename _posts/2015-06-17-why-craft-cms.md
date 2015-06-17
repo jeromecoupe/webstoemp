@@ -38,7 +38,7 @@ Craft's capabilities in terms of [localisation](https://buildwithcraft.com/featu
 
 Craft is developed on [Yii](http://www.yiiframework.com/), a PHP framework with an impeccable reputation in terms of internationalisation and localisation.
 
-Craft's control panel is available in 16 different languages already.
+As of this writing, Craft's control panel is available in 18 different languages already.
 
 ## Powerful and flexible
 
