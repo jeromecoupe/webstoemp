@@ -17,7 +17,7 @@ Here are the basic steps:
 
 1. Create an empty array.
 2. Use `craft.entries.ids()` several times to get the IDs of the entries you need to display.
-3. Use Twig's array filters [merge](http://twig.sensiolabs.org/doc/filters/merge.html) and [slice](http://twig.sensiolabs.org/doc/filters/slice.html) to assemble those arrays of ids into a single one using the array we created in step one.
+3. Use Twig's array filters [merge](http://twig.sensiolabs.org/doc/filters/merge.html) and [slice](http://twig.sensiolabs.org/doc/filters/slice.html) to assemble those arrays of ids into a single one using the array we created in step one. Craft's own [without](http://buildwithcraft.com/docs/templating/filters#without) and [intersect](http://buildwithcraft.com/docs/templating/filters#intersect) filters should also be part of your arsenal.
 4. Use `craft.entries.id(myCustomArray).fixedOrder(true).find()` to output exactly the entries you want using your newly created array of entry ids.
 
 Let's go through a few use cases for that pattern.
