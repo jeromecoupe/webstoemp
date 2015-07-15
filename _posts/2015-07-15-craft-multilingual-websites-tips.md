@@ -16,7 +16,7 @@ As I already said [elsewhere]({{ site.url }}/blog/why-craft-cms/), Craft's multi
 
 ## A few config helpers
 
-I personally like to add a few variables to my [general.ph config file](http://buildwithcraft.com/docs/multi-environment-configs) when I am done with the basic multilingual setup.
+I personally like to add a few variables to my [general.php config file](http://buildwithcraft.com/docs/multi-environment-configs) when I am done with the basic multilingual setup.
 
 Since I am usually sharing files between locales (css, images), I like to add a `rootUrl` variable that I can use in my template with `{% raw %}{{ craft.config.rootUrl }}{% endraw %}`. I could also count on the `baseUrl` environmentVariable that I use for asset sources and write `{% raw %}{{ craft.config.environmentVariables['baseUrl'] }}{% endraw %}` but that's a lot longer to type.
 
@@ -149,6 +149,10 @@ Here is an example of the code I use. I've added comments so that it is document
 {% endraw %}
 {% endhighlight %}
 
-These are the tools I have used to build a few multilingual websites. I cannot say enough how much Craft and Twig have made my life easier on those projects.
+This simple language switcher does not take categories into account. If on a blog list page with a category selected, the user would be redirected to that blog list page without any selected categories upon switching language.
+
+To me, that is an acceptable trade-off I'll happily make to keep my template logic simple. I also feel it is a good way to take care of cases where categories might not be available in all languages, for example if no entry is attached to a category in a specific locale.
+
+These are the simple tools I have used to build a few multilingual websites. I cannot say enough how much Craft and Twig have made my life easier on those projects.
 
 Hit me up on Twitter or on Craft Slack if you have a few tips and tricks of your own. I'd love to hear about them.
