@@ -41,8 +41,8 @@ return array(
     'devMode' => true,
     'siteUrl' => array(
         'fr_be' => 'http://mywebsite.dev/',
-        'en'    => 'http://mywebsite/en/',
-        'nl'    => 'http://mywebsite/nl/'
+        'en'    => 'http://mywebsite.dev/en/',
+        'nl'    => 'http://mywebsite.dev/nl/'
     ),
     'rootUrl' => 'http://mywebsite.dev/',
     'currentLgg' => array(
