@@ -18,7 +18,7 @@ As I already said [elsewhere]({{ site.url }}/blog/why-craft-cms/), Craft's multi
 
 I personally like to add a few variables to my [general.ph config file](http://buildwithcraft.com/docs/multi-environment-configs) when I am done with the basic multilingual setup.
 
-Since I am usually sharing files between locales (css, images), I like to add a `rootUrl` variable that I can use in my template with `{% raw %}{{ craft.config.rootUrl }}{% endraw %}`. I could also count on the `baseUrl` environmentVariable that I use for asset sources and write `{% raw %}{{ craft.config.environmentVariables['baseUrl'] }}{% endraw %}` but that's a lot longer.
+Since I am usually sharing files between locales (css, images), I like to add a `rootUrl` variable that I can use in my template with `{% raw %}{{ craft.config.rootUrl }}{% endraw %}`. I could also count on the `baseUrl` environmentVariable that I use for asset sources and write `{% raw %}{{ craft.config.environmentVariables['baseUrl'] }}{% endraw %}` but that's a lot longer to type.
 
 I also like to have a `currentLgg` array with just the language codes in general.php. I use those for my `lang` attributes in my `<html>` tag for example.
 
