@@ -12,7 +12,7 @@ As I already said [elsewhere]({{ site.url }}/blog/why-craft-cms/), Craft's multi
 
 ## Setting Craft up
 
-Pixel&amp;Tonic did a great job of describing the basic steps involved in [setting up a multilingual or localised website using Craft](http://buildwithcraft.com/docs/localization-guide). If you haven't read that guide yet, please do and come back afterwards.
+[Pixel&amp;Tonic](http://pixelandtonic.com/) did a great job of describing the basic steps involved in [setting up a multilingual or localised website using Craft](http://buildwithcraft.com/docs/localization-guide). If you haven't read that guide yet, please do and come back afterwards.
 
 ## A few config helpers
 
