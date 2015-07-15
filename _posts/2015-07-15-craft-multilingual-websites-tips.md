@@ -151,7 +151,7 @@ Here is an example of the code I use. I've added comments so that it is document
 
 This simple language switcher does not take categories into account. If on a blog list page with a category selected, the user would be redirected to that blog list page without any selected categories upon switching language.
 
-To me, that is an acceptable trade-off I'll happily make to keep my template logic simple. I also feel it is a good way to take care of cases where categories might not be available in all languages, for example if no entry is attached to a category in a specific locale.
+That is an acceptable trade-off I'll happily make to keep my template logic simple. I also feel it is a good way to take care of cases where categories might not be available in all languages, for example if no entry is attached to a category in a specific locale.
 
 These are the simple tools I have used to build a few multilingual websites. I cannot say enough how much Craft and Twig have made my life easier on those projects.
 
