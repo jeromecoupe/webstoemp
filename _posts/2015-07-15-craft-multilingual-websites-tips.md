@@ -26,7 +26,7 @@ The locales used by Craft and the [language codes the W3C wants you to use](http
 
 You can then use those variables in your templates like this `{% raw %}<html lang="{{ craft.config.currentLgg[craft.locale] }}">{% endraw %}`
 
-Here is an example of a general.php config file with three locales
+Here is an example of a general.php config file with three locales:
 
 {% highlight php startinline=true %}
 return array(
@@ -113,7 +113,7 @@ Sometimes, the client just wants a link to the homepage if a user chooses anothe
 
 A word on building Craft sites with entries. When building a multilingual website with Craft, it will make your life easier if all your pages are an entry of some kind. A blog detail page would be an entry in a Channel, whereas the blog list page would be a Single. In my opinion, that's the best way to make the most use of Craft's localisation features, make your content providers comfortable and have different URLs / slugs for each language.
 
-Back to our language switcher. If an entry in another locale exists, we want to link to that entry. If we cannot find and entry in a given locale, we will simply redirect the user to the homepage in the chosen locale.
+Back to our language switcher. If an entry in another locale exists, we want to link to that entry. If we cannot find an entry in a given locale, we will simply redirect the user to the homepage in the chosen locale.
 
 Here is an example of the code I use. I've added comments so that it is documented.
 
@@ -149,10 +149,10 @@ Here is an example of the code I use. I've added comments so that it is document
 {% endraw %}
 {% endhighlight %}
 
-This simple language switcher does not take categories into account. If on a blog list page with a category selected, the user would be redirected to that blog list page without any selected categories upon switching language.
+This simple language switcher does not take categories into account. When on the blog list page with a category selected, the user would be redirected to that blog list page without any selected categories upon switching language.
 
 That is an acceptable trade-off I'll happily make to keep my template logic simple. I also feel it is a good way to take care of cases where categories might not be available in all languages, for example if no entry is attached to a category in a specific locale.
 
 These are the simple tools I have used to build a few multilingual websites. I cannot say enough how much Craft and Twig have made my life easier on those projects.
 
-Hit me up on Twitter or on Craft Slack if you have a few tips and tricks of your own. I'd love to hear about them.
+Hit me up on [Twitter](https://twitter.com/jeromecoupe) or on Craft Slack if you have a few tips and tricks of your own. I'd love to hear about them.
