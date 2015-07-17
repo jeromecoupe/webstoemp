@@ -53,13 +53,13 @@ By building your own style guide, you are in control of your codebase and of the
 
 ### Make your own choices and increased collaboration
 
-With an in-house style guide, you can make your own choices and decisions, based on your own business needs or on your team's experience and preferences (investing in your team is never a bad idea, by the way).
+With an in-house style guide, you can make your own choices and decisions, based on your own business needs and on your team's experience and preferences (investing in your team is never a bad idea, by the way).
 
-You need to use different grid breakpoints or you want to use inline-block instead of floats ? You can. Your design calls for a golden-ratio based grid ? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` make no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.  
+You need to use different grid breakpoints or you want to use inline-block instead of floats? You can. Your design calls for a golden-ratio based grid? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` make no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.  
 
 By essence, turnkey UI toolkits are built for the masses, are quite prescriptive and [focus on the how rather than on the why](https://speakerdeck.com/csswizardry/what-is-a-css-framework-anyway). When using them, you have to build around them for maximum efficiency and they are not very well suited to building bespoke codebases.
 
-It might take you some time up front, but building something that is truly tailored to your (business) needs and those of your team will save you some time down the line.
+It might take you some time up front, but building something that is truly tailored to your business needs and those of your team will save you some time down the line.
 
 If you build it in your approach from the get go, building an in-house stye guide is not going to add a lot of overhead to your project. That's just a sane approach to front-end development these days.
 
@@ -69,7 +69,7 @@ In my small experience, developing an internal front-end style guides is also an
 
 Front-end codebases have a tendency to put on weight over time and get more complex while we all strive for them to stay lean, understandable and maintainable.
 
-All UI toolkits have migrated to a pre-processor architecture these days and including only the components you need is a possibility but, again, you have to know someone else's codebase and its dependencies tree quite well to only include what you need. In cases where the toolkit does not quite provide you with what you need, you will have to override certain things or to add your own components that might have to interact with certain elements of the toolkit. That will inevitably translate into a more fragile and less manageable codebase.
+All UI toolkits have migrated to a pre-processor architecture these days and including only the components you need is a possibility but, again, you have to know someone else's codebase and its dependencies tree quite well to only include what you need. In cases where the toolkit does not quite provide you with what you need, you will have to override certain things or to add your own components that might have to interact with certain elements of the toolkit. That will inevitably translate into a more fragile, more bloated and less manageable codebase.
 
 All this can be avoided if you start with the basic tools and components you need and build up the tools and components you need to solve your own problems.
 
