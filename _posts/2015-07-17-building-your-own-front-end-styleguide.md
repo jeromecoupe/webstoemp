@@ -51,9 +51,9 @@ The ability to adapt over time can be business critical. Introducing such a depe
 
 By building your own style guide, you are in control of your codebase and of the dependencies and technologies you chose to use and commit to.
 
-### Make your own choices and increased collaboration
+### Make your own choices
 
-With an in-house style guide, you can make your own choices and decisions, based on your own business needs and on your team's experience and preferences (investing in your team is never a bad idea, by the way).
+With an in-house style guide, you can make your own choices and decisions, based on your own business needs and on your team's experience and preferences.
 
 You need to use different grid breakpoints or you want to use inline-block instead of floats? You can. Your design calls for a golden-ratio based grid? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` make no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.  
 
@@ -63,7 +63,13 @@ It might take you some time up front, but building something that is truly tailo
 
 If you build it in your approach from the get go, building an in-house stye guide is not going to add a lot of overhead to your project. That's just a sane approach to front-end development these days.
 
+### Increase collaboration &amp; buy in
+
 In my small experience, developing an internal front-end style guides is also an opportunity to involve stakeholders and gather people around a table. It's a fantastic communication tool and, used well, it can foster collaboration in your organisation.
+
+If people in charge of design, development, UI/UX, content and business are all involved in the creation of your style guide, you are dramatically increasing its adoption rate compared to using a solution coming from the outside.
+
+A style guide is also an investment in your team, which is always a good idea. Having everybody behind you when trying to get buy-in from the management changes the dynamic of those conversations.
 
 ### Stay lean
 
