@@ -47,17 +47,21 @@ In fact, al least two of the most popular of those UI frameworks began their lif
 
 By using an off the shelf UI toolkit, you are introducing a big dependency and you are agreeing to a lot of choices that were made for you. You are now essentially tied to a codebase you do not fully control. Although [migration](http://getbootstrap.com/migration/) [instructions](http://foundation3.zurb.com/migration.php) [exist](http://foundation.zurb.com/docs/upgrading.html), in my experience, UI toolkits are rarely updated during the lifetime of a project.
 
-The ability to adapt over time can be business critical. Introducing such a dependency might hinder the ability of your codebase to evolve quickly enough. By building your own style guide, you are in control of your codebase and of the dependencies and technologies you chose to use and commit to.
+The ability to adapt over time can be business critical. Introducing such a dependency might hinder the ability of your codebase to evolve quickly enough.
+
+By building your own style guide, you are in control of your codebase and of the dependencies and technologies you chose to use and commit to.
 
 ### Make your own choices and increased collaboration
 
 With an in-house style guide, you can make your own choices and decisions, based on your own business needs or on your team's experience and preferences (investing in your team is never a bad idea, by the way).
 
-You need to use different grid breakpoints or you want to use inline-block instead of floats ? You can. Your design calls for golden-ratio based grids ? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` makes no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.  
+You need to use different grid breakpoints or you want to use inline-block instead of floats ? You can. Your design calls for a golden-ratio based grid ? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` make no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.  
 
 By essence, turnkey UI toolkits are built for the masses, are quite prescriptive and [focus on the how rather than on the why](https://speakerdeck.com/csswizardry/what-is-a-css-framework-anyway). When using them, you have to build around them for maximum efficiency and they are not very well suited to building bespoke codebases.
 
-It might take you some time up front, but building something that is truly tailored to your (business) needs and those of your team will save you some time down the line. If you build it in your approach from the get go, building an in-house stye guide is not going to add a lot of overhead to your project. That's just a sane approach to front-end development these days.
+It might take you some time up front, but building something that is truly tailored to your (business) needs and those of your team will save you some time down the line.
+
+If you build it in your approach from the get go, building an in-house stye guide is not going to add a lot of overhead to your project. That's just a sane approach to front-end development these days.
 
 In my small experience, developing an internal front-end style guides is also an opportunity to involve stakeholders and gather people around a table. It's a fantastic communication tool and, used well, it can foster collaboration in your organisation.
 
@@ -65,12 +69,12 @@ In my small experience, developing an internal front-end style guides is also an
 
 Front-end codebases have a tendency to put on weight over time and get more complex while we all strive for them to stay lean, understandable and maintainable.
 
-All UI toolkits have migrated to a pre-processor architecture these days and including only the components you need is a possibility but, again, you have to know someone else's codebase and its dependencies trees quite well to only include what you need. In cases where the toolkit does not quite provide you with what you need, you will have to override certain things or to add your own components that might have to interact with certain elements of the toolkit. That will inevitably translate into a more fragile and less manageable codebase.
+All UI toolkits have migrated to a pre-processor architecture these days and including only the components you need is a possibility but, again, you have to know someone else's codebase and its dependencies tree quite well to only include what you need. In cases where the toolkit does not quite provide you with what you need, you will have to override certain things or to add your own components that might have to interact with certain elements of the toolkit. That will inevitably translate into a more fragile and less manageable codebase.
 
 All this can be avoided if you start with the basic tools and components you need and build up the tools and components you need to solve your own problems.
 
 ## Famous last words
 
-Let me reiterate again, tools like Bootstrap or Foundation are not evil per se. They make a lot of sense when building quick prototypes and can teach us a lot in terms of documentation, pattern identification and problem solving. In fact, they can even make total sense for small projects or when budgets are tight.
+Let me reiterate once again, tools like Bootstrap or Foundation are not evil per se. They make a lot of sense when building quick prototypes and can teach us a lot in terms of documentation, pattern identification and problem solving. One could even argue they make total sense for small projects or when budgets are tight.
 
-I am just arguing that they might not be the best choices for bespoke projects having specific needs. If you are going to live with a codebase for a while and evolve and grow with it, you are better off rolling your own. Standing on the shoulders of giants here: [Mark D Otto](https://speakerdeck.com/mdo/build-your-own-bootstrap) and "Web Standards Southern Gentleman" [Dave Rupert](http://daverupert.com/2013/04/responsive-deliverables/) are basically saying the same thing.
+My basic argument is that they might not be the best choices for bespoke projects having specific needs. If you are going to live with a codebase for a while and evolve and grow with it, you are better off rolling your own. Standing on the shoulders of giants here: [Mark D Otto](https://speakerdeck.com/mdo/build-your-own-bootstrap) and "Web Standards Southern Gentleman" [Dave Rupert](http://daverupert.com/2013/04/responsive-deliverables/) are basically saying the same thing.
