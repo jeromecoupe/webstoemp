@@ -29,7 +29,7 @@ From a web point of view, the priority was to create an online presence for EQUA
 
 ## Phase two: a fully-fledged website
 
-After a memorable inauguration party, it was time to work on the second incarnation of the EQUAL website, powered by Craft CMS.
+After a memorable inauguration party, it was time to work on the second incarnation of the EQUAL website, powered by [Craft CMS](http://buildwithcraft.com).
 
 The goals were to create a website that would showcase EQUAL's motto: "Law for Better Living". As lawyers, it is crucial for them to be perceived as approachable and in touch with the citizens and their concerns.
 
@@ -39,6 +39,6 @@ The website mainly consists in the following key components, tied together by a 
 - Detail pages presenting EQUAL's areas of expertise
 - Articles written by the team
 
-The website was developed in three languages and, despite its relative complexity, it can easily be managed by the EQUAL team, thanks to the ease of use of Craft's control panel.
+The website was developed in three languages and, despite its relative complexity, can easily be managed by the EQUAL team, thanks to the ease of use of Craft's control panel.
 
 From the various feedback we had since launch, it looks like we succeeded in creating a website reflecting EQUAL's philosophy and ethos. Its was certainly very interesting to work with a group of people believing in their dreams and setting out to build something new.

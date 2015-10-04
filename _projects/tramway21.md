@@ -2,8 +2,8 @@
 title: "Tramway21"
 date: 2015-10-20 00:00:00
 excerpt: "Tramway21 is a communication agency helping brands to create products and services improving people's lives. We worked together to refresh their branding and relaunch their website."
-project_url: http://www.tramway21.be
-project_website: www.tramway21.be
+project_url: http://tramway21.be
+project_website: tramway21.be
 project_tagline: "Communication agency"
 project_year: 2015
 project_thumbnail: tramway21_thumb.jpg
@@ -20,7 +20,7 @@ tags:
 
 ## Objectives
 
-Tramway21 wanted a relatively simple website presenting the agency and its philosophy. They also wanted to be able to showcase in-depth case studies presenting the work they do for their clients.
+[Tramway21](http://tramway21.be) wanted a relatively simple website presenting the agency and its philosophy. They also wanted to be able to showcase in-depth case studies presenting the work they do for their clients.
 
 The website had to be easy to update by non technical people and the design and content had to reflect the fact that the agency has one foot in the analog advertising and marketing world and the other in the digital space.
 
@@ -36,6 +36,6 @@ Collaborating with people having a design sensibility allowed for quick iteratio
 
 The website was also a good opportunity to revisit the branding and the positioning of Tramway21 with the owners, the art director and the project manager.
 
-The CMS development phase was quick, thanks to Craft CMS. A simple Matrix field allows content publishers to quickly create modular tailor-made pages for each case study using a combination of simple content blocks.
+The CMS development phase was quick, thanks to [Craft CMS](http://buildwithcraft.com). A simple Matrix field allows content publishers to quickly create modular tailor-made pages for each case study using a combination of simple content blocks.
 
 We were all very happy with how the project turned out. Tramway21 is currently working on publishing new case studies and has already integrated the website into its sales and pitching process.
