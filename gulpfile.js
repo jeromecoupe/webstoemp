@@ -17,7 +17,6 @@ var gutil					= require('gulp-util');
 var base64				= require('gulp-base64');
 var imagemin			= require('gulp-imagemin');
 var svgstore			= require('gulp-svgstore');
-var shell					= require('gulp-shell');
 var browsersync		= require('browser-sync');
 
 // error function for plumber
@@ -120,19 +119,22 @@ gulp.task('svgsprite', function () {
 });
 
 // Jekyll build
-gulp.task('jekyll', function () {
-	return gulp.src('')
-	.pipe(shell(['jekyll build']))
-	.pipe(browsersync.reload({ stream:true }))
-	.pipe(notify({ message: 'Jekyll task done' }));
+gulp.task('jekyll-build', function (done) {
+  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  .on('close', done);
 })
+
+// Rebuild Jekyll & reload
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browsersync.reload();
+});
 
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
 	gulp.watch('./scss/**/*', ['css']);
 	gulp.watch('./js/modules/**/*', ['jslint', 'scripts']);
 	gulp.watch(['./_posts/**/*','./_projects/**/*'], ['bannerimage']);
-	gulp.watch(['_includes/**/*','_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','index.html'], ['jekyll']);
+	gulp.watch(['_includes/**/*','_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','index.html'], ['jekyll-rebuild']);
 });
 
 // Tasks
