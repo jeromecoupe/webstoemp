@@ -28,7 +28,7 @@ You can then use those variables in your templates like this `{% raw %}<html lan
 
 Here is an example of a general.php config file with three locales:
 
-{% highlight php startinline=true %}
+{% highlight php %}
 return array(
 
   '*' => array(
@@ -85,7 +85,7 @@ For the english version, a date might be "April 1, 2015" where in french it woul
 
 We can easily create a macro that outputs localised dates from a date object. We are simply going to use the `currentLgg` variable we created earlier.
 
-{% highlight jinja %}
+{% highlight twig %}
 {% raw %}
 {% macro localizeDate(date) %}
   {% if craft.config.currentLgg[craft.locale] == 'fr' %}
@@ -99,7 +99,7 @@ We can easily create a macro that outputs localised dates from a date object. We
 
 After importing the macro in our template, we can use it like this:
 
-{% highlight jinja %}
+{% highlight twig %}
 {% raw %}
 <p class="text-meta"><time datetime="{{ item.postDate|date('Y-m-d') }}">{{ siteMacros.localizeDate(item.postDate) }}</time>
 {% endraw %}
@@ -117,7 +117,7 @@ Back to our language switcher. If an entry in another locale exists, we want to 
 
 Here is an example of the code I use. I've added comments so that it is documented.
 
-{% highlight jinja %}
+{% highlight twig %}
 {% raw %}
 {# loop through all site locales #}
 {% for locale in craft.i18n.getSiteLocales() %}

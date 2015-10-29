@@ -3,6 +3,7 @@
 
 # Cache files
 .sass-cache/
+.jekyll-metadata
 
 # Node packages
 node_modules/
