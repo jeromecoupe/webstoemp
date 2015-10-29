@@ -17,6 +17,7 @@ var gutil					= require('gulp-util');
 var base64				= require('gulp-base64');
 var imagemin			= require('gulp-imagemin');
 var svgstore			= require('gulp-svgstore');
+var cp			      = require('child_process');
 var browsersync		= require('browser-sync');
 
 // error function for plumber
@@ -138,6 +139,6 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 // Tasks
-gulp.task('default', ['css', 'jslint', 'scripts', 'bannerimage', 'jekyll']);
+gulp.task('default', ['css', 'jslint', 'scripts', 'bannerimage', 'jekyll-rebuild']);
 gulp.task('images', ['img']);
 gulp.task('svg', ['svgsprite']);
