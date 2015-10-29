@@ -4,7 +4,7 @@ html_description: "The blog and portfolio of Jérôme Coupé, a web designer fro
 # Build settings
 url: "http://www.webstoemp.com"
 exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
-highlighter: rouge
+highlighter: pygments
 markdown: kramdown
 kramdown:
   input: GFM
