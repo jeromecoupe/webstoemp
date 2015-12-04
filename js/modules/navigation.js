@@ -25,7 +25,7 @@ var myNavigation = (function () {
       //hide menu
       apollo.addClass(menu, 'js-is-hidden');
 
-      //bin actions
+      //bind actions
       bindActions();
     }
 
