@@ -42,18 +42,18 @@ We want our Sass to generate the following classes for us:
 {% highlight scss %}
 .grid
 {
-  list-style: none; // works with lists too
-  margin: 0;        // works with lists too
-  padding: 0;       // works with lists too
-  padding-left: -30px;  // clear gutters
+  list-style: none;    // works with lists too
+  margin: 0;           // works with lists too
+  padding: 0;          // works with lists too
+  margin-left: -30px;  // clear gutters
 }
 
 .grid__unit
 {
-  box-sizing: border-box;
-  width: 100%;
   display: inline-block;
   vertical-align: top;
+  box-sizing: border-box;
+  width: 100%;
   padding-left: 30px;  // create gutters
 }
 
@@ -123,7 +123,7 @@ So in our HTML, provided we have defined a medium breakpoint, we could just writ
 
 ### Our variables
 
-Let's start by creating the variables we need to define the characteristics of our grid. The `!default` flag is used so that we can override those in a `_variables.scss` files down the line if needs be.
+Let's start by creating the variables we need to define the characteristics of our grid. The `!default` flag is used so that we can override those in a `_variables.scss` files down the line if needs be. We'll also go ahead and create the base CSS rules we need for `.grid` and `.grid__unit`.
 
 {% highlight scss %}
 // grid variables
@@ -145,6 +145,24 @@ $grid-breakpoints: (
     query: "(min-width: 71.25em)",
   )
 ) !default;
+
+.grid
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: ($grid-gutter * -1);
+}
+
+.grid__unit
+{
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-left: $grid-gutter;
+  width: 100%;
+}
+
 {% endhighlight %}
 
 We then go ahead and tell Sass to create our base grid classes with a simple `for` loop. No namespacing and no media-queries involved so far.
@@ -169,6 +187,23 @@ $grid-breakpoints: (
     query: "(min-width: 71.25em)",
   )
 ) !default;
+
+.grid
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: ($grid-gutter * -1);
+}
+
+.grid__unit
+{
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-left: $grid-gutter;
+  width: 100%;
+}
 
 // create base grid classes
 @for $i from 1 through $grid-units
@@ -202,6 +237,23 @@ $grid-breakpoints: (
     query: "(min-width: 71.25em)",
   )
 ) !default;
+
+.grid
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: ($grid-gutter * -1);
+}
+
+.grid__unit
+{
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-left: $grid-gutter;
+  width: 100%;
+}
 
 // create base grid classes
 @for $i from 1 through $grid-units
