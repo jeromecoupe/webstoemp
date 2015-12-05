@@ -20,7 +20,7 @@ Fortunately, with tools like Sass, developing your own grid system has become ea
 
 ## A few bias on grids
 
-As far as grids go, I'd like to get a few of my own personal grid-related bias out of the way first.
+As far as grids go, I'd like to get a few of my own personal bias out of the way first.
 
 1. I like nestable fluid grids with fixed gutters. Enough said.
 2. I am more comfortable with proportional grids where classes like `.grid__unit--3of10` means *"span [proportion] of your parent's width"*. I find those types of grids more suitable to responsive mobile first projects. You guessed it, I also happen to like BEM-inspired naming conventions.
