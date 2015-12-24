@@ -1,7 +1,6 @@
 ---
 title: "My default Gulp setup for build automation"
 excerpt: "I have switched from Grunt to Gulp to handle my build process. I love its simple syntax and the fact that you can easily use your JavaScript chops to simplify your life as a front-end developer."
-publication_year: 2014
 categories:
 - Tooling
 tags:

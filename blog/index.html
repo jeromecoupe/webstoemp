@@ -28,36 +28,39 @@ current_nav: blog
 
     <div class="maincontent__primary  grid__unit  medium-span-9of12">
 
-      {% assign postsByYear = site.posts | group_by:"publication_year" %}
-
-      {% for postsInYear in postsByYear %}
+      {% assign allPosts = site.posts %}
+      {% for item in allPosts %}
 
         {% if forloop.first %}<ul class="yearlyarchive">{% endif %}
 
-        <li class="yearlyarchive__year">
+          {% assign currentYear = item.date | date: "%Y" %}
 
-          <h2 class="yearlyarchive__title">{{ postsInYear.name }}</h2>
+          {% if currentYear != postYear %}
 
-            {% for item in postsInYear.items %}
+            {% unless forloop.first %}</li></ul>{% endunless %}
 
-              {% if forloop.first %}<ul class="yearlyarchive__list">{% endif %}
+            <li class="yearlyarchive__year">
+              <h2 class="yearlyarchive__title">{{ currentYear }}</h2>
+              <ul class="yearlyarchive__list">
 
-                <li class="yearlyarchive__item">
-                  <article>
-                    <p class="item-info"><time datetime="{{ item.date|date:'%Y-%m-%d' }}">{{ item.date|date:"%B %-d, %Y" }}</time></p>
-                    <h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
-                    <p>{{ item.excerpt }}</p>
-                    <p><a href="{{ item.url }}" class="more">Read More</a></p>
-                  </article>
-                </li>
+          {% endif %}
 
-              {% if forloop.last %}</ul>{% endif %}
+            <li class="yearlyarchive__item">
+              <article>
+                <p class="item-info"><time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%B %-d, %Y" }}</time></p>
+                <h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+                <p>{{ item.excerpt }}</p>
+                <p><a href="{{ item.url }}" class="more">Read More</a></p>
+              </article>
+            </li>
 
-            {% endfor %}
-
-        </li>
+          {% assign postYear = currentYear %}
 
         {% if forloop.last %}</ul>{% endif %}
+
+      {% else %}
+
+        <p>Sorry, no blogpost found</p>
 
       {% endfor %}
 

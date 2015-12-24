@@ -1,7 +1,6 @@
 ---
 title: "Going freelance while teaching"
 excerpt: "I have been teaching front-end developement for the last 7 years. Last year I was offically appointed as a part time teacher and have decided to go back to freelancing for the other half of my working life."
-publication_year: 2014
 categories:
 - Teaching
 - Life

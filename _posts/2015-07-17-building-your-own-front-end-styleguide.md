@@ -1,7 +1,6 @@
 ---
 title: "Benefits of building your own front-end style guide"
 excerpt: "In a world where you can download popular UI toolkits like Bootstrap or Foundation, what are the benefits of building your own front-end style guide, tailor-made to your needs?"
-publication_year: 2015
 categories:
 - Front-end
 tags:
