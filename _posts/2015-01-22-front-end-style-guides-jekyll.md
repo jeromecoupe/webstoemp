@@ -2,8 +2,9 @@
 title: "Front-end style guides with Jekyll"
 excerpt: "Style guides are a great tool to present responsive design systems. More often than not, I use Jekyll to produce HTML/CSS/JS prototypes these days. Here is my current approach to quickly create style guides for clients with Jekyll."
 categories:
-- Jekyll
+- Front end
 tags:
+- Jekyll
 - Style Guides
 - Liquid
 ---

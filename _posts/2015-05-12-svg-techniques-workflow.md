@@ -2,7 +2,7 @@
 title: "My current SVG techniques and workflow"
 excerpt: "SVG is certainly the new hotness to get to grips with in the front-end world. Here are various use cases I encountered and the techniques and workflow I use with SVG today."
 categories:
-- Front-end
+- Front end
 tags:
 - SVG
 ---

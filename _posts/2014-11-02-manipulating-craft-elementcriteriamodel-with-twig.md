@@ -2,8 +2,9 @@
 title: "Manipulating Craft's ElementCriteriaModel objects with Twig"
 excerpt: "Using Twig to manipulate Craft's ElementCriteriaModel objects makes for leaner and meaner templates. Relatively complex functionalities can also be built pretty easily."
 categories:
-- Craft
+- CMS
 tags:
+- Craft
 - ElementCriteriaModel
 - Twig
 ---

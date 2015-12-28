@@ -3,8 +3,9 @@ title: "Why Craft?"
 excerpt: "\"Why Craft?\" is a question I have to answer often in sales pitches or in the proposals I write. So often, in fact, that I thought a quick blogpost about it might be in order."
 categories:
 - Business
-- Craft
+- CMS
 tags:
+- Craft
 - Freelancing
 ---
 

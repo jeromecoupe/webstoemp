@@ -2,11 +2,11 @@
 title: "Building a simple grid system with Sass"
 excerpt: "Grid systems are great. With the help of Sass, it is now relatively trivial to build your own, tailor-made to the needs of your project and free of the cruft coming with one size fits all systems."
 categories:
-- Front-end
+- Front end
 tags:
 - grids
-- sass
-- css
+- Sass
+- CSS
 ---
 
 When building a website, being able to rely on a grid system allows for faster development and more consistency: grids are good.
