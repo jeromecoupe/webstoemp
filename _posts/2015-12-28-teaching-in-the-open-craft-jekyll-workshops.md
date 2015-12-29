@@ -27,7 +27,7 @@ The last reason is also why I have decided to translate some of my workshops in 
 
 On top of my fixed curriculum, I have a series of one day workshops that I am in charge of and for which I can pretty much choose what I want to cover. Some of the topics come and go but, over the course of two years, Craft and Jekyll have been quite in demand and have earned their slots as "technologies in which 22 years old geekettes and geeks are interested in".
 
-The teaching material for these two workshops is available on Github in French and English. I'll do my best to keep these courses up to date with the subsequent versions of these two softwares. If this experiment proves successful, I'll translate and other workshops on various themes and will make them available as well throughout 2016.
+The teaching material for these two workshops is available on Github in French and English. I'll do my best to keep these courses up to date with the subsequent versions of these two softwares. If this experiment proves successful, I'll probably go ahead and translate other workshops covering various themes throughout 2016.
 
 - [Introduction to Craft CMS](https://github.com/jeromecoupe/iad_craftcms_introduction)
 - [Introduction to Jekyll](https://github.com/jeromecoupe/iad_jekyll_introduction)
