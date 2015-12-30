@@ -67,10 +67,10 @@ gulp.task('critical', function (cb) {
   critical.generate({
     base: './',
     inline: false,
-    src: ['_site/index.html'],
-    dest: '_includes/home-critical.css',
+    src: '_site/index.html',
+    dest: '_includes/critical.css',
     minify: true,
-    height: 600
+    height: 1000
   });
 });
 
@@ -139,7 +139,7 @@ gulp.task('jekyll-build', function (done) {
 })
 
 // Rebuild Jekyll & reload
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build', 'critical'], function () {
     browsersync.reload();
 });
 
