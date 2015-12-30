@@ -39,28 +39,9 @@
   margin:0;
   padding:0;
 
-  & > a
+  & svg
   {
-    display:block;
-    width:122px;
-    height:16px;
-    padding:.7em 0;
-    @extend %hidecontent;
-    background-position:0 50%;
-    background-repeat:no-repeat;
-    background-image:url(../img/logo_web.svg);
-
-    transition:opacity .1s linear;
-
-    .no-svg &
-    {
-      background-image:url(../img/logo_web.png);
-    }
-
-    &:hover
-    {
-      opacity:.7;
-    }
+    display: block;
   }
 }
 
@@ -89,25 +70,16 @@
   float:right;
   margin:0;
   padding:0;
-  width:37px;
-  height:37px;
+
+  @include mq(small)
+  {
+    display:none;
+  }
 
   & > a
   {
-    display:block;
-    @extend %hidecontent;
-    width:100%;
-    height:100%;
-    background-position:50% 50%;
-    background-repeat:no-repeat;
-    background-image:url(../img/btn_nav.svg);
-
-    transition:opacity .1s linear;
-
-    .no-svg &
-    {
-      background-image:url(../img/btn_nav.png);
-    }
+    display: block;
+    transition: opacity 0.2s ease-in-out;
 
     &:hover
     {
@@ -115,9 +87,9 @@
     }
   }
 
-  @include mq(small)
+  & svg
   {
-    display:none;
+    display: block;
   }
 }
 
