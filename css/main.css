@@ -1897,8 +1897,11 @@ code {
 **/
 .logo {
   float: left;
-  margin: 0;
+  margin: 0.2em 0 0;
   padding: 0; }
+  @media all and (min-width: 37.5em) {
+    .logo {
+      margin-top: 0.55em; } }
   .logo svg {
     display: block; }
 
