@@ -8,6 +8,11 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.html_description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Modernizr and Picturefill -->
+    <script src="/js/vendors/modernizr.min.js"></script>
+    <script src="/js/vendors/picturefill.min.js" async></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/main.min.css">
 
     <!-- RSS Feed -->
@@ -44,10 +49,6 @@
       {{ content }}
 
     {% include footer.html %}
-
-    <!-- Modernizr and Picturefill -->
-    <script src="/js/vendors/modernizr.min.js" async></script>
-    <script src="/js/vendors/picturefill.min.js" async></script>
 
     <!-- all other scripts minified and concatenated -->
     <script src="/js/webstoemp.min.js" async></script>
