@@ -8,11 +8,7 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.html_description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-      {% include critical.css %}
-    </style>
-
-    <noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
+    <link rel="stylesheet" href="/css/main.min.css">
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Webstoemp Blog">
@@ -48,19 +44,6 @@
       {{ content }}
 
     {% include footer.html %}
-
-    <!-- CSS -->
-    <script>
-      var cb = function() {
-        var l = document.createElement('link'); l.rel = 'stylesheet';
-        l.href = '/css/main.min.css';
-        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-      };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(cb);
-      else window.addEventListener('load', cb);
-    </script>
 
     <!-- Modernizr and Picturefill -->
     <script src="/js/vendors/modernizr.min.js" async></script>

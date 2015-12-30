@@ -17,7 +17,6 @@ var gutil         = require('gulp-util');
 var base64        = require('gulp-base64');
 var imagemin      = require('gulp-imagemin');
 var svgstore      = require('gulp-svgstore');
-var critical      = require('critical');
 var cp            = require('child_process');
 var browsersync   = require('browser-sync');
 
@@ -60,18 +59,6 @@ gulp.task('img', function() {
   }))
   .pipe(gulp.dest('./img/'))
   .pipe(notify({ message: 'Images task done' }));
-});
-
-// Critical CSS
-gulp.task('critical', function (cb) {
-  critical.generate({
-    base: './',
-    inline: false,
-    src: '_site/index.html',
-    dest: '_includes/critical.css',
-    minify: true,
-    height: 1000
-  });
 });
 
 // CSS task
@@ -139,7 +126,7 @@ gulp.task('jekyll-build', function (done) {
 })
 
 // Rebuild Jekyll & reload
-gulp.task('jekyll-rebuild', ['jekyll-build', 'critical'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browsersync.reload();
 });
 
