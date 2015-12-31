@@ -2130,7 +2130,7 @@ code {
   font-family: "jaf-bernina-sans", Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1.1;
-  color: yellow; }
+  color: #fff; }
   @media all and (min-width: 47.5em) {
     .banner-title {
       font-size: 36px;
