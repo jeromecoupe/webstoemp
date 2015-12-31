@@ -1974,8 +1974,6 @@ code {
   background-repeat: no-repeat;
   background-image: url(../img/bkg_mainnav_mobile.svg);
   transition: all .1s linear; }
-  .no-svg .mainnav__item > a {
-    background-image: url(../img/bkg_mainnav_mobile.png); }
   .mainnav__item > a:hover {
     text-decoration: none;
     color: #b3b3b3; }
@@ -1984,9 +1982,7 @@ code {
       display: inline-block;
       padding: .85em .75em;
       border: none;
-      background: none; }
-      .no-svg .mainnav__item > a {
-        background: none; } }
+      background: none; } }
 
 .mainnav__item--current > a,
 .mainnav__item--current > a:hover {
@@ -2043,18 +2039,11 @@ code {
 @media all and (max-width: 37.49em) {
   .mainnav {
     overflow: hidden;
-    transition: all .5s ease; }
+    transition: max-height .5s ease; }
   .mainnav.js-is-hidden {
     max-height: 0; }
   .mainnav.js-is-visible {
-    max-height: 14em; } }
-
-/*
- * if no JS support, nav visible always
- *
-**/
-.no-js .mainnav {
-  max-height: 14em; }
+    max-height: 16em; } }
 
 /*------------------------------------*=banner
 \*------------------------------------*/
@@ -2141,7 +2130,7 @@ code {
   font-family: "jaf-bernina-sans", Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1.1;
-  color: #fff; }
+  color: yellow; }
   @media all and (min-width: 47.5em) {
     .banner-title {
       font-size: 36px;
@@ -2571,8 +2560,6 @@ form {
   background-repeat: no-repeat;
   color: #fff;
   opacity: 0; }
-  .no-svg .project__overlay {
-    background-image: url(../img/icon_more_overlay.png); }
 
 .project__title {
   text-align: center;

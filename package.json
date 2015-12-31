@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "browser-sync": "2.10.x",
+    "critical": "^0.7.0",
     "gulp": "3.9.x",
     "gulp-autoprefixer": "3.1.x",
     "gulp-base64": "0.1.x",

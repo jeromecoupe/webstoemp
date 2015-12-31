@@ -17,6 +17,7 @@ var gutil         = require('gulp-util');
 var base64        = require('gulp-base64');
 var imagemin      = require('gulp-imagemin');
 var svgstore      = require('gulp-svgstore');
+var critical      = require('critical');
 var cp            = require('child_process');
 var browsersync   = require('browser-sync');
 
@@ -119,26 +120,38 @@ gulp.task('svgsprite', function () {
   .pipe(notify({ message: 'SVG sprite created' }));
 });
 
-// Jekyll build
-gulp.task('jekyll-build', function (done) {
+// Jekyll
+gulp.task('jekyll-build', ['critical'], function (done) {
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
-})
+});
 
 // Rebuild Jekyll & reload
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browsersync.reload();
+  browsersync.reload();
+});
+
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+  critical.generate({
+    inline: false,
+    base: './_site/',
+    src: 'index.html',
+    css: 'css/main.min.css',
+    dest: '_includes/critical.css',
+    minify: true,
+    width: 1300,
+    height: 900
+  });
 });
 
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
   gulp.watch('./scss/**/*', ['css']);
   gulp.watch('./js/modules/**/*', ['scripts']);
-  gulp.watch(['./_posts/**/*','./_projects/**/*'], ['bannerimage']);
-  gulp.watch(['_includes/**/*','_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','index.html'], ['jekyll-rebuild']);
+  gulp.watch(['./_includes/**/*','!./_includes/critical.css','./_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','./index.html'], ['jekyll-rebuild']);
 });
 
 // Tasks
-gulp.task('default', ['css', 'jslint', 'scripts', 'bannerimage', 'jekyll-rebuild']);
-gulp.task('images', ['img']);
+gulp.task('default', ['css', 'scripts', 'jekyll-rebuild']);
 gulp.task('svg', ['svgsprite']);

@@ -163,11 +163,6 @@
       background-repeat:no-repeat;
       background-image:url(../img/bkg_mainnav_mobile.svg);
 
-      .no-svg &
-      {
-        background-image:url(../img/bkg_mainnav_mobile.png);
-      }
-
       transition:all .1s linear;
 
       &:hover
@@ -182,11 +177,6 @@
         padding:.85em .75em;
         border:none; //override
         background:none; //override
-
-        .no-svg &
-        {
-          background:none; //override
-        }
       }
     }
 
@@ -278,7 +268,7 @@
   .mainnav
   {
     overflow:hidden;
-    transition:all .5s ease;
+    transition:max-height .5s ease;
   }
 
   .mainnav.js-is-hidden
@@ -288,19 +278,8 @@
 
   .mainnav.js-is-visible
   {
-    max-height:14em; //must equal at least the height of the menu
+    max-height:16em; //must equal at least the height of the menu
   }
-}
-
-
-/*
- * if no JS support, nav visible always
- *
-**/
-
-.no-js .mainnav
-{
-  max-height:14em; //must equal at least the height of the menu
 }
 
 
@@ -362,7 +341,7 @@
     font-family:$fontstack-main;
     font-weight:700;
     line-height:1.1;
-    color:#fff;
+    color:yellow;
 
     @include mq(medium)
     {
