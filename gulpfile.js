@@ -141,7 +141,7 @@ gulp.task('critical', function () {
     dest: '_includes/critical.css',
     minify: true,
     width: 1300,
-    height: 900
+    height: 1300
   });
 });
 
