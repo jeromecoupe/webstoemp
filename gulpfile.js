@@ -17,7 +17,6 @@ var gutil         = require('gulp-util');
 var base64        = require('gulp-base64');
 var imagemin      = require('gulp-imagemin');
 var svgstore      = require('gulp-svgstore');
-var critical      = require('critical');
 var cp            = require('child_process');
 var browsersync   = require('browser-sync');
 
@@ -59,7 +58,6 @@ gulp.task('img', function() {
     svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
   }))
   .pipe(gulp.dest('./img/'))
-  .pipe(notify({ message: 'Images task done' }));
 });
 
 // CSS task
@@ -121,7 +119,7 @@ gulp.task('svgsprite', function () {
 });
 
 // Jekyll
-gulp.task('jekyll-build', ['critical'], function (done) {
+gulp.task('jekyll-build', function (done) {
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
 });
@@ -131,27 +129,14 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
   browsersync.reload();
 });
 
-// Generate & Inline Critical-path CSS
-gulp.task('critical', function () {
-  critical.generate({
-    inline: false,
-    base: './_site/',
-    src: 'index.html',
-    css: 'css/main.min.css',
-    dest: '_includes/critical.css',
-    minify: true,
-    width: 1300,
-    height: 1300
-  });
-});
-
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
   gulp.watch('./scss/**/*', ['css']);
   gulp.watch('./js/modules/**/*', ['scripts']);
-  gulp.watch(['./_includes/**/*','!./_includes/critical.css','./_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','./index.html'], ['jekyll-rebuild']);
+  gulp.watch(['./_includes/**/*','./_layouts/**/*','./_posts/**/*','./_projects/**/*','./about/**/*','./blog/**/*','./contact/**/*','./work/**/*','./index.html'], ['jekyll-rebuild']);
 });
 
 // Tasks
 gulp.task('default', ['css', 'scripts', 'jekyll-rebuild']);
 gulp.task('svg', ['svgsprite']);
+gulp.task('images', ['img']);
