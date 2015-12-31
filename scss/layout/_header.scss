@@ -268,6 +268,7 @@
   .mainnav
   {
     overflow:hidden;
+    display: none;
     transition:max-height .5s ease;
   }
 
@@ -278,7 +279,8 @@
 
   .mainnav.js-is-visible
   {
-    max-height:16em; //must equal at least the height of the menu
+    display: block;
+    max-height: 16em; //must equal at least the height of the menu
   }
 }
 

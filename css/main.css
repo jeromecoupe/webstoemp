@@ -2039,10 +2039,12 @@ code {
 @media all and (max-width: 37.49em) {
   .mainnav {
     overflow: hidden;
+    display: none;
     transition: max-height .5s ease; }
   .mainnav.js-is-hidden {
     max-height: 0; }
   .mainnav.js-is-visible {
+    display: block;
     max-height: 16em; } }
 
 /*------------------------------------*=banner
