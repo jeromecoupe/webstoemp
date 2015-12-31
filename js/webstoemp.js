@@ -107,10 +107,10 @@ var myNavigation = (function () {
       // set vars
       menuLink = document.querySelector('.js-mainnav-compact > a');
       menu = document.querySelector('.js-mainnav');
-      menuState = 'closed';
 
       //hide menu
       apollo.addClass(menu, 'js-is-hidden');
+      menuState = 'closed';
 
       //bind actions
       bindActions();
@@ -123,28 +123,28 @@ var myNavigation = (function () {
 
     menuLink.addEventListener('click', function(e) {
 
-      toggleMenu(menuState);
+      toggleMenu();
       e.preventDefault();
-      //console.log(menuState);
 
     }, false);
 
   };
 
   //toggle menu
-  var toggleMenu = function(state) {
+  var toggleMenu = function() {
 
     //swap classes
-    if (state === 'closed' ){
+    if (menuState === 'closed' ){
       apollo.removeClass(menu, 'js-is-hidden');
       apollo.addClass(menu, 'js-is-visible');
+      menuState = 'open';
     } else {
       apollo.removeClass(menu, 'js-is-visible');
       apollo.addClass(menu, 'js-is-hidden');
+      menuState = 'closed';
     }
 
-    // toggle menu state
-    menuState = (state === 'closed') ? 'open' : 'closed';
+    console.log(menuState);
 
   };
 

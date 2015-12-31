@@ -267,13 +267,14 @@
 {
   .mainnav
   {
-    overflow:hidden;
     display: none;
-    transition:max-height .5s ease;
+    overflow:hidden;
+    transition: max-height .5s ease-in-out;
   }
 
   .mainnav.js-is-hidden
   {
+    display: block;
     max-height:0;
   }
 
