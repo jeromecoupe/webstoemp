@@ -21,6 +21,6 @@ Meeting the locals, paying the Moais and the Ranu Raraku crater a visit has been
 
 Rapa Nui is roughly 4000 kilometers away from the coasts of Chile, a country we already fell in love with. On our way back to Belgium, we will also spend a couple of weeks hiking in the mountains lying between Santiago and the Argentinian border to enjoy the beautiful landscapes of the area.
 
-I am really looking forward to the Chilean part of the trip too. Among other things, I have very fond memories of the Bellavista neighbourhood in Santiago and of the delicious "Machas a la Parmigiana" you can have near the Mercado Central.
+I am really looking forward to the Chilean part of the trip too. Among other things, I have very fond memories of the Bellavista neighbourhood in Santiago and of the delicious "Machas a la Parmegiana" you can have near the Mercado Central.
 
 Only a couple of weeks to go now ...
