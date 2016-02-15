@@ -9,7 +9,7 @@ html_description: "The blog and portfolio of Jérôme Coupé, a web designer fro
 
 # Build settings
 exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
