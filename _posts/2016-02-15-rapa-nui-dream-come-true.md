@@ -11,7 +11,7 @@ tags:
 
 ## An opportunity like no other
 
-One of my Uncle is an archeologist. He specialises in megaliths and all kind of old stones and has been participating in regular archeology campaigns studying the Moais of [Rapa Nui](https://en.wikipedia.org/wiki/Easter_Island) (Easter Island) for more than ten years. About nine months ago, he came over for diner and told us he would be going again for a new mission in 2016.
+One of my uncles is an archeologist. He specialises in megaliths and all kind of old stones and has been participating in regular archeology campaigns studying the Moais of [Rapa Nui](https://en.wikipedia.org/wiki/Easter_Island) (Easter Island) for more than ten years. About nine months ago, he came over for diner and told us he would be going again for a new mission in 2016.
 
 After emptying a first bottle of wine together, we decided we would join him and spend a couple of weeks with him on the island, where he could show us around and make the trip really worth the while.
 
