@@ -178,7 +178,7 @@ When this is ready, we will have a modular query object with various parameters 
 {% endraw %}
 {% endhighlight %}
 
-## Taking take of pagination
+## Taking care of pagination
 
 Since this is a paginated list, we need to take care of the pagination interface so that our query parameters are also available in the pagination URLs built by Craft. In order to do that, we will simply use `craft.request` again, and specifically `getQueryStringWithoutPath()`.
 
