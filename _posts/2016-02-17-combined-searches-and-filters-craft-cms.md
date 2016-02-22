@@ -30,7 +30,7 @@ The first step is to build the form. Here are the four pieces we need:
 3. a dropdown of all the blogpost topics containing at least one entry
 4. a search field to allow for free text search on entries' titles
 
-Our form will generate three parameters in a query string: `year`, `theme`, `topic` and `q`. We will then be able to use those parameters to build our Craft query.
+Our form will generate four parameters in a query string: `year`, `theme`, `topic` and `q`. We will then be able to use those parameters to build our Craft query.
 
 ```html
 {% raw %}<form action="{{ url('blog/') }}" method="get">
@@ -71,7 +71,7 @@ Our form will generate three parameters in a query string: `year`, `theme`, `top
     {% if loop.first %}<select name="theme">{% endif %}
       {% if loop.first %}<option value="">Choose a theme</option>{% endif %}
 
-      {# if already a 'theme' parameter in the URL, select the corresponding year #}
+      {# if already a 'theme' parameter in the URL, select the corresponding theme category in the dropdown #}
       {% set themeCategory = craft.request.getParam('theme') %}
       {% set themeActive = (themeCategory == category.slug) ? 'selected' : '' %}
       <option value="{{ category.slug }}" {{ themeActive }}>{{ category.title }}</option>
@@ -85,7 +85,7 @@ Our form will generate three parameters in a query string: `year`, `theme`, `top
     {% if loop.first %}<select name="topic">{% endif %}
       {% if loop.first %}<option value="">Choose a topic</option>{% endif %}
 
-      {# if already a 'topics' parameter in the URL, select the corresponding year #}
+      {# if already a 'topics' parameter in the URL, select the corresponding topic category in the dropdown #}
       {% set topicCategory = craft.request.getParam('topic') %}
       {% set topicActive = (topicCategory == category.slug) ? 'selected' : '' %}
       <option value="{{ category.slug }}" {{ topicActive }}>{{ category.title }}</option>
