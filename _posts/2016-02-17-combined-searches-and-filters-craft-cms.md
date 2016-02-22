@@ -15,25 +15,25 @@ Let's get coding.
 
 ## Setting the stage
 
-We start with a classic paginated list of blogposts. Our hypothetical client wants us to create a series of filters (year of publication, blogpost type category) and a search box that should allow users to filter blogposts on the list page.
+We start with a classic paginated list of blogposts. Our hypothetical client wants us to create a series of filters (year of publication, blogpost type category, blogpost topic category) and a search box that should allow users to filter blogposts on the list page.
 
-Here is the twist: those filters and the search should allow the users to perform cumulative searches and filtering. For example, users should be able to only display the posts published in 2015 *and* belonging to the "geek stuff" category *and* containing the words "Brad" in their titles.
+Here is the twist: those filters and the search should allow the users to perform cumulative searches and filtering. For example, users should be able to only display the posts published in 2015 *and* belonging to the "geek stuff" theme *and* belonging to the "cms" topic *and* containing the word "Brad" in their titles.
 
 Of course, the list should remain properly paginated whatever the query.
 
 ## Building the form
 
-The first step is to build the form. Here are the three pieces we need:
+The first step is to build the form. Here are the four pieces we need:
 
 1. a dropdown of all the years during which at least one entry was published
-2. a dropdown of all the blogpost categories containing at least one entry
-3. a search field to allow for free text search on entries' titles
+2. a dropdown of all the blogpost themes containing at least one entry
+3. a dropdown of all the blogpost topics containing at least one entry
+4. a search field to allow for free text search on entries' titles
 
-Our form will generate three parameters in a query string: `year`, `category` and `q`. We will then be able to use those parameters to build our Craft query.
+Our form will generate three parameters in a query string: `year`, `theme`, `topic` and `q`. We will then be able to use those parameters to build our Craft query.
 
-{% highlight html %}
-{% raw %}
-<form action="{{ url('blog/') }}" method="get">
+```html
+{% raw %}<form action="{{ url('blog/') }}" method="get">
 
   {# years
   - get first entry ever and grab year
@@ -62,16 +62,32 @@ Our form will generate three parameters in a query string: `year`, `category` an
     {% if loop.last %}</select>{% endif %}
   {% endfor %}
 
-  {# categories #}
-  {% set blogCategories = craft.categories.group('themes').find() %}
-  {% for category in blogCategories %}
-    {% if loop.first %}<select name="category">{% endif %}
-    {% if loop.first %}<option value="">Choose a theme</option>{% endif %}
+  {# themes #}
+  {% set blogAllEntries = craft.entries.section('blog').limit(null).find() %}
+  {% set blogThemes = craft.categories.group('themes').relatedTo(blogAllEntries).find() %}
+  {% for category in blogThemes %}
+    {% if loop.first %}<select name="theme">{% endif %}
+      {% if loop.first %}<option value="">Choose a theme</option>{% endif %}
 
-      {# if already a 'category' parameter in the URL, select the corresponding year #}
-      {% set searchCategory = craft.request.getParam('category') %}
-      {% set categoryActive = (searchCategory == category.slug) ? 'selected' : '' %}
-      <option value="{{ category.slug }}" {{ categoryActive }}>{{ category.title }}</option>
+      {# if already a 'theme' parameter in the URL, select the corresponding theme #}
+      {% set themeCategory = craft.request.getParam('theme') %}
+      {% set themeActive = (themeCategory == category.slug) ? 'selected' : '' %}
+      <option value="{{ category.slug }}" {{ themeActive }}>{{ category.title }}</option>
+
+    {% if loop.last %}</select>{% endif %}
+  {% endfor %}
+
+  {# topics #}
+  {% set blogAllEntries = craft.entries.section('blog').limit(null).find() %}
+  {% set blogTopics = craft.categories.group('topics').relatedTo(blogAllEntries).find() %}
+  {% for category in blogTopics %}
+    {% if loop.first %}<select name="topic">{% endif %}
+      {% if loop.first %}<option value="">Choose a topic</option>{% endif %}
+
+      {# if already a 'topics' parameter in the URL, select the corresponding topic #}
+      {% set topicCategory = craft.request.getParam('topic') %}
+      {% set topicActive = (topicCategory == category.slug) ? 'selected' : '' %}
+      <option value="{{ category.slug }}" {{ topicActive }}>{{ category.title }}</option>
 
     {% if loop.last %}</select>{% endif %}
   {% endfor %}
@@ -80,24 +96,23 @@ Our form will generate three parameters in a query string: `year`, `category` an
   <input type="search" name="q">
   <input type="submit" value="search">
 
-</form>
-{% endraw %}
-{% endhighlight %}
+</form>{% endraw %}
+```
 
-When that form gets submitted, we now have a query string at the end of our URL that has the following format:  `/blog?year=&category=&q=`.
+When that form gets submitted, we now have a query string at the end of our URL that has the following format:  `/blog?year=&theme=&topic=&q=`.
 
 These parameters might not be the prettiest in our URLs but at least users are able to bookmark searches and are not asked to resend data when they reload a page. This method would work with POST data, but the pagination part will be harder to pull off. Sure, you can resort to AJAX for it, at which point a full-blown JSON / [Vue.js](http://vuejs.org) solution is likely a better option.
 
 ## Retrieving form data & building modular queries
 
-The next step is to use `craft.request` to grab those parameters from the URL and use these to create our custom modular query. To build it, we will make use of the fact that the `craft.entries` tag can be fed an object. As it happens, Twig can handle objects and manipulate them using the `merge` filter.
+The next step is to use `craft.request` to grab those parameters from the URL and use these to create our custom modular query. To build it, we will make use of the fact that the `craft.entries` tag can be fed an object. As it happens, Twig can handle objects and arrays and manipulate them using primarily the `merge` filter.
 
 Here is the plan for this step:
 
 1. Instantiate an object with the default query parameters we need: `section`, `order` `limit`, etc.
-2. Check if the `year` parameter has a value and use `before` and `after` to build the time-based part of our query
-3. Check if a `category` parameter has a value and use `relatedTo` to build the category part of our query
-4. Check if a `q` parameter has a value and use `search` to build the text search part of our query
+2. Check if the `year` parameter has a value and use `before` and `after` to build the time-based part of our query. Add it to our object
+3. Check if a `theme` and/or `topic` parameter have a value and use `relatedTo` to build the category part of our query. Add it to our object
+4. Check if a `q` parameter has a value and use `search` to build the text search part of our query. Add it to our object
 
 When this is ready, we will have a modular query object with various parameters and values depending on the user input. We can then feed that object to `craft.entries` and retrieve what we need from the database.
 
@@ -105,10 +120,11 @@ When this is ready, we will have a modular query object with various parameters 
 {% raw %}
 
 {# build our query object
-  - Default parameters
-  - If a year has been chosen: add 'before' and 'after' parameters to the query
-  - If a category has been chosen: add 'relatedTo' parameter to the query
-  - If a search term has been entered: add 'search' parameter to the query
+- Default parameters
+- If a year has been chosen: add 'before' and 'after' parameters to the query
+- If one or more categories have been chosen: build an empty array and use it to build a 'relatedTo' parameter that we can add to the query
+- If a category has been chosen: add 'relatedTo' parameter to the query
+- If a search term has been entered: add 'search' parameter to the query
 #}
 
 {# defaults #}
@@ -127,13 +143,43 @@ When this is ready, we will have a modular query object with various parameters 
   }) %}
 {% endif %}
 
-{# category #}
-{% set searchCategory = craft.request.getParam('category') %}
-{% set searchCategoryCat = craft.categories.slug(searchCategory).first() %}
-{% if searchCategory is not empty %}
+{# Build an empty category array and add targetElement objects with selected categories Ids to it #}
+{% set categoriesArray = [] %}
+
+{% set searchTheme = craft.request.getParam('theme') %}
+{% set searchThemeCat = craft.categories.slug(searchTheme).ids() %}
+{% if searchTheme is not empty %}
+  {% set categoriesArray = categoriesArray|merge([{
+    targetElement: searchThemeCat,
+  }]) %}
+{% endif %}
+
+{% set searchTopic = craft.request.getParam('topic') %}
+{% set searchTopicCat = craft.categories.slug(searchTopic).ids() %}
+{% if searchTopic is not empty %}
+  {% set categoriesArray = categoriesArray|merge([{
+    targetElement: searchTopicCat,
+  }]) %}
+{% endif %}
+
+{# multiple vs single categories
+- If there is only a single category, just use the array constructed earlier
+- If there is more than one category, add 'and' in front of the array
+- Pass the categoriesArray to relatedTo to build the last part of our query
+#}
+{% if categoriesArray|length %}
+
+  {% if categoriesArray|length > 1 %}
+
+    {% set categoriesArray = categoriesArray|merge(['and']) %}
+    {% set categoriesArray = categoriesArray|reverse %}
+
+  {% endif %}
+
   {% set queryParams = queryParams|merge({
-    relatedTo: searchCategoryCat,
+    relatedTo: categoriesArray
   }) %}
+
 {% endif %}
 
 {# search #}
