@@ -62,14 +62,16 @@ Our form will generate three parameters in a query string: `year`, `theme`, `top
     {% if loop.last %}</select>{% endif %}
   {% endfor %}
 
-  {# themes #}
+  {# get all entries to display only the categories related to entries #}
   {% set blogAllEntries = craft.entries.section('blog').limit(null).find() %}
+
+  {# themes categories #}
   {% set blogThemes = craft.categories.group('themes').relatedTo(blogAllEntries).find() %}
   {% for category in blogThemes %}
     {% if loop.first %}<select name="theme">{% endif %}
       {% if loop.first %}<option value="">Choose a theme</option>{% endif %}
 
-      {# if already a 'theme' parameter in the URL, select the corresponding theme #}
+      {# if already a 'theme' parameter in the URL, select the corresponding year #}
       {% set themeCategory = craft.request.getParam('theme') %}
       {% set themeActive = (themeCategory == category.slug) ? 'selected' : '' %}
       <option value="{{ category.slug }}" {{ themeActive }}>{{ category.title }}</option>
@@ -77,14 +79,13 @@ Our form will generate three parameters in a query string: `year`, `theme`, `top
     {% if loop.last %}</select>{% endif %}
   {% endfor %}
 
-  {# topics #}
-  {% set blogAllEntries = craft.entries.section('blog').limit(null).find() %}
+  {# topics categories #}
   {% set blogTopics = craft.categories.group('topics').relatedTo(blogAllEntries).find() %}
   {% for category in blogTopics %}
     {% if loop.first %}<select name="topic">{% endif %}
       {% if loop.first %}<option value="">Choose a topic</option>{% endif %}
 
-      {# if already a 'topics' parameter in the URL, select the corresponding topic #}
+      {# if already a 'topics' parameter in the URL, select the corresponding year #}
       {% set topicCategory = craft.request.getParam('topic') %}
       {% set topicActive = (topicCategory == category.slug) ? 'selected' : '' %}
       <option value="{{ category.slug }}" {{ topicActive }}>{{ category.title }}</option>
@@ -116,10 +117,8 @@ Here is the plan for this step:
 
 When this is ready, we will have a modular query object with various parameters and values depending on the user input. We can then feed that object to `craft.entries` and retrieve what we need from the database.
 
-{% highlight html %}
-{% raw %}
-
-{# build our query object
+```html
+{% raw %}{# build our query object
 - Default parameters
 - If a year has been chosen: add 'before' and 'after' parameters to the query
 - If one or more categories have been chosen: build an empty array and use it to build a 'relatedTo' parameter that we can add to the query
@@ -147,16 +146,16 @@ When this is ready, we will have a modular query object with various parameters 
 {% set categoriesArray = [] %}
 
 {% set searchTheme = craft.request.getParam('theme') %}
-{% set searchThemeCat = craft.categories.slug(searchTheme).ids() %}
 {% if searchTheme is not empty %}
+  {% set searchThemeCat = craft.categories.slug(searchTheme).ids() %}
   {% set categoriesArray = categoriesArray|merge([{
     targetElement: searchThemeCat,
   }]) %}
 {% endif %}
 
 {% set searchTopic = craft.request.getParam('topic') %}
-{% set searchTopicCat = craft.categories.slug(searchTopic).ids() %}
 {% if searchTopic is not empty %}
+  {% set searchTopicCat = craft.categories.slug(searchTopic).ids() %}
   {% set categoriesArray = categoriesArray|merge([{
     targetElement: searchTopicCat,
   }]) %}
@@ -219,28 +218,22 @@ When this is ready, we will have a modular query object with various parameters 
 
   <p>No blogpost found</p>
 
-{% endfor %}
-
-{% endraw %}
-{% endhighlight %}
+{% endfor %}{% endraw %}
+```
 
 ## Taking care of pagination
 
 Since this is a paginated list, we need to take care of the pagination interface so that our query parameters are also available in the pagination URLs built by Craft. In order to do that, we will simply use `craft.request` again, and specifically `getQueryStringWithoutPath()`.
 
-{% highlight html %}
-{% raw %}
-
-{% set queryString = craft.request.getQueryStringWithoutPath() %}
+```html
+{% raw %}{% set queryString = craft.request.getQueryStringWithoutPath() %}
 {% set queryStringFull = (queryString is not empty) ? '?' ~ queryString : '' %}
 {% if paginateInfo.prevUrl %}<a href="{{ paginateInfo.prevUrl ~ queryStringFull }}">Previous Page</a>{% endif %}
-{% if paginateInfo.nextUrl %}<a href="{{ paginateInfo.nextUrl ~ queryStringFull }}">Next Page</a>{% endif %}
-
-{% endraw %}
-{% endhighlight %}
+{% if paginateInfo.nextUrl %}<a href="{{ paginateInfo.nextUrl ~ queryStringFull }}">Next Page</a>{% endif %}{% endraw %}
+```
 
 That ensures that the various parameters now come along for the ride whenever a user clicks our pagination links.
 
 ## Voilà: job done
 
-This kind of technique can be expanded to a lot of use cases. In my opinion, it is another testament to the flexibility provided by the combiantion of a mature templating language like Twig and a flexible CMS like Craft.
+This kind of technique can be expanded to a lot of use cases. In my opinion, it is another testament to the flexibility provided by the combination of a mature templating language like Twig and a flexible CMS like Craft.
