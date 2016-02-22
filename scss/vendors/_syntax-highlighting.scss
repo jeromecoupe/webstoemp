@@ -3,15 +3,11 @@
  */
 .highlight {
     margin:1em 0;
-    padding:0 1em;
+    padding:0.5em 1em;
     background: #f6f6f6;
     border:1px solid #EEEEEE;
     border-radius:.15em;
-
-    .highlighter-rouge & {
-      background: #eef;
-    }
-
+    
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
     .k     { font-weight: bold } // Keyword
