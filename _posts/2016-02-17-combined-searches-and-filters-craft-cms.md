@@ -142,8 +142,8 @@ When this is ready, we will have a modular query object with various parameters 
   }) %}
 {% endif %}
 
-{# Build an empty category array and add targetElement objects with selected categories Ids to it #}
-{% set categoriesArray = [] %}
+{# Build a category array beginning with 'and' and add targetElement objects with selected categories Ids to it #}
+{% set categoriesArray = ['and'] %}
 
 {% set searchTheme = craft.request.getParam('theme') %}
 {% if searchTheme is not empty %}
@@ -162,18 +162,9 @@ When this is ready, we will have a modular query object with various parameters 
 {% endif %}
 
 {# multiple vs single categories
-- If there is only a single category, just use the array constructed earlier
-- If there is more than one category, add 'and' in front of the array
-- Pass the categoriesArray to relatedTo to build the last part of our query
+- If there is more than just the "and" in the categoriesArray, use relatedTo and the categoriesArray to build the last part of our query
 #}
-{% if categoriesArray|length %}
-
-  {% if categoriesArray|length > 1 %}
-
-    {% set categoriesArray = categoriesArray|merge(['and']) %}
-    {% set categoriesArray = categoriesArray|reverse %}
-
-  {% endif %}
+{% if categoriesArray|length > 1 %}
 
   {% set queryParams = queryParams|merge({
     relatedTo: categoriesArray
