@@ -18,7 +18,7 @@ current_nav: work
     {% assign projects = site.projects | sort: 'date' | reverse %}
     {% for item in projects %}
 
-      {% if forloop.first %}<ul class="grid  grid--spaced"><li class="grid__unit  medium-span-6of12  large-span-4of12">{% endif %}
+      {% if forloop.first %}<ul class="grid  grid--spaced  grid--center"><li class="grid__unit  medium-span-6of12  large-span-4of12">{% endif %}
 
         <article class="project">
           <a href="{{ item.url }}">
