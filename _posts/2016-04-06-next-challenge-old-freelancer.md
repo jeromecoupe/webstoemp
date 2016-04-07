@@ -15,7 +15,7 @@ Writing this down is an attempt at making sense of the myriad of thoughts and id
 
 I started working on the web as a copywriter in 1998. Today, I teach a handful of front-end related courses at school and freelance the rest of the time, designing and building content-centric websites for clients and agencies.
 
-I design, write HTML, CSS and DOM related Javascript, know a few CMS like the back of my hand and use modern tools like like Gulp, Sass and deployments on a daily basis. I also happen to have degrees in Philosophy and Communication. Oddly enough, I enjoy writing proposals, specifications, and talking with clients to find out how the web can help improve their businesses.
+I design, write HTML, CSS and DOM related Javascript, know a few CMS like the back of my hand and use modern tools like Gulp, Sass and deployments on a daily basis. I also happen to have degrees in Philosophy and Communication. Oddly enough, I enjoy writing proposals, specifications, and talking with clients to find out how the web can help improve their businesses.
 
 However, I don't feel comfortable carrying on like this for three main reasons:
 
