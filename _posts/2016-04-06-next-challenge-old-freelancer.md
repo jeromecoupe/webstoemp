@@ -47,6 +47,6 @@ I would be less expensive than an employee and could even build part of what is 
 
 I regularly work with a few friends: a back-end sysadmin and a couple of full-stack developers with a JS / Laravel focus (You should [hire them](http://tcheu.be), they're great). We could join forces and create a company of our own. My roles would be half design / front-end / CMS, half strategy and sales.
 
-That's unlikely to be less stressful than the freelancer life but I will be diversifying and learning new skills. Obviously, I would stop woking on my own and would have the perspective of gradually transitioning out of dev in a few years if I feel like it.
+That's unlikely to be less stressful than the freelancer life but I will be diversifying and learning new skills. Obviously, I would stop working on my own and would have the perspective of gradually transitioning out of dev in a few years if I feel like it.
 
 There, that old head of mine feels a bit tidier now. Let’s work on finding the next challenge before I turn 43!
