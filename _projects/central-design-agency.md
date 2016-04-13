@@ -1,7 +1,7 @@
 ---
-title: "Central Design"
+title: "Central"
 date: 2016-04-03 00:00:00
-excerpt: "The talented team of UX/UI designers at Central Design asked me to help them build the next iteration of their website using Jekyll."
+excerpt: "The talented team of UX/UI designers at Central asked me to help them build the next iteration of their website using Jekyll."
 project_url: http://central.team
 project_website: central.team
 project_tagline: "Jekyll-powered agency website"
@@ -20,7 +20,7 @@ tags:
 
 ## Collaborate, Build, Iterate
 
-Using a static site generator was natural for the team: [Central Design](http://central.team/) uses [Jekyll](http://jekyllrb.com/) to create and maintain style guides for clients. They are also huge fans of Markdown and could thus easily integrate Jekyll in their workflow.
+Using a static site generator was natural for the team: [Central](http://central.team/) uses [Jekyll](http://jekyllrb.com/) to create and maintain style guides for clients. They are also huge fans of Markdown and could thus easily integrate Jekyll in their workflow.
 
 Using such a tool allowed us to work together using a simple Git workflow and to have everything, including the content, in version control. The team at Central could concentrate on design, content and front end while I was working on the data model, logic and Jekyll build. Using a static site generator with a team that is used to collaborate and iterate quickly meant that we had a working website we could deploy to any server in a matter of days.
 
