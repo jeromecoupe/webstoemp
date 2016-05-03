@@ -35,7 +35,7 @@ defaults:
       current_nav: "blog"
   -
     scope:
-      path: "work"
+      path: ""
       type: "projects"
     values:
       layout: "portfolio"
