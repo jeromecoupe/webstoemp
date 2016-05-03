@@ -43,8 +43,9 @@ var getStamp = function() {
   var myYear = myDate.getFullYear().toString();
   var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
   var myDay = ('0' + myDate.getDate()).slice(-2);
+  var myMinutes = myDate.getSeconds();
 
-  var myFullDate = myYear + myMonth + myDay;
+  var myFullDate = myYear + myMonth + myDay + myMinutes;
 
   return myFullDate;
 };
