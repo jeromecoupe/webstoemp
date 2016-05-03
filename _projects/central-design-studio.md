@@ -1,4 +1,6 @@
 ---
+layout: "portfolio"
+current_nav: "work"
 title: "Central"
 date: 2016-04-03 00:00:00
 excerpt: "The talented team of UX/UI designers at Central asked me to help them build the next iteration of their website using Jekyll."
