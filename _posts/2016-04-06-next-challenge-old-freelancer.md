@@ -43,6 +43,8 @@ A lot of non profits, medium-sized businesses, etc. still need help in using soc
 
 I would be less expensive than an employee and could even help design and develop part of their web presence, which possibly gives me an edge over someone with less "hands on" knowledge of the field. I could also put my communication background to good use.
 
+Obviously, I don't rule out the possibility of becoming and employee again.
+
 ### Join friends & start a business
 
 I regularly work with a few friends: a back-end sysadmin and a couple of full-stack developers with a JS / Laravel focus (You should [hire them](http://tcheu.be), they're great). We could join forces and create a company of our own. My roles would be half design / front-end / CMS, half strategy and sales.
