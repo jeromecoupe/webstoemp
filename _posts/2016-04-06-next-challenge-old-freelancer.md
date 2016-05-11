@@ -39,9 +39,9 @@ The main issues here might be the stress levels involved and the fact that I am 
 
 ### Digital Communication Officer (internal team)
 
-A lot of non profits, medium-sized businesses, etc. still need help in using the web and social media and are bringing these competencies in house. Some of them might not need a full time position for that but could use the help of a freelancer part-time.
+A lot of non profits, medium-sized businesses, etc. still need help in using social media or building their web presence and are bringing these competencies in house. Some of them might not need a full time position for that but could use the help of a freelancer part-time.
 
-I would be less expensive than an employee and could even build part of what is needed, which possibly gives me an edge over someone with less "hands on" knowledge of the field. I could also put my communication background to good use.
+I would be less expensive than an employee and could even help design and develop part of their web presence, which possibly gives me an edge over someone with less "hands on" knowledge of the field. I could also put my communication background to good use.
 
 ### Join friends & start a business
 
