@@ -18,7 +18,7 @@ var base64        = require('gulp-base64');
 var imagemin      = require('gulp-imagemin');
 var svgstore      = require('gulp-svgstore');
 var cp            = require('child_process');
-var browsersync   = require('browser-sync');
+var browsersync   = require('browser-sync').create();
 
 // error function for plumber
 var onError = function (err) {
@@ -58,7 +58,7 @@ var getRandomInt = function(min, max) {
 
 // BrowserSync proxy
 gulp.task('browser-sync', function() {
-  browsersync({
+  browsersync.init({
     proxy: 'www.webstoemp.dev',
     port: 3000
   });
@@ -95,7 +95,7 @@ gulp.task('css', ['cachebust'], function() {
   .pipe(cssnano())
   .pipe(gulp.dest('./css/'))
   .pipe(gulp.dest('./_site/css/'))
-  .pipe(browsersync.reload({stream:true}))
+  .pipe(browsersync.stream())
   .pipe(notify({ message: 'Styles task done' }));
 });
 
@@ -119,7 +119,7 @@ gulp.task('scripts', ['jslint', 'cachebust'], function() {
   .pipe(uglify())
   .pipe(gulp.dest('./js/'))
   .pipe(gulp.dest('./_site/js/'))
-  .pipe(browsersync.reload({stream:true}))
+  .pipe(browsersync.stream())
   .pipe(notify({ message: 'Scripts task done' }));
 });
 
