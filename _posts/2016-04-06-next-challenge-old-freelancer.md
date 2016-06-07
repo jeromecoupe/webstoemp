@@ -43,7 +43,7 @@ A lot of non profits, medium-sized businesses, etc. still need help in using soc
 
 I would be less expensive than an employee and could even help design and develop part of their web presence, which possibly gives me an edge over someone with less "hands on" knowledge of the field. I could also put my communication background to good use.
 
-Obviously, I don't rule out the possibility of becoming an employee again.
+Just to be clear, I don't rule out the possibility of becoming an employee again.
 
 ### Join friends & start a business
 
