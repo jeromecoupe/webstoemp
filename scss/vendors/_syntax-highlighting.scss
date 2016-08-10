@@ -7,15 +7,15 @@
     background: #f6f6f6;
     border:1px solid #EEEEEE;
     border-radius:.15em;
-    
-    .c     { color: #998; font-style: italic } // Comment
-    .err   { color: #a61717; background-color: #e3d2d2 } // Error
+
+    .c     { color: #998; } // Comment
+    .err   { color: #000; } // Error
     .k     { font-weight: bold } // Keyword
     .o     { font-weight: bold } // Operator
-    .cm    { color: #998; font-style: italic } // Comment.Multiline
+    .cm    { color: #998; } // Comment.Multiline
     .cp    { color: #999; font-weight: bold } // Comment.Preproc
-    .c1    { color: #998; font-style: italic } // Comment.Single
-    .cs    { color: #999; font-weight: bold; font-style: italic } // Comment.Special
+    .c1    { color: #998; } // Comment.Single
+    .cs    { color: #999; font-weight: bold; } // Comment.Special
     .gd    { color: #000; background-color: #fdd } // Generic.Deleted
     .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific
     .ge    { font-style: italic } // Generic.Emph

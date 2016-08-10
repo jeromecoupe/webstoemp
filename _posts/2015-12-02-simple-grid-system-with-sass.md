@@ -38,7 +38,7 @@ Our goal here is to create a simple `inline-block`-based grid system that we can
 
 We want our Sass to generate the following classes for us:
 
-{% highlight scss %}
+```scss
 .grid
 {
   list-style: none;    // works with lists too
@@ -105,11 +105,11 @@ We want our Sass to generate the following classes for us:
     width: 100%;
   }
 }
-{% endhighlight %}
+```
 
 So in our HTML, provided we have defined a medium breakpoint, we could just write the following to build a responsive reflowing grid of six items. The comments in the code are there to deal with the whitespace in an inline-block context. I warned you didn't I?
 
-{% highlight html %}
+```html
   <ul class="grid">
     <li class="grid__unit  grid__unit--6of12  grid__unit--medium-4of12">item</li><!--
  --><li class="grid__unit  grid__unit--6of12  grid__unit--medium-4of12">item</li><!--
@@ -118,13 +118,13 @@ So in our HTML, provided we have defined a medium breakpoint, we could just writ
  --><li class="grid__unit  grid__unit--6of12  grid__unit--medium-4of12">item</li><!--
  --><li class="grid__unit  grid__unit--6of12  grid__unit--medium-4of12">item</li>
   </ul>
-{% endhighlight %}
+```
 
 ### Our variables
 
 Let's start by creating the variables we need to define the characteristics of our grid. The `!default` flag is used so that we can override those in a `_variables.scss` files down the line if needs be. We'll also go ahead and create the base CSS rules we need for `.grid` and `.grid__unit`.
 
-{% highlight scss %}
+```scss
 // grid variables
 $grid-units: 12 !default;
 $grid-gutter: 30px !default;
@@ -161,12 +161,11 @@ $grid-breakpoints: (
   padding-left: $grid-gutter;
   width: 100%;
 }
-
-{% endhighlight %}
+```
 
 We then go ahead and tell Sass to create our base grid classes with a simple `for` loop. No namespacing and no media-queries involved so far.
 
-{% highlight scss %}
+``` scss
 // grid variables
 $grid-units: 12 !default;
 $grid-gutter: 30px !default;
@@ -212,11 +211,11 @@ $grid-breakpoints: (
     width: percentage( $i / $grid-units );
   }
 }
-{% endhighlight %}
+```
 
 We will then walk our `$grid-breakpoints` map and, for each breakpoint, we will create namespaced grid classes in a media-query.
 
-{% highlight scss %}
+```scss
 // grid variables
 $grid-units: 12 !default;
 $grid-gutter: 30px !default;
@@ -285,7 +284,7 @@ $grid-breakpoints: (
     }
   }
 }
-{% endhighlight %}
+```
 
 We just created a simple grid system using Sass in about 50 lines of code. One that we have full control over, that fits our own grid bias and that we can easily adapt to the needs of most projects.
 

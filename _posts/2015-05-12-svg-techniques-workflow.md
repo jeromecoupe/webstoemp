@@ -17,23 +17,23 @@ I tend to use a deceivingly (boringly) simple approach based on custom fields an
 
 Then, I just use the `<picture>` element and the source-swapping capabilities it offers via the `<source>` elements.
 
-{% highlight html %}
+```html
 <picture>
   <source type="image/svg+xml" srcset="svgimage.svg">
   <img src="pngimage.png" class="fluidimg" alt="alt text for image">
 </picture>
-{% endhighlight %}
+```
 
 Browsers that do not support SVG will fallback to the PNG image. For the moment, you need [picturefill](http://scottjehl.github.io/picturefill/) to get broad support. A small hack is also needed to make it work in IE9. All well worth it if you ask me.
 
-{% highlight html %}
+```html
 <picture>
   <!--[if IE 9]><video style="display: none;"><![endif]-->
   <source type="image/svg+xml" srcset="svgimage.svg">
   <!--[if IE 9]></video><![endif]-->
   <img src="pngimage.png" class="fluidimg" alt="alt text for image">
 </picture>
-{% endhighlight %}
+```
 
 ## Static design elements
 
@@ -43,7 +43,7 @@ For those, I currently use external SVG spritemaps that will get cached by brows
 
 Workflow-wise, this is a very simple technique if you already use some kind of build tool (I currently use Gulp). The only thing you have to do is to use a plugin called [svg-store](https://github.com/w0rm/gulp-svgstore) and to configure a task similar to this one for the magic to happen.
 
-{% highlight javascript %}
+```javascript
 gulp.task('spritesvg', function () {
   return gulp.src('./public/img/svg/sprite_sources/*.svg')
   .pipe(svgstore())
@@ -51,15 +51,15 @@ gulp.task('spritesvg', function () {
   .pipe(gulp.dest('./public/img/svg/sprite/'))
   .pipe(notify({ message: 'SVG sprite created' }));
 });
-{% endhighlight %}
+```
 
 This plugin will take the svg files you have exported from Sketch or Illustrator as input and output a single SVG sprite combining them all as `<symbol>` elements with id attributes corresponding to the filenames of the SVG files you used as sources.
 
 You can then refer to those IDs when you use the SVG spritemap in your HTML code and the corresponding part of the spritemap will be displayed. You have to specify a width and a height in your HTML but you can change those values using CSS in a responsive project without any problem.
 
-{% highlight html %}
+```html
 <svg width="12" height="10" role="img" title="Email icon"><use xlink:href="/img/svg/sprite/svgsprite.svg#icon_email"></use></svg>
-{% endhighlight %}
+```
 
 The only thing left to do is to add the handy [SVG for Everybody](https://github.com/jonathantneal/svg4everybody) by Jonathan Neal to your templates to enjoy full support in IE9 through IE11. I don't generally bother that much with IE8 anymore but supporting it is easy enough, provided that you export PNG versions of your assets as well.
 
@@ -69,7 +69,7 @@ Next up are more complex icons or UI elements where you want to use CSS animatio
 
 After exorting the SVG from Sketch, I use SVGO (part of gulp-imagemin) with the following settings to clean them up:
 
-{% highlight javascript %}
+```javascript
 gulp.task('img', function() {
   return gulp.src('./img/**/*')
   .pipe(imagemin({
@@ -79,7 +79,7 @@ gulp.task('img', function() {
   .pipe(gulp.dest('./img/'))
   .pipe(notify({ message: 'Images task done' }));
 });
-{% endhighlight %}
+```
 
 For convenience's sake I usually keep the exported and optimised SVG around but store the SVG code as partials / includes in my CMS. That allows for easy inclusion anywhere in my code base, keeps the bloat of SVG files out of my templates and preserve the [accessibility-related enhancements](http://www.sitepoint.com/tips-accessible-svg/) I make when SVGO cleans the files. If I modify those, I just copy the paths and shapes from the cleaned up sources back to my partials.
 
@@ -87,7 +87,7 @@ Using CSS animations and transitions with inline SVGs is trivial. All it takes i
 
 Here is a small example of what you would write in your CSS / Sass
 
-{% highlight scss %}
+```scss
 .icon
 {
   display: inline-block;
@@ -115,7 +115,7 @@ Here is a small example of what you would write in your CSS / Sass
     fill: red;
   }
 }
-{% endhighlight %}
+```
 
 ## Bigger and more complex animations
 
@@ -125,8 +125,8 @@ If you want to dabble into SMIL, [Sara Soueidan wrote a detailed guide for CSS-t
 
 The two gotchas that tripped me up with SMIL animations:
 
-- if you want to animate the same element in two different ways, you have to explicitely say that your animations sould be cumulative using [the `additive="sum"` attribute](http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AdditiveAnim).
-- The way the SVG coordinate system works was not very intuitive to me. Luckily, the inavoidable Sara Soueidan [comes to our rescue again](http://sarasoueidan.com/blog/svg-coordinate-systems/) with [a "trifecta"](http://sarasoueidan.com/blog/svg-transformations/) on the [subject](http://sarasoueidan.com/blog/nesting-svgs/).
+1. if you want to animate the same element in two different ways, you have to explicitely say that your animations sould be cumulative using [the `additive="sum"` attribute](http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AdditiveAnim).
+2. The way the SVG coordinate system works was not very intuitive to me. Luckily, the inavoidable Sara Soueidan [comes to our rescue again](http://sarasoueidan.com/blog/svg-coordinate-systems/) with [a "trifecta"](http://sarasoueidan.com/blog/svg-transformations/) on the [subject](http://sarasoueidan.com/blog/nesting-svgs/).
 
 If SMIL is not your cup of tea or if you need broader browser support, there are several Javascript librairies that will fill the gap nicely: [Snap.svg](http://snapsvg.io/), [GSAP](http://greensock.com/get-started-js) or [Velocity.js](http://julian.com/research/velocity/) would be your best bets.
 

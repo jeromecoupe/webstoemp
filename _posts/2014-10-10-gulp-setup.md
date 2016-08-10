@@ -14,7 +14,7 @@ For now, I just wanted to share my default gulpfile.js file with you.
 
 ## Full file
 
-{% highlight javascript %}
+```javascript
 'use strict';
 
 // Load plugins
@@ -51,7 +51,7 @@ var AUTOPREFIXER_BROWSERS = [
   'bb >= 10'
 ];
 
-//build datestamp for cache busting
+// Datestamp for cache busting
 var getStamp = function() {
   var myDate = new Date();
 
@@ -142,10 +142,10 @@ gulp.task('watch', ['browser-sync'], function () {
   gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
 });
 
-//tasks
+// Generic tasks
 gulp.task('default', ['css', 'jslint', 'scripts', 'cachebust']);
 gulp.task('images', ['img']);
-{% endhighlight %}
+```
 
 ## Gulp plugins
 
@@ -161,7 +161,7 @@ You can find all of the plugins I am using on the [npm website](https://www.npmj
 
 I use the gulp-imagemin plugin for optimising my images. It comes bundled with plugins to optimise jpg, gif and png so it suits most of my needs perfectly. The only options I use are for making progressive JPEG, interlaced GIFs and optimise SVG. Setting `removeViewBox` and `removeUselessStrokeAndFill` to `false` prevent SVGO from borking some complex SVG files.
 
-{% highlight javascript %}
+``` javascript
 // Optimize Images task
 gulp.task('images', function() {
   return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
@@ -172,7 +172,7 @@ gulp.task('images', function() {
     }))
     .pipe(gulp.dest('./public_html/assets/img/'))
 });
-{% endhighlight %}
+```
 
 In case you need something else, [have a look on nmpjs.org](https://www.npmjs.org/browse/keyword/imageminplugin), you are bound to find a plugin fulfilling your wildest dreams about image optimisation.
 
@@ -182,7 +182,7 @@ I consider this a one shot task and, as such, I don't include it in my watch tas
 
 Generally, may main Sass file is just a bunch of imports and my partials live in separate folders so I watch the whole Scss folder of my project here. As far as CSS go, here are the tasks Gulp performs for me:
 
-{% highlight javascript %}
+```javascript
 // CSS task
 gulp.task('css', function() {
   return gulp.src('./public_html/assets/scss/*.scss')
@@ -197,29 +197,29 @@ gulp.task('css', function() {
     .pipe(browsersync.reload({ stream:true }))
     .pipe(notify({ message: 'Styles task complete' }));
 });
-{% endhighlight %}
+```
 
 The first line tells gulp-plumber to enter the game and to prevent this task from quitting upon error. I frequently make typos in my CSS during development and don't want my watch tasks to stop every time.
 
-{% highlight javascript %}
+```javascript
   .pipe(sass({ style: 'expanded', }))
   .pipe(gulp.dest('./public_html/assets/css/'))
-{% endhighlight %}
+```
 
 This compile my Sass in expanded mode and save the file in my css/ folder.
 
-{% highlight javascript %}
+```javascript
   .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-{% endhighlight %}
+```
 
 I then pipe in [Autoprefixer](https://github.com/postcss/autoprefixer). That tool allows me to focus on writing spec-compliant CSS code and takes care of adding in the vendor prefixes for me. It also generates the CSS variations for things like gradients or flexbox when multiple implementations have seen the light of day. I just find it easier to have all my autoprefixer browsers config out of the task itself.
 
-{% highlight javascript %}
+```javascript
   .pipe(base64({ extensions:['svg'] }))
   .pipe(rename({ suffix: '.min' }))
   .pipe(minifycss())
   .pipe(gulp.dest('./public_html/assets/css/'))
-{% endhighlight %}
+```
 
 The first line encodes my SVG as base64. This will save some http requests. Make sure you have a .png fallback using Modernizr. I generally use this only for icons. Depending on the project, I might change this and have Gulp do the Base 64 encoding only on one or two of my sass files for more granularity.
 
@@ -237,21 +237,21 @@ I have gulp run all my modules through jshint and then concatenate and minify al
 
 If you set long browser cache expirations on your static files using expire headers, you will need some sort of cache busting method. The simplest one is to add query strings to every references to your CSS and JS files.
 
-{% highlight html %}
+```html
 <link rel="stylesheet" media="screen" href="css/screen.css">
-{% endhighlight %}
+```
 
 becomes
 
-{% highlight html %}
+```html
 <link rel="stylesheet" media="screen" href="css/screen.css?2014100345">
-{% endhighlight %}
+```
 
 Generating that query string every time your CSS or JS files are modified, is an easy way to override the browser cache. It is worth noting that Steve Souders advises you not to rev your files using query strings but rather using filenames for various reasons detailed [in a good article](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/).
 
 Nevertheless, I went with query string, constructed my own timestamp as a query string and applied it using using the gulp-replace plugin.
 
-{% highlight javascript %}
+```javascript
 gulp.task('cachebust', function() {
   return gulp.src('./craft/templates/_layouts/*.html')
     .pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
@@ -260,7 +260,7 @@ gulp.task('cachebust', function() {
     .pipe(gulp.dest('./craft/templates/_layouts/'))
     .pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
 });
-{% endhighlight %}
+```
 
 ## Reload and CSS Injections
 
@@ -270,42 +270,42 @@ I have used [Vanamco's Ghostlab](http://vanamco.com/ghostlab/) (which I like a l
 
 It's quite easy to install and to integrate to your Gulp workflow:
 
-{% highlight javascript %}
-//Browsersync server
+```javascript
+// Browsersync server
 gulp.task('browser-sync', function() {
   browsersync({
     proxy: 'www.webstoemp.dev',
     port: 3000
   });
 });
-{% endhighlight %}
+```
 
 This wraps my virtual host (www.webstoemp.dev) with a proxy URL allowing me to view my site.
 
-{% highlight javascript %}
+```javascript
 // BrowserSync reload all Browsers
 gulp.task('browsersync-reload', function () {
   browsersync.reload();
 });
-{% endhighlight %}
+```
 
 Simple task to reload all browsers with BrowserSync (used when my HTML / Template or script files are modified).
 
-{% highlight javascript %}
+```javascript
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
   gulp.watch('./public_html/assets/scss/**/*', ['css']);
   gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
   gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
 });
-{% endhighlight %}
+```
 
 Here, I launch the BrowserSync task when my watch task starts and I force a browser reload every time one of my templates or scripts are modified.
 
 BrowserSync will inject any new styles in my pages when my CSS files are modified because of this line in my CSS task:
 
-{% highlight javascript %}
+```javascript
 .pipe(browsersync.reload({ stream:true }))
-{% endhighlight %}
+```
 
 Well, that's it. I just walked you through my current default setup for build automation with Gulp. I hope you found something useful in there. If you have suggestions or optimisations, don't hesitate to get in touch on twitter, I love to nerd out on such things.

@@ -24,3 +24,5 @@ Rapa Nui is roughly 4000 kilometers away from the coasts of Chile, a country we 
 I am really looking forward to the Chilean part of the trip too. Among other things, I have very fond memories of the Bellavista neighbourhood in Santiago and of the delicious "Machas a la Parmegiana" you can have near the Mercado Central.
 
 Only a couple of weeks to go now ...
+
+Actually, [the pictures are online now](https://www.flickr.com/photos/g-rom/albums/72157663941247163), in case you want to have a look.

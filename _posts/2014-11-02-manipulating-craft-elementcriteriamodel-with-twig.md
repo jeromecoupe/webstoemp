@@ -28,13 +28,12 @@ This is a very common use case. On the homepage of a website, we let administrat
 
 Using the simple method described above, that's how we can implement this:
 
-{% highlight jinja %}
-{% raw %}
-{#
- # 1. Create array containing Ids of chosen projects
- # 2. If not up to 6 items, get the Ids of the 6 most recent projects and remove chosen projects Ids from that list
- # 3. Get your final ElementCriteria model using your list of Ids
-##}
+```twig
+{% raw %}{#
+ 1. Create array containing Ids of chosen projects
+ 2. If not up to 6 items, get the Ids of the 6 most recent projects and remove chosen projects Ids from that list
+ 3. Get your final ElementCriteria model using your list of Ids
+#}
 
 {% set projectsIds = entry.homeProjects.ids() %}
 
@@ -45,9 +44,8 @@ Using the simple method described above, that's how we can implement this:
 
 {% set projects = craft.entries.section('projects').id(projectsIds).fixedOrder(true).find() %}
 
-{# use 'projects' in a for loop for display #}
-{% endraw %}
-{% endhighlight %}
+{# use 'projects' in a for loop for display #}{% endraw %}
+```
 
 ## Display related items on an entry page
 
@@ -57,14 +55,14 @@ When no related entries have been found or when all slots are not used, we want 
 
 Again, no duplicates allowed and the currently viewed entry should never appear in that list.
 
-{% highlight jinja %}
+```twig
 {% raw %}
 {#
- # 1. Create array containing Ids of related articles
- # 2. If not up to 5 items, get 6 entries sharing categories w/ the current entry
- # 3. If not up to 5 items, get the 6 most recent entries
- # 4. No duplicates allowed. Current entry should never appear in that list
-##}
+  1. Create array containing Ids of related articles
+  2. If not up to 5 items, get 6 entries sharing categories w/ the current entry
+  3. If not up to 5 items, get the 6 most recent entries
+  4. No duplicates allowed. Current entry should never appear in that list
+#}
 
 {% set articlesIds = entry.articleRelated.ids() %}
 
@@ -85,7 +83,7 @@ Again, no duplicates allowed and the currently viewed entry should never appear 
 
 {# use 'relatedArticles' in a for loop for display #}
 {% endraw %}
-{% endhighlight %}
+```
 
 ## Order entries by categories
 
@@ -93,16 +91,13 @@ Another use case would be to display entries sorted by categories and reflect th
 
 We want to list the sponsor levels (categories) and preserve the order they have in the control panel. Then, we want to list all sponsors under each category. The client will be able to easily add a sponsor level and assign new sponsors to it. The client will also be able to reorder his sponsorship levels easily if needed.
 
-{% highlight jinja %}
-{% raw %}
-{#
- # Sponsors listed by categories
- # -----------------------------
- # - Create an empty array to hold our entries ids
- # - Get the list of categories in the order they are in in the CP
- # - For each category, get a list of entry ids related to that category
- # - Merge those arrays together
-##}
+```twig
+{% raw %}{#
+  - Create an empty array to hold our entries ids
+  - Get the list of categories in the order they are in in the CP
+  - For each category, get a list of entry ids related to that category
+  - Merge those arrays together
+#}
 
 {% set sponsorsIds = [] %}
 {% set sponsorsCategories = craft.categories.group('sponsorLevels').find() %}
@@ -113,8 +108,7 @@ We want to list the sponsor levels (categories) and preserve the order they have
 
 {% set sponsors = craft.entries.section('sponsors').id(sponsorsIds).fixedOrder(true).find() %}
 
-{# use 'sponsors' in a for loop for display #}
-{% endraw %}
-{% endhighlight %}
+{# use 'sponsors' in a for loop for display #}{% endraw %}
+```
 
 There you go, three use cases for a simple but powerful technique. I hope you'll find this little trick useful when working on your next Craft project.

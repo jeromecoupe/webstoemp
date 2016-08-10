@@ -29,12 +29,12 @@ To create a collection, you start by creating a folder in the root of your proje
 
 You then have to configure that collection in your `config.yml` file:
 
-{% highlight yaml %}
+```yaml
 collections:
   projects:
     output: true
     permalink: /work/:title
-{% endhighlight %}
+```
 
 Collections can either be output into posts with a unique URL or be embedded in other templates. For example, quotes displayed on the homepage of a site don't need their own URL, whereas projects in a portfolio would. You can also specify the default permalink structure of your collections in your `_config.yml` file as you can do with the default `posts`.
 
@@ -55,7 +55,7 @@ With a growing number of collections or post types, [Front Matter Defaults](http
 - `path` and `type` define the scope of the default values you are going to specify. An empty path means you are going to target all files in your site. The `type` corresponds to your post types.
 - `values` is going to hold everything you would have set in the YAML Front Matter of those individual posts and that you want set by default. If you specify a key value pair for those in the YAML Front Matter of the posts themselves, it's going to overwrite the default value.
 
-{% highlight yaml %}
+```yaml
 defaults:
   -
     scope:
@@ -71,7 +71,7 @@ defaults:
     values:
       layout: "project"
       current_nav: "work"
-{% endhighlight %}
+```
 
 ## `group_by`, `where` and `sort` filters
 
@@ -79,9 +79,8 @@ Those [filters](http://jekyllrb.com/docs/templates/#filters) help you filter, so
 
 For this blog, I wanted an archive of blogposts grouped by year and, since Github pages do not support them, I didn't want to use plugins. All I had to do was to create a `publication_year` variable in the YAML front matter of all my blogposts and use the group filter. Easy.
 
-{% highlight liquid %}
-{% raw %}
-{% assign postsByYear = site.posts | group_by:"publication_year" %}
+```liquid
+{% raw %}{% assign postsByYear = site.posts | group_by:"publication_year" %}
 
 {% for postsInYear in postsByYear %}
   {% if forloop.first %}<ul class="yearlyarchive">{% endif %}
@@ -103,9 +102,8 @@ For this blog, I wanted an archive of blogposts grouped by year and, since Githu
   </li>
 
   {% if forloop.last %}</ul>{% endif %}
-{% endfor %}
-{% endraw %}
-{% endhighlight %}
+{% endfor %}{% endraw %}
+```
 
 The `where` filter allows you to select all objects in an array where the key has a given value. Posts can be filtered by category or by any custom value we set in the YAML Front Matter.
 

@@ -32,7 +32,7 @@ The first step is to build the form. Here are the four pieces we need:
 
 Our form will generate four parameters in a query string: `year`, `theme`, `topic` and `q`. We will then be able to use those parameters to build our Craft query.
 
-```html
+```twig
 {% raw %}<form action="{{ url('blog/') }}" method="get">
 
   {# years
@@ -117,7 +117,7 @@ Here is the plan for this step:
 
 When this is ready, we will have a modular query object with various parameters and values depending on the user input. We can then feed that object to `craft.entries` and retrieve what we need from the database.
 
-```html
+```twig
 {% raw %}{# build our query object
 - Default parameters
 - If a year has been chosen: add 'before' and 'after' parameters to the query
@@ -216,7 +216,7 @@ When this is ready, we will have a modular query object with various parameters 
 
 Since this is a paginated list, we need to take care of the pagination interface so that our query parameters are also available in the pagination URLs built by Craft. In order to do that, we will simply use `craft.request` again, and specifically `getQueryStringWithoutPath()`.
 
-```html
+```twig
 {% raw %}{% set queryString = craft.request.getQueryStringWithoutPath() %}
 {% set queryStringFull = (queryString is not empty) ? '?' ~ queryString : '' %}
 {% if paginateInfo.prevUrl %}<a href="{{ paginateInfo.prevUrl ~ queryStringFull }}">Previous Page</a>{% endif %}
