@@ -140,6 +140,12 @@ gulp.task('svgsprite', function () {
   .pipe(notify({ message: 'SVG sprite created' }));
 });
 
+// Jekyll w/ dependencies for production
+gulp.task('jekyll-production', ['css', 'scripts'], function (done) {
+  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  .on('close', done);
+});
+
 // Jekyll
 gulp.task('jekyll-build', function (done) {
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
@@ -160,5 +166,6 @@ gulp.task('watch', ['browser-sync'], function () {
 
 // Tasks
 gulp.task('default', ['css', 'scripts', 'jekyll-rebuild']);
+gulp.task('build', ['jekyll-production']);
 gulp.task('svg', ['svgsprite']);
 gulp.task('images', ['img']);
