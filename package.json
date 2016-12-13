@@ -7,23 +7,23 @@
     "url": "https://github.com/jeromecoupe/jeromecoupe.github.io"
   },
   "devDependencies": {
-    "browser-sync": "2.10.x",
+    "browser-sync": "2.18.x",
     "gulp": "3.9.x",
     "gulp-autoprefixer": "3.1.x",
     "gulp-base64": "0.1.x",
     "gulp-concat": "2.6.x",
-    "gulp-cssnano": "2.0.x",
-    "gulp-imagemin": "2.4.x",
+    "gulp-cssnano": "2.1.x",
+    "gulp-imagemin": "3.1.x",
     "gulp-jshint": "2.0.x",
     "gulp-notify": "2.2.x",
-    "gulp-plumber": "1.0.x",
+    "gulp-plumber": "1.1.x",
     "gulp-rename": "1.2.x",
     "gulp-replace": "0.5.x",
-    "gulp-sass": "2.1.x",
+    "gulp-sass": "3.0.x",
     "gulp-strip-debug": "1.1.x",
-    "gulp-svgstore": "5.0.x",
-    "gulp-uglify": "1.5.x",
+    "gulp-svgstore": "6.1.x",
+    "gulp-uglify": "2.0.x",
     "gulp-util": "3.0.x",
-    "jshint": "2.8.x"
+    "jshint": "2.9.x"
   }
 }
