@@ -10,11 +10,11 @@ tags:
 
 ## Aiming for conversations
 
-High fidelity deliverables like wireframes and comps are too much of an abstraction compared to the final product. We need deliverables that create ongoing conversations and aim at materialising the core aspects of a project quickly and in a concrete way, while leaving the door open for interpretation and evolution.
+In my opinion, high fidelity deliverables like very detailed wireframes or comps are too much of an abstraction compared to the final product. I want deliverables that create ongoing conversations and aim at materialising the core aspects of a project quickly and in a concrete way, while leaving the door open for interpretation and evolution.
 
 Deliverables are a mean to an end. They only exist for people and processes to align in order to create the real thing: the final product (or a prototype thereof in the pre-production phase).
 
-Spending inordinate amounts of time on wireframes, static comps, content spreadsheets, personas and user journeys can be frustrating. Typically, these deliverables are also created in isolation and do not really foster collaboration. They often are too prescriptive, leaving no room for change or interpretation and locking the project in too rigid of a process. Because we spend so much time making them, we also get more attached and, as a result, we are less inclined to iterate and change them.
+Spending inordinate amounts of time polishing wireframes, static comps, content spreadsheets, personas and user journeys can be frustrating. Typically, these deliverables are also created in isolation and do not really foster collaboration. They often are too prescriptive, leaving no room for change or interpretation and locking the project in too rigid of a process. Because we spend so much time making them, we also get more attached and, as a result, we are less inclined to iterate and change them.
 
 ## Tackling strategy with a discovery workshop
 
