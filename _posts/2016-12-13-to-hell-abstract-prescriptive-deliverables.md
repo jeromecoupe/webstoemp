@@ -1,6 +1,6 @@
 ---
 title: "To hell with prescriptive abstract deliverables"
-excerpt: "As we reach the end of the year, it's time for resolutions: one of mine is to rethink my workflow and to ditch prescriptive and abstract deliverables created in isolation in favour of more descriptive, collaborative and concrete ones."
+excerpt: "As we reach the end of the year, it's time for resolutions: one of mine is to ditch prescriptive and abstract deliverables created in isolation in favour of more descriptive, collaborative and concrete ones."
 categories:
 - Work
 tags:
