@@ -71,7 +71,7 @@ After the workshop, we can test the information architecture or the various poss
 
 What we have produced has been created collaboratively, we had conversations and exchanges to come up with solutions to concrete problems. We have been precise enough to be able to build something, but loose enough to be fast and to be open to iteration.
 
-### Get a design briefing by reviewing existing examples
+### Get a design brief by reviewing existing examples
 
 To gain insights into how a website should look like and work, I generally use a method that Dan Mall calls "[Visual Inventories](http://danielmall.com/articles/visual-inventory/)".
 
@@ -79,7 +79,7 @@ It is a very simple approach consisting in presenting the participants with 15 d
 
 Everyone only has 15 seconds to rate each design on a scale ranging from 1 to 5. We then tally up the results and discuss the top three design approaches and why people think they would work. We also discuss the bottom three and why people think these approaches would not work for the project at hand. Take notes.
 
-Again, we have collectively built a design briefing. We can feed designers data that they can then interpret to create an element collage for the project.
+Again, we have collectively built a design brief. We can feed designers data that they can then interpret to create an element collage for the project.
 
 ## Build a clickable content prototype
 
