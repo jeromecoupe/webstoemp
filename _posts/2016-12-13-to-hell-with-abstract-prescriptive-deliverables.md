@@ -1,5 +1,5 @@
 ---
-title: "To hell with prescriptive abstract deliverables"
+title: "To hell with abstract prescriptive deliverables"
 excerpt: "As we reach the end of the year, it's time for resolutions: one of mine is to ditch prescriptive and abstract deliverables created in isolation in favour of more descriptive, collaborative and concrete ones."
 categories:
 - Work
