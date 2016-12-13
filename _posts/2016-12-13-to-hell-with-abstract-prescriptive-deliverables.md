@@ -10,7 +10,7 @@ tags:
 
 ## Aiming for conversations
 
-In my opinion, high fidelity deliverables like very detailed wireframes or comps are too much of an abstraction compared to the final product. I want deliverables that create ongoing conversations and aim at materialising the core aspects of a project quickly and in a concrete way, while leaving the door open for interpretation and evolution.
+In my opinion, high fidelity deliverables like very detailed wireframes or comps are too much of an abstraction compared to the final product. I prefer deliverables that create ongoing conversations and aim at materialising the core aspects of a project quickly and in a concrete way, while leaving the door open for interpretation and evolution.
 
 Deliverables are a mean to an end. They only exist for people and processes to align in order to create the real thing: the final product (or a prototype thereof in the pre-production phase).
 
