@@ -14,7 +14,7 @@ In my opinion, high fidelity deliverables like very detailed wireframes or comps
 
 Deliverables are a mean to an end. They only exist for people and processes to align in order to create the real thing: the final product (or a prototype thereof in the pre-production phase).
 
-Spending inordinate amounts of time polishing wireframes, static comps, content spreadsheets, personas and user journeys can be frustrating. Typically, these deliverables are also created in isolation and do not really foster collaboration. They often are too prescriptive, leaving no room for change or interpretation and locking the project in too rigid of a process. Because we spend so much time making them, we also get more attached and, as a result, we are less inclined to iterate and change them.
+Spending inordinate amounts of time polishing wireframes, static comps, content spreadsheets, personas and user journeys can be frustrating. Typically, these deliverables are also created in isolation and do not really foster collaboration. They often are very prescriptive, leaving little room for change or interpretation and locking the project in too rigid of a process. Because we spend so much time making them, we also get more attached and, as a result, we are less inclined to iterate and change them.
 
 ## Tackling strategy with a discovery workshop
 
@@ -23,13 +23,13 @@ In 2016, I have started all my projects with a discovery workshop. It helped. A 
 - needs and business objectives for each identified user group
 - first pass at information architecture
 - content and data structure of key pages
-- establish a design direction using existing examples
+- design brief and general design direction
 
 ### User groups, needs and objectives
 
 We try to focus on three or four audiences, for each of them we want to come up with a persona that we try to define in a very practical way, using a job to be done approach.
 
-For each audience, we have to come up with one or two sentence with the following structure:
+For each audience, we have to come up with a couple of sentences with the following structure:
 
 <blockquote>
   <p>When I <em>[something]</em>, I want to <em>[something]</em> so I can <em>[something]</em></p>
@@ -50,7 +50,7 @@ We then take the reverse approach and try to come up with objectives we have tow
 For example, working for a data visualisation company:
 
 <blockquote>
-  <p>Reassure companies with big data needs that they can choose us instead of the big players because we will adapt to their needs instead of shoehorning them into our processes, we will not lock them into proprietary formats and we have years of experience in the field.</p>
+  <p>Reassure companies with big data needs that they can choose us instead of the big players because we will adapt to their needs instead of shoehorning them into our processes, we don't lock them in with proprietary formats and we have years of experience in the field.</p>
 </blockquote>
 
 In my experience, those sentences and the discussions surrounding them will give you far more insight than detailed personas and user journeys. They are also more concrete and can serve as a guide for the duration of the project.
@@ -59,15 +59,15 @@ In my experience, those sentences and the discussions surrounding them will give
 
 We can then examine key pages and item types for the project at hand. The goal here is first to list all key pages and item types. For each of them, we want to have a precise data structure describing what chunks of content they contain. We want to be as granular as possible and establish priorities.
 
-Talking about it in a mobile context generally helps avoiding the "everything is of equal importance" syndrome. I have found that a 300 pixels "tube of content" is a great construct to force people to prioritise, be it at the macro level (screens), or at the micro level (content types).
+Talking about it in a mobile context generally helps avoiding the "everything is of equal importance" syndrome. A 300 pixels wide "tube of content" is a great construct to force people to prioritise, be it at the macro level (screens), or at the micro level (content types).
 
-Everybody around the table can have their say about what should be included. We then collectively vote to establish what are the most important items for each page or content type.
+Everybody around the table can have their say about what should be included. We then collectively vote to establish what the most important items are for each page or content type.
 
 ### First pass at information architecture
 
 Time to get post-it notes out. The goal is to collaboratively come up with a sensible information architecture by sticking post-it notes representing content types and key pages on the wall and moving them around. When there are hesitations, we just snap a picture of the various possibilities.
 
-After the workshop, we can test the information architecture or the various possibilities we came up with users, using something like [Treejack](https://www.optimalworkshop.com/treejack/) or tasks based exercises.
+After the workshop, we test the information architecture or the various possibilities we came up with users, using something like [Treejack](https://www.optimalworkshop.com/treejack/) or tasks based exercises.
 
 What we have produced has been created collaboratively, we had conversations and exchanges to come up with solutions to concrete problems. We have been precise enough to be able to build something, but loose enough to be fast and to be open to iteration.
 
@@ -79,11 +79,11 @@ It is a very simple approach consisting in presenting the participants with 15 d
 
 Everyone only has 15 seconds to rate each design on a scale ranging from 1 to 5. We then tally up the results and discuss the top three design approaches and why people think they would work. We also discuss the bottom three and why people think these approaches would not work for the project at hand. Take notes.
 
-Again, we have collectively built a design brief. We can feed designers data that they can then interpret to create an element collage for the project.
+We now have a collectively built design brief. We can feed designers data that they can then interpret to create an element collage for the project.
 
 ## Build a clickable content prototype
 
-The next step is to use all the data collected during the workshop to create the kind of clickable content prototype [described by Thomas Byttebier in this excellent post](http://thomasbyttebier.be/blog/the-bold-beauty-of-content-prototypes). The goal here is to create something tangible and testable that will bring together the insights gathered during the discovery workshop in terms of content and strategy.
+The next step is to use all the data collected during the workshop to create the kind of clickable content prototype [described by Thomas Byttebier in his excellent post](http://thomasbyttebier.be/blog/the-bold-beauty-of-content-prototypes). The goal here is to create something tangible and testable that will bring together the insights gathered during the discovery workshop in terms of content and strategy.
 
 Having something concrete to look at will spawn other conversations. Using tools like [Jekyll](http://jekyllrb.com/) and [Github pages](https://pages.github.com), that content prototype can be tweaked, revised and tested with users in quick iterative rounds, until we have something solid.
 
@@ -99,9 +99,9 @@ Again, because of its moodboard-esque nature, an element collage is far less pre
 
 ## Enrich and iterate
 
-Once the "Elements Collage" has been approved, we can slowly integrate the design in our content prototype: typography, colors, icons, images, videos and, finally, layout.
+Once the "Elements Collage" has been approved, we can slowly integrate visual design in our content prototype: typography, colors, icons, images, videos and, finally, layout.
 
-The client does not have "painting of a website" to compare the front-end implementation to. The front-end team can come up with its own interpretation of the design and collaborate with designers on the product directly, solving problems as they arise.
+The client does not have "paintings of a website" to compare the front-end implementation to. The front-end team can come up with its own interpretation of the design and collaborate with designers on the product directly, solving problems as they arise.
 
 Front-end developers are not considered as simple "integrators" but can [interpret or shape the design](https://www.youtube.com/watch?v=ldx4ZFxMEeo) of the website or app they are working on. In the words of [Harry Roberts](http://csswizardry.com/): "designs are a clue, a blueprint, not a contract."
 
