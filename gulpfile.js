@@ -10,7 +10,6 @@ var uglify        = require('gulp-uglify');
 var rename        = require('gulp-rename');
 var replace       = require('gulp-replace');
 var concat        = require('gulp-concat');
-var notify        = require('gulp-notify');
 var cssnano       = require('gulp-cssnano');
 var plumber       = require('gulp-plumber');
 var gutil         = require('gulp-util');
@@ -71,15 +70,14 @@ gulp.task('img', function() {
     progressive: true,
     svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
   }))
-  .pipe(gulp.dest('./img/'))
+  .pipe(gulp.dest('./img/'));
 });
 
 // Cache busting task
 gulp.task('cachebust', function() {
   return gulp.src('./_layouts/default.html', { base:'./' })
     .pipe(replace(/(js|css)\?rev=([0-9]*)/g, '$1?rev=' + getStamp() ))
-    .pipe(gulp.dest('./'))
-    .pipe(notify({ message: 'cache busted' }));
+    .pipe(gulp.dest('./'));
 });
 
 // CSS task
@@ -95,8 +93,7 @@ gulp.task('css', ['cachebust'], function() {
   .pipe(cssnano())
   .pipe(gulp.dest('./css/'))
   .pipe(gulp.dest('./_site/css/'))
-  .pipe(browsersync.stream())
-  .pipe(notify({ message: 'Styles task done' }));
+  .pipe(browsersync.stream());
 });
 
 // Lint JS task
@@ -104,8 +101,7 @@ gulp.task('jslint', function() {
   return gulp.src('./js/modules/**/*.js')
   .pipe(jshint())
   .pipe(jshint.reporter('default'))
-  .pipe(jshint.reporter('fail'))
-  .pipe(notify({ message: 'Lint task done' }));
+  .pipe(jshint.reporter('fail'));
 });
 
 //Concatenate and Minify JS task
@@ -119,16 +115,14 @@ gulp.task('scripts', ['jslint', 'cachebust'], function() {
   .pipe(uglify())
   .pipe(gulp.dest('./js/'))
   .pipe(gulp.dest('./_site/js/'))
-  .pipe(browsersync.stream())
-  .pipe(notify({ message: 'Scripts task done' }));
+  .pipe(browsersync.stream());
 });
 
 // Display random image on homepage
 gulp.task('bannerimage', function() {
   return gulp.src('./_includes/header.html')
   .pipe(replace(/siteheader__banner--([0-9]*)/g, 'siteheader__banner--' + getRandomInt(1,6)))
-  .pipe(gulp.dest('./_includes/'))
-  .pipe(notify({ message: 'Random banner for homepage done' }));
+  .pipe(gulp.dest('./_includes/'));
 });
 
 // SVG sprite task
@@ -136,19 +130,18 @@ gulp.task('svgsprite', function () {
   return gulp.src('./img/svg_sprite/sources/*.svg')
   .pipe(svgstore())
   .pipe(rename("svgsprite.svg"))
-  .pipe(gulp.dest('./img/svg_sprite/'))
-  .pipe(notify({ message: 'SVG sprite created' }));
+  .pipe(gulp.dest('./img/svg_sprite/'));
 });
 
 // Jekyll w/ dependencies for production
 gulp.task('jekyll-production', ['css', 'scripts'], function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  return cp.spawn('bundle', ['exec','jekyll','build'], {stdio: 'inherit'})
   .on('close', done);
 });
 
 // Jekyll
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  return cp.spawn('bundle', ['exec','jekyll','build'], {stdio: 'inherit'})
   .on('close', done);
 });
 

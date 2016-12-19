@@ -15,7 +15,6 @@
     "gulp-cssnano": "2.1.x",
     "gulp-imagemin": "3.1.x",
     "gulp-jshint": "2.0.x",
-    "gulp-notify": "2.2.x",
     "gulp-plumber": "1.1.x",
     "gulp-rename": "1.2.x",
     "gulp-replace": "0.5.x",
