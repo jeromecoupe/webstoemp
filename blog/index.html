@@ -28,40 +28,32 @@ current_nav: blog
 
     <div class="maincontent__primary  grid__unit  medium-span-9of12">
 
-      {% assign allPosts = site.posts %}
-      {% for item in allPosts %}
 
+      {% assign postsByYear = site.posts | group_by_exp: "item", "item.date | date:'%Y''" %}
+
+      {% for year in postsByYear %}
         {% if forloop.first %}<ul class="yearlyarchive">{% endif %}
 
-          {% assign currentYear = item.date | date: "%Y" %}
+          <li class="yearlyarchive__year">
+            <h2 class="yearlyarchive__title">{{ year.name }}</h2>
 
-          {% if currentYear != postYear %}
+            {% for blogpost in year.items %}
+              {% if forloop.first %}<ul class="yearlyarchive__list">{% endif %}
 
-            {% unless forloop.first %}</li></ul>{% endunless %}
+                <li class="yearlyarchive__item">
+                  <article>
+                    <p class="item-info"><time datetime="{{ blogpost.date | date: '%Y-%m-%d' }}">{{ blogpost.date | date: "%B %-d, %Y" }}</time></p>
+                    <h3 class="h4  h4--notop"><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></h3>
+                    <p>{{ blogpost.excerpt }}</p>
+                    <p><a href="{{ blogpost.url }}" class="more">Read More</a></p>
+                  </article>
+                </li>
 
-            <li class="yearlyarchive__year">
-              <h2 class="yearlyarchive__title">{{ currentYear }}</h2>
-              <ul class="yearlyarchive__list">
-
-          {% endif %}
-
-            <li class="yearlyarchive__item">
-              <article>
-                <p class="item-info"><time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%B %-d, %Y" }}</time></p>
-                <h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
-                <p>{{ item.excerpt }}</p>
-                <p><a href="{{ item.url }}" class="more">Read More</a></p>
-              </article>
-            </li>
-
-          {% assign postYear = currentYear %}
+              {% if forloop.last %}</ul>{% endif %}
+            {% endfor %}
+          </li>
 
         {% if forloop.last %}</ul>{% endif %}
-
-      {% else %}
-
-        <p>Sorry, no blogpost found</p>
-
       {% endfor %}
 
     </div><!--
