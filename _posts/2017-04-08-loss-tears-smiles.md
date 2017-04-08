@@ -11,13 +11,13 @@ tags:
 
 ## A first taste
 
-My first experience with loss started last June, when a 17 years relationship ended abruptly. The women I loved left me to try something new. We were very civil about it and we both remain nice to each other but, the span of only four weeks in which it happened, and the impact it had in all the sectors of my life left me dizzy, confused and with a feeling of emptiness and absurdity I have rarely ever felt.
+My first experience with loss started last June, when a 17 years relationship ended abruptly. The woman I loved for half of my life left me to try something new. We were very civil about it and we both remain nice to each other but, the span of only four weeks in which it happened, and the impact it had in all the sectors of my life left me dizzy, confused and with a feeling of emptiness and absurdity I have rarely ever felt.
 
 As "the Dude" would put it, "[the rug that really tied the room together](https://www.youtube.com/watch?v=4Wu598ENenk)" was gone. The void that replaced it became my new companion. At first I hated it, with a passion. My reaction was to fight it with whatever I could find: work, beers, parties, girls, etc. I filled my life with anything that would keep the void at bay. After 3 months of this regimen, I was toast. I was barely able to function properly anymore and my sleeping patterns were messier than ever.
 
 Time for a shift. Instead of fighting the void, I tried to tame it, to consider it also as an opportunity for me to have more room in my life, to take more time to do what I enjoy doing, to stop running, to breathe, to try new things and to meet new people, and to spend more time with old friends.
 
-It helped. A lot. Although the void created by that loss still hits me hard some days, although it can still hurl me in a bottomless pit of sadness at times, I know now that it can bring me nice moments as well.
+It helped. A lot. Although the void created by that loss still hits me hard some days, although it can still hurl me down a bottomless pit of sadness at times, I know now that it can bring me nice moments as well.
 
 ## Cancer is a bitch
 
@@ -37,11 +37,11 @@ A couple of month ago, I met a woman I would probably never have encountered wit
 
 We chatted for days before meeting each other for our first date. We both talked about our shortcomings, flaws and cracks, about our hopes and fears. Meeting someone in your forties is inevitably very different than when you are twenty five. I was lost at times, probably very clumsy as well. I was also very determined to deal with my issues on my own, without counting on her to "fix" or "help" me in any way.
 
-I realised that those cracks are as an essential part of us as our qualities, and can even be charming at times. I discovered that speaking about my insecurities was possible and even accepted. That, maybe, it even prompted her to talk about hers. I was bluntly honest. I shared how I felt, not in the hope of infecting her with my happiness or wanting her to help me deal with my sadness, but just because I simply couldn't help it. I didn't want to loose any time, I wrote her poems, I grabbed her hand when walking down the street, we cooked for eachother, we went to exhibitions, we shared brunches at 5 in the morning coming back from parties. It felt simple, it felt good. That's not to say I didn't have any doubts, but I was focusing on enjoying the moment.
+I realised that those cracks are as an essential part of us as our qualities, and can even be charming at times. I discovered that speaking about my insecurities was possible and even accepted. That, maybe, it even prompted her to talk about hers. I was bluntly honest. I shared how I felt, not in the hope of infecting her with my happiness or wanting her to help me deal with my sadness, but just because I simply couldn't help it. I didn't want to loose any time, I wrote her poems, I grabbed her hand when walking down the street, we cooked for each other, we went to exhibitions, we shared brunches at 5 in the morning coming back from parties. It felt simple, it felt good. That's not to say I didn't have any doubts, I was simply focusing on enjoying the moment.
 
 She is the mother of a 6 years old boy. The fact that we both had our own lives and only saw each other when we would both be available was a new experience for me. It made me realise that a relationship can feel great without living with someone day in and day out, without necessarily having to experience the constant friction of everyday life, without rubbing our mutual wounds, and that those empty moments also created a space that could be filled with anticipation.
 
-That short but nice story ended rather abruptly. Some of us are more interested in chasing an immediate spark or lightning bolt than in the longer road consisting in looking for wood, building a fire together and slowly creating long lasting embers. That's ok too. At least it has taught me that relationships can have a comfortable degree of elasticity, and that preserving a healthy amount of space and distance is something to be mindful of.
+That short but nice story ended rather abruptly. Some of us are more interested in chasing an immediate spark than in the longer road consisting in looking for wood, building a fire together and slowly creating long lasting embers. That's ok too. At least it has taught me that relationships can have a comfortable degree of elasticity, and that preserving a healthy amount of space and distance is something to be mindful of.
 
 ## Onwards
 
