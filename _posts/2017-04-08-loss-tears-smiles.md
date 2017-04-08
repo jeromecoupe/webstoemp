@@ -11,7 +11,7 @@ tags:
 
 ## A first taste
 
-My first experience with loss started 8 months ago, when a 17 years relationship ended abruptly. The women I loved left me to try something new. We were very civil about it and we both remain nice to each other but, the span of only four weeks in which it happened, and the impact it had in all the sectors of my life left me dizzy, confused and with a feeling of emptiness and absurdity I have rarely ever felt.
+My first experience with loss started last June, when a 17 years relationship ended abruptly. The women I loved left me to try something new. We were very civil about it and we both remain nice to each other but, the span of only four weeks in which it happened, and the impact it had in all the sectors of my life left me dizzy, confused and with a feeling of emptiness and absurdity I have rarely ever felt.
 
 As "the Dude" would put it, "[the rug that really tied the room together](https://www.youtube.com/watch?v=4Wu598ENenk)" was gone. The void that replaced it became my new companion. At first I hated it, with a passion. My reaction was to fight it with whatever I could find: work, beers, parties, girls, etc. I filled my life with anything that would keep the void at bay. After 3 or 4 months of this regimen, I was toast. I was barely able to function properly anymore and my sleeping patterns were messier than ever.
 
@@ -21,7 +21,7 @@ It helped. A lot. Although the void created by that loss still hits me hard some
 
 ## Cancer is a bitch
 
-A couple of week after our breakup, my phone rang one Tuesday afternoon, it was my mother. "You have to come over, I need to talk to you". "I could come over this week-end, no problem". "No no, Jérôme, in need you to come by now, today". I knew something was not quite right so I took the train after work and we met on a sunny terrasse in downtown Namur.
+A couple of week after our breakup, my phone rang one Tuesday afternoon, it was my mother. "You have to come over, I need to talk to you". "I could come over this week-end, no problem". "No no, Jérôme, I need you to come by now, today". I knew something was not quite right so I took the train after work and we met on a sunny terrasse in downtown Namur.
 
 "Well, she said, I have been diagnosed with a very aggressive form of breast cancer. I have to undergo five months of chemo, then an operation and then radiotherapy". There it was again, loss, this time manifesting itself in a more subtle way, through the prospect of maybe loosing my mum. A more prospective kind of void, but a void nonetheless.
 
