@@ -11,10 +11,10 @@ html_description: "The blog and portfolio of Jérôme Coupé, a web designer fro
 exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
 highlighter: rouge
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
   hard_wrap: false
-  syntax_highlighter: rouge
 
 permalink: /blog/:title/
 
