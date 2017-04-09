@@ -15,7 +15,7 @@ My first experience with loss started last June, when a 17 years relationship en
 
 As "the Dude" would put it, "[the rug that really tied the room together](https://www.youtube.com/watch?v=4Wu598ENenk)" was gone. The void that replaced it became my new companion. At first I hated it, with a passion. My reaction was to fight it with whatever I could find: work, beers, parties, girls, etc. I filled my life with anything that would keep the void at bay. After 3 months of this regimen, I was toast. I was barely able to function properly anymore and my sleeping patterns were messier than ever.
 
-Time for a shift. Instead of fighting the void, I tried to tame it, to consider it also as an opportunity for me to have more room in my life, to take more time to do what I enjoy doing, to stop running, to breathe, to try new things and to meet new people, and to spend more time with old friends.
+Time for a shift. Instead of fighting the void, I tried to tame it, to consider it also as an opportunity for me to have more room in my life, to take more time to do what I enjoy doing, to stop running, to breathe, to try new things, meet new people, and to spend more time with old friends.
 
 It helped. A lot. Although the void created by that loss still hits me hard some days, although it can still hurl me down a bottomless pit of sadness at times, I know now that it can bring me nice moments as well.
 
@@ -41,7 +41,7 @@ I realised that those cracks are as an essential part of us as our qualities, an
 
 She is the mother of a 6 years old boy. The fact that we both had our own lives and only saw each other when we would both be available was a new experience for me. It made me realise that a relationship can feel great without living with someone day in and day out, without necessarily having to experience the constant friction of everyday life, without rubbing our mutual wounds, and that those empty moments also created a space that could be filled with anticipation.
 
-That short but nice story ended rather abruptly. Some of us are more interested in chasing an immediate spark than in the longer road consisting in looking for wood, building a fire together and slowly creating long lasting embers. That's ok too. At least it has taught me that relationships can have a comfortable degree of elasticity, and that preserving a healthy amount of space and distance is something to be mindful of.
+That short but nice story ended rather abruptly. Some of us are more interested in chasing an immediate spark than in the longer road consisting in looking for wood, building a fire together and slowly creating long lasting embers. I miss her and that's ok too. At least it has taught me that relationships can have a comfortable degree of elasticity, and that preserving a healthy amount of space and distance is something to be mindful of.
 
 ## Onwards
 
