@@ -41,7 +41,7 @@ I realised that those cracks are as an essential part of us as our qualities, an
 
 She is the mother of a 6 years old boy. The fact that we both had our own lives and only saw each other when we would both be available was a new experience for me. It made me realise that a relationship can feel great without living with someone day in and day out, without necessarily having to experience the constant friction of everyday life, without rubbing our mutual wounds, and that those empty moments also created a space that could be filled with anticipation.
 
-That short but nice story ended rather abruptly. Some of us are more interested in chasing an immediate spark than in the longer road consisting in looking for wood, building a fire together and slowly creating long lasting embers. I miss her and that's ok too. At least it has taught me that relationships can have a comfortable degree of elasticity, and that preserving a healthy amount of space and distance is something to be mindful of.
+That short but nice story ended rather abruptly. Some of us are more interested in chasing an immediate spark than in the longer road consisting in looking for wood, building a fire together and slowly creating long lasting embers. That's ok too. At least it has taught me that relationships can have a comfortable degree of elasticity, and that preserving a healthy amount of space and distance is something to be mindful of.
 
 ## Onwards
 
