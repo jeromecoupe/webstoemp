@@ -8,7 +8,6 @@ github_username:  jeromecoupe
 html_description: "The blog and portfolio of Jérôme Coupé, a web designer from Brussels, Belgium"
 
 # Build settings
-exclude: [node_modules/, scss/, gulpfile.js, package.json, README.md, js/modules/]
 highlighter: rouge
 markdown: kramdown
 highlighter: rouge
@@ -40,3 +39,16 @@ defaults:
     values:
       layout: "portfolio"
       current_nav: "work"
+
+exclude:
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scss
+  - js/modules
+
+include:
+  - _pages

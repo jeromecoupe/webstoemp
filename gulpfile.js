@@ -35,20 +35,6 @@ var AUTOPREFIXER_BROWSERS = [
   'bb >= 10'
 ];
 
-//build datestamp for cache busting
-var getStamp = function() {
-  var myDate = new Date();
-
-  var myYear = myDate.getFullYear().toString();
-  var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
-  var myDay = ('0' + myDate.getDate()).slice(-2);
-  var myMinutes = myDate.getSeconds();
-
-  var myFullDate = myYear + myMonth + myDay + myMinutes;
-
-  return myFullDate;
-};
-
 //create random number for banner swap
 //between min (inclusive) and max (exclusive)
 var getRandomInt = function(min, max) {
@@ -73,15 +59,8 @@ gulp.task('img', function() {
   .pipe(gulp.dest('./img/'));
 });
 
-// Cache busting task
-gulp.task('cachebust', function() {
-  return gulp.src('./_layouts/default.html', { base:'./' })
-    .pipe(replace(/(js|css)\?rev=([0-9]*)/g, '$1?rev=' + getStamp() ))
-    .pipe(gulp.dest('./'));
-});
-
 // CSS task
-gulp.task('css', ['cachebust'], function() {
+gulp.task('css', function() {
   return gulp.src('./scss/**/*.scss')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(sass({ style: 'expanded' }))
@@ -105,7 +84,7 @@ gulp.task('jslint', function() {
 });
 
 //Concatenate and Minify JS task
-gulp.task('scripts', ['jslint', 'cachebust'], function() {
+gulp.task('scripts', ['jslint'], function() {
   return gulp.src(['./js/modules/**/*.js','./js/vendors/svg4everybody.min.js'])
   .pipe(concat('webstoemp.js'))
   .pipe(gulp.dest('./js/'))
