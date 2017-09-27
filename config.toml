@@ -1,0 +1,5 @@
+baseURL = "/"
+languageCode = "en"
+title = "Webstoemp"
+
+disableKinds = ["RSS", "sitemap", "taxonomy", "404"]

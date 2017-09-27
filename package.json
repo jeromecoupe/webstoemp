@@ -1,0 +1,39 @@
+{
+  "name": "webstoemp",
+  "version": "1.0.0",
+  "description": "new webstoemp website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromecoupe/webstoempv2.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Jérôme Coupé",
+  "bugs": {
+    "url": "https://github.com/jeromecoupe/webstoempv2/issues"
+  },
+  "devDependencies": {
+    "babel-core": "6.x",
+    "babel-preset-env": "1.x",
+    "browser-sync": "2.x",
+    "del": "3.x",
+    "globby": "6.x",
+    "gulp": "3.x",
+    "gulp-autoprefixer": "4.x",
+    "gulp-babel": "7.x",
+    "gulp-concat": "2.x",
+    "gulp-cssnano": "2.x",
+    "gulp-eslint": "4.x",
+    "gulp-image-resize": "0.x",
+    "gulp-imagemin": "3.x",
+    "gulp-newer": "1.x",
+    "gulp-plumber": "1.x",
+    "gulp-rename": "1.x",
+    "gulp-sass": "3.x",
+    "gulp-uglify": "3.x",
+    "merge2": "1.x"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {}
+}
