@@ -28,24 +28,24 @@ const globby = require("globby");
 // ---------------------------------------
 
 const transforms = [
-{
-  "src": "./assets/img/blogposts/*",
-  "dist": "./public/assets/img/blogposts/",
-  "params": {
-    "width": 500,
-    "height": 500,
-    "crop": true
+  {
+    "src": "./assets/img/blogposts/*",
+    "dist": "./public/assets/img/blogposts/",
+    "params": {
+      "width": 500,
+      "height": 500,
+      "crop": true
+    }
+  },
+  {
+    "src": "./assets/img/banners/*",
+    "dist": "./public/assets/img/banners/",
+    "params": {
+      "width": 100,
+      "height": 100,
+      "crop": true
+    }
   }
-},
-{
-  "src": "./assets/img/banners/*",
-  "dist": "./public/assets/img/banners/",
-  "params": {
-    "width": 100,
-    "height": 100,
-    "crop": true
-  }
-}
 ];
 
 // ---------------------------------------
