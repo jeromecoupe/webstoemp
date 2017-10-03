@@ -131,9 +131,14 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
-  gulp.watch('./scss/**/*', ['css']);
-  gulp.watch('./js/modules/**/*', ['scripts']);
-  gulp.watch(['./_includes/**/*','./_layouts/**/*','./_posts/**/*','./_projects/**/*','./_pages/**/*'], ['jekyll-rebuild']);
+  gulp.watch('scss/**/*', ['css']);
+  gulp.watch('js/modules/**/*', ['scripts']);
+  gulp.watch(['_includes/**/*',
+              '_layouts/**/*',
+              '_posts/**/*',
+              '_projects/**/*',
+              '_pages/**/*'],
+              ['jekyll-rebuild']);
 });
 
 // Tasks
