@@ -12,14 +12,14 @@ tags:
 
 Over the last year or so, I have really become a fan of using static site generators for prototyping or even for full blown websites. This [JAMstack](https://jamstack.org/) thing is growing on me, but I wanted a way to deal with responsive images and thumbnails generation as part of the build process.
 
-Generating all these thumbnails on every build is time consuming and slows down the build process, so I wanted something working incrementally. It is also nice to have a central place where you can configure all the image transforms you need. Finally, I wanted something clean that keeps my build folder free of cruft.
+Generating all these thumbnails on every build is time consuming, so I wanted something working incrementally. It is also nice to have a central place where you can configure all the image transforms you need. Finally, I wanted something clean that keeps my `dist` folder free of cruft.
 
 Here is what I wanted these Gulp tasks to do for me:
 
-- Copy and optimise images form `src` to `dist` only if images in `src` are newer than images in `dist`.
-- Use a simple configuration array of objects to generate and optimise image thumbnails for selected folders in `src` using ImageMagick.
-- Delete images and related thumbnails in my `dist` folder when images are deleted from `src` folder
-- Delete unused folders in my `dist` folder when transform objects are modified in the configuration array or when `src` images are moved around.
+1. Copy and optimise images form `src` to `dist` only if images in `src` are newer than images in `dist`.
+2. Use a simple configuration array of objects to generate and optimise image thumbnails for selected folders in `src` using ImageMagick.
+3. Delete images and related thumbnails in my `dist` folder when images are deleted from the `src` folder or renamed.
+4. Delete unused folders in my `dist` folder when transform objects are modified in the configuration array or when images in `src` are moved around.
 
 Let's get to work.
 
