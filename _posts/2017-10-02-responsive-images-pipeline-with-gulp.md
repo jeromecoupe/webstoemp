@@ -1,5 +1,5 @@
 ---
-title: "Building a responsive images pipeline with Gulp"
+title: "Building a simple responsive images pipeline with Gulp"
 excerpt: "I have been working with static site generators a lot lately. One thing I missed is a configurable image pipeline to automate the process of creating thumbnails for responsive images and the likes, so I looked into building one with Gulp."
 categories:
 - Front end
@@ -12,14 +12,14 @@ tags:
 
 Over the last year or so, I have really become a fan of using static site generators for prototyping or even for full blown websites. This [JAMstack](https://jamstack.org/) thing is growing on me, but I wanted a way to deal with responsive images and thumbnails generation as part of the build process.
 
-I have never been stellar at JavaScript and generally work with people that are a lot better at it than myself. But, even if I consider myself a bit slow, I enjoy like writing JS code to solve problems and I wanted to get more aquainted with ES6 syntax, which you can do with Gulp as of version 3.9.
+I have never been stellar at JavaScript and generally work with people that are a lot better at it than myself. But, even if I consider myself a bit slow, I enjoy writing JS code to solve problems and I wanted to get more aquainted with ES6 syntax, which you can use with Gulp as of version 3.9.
 
 Here is what I wanted these Gulp tasks to do for me:
 
 - Copy and optimise images form `src` to `dist` only if images in `src` are newer than images in `dist`.
 - Use a simple configuration array of objects to generate and optimise image thumbnails for selected folders in `src` using ImageMagick.
 - Delete images and related thumbnails in my `dist` folder when images are deleted from `src` folder
-- Delete usused folders in my `dist` folder when transform objects are modified in the configuration array or when `src` images are moved around.
+- Delete unused folders in my `dist` folder when transform objects are modified in the configuration array or when `src` images are moved around.
 
 Let's get to work.
 
@@ -32,10 +32,10 @@ Apart from Gulp itself, we will need a few packages to accomplish this:
 - [globby](https://www.npmjs.com/package/globby): match files and folders using globs and expose a Promise API
 - [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin): minify images
 - [gulp-image-resize](https://www.npmjs.com/package/gulp-image-resize): resize images using ImageMagick
-- [gulp-newer](https://www.npmjs.com/package/gulp-newer): only pass through source files newer tha destination files
-- [merge2](https://www.npmjs.com/package/merge2): merge multiple streams into one stream in sequence or parallel (we will use the arallel option for performance)
+- [gulp-newer](https://www.npmjs.com/package/gulp-newer): only pass through source files newer than destination files
+- [merge2](https://www.npmjs.com/package/merge2): merge multiple streams into one stream in sequence or parallel (we will use the parallel option for performance)
 
-After installing these packages with NPM, we need to declare them at the top of our gulpfile.js file.
+After installing these packages with NPM, we need to import them at the top of our gulpfile.js file.
 
 ```js
 const del = require("del");
@@ -77,9 +77,9 @@ Now that we have everything we need, let's tackle our objectives one by one.
 
 ## Copy and optimise source images
 
-First, let's simply copy our `src` images our `dist` folder and optimise them. We want that operation to be incremental and only target images in `src` that are newer than the files already sitting in our `dist` folder. To do this, we simply use `gulp-newer` and feed it the path to our `dist` folder, the same one we feed to `gulp.dest`.
+First, let's simply copy our `src` images into our `dist` folder and optimise them. We want that operation to be incremental and only target images in `src` that are newer than the files already sitting in our `dist` folder. To do this, we simply use `gulp-newer` and feed it the path to our `dist` folder. Job done. Gulp only copies new or modified images to our `dist` folder.
 
-Job done. Gulp only copies new or modified images to our `dist` folder. We'll come back to that `img:clean` task we specify as a dependency a bit later.
+We'll come back to that `img:clean` task we specify as a dependency a bit later.
 
 ```js
 /**
@@ -106,7 +106,7 @@ Next, we want to create our thumbnails using ImageMagick. If we only had one ima
 
 Here, we have to walk over our configuration array and, for each transform, repeat these operations. If possible, we also want to do it in parallel to optimise our build process.
 
-That's what we use `merge2` for. We can use it to merge various streams. If we feed it an array of streams, it will process them in parallel.
+That's what `merge2` is used for. It merges multiple streams into one and, when fed an array of streams, processes them in parallel.
 
 ```js
 /**
@@ -151,7 +151,7 @@ gulp.task("img:thumbnails", ["img:clean"], () => {
 });
 ```
 
-Our thumbnails are generated in subdirectories. They have the same filenames as the original images they are created from and we store them in subfolder named after the following pattern: "thumbs_[width]x[height]".
+Our thumbnails have the same filenames as the original images and we store them in subfolders named after the following pattern: "thumbs_[width]x[height]".
 
 For example, if we configure a transform to generate "800" per "600" thumbnails for images in `src/assets/images/blogposts`, the generated thumbnails will be stored in `dist/assets/images/blogposts/thumbs_800x600/`.
 
@@ -311,8 +311,8 @@ gulp.task("watch", ["browser-sync"], () => {
 
 ## A nice little image pipeline
 
-With a few line of JS, we have a small but powerfull image pipeline built with Gulp and Node that can be used with pretty much any static site generator on the market. Sure, services like [Cloudinary](https://cloudinary.com) and [imgIX](https://www.imgix.com/) are great but they are overkill for most of the projects I work on and introduce another dependency. I also gave me the opportunity to write some more ES6 and to work with Promises.
+With a few line of JS, we have a small but powerfull image pipeline built with Gulp and Node that can be used with pretty much any static site generator on the market. Sure, services like [Cloudinary](https://cloudinary.com) and [imgIX](https://www.imgix.com/) are great but they are overkill for most of the projects I work on and introduce another dependency. I also gave me the opportunity to write some ES6 and to work with Promises.
 
 This series of Gulp tasks should be able to deal with even a large amount of images and is pretty easy to customise to suit your needs if you feel so inclined.
 
-Thanks for reading and don't hesitate to hit me up if you have remarks or comment. [Here is the full file as a Gist](https://gist.github.com/jeromecoupe/dbda0e037f2fee9e0026dfb38fbc5e73) for reference.
+Thanks for reading and don't hesitate to hit me up if you have remarks or comments. [Here is the full file as a Gist](https://gist.github.com/jeromecoupe/dbda0e037f2fee9e0026dfb38fbc5e73) for reference.
