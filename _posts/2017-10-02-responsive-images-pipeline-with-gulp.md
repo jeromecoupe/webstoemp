@@ -1,5 +1,5 @@
 ---
-title: "Building a responsive image pipeline with gulp"
+title: "Building a responsive images pipeline with Gulp"
 excerpt: "I have been working with static site generators a lot lately. One thing I missed is a configurable image pipeline to automate the process of creating thumbnails for responsive images and the likes, so I looked into building one with Gulp."
 categories:
 - Front end
