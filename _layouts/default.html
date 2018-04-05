@@ -9,16 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.min.css?rev={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="/assets/css/main.min.css?rev={{ site.time | date: '%s' }}">
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Webstoemp Blog">
-
-    <!-- Picturefill -->
-    <script>
-      document.createElement( "picture" );
-    </script>
-    <script src="/js/vendors/picturefill.min.js" async></script>
 
     <!-- Typekit -->
     <script>
@@ -53,7 +47,7 @@
     {% include footer.html %}
 
     <!-- all other scripts minified and concatenated -->
-    <script src="/js/webstoemp.min.js?rev={{ site.time | date: '%s' }}"></script>
+    <script src="/assets/js/main.bundle.js?rev={{ site.time | date: '%s' }}"></script>
 
   </body>
 

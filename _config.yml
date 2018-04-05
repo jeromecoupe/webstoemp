@@ -44,11 +44,14 @@ exclude:
   - node_modules
   - gulpfile.js
   - package.json
+  - package-lock.json
   - Gemfile
   - Gemfile.lock
   - README.md
-  - scss
-  - js/modules
+  - assets
 
 include:
   - _pages
+
+keep_files:
+  - assets

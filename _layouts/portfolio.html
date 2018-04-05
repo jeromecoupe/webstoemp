@@ -14,7 +14,7 @@ layout: default
             {% if page.project_url and page.project_website %}
               <a href="{{ page.project_url }}">{{ page.project_website }}</a>
             {% else %}
-              project no longer online
+              no public URL for this project
             {% endif %}
           </p>
           <h1 class="h1  h1--notop  aligncenter">{{ page.title }}</h1>
@@ -25,10 +25,10 @@ layout: default
         </div>
 
         <figure class="figure  figure--full">
-           <img src="{{ page.project_image_small | prepend:'/img/projects/' }}"
-                srcset="{{ page.project_image_large | prepend:'/img/projects/' }} 1500w,
-                        {{ page.project_image_medium | prepend:'/img/projects/' }} 1024w,
-                        {{ page.project_image_small | prepend:'/img/projects/' }} 600w"
+           <img src="{{ page.project_image_small | prepend:'/assets/img/projects/' }}"
+                srcset="{{ page.project_image_large | prepend:'/assets/img/projects/' }} 1500w,
+                        {{ page.project_image_medium | prepend:'/assets/img/projects/' }} 1024w,
+                        {{ page.project_image_small | prepend:'/assets/img/projects/' }} 600w"
                 sizes="100vw"
                 alt="{{ page.title }}" class="imgfluid">
         </figure>
