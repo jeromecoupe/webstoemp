@@ -42,13 +42,14 @@ defaults:
 
 exclude:
   - node_modules
+  - assets
+  - Gemfile
+  - Gemfile.lock
   - gulpfile.js
   - package.json
   - package-lock.json
-  - Gemfile
-  - Gemfile.lock
   - README.md
-  - assets
+  - webpack.config.js
 
 include:
   - _pages
