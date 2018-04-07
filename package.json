@@ -18,6 +18,7 @@
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "cssnano": "^3.10.0",
+    "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "^1.4.0",

@@ -5,6 +5,7 @@ const autoprefixer = require("autoprefixer");
 const browsersync = require("browser-sync").create();
 const cp = require("child_process");
 const cssnano = require("cssnano");
+const del = require("del");
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
@@ -32,18 +33,23 @@ function browserSyncReload(done) {
   done();
 }
 
+// Clean assets
+function clean() {
+  return del(["./_site/assets/"]);
+}
+
 // Optimize Images
 function images() {
   return gulp
     .src("./assets/img/**/*")
-    .pipe(newer("./_site/assets/img/"))
+    .pipe(newer("./_site/assets/img"))
     .pipe(
       imagemin({
         progressive: true,
         svgoPlugins: [{ removeViewBox: false }]
       })
     )
-    .pipe(gulp.dest("./_site/assets/img/"));
+    .pipe(gulp.dest("./_site/assets/img"));
 }
 
 // CSS task
@@ -70,19 +76,6 @@ function scripts() {
       .pipe(gulp.dest("./_site/assets/js/")) // filename in webpack config
       .pipe(browsersync.reload({ stream: true }))
   );
-}
-
-// Display random image on homepage
-function bannerImage() {
-  return gulp
-    .src("./_includes/header.html")
-    .pipe(
-      replace(
-        /siteheader__banner--([0-9]*)/g,
-        "siteheader__banner--" + getRandomInt(1, 6)
-      )
-    )
-    .pipe(gulp.dest("./_includes/"));
 }
 
 // Jekyll
@@ -114,6 +107,10 @@ gulp.task("images", images);
 gulp.task("css", css);
 gulp.task("scripts", scripts);
 gulp.task("jekyll", jekyll);
-gulp.task("build", gulp.parallel([css, images, scripts, jekyll]));
+gulp.task("clean", clean);
 
-gulp.task("watch", gulp.parallel([watchFiles, browserSync]));
+gulp.task(
+  "build",
+  gulp.series(clean, gulp.parallel(css, images, scripts, jekyll))
+);
+gulp.task("watch", gulp.parallel(watchFiles, browserSync));
