@@ -67,15 +67,13 @@ function css() {
 
 // Concatenate and Minify JS task
 function scripts() {
-  return (
-    gulp
-      .src(["./assets/js/**/*"])
-      .pipe(plumber())
-      .pipe(webpackstream(webpackconfig), webpack)
-      //.pipe(uglify())
-      .pipe(gulp.dest("./_site/assets/js/")) // filename in webpack config
-      .pipe(browsersync.reload({ stream: true }))
-  );
+  return gulp
+    .src(["./assets/js/**/*"])
+    .pipe(plumber())
+    .pipe(webpackstream(webpackconfig), webpack)
+    .pipe(uglify())
+    .pipe(gulp.dest("./_site/assets/js/")) // filename in webpack config
+    .pipe(browsersync.reload({ stream: true }));
 }
 
 // Jekyll
@@ -109,8 +107,5 @@ gulp.task("scripts", scripts);
 gulp.task("jekyll", jekyll);
 gulp.task("clean", clean);
 
-gulp.task(
-  "build",
-  gulp.series(clean, gulp.parallel(css, images, scripts, jekyll))
-);
+gulp.task("build", gulp.parallel(css, images, scripts, jekyll));
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
