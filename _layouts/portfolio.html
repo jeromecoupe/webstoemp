@@ -10,13 +10,9 @@ layout: default
       <article class="item">
 
         <header class="item__header">
-          <p class="item-info  item-info--big  aligncenter">
-            {% if page.project_url and page.project_website %}
-              <a href="{{ page.project_url }}">{{ page.project_website }}</a>
-            {% else %}
-              no public URL for this project
-            {% endif %}
-          </p>
+          {% if page.project_url and page.project_website %}
+            <p class="item-info  item-info--big  aligncenter"><a href="{{ page.project_url }}">{{ page.project_website }}</a></p>
+          {% endif %}
           <h1 class="h1  h1--notop  aligncenter">{{ page.title }}</h1>
         </header>
 
