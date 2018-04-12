@@ -21,7 +21,7 @@ tags:
 
 I personally think side projects are great and I try to keep some time in my schedule to be able to work on a few of them. For me, they are great way to learn new techniques and to get familiar with new workflows by working on a real product.
 
-When Nicolas sked me to work on a simple one page website, my only conditions were that I could use CSS Grid and [Netlify](https://www.netlify.com/)'s continuous integration. We agreed that I would not be using any fallbacks for CSS Grid, which essentially means old browsers would get a linear version of the layout, while modern browsers would get the full experience.
+When Nicolas asked me to work on a simple one page website, my only conditions were that I could use CSS Grid and [Netlify](https://www.netlify.com/)'s continuous integration. We agreed that I would not be using any fallbacks for CSS Grid, which essentially means old browsers would get a linear version of the layout, while modern browsers would get the full experience.
 
 ## Playing with CSS Grid and Netlify
 
