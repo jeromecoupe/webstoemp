@@ -1,5 +1,5 @@
 ---
-title: "Migrating to Gulp 4"
+title: "Switching to Gulp 4"
 excerpt: "Although I also use NPM scripts on some projects, I have a soft spot for Gulp, mainly for its streaming ability, speed and easy to read configuration files. I have recently moved to Gulp 4 and wanted to share my experience."
 categories:
 - Front end
@@ -8,7 +8,7 @@ tags:
 - Build scripts
 ---
 
-## The Good and the Bad with Gulp 3
+## The good and the bad with Gulp 3
 
 What I really enjoy about Gulp is that you can leverage your Javascript chops to create your build script. As a front-ender this is just great. For the most part, you can also use ES6 syntax with Gulp natively now, which is a bonus.
 
@@ -18,7 +18,7 @@ On the negative side, Gulp adds an abstraction between your scripts and the NPM 
 
 Another pain point I have with it is that to clearly specify which tasks you want to run in sequence, and which ones you want to run in parallel, you had to fiddle with task dependencies or with plugins like `run-sequence`.
 
-## Changes when migrating to Gulp 4
+## Switching to Gulp 4
 
 Here is a quick summary of the major changes I made to build scripts when migrating to [Gulp 4](https://github.com/gulpjs/gulp). I tried to keep changes to a minimum. Let's go over a simple gulpfile (the one used on this website) to see what changed. Here is [a gist with the whole file for reference](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a).
 
@@ -112,3 +112,7 @@ gulp.task(
 The biggest advantage of migrating to Gulp 4 for me is the addition of `gulp.series` and `gulp.parallel` used above. These two are giving us a lot more control on the order in which we want our tasks to be executed and are also a lot more explicit.
 
 Since they can be nested it is a very straightforward and flexible dependency management system for our tasks.
+
+## Conclusion
+
+All in all, I really like Gulp 4 and its increased readability and flexibility. If you want to dive in a bit further, I wholeheartedly recommend Joe Zimmerman's "[The Complete-Ish Guide to Upgrading to Gulp 4](https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/)".
