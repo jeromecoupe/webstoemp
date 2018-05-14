@@ -24,17 +24,17 @@ Here is a quick summary of the major changes I made to build scripts when migrat
 
 ### Modules, import and export
 
-I didn't yet switch to ES6 modules (imports and exports) as they are not yet supported natively in Node. You can simply [use Babel as explained in the doc](https://github.com/gulpjs/gulp/tree/4.0#use-last-javascript-version-in-your-gulpfile) if you fancy doing that. Basically, I kept everything the same here, except swithing from `var` to `const`.
+I didn't switch to ES6 modules (imports and exports) as they are not yet supported natively in Node. You can simply [use Babel as explained in the doc](https://github.com/gulpjs/gulp/tree/4.0#use-last-javascript-version-in-your-gulpfile) if you fancy doing that. Basically, I kept everything the same here, except swithing from `var` to `const`.
 
 ```js
 const gulp = require("gulp");
 ```
 
-I also don't use commonJs syntax expose tasks to the CLI using `export` but simply use `gulp.task` for that as explained below.
+I also don't use commonJs `exports` syntax to expose tasks to the CLI. Instead, I simply use `gulp.task` as explained below.
 
 ### Plain named functions and `gulp.task`
 
-Instead of the traditional `gulp.task` we all use with version 3, I use simple named functions with no dependencies to define tasks. One thing to pay attention to is that, with Gulp 4, we need to explicitely signal task completion for each function. You can do that in five ways: return a stream, return a promise, callback, return a child process, return a RxJS observable. If you do not do it properly, you will get the infamous "Did you forget to signal async completion?" message in your console and the task will not complete.
+Instead of the traditional `gulp.task` we all use with version 3 to define our tasks, I use simple named functions with no dependencies. One thing to pay attention to is that, with Gulp 4, we need to explicitely signal task completion for each function. You can do that [in five ways](https://stackoverflow.com/a/36899424/1796281): return a stream, return a promise, callback, return a child process, return a RxJS observable. If you do not do it properly, you will get the infamous "Did you forget to signal async completion?" message in your console and the task will not complete.
 
 Here are some examples of the functions I use on this very website. They use the most common ways to signal async completion.
 
