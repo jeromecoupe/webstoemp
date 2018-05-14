@@ -6,13 +6,13 @@ const browsersync = require("browser-sync").create();
 const cp = require("child_process");
 const cssnano = require("cssnano");
 const del = require("del");
+const eslint = require("gulp-eslint");
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
-const replace = require("gulp-replace");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const webpack = require("webpack");
@@ -20,11 +20,14 @@ const webpackconfig = require("./webpack.config.js");
 const webpackstream = require("webpack-stream");
 
 // BrowserSync
-function browserSync() {
+function browserSync(done) {
   browsersync.init({
-    proxy: "www.webstoemp.test",
+    server: {
+      baseDir: "./_site/"
+    },
     port: 3000
   });
+  done();
 }
 
 // BrowserSync Reload
@@ -65,28 +68,39 @@ function css() {
     .pipe(browsersync.stream());
 }
 
-// Concatenate and Minify JS task
-function scripts() {
+// Lint scripts
+function scriptsLint() {
   return gulp
-    .src(["./assets/js/**/*"])
+    .src(["./assets/js/**/*", "./gulpfile.js"])
     .pipe(plumber())
-    .pipe(webpackstream(webpackconfig), webpack)
-    .pipe(uglify())
-    .pipe(gulp.dest("./_site/assets/js/")) // filename in webpack config
-    .pipe(browsersync.reload({ stream: true }));
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+}
+
+// Transpile, concatenate and minify scripts
+function scripts() {
+  return (
+    gulp
+      .src(["./assets/js/**/*"])
+      .pipe(plumber())
+      .pipe(webpackstream(webpackconfig), webpack)
+      .pipe(uglify())
+      // folder only, filename is specified in webpack config
+      .pipe(gulp.dest("./_site/assets/js/"))
+      .pipe(browsersync.stream())
+  );
 }
 
 // Jekyll
-function jekyll(done) {
-  return cp
-    .spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" })
-    .on("close", done);
+function jekyll() {
+  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
 }
 
 // Watch files
 function watchFiles() {
   gulp.watch("./assets/scss/**/*", css);
-  gulp.watch("./assets/js/**/*", scripts);
+  gulp.watch("./assets/js/**/*", gulp.series(scriptsLint, scripts));
   gulp.watch(
     [
       "./_includes/**/*",
@@ -103,9 +117,15 @@ function watchFiles() {
 // Tasks
 gulp.task("images", images);
 gulp.task("css", css);
-gulp.task("scripts", scripts);
+gulp.task("js", gulp.series(scriptsLint, scripts));
 gulp.task("jekyll", jekyll);
 gulp.task("clean", clean);
 
-gulp.task("build", gulp.parallel(css, images, scripts, jekyll));
+// build
+gulp.task(
+  "build",
+  gulp.series(clean, gulp.parallel(css, images, jekyll, "js"))
+);
+
+// watch
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
