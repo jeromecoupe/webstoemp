@@ -46,4 +46,4 @@ Of course, hiring an external agency for design and UX services makes sense if y
 
 Even if you have one, collaborating with an external team can help you increase your team’s bandwidth and flexibility. It can also help you see your projects from a new angle and learn new skills. These creativity boosts will enable you to crack tough challenges faster. Last but not least, getting an agency’s support to create high-level UX deliverables will benefit your whole business by helping you keep your products clear and consistent.
 
-This blogpost was originally written when working with [Central](https://central.team), a design consultancy that helps organizations create successful digital products.
+*This blogpost was originally written when working with [Central](https://central.team), a design consultancy that helps organizations create successful digital products.*
