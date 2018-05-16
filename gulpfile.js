@@ -60,7 +60,7 @@ function css() {
   return gulp
     .src("./assets/scss/**/*.scss")
     .pipe(plumber())
-    .pipe(sass({ style: "expanded" }))
+    .pipe(sass({ outputStyle: "expanded" }))
     .pipe(gulp.dest("./_site/assets/css/"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
