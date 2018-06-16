@@ -14,7 +14,6 @@ const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-const uglify = require("gulp-uglify");
 const webpack = require("webpack");
 const webpackconfig = require("./webpack.config.js");
 const webpackstream = require("webpack-stream");
@@ -84,8 +83,7 @@ function scripts() {
     gulp
       .src(["./assets/js/**/*"])
       .pipe(plumber())
-      .pipe(webpackstream(webpackconfig), webpack)
-      .pipe(uglify())
+      .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack config
       .pipe(gulp.dest("./_site/assets/js/"))
       .pipe(browsersync.stream())
