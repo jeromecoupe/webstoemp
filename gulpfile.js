@@ -79,15 +79,13 @@ function scriptsLint() {
 
 // Transpile, concatenate and minify scripts
 function scripts() {
-  return (
-    gulp
+  return gulp
       .src(["./assets/js/**/*"])
       .pipe(plumber())
       .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack config
       .pipe(gulp.dest("./_site/assets/js/"))
-      .pipe(browsersync.stream())
-  );
+      .pipe(browsersync.stream());
 }
 
 // Jekyll
