@@ -46,7 +46,7 @@ current_nav: blog
                     <p class="item-info"><time datetime="{{ blogpost.date | date: '%Y-%m-%d' }}">{{ blogpost.date | date: "%B %-d, %Y" }}</time></p>
                     <h3 class="h4  h4--notop"><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></h3>
                     <p>{{ blogpost.excerpt }}</p>
-                    <p><a href="{{ blogpost.url }}" class="more">Read More</a></p>
+                    <p><a class="more" href="{{ blogpost.url }}" title="{{ blogpost.title }}">Read More</a></p>
                   </article>
                 </li>
 

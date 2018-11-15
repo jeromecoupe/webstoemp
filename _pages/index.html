@@ -64,7 +64,7 @@ current_nav: home
         <p class="item-info"><time datetime="{{ item.date|date:'%Y-%m-%d' }}">{{ item.date|date:"%B %-d, %Y" }}</time></p>
         <h3 class="h4  h4--notop"><a href="{{ item.url }}">{{ item.title }}</a></h3>
         <p>{{ item.excerpt }}</p>
-        <p><a href="{{ item.url }}" class="more">Read More</a></p>
+        <p><a class="more" href="{{ item.url }}" title="{{ item.title }}">Read More</a></p>
       </article>
 
       {% if forloop.last %}</li></ul>{% else %}</li><li class="grid__unit  medium-span-6of12">{% endif %}
