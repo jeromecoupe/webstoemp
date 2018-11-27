@@ -20,7 +20,7 @@ Another pain point I have with it is that to clearly specify which tasks you wan
 
 ## Switching to Gulp 4
 
-Here is a quick summary of the major changes I made to build scripts when migrating to [Gulp 4](https://github.com/gulpjs/gulp). I tried to keep changes to a minimum. Let's go over a simple gulpfile (the one used on this website) to see what changed. Here is [a gist with the whole file for reference](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a).
+Here is a quick summary of the major changes I made to build scripts when migrating to [Gulp 4](https://github.com/gulpjs/gulp). I tried to keep changes to a minimum. Let's go over a simple gulpfile (the one used on this website) to see what changed. Here is [a gist with the whole file for reference](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a). You could also have a look on Github at the [gulpfile this site is using](https://github.com/jeromecoupe/jeromecoupe.github.io).
 
 ### Modules, import and export
 
@@ -91,7 +91,7 @@ function jekyll() {
 }
 ```
 
-I then reference these functions using `gulp.task` to expose them to the CLI and give them a name. You can do other interesting things beside just naming them Some tasks, like `clean` for example, do not need to be exposed and are kept "private" only to be used in the context of other tasks.
+I then reference these functions using `gulp.task` to expose them to the CLI and give them a name. You can do other interesting things beside just naming them. Some tasks, like `clean` for example, do not need to be exposed and are kept "private" only to be used in the context of other tasks.
 
 ```js
 // expose 'scripts' task to CLI
