@@ -46,10 +46,19 @@ function images() {
     .src("./assets/img/**/*")
     .pipe(newer("./_site/assets/img"))
     .pipe(
-      imagemin({
-        progressive: true,
-        svgoPlugins: [{ removeViewBox: false }]
-      })
+      imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.jpegtran({ progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+          plugins: [
+            {
+              removeViewBox: false,
+              collapseGroups: true
+            }
+          ]
+        })
+      ])
     )
     .pipe(gulp.dest("./_site/assets/img"));
 }
