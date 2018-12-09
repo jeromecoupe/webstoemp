@@ -1,6 +1,6 @@
 ---
 title: "Contextual components in Craft CMS"
-excerpt: "Front-end developers gravitate more and more towards using components thse days. Here is a simple approach to reuse the logic of a component in Craft CMS while adjusting its styling depending on context."
+excerpt: "Front-end developers gravitate more and more towards using components these days. Here is a simple approach to reuse the logic of a component in Craft CMS while adjusting its styling depending on context."
 categories:
 - CMS
 tags:
@@ -48,7 +48,7 @@ Here is what it might look like:
 
 If you work like this, you will need to repeat that little `blogpost` view everywhere you use it, which flies in the face of the DRY principle. A better option is to use an include and pass it the object you want to display.
 
-Using a component-based approch, our code becomes:
+Using a component-based approach, our code becomes:
 
 ```twig
 {% raw %}{# get all Blogposts #}
@@ -192,6 +192,6 @@ We can then simply call our component in our footer and pass it a context like s
 
 We don't use the `only` keyword here because we need more than our `context` variable. In this case we need `entry` and possibly `currentSection` to be available from the global context.
 
-Again, our main navigation is handled by a single reusable component that gets styled diffrently based on the context variable we pass to it.
+Again, our main navigation is handled by a single reusable component that gets styled differently based on the context variable we pass to it.
 
-Personnaly, using a component-based approach helps me be more productive but, above all, it makes the sites I work on easier to debug and maintain over time.
+Personally, using a component-based approach helps me be more productive but, above all, it makes the sites I work on easier to debug and maintain over time.
