@@ -185,7 +185,7 @@ Time for a contextual `mainnav.twig` component that we will again write in our `
 We can then simply call our component in our footer and pass it a context like so:
 
 ```twig
-{% raw %}{% include "_components/blogpost.twig" with {
+{% raw %}{% include "_components/mainnav.twig" with {
   context: "footer"
 }%}{% endraw %}
 ```
