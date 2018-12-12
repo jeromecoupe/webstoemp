@@ -18,7 +18,7 @@ Here is what it might look like:
 
 ```twig
 {% raw %}{# get all Blogposts #}
-{% set allBlogposts = craft.entries()
+{% set latestBlogposts = craft.entries()
       .section("blog")
       .orderBy("postDate desc")
       .limit(3)
@@ -52,7 +52,7 @@ Using a component-based approach, our code becomes:
 
 ```twig
 {% raw %}{# get all Blogposts #}
-{% set allBlogposts = craft.entries()
+{% set latestBlogposts = craft.entries()
     .section("blog")
     .orderBy("postDate desc")
     .limit(3)
