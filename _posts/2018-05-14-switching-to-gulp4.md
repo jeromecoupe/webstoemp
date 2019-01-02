@@ -20,21 +20,25 @@ Another pain point I have with it is that to clearly specify which tasks you wan
 
 ## Switching to Gulp 4
 
-Here is a quick summary of the major changes I made to build scripts when migrating to [Gulp 4](https://github.com/gulpjs/gulp). I tried to keep changes to a minimum. Let's go over a simple gulpfile (the one used on this website) to see what changed. Here is [a gist with the whole file for reference](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a). You could also have a look on Github at the [gulpfile this site is using](https://github.com/jeromecoupe/jeromecoupe.github.io).
+Here is a quick summary of the major changes I made to build scripts when migrating to [Gulp 4](https://github.com/gulpjs/gulp). I tried to keep changes to a minimum. Let's go over a simple gulpfile (the one used on this website) to see what changed. Have a look at [the full file on Github](https://github.com/jeromecoupe/jeromecoupe.github.io/blob/master/gulpfile.js) if you want an up to date version.
 
 ### Modules, import and export
 
-I didn't switch to ES6 modules (imports and exports) as they are not yet supported natively in Node. You can simply [use Babel as explained in the doc](https://github.com/gulpjs/gulp/tree/4.0#use-last-javascript-version-in-your-gulpfile) if you fancy doing that. Basically, I kept everything the same here, except swithing from `var` to `const`.
+I didn't switch to ES6 modules (imports and exports) as they are not yet supported natively in Node. You can [use Babel as explained in the docs](https://github.com/gulpjs/gulp) if you fancy doing that. Basically, I only switched from `var` to `const` here, nothing more.
 
 ```js
 const gulp = require("gulp");
 ```
 
-I also don't use commonJs `exports` syntax to expose tasks to the CLI. Instead, I simply use `gulp.task` as explained below.
+I also started using CommonJs exports instead of `gulp.task` to expose tasks to the CLI.
 
-### Plain named functions and `gulp.task`
+```js
+exports.css = css;
+```
 
-Instead of the traditional `gulp.task` we all use with version 3 to define our tasks, I use simple named functions with no dependencies. One thing to pay attention to is that, with Gulp 4, we need to explicitely signal task completion for each function. You can do that [in five ways](https://stackoverflow.com/a/36899424/1796281): return a stream, return a promise, callback, return a child process, return a RxJS observable. If you do not do it properly, you will get the infamous "Did you forget to signal async completion?" message in your console and the task will not complete.
+### Plain named functions
+
+Instead of the traditional `gulp.task` we all use with version 3 to define our tasks, I use simple named functions with no dependencies. One thing to pay attention to is that, with Gulp 4, we need to explicitely signal task completion for each function. You can do that [in six ways](https://gulpjs.com/docs/en/getting-started/async-completion): return a stream, return a promise, return a child process, callback, return an event emitter, return an observable. If you do not do it properly, you will get the infamous "Did you forget to signal async completion?" message in your console and the task will not complete.
 
 Here are some examples of the functions I use on this very website. They use the most common ways to signal async completion.
 
@@ -59,6 +63,19 @@ function browserSyncReload(done) {
 // Clean assets (returns a promise)
 function clean() {
   return del(["./_site/assets/"]);
+}
+
+// CSS task (returns a stream)
+function css() {
+  return gulp
+    .src("./assets/scss/**/*.scss")
+    .pipe(plumber())
+    .pipe(sass({ outputStyle: "expanded" }))
+    .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(browsersync.stream());
 }
 
 // Lint scripts (returns a stream)
@@ -91,20 +108,17 @@ function jekyll() {
 }
 ```
 
-I then reference these functions using `gulp.task` to expose them to the CLI and give them a name. You can do other interesting things beside just naming them. Some tasks, like `clean` for example, do not need to be exposed and are kept "private" only to be used in the context of other tasks.
+I then reference these functions using CommonJS exports module notation to expose them to the CLI and give them a name. Some tasks, like `clean` for example, might not need to be exposed and are kept "private" only to be used in the context of other tasks.
 
 ```js
-// expose 'scripts' task to CLI
-gulp.task("js", gulp.series(scriptsLint, scripts));
+// define complex tasks
+const js = gulp.series(scriptsLint, scripts);
+const build = gulp.series(clean, gulp.parallel(css, images, jekyll, js));
 
-// build task
-gulp.task(
-  "build",
-  gulp.series(
-    clean,
-    gulp.parallel(css, images, jekyll, "js")
-  )
-);
+// export tasks
+exports.js = js;
+exports.build = build;
+exports.default = build;
 ```
 
 ### Newcomers for dependencies management
