@@ -88,13 +88,15 @@ function scriptsLint() {
 
 // Transpile, concatenate and minify scripts
 function scripts() {
-  return gulp
+  return (
+    gulp
       .src(["./assets/js/**/*"])
       .pipe(plumber())
       .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack config
       .pipe(gulp.dest("./_site/assets/js/"))
-      .pipe(browsersync.stream());
+      .pipe(browsersync.stream())
+  );
 }
 
 // Jekyll
@@ -119,18 +121,17 @@ function watchFiles() {
   gulp.watch("./assets/img/**/*", images);
 }
 
-// Tasks
-gulp.task("images", images);
-gulp.task("css", css);
-gulp.task("js", gulp.series(scriptsLint, scripts));
-gulp.task("jekyll", jekyll);
-gulp.task("clean", clean);
+// define complex tasks
+const js = gulp.series(scriptsLint, scripts);
+const build = gulp.series(clean, gulp.parallel(css, images, jekyll, js));
+const watch = gulp.parallel(watchFiles, browserSync);
 
-// build
-gulp.task(
-  "build",
-  gulp.series(clean, gulp.parallel(css, images, jekyll, "js"))
-);
-
-// watch
-gulp.task("watch", gulp.parallel(watchFiles, browserSync));
+// export tasks
+exports.images = images;
+exports.css = css;
+exports.js = js;
+exports.jekyll = jekyll;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = build;
