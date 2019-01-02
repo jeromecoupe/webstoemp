@@ -38,7 +38,7 @@ exports.css = css;
 
 ### Plain named functions
 
-Instead of the traditional `gulp.task` we all use with version 3 to define our tasks, I use simple named functions with no dependencies. One thing to pay attention to is that, with Gulp 4, we need to explicitely signal task completion for each function. You can do that [in six ways](https://gulpjs.com/docs/en/getting-started/async-completion): return a stream, return a promise, return a child process, callback, return an event emitter, return an observable. If you do not do it properly, you will get the infamous "Did you forget to signal async completion?" message in your console and the task will not complete.
+Instead of the traditional `gulp.task` we all use with version 3 to define our tasks, I use simple named functions with no dependencies. One thing to pay attention to is that, with Gulp 4, we need to explicitly signal task completion for each function. You can do that [in six ways](https://gulpjs.com/docs/en/getting-started/async-completion): return a stream, return a promise, return a child process, callback, return an event emitter, return an observable. If you do not do it properly, you will get the infamous "Did you forget to signal async completion?" message in your console and the task will not complete.
 
 Here are some examples of the functions I use on this very website. They use the most common ways to signal async completion.
 
@@ -129,4 +129,4 @@ Since they can be nested it is a very straightforward and flexible dependency ma
 
 ## Conclusion
 
-All in all, I really like Gulp 4 and its increased readability and flexibility. If you want to dive in a bit further, I wholeheartedly recommend Joe Zimmerman's "[The Complete-Ish Guide to Upgrading to Gulp 4](https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/)".
+All in all, I really like Gulp 4 and its increased readability and flexibility. If you want to dive in a bit further, I wholeheartedly recommend Joe Zimmerman's "[The Complete-Ish Guide to Upgrading to Gulp 4](https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/)". The [full gulpfile used by this website](https://github.com/jeromecoupe/jeromecoupe.github.io/blob/master/gulpfile.js) is also available on Github if you want to check it out.
