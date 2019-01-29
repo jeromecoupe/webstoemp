@@ -1,10 +1,10 @@
 ---
 title: "Little Miss Robot"
 date: 2019-01-17 00:00:00
-excerpt: "The Little Miss Robot team was looking to level up their Craft CMS development chops. I gave a one day workshop to a bunch of their developers to showcase what was possible."
+excerpt: "The Little Miss Robot team was looking to level up their Craft CMS development chops. I gave a one day hands-on workshop to a bunch of their developers."
 project_url: "https://littlemissrobot.com/"
 project_website: "littlemissrobot.com"
-project_tagline: "Craft CMS developpers workshop"
+project_tagline: "Craft CMS developers workshop"
 project_thumbnail: lmrcraft_thumb.jpg
 project_image_small: lmrcraft_600.jpg
 project_image_medium: lmrcraft_1024.jpg
