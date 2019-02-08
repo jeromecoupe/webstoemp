@@ -1,0 +1,17 @@
+// -------------------------------------
+// Site header
+// -------------------------------------
+
+.c-siteheader
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  @include mq(large)
+  {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}

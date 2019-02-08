@@ -1,0 +1,18 @@
+[
+  {
+    "navLabel": "Home",
+    "navUrl": "/"
+  },
+  {
+    "navLabel": "Blog",
+    "navUrl": "/blog/"
+  },
+  {
+    "navLabel": "Work",
+    "navUrl": "/work/"
+  },
+  {
+    "navLabel": "About",
+    "navUrl": "/about/"
+  }
+]

@@ -1,0 +1,8 @@
+<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Content Management Systems</title>
+  <desc>Content Management Systems icon</desc>
+  <g fill="#C7A21E">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3C0 1.89543 0.895431 1 2 1H35C36.1046 1 37 1.89543 37 3V20H40C41.1046 20 42 20.8954 42 22V38C42 39.1046 41.1046 40 40 40H32C30.8954 40 30 39.1046 30 38V29H2C0.895431 29 0 28.1046 0 27V3ZM35 3V20H32C30.8954 20 30 20.8954 30 22V27H2V3H35ZM40 33H32V22H40V33ZM32 35V38H40V35H32Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 31H26L28 37H10L12 31ZM12.7749 35L13.4415 33H24.5585L25.2251 35H12.7749Z"/>
+  </g>
+</svg>

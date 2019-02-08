@@ -1,0 +1,20 @@
+---
+permalink: index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  <h1>Hello world</h1>
+  {% for service in services %}
+    {% if loop.first %}<ul>{% endif %}
+    <li>
+      {% include "svg/" ~ service.icon  %}
+      <h2>{{ service.title }}</h2>
+      <p>{{ service.description }}</p>
+    </li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+{% endblock %}

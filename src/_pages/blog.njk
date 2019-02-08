@@ -1,0 +1,18 @@
+---
+permalink: blog/index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  {% for blogpost in collections.blogposts | reverse %}
+    {% if loop.first %}<ul>{% endif %}
+    <li>
+      <p>{{ blogpost.date | date("MMM DD, YYYY") }}</p>
+      <h2><a href="{{ blogpost.url }}">{{ blogpost.data.title }}</a></h2>
+    </li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+{% endblock %}

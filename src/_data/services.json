@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Strategy and discovery",
+    "icon": "icon-service-strategy.svg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iusto, minus alias recusandae omnis suscipit cupiditate quas hic incidunt."
+  },
+  {
+    "title": "Design systems",
+    "icon": "icon-service-systems.svg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iusto, minus alias recusandae omnis suscipit cupiditate quas hic incidunt."
+  },
+  {
+    "title": "Front-end code",
+    "icon": "icon-service-frontend.svg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iusto, minus alias recusandae omnis suscipit cupiditate quas hic incidunt."
+  },
+  {
+    "title": "Responsive design",
+    "icon": "icon-service-design.svg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iusto, minus alias recusandae omnis suscipit cupiditate quas hic incidunt."
+  },
+  {
+    "title": "Content management",
+    "icon": "icon-service-cms.svg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iusto, minus alias recusandae omnis suscipit cupiditate quas hic incidunt."
+  },
+  {
+    "title": "Workshops",
+    "icon": "icon-service-workshops.svg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iusto, minus alias recusandae omnis suscipit cupiditate quas hic incidunt."
+  }
+]

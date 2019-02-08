@@ -1,0 +1,10 @@
+<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Strategy</title>
+  <desc>Tower icon</desc>
+  <g fill="#C7A21E">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1H13V13H1V1ZM3 3H11V11H3V3Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 29H41V41H15V29ZM17 31H39V39H17V31Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 15H1V41H13V27H27V1H15V15ZM17 3V17H3V39H11V25H25V3H17Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M29 1H41V27H29V1ZM31 3H39V25H31V3Z"/>
+  </g>
+</svg>
