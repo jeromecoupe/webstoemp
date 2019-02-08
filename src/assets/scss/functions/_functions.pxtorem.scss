@@ -1,0 +1,15 @@
+// -------------------------------------
+// pixels to rems
+// -------------------------------------
+
+@function pxtorem($pixels) {
+  @if ($pixels == 0) {
+    @return 0;
+  }
+
+  @if (unit($pixels) == "px") {
+    @return $pixels / 16px * 1rem;
+  } @else {
+    @error "passed value must be in pixels or equal to zero";
+  }
+}

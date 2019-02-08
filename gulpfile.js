@@ -75,6 +75,11 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+// Copy fonts
+function fonts() {
+  return gulp.src("./src/assets/fonts/**/*").pipe(gulp.dest("./dist/fonts/"));
+}
+
 // Lint scripts
 function scriptsLint() {
   return gulp
@@ -92,7 +97,7 @@ function scripts() {
       .src(["./src/assets/js/**/*"])
       .pipe(plumber())
       .pipe(webpackstream(webpackconfig, webpack))
-      // folder only, filename is specified in webpack config
+      // folder only, filename is specified in webpack
       .pipe(gulp.dest("./dist/js/"))
       .pipe(browsersync.stream())
   );
@@ -123,12 +128,16 @@ function watchFiles() {
 
 // define complex tasks
 const js = gulp.series(scriptsLint, scripts);
-const build = gulp.series(clean, gulp.parallel(css, images, eleventy, js));
+const build = gulp.series(
+  clean,
+  gulp.parallel(fonts, css, images, eleventy, js)
+);
 const watch = gulp.parallel(watchFiles, browserSync);
 
 // export tasks
 exports.images = images;
 exports.css = css;
+exports.fonts = fonts;
 exports.js = js;
 exports.eleventy = eleventy;
 exports.clean = clean;

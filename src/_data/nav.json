@@ -1,18 +1,22 @@
 [
   {
     "navLabel": "Home",
+    "navTrigger": "home",
     "navUrl": "/"
   },
   {
     "navLabel": "Blog",
+    "navTrigger": "blog",
     "navUrl": "/blog/"
   },
   {
     "navLabel": "Work",
+    "navTrigger": "work",
     "navUrl": "/work/"
   },
   {
     "navLabel": "About",
+    "navTrigger": "about",
     "navUrl": "/about/"
   }
 ]

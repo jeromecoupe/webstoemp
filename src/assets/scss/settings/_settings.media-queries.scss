@@ -1,0 +1,21 @@
+// -------------------------------------
+// Mdia queries
+// -------------------------------------
+
+$breakpoints-map: (
+  small: (
+    query: "all and (min-width: 500px)",
+    generate-grid: true,
+    generate-helpers: true
+  ),
+  medium: (
+    query: "all and (min-width: 750px)",
+    generate-grid: true,
+    generate-helpers: true
+  ),
+  large: (
+    query: "all and (min-width: 1140px)",
+    generate-grid: true,
+    generate-helpers: true
+  )
+) !default;
