@@ -1,0 +1,11 @@
+<header>
+  {% include "svg/logo.svg" %}
+  <nav>
+    {% for item in nav %}
+      {% if loop.first %}<ul>{% endif %}
+        <li><a href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+      {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+    <p><a href="#">Menu</a></p>
+  </nav>
+</header>

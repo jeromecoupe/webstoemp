@@ -1,39 +1,36 @@
 {
   "name": "webstoemp",
-  "version": "1.0.0",
-  "description": "new webstoemp website",
+  "description": "Personal website of Jérôme Coupé",
+  "version": "2.0.0",
+  "author": "Jérôme Coupé",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeromecoupe/webstoempv2.git"
-  },
-  "license": "UNLICENSED",
-  "author": "Jérôme Coupé",
-  "bugs": {
-    "url": "https://github.com/jeromecoupe/webstoempv2/issues"
-  },
-  "devDependencies": {
-    "babel-core": "6.x",
-    "babel-preset-env": "1.x",
-    "browser-sync": "2.x",
-    "del": "3.x",
-    "globby": "6.x",
-    "gulp": "3.x",
-    "gulp-autoprefixer": "4.x",
-    "gulp-babel": "7.x",
-    "gulp-concat": "2.x",
-    "gulp-cssnano": "2.x",
-    "gulp-eslint": "4.x",
-    "gulp-image-resize": "0.x",
-    "gulp-imagemin": "3.x",
-    "gulp-newer": "1.x",
-    "gulp-plumber": "1.x",
-    "gulp-rename": "1.x",
-    "gulp-sass": "3.x",
-    "gulp-uglify": "3.x",
-    "merge2": "1.x"
+    "url": "https://github.com/jeromecoupe/webstoempv2.git"
   },
   "browserslist": [
     "last 2 versions"
   ],
-  "dependencies": {}
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.4.7",
+    "babel-loader": "^8.0.5",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.8",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "moment": "^2.24.0",
+    "webpack": "^4.29.2",
+    "webpack-stream": "^5.2.1"
+  }
 }

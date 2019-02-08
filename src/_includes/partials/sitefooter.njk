@@ -1,0 +1,23 @@
+<footer>
+
+  <nav>
+    {% for item in nav %}
+      {% if loop.first %}<ul>{% endif %}
+        <li><a href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+      {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+  </nav>
+
+  <nav>
+    <ul>
+      <li><a href="#">{% include "svg/icon-dribbble.svg" %}</a></li>
+      <li><a href="#">{% include "svg/icon-github.svg" %}</a></li>
+      <li><a href="#">{% include "svg/icon-linkedin.svg" %}</a></li>
+      <li><a href="#">{% include "svg/icon-pinboard.svg" %}</a></li>
+      <li><a href="#">{% include "svg/icon-twitter.svg" %}</a></li>
+    </ul>
+  </nav>
+
+  <p>&copy; Webstoemp {{ now | date("Y") }}</p>
+
+</footer>
