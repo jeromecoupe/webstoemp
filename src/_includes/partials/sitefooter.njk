@@ -1,23 +1,37 @@
-<footer>
+<footer class="c-sitefooter">
 
-  <nav>
-    {% for item in nav %}
-      {% if loop.first %}<ul>{% endif %}
-        <li><a href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
-      {% if loop.last %}</ul>{% endif %}
-    {% endfor %}
-  </nav>
+  <p class="c-footercta">
+    <a class="c-footercta__link" href="#">Need some help? <span>Let’s have a coffee together.</span></a>
+  </div>
 
-  <nav>
-    <ul>
-      <li><a href="#">{% include "svg/icon-dribbble.svg" %}</a></li>
-      <li><a href="#">{% include "svg/icon-github.svg" %}</a></li>
-      <li><a href="#">{% include "svg/icon-linkedin.svg" %}</a></li>
-      <li><a href="#">{% include "svg/icon-pinboard.svg" %}</a></li>
-      <li><a href="#">{% include "svg/icon-twitter.svg" %}</a></li>
-    </ul>
-  </nav>
+  <div class="l-container">
 
-  <p>&copy; Webstoemp {{ now | date("Y") }}</p>
+    <div class="c-sitefooter__main">
+      <nav class="c-sitefooter__nav">
+        {% for item in nav %}
+          {% if loop.first %}<ul class="c-footernav">{% endif %}
+            {% set activeClass = "" %}
+            {% if activeSection == item.navTrigger %}{% set activeClass = "is-active" %}{% endif %}
+            <li class="c-footernav__item"><a class="c-footernav__link  {{ activeClass }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+          {% if loop.last %}</ul>{% endif %}
+        {% endfor %}
+      </nav>
+
+      <nav class="c-sitefooter__social">
+        <ul class="c-socialmedia">
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-dribbble.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-github.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-linkedin.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-pinboard.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-twitter.svg" %}</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="c-sitefooter__copyright">
+      <p class="c-copyright">&copy; Webstoemp {{ now | date("Y") }}</p>
+    </div>
+
+  </div>
 
 </footer>

@@ -1,0 +1,28 @@
+// -------------------------------------
+// Site footer
+// -------------------------------------
+
+.c-sitefooter {
+  background-color: $color-gray8;
+  font-size: pxtorem(16px);
+}
+
+.c-sitefooter__main {
+  padding-top: pxtorem(60px);
+  padding-bottom: pxtorem(60px);
+
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "nav social";
+    grid-gap: 42px;
+  }
+}
+
+.c-sitefooter__nav {
+  grid-area: nav;
+}
+
+.c-sitefooter__social {
+  grid-area: social;
+}

@@ -1,8 +1,29 @@
-@import "mixins/mixin.media-queries.scss";
+// Settings and variables
+@import "settings/settings.colors.scss";
+@import "settings/settings.media-queries.scss";
+@import "settings/settings.fonts.scss";
 
+// Functions
+@import "functions/functions.pxtorem.scss";
+
+// Mixins
+@import "mixins/mixins.media-queries.scss";
+
+// Base (unclassed elements)
+@import "base/base.fonts.scss";
 @import "base/base.html.scss";
 @import "base/base.body.scss";
+@import "base/base.margins.scss";
 
-@import "layout/layout.containers.scss";
+// Objects
 
-@import "components/component.siteheader.scss";
+// Layout
+@import "layouts/layouts.containers.scss";
+
+// Components
+@import "components/components.siteheader.scss";
+@import "components/components.sitefooter.scss";
+@import "components/components.copyright.scss";
+@import "components/components.footercta.scss";
+@import "components/components.footernav.scss";
+@import "components/components.socialmedia.scss";

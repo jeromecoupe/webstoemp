@@ -1,0 +1,37 @@
+// -------------------------------------
+// Footer CTA
+// -------------------------------------
+
+.c-footercta {
+  margin: 0;
+  padding: 0;
+}
+
+.c-footercta__link {
+  display: block;
+  padding: pxtorem(36px) pxtorem(24px);
+  text-align: center;
+  background-color: $color-brand3;
+
+  font-weight: 700;
+  font-size: pxtorem(26px);
+  line-height: 1.4;
+  font-family: $fontstack-alt;
+  text-decoration: none;
+  color: $color-gray8;
+
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $color-brand2;
+  }
+
+  & > span {
+    color: $color-brand6;
+  }
+
+  @include mq(medium) {
+    padding: pxtorem(36px) pxtorem(42px);
+  }
+}
