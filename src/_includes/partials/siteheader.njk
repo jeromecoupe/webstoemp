@@ -1,11 +1,22 @@
-<header>
-  {% include "svg/logo.svg" %}
-  <nav>
-    {% for item in nav %}
-      {% if loop.first %}<ul>{% endif %}
-        <li><a href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
-      {% if loop.last %}</ul>{% endif %}
-    {% endfor %}
-    <p><a href="#">Menu</a></p>
-  </nav>
+<header class="c-siteheader">
+  <div class="l-container  c-siteheader__inner">
+    <p class="c-siteheader__logo">{% include "svg/logo.svg" %}</p>
+    <nav class="c-siteheader__nav">
+      {% for item in nav %}
+        {% if loop.first %}<ul class="c-mainnav">{% endif %}
+          <li class="c-mainnav__item"><a class="c-mainnav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+      <p class="c-mainnav-compact"><a class="js-navtrigger" href="#footernav">{% include "svg/icon-hamburger.svg" %}</a></p>
+    </nav>
+  </div>
 </header>
+
+<div class="c-mobilemenu">
+  <p class="c-mobilemenu__close"><a class="js-navtrigger" href="#">{% include "svg/icon-close.svg" %}</a></p>
+  {% for item in nav %}
+    {% if loop.first %}<ul class="c-mobilenav">{% endif %}
+      <li class="c-mobilenav__item"><a class="c-mobilenav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+</div>

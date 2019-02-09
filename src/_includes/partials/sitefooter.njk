@@ -9,10 +9,8 @@
     <div class="c-sitefooter__main">
       <nav class="c-sitefooter__nav">
         {% for item in nav %}
-          {% if loop.first %}<ul class="c-footernav">{% endif %}
-            {% set activeClass = "" %}
-            {% if activeSection == item.navTrigger %}{% set activeClass = "is-active" %}{% endif %}
-            <li class="c-footernav__item"><a class="c-footernav__link  {{ activeClass }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+          {% if loop.first %}<ul class="c-footernav" id="footernav">{% endif %}
+            <li class="c-footernav__item"><a class="c-footernav__link  {{ 'is-active' if activeSection ==  item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
           {% if loop.last %}</ul>{% endif %}
         {% endfor %}
       </nav>

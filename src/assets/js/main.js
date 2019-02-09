@@ -1,2 +1,2 @@
-import * as test from "./modules/test.js";
-test.init("this is a test");
+import * as nav from "./modules/navigation.js";
+nav.init("this is a test");
