@@ -38,6 +38,7 @@
 
   &:hover {
     color: $color-gray3;
+    text-decoration: none;
   }
 
   @include mq(medium) {
