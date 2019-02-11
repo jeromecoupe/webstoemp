@@ -1,0 +1,129 @@
+// ---------------------------
+// =settings
+// ---------------------------
+
+$utilities-spacing-map: (
+  "none": 0,
+  "xs": 6px,
+  "s": 12px,
+  "base": 18px,
+  "l": 24px,
+  "xl": 30px,
+  "xxl": 60px
+) !default;
+
+$breakpoints-map: (
+  small: (
+    query: "all and (min-width: 500px)",
+    generate-grid: true,
+    generate-helpers: true
+  ),
+  medium: (
+    query: "all and (min-width: 750px)",
+    generate-grid: true,
+    generate-helpers: true
+  ),
+  large: (
+    query: "all and (min-width: 1140px)",
+    generate-grid: true,
+    generate-helpers: true
+  )
+) !default;
+
+// ---------------------------
+// =margins
+// ---------------------------
+
+/**
+ * using keys and values
+ *
+ * .u-margin-top[-key]@[breakpoint-name]
+ * examples: .u-margin-top-all, .u-margin-top-xs@medium, .u-margin-top-l@large
+*/
+
+// base classes
+@each $key, $value in $utilities-spacing-map {
+  // margins
+  .u-margin-all-#{$key} {
+    margin: #{$value} !important;
+  }
+  .u-margin-top-#{$key} {
+    margin-top: #{$value} !important;
+  }
+  .u-margin-right-#{$key} {
+    margin-right: #{$value} !important;
+  }
+  .u-margin-bottom-#{$key} {
+    margin-bottom: #{$value} !important;
+  }
+  .u-margin-left-#{$key} {
+    margin-left: #{$value} !important;
+  }
+
+  // paddings
+  .u-padding-all-#{$key} {
+    padding: #{$value} !important;
+  }
+  .u-padding-top-#{$key} {
+    padding-top: #{$value} !important;
+  }
+  .u-padding-right-#{$key} {
+    padding-right: #{$value} !important;
+  }
+  .u-padding-bottom-#{$key} {
+    padding-bottom: #{$value} !important;
+  }
+  .u-padding-left-#{$key} {
+    padding-left: #{$value} !important;
+  }
+}
+
+// responsive classes
+@each $breakpoint, $params in $breakpoints-map {
+  // get params and assign
+  $query: map-get($params, query);
+  $helpers: map-get($params, generate-helpers);
+
+  // if utility classes have to be generated
+  @if ($helpers == true) {
+    // write media query
+    @media #{$query} {
+      // write spacing classes
+      @each $key, $value in $utilities-spacing-map {
+        // margins
+        .u-margin-all-#{$key}\@#{$breakpoint} {
+          margin: #{$value} !important;
+        }
+        .u-margin-top-#{$key}\@#{$breakpoint} {
+          margin-top: #{$value} !important;
+        }
+        .u-margin-right-#{$key}\@#{$breakpoint} {
+          margin-right: #{$value} !important;
+        }
+        .u-margin-bottom-#{$key}\@#{$breakpoint} {
+          margin-bottom: #{$value} !important;
+        }
+        .u-margin-left-#{$key}\@#{$breakpoint} {
+          margin-left: #{$value} !important;
+        }
+
+        // paddings
+        .u-padding-all-#{$key}\@#{$breakpoint} {
+          padding: #{$value} !important;
+        }
+        .u-padding-top-#{$key}\@#{$breakpoint} {
+          padding-top: #{$value} !important;
+        }
+        .u-padding-right-#{$key}\@#{$breakpoint} {
+          padding-right: #{$value} !important;
+        }
+        .u-padding-bottom-#{$key}\@#{$breakpoint} {
+          padding-bottom: #{$value} !important;
+        }
+        .u-padding-left-#{$key}\@#{$breakpoint} {
+          padding-left: #{$value} !important;
+        }
+      }
+    }
+  }
+}

@@ -50,7 +50,7 @@
   padding: pxtorem(12px) 0;
 
   font-weight: 600;
-  font-size: pxtorem(13px);
+  font-size: pxtorem(15px);
   line-height: 1;
   text-decoration: none;
   color: $color-gray8;
@@ -80,6 +80,12 @@
   transition: transform 0.2s ease-out;
 }
 
-.js-menu-isactive .c-mobilemenu {
-  transform: translate3d(0, 0, 0);
+.js-menu-isactive {
+  @include mq(under-medium) {
+    overflow-y: hidden;
+  }
+
+  .c-mobilemenu {
+    transform: translate3d(0, 0, 0);
+  }
 }

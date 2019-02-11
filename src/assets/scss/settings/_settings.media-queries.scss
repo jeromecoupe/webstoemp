@@ -3,6 +3,11 @@
 // -------------------------------------
 
 $breakpoints-map: (
+  under-medium: (
+    query: "all and (max-width: 749px)",
+    generate-grid: false,
+    generate-helpers: false
+  ),
   small: (
     query: "all and (min-width: 500px)",
     generate-grid: true,

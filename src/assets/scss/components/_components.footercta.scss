@@ -13,8 +13,8 @@
   text-align: center;
   background-color: $color-brand3;
 
-  font-weight: 700;
-  font-size: pxtorem(26px);
+  font-weight: 600;
+  font-size: pxtorem(20px);
   line-height: 1.4;
   font-family: $fontstack-alt;
   text-decoration: none;
@@ -31,7 +31,12 @@
     color: $color-brand6;
   }
 
+  @include mq(small) {
+    font-size: pxtorem(20px);
+  }
+
   @include mq(medium) {
+    font-size: pxtorem(26px);
     padding: pxtorem(36px) pxtorem(42px);
   }
 }
