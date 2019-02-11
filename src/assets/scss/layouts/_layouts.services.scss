@@ -1,0 +1,79 @@
+// -------------------------------------
+// Services grid
+// -------------------------------------
+
+.l-services {
+  display: grid;
+  @include mq(medium) {
+    grid-template-columns: 1fr 9fr;
+    grid-gap: pxtorem(42px);
+    grid-template-areas: "heading services";
+  }
+}
+
+.l-services__title {
+  margin-bottom: pxtorem(42px);
+
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 1px;
+    margin-left: 12px;
+    background-color: $color-brand4;
+  }
+
+  @include mq(medium) {
+    grid-area: heading;
+    margin: 0;
+    padding: 0;
+    writing-mode: vertical-lr;
+
+    &:after {
+      width: 1px;
+      height: 42px;
+      margin-top: 12px;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.l-services__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-row-gap: pxtorem(18px);
+  grid-template-columns: 1fr;
+
+  @include mq(medium) {
+    grid-area: services;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: pxtorem(24px) pxtorem(42px);
+    grid-template-areas:
+      "s1 ."
+      "s2 s3"
+      "s4 s5"
+      "s6 .";
+  }
+
+  @include mq(large) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "s1 s2 ."
+      "s3 s4 s5"
+      "s6 . .";
+  }
+}
+
+@for $i from 1 through 6 {
+  @include mq(medium) {
+    .l-services__grid > li:nth-child(#{$i}) {
+      grid-area: s#{$i};
+    }
+  }
+}

@@ -19,6 +19,7 @@
 
 // Layout
 @import "layouts/layouts.containers.scss";
+@import "layouts/layouts.services.scss";
 
 // Components
 @import "components/components.siteheader.scss";
@@ -29,3 +30,13 @@
 @import "components/components.socialmedia.scss";
 @import "components/components.mainnav.scss";
 @import "components/components.mobilemenu.scss";
+@import "components/components.pageintro.scss";
+@import "components/components.titles.scss";
+@import "components/components.texts.scss";
+@import "components/components.pagecontent.scss";
+@import "components/components.service.scss";
+@import "components/components.banners.scss";
+
+// Utilities
+@import "utilities/utilities.scroll.scss";
+@import "utilities/utilities.spacing.scss";

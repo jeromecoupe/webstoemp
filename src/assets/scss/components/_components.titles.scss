@@ -1,0 +1,47 @@
+// -------------------------------------
+// Titles
+// -------------------------------------
+
+.c-h1 {
+  font-weight: 400;
+  font-size: pxtorem(31px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-white;
+  margin-bottom: pxtorem(18px);
+
+  @include mq(medium) {
+    font-size: pxtorem(39px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(45px);
+  }
+}
+
+// -------------------------------------
+// Titles in wysiwyg
+// -------------------------------------
+
+// -------------------------------------
+// Special titles
+// -------------------------------------
+
+.c-suptitle {
+  font-weight: 400;
+  font-size: pxtorem(13px);
+  font-family: $fontstack-main;
+  color: $color-brand4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: pxtorem(12px);
+}
+
+.c-smalltitle {
+  font-weight: 700;
+  font-size: pxtorem(13px);
+  font-family: $fontstack-main;
+  color: $color-gray8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

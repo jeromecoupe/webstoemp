@@ -1,0 +1,18 @@
+// -------------------------------------
+// Intros
+// -------------------------------------
+
+.c-txtintro {
+  font-weight: 400;
+  font-size: pxtorem(18px);
+  color: $color-gray6;
+
+  @include mq(medium) {
+    font-size: pxtorem(20px);
+  }
+}
+
+.amperstand {
+  font-family: "Baskerville", "Palatino", "Constantia", "Book Antiqua", serif;
+  font-style: italic;
+}

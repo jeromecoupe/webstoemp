@@ -3,5 +3,9 @@ body {
   padding: 0;
   background-color: $color-white;
   color: $color-gray8;
-  font-size: pxtorem(18px);
+  font-size: pxtorem(16px);
+
+  @include mq(medium) {
+    font-size: pxtorem(18px);
+  }
 }

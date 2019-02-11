@@ -1,0 +1,18 @@
+// -------------------------------------
+// Page content
+// -------------------------------------
+
+.c-pagecontent {
+  padding-top: pxtorem(60px);
+  padding-bottom: pxtorem(60px);
+
+  @include mq(medium) {
+    padding-top: pxtorem(84px);
+    padding-bottom: pxtorem(84px);
+  }
+
+  @include mq(large) {
+    padding-top: pxtorem(120px);
+    padding-bottom: pxtorem(120px);
+  }
+}
