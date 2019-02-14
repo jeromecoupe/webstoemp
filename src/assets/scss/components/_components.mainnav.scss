@@ -22,12 +22,15 @@
   display: block;
   padding: pxtorem(18px) pxtorem(6px);
 
-  font-weight: 600;
+  font-weight: 700;
   font-size: pxtorem(13px);
   line-height: 1;
   text-decoration: none;
   color: $color-gray4;
   text-transform: uppercase;
+  letter-spacing: 1px;
+
+  transition: color 0.2s ease-in-out;
 
   &:hover,
   &:focus {
@@ -40,6 +43,7 @@
 .c-mainnav__link.is-active:focus {
   padding-bottom: pxtorem(16px);
   border-bottom: 2px solid $color-brand4;
+  text-decoration: none;
 }
 
 // -------------------------------------

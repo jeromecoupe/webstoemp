@@ -10,9 +10,4 @@
     padding-top: pxtorem(84px);
     padding-bottom: pxtorem(84px);
   }
-
-  @include mq(large) {
-    padding-top: pxtorem(120px);
-    padding-bottom: pxtorem(120px);
-  }
 }

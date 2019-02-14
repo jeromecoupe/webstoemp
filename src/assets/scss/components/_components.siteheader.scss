@@ -30,6 +30,19 @@
   margin: 0;
   padding: 0;
 
+  & > a {
+    display: block;
+    color: $color-white;
+    text-decoration: none;
+
+    transition: color 0.2s ease-in-out;
+  }
+
+  & > a:hover {
+    color: $color-brand3;
+    text-decoration: none;
+  }
+
   & svg {
     vertical-align: middle;
   }

@@ -3,13 +3,13 @@
 // ---------------------------
 
 .u-noyscroll {
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
 
 .u-noxscroll {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .u-noscroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }

@@ -1,0 +1,10 @@
+---
+title: "Princess Elisabeth Antarctica"
+client: "International Polar Foundation"
+url: http://www.antarcticstation.org
+thumbnailSmall: placeholder-800.jpg
+thumbnailBig: placeholder-1024.jpg
+tags: [ExpressionEngine, Webdesign, Front-end, Content]
+---
+
+While the International Polar Foundation was busy building the first “zero emission” research station in Antarctica, I got to design, build and maintain the website for it. I built an easy to navigate website despite the sheer amount of content and a modular landing pages system.

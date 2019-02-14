@@ -1,0 +1,62 @@
+---
+permalink: work/index.html
+---
+
+{% extends "layouts/base.njk" %}
+{% set activeSection = "work" %}
+
+{% block content %}
+
+  <div class="c-pageintro">
+    <div class="l-container">
+      <div class="c-pageintro__inner">
+
+        <p class="c-suptitle">Clients, big and small</p>
+        <h1 class="c-h1  c-h1--invert">Selected projects</h1>
+        <p class="c-txtintro">Projects my clients and I worked on together. Some are fresh out the oven, while others are a bit older. I tried my best to give you a little bit of variety in terms of scopes and types.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="c-banner  c-banner--blog"></div>
+
+  <main class="c-pagecontent">
+    <div class="l-container">
+
+      {% for project in collections.projects | reverse %}
+        {% if loop.first %}<ul class="c-list-spaced">{% endif %}
+          <li>
+
+            <article class="c-project">
+              <p class="c-project__image">
+                <img src="/img/projects/placeholder-800.jpg"
+                     srcset="/img/projects/placeholder-800.jpg 800w,
+                             /img/projects/placeholder-1024.jpg 1024w"
+                     sizes="(min-width: 1140px) 550px,
+                            (min-width: 750px) 50vw,
+                            100vw"
+                     class="o-fluidimage" alt="project alt">
+              </p>
+              <div class="c-project__body">
+                <p class="c-suptitle  c-suptitle--dark">{{ project.data.client }}</p>
+                <h2 class="c-h4"><a href="{{ project.data.url }}">{{ project.data.title }}</a></h2>
+                <div class="c-project__description">
+                  {{ project.templateContent | safe }}
+                </div>
+                {% for tag in project.data.tags %}
+                  {% if loop.first %}<ul class="c-tags">{% endif %}
+                    <li class="c-tags__item">{{ tag }}</li>
+                  {% if loop.last %}</ul>{% endif %}
+                {% endfor %}
+              </div>
+            </article>
+
+          </li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+
+    </div>
+  </main>
+
+{% endblock %}

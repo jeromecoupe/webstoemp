@@ -1,0 +1,51 @@
+// -------------------------------------
+// Blog teaser
+// -------------------------------------
+
+.c-blogteaser {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+
+  @include mq(large) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.c-blogteaser__date {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: pxtorem(16px);
+  color: $color-gray6;
+
+  @include mq(large) {
+    width: 360px;
+    flex: 0 0 auto;
+  }
+}
+
+.c-blogteaser__title {
+  flex: 0 0 auto;
+
+  margin: 0;
+  padding: 6px 0;
+
+  font-weight: 600;
+  font-size: pxtorem(20px);
+  line-height: 1.3;
+  font-family: $fontstack-alt;
+  color: $color-gray8;
+
+  @include mq(medium) {
+    font-size: pxtorem(23px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(25px);
+  }
+}

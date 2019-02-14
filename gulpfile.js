@@ -83,7 +83,11 @@ function fonts() {
 // Lint scripts
 function scriptsLint() {
   return gulp
-    .src(["./src/assets/js/**/*", "./gulpfile.js"])
+    .src([
+      "./src/assets/js/modules/**/*",
+      "./src/assets/js/main.js",
+      "./gulpfile.js"
+    ])
     .pipe(plumber())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -113,11 +117,13 @@ function watchFiles() {
   gulp.watch("./src/assets/scss/**/*", css);
   gulp.watch("./src/assets/js/**/*", gulp.series(scriptsLint, scripts));
   gulp.watch("./src/assets/img/**/*", images);
+  gulp.watch("./src/assets/fonts/**/*", fonts);
   gulp.watch(
     [
       "./.eleventy.js",
       "./.eleventyignore",
       "./src/_blogposts/**/*",
+      "./src/_projects/**/*",
       "./src/_data/**/*",
       "./src/_includes/**/*",
       "./src/_pages/**/*"

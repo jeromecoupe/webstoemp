@@ -2,11 +2,41 @@
 {% set activeSection = "blog" %}
 
 {% block content %}
-  <p>{{ page.date | date("MMM DD, YYYY") }}</p>
-  <h1>{{ title }}</h1>
-  <div>
-    <p>{{ excerpt }}</p>
-  </div>
 
-  {{ content | safe }}
+  <article class="c-blogpost">
+    <div class="c-blogpost__media">
+      <div class="l-container">
+
+        <picture>
+          <source media="(min-width: 500px)"
+                  srcset="/img/blogposts/placeholder-1024.jpg 1024w,
+                          /img/blogposts/placeholder-1500.jpg 1500w,"
+                  sizes="(min-width: 1140px) 1140px,
+                         100vw">
+          <img src="/img/blogposts/placeholder-600.jpg"
+               class="o-fluidimage"
+               alt="my image alt">
+        </picture>
+
+      </div>
+    </div>
+
+    <div class="c-blogpost__body  l-container  l-container--narrow">
+
+      <header>
+        <p class="c-suptitle  c-suptitle--dark"><time datetime="{{ page.date | date('Y-M-DD') }}">{{ page.date | date("MMMM Do, YYYY") }}</time></p>
+        <h1 class="c-h1">{{ title }}</h1>
+        <div class="c-blogpost__intro">
+          <p>{{ excerpt }}</p>
+        </div>
+      </header>
+
+
+      <div class="c-wysiwyg">
+        {{ content | safe }}
+      </div>
+
+    </div>
+  </article>
+
 {% endblock %}
