@@ -29,15 +29,17 @@
 .c-footernav__link {
   display: block;
   padding: pxtorem(12px) 0;
-  font-weight: 600;
+  font-weight: 700;
   font-size: pxtorem(13px);
   color: $color-gray6;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
 
+  transition: color 0.2s ease-in-out;
+
   &:hover {
-    color: $color-gray3;
+    color: $color-gray4;
     text-decoration: none;
   }
 
@@ -47,5 +49,5 @@
 }
 
 .c-footernav__link.is-active {
-  color: $color-brand3;
+  color: $color-gray3;
 }

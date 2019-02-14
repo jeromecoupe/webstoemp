@@ -1,0 +1,35 @@
+// -------------------------------------
+// Links
+// -------------------------------------
+
+a {
+  color: $color-brand6;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-brand6;
+    text-decoration: none;
+  }
+}
+
+// -------------------------------------
+// Links in titles
+// -------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  & > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  & > a:hover {
+    color: $color-brand6;
+    text-decoration: none;
+  }
+}

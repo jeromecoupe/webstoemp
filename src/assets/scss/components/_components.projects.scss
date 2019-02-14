@@ -1,0 +1,37 @@
+// -------------------------------------
+// Projects
+// -------------------------------------
+
+.c-project {
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 42px;
+  }
+}
+
+.c-project__image {
+  margin-bottom: pxtorem(24px);
+
+  & > a {
+    display: block;
+  }
+
+  @include mq(large) {
+    margin-bottom: 0;
+  }
+}
+
+.c-project__body {
+  @include mq(medium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+}
+
+.c-project__description {
+  color: $color-gray7;
+}

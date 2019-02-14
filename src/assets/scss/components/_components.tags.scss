@@ -1,0 +1,32 @@
+// -------------------------------------
+// Tags
+// -------------------------------------
+
+.c-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.c-tags__item {
+  font-size: pxtorem(15px);
+  font-weight: 400;
+  color: $color-gray6;
+}
+
+.c-tags__item:before {
+  content: "#";
+  display: inline-block;
+  color: $color-brand5;
+  margin-right: pxtorem(3px);
+}
+
+.c-tags__item:not(:last-child):after {
+  content: "\00a0-\00a0";
+}

@@ -6,6 +6,11 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("./src/_blogposts/*.md");
   });
 
+  // projects collection
+  eleventyConfig.addCollection("projects", function(collection) {
+    return collection.getFilteredByGlob("./src/_projects/*.md");
+  });
+
   // limit filter
   eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
     return array.slice(0, limit);
