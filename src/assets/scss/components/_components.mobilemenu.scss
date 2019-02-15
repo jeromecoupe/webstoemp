@@ -61,7 +61,7 @@
 
   &:hover,
   &:focus {
-    color: $color-gray7;
+    color: mix($color-white, $color-gray8, 30%);
   }
 }
 
