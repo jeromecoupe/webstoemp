@@ -7,7 +7,6 @@ const del = require("del");
 const eslint = require("gulp-eslint");
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin");
-const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
@@ -39,11 +38,14 @@ function clean() {
   return del(["./dist/"]);
 }
 
-// Optimize Images
-function images() {
+// Copy Images
+function imagesCopy() {
+  return gulp.src("./src/assets/img/**/*").pipe(gulp.dest("./dist/img/"));
+}
+
+function imagesOptimise() {
   return gulp
     .src("./src/assets/img/**/*")
-    .pipe(newer("./dist/img/"))
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
@@ -59,7 +61,7 @@ function images() {
         })
       ])
     )
-    .pipe(gulp.dest("./dist/img/"));
+    .pipe(gulp.dest("./src/assets/img/"));
 }
 
 // CSS task
@@ -76,7 +78,7 @@ function css() {
 }
 
 // Copy fonts
-function fonts() {
+function fontsCopy() {
   return gulp.src("./src/assets/fonts/**/*").pipe(gulp.dest("./dist/fonts/"));
 }
 
@@ -112,12 +114,20 @@ function eleventy() {
   return cp.spawn("npx", ["eleventy", "--quiet"], { stdio: "inherit" });
 }
 
+// define complex tasks
+const js = gulp.series(scriptsLint, scripts);
+const build = gulp.series(
+  clean,
+  gulp.parallel(fontsCopy, css, imagesCopy, eleventy, js)
+);
+const watch = gulp.parallel(watchFiles, browserSync);
+
 // Watch files
 function watchFiles() {
   gulp.watch("./src/assets/scss/**/*", css);
   gulp.watch("./src/assets/js/**/*", gulp.series(scriptsLint, scripts));
-  gulp.watch("./src/assets/img/**/*", images);
-  gulp.watch("./src/assets/fonts/**/*", fonts);
+  gulp.watch("./src/assets/img/**/*", imagesCopy);
+  gulp.watch("./src/assets/fonts/**/*", fontsCopy);
   gulp.watch(
     [
       "./.eleventy.js",
@@ -132,21 +142,11 @@ function watchFiles() {
   );
 }
 
-// define complex tasks
-const js = gulp.series(scriptsLint, scripts);
-const build = gulp.series(
-  clean,
-  gulp.parallel(fonts, css, images, eleventy, js)
-);
-const watch = gulp.parallel(watchFiles, browserSync);
-
 // export tasks
-exports.images = images;
+exports.images = imagesOptimise;
 exports.css = css;
-exports.fonts = fonts;
 exports.js = js;
 exports.eleventy = eleventy;
-exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
