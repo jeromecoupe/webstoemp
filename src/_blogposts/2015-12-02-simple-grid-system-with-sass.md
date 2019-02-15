@@ -122,7 +122,7 @@ So in our HTML, provided we have defined a medium breakpoint, we could just writ
 
 ### Our variables
 
-Let's start by creating the variables we need to define the characteristics of our grid. The `!default` flag is used so that we can override those in a `_variables.scss` files down the line if needs be. We'll also go ahead and create the base CSS rules we need for `.grid` and `.grid__unit`.
+Let's start by creating the variables we need to define the characteristics of our grid. The `!default` flag is used so that we can override those in a `_variables.sass` files down the line if needs be. We'll also go ahead and create the base CSS rules we need for `.grid` and `.grid__unit`.
 
 ```scss
 // grid variables
@@ -165,7 +165,7 @@ $grid-breakpoints: (
 
 We then go ahead and tell Sass to create our base grid classes with a simple `for` loop. No namespacing and no media-queries involved so far.
 
-``` scss
+```scss
 // grid variables
 $grid-units: 12 !default;
 $grid-gutter: 30px !default;

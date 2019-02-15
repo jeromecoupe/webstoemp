@@ -10,12 +10,12 @@
 
   @include mq(medium) {
     padding-top: pxtorem(60px);
-    padding-bottom: pxtorem(84px);
+    padding-bottom: pxtorem(60px);
   }
 
   @include mq(large) {
     padding-top: pxtorem(84px);
-    padding-bottom: pxtorem(96px);
+    padding-bottom: pxtorem(84px);
   }
 }
 
