@@ -2,6 +2,7 @@
 title: "Princess Elisabeth Antarctica"
 client: "International Polar Foundation"
 url: http://www.antarcticstation.org
+urlLabel: "Visit website"
 thumbnailSmall: placeholder-800.jpg
 thumbnailBig: placeholder-1024.jpg
 tags: [ExpressionEngine, Webdesign, Front-end, Content]

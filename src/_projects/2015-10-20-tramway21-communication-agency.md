@@ -2,6 +2,7 @@
 title: "Tramway 21: modular online case studies"
 client: "Tramway 21"
 url: http://www.tramway21.be
+urlLabel: "Visit website"
 thumbnailSmall: placeholder-800.jpg
 thumbnailBig: placeholder-1024.jpg
 tags: [Craft, Webdesign, Front-end]

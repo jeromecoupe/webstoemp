@@ -3,7 +3,7 @@
 // -------------------------------------
 
 .c-project {
-  @include mq(medium) {
+  @include mq(large) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 42px;
@@ -22,6 +22,23 @@
   }
 }
 
+.c-project__title {
+  font-weight: 600;
+  font-size: pxtorem(23px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+  margin-bottom: pxtorem(18px);
+
+  @include mq(medium) {
+    font-size: pxtorem(25px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(29px);
+  }
+}
+
 .c-project__body {
   @include mq(medium) {
     display: flex;
@@ -34,4 +51,26 @@
 
 .c-project__description {
   color: $color-gray7;
+}
+
+.c-project__reference {
+  margin-top: pxtorem(-6px);
+  margin-bottom: 0;
+}
+
+.c-project__link {
+  display: inline-block;
+  color: $color-gray7;
+  font-weight: 600;
+  text-decoration: none;
+  padding-bottom: pxtorem(6px);
+  border-bottom: 2px solid $color-brand3;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color-brand5;
+    border-color: $color-gray3;
+  }
 }

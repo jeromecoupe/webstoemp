@@ -11,3 +11,8 @@
     padding-bottom: pxtorem(84px);
   }
 }
+
+.c-pagecontent--dark {
+  background-color: $color-gray8;
+  color: $color-gray7;
+}

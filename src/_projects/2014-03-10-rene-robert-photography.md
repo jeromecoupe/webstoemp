@@ -1,7 +1,8 @@
 ---
 title: "René Robert: outdoor photographer"
 client: "René Robert"
-url: http://www.equal-partners.eu
+url: http://www.renerobert.com
+urlLabel: "Visit website"
 thumbnailSmall: placeholder-800.jpg
 thumbnailBig: placeholder-1024.jpg
 tags: [Craft, Webdesign, Front-end]
