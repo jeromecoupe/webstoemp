@@ -1,7 +1,7 @@
 ---
 title: "René Robert: outdoor photographer"
 client: "René Robert"
-url: http://www.renerobert.com
+url: http://www.renerobert.net
 urlLabel: "Visit website"
 thumbnailSmall: placeholder-800.jpg
 thumbnailBig: placeholder-1024.jpg
