@@ -3,7 +3,7 @@
 // -------------------------------------
 
 .c-project {
-  @include mq(large) {
+  @include mq(medium) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 42px;
@@ -17,7 +17,7 @@
     display: block;
   }
 
-  @include mq(large) {
+  @include mq(medium) {
     margin-bottom: 0;
   }
 }
