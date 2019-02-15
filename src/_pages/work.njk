@@ -34,21 +34,16 @@ permalink: work/index.html
                      srcset="/img/projects/placeholder-800.jpg 800w,
                              /img/projects/placeholder-1024.jpg 1024w"
                      sizes="(min-width: 1140px) 550px,
-                            (min-width: 750px) 50vw,
                             100vw"
                      class="o-fluidimage" alt="project alt">
               </p>
               <div class="c-project__body">
                 <p class="c-suptitle  c-suptitle--dark">{{ project.data.client }}</p>
-                <h2 class="c-h4"><a href="{{ project.data.url }}">{{ project.data.title }}</a></h2>
+                <h2 class="c-project__title">{{ project.data.title }}</h2>
                 <div class="c-project__description">
                   {{ project.templateContent | safe }}
                 </div>
-                {% for tag in project.data.tags %}
-                  {% if loop.first %}<ul class="c-tags">{% endif %}
-                    <li class="c-tags__item">{{ tag }}</li>
-                  {% if loop.last %}</ul>{% endif %}
-                {% endfor %}
+                <p class="c-project__reference"><a class="c-project__link" href="{{ project.data.url }}">{{ project.data.urlLabel }}</a></p>
               </div>
             </article>
 

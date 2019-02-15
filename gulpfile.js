@@ -109,7 +109,7 @@ function scripts() {
 
 // Eleventy
 function eleventy() {
-  return cp.spawn("npx", ["eleventy"], { stdio: "inherit" });
+  return cp.spawn("npx", ["eleventy", "--quiet"], { stdio: "inherit" });
 }
 
 // Watch files

@@ -2,6 +2,7 @@
 title: "Nicolas Benedit: design and architecture"
 client: "Nicolas Benedit"
 url: http://www.nicolasbenedit.com
+urlLabel: "Visit website"
 thumbnailSmall: placeholder-800.jpg
 thumbnailBig: placeholder-1024.jpg
 tags: [Jekyll, Netlify, Webdesign, Front-end]

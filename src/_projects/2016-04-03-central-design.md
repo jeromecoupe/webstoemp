@@ -1,7 +1,8 @@
 ---
 title: "Central: a Jekyll-powered agency website"
 client: "Central Design"
-url: http://www.basedesign.com
+url: http://www.central.team
+urlLabel: "Visit website"
 thumbnailSmall: placeholder-800.jpg
 thumbnailBig: placeholder-1024.jpg
 tags: [Craft, Workshop]

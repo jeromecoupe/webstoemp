@@ -9,6 +9,7 @@
     font-family: $fontstack-alt;
     line-height: 1.2;
     color: $color-gray8;
+    margin-top: pxtorem(30px);
     margin-bottom: pxtorem(18px);
 
     @include mq(medium) {
@@ -26,6 +27,7 @@
     font-family: $fontstack-alt;
     line-height: 1.2;
     color: $color-gray8;
+    margin-top: pxtorem(30px);
     margin-bottom: pxtorem(18px);
 
     @include mq(medium) {
@@ -43,6 +45,7 @@
     font-family: $fontstack-alt;
     line-height: 1.2;
     color: $color-gray8;
+    margin-top: pxtorem(30px);
     margin-bottom: pxtorem(18px);
 
     @include mq(medium) {

@@ -31,6 +31,8 @@
   font-family: $fontstack-alt;
   line-height: 1.2;
   color: $color-gray8;
+
+  margin-top: pxtorem(36px);
   margin-bottom: pxtorem(18px);
 
   @include mq(medium) {
@@ -42,12 +44,19 @@
   }
 }
 
+.c-h2--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .c-h3 {
   font-weight: 600;
   font-size: pxtorem(23px);
   font-family: $fontstack-alt;
   line-height: 1.2;
   color: $color-gray8;
+  margin-top: pxtorem(36px);
   margin-bottom: pxtorem(18px);
 
   @include mq(medium) {
@@ -59,12 +68,19 @@
   }
 }
 
+.c-h3--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .c-h4 {
   font-weight: 600;
   font-size: pxtorem(20px);
   font-family: $fontstack-alt;
   line-height: 1.2;
   color: $color-gray8;
+  margin-top: pxtorem(36px);
   margin-bottom: pxtorem(18px);
 
   @include mq(medium) {
@@ -74,6 +90,12 @@
   @include mq(large) {
     font-size: pxtorem(25px);
   }
+}
+
+.c-h4--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c-h5 {
