@@ -1,14 +1,15 @@
 ---
 title: "Are you telling me front-end is not programming?"
 excerpt: "Recently, a fellow teacher dismissively stated that front-end development is not programming. After a brief flash of anger, his words triggered a few thoughts I'd like to share."
-categories:
+imageBig: "angry-ostrich-1500.jpg"
+imageMedium: "angry-ostrich-1024.jpg"
+imageSmall: "angry-ostrich-600.jpg"
+imageAlt: "Angry ostrich - Photo by Ruth Caron"
+tags:
 - Teaching
 - Life
-tags:
 - Gulp
-- HTML
-- CSS
-- JS
+- Front-end
 ---
 
 ## Fast-paced & ever-changing environment

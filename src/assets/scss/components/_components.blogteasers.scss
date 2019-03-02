@@ -30,7 +30,7 @@
 }
 
 .c-blogteaser__title {
-  flex: 0 0 auto;
+  flex: 1 1 100%;
 
   margin: 0;
   padding: 6px 0;
@@ -48,4 +48,8 @@
   @include mq(large) {
     font-size: pxtorem(25px);
   }
+}
+
+.c-blogteaser__title a:hover {
+  color: $color-brand5;
 }

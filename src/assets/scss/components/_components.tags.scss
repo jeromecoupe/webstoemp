@@ -20,13 +20,13 @@
   color: $color-gray6;
 }
 
-.c-tags__item:before {
+.c-tags__item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.c-tags__link:before {
   content: "#";
   display: inline-block;
   color: $color-brand5;
   margin-right: pxtorem(3px);
-}
-
-.c-tags__item:not(:last-child):after {
-  content: "\00a0-\00a0";
 }

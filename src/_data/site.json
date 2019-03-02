@@ -1,5 +1,7 @@
 {
   "title": "Webstoemp",
+  "url": "https://www.webstoemp.com",
   "baseUrl": "/",
-  "author": "Jerôme Coupé"
+  "author": "Jerôme Coupé",
+  "twitterHandle": "@jeromecoupe"
 }

@@ -1,10 +1,12 @@
 ---
 title: "Why Craft?"
 excerpt: "\"Why Craft?\" is a question I have to answer often in sales pitches or in the proposals I write. So often, in fact, that I thought a quick blogpost about it might be in order."
-categories:
-- Business
-- CMS
+imageBig: "craft-logo-1500.jpg"
+imageMedium: "craft-logo-1024.jpg"
+imageSmall: "craft-logo-600.jpg"
+imageAlt: "Craft logo - Pixel and Tonic"
 tags:
+- Business
 - Craft
 - Freelancing
 ---

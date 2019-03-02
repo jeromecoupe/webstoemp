@@ -1,13 +1,14 @@
 ---
 title: "Benefits of building your own front-end style guide"
 excerpt: "In a world where you can download popular UI toolkits like Bootstrap or Foundation, what are the benefits of building your own front-end style guide, tailor-made to your needs?"
-categories:
-- Front end
+imageBig: "toolset-1500.jpg"
+imageMedium: "toolset-1024.jpg"
+imageSmall: "toolset-600.jpg"
+imageAlt: "Toolset - Photo by Cesar Carlevarino Aragon"
 tags:
-- css
-- html
-- style guide
-- workflow
+- Front-end
+- Style guides
+- Workflow
 ---
 
 If the proliferation and popularity of UI toolkits like [Bootstrap](http://getbootstrap.com/) or [Foundation](http://foundation.zurb.com/) have taught us one thing, it's that [front-end styleguides are a thing](http://styleguides.io/) in modern front-end development.
@@ -54,7 +55,7 @@ By building your own style guide, you are in control of your codebase and of the
 
 With an in-house style guide, you can make your own choices and decisions, based on your own business needs and on your team's experience and preferences.
 
-You need to use different grid breakpoints or you want to use inline-block instead of floats? You can. Your design calls for a golden-ratio based grid? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` make no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.  
+You need to use different grid breakpoints or you want to use inline-block instead of floats? You can. Your design calls for a golden-ratio based grid? More power to you. Your team wants to use a BEM-inspired naming convention and classes like `.jumbotron` make no sense to you? Check. Performance and progressive enhancement are at the core of your project? Fine.
 
 By essence, turnkey UI toolkits are built for the masses, are quite prescriptive and [focus on the how rather than on the why](https://speakerdeck.com/csswizardry/what-is-a-css-framework-anyway). When using them, you have to build around them for maximum efficiency and they are not very well suited to building bespoke codebases.
 

@@ -1,8 +1,10 @@
 ---
 title: "Contextual components with Craft CMS"
 excerpt: "Front-end developers gravitate more and more towards using components these days. Here is a simple approach to reuse the logic of a component in Craft CMS while adjusting its styling depending on context."
-categories:
-- CMS
+imageBig: "components-1500.jpg"
+imageMedium: "components-1024.jpg"
+imageSmall: "components-600.jpg"
+imageAlt: "Wood blocks - Photo by Marcello Gennari"
 tags:
 - Craft
 - Twig

@@ -1,9 +1,12 @@
 ---
 title: "Loss, tears and smiles"
 excerpt: "Lately, a few events drastically changed my views on what it means to experience loss. I became aware of the various nuances of negative spaces it created in my life and of my ability to cope with them or not. Between the tears and smiles, a few things emerged that I want my future self to remember."
-categories:
-- Life
+imageBig: "rain-1500.jpg"
+imageMedium: "rain-1024.jpg"
+imageSmall: "rain-600.jpg"
+imageAlt: "Rain - Photo by Wenniel Lun"
 tags:
+- Life
 - Loss
 - Void
 - Lessons
