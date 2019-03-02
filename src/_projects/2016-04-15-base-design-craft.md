@@ -3,8 +3,8 @@ title: "Base Design: Craft workshop"
 client: "Base Design"
 url: http://www.basedesign.com
 urlLabel: "Client's website"
-thumbnailSmall: placeholder-800.jpg
-thumbnailBig: placeholder-1024.jpg
+thumbnailSmall: base-craft-800.jpg
+thumbnailBig: base-craft-1024.jpg
 tags: [Craft, Workshop]
 ---
 
