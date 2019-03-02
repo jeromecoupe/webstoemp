@@ -3,8 +3,8 @@ title: "Equal Partners: a new breed of law firm"
 client: "Equal partners"
 url: http://www.equal-partners.eu
 urlLabel: "Visit website"
-thumbnailSmall: placeholder-800.jpg
-thumbnailBig: placeholder-1024.jpg
+thumbnailSmall: equal-partners-800.jpg
+thumbnailBig: equal-partners-1024.jpg
 tags: [Craft, Webdesign, Front-end]
 ---
 

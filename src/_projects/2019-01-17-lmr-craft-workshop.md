@@ -3,8 +3,8 @@ title: "Little Miss Robot: Craft workshop"
 client: Little Miss Robot
 url: http://www.littlemissrobot.be
 urlLabel: "Client's website"
-thumbnailSmall: placeholder-800.jpg
-thumbnailBig: placeholder-1024.jpg
+thumbnailSmall: lmr-craft-800.jpg
+thumbnailBig: lmr-craft-1024.jpg
 tags: [Craft CMS, Workshops]
 ---
 

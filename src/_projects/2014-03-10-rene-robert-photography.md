@@ -3,8 +3,8 @@ title: "René Robert: outdoor photographer"
 client: "René Robert"
 url: http://www.renerobert.net
 urlLabel: "Visit website"
-thumbnailSmall: placeholder-800.jpg
-thumbnailBig: placeholder-1024.jpg
+thumbnailSmall: rene-robert-800.jpg
+thumbnailBig: rene-robert-1024.jpg
 tags: [Craft, Webdesign, Front-end]
 ---
 
