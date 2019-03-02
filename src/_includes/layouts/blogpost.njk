@@ -1,6 +1,10 @@
 {% extends "layouts/base.njk" %}
 {% set activeSection = "blog" %}
 
+{% set metaTitle = title %}
+{% set metaDescription = excerpt %}
+{% set metaImage = site.url ~ "/img/blogposts/" ~ imageSmall %}
+
 {% block content %}
 
   <article class="c-blogpost">
@@ -9,13 +13,13 @@
 
         <picture>
           <source media="(min-width: 500px)"
-                  srcset="/img/blogposts/placeholder-1024.jpg 1024w,
-                          /img/blogposts/placeholder-1500.jpg 1500w,"
+                  srcset="/img/blogposts/{{ imageMedium }} 1024w,
+                          /img/blogposts/{{ imageBig }} 1500w,"
                   sizes="(min-width: 1140px) 1140px,
                          100vw">
-          <img src="/img/blogposts/placeholder-600.jpg"
+          <img src="/img/blogposts/{{ imageSmall }}"
                class="o-fluidimage"
-               alt="my image alt">
+               alt="{{ imageAlt }}">
         </picture>
 
       </div>
@@ -30,7 +34,6 @@
           <p>{{ excerpt }}</p>
         </div>
       </header>
-
 
       <div class="c-wysiwyg">
         {{ content | safe }}

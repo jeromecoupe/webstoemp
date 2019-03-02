@@ -1,11 +1,13 @@
 ---
 title: "Teaching in the open: Craft and Jekyll workshops on Github"
 excerpt: "As a teacher, I want to stay current and not bore my students with outdated technologies. Being a freelancer helps, but I believe teaching in the open can too. All my courses are available for free on Github, and I began translating some of them in English as an experiment."
-categories:
+imageBig: "school-1500.jpg"
+imageMedium: "school-1024.jpg"
+imageSmall: "school-600.jpg"
+imageAlt: "Coding session at school - Photo by Jérôme Coupé"
+tags:
 - Teaching
 - Front-end
-- CMS
-tags:
 - Jekyll
 - Craft
 - Workshops

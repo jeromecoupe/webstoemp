@@ -1,9 +1,12 @@
 ---
 title: "Switching to Gulp 4"
 excerpt: "Although I also use NPM scripts on some projects, I have a soft spot for Gulp, mainly for its streaming ability, speed and easy to read configuration files. I have recently moved to Gulp 4 and wanted to share my experience."
-categories:
-- Front end
+imageBig: "gulp4-1500.png"
+imageMedium: "gulp4-1024.png"
+imageSmall: "gulp4-600.png"
+imageAlt: "Gulp 4 logo"
 tags:
+- Front-end
 - Gulp
 - Build scripts
 ---

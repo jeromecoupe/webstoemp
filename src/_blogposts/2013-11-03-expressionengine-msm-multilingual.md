@@ -1,9 +1,12 @@
 ---
 title: "Using MSM for ExpressionEngine multilingual websites"
 excerpt: "When developing mulilingual websites with ExpressionEngine, I would argue that (wait for it) the Multi-Sites Manager is one of the options you should consider, especially when dealing with content-heavy websites."
-categories:
-- CMS
+imageBig: "expressionengine-1500.jpg"
+imageMedium: "expressionengine-1024.jpg"
+imageSmall: "expressionengine-600.jpg"
+imageAlt: "Expressionengine logo"
 tags:
+- CMS
 - ExpressionEngine
 - Multilingual
 ---

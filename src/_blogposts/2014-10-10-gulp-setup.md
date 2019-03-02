@@ -1,9 +1,12 @@
 ---
 title: "My default Gulp setup for build automation"
 excerpt: "I have switched from Grunt to Gulp to handle my build process. I love its simple syntax and the fact that you can easily use your JavaScript chops to simplify your life as a front-end developer."
-categories:
-- Tooling
+imageBig: "gulp-1500.jpg"
+imageMedium: "gulp-1024.jpg"
+imageSmall: "gulp-600.jpg"
+imageAlt: "Gulp logo"
 tags:
+- Tooling
 - Gulp
 - BrowserSync
 ---

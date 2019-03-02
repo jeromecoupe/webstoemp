@@ -1,12 +1,13 @@
 ---
 title: "The next challenge of an old freelancer"
 excerpt: "I recently turned 42 and questions about my professional life started popping up. One of them in particular hit me like a brick: where do I want to be when I am 50?"
-categories:
-- Work
+imageBig: "old-man-1500.jpg"
+imageMedium: "old-man-1024.jpg"
+imageSmall: "old-man-600.jpg"
+imageAlt: "Old man - Photo by Andrés Gómez"
 tags:
+- Work
 - Front-end
-- Project Manager
-- Communication Officer
 ---
 
 Writing this down is an attempt at making sense of the myriad of thoughts and ideas swirling in my head. Turning them into a blogpost might help giving them some substance and clarity. Hell, I might even come up with ideas for a new course to set myself on.

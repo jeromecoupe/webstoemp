@@ -1,3 +1,5 @@
+{% set metaUrl = site.url ~ page.url %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Webstoemp</title>
   <link rel="stylesheet" href="/css/main.min.css">
+
+  <meta name="description" content="{{ metaDescription }}">
+  <link rel="alternate" href="/feed.xml" title="Webstoemp blog feed, by Jérôme Coupé" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="{{ site.twitterHandle }}" />
+  <meta property="og:url" content="{{ metaUrl }}" />
+  <meta property="og:title" content="{{ metaTitle }}" />
+  <meta property="og:description" content="{{ metaDescription }}" />
+  <meta property="og:image" content="{{ metaImage }}" />
 </head>
 <body>
   {% include "partials/siteheader.njk" %}

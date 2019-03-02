@@ -1,14 +1,17 @@
 ---
 title: "Tips for Craft multilingual websites"
 excerpt: "I live and work in Belgium, a country with three official languages. Multilingual websites are quite a common sight around here. Here is what I learned along the way after building a few of those using Craft as a CMS."
-categories:
-- CMS
+imageBig: "flags-1500.jpg"
+imageMedium: "flags-1024.jpg"
+imageSmall: "flags-600.jpg"
+imageAlt: "Flags - Photo by Joshua Fuller"
 tags:
+- CMS
 - Craft
 - Twig
 ---
 
-As I already said [elsewhere]({{ site.url }}/blog/why-craft-cms/), Craft's multilingual support is second to none and having localisation built into the core is just great. That being said, there are a few gotchas, tips and tricks I'd like to document for myself and share with you.
+As I already said [elsewhere](/blog/why-craft-cms/), Craft's multilingual support is second to none and having localisation built into the core is just great. That being said, there are a few gotchas, tips and tricks I'd like to document for myself and share with you.
 
 ## Setting Craft up
 

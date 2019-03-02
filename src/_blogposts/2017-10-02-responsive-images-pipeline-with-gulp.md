@@ -1,13 +1,16 @@
 ---
 title: "Building a simple responsive images pipeline with Gulp"
 excerpt: "I have been working with static site generators a lot lately. One thing I missed is a configurable image pipeline to automate the process of creating thumbnails for responsive images and the likes, so I looked into building one with Gulp."
-categories:
-- Front end
+imageBig: "images-pipeline-1500.jpg"
+imageMedium: "images-pipeline-1024.jpg"
+imageSmall: "images-pipeline-600.jpg"
+imageAlt: "Big pipe - Photo by Erlend Ekseth"
 tags:
+- Front-end
 - Gulp
 - Images
 - Static
-- Responsive
+- Responsive web design
 ---
 
 Over the last year or so, I have really become a fan of using static site generators for prototyping or even for full blown websites. This [JAMstack](https://jamstack.org/) thing is growing on me, but I wanted a way to deal with responsive images and thumbnails generation as part of the build process.
