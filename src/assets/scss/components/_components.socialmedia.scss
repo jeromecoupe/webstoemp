@@ -1,0 +1,32 @@
+// -------------------------------------
+// Social media
+// -------------------------------------
+
+.c-socialmedia {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  @include mq(medium) {
+    justify-content: flex-end;
+  }
+}
+
+.c-socialmedia__item:not(:last-child) {
+  margin-right: pxtorem(6px);
+}
+
+.c-socialmedia__link {
+  color: $color-gray7;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-gray6;
+  }
+}

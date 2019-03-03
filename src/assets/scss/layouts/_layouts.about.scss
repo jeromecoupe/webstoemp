@@ -1,0 +1,40 @@
+// -------------------------------------
+// About grid
+// -------------------------------------
+
+.l-about {
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: pxtorem(42px);
+  }
+
+  @include mq(large) {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+.l-about__content {
+  @include mq(medium) {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+
+  @include mq(large) {
+    grid-column: 1 / 7;
+  }
+}
+
+.l-about__media {
+  margin-bottom: pxtorem(36px);
+
+  @include mq(medium) {
+    margin-bottom: 0;
+    grid-column: 5 / 7;
+    grid-row: 1 / 2;
+  }
+
+  @include mq(large) {
+    grid-column: 8 / 11;
+  }
+}

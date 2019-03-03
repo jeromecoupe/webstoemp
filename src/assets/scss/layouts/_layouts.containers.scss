@@ -1,0 +1,23 @@
+// -------------------------------------
+// Containers
+// -------------------------------------
+
+/**
+ * Centered and have max-width + padding
+*/
+
+.l-container {
+  margin: 0 auto;
+  max-width: 1140px;
+  padding-left: pxtorem(24px);
+  padding-right: pxtorem(24px);
+
+  @include mq(medium) {
+    padding-left: pxtorem(42px);
+    padding-right: pxtorem(42px);
+  }
+}
+
+.l-container--narrow {
+  max-width: 672px;
+}

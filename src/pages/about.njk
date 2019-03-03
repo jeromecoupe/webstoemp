@@ -1,0 +1,54 @@
+---
+permalink: about/index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% set activeSection = "about" %}
+
+{% set metaTitle = "About Jérôme Coupé" %}
+{% set metaDescription = "Webstoemp is the portfolio and blog of Jérôme Coupé, a teacher, designer and front-end developer from Brussels, Belgium." %}
+{% set metaImage = "/img/me-600.jpg" %}
+
+{% block content %}
+
+  <main class="c-pagecontent  c-pagecontent--dark  u-padding-top-none">
+    <div class="l-container  l-about">
+
+      <div class="l-about__media">
+        <img src="/img/me-600.jpg"
+             srcset="/img/me-600.jpg 600w,
+                     /img/me-1024.jpg 1024w"
+             sizes="(min-width: 1140pw) 320px
+                    (min-width: 750pw) 33vw,
+                    100vw"
+             class="o-fluidimage"
+             alt="Jérôme Coupé">
+      </div>
+      <div class="l-about__content">
+
+        <p class="c-suptitle">Getting to know me</p>
+        <h1 class="c-h1  c-h1--invert">Meet the cook</h1>
+
+        <div class="c-txtintro">
+          <p>Webstoemp is the portfolio and blog of Jérôme Coupé, a teacher, designer and front-end developer from Brussels, Belgium.</p>
+        </div>
+
+        <p>I am primarily a front-end developer with an interest in design systems, pattern libraries and UX. I have been writing HTML, CSS, JavaScript and creating websites for the last {{ now| date("YYYY") - 1996 }} years.</p>
+
+        <p>When not busy designing or coding websites or giving workshops, I teach design and front-end at IAD in Louvain-La-Neuve. I have also be seen drinking belgian beers with friends somewhere in Brussels.</p>
+
+        <h2 class="c-h4  c-h4--invert">Partner with clients</h2>
+        <p>I favour partnerships over one-shot projects. I frequently work in house as part of the team, which generally makes for better projects.</p>
+
+        <h2 class="c-h4  c-h4--invert">Working with agencies</h2>
+        <p>I work with web agencies and specialise in being at the intersection of design and development. My specialties are design systems, front-end development and CMS implmentations (Craft, Jekyll, Hugo, Eleventy).</p>
+
+        <h2 class="c-h4  c-h4--invert">Get in touch</h2>
+        <p>I am out and about a lot, so <a href="mailto:hellowebstoemp.com">email</a> and <a href="https://twitter.com/jeromecoupe">twitter</A> are the most effective ways of getting in touch. You can also reach me by phone:  <a href="tel:0032474340174">+32 474 340 174</a></p>
+      </div>
+
+    </div>
+  </main>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+// -------------------------------------
+// Site header
+// -------------------------------------
+
+.c-siteheader {
+  padding-top: pxtorem(42px);
+  padding-bottom: pxtorem(42px);
+  background-color: $color-gray8;
+  color: $color-gray3;
+
+  @include mq(medium) {
+    padding-top: pxtorem(60px);
+    padding-bottom: pxtorem(60px);
+  }
+
+  @include mq(large) {
+    padding-top: pxtorem(84px);
+    padding-bottom: pxtorem(84px);
+  }
+}
+
+.c-siteheader__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-siteheader__logo {
+  margin: 0;
+  padding: 0;
+
+  & > a {
+    display: block;
+    color: $color-white;
+    text-decoration: none;
+
+    transition: color 0.2s ease-in-out;
+  }
+
+  & > a:hover {
+    color: $color-brand3;
+    text-decoration: none;
+  }
+
+  & svg {
+    vertical-align: middle;
+  }
+}

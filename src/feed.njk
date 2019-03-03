@@ -1,0 +1,24 @@
+---
+permalink: feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | escape }}</title>
+    <description>{{ site.description }}</description>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>{{ now | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</pubDate>
+    <lastBuildDate>{{ now | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</lastBuildDate>
+    <generator>Eleventy</generator>
+    {% for post in collections.blogposts | reverse | limit(10) %}
+      <item>
+        <title>{{ post.data.title }}</title>
+        <description><![CDATA[{{ post.data.excerpt }}]]></description>
+        <pubDate>{{ post.date | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</pubDate>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

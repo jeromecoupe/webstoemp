@@ -1,0 +1,45 @@
+// -------------------------------------
+// Banners
+// -------------------------------------
+
+.c-banner {
+  height: 300px;
+  background-color: $color-brand2;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mq(large) {
+    height: 240px;
+  }
+}
+
+.c-banner--home {
+  background-image: url(../img/banners/banner-home-800.jpg);
+  @include mq(medium) {
+    background-image: url(../img/banners/banner-home-1024.jpg);
+  }
+  @include mq(large) {
+    background-image: url(../img/banners/banner-home-1500.jpg);
+  }
+}
+
+.c-banner--work {
+  background-image: url(../img/banners/banner-work-800.jpg);
+  @include mq(medium) {
+    background-image: url(../img/banners/banner-work-1024.jpg);
+  }
+  @include mq(large) {
+    background-image: url(../img/banners/banner-work-1500.jpg);
+  }
+}
+
+.c-banner--blog {
+  background-image: url(../img/banners/banner-blog-800.jpg);
+  @include mq(medium) {
+    background-image: url(../img/banners/banner-blog-1024.jpg);
+  }
+  @include mq(large) {
+    background-image: url(../img/banners/banner-blog-1500.jpg);
+  }
+}

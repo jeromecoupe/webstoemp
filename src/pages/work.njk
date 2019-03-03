@@ -1,0 +1,63 @@
+---
+permalink: work/index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% set activeSection = "work" %}
+
+{% set metaTitle = "Clients, big and small" %}
+{% set metaDescription = "Selected projects" %}
+{% set metaImage = "/img/me-600.jpg" %}
+
+{% block content %}
+
+  <div class="c-pageintro">
+    <div class="l-container">
+      <div class="c-pageintro__inner">
+
+        <p class="c-suptitle">Clients, big and small</p>
+        <h1 class="c-h1  c-h1--invert">Selected projects</h1>
+        <p class="c-txtintro">Projects my clients and I worked on together. Some are fresh out the oven, while others are a bit older. I tried my best to give you a little bit of variety in terms of scopes and types.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="c-banner  c-banner--work"></div>
+
+  <main class="c-pagecontent">
+    <div class="l-container">
+
+      {% for project in collections.projects | reverse %}
+        {% if loop.first %}<ul class="c-list-spaced">{% endif %}
+          <li>
+
+            <article class="c-project">
+              <p class="c-project__image">
+                <img src="/img/projects/_800x600/{{ project.data.image }}"
+                     srcset="/img/projects/_800x600/{{ project.data.image }} 800w,
+                             /img/projects/{{ project.data.image }} 1024w"
+                     sizes="(min-width: 1140px) 550px,
+                            (min-width: 750px) 50vw,
+                            100vw"
+                     class="o-fluidimage" alt="project alt">
+              </p>
+              <div class="c-project__body">
+                <p class="c-suptitle  c-suptitle--dark">{{ project.data.client }}</p>
+                <h2 class="c-project__title">{{ project.data.title }}</h2>
+                <div class="c-project__description">
+                  {{ project.templateContent | safe }}
+                </div>
+                <p class="c-project__reference"><a class="c-project__link" href="{{ project.data.url }}">{{ project.data.urlLabel }}</a></p>
+              </div>
+            </article>
+
+          </li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+
+    </div>
+  </main>
+
+{% endblock %}

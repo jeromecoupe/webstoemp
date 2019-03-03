@@ -1,0 +1,8 @@
+# mac stuff
+.DS_Store
+
+# node stuff
+node_modules/
+
+# public site
+dist/

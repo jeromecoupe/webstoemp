@@ -1,0 +1,53 @@
+// -------------------------------------
+// Footer Nav
+// -------------------------------------
+
+.c-footernav {
+  list-style: none;
+  margin: 0 0 pxtorem(42px);
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  @include mq(medium) {
+    margin: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.c-footernav__item:not(:last-child) {
+  @include mq(medium) {
+    margin-right: pxtorem(36px);
+  }
+}
+
+.c-footernav__link {
+  display: block;
+  padding: pxtorem(12px) 0;
+  font-weight: 700;
+  font-size: pxtorem(13px);
+  color: $color-gray6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-gray4;
+    text-decoration: none;
+  }
+
+  @include mq(medium) {
+    padding: pxtorem(6px) 0;
+  }
+}
+
+.c-footernav__link.is-active {
+  color: $color-gray3;
+}

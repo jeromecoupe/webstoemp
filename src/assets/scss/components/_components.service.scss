@@ -1,0 +1,33 @@
+// -------------------------------------
+// Service
+// -------------------------------------
+
+.c-service {
+  margin-bottom: pxtorem(24px);
+}
+
+.c-service__icon {
+  margin-bottom: pxtorem(24px);
+
+  & svg {
+    vertical-align: middle;
+  }
+}
+
+.c-service__title {
+  font-weight: 600;
+  font-size: pxtorem(20px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+  margin-bottom: pxtorem(12px);
+
+  @include mq(large) {
+    font-size: pxtorem(23px);
+  }
+}
+
+.c-service__text {
+  margin-bottom: 0;
+  color: $color-gray7;
+}

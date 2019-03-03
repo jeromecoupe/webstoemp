@@ -1,0 +1,139 @@
+// -------------------------------------
+// Titles
+// -------------------------------------
+
+.c-h1 {
+  font-weight: 600;
+  font-size: pxtorem(31px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+  margin-bottom: pxtorem(18px);
+
+  @include mq(medium) {
+    font-size: pxtorem(39px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(45px);
+  }
+}
+
+.c-h1--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c-h2 {
+  font-weight: 600;
+  font-size: pxtorem(29px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+
+  margin-top: pxtorem(36px);
+  margin-bottom: pxtorem(18px);
+
+  @include mq(medium) {
+    font-size: pxtorem(31px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(36px);
+  }
+}
+
+.c-h2--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c-h3 {
+  font-weight: 600;
+  font-size: pxtorem(23px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+  margin-top: pxtorem(36px);
+  margin-bottom: pxtorem(18px);
+
+  @include mq(medium) {
+    font-size: pxtorem(25px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(29px);
+  }
+}
+
+.c-h3--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c-h4 {
+  font-weight: 700;
+  font-size: pxtorem(20px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+  margin-top: pxtorem(36px);
+  margin-bottom: pxtorem(18px);
+
+  @include mq(medium) {
+    font-size: pxtorem(23px);
+  }
+
+  @include mq(large) {
+    font-size: pxtorem(25px);
+  }
+}
+
+.c-h4--invert {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c-h5 {
+  font-weight: 600;
+  font-size: pxtorem(20px);
+  font-family: $fontstack-alt;
+  line-height: 1.2;
+  color: $color-gray8;
+  margin-bottom: pxtorem(12px);
+
+  @include mq(large) {
+    font-size: pxtorem(23px);
+  }
+}
+
+// -------------------------------------
+// Special titles
+// -------------------------------------
+
+.c-suptitle {
+  font-weight: 600;
+  font-size: pxtorem(13px);
+  font-family: $fontstack-main;
+  color: $color-brand4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: pxtorem(12px);
+}
+
+.c-suptitle--dark {
+  color: $color-brand5;
+}
+
+.c-smalltitle {
+  font-weight: 700;
+  font-size: pxtorem(13px);
+  font-family: $fontstack-main;
+  color: $color-gray8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

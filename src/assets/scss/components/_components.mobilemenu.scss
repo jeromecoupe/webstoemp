@@ -1,0 +1,91 @@
+// -------------------------------------
+// Mobile menu
+// -------------------------------------
+
+.c-mobilemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: pxtorem(42px) pxtorem(24px);
+
+  background-color: $color-brand5;
+
+  @include mq(medium) {
+    display: none;
+  }
+}
+
+.c-mobilemenu__close {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+
+  & > a {
+    display: inline-block;
+  }
+
+  & svg {
+    display: block;
+  }
+}
+
+.c-mobilenav {
+  list-style: none;
+  margin: pxtorem(120px) 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.c-mobilenav__link {
+  display: block;
+  padding: pxtorem(12px) 0;
+
+  font-weight: 600;
+  font-size: pxtorem(15px);
+  line-height: 1;
+  text-decoration: none;
+  color: $color-gray8;
+  text-transform: uppercase;
+  text-align: center;
+
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: mix($color-white, $color-gray8, 30%);
+  }
+}
+
+.c-mobilenav__link.is-active,
+.c-mobilenav__link.is-active:hover,
+.c-mobilenav__link.is-active:focus {
+  color: $color-white;
+}
+
+// -------------------------------------
+// Trigger visibility
+// -------------------------------------
+
+.c-mobilemenu {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.2s ease-out;
+}
+
+.js-menu-isactive {
+  @include mq(under-medium) {
+    overflow-y: hidden;
+  }
+
+  .c-mobilemenu {
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,0 +1,35 @@
+<footer class="c-sitefooter">
+
+  <div class="c-sitefooter__cta">
+    <a class="c-footercta" href="#">Need some help? <span>Let's have a coffee together.</span></a>
+  </div>
+
+  <div class="l-container">
+
+    <div class="c-sitefooter__main">
+      <nav class="c-sitefooter__nav">
+        {% for item in nav %}
+          {% if loop.first %}<ul class="c-footernav" id="footernav">{% endif %}
+            <li class="c-footernav__item"><a class="c-footernav__link  {{ 'is-active' if activeSection ==  item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+          {% if loop.last %}</ul>{% endif %}
+        {% endfor %}
+      </nav>
+
+      <nav class="c-sitefooter__social">
+        <ul class="c-socialmedia">
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-dribbble.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-github.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-linkedin.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-pinboard.svg" %}</a></li>
+          <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#">{% include "svg/icon-twitter.svg" %}</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="c-sitefooter__copyright">
+      <p class="u-margin-all-none">&copy; Webstoemp {{ now | date("Y") }}</p>
+    </div>
+
+  </div>
+
+</footer>

@@ -1,0 +1,82 @@
+// -------------------------------------
+// Mainnav
+// -------------------------------------
+
+.c-mainnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.c-mainnav__item:not(:last-child) {
+  margin-right: pxtorem(30px);
+}
+
+.c-mainnav__link {
+  display: block;
+  padding: pxtorem(18px) pxtorem(6px);
+
+  font-weight: 700;
+  font-size: pxtorem(13px);
+  line-height: 1;
+  text-decoration: none;
+  color: $color-gray4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+  }
+}
+
+.c-mainnav__link.is-active,
+.c-mainnav__link.is-active:hover,
+.c-mainnav__link.is-active:focus {
+  padding-bottom: pxtorem(16px);
+  border-bottom: 2px solid $color-brand4;
+  text-decoration: none;
+}
+
+// -------------------------------------
+// Hamburger menu
+// -------------------------------------
+
+.c-mainnav-compact {
+  margin: 0;
+  padding: 0;
+
+  & > a {
+    display: block;
+  }
+
+  & svg {
+    vertical-align: middle;
+  }
+}
+
+// -------------------------------------
+// Visibility toggle
+// -------------------------------------
+
+.c-mainnav {
+  display: none;
+
+  @include mq(medium) {
+    display: flex;
+  }
+}
+
+.c-mainnav-compact {
+  @include mq(medium) {
+    display: none;
+  }
+}

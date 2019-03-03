@@ -1,0 +1,9 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Menu</title>
+  <desc>Navigation</desc>
+  <g fill="#ffffff">
+    <rect x="3" y="7" width="24" height="2"/>
+    <rect x="3" y="14" width="24" height="2"/>
+    <rect x="3" y="21" width="24" height="2"/>
+  </g>
+</svg>

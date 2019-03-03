@@ -1,0 +1,35 @@
+// -------------------------------------
+// Site footer
+// -------------------------------------
+
+.c-sitefooter {
+  background-color: $color-gray8;
+  color: $color-gray7;
+  font-size: pxtorem(16px);
+}
+
+.c-sitefooter__main {
+  padding-top: pxtorem(60px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: pxtorem(60px);
+
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "nav social";
+    grid-gap: 42px;
+  }
+}
+
+.c-sitefooter__nav {
+  grid-area: nav;
+}
+
+.c-sitefooter__social {
+  grid-area: social;
+}
+
+.c-sitefooter__copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: pxtorem(24px) 0;
+}
