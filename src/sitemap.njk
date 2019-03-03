@@ -1,0 +1,31 @@
+---
+permalink: sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/about/index.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/work/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  {% for post in collections.blogposts | reverse %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <lastmod>{{ post.date | date("YYYY-MM-DD[T]HH:mm:ssZZ") }}</lastmod>
+      <priority>0.8</priority>
+    </url>
+  {% endfor %}
+</urlset>

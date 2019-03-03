@@ -132,11 +132,11 @@ function watchFiles() {
     [
       "./.eleventy.js",
       "./.eleventyignore",
-      "./src/_blogposts/**/*",
-      "./src/_projects/**/*",
+      "./src/blogposts/**/*",
+      "./src/projects/**/*",
+      "./src/pages/**/*",
       "./src/_data/**/*",
-      "./src/_includes/**/*",
-      "./src/_pages/**/*"
+      "./src/_includes/**/*"
     ],
     gulp.series(eleventy, browserSyncReload)
   );

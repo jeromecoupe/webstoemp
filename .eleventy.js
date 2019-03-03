@@ -3,12 +3,12 @@ const moment = require("moment");
 module.exports = function(eleventyConfig) {
   // blogpost collection
   eleventyConfig.addCollection("blogposts", function(collection) {
-    return collection.getFilteredByGlob("./src/_blogposts/*.md");
+    return collection.getFilteredByGlob("./src/blogposts/*.md");
   });
 
   // projects collection
   eleventyConfig.addCollection("projects", function(collection) {
-    return collection.getFilteredByGlob("./src/_projects/*.md");
+    return collection.getFilteredByGlob("./src/projects/*.md");
   });
 
   // limit filter
