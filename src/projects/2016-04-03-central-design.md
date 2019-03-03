@@ -3,8 +3,7 @@ title: "Central: a Jekyll-powered agency website"
 client: "Central Design"
 url: http://www.central.team
 urlLabel: "Visit website"
-thumbnailSmall: central-800.jpg
-thumbnailBig: central-1024.jpg
+image: central.jpg
 tags: [Craft, Workshop]
 ---
 

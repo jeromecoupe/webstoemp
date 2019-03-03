@@ -1,9 +1,7 @@
 ---
 title: "Building a simple grid system with Sass"
 excerpt: "Grid systems are great. With the help of Sass, it is now relatively trivial to build your own, tailor-made to the needs of your project and free of the cruft coming with one size fits all systems."
-imageBig: "grid-1500.jpg"
-imageMedium: "grid-1024.jpg"
-imageSmall: "grid-600.jpg"
+image: "grid.jpg"
 imageAlt: "Gray metal cube container - Photo by Ilze Lucero"
 categories:
 - Front-end

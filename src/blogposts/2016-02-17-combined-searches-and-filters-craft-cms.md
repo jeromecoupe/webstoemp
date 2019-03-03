@@ -1,9 +1,7 @@
 ---
 title: "Combined searches and filters using Craft"
 excerpt: "In a recent project, I had to create combined searches and filters with Craft CMS. The basic gist of it consists in using Twig to build modular objects that can then be consumed by Craft in the form of query parameters."
-imageBig: "mixer-1500.jpg"
-imageMedium: "mixer-1024.jpg"
-imageSmall: "mixer-600.jpg"
+image: "mixer.jpg"
 imageAlt: "Audio mixer - Photo by chuttersnap"
 tags:
 - Craft

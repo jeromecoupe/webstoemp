@@ -1,9 +1,7 @@
 ---
 title: "Building a simple responsive images pipeline with Gulp"
 excerpt: "I have been working with static site generators a lot lately. One thing I missed is a configurable image pipeline to automate the process of creating thumbnails for responsive images and the likes, so I looked into building one with Gulp."
-imageBig: "images-pipeline-1500.jpg"
-imageMedium: "images-pipeline-1024.jpg"
-imageSmall: "images-pipeline-600.jpg"
+image: "images-pipeline.jpg"
 imageAlt: "Big pipe - Photo by Erlend Ekseth"
 tags:
 - Front-end
@@ -136,7 +134,7 @@ gulp.task("img:thumbnails", ["img:clean"], () => {
         .pipe(gulpImageresize({
           imageMagick: true,
           width: transform.params.width,
-          height: transform.params.width,
+          height: transform.params.height,
           crop: transform.params.crop
         }))
         .pipe(gulpImagemin({

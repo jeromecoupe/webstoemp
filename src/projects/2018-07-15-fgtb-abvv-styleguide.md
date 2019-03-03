@@ -3,8 +3,7 @@ title: "FGTB / ABVV: a front-end design system"
 client: Cronos Group
 url: http://www.abvv.be
 urlLabel: "Client's website"
-thumbnailSmall: abvv-fgtb-800.jpg
-thumbnailBig: abvv-fgtb-1024.jpg
+image: abvv-fgtb.jpg
 tags: [Nunjucks, Gulp, Design System]
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: "Rapa Nui: an old dream finally comes true"
 excerpt: "Ten years ago, the missus and myself backpacked through Chile, Peru and Bolivia for three months. At the time, we didn't have the money to make it to Easter Island, but we promised ourselves we would go one day."
-imageBig: "rapa-nui-1500.jpg"
-imageMedium: "rapa-nui-1024.jpg"
-imageSmall: "rapa-nui-600.jpg"
+image: "rapa-nui.jpg"
 imageAlt: "Rano Raraku, Easter Island - Photo by Jérôme Coupé"
 tags:
 - Travel

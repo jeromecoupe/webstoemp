@@ -3,8 +3,7 @@ title: "Little Miss Robot: a design system framemork"
 client: Little Miss Robot
 url: http://www.littlemissrobot.be
 urlLabel: "Client's website"
-thumbnailSmall: lmr-design-system-framework-800.jpg
-thumbnailBig: lmr-design-system-framework-1024.jpg
+image: lmr-design-system-framework.jpg
 tags: [Node, Express, Nunjucks, Gulp, Design System]
 ---
 

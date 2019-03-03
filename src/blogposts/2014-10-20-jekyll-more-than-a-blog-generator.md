@@ -1,9 +1,7 @@
 ---
 title: "Jekyll: much more than a static blog generator"
 excerpt: "When building this website, I had an in depth look at the latest version of Jekyll. Since I last looked at it, it had become a lot more powerful than a simple static blog generator, thanks to a few features."
-imageBig: "jekyll-logo-1500.jpg"
-imageMedium: "jekyll-logo-1024.jpg"
-imageSmall: "jekyll-logo-600.jpg"
+image: "jekyll-logo.jpg"
 imageAlt: "Jekyll static site generator"
 categories:
 - CMS
