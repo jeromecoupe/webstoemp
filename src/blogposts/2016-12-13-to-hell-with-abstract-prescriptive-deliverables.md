@@ -1,9 +1,7 @@
 ---
 title: "To hell with abstract prescriptive deliverables"
 excerpt: "As we reach the end of the year, it's time for good resolutions: one of mine is to ditch prescriptive and abstract deliverables created in isolation in favour of more descriptive, collaborative and concrete ones."
-imageBig: "to-hell-1500.jpg"
-imageMedium: "to-hell-1024.jpg"
-imageSmall: "to-hell-600.jpg"
+image: "to-hell.jpg"
 imageAlt: "Animal Skull - Photo by Annie Spratt"
 tags:
 - Work

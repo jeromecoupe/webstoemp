@@ -3,8 +3,7 @@ title: "International Polar Foundation"
 client: "International Polar Foundation"
 url: http://www.polarfoundation.org
 urlLabel: "Visit website"
-thumbnailSmall: international-polar-foundation-800.jpg
-thumbnailBig: international-polar-foundation-1024.jpg
+image: international-polar-foundation.jpg
 tags: [ExpressionEngine, Webdesign, Front-end]
 ---
 

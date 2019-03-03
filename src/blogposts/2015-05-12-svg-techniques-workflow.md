@@ -1,9 +1,7 @@
 ---
 title: "My current SVG techniques and workflow"
 excerpt: "SVG is certainly the new hotness to get to grips with in the front-end world. Here are various use cases I encountered and the techniques and workflow I use with SVG today."
-imageBig: "svg-1500.jpg"
-imageMedium: "svg-1024.jpg"
-imageSmall: "svg-600.jpg"
+image: "svg.jpg"
 imageAlt: "Vectors and bezier curves"
 tags:
 - Front-end

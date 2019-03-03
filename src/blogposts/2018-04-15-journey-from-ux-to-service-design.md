@@ -1,9 +1,7 @@
 ---
 title: "The journey from UX to service design"
 excerpt: "As digital products are increasingly integrating the fabric of all types of businesses, I wanted to look at why great UX is just the bare minimum and how the mission of UX teams is broadening."
-imageBig: "journey-ux-1500.jpg"
-imageMedium: "journey-ux-1024.jpg"
-imageSmall: "journey-ux-600.jpg"
+image: "journey-ux.jpg"
 imageAlt: "Country Road - Photo by Fritz Bielmeier"
 tags:
 - Front-end

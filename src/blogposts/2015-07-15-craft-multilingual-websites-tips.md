@@ -1,9 +1,7 @@
 ---
 title: "Tips for Craft multilingual websites"
 excerpt: "I live and work in Belgium, a country with three official languages. Multilingual websites are quite a common sight around here. Here is what I learned along the way after building a few of those using Craft as a CMS."
-imageBig: "flags-1500.jpg"
-imageMedium: "flags-1024.jpg"
-imageSmall: "flags-600.jpg"
+image: "flags.jpg"
 imageAlt: "Flags - Photo by Joshua Fuller"
 tags:
 - CMS

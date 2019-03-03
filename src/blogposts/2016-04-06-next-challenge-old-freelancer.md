@@ -1,9 +1,7 @@
 ---
 title: "The next challenge of an old freelancer"
 excerpt: "I recently turned 42 and questions about my professional life started popping up. One of them in particular hit me like a brick: where do I want to be when I am 50?"
-imageBig: "old-man-1500.jpg"
-imageMedium: "old-man-1024.jpg"
-imageSmall: "old-man-600.jpg"
+image: "old-man.jpg"
 imageAlt: "Old man - Photo by Andrés Gómez"
 tags:
 - Work

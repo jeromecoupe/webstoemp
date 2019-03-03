@@ -13,11 +13,11 @@
 
         <picture>
           <source media="(min-width: 500px)"
-                  srcset="/img/blogposts/{{ imageMedium }} 1024w,
-                          /img/blogposts/{{ imageBig }} 1500w,"
+                  srcset="/img/blogposts/_1024x576/{{ image }} 1024w,
+                          /img/blogposts/{{ image }} 1500w"
                   sizes="(min-width: 1140px) 1140px,
                          100vw">
-          <img src="/img/blogposts/{{ imageSmall }}"
+          <img src="/img/blogposts/_600x600/{{ image }}"
                class="o-fluidimage"
                alt="{{ imageAlt }}">
         </picture>
