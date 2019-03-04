@@ -20,6 +20,7 @@ function watchFiles() {
     [
       "./.eleventy.js",
       "./.eleventyignore",
+      "./src/*",
       "./src/blogposts/**/*",
       "./src/projects/**/*",
       "./src/pages/**/*",
