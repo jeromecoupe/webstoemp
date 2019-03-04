@@ -15,8 +15,8 @@
     "navUrl": "/work/"
   },
   {
-    "navLabel": "About",
-    "navTrigger": "about",
-    "navUrl": "/about/"
+    "navLabel": "Contact",
+    "navTrigger": "contact",
+    "navUrl": "/contact/"
   }
 ]
