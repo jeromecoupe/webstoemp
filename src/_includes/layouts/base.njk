@@ -7,17 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Webstoemp</title>
+  <meta name="description" content="{{ metaDescription }}">
+
   <link rel="stylesheet" href="/css/main.min.css">
 
-  <meta name="description" content="{{ metaDescription }}">
+  <!-- Feed -->
   <link rel="alternate" href="/feed.xml" title="Webstoemp blog feed, by Jérôme Coupé" type="application/atom+xml">
 
+  <!-- Twitter + Open Graph -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="{{ site.twitterHandle }}" />
   <meta property="og:url" content="{{ metaUrl }}" />
   <meta property="og:title" content="{{ metaTitle }}" />
   <meta property="og:description" content="{{ metaDescription }}" />
   <meta property="og:image" content="{{ metaImage }}" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55680384-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-55680384-1');
+  </script>
+
 </head>
 <body>
   {% include "partials/siteheader.njk" %}
