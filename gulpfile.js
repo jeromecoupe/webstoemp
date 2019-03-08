@@ -17,17 +17,8 @@ function watchFiles() {
   gulp.watch("./src/assets/img/**/*", gulp.parallel(img.copy, img.resize));
   gulp.watch("./src/assets/fonts/**/*", fonts.copy);
   gulp.watch(
-    [
-      "./.eleventy.js",
-      "./.eleventyignore",
-      "./src/*",
-      "./src/blogposts/**/*",
-      "./src/projects/**/*",
-      "./src/pages/**/*",
-      "./src/_data/**/*",
-      "./src/_includes/**/*"
-    ],
-    gulp.series(eleventy.build)
+    ["./.eleventy.js", "./.eleventyignore", "./src/**/*"],
+    eleventy.build
   );
 }
 
