@@ -21,8 +21,12 @@ module.exports = function(eleventyConfig) {
     return moment(date).format(format);
   });
 
+  // pass throgh ./src/_redirects
+  eleventyConfig.addPassthroughCopy("./src/_redirects");
+
   // Base config
   return {
+    passthroughFileCopy: true,
     dir: {
       input: "src",
       output: "dist"
