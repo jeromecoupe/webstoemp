@@ -38,23 +38,14 @@ const transforms = [
   }
 ];
 
-// Check that directory exists (recursive)
-function dirExists(path) {
-  var dir = sanitizeDir(path);
-  if (fs.existsSync(dir)) {
-    return true;
-  }
-  return false;
-}
-
-// Make sure paths ends with a slash
-function sanitizeDir(path) {
+// Make sure paths end with a slash
+function sanitizePath(path) {
   let sanitizedPath = path.slice(-1) !== "/" ? `${path}/` : path;
   return sanitizedPath;
 }
 
 // Copy Images
-function copy() {
+function copyImages() {
   return gulp
     .src("./src/assets/img/**/*")
     .pipe(newer("./dist/img/"))
@@ -62,7 +53,7 @@ function copy() {
 }
 
 // Optimize images (src)
-function optimise() {
+function optimiseImages() {
   return gulp
     .src("./src/assets/img/**/*")
     .pipe(
@@ -84,14 +75,14 @@ function optimise() {
 }
 
 // resize images
-function resize(done) {
+function resizeImages(done) {
   transforms.forEach(function(transform) {
-    let distDir = sanitizeDir(transform.dist);
-    if (!dirExists(distDir)) {
+    let distDir = sanitizePath(transform.dist);
+    if (!fs.existsSync(distDir)) {
       fs.mkdirSync(distDir, { recursive: true });
     }
 
-    let files = glob.sync(sanitizeDir(transform.src) + "*");
+    let files = glob.sync(sanitizePath(transform.src) + "*");
 
     files.forEach(function(file) {
       let filename = path.basename(file);
@@ -108,7 +99,7 @@ function resize(done) {
 
 // exports (Common JS)
 module.exports = {
-  resize: resize,
-  optimise: optimise,
-  copy: copy
+  resize: resizeImages,
+  optimise: optimiseImages,
+  copy: copyImages
 };

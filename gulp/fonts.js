@@ -3,7 +3,7 @@ const gulp = require("gulp");
 const newer = require("gulp-newer");
 
 // Copy fonts
-function copy() {
+function copyFonts() {
   return gulp
     .src("./src/assets/fonts/**/*")
     .pipe(newer("./dist/fonts/"))
@@ -12,5 +12,5 @@ function copy() {
 
 // exports
 module.exports = {
-  copy: copy
+  copy: copyFonts
 };
