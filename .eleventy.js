@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
   });
 
   // pass throgh ./src/_redirects
-  eleventyConfig.addPassthroughCopy("./src/_redirects");
+  eleventyConfig.addPassthroughCopy("./_redirects");
 
   // Base config
   return {
