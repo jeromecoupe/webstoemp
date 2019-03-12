@@ -1,5 +1,5 @@
 ---
-title: "FGTB / ABVV: a front-end design system"
+title: "A front-end design system for ABVV/FGTB"
 client: Cronos Group
 url: http://www.abvv.be
 urlLabel: "Client's website"

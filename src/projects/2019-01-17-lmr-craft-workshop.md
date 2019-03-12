@@ -1,5 +1,5 @@
 ---
-title: "Little Miss Robot: Craft workshop"
+title: "Craft workshop for designers and developers"
 client: Little Miss Robot
 url: http://www.littlemissrobot.be
 urlLabel: "Client's website"
