@@ -17,14 +17,14 @@ function watchFiles() {
   gulp.watch("./src/assets/img/**/*", images);
   gulp.watch("./src/assets/fonts/**/*", fonts.copy);
   gulp.watch(
-    ["./.eleventy.js", "./.eleventyignore", "./src/**/*"],
+    ["./.eleventy.js", "./.eleventyignore", "./src/**/*.{json, js, njk, md}"],
     eleventy.build
   );
 }
 
 // define tasks
 const scripts = gulp.series(js.lint, js.build);
-const images = gulp.series(img.optimise, gulp.parallel(img.copy, img.resize));
+const images = gulp.series(gulp.parallel(img.copy, img.resize));
 const watch = gulp.parallel(watchFiles, server.init);
 const build = gulp.series(
   clean.all,
