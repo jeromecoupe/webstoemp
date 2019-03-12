@@ -2,11 +2,11 @@
 const cp = require("child_process");
 
 // Eleventy
-function build() {
+function eleventyBuild() {
   return cp.spawn("npx", ["eleventy", "--quiet"], { stdio: "inherit" });
 }
 
 // exports
 module.exports = {
-  build: build
+  build: eleventyBuild
 };
