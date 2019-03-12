@@ -1,5 +1,5 @@
 ---
-title: "Little Miss Robot: a design system framemork"
+title: "Building a design system framemork"
 client: Little Miss Robot
 url: http://www.littlemissrobot.be
 urlLabel: "Client's website"

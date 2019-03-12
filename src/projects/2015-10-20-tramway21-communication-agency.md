@@ -1,5 +1,5 @@
 ---
-title: "Tramway 21: modular online case studies"
+title: "Modular online case studies for a communication agency"
 client: "Tramway 21"
 url: http://www.tramway21.be
 urlLabel: "Visit website"

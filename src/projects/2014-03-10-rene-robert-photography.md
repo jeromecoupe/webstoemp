@@ -1,5 +1,5 @@
 ---
-title: "René Robert: outdoor photographer"
+title: "Showcase the work of an outdoor photographer"
 client: "René Robert"
 url: http://www.renerobert.net
 urlLabel: "Visit website"

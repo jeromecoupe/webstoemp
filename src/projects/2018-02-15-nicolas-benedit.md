@@ -1,5 +1,5 @@
 ---
-title: "Nicolas Benedit: design and architecture"
+title: "Micro website for an architect and designer"
 client: "Nicolas Benedit"
 url: http://www.nicolasbenedit.com
 urlLabel: "Visit website"

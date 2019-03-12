@@ -1,5 +1,5 @@
 ---
-title: "Princess Elisabeth Antarctica"
+title: "Website for the Princess Elisabeth Antarctica station"
 client: "International Polar Foundation"
 url: http://www.antarcticstation.org
 urlLabel: "Visit website"
