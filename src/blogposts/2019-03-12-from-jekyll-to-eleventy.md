@@ -23,7 +23,7 @@ Its only downsides for me were the go templating language, which needs a bit of 
 
 ### Eleventy
 
-Which bring me to Eleventy. Being written in Node, it gives you access to the whole NPM ecosystem to extend it, is easy to use, and is quite a lot faster than Jekyll (albeit not being as fast as Hugo).
+Which brings me to Eleventy. Being written in Node, it gives you access to the NPM ecosystem to extend it, is easy to use, and is quite a lot faster than Jekyll (albeit not being as fast as Hugo).
 
 Eleventy also works with [several template languages](https://www.11ty.io/docs/languages/), which was an added bonus.
 
