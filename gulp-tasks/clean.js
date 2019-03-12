@@ -2,11 +2,11 @@
 const del = require("del");
 
 // Clean
-function all() {
+function cleanDist() {
   return del(["./dist/"]);
 }
 
 // exports
 module.exports = {
-  all: all
+  dist: cleanDist
 };

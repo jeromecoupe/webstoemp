@@ -7,7 +7,7 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 
 // CSS task
-function build() {
+function stylesBuild() {
   return gulp
     .src("./src/assets/scss/**/*.scss")
     .pipe(sass({ outputStyle: "expanded" }))
@@ -19,5 +19,5 @@ function build() {
 
 // exports
 module.exports = {
-  build: build
+  build: stylesBuild
 };
