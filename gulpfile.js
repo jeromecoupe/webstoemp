@@ -14,7 +14,7 @@ const eleventy = require("./gulp-tasks/eleventy.js");
 function watchFiles() {
   gulp.watch("./src/assets/scss/**/*", css.build);
   gulp.watch("./src/assets/js/**/*", scripts);
-  gulp.watch("./src/assets/img/**/*", gulp.parallel(img.copy, img.resize));
+  gulp.watch("./src/assets/img/**/*", images);
   gulp.watch("./src/assets/fonts/**/*", fonts.copy);
   gulp.watch(
     ["./.eleventy.js", "./.eleventyignore", "./src/**/*"],
