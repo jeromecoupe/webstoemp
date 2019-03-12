@@ -10,7 +10,7 @@ const sharp = require("sharp");
 // specify transforms
 const transforms = [
   {
-    src: "./src/assets/img/blogposts/",
+    src: "./src/assets/img/blogposts/*",
     dist: "./dist/img/blogposts/_1024x576/",
     options: {
       width: 1024,
@@ -19,7 +19,7 @@ const transforms = [
     }
   },
   {
-    src: "./src/assets/img/blogposts/",
+    src: "./src/assets/img/blogposts/*",
     dist: "./dist/img/blogposts/_600x600/",
     options: {
       width: 600,
@@ -28,7 +28,7 @@ const transforms = [
     }
   },
   {
-    src: "./src/assets/img/projects/",
+    src: "./src/assets/img/projects/*",
     dist: "./dist/img/projects/_800x600/",
     options: {
       width: 800,
@@ -37,12 +37,6 @@ const transforms = [
     }
   }
 ];
-
-// Make sure paths end with a slash
-function sanitizePath(path) {
-  let sanitizedPath = path.slice(-1) !== "/" ? `${path}/` : path;
-  return sanitizedPath;
-}
 
 // Copy Images
 function copyImages() {
@@ -77,12 +71,13 @@ function optimiseImages() {
 // resize images
 function resizeImages(done) {
   transforms.forEach(function(transform) {
-    let distDir = sanitizePath(transform.dist);
+    let distDir = transform.dist;
+
     if (!fs.existsSync(distDir)) {
       fs.mkdirSync(distDir, { recursive: true });
     }
 
-    let files = glob.sync(sanitizePath(transform.src) + "*");
+    let files = glob.sync(transform.src);
 
     files.forEach(function(file) {
       let filename = path.basename(file);
