@@ -1,6 +1,6 @@
 ---
 title: "From Jekyll to Eleventy"
-excerpt: "Jekyll served me well for a few years and is still a static site generator I like, use and follow. Nevertheless, when I finally had the time to update this site, I chose to go with Eleventy."
+excerpt: "Jekyll is still a static site generator I like, use and follow. Nevertheless, when I finally had the time to update this site, I chose to go with Eleventy."
 image: "eleventy-logo.png"
 imageAlt: "Eleventy logo"
 tags:
@@ -9,15 +9,15 @@ tags:
 - Jekyll
 ---
 
-For the last two years, static site generators have gained a lot of traction thanks to the pervasiveness of API, Git based workflows, powerful javascript frameworks, headless CMS and unified data layers powered by GraphQL. They have become a sensible choice for all kinds of websites.
-
 ## Choosing a static site generator
 
-Webstoemp was previously running on Jekyll, which I liked because of its ease of use and flexibility. However, it was a bit slow compared to other options and forced me to keep a Ruby environment up to date. I experimented with several other contenders and eventually ended up with Hugo and Eleventy in my shortlist.
+Static site generators have gained a lot of traction lately, thanks to the pervasiveness of API, Git based workflows, powerful javascript frameworks, headless CMS and unified data layers powered by GraphQL. They have become a sensible choice for all kinds of websites.
+
+Webstoemp was previously running on Jekyll, which I liked because of its ease of use and flexibility. However, it was a bit slow compared to other options and forced me to keep a Ruby environment up to date. I experimented with several other contenders and eventually ended up with [Hugo](https://gohugo.io/) and [Eleventy](https://www.11ty.io/) in my shortlist.
 
 ### Hugo
 
-Hugo being written in Go, it's bazing fast. It is also a binary so you don't have to maintain a Go environment. I actually built the entire V2 of webstoemp with Hugo as an experiment and really liked it.
+Hugo being written in Go, it's blazing fast. It is also a binary so you don't have to maintain a Go environment. I actually built the entire V2 of webstoemp with Hugo as an experiment and really liked it.
 
 Its only downsides for me were the go templating language, which needs a bit of getting used to, and the fact that Hugo is an all encompassing solution, which can be extremely useful for large scale projects but didn't quite appeal to the tinkerer in me.
 
@@ -25,13 +25,13 @@ Its only downsides for me were the go templating language, which needs a bit of 
 
 Which bring me to Eleventy. Being written in Node, it gives you access to the whole NPM ecosystem to extend it, is easy to use, and is quite a lot faster than Jekyll (albeit not being as fast as Hugo).
 
-Eleventy also works with several template languages, which was an added bonus.
+Eleventy also works with [several template languages](https://www.11ty.io/docs/languages/), which was an added bonus.
 
 ## Setting things up
 
 I chose [Nunjucks](https://mozilla.github.io/nunjucks/) by Mozilla as my main templating engine and only needed markdown and html files apart from that.
 
-Nunjucks lacks date and limit filters so I just went ahead and added them in `eleventy.js` using `Moment.js` for the date filter.
+Nunjucks lacks date and limit filters so I just went ahead and added them in `eleventy.js`. I used the well known [`moment.js`](https://momentjs.com/) library for the date filter.
 
 ```js
 const moment = require("moment");
@@ -47,7 +47,7 @@ eleventyConfig.addNunjucksFilter("date", function(date, format) {
 });
 ```
 
-Since I am using Gulp as a build tool, I had to tell Eleventy to ignore my assets. I just added the following line to my `.eleventyignore` file at the root of the project:
+Since I am using [Gulp](https://gulpjs.com/) as a build tool, I had to tell Eleventy to ignore my assets. I just added the following line to my `.eleventyignore` file at the root of the project:
 
 ```
 src/assets/**/*
@@ -71,7 +71,7 @@ function build() {
 
 For this simple website, I only needed two collections (blogposts and projects) for which I created two folders full of markdown files with YAML front-matters.
 
-Eleventy has a neat little feature allowing you to use JSON-formatted files with the same name as your directory to declare common front matter values for all files in that directory. For example, I use a `blogposts.json` file in my `blogposts` directory to specify a layout and a permalink structure for all blogposts.
+Eleventy has a neat little feature allowing you to use JSON files with the same name as your directory to declare common front matter values for all files in that directory. For example, I use a `blogposts.json` file in my `blogposts` directory to specify a layout and a permalink structure for all blogposts.
 
 ```json
 {% raw %}
@@ -128,9 +128,9 @@ module.exports = function(eleventyConfig) {
 
 ### Data files
 
-Eleventy lets you easily work with JSON or JS data files that are yout store in a  `./src/_data` folder by default.
+Eleventy lets you easily work with JSON or JS data files located in a  `./src/_data` folder by default.
 
-For example, I use a `site.js` file to define site-wide variables that I can access easily access in any template by using the name of the file and one of the object keys.
+For example, I use a `./src/_data/site.js` file to define site-wide variables that I can access easily access in any template by using the name of the file and one of the object keys.
 
 ```js
 module.exports = {
