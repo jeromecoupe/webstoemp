@@ -233,7 +233,7 @@ As you have seen above, I use a dedicated template to display the detail of each
 
 ### Projects
 
-The same logic is used for displaying projects, with a little caveheat. Because we don't have a dedicated template for projects, we just have to use [`templateContent`](https://www.11ty.io/docs/collections/#collection-item-data-structure) to display the content of markdown files. Here is a simplified version of the code.
+The same logic is used for displaying projects, with a little caveat. Because we don't have a dedicated template for projects, we just have to use [`templateContent`](https://www.11ty.io/docs/collections/#collection-item-data-structure) to display the content of markdown files. Here is a simplified version of the code.
 
 ```twig
 {% raw %}
