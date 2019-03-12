@@ -17,9 +17,9 @@ Webstoemp was previously running on Jekyll, which I liked because of its ease of
 
 ### Hugo
 
-Hugo being written in Go, it's blazing fast. It is also a binary so you don't have to maintain a Go environment. I actually built the entire V2 of webstoemp with Hugo as an experiment and really liked it.
+Hugo being written in Go, it's blazing fast. It is also a binary so you don't have to maintain a Go environment. I actually built the entire V2 of Webstoemp with Hugo as an experiment and really liked it.
 
-Its only downsides for me were the go templating language, which needs a bit of getting used to, and the fact that Hugo is an all encompassing solution, which can be extremely useful for large scale projects but didn't quite appeal to the tinkerer in me.
+Its only downsides for me were [the go templating language](https://gohugo.io/templates/introduction/), which needs a bit of getting used to, and the fact that Hugo is an all encompassing solution, which can be extremely useful for large scale projects but didn't quite appeal to the tinkerer in me.
 
 ### Eleventy
 
