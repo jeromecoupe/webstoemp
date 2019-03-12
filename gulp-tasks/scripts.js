@@ -7,7 +7,7 @@ const webpackconfig = require("../webpack.config");
 const webpackstream = require("webpack-stream");
 
 // Lint scripts
-function lint() {
+function scriptsLint() {
   return gulp
     .src([
       "./src/assets/js/modules/**/*",
@@ -20,7 +20,7 @@ function lint() {
 }
 
 // Transpile, concatenate and minify scripts
-function build() {
+function scriptsBuild() {
   return (
     gulp
       .src(["./src/assets/js/**/*"])
@@ -32,6 +32,6 @@ function build() {
 
 // exports (Common JS)
 module.exports = {
-  lint: lint,
-  build: build
+  lint: scriptsLint,
+  build: scriptsBuild
 };
