@@ -1,5 +1,5 @@
 ---
-title: "International Polar Foundation"
+title: "A website for an International NGO"
 client: "International Polar Foundation"
 url: http://www.polarfoundation.org
 urlLabel: "Visit website"

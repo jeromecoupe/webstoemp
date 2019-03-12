@@ -1,5 +1,5 @@
 ---
-title: "Equal Partners: a new breed of law firm"
+title: "Website for a new breed of law firm"
 client: "Equal partners"
 url: http://www.equal-partners.eu
 urlLabel: "Visit website"

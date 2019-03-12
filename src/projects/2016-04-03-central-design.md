@@ -1,5 +1,5 @@
 ---
-title: "Central: a Jekyll-powered agency website"
+title: "A Jekyll-powered agency website"
 client: "Central Design"
 url: http://www.central.team
 urlLabel: "Visit website"
