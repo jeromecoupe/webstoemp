@@ -23,8 +23,8 @@ module.exports = function(eleventyConfig) {
 
   // pass throgh ./src/_redirects
   eleventyConfig.addPassthroughCopy("./_redirects");
-  eleventyConfig.addPassthroughCopy("./favicon.ico");
-  eleventyConfig.addPassthroughCopy("./apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
 
   // Base config
   return {
