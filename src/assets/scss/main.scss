@@ -3,6 +3,9 @@
 @import "settings/settings.media-queries.scss";
 @import "settings/settings.fonts.scss";
 
+// normalize
+@import "vendors/normalize.scss";
+
 // Functions
 @import "functions/functions.pxtorem.scss";
 
@@ -22,7 +25,7 @@
 // Layout
 @import "layouts/layouts.containers.scss";
 @import "layouts/layouts.services.scss";
-@import "layouts/layouts.about.scss";
+@import "layouts/layouts.contact.scss";
 
 // Components
 @import "components/components.siteheader.scss";

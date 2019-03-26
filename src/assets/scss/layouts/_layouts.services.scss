@@ -3,8 +3,8 @@
 // -------------------------------------
 
 .l-services {
-  display: grid;
   @include mq(medium) {
+    display: grid;
     grid-template-columns: 1fr 9fr;
     grid-gap: pxtorem(42px);
     grid-template-areas: "heading services";
@@ -45,13 +45,10 @@
   margin: 0;
   padding: 0;
 
-  display: grid;
-  grid-row-gap: pxtorem(18px);
-  grid-template-columns: 1fr;
-
   @include mq(medium) {
     grid-area: services;
 
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: pxtorem(24px) pxtorem(42px);
     grid-template-areas:
@@ -71,8 +68,11 @@
 }
 
 @for $i from 1 through 6 {
-  @include mq(medium) {
-    .l-services__grid > li:nth-child(#{$i}) {
+  .l-services__grid > li:nth-child(#{$i}) {
+    margin-bottom: 1rem;
+
+    @include mq(medium) {
+      margin-bottom: 0;
       grid-area: s#{$i};
     }
   }
