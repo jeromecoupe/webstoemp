@@ -6,6 +6,7 @@
   @include mq(medium) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "img txt";
     grid-gap: 42px;
   }
 }
@@ -18,6 +19,7 @@
   }
 
   @include mq(medium) {
+    grid-area: img;
     margin-bottom: 0;
   }
 }
@@ -40,6 +42,8 @@
 }
 
 .c-project__body {
+  grid-area: txt;
+
   @include mq(medium) {
     display: flex;
     flex-direction: column;

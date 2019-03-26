@@ -13,7 +13,7 @@ function stylesBuild() {
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(gulp.dest("./dist/css/"))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss([autoprefixer({ grid: true }), cssnano()]))
     .pipe(gulp.dest("./dist/css/"));
 }
 

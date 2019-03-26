@@ -1,4 +1,4 @@
 import * as nav from "./modules/navigation.js";
-nav.init("this is a test");
+nav.init();
 
 require("./vendors/prism.js");
