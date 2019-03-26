@@ -9,14 +9,15 @@
     "url": "https://github.com/jeromecoupe/jeromecoupe.github.io"
   },
   "browserslist": [
-    "last 2 versions"
+    "last 2 versions",
+    "not ie < 11"
   ],
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "acorn": "^6.1.1",
-    "autoprefixer": "^9.4.9",
+    "autoprefixer": "^9.5.0",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
     "cssnano": "^4.1.10",

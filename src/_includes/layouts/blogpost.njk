@@ -11,17 +11,14 @@
     <div class="c-blogpost__media">
       <div class="l-container">
 
-        <picture>
-          <source media="(min-width: 500px)"
-                  srcset="/img/blogposts/_1024x576/{{ image }} 1024w,
-                          /img/blogposts/{{ image }} 1500w"
-                  sizes="(min-width: 1140px) 1140px,
-                         100vw">
-          <img src="/img/blogposts/_600x600/{{ image }}"
-               class="o-fluidimage"
-               alt="{{ imageAlt }}">
-        </picture>
-
+        <img src="/img/blogposts/{{ image }}"
+             srcset="/img/blogposts/_600x600/{{ image }} 600w,
+                     /img/blogposts/_1024x576/{{ image }} 1024w,
+                     /img/blogposts/{{ image }} 1500w,"
+             sizes="(min-width: 1140px) 1140px,
+                    100vw"
+             class="o-fluidimage"
+             alt="{{ imageAlt }}">
       </div>
     </div>
 

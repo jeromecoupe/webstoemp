@@ -1,0 +1,32 @@
+// -------------------------------------
+// contact grid
+// -------------------------------------
+
+.l-contact {
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-template-areas: "txt media";
+    grid-gap: pxtorem(42px);
+  }
+
+  @include mq(large) {
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas: "txt media";
+  }
+}
+
+.l-contact__content {
+  @include mq(medium) {
+    grid-area: txt;
+  }
+}
+
+.l-contact__media {
+  margin-bottom: pxtorem(36px);
+
+  @include mq(medium) {
+    grid-area: media;
+    margin-bottom: 0;
+  }
+}
