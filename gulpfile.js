@@ -6,23 +6,22 @@ const img = require("./gulp-tasks/images.js");
 const js = require("./gulp-tasks/scripts.js");
 const server = require("./gulp-tasks/browsersync.js");
 const css = require("./gulp-tasks/styles.js");
-const fonts = require("./gulp-tasks/fonts.js");
 const clean = require("./gulp-tasks/clean.js");
 const eleventy = require("./gulp-tasks/eleventy.js");
+const copy = require("./gulp-tasks/copy.js");
 
 // Watch files
 function watchFiles() {
   gulp.watch("./src/assets/scss/**/*", css.build);
-  gulp.watch("./src/assets/js/**/*", scripts);
-  gulp.watch("./src/assets/img/**/*", images);
-  gulp.watch("./src/assets/fonts/**/*", fonts.copy);
+  gulp.watch("./src/assets/js/**/*", gulp.series(js.lint, js.build));
+  gulp.watch("./src/assets/img/**/*", gulp.series(img.resize, copy.assets));
+  gulp.watch("./src/assets/fonts/**/*", copy.assets);
   gulp.watch(
     [
       "./.eleventy.js",
       "./.eleventyignore",
       "./src/*",
       "./src/_data/**/*",
-      "./src/_includes/**/*",
       "./src/_includes/**/*",
       "./src/blogposts/**/*",
       "./src/pages/**/*",
@@ -33,12 +32,16 @@ function watchFiles() {
 }
 
 // define tasks
-const scripts = gulp.series(js.lint, js.build);
-const images = gulp.series(gulp.parallel(img.copy, img.resize));
 const watch = gulp.parallel(watchFiles, server.init);
 const build = gulp.series(
   clean.dist,
-  gulp.parallel(fonts.copy, css.build, images, eleventy.build, scripts)
+  gulp.parallel(
+    copy.assets,
+    css.build,
+    img.resize,
+    eleventy.build,
+    gulp.series(js.lint, js.build)
+  )
 );
 
 // expose tasks to CLI
