@@ -11,8 +11,8 @@
   }
 
   @include mq(large) {
-    grid-template-columns: 7fr 3fr;
-    grid-template-areas: "txt media";
+    grid-template-columns: 6fr 4fr;
+    grid-gap: pxtorem(60px);
   }
 }
 
@@ -27,6 +27,9 @@
 
   @include mq(medium) {
     grid-area: media;
-    margin-bottom: 0;
+
+    @supports (display: grid) {
+      margin-bottom: 0;
+    }
   }
 }

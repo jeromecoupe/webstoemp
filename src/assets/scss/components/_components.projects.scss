@@ -6,7 +6,6 @@
   @include mq(medium) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "img txt";
     grid-gap: 42px;
   }
 }
@@ -19,8 +18,19 @@
   }
 
   @include mq(medium) {
-    grid-area: img;
-    margin-bottom: 0;
+    @supports (display: grid) {
+      margin-bottom: 0;
+    }
+
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+}
+
+.c-project__body {
+  @include mq(medium) {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
   }
 }
 
@@ -38,18 +48,6 @@
 
   @include mq(large) {
     font-size: pxtorem(29px);
-  }
-}
-
-.c-project__body {
-  grid-area: txt;
-
-  @include mq(medium) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap;
   }
 }
 
