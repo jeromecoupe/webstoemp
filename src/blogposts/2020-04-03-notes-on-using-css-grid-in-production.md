@@ -220,7 +220,7 @@ In your HTML you can just use the following and enjoy good cross-browser support
 </ul>
 ```
 
-### Layouts for pages and components
+#### Layouts for pages and components
 
 When using CSS Grid for page or components layouts, I also use a flexbox fallback and `@supports` to serve a simple layout to IE 10 and IE 11.
 
