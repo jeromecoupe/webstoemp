@@ -11,15 +11,17 @@ tags:
 
 CSS Grid and flexbox are the new tools web designers can work with for creating layouts. flexbox is well supported across the board and CSS grid support is great amongst evergreen desktop browsers, but less so with legacy ones.
 
-## Layout as progressive enhancement
+What approaches can we use ?
 
-For some projects, and that number can be surprisingly high when you explain in detail what the approach amounts to in practice, you can simply serve a linear layout to browsers that do not support grid.
+## Consider layout as progressive enhancement
+
+For some projects, and that number can be surprisingly high when you [give some context](http://dowebsitesneedtolookexactlythesameineverybrowser.com/), you can simply serve a linearised layout to browsers that do not support grid.
 
 Back in the heyday of responsive web design, I settled on delivering (slightly tweaked) mobile layouts to browsers that did not support media queries. A similar approach can be taken for browsers not supporting CSS Grid.
 
-The simplest approach (and my favourite one) is to serve a linearised version of the desktop layout to browsers not supporting CSS grid. That's what [Clearleft](https://clearleft.com/) is doing on their own website, in line with [Jeremy Keith's blogpost](https://adactio.com/journal/14131) on the topic. The website remains usable but its layout is (mostly) considered as an enhancement for legacy browsers. That's also the strategy I used on this very website. You can see it if you have a copy of IE 11 lying around.
+That's what [Clearleft](https://clearleft.com/) is doing on their own website, in line with [Jeremy Keith's blogpost](https://adactio.com/journal/14131) on the topic. The website remains usable but its layout is (mostly) considered as an enhancement for legacy browsers. That's also the strategy I used on this very website. Feel free to check it out if you have a copy of IE 11 lying around.
 
-## Legacy layout for legacy desktop browsers
+## Serve legacy layouts to legacy browsers
 
 For some projects, depending on your user statistics and your client, you might have to serve a fallback layout to legacy browsers. Here are various options I have used.
 
@@ -349,6 +351,6 @@ Ad here is the CSS (well, the Sass actually):
 }
 ```
 
-## Final words
+## Not too bad
 
-Despite being longing for the day we don't have to support old IE, I generally don't find it too hard to handle this new world of layout, even if I have to support legacy browsers for some projects.
+Despite being longing for the day we don't have to support old IE, I generally don't find it too hard to handle this new world of layout, while supporting legacy browsers.
