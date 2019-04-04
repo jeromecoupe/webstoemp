@@ -230,24 +230,24 @@ Here is the HTML code:
 
 ```html
 <footer class="c-sitefooter">
-    <div class="c-sitefooter__grid  o-container">
-      <div class="c-sitefooter__about">
-        about
-      </div>
-      <div class="c-sitefooter__nav">
-        nav
-      </div>
-      <div class="c-sitefooter__social">
-        social
-      </div>
-      <div class="c-sitefooter__copyright">
-        copyright
-      </div>
+  <div class="c-sitefooter__grid  o-container">
+    <div class="c-sitefooter__about">
+      about
     </div>
-  </footer>
+    <div class="c-sitefooter__nav">
+      nav
+    </div>
+    <div class="c-sitefooter__social">
+      social
+    </div>
+    <div class="c-sitefooter__copyright">
+      copyright
+    </div>
+  </div>
+</footer>
 ```
 
-Ad here is the CSS (well, the Sass actually):
+And here is the CSS (well, the Sass actually):
 
 ```scss
 // -------------------------------------
