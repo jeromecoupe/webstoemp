@@ -37,7 +37,7 @@ That approach has been [detailed on CSS Tricks](https://css-tricks.com/css-grid-
 - If you need support for `grid-gap`, it is recommended to use `grid-template-areas` and `grid-area` for explicit placement.
 - You only have access to a subset of CSS Grid features. You cannot use things like implicit grids, `repeat(auto-fit, ...)`, `repeat(auto-fill, ...)`, etc.
 
-I can see how that can be useful in some cases but that's not the approach I personally favour.
+I went down the Autoprefixer route but that's not the approach I personally favour. I find it too limiting because it inevitably has to be a middle ground between a complex modern spec and what PostCSS can fix for legacy browsers without having access to the DOM.
 
 ### Use flexbox as a fallback
 
@@ -46,8 +46,10 @@ For legacy desktop browsers, we can start with a flexbox version of layout and o
 - Use flexbox as a fallback because it offers more possibilities than layouts relying on `float` / `clear`, `display: inline-block` or `display: table`.
 - Separate concerns between the layout of components and the styling of their content.
 - Wrap the whole CSS grid code in `@supports` statements. That makes it easier to come back and delete fallback code when the project does not need IE support.
-- Group flexbox overrides in my CSS Grid code (mainly `width`, `margin` and `padding`).
+- Group and comment flexbox overrides in my CSS Grid code (mainly `width`, `margin` and `padding`).
 - Make sure the client and/or your boss understands that this approach is going to have an impact on development and testing time.
+
+It is a verbose approach, but it makes sense for me if you have to serve layout to legacy browsers.
 
 #### Start with utility grid classes
 
