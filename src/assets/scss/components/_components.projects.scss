@@ -31,6 +31,13 @@
   @include mq(medium) {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
+
+    @supports (display: grid) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
   }
 }
 
