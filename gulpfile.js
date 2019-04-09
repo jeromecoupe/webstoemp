@@ -35,6 +35,7 @@ function watchFiles() {
 const watch = gulp.parallel(watchFiles, server.init);
 const build = gulp.series(
   clean.dist,
+  img.optimise,
   gulp.parallel(
     copy.assets,
     css.build,
