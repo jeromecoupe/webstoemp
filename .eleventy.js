@@ -21,7 +21,7 @@ module.exports = function(eleventyConfig) {
     return moment(date).format(format);
   });
 
-  // pass throgh ./src/_redirects
+  // pass through
   eleventyConfig.addPassthroughCopy("./_redirects");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
