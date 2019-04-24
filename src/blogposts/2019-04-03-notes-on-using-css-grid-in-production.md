@@ -143,11 +143,14 @@ $grid-gap: 2rem !default;
     margin-left: 0;
   }
 
+  .l-grid__unit {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
   .l-grid--2cols > .l-grid__unit,
   .l-grid--3cols > .l-grid__unit,
   .l-grid--4cols > .l-grid__unit {
-    margin-bottom: 0;
-    padding-left: 0;
     width: auto;
   }
 }
