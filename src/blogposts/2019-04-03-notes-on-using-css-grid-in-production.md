@@ -83,7 +83,7 @@ $grid-gap: 2rem !default;
 // -------------------------------------
 // Base flexbox classes
 // -------------------------------------
-.o-grid {
+.l-grid {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -97,22 +97,22 @@ $grid-gap: 2rem !default;
   margin-left: ($grid-gap * -1);
 }
 
-.o-grid__unit {
+.l-grid__unit {
   box-sizing: border-box;
   margin-bottom: $grid-gap;
   padding-left: $grid-gap;
   width: 100%;
 }
 
-.o-grid--2cols > .o-grid__unit {
+.l-grid--2cols > .l-grid__unit {
   width: 50%;
 }
 
-.o-grid--3cols > .o-grid__unit {
+.l-grid--3cols > .l-grid__unit {
   width: 33.33%;
 }
 
-.o-grid--4cols > .o-grid__unit {
+.l-grid--4cols > .l-grid__unit {
   width: 25%;
 }
 
@@ -120,32 +120,32 @@ $grid-gap: 2rem !default;
 // Base grid classes
 // -------------------------------------
 @supports (display: grid) {
-  .o-grid {
+  .l-grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: $grid-gap;
   }
 
-  .o-grid--2cols {
+  .l-grid--2cols {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .o-grid--3cols {
+  .l-grid--3cols {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .o-grid--4cols {
+  .l-grid--4cols {
     grid-template-columns: repeat(4, 1fr);
   }
 
   // flexbox overrides
-  .o-grid {
+  .l-grid {
     margin-left: 0;
   }
 
-  .l-grid--2units > .l-grid__unit,
-  .l-grid--3units > .l-grid__unit,
-  .l-grid--4units > .l-grid__unit {
+  .l-grid--2cols > .l-grid__unit,
+  .l-grid--3cols > .l-grid__unit,
+  .l-grid--4cols > .l-grid__unit {
     margin-bottom: 0;
     padding-left: 0;
     width: auto;
@@ -163,15 +163,15 @@ $grid-gap: 2rem !default;
 
   @if ($generate-grids) {
     @media #{$query} {
-      .o-grid--2cols\@#{$name} > .o-grid__unit {
+      .l-grid--2cols\@#{$name} > .l-grid__unit {
         width: 50%;
       }
 
-      .o-grid--3cols\@#{$name} > .o-grid__unit {
+      .l-grid--3cols\@#{$name} > .l-grid__unit {
         width: 33.33%;
       }
 
-      .o-grid--4cols\@#{$name} > .o-grid__unit {
+      .l-grid--4cols\@#{$name} > .l-grid__unit {
         width: 25%;
       }
     }
@@ -190,22 +190,22 @@ $grid-gap: 2rem !default;
 
     @if ($generate-grids) {
       @media #{$query} {
-        .o-grid--2cols\@#{$name} {
+        .l-grid--2cols\@#{$name} {
           grid-template-columns: repeat(2, 1fr);
         }
 
-        .o-grid--3cols\@#{$name} {
+        .l-grid--3cols\@#{$name} {
           grid-template-columns: repeat(3, 1fr);
         }
 
-        .o-grid--4cols\@#{$name} {
+        .l-grid--4cols\@#{$name} {
           grid-template-columns: repeat(4, 1fr);
         }
 
         // flexbox overrides
-        .o-grid--2cols\@#{$name} > .o-grid__unit,
-        .o-grid--3cols\@#{$name} > .o-grid__unit,
-        .o-grid--4cols\@#{$name} > .o-grid__unit {
+        .l-grid--2cols\@#{$name} > .l-grid__unit,
+        .l-grid--3cols\@#{$name} > .l-grid__unit,
+        .l-grid--4cols\@#{$name} > .l-grid__unit {
           width: auto;
         }
       }
@@ -217,10 +217,10 @@ $grid-gap: 2rem !default;
 In your HTML you can just use the following and enjoy good cross-browser support:
 
 ```html
-<ul class="o-grid  o-grid--2cols@small  o-grid--3cols@medium  o-grid--4cols@large">
-  <li class="o-grid__unit"><!-- content --></li>
+<ul class="l-grid  l-grid--2cols@small  l-grid--3cols@medium  l-grid--4cols@large">
+  <li class="l-grid__unit"><!-- content --></li>
   <!-- [ other list items ] -->
-  <li class="o-grid__unit"><!-- content --></li>
+  <li class="l-grid__unit"><!-- content --></li>
 </ul>
 ```
 
