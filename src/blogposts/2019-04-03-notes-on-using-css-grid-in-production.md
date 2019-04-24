@@ -143,7 +143,9 @@ $grid-gap: 2rem !default;
     margin-left: 0;
   }
 
-  .o-grid__unit {
+  .l-grid--2units > .l-grid__unit,
+  .l-grid--3units > .l-grid__unit,
+  .l-grid--4units > .l-grid__unit {
     margin-bottom: 0;
     padding-left: 0;
     width: auto;
