@@ -130,4 +130,4 @@ Since they can be nested it is a very straightforward and flexible dependency ma
 
 ## Conclusion
 
-All in all, I really like Gulp 4 and its increased readability and flexibility. If you want to dive in a bit further, I wholeheartedly recommend Joe Zimmerman's "[The Complete-Ish Guide to Upgrading to Gulp 4](https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/)". The [full gulpfile used by this website](https://github.com/jeromecoupe/jeromecoupe.github.io/blob/master/gulpfile.js) is also available on Github if you want to check it out.
+All in all, I really like Gulp 4 and its increased readability and flexibility. If you want to dive in a bit further, I wholeheartedly recommend Joe Zimmerman's "[The Complete-Ish Guide to Upgrading to Gulp 4](https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/)". The [full gulpfile used by this website](https://github.com/jeromecoupe/webstoemp/blob/v1-backup/gulpfile.js) is also available on Github if you want to check it out.
