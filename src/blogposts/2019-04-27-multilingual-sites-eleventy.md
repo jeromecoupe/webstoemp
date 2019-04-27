@@ -282,4 +282,4 @@ Just like that, we now have a footer with automatic translations. Since this fil
 
 ## Flexible by design
 
-Static sites generators are usually flexible by design in terms of the data structures you can create with them. Eleventy is one of the most flexible SSG I have used so far, which makes it quite a good fit to create a multilingual data structure that can work for pretty much any project.
+Static sites generators are very flexible in terms of the data structures you can create with them. Eleventy is one of the most flexible SSG I have used so far, which makes it quite a good fit to create a multilingual data structure that can work for pretty much any project.
