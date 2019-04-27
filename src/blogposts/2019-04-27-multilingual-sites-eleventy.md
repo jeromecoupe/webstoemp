@@ -1,8 +1,8 @@
 ---
 title: "Multilingual sites with Eleventy"
 excerpt: "Eleventy might not have multilingual and localisation capabilities out of the box, but you can build a pretty good setup using global data files, collections and Nunjucks as a templating language."
-image: "cssgrid.jpg"
-imageAlt: "Photo by Calvin Ma"
+image: "blahblahblah.jpg"
+imageAlt: "Photo by Nick Fewings"
 tags:
 - Multilingual
 - Localization
@@ -111,12 +111,14 @@ Because they live in subdirectories of our language directories, all those markd
 Instead of adding a `permalink` variable in each front-matter, we can simply add a `posts.js` or `posts.json` directory data file in each of our three `posts` folder with the following content:
 
 ```js
+{% raw %}
 {
   permalink: "/{{ locale }}/events/{{ page.fileslug }}/index.html"
 }
+{% endraw %}
 ```
 
-Now that we have localised detail pages for all of our posts, we can simply go into all three of our `blog.njk` pages and loop over our language-specific collection.
+Now that we have localised detail pages for all of our posts, we can simply go into all three of our `blog.njk` pages and loop over our language-specific collections.
 
 ```twig
 {% raw %}
@@ -278,7 +280,7 @@ Then, in `./src/_includes/partials/footer.njk`, we just rely on the value of our
 {% endraw %}
 ```
 
-Just like that, we now have a footer with automatic translations. Since this file is a Nunjucks include, it has access to all variables defined in the template context, which means it has access to that `locale` variable we defined with our [directory data files](https://www.11ty.io/docs/data-template-dir/).
+Just like that, we now have a footer with automatic translations. Since this file is a Nunjucks include, it has access to all variables defined in the template context, which means it has access to that `locale` variable we defined with our directory data files.
 
 ## Flexible by design
 
