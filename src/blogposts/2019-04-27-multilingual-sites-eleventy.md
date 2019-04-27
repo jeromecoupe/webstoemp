@@ -63,7 +63,7 @@ Here what our `fr.json` file would contain:
 
 The values assigned to that `locale` key will be accessible in all our templates. `{% raw %}{{ locale }}{% endraw %}` would now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
 
-## Create localised date filter
+## Localised date filter
 
 Nunjucks does not have a date filter. We can easily create one using `moment.js` and pass it our `locale` value to localise dates for us, which is an important part of all multilingual projects. In order to do that, we use the following code in our `.eleventy.js` file:
 
@@ -106,7 +106,7 @@ module.exports = function(eleventyConfig) {
 
 Because they live in subdirectories of our language directories, all those markdown files have that handy `locale` variable available. We can for example use it to create permalinks for all our posts.
 
-Instead of adding a `permalink` variable in each front-matter, we can simply add a `posts.js` or `posts.json` directory data file in each of our three `posts` folder with the following content:
+Instead of adding a `permalink` variable in each front-matter, we can simply add a `posts.js` or `posts.json` directory data file in each of our three `posts` folders with the following content:
 
 ```js
 {% raw %}
