@@ -61,7 +61,7 @@ Here what our `fr.json` file would contain:
 }
 ```
 
-The values assigned to that `locale` key will be accessible in all our templates. `{{ locale }}` would now output "fr" or "en" for any of our template files.
+The values assigned to that `locale` key will be accessible in all our templates. `{% raw %}{{ locale }}{% endraw %}` would now output "fr" or "en" for any of our template files.
 
 Now that they are accessible to all our templates, we can pass those to our layouts and includes using Nunujucks and use them as keys to access values in `.json` or `.js` [global data files](https://www.11ty.io/docs/data-global/).
 
