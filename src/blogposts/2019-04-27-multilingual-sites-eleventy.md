@@ -51,7 +51,7 @@ Here is the folder architecture we will be working with. It is quite a standard 
 
 The first step is to create our locales using [directory data files](https://www.11ty.io/docs/data-template-dir/).
 
-We simply add `en.json` and `fr.json` in the root of our language directories. In each of them, we specify a `locale` key. That will make the cooresponding values accessible in all template files living in those languages directories and subdirectories.
+We simply add `en.json` and `fr.json` in the root of our language directories. In each of them, we specify a `locale` key. That will make the corresponding values accessible in all template files living in those languages directories and subdirectories.
 
 Here what our `fr.json` file would contain:
 
@@ -61,7 +61,7 @@ Here what our `fr.json` file would contain:
 }
 ```
 
-The values assigned to that `locale` key will be accessible in all our templates. `{% raw %}{{ locale }}{% endraw %}` would now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
+`{% raw %}{{ locale }}{% endraw %}` will now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
 
 ## Localised date filter
 
@@ -84,7 +84,7 @@ Now, we can just call that filter in our templatesand pass it a `locale` paramet
 {% endraw %}
 ```
 
-Bingo, our dates are now automatically localized. Now, let's move to collections.
+Now that our dates are automatically localized, let's move to collections.
 
 ## Localized collections
 
@@ -136,7 +136,7 @@ Now that we have localised detail pages for all of our posts, we can simply go i
 {% endraw %}
 ```
 
-Note that we could make use of our `locale` variable to call our collections too. We would just have to switch to a square brackets notation instead.
+We could make use of our `locale` variable to call our collections too. We would just have to switch to a square brackets notation instead.
 
 ```twig
 {% raw %}
@@ -147,13 +147,11 @@ Note that we could make use of our `locale` variable to call our collections too
 {% endraw %}
 ```
 
-## localised layouts and partials
+## Localised layouts and partials
 
 Although duplicating our pages and posts is quite logical, we don't want to duplicate our layouts and partials.
 
-Luckily, we can feed them localised strings. In order to do that, we only need to create multilingual [global data files](https://www.11ty.io/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
-
-Currently, that Eleventy `locale` variable is available automatically in our Nunjucks extended templates and included partials. We could just work with that, but I feel safer mapping it to a Nunjucks variable for good measure. I am sure that one will always be availble to includes and extends down the road.
+Luckily, we can avoid it by feeding them localised strings. In order to do that, we only need to create multilingual [global data files](https://www.11ty.io/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
 
 ### Layouts
 
@@ -178,7 +176,7 @@ module.exports = {
 };
 ```
 
-We can use those variables in our `./src/fr/pages/index.njk` page file. In this case, we assign some of them to Nunjucks variables instead of using them directly because those are values we want to be able to easily override for specific pages or for posts.
+We can use those variables in our `./src/fr/pages/index.njk` file. In this case, we assign some of them to Nunjucks variables instead of using them directly because those are values we might want to be able to easily override for specific pages. I would use the same logic for a posts specific template.
 
 ```twig
 {% raw %}
@@ -188,10 +186,9 @@ permalink: /{{ locale }}/index.html
 
 {% extends "layouts/base.njk" %}
 
-{% set locale = locale %}
-{% set metaTitle = site.fr.metaTitle %}
-{% set metaDescription = site.fr.metaDescription %}
-{% set metaImage = site.fr.metaImage %}
+{% set metaTitle = site[locale].metaTitle %}
+{% set metaDescription = site[locale].metaDescription %}
+{% set metaImage = site[locale].metaImage %}
 
 {% block content %}
   {# page content #}
@@ -199,7 +196,7 @@ permalink: /{{ locale }}/index.html
 {% endraw %}
 ```
 
-Since our page file extends `./src/_includes/layouts/base.njk`, our Nunjucks variables declared in the child template as well as our Eleventy global variables are going to be available in that layout.
+Since our page template extends `./src/_includes/layouts/base.njk`, Nunjucks variables declared in the child template as well as our Eleventy global variables are going to be available in that layout too.
 
 ```twig
 {% raw %}
@@ -237,7 +234,7 @@ Since our page file extends `./src/_includes/layouts/base.njk`, our Nunjucks var
 
 ### Partials
 
-Localizing partials like `./src/_includes/partials/footer.njk` follows the same principles.
+Localizing partials like `./src/_includes/partials/footer.njk` can easily be done using the same simple principles.
 
 First, we create a `./data/footer.js` file using our locales as keys.
 
@@ -278,7 +275,7 @@ Then, in `./src/_includes/partials/footer.njk`, we just rely on the value of our
 {% endraw %}
 ```
 
-Just like that, we now have a footer with automatic translations. Since this file is a Nunjucks include, it has access to all variables defined in the template context, which means it has access to our `locale` variable.
+Just like that, we now have a footer with automatic translations.
 
 ## Flexible by design
 
