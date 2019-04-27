@@ -61,9 +61,7 @@ Here what our `fr.json` file would contain:
 }
 ```
 
-The values assigned to that `locale` key will be accessible in all our templates. `{% raw %}{{ locale }}{% endraw %}` would now output "fr" or "en" for any of our template files.
-
-Now that they are accessible to all our templates, we can pass those to our layouts and includes using Nunujucks and use them as keys to access values in `.json` or `.js` [global data files](https://www.11ty.io/docs/data-global/).
+The values assigned to that `locale` key will be accessible in all our templates. `{% raw %}{{ locale }}{% endraw %}` would now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
 
 ## Create localised date filter
 
@@ -153,7 +151,7 @@ Note that we could make use of our `locale` variable to call our collections too
 
 Although duplicating our pages and posts is quite logical, we don't want to duplicate our layouts and partials.
 
-Luckily, we can feed them localised strings. We only need to create multilingual global data files using our locales as keys. We can then reference those keys dynamically using our trusty `locale` variable.
+Luckily, we can feed them localised strings. In order to do that, we only need to create multilingual [global data files](https://www.11ty.io/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
 
 Currently, that Eleventy `locale` variable is available automatically in our Nunjucks extended templates and included partials. We could just work with that, but I feel safer mapping it to a Nunjucks variable for good measure. I am sure that one will always be availble to includes and extends down the road.
 
