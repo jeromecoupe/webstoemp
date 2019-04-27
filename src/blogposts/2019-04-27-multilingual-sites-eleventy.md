@@ -278,7 +278,7 @@ Then, in `./src/_includes/partials/footer.njk`, we just rely on the value of our
 {% endraw %}
 ```
 
-Just like that, we now have a footer with automatic translations. Since this file is a Nunjucks include, it has access to all variables defined in the template context, which means it has access to that `locale` variable we defined with our directory data files.
+Just like that, we now have a footer with automatic translations. Since this file is a Nunjucks include, it has access to all variables defined in the template context, which means it has access to our `locale` variable.
 
 ## Flexible by design
 
