@@ -8,11 +8,12 @@ tags:
 - Localization
 - Eleventy
 - 11ty
+- Jamstack
 ---
 
 In order to have a simple project to work with, let's build a fairly straight forward multilingual blog.
 
-Here is the folder architecture we will be working with. It is quite a standard Eleventy architecture and a pretty simple project. However, I believe the principles and techniques can easily be applied to bigger ones.
+Here is the folder architecture we will be working with. It is quite a standard [Eleventy](https://www.11ty.io) architecture and a pretty simple project. However, I believe the principles and techniques can easily be applied to bigger ones.
 
 ```text
 +-- src
@@ -76,7 +77,7 @@ eleventyConfig.addNunjucksFilter("date", function(date, format, locale) {
 });
 ```
 
-Now, we can just call that filter in our templatesand pass it a `locale` parameter. Note that, since we set the locale to "en" by default, we can use our filter without a locale parameter for our purely numeric dates. Here is a small example.
+Now, we can just call that filter in our templates and pass it a `locale` parameter. Note that, since we set the locale to "en" by default, we can use our filter without a `locale` parameter for our purely numeric dates. Here is a small example.
 
 ```twig
 {% raw %}
@@ -88,7 +89,7 @@ Now that our dates are automatically localized, let's move to collections.
 
 ## Localized collections
 
-We can also use our dirctory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can easily accomplish that using the [`getFilteredByGlob`](https://www.11ty.io/docs/collections/#getfilteredbyglob(-glob-)) method in our `.eleventy.js` file.
+We can also use our directory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can easily accomplish that using the [`getFilteredByGlob`](https://www.11ty.io/docs/collections/#getfilteredbyglob(-glob-)) method in our `.eleventy.js` file.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -111,7 +112,7 @@ Instead of adding a `permalink` variable in each front-matter, we can simply add
 ```js
 {% raw %}
 {
-  permalink: "/{{ locale }}/events/{{ page.fileslug }}/index.html"
+  permalink: "/{{ locale }}/blog/{{ page.fileslug }}/index.html"
 }
 {% endraw %}
 ```
@@ -176,7 +177,7 @@ module.exports = {
 };
 ```
 
-We can use those variables in our `./src/fr/pages/index.njk` file. In this case, we assign some of them to Nunjucks variables instead of using them directly because those are values we might want to be able to easily override for specific pages. I would use the same logic for a posts specific template.
+We can use those variables in our `./src/fr/pages/index.njk` file. In this case, we assign some of them to Nunjucks variables instead of using them directly because those are values we might want to be able to easily override for specific pages. We could use the same logic for a posts specific template.
 
 ```twig
 {% raw %}
