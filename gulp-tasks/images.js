@@ -42,7 +42,9 @@ function resizeImages(done) {
   transforms.forEach(function(transform) {
     // if folder does not exist create it with all above folders
     if (!fs.existsSync(transform.dist)) {
-      fs.mkdirSync(transform.dist, { recursive: true });
+      fs.mkdirSync(transform.dist, { recursive: true }, err => {
+        if (err) throw err;
+      });
     }
 
     // glob all files
