@@ -166,4 +166,4 @@ exports.build = build;
 
 For any project I have worked on lately, Sharp has proven to be the fastest and most flexible option available. If you like numbers, check out the [performance benchmarks available on their website](https://sharp.pixelplumbing.com/en/stable/performance/).
 
-Just to give you an idea, all image thumbnails for this website get generated in 38 milliseconds only. Depending on your requirements and the scale of your project, that `resizeImages` task could easily be made incremental.
+Just to give you an idea, all image thumbnails for this website get generated in 38 milliseconds only. Depending on your requirements and the scale of your project, that `resizeImages` task could easily be made incremental, which would make it even faster.
