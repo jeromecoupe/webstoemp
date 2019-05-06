@@ -45,16 +45,18 @@
   font-weight: 600;
   font-size: pxtorem(23px);
   font-family: $fontstack-alt;
-  line-height: 1.2;
+  line-height: (30/23);
   color: $color-gray8;
   margin-bottom: pxtorem(18px);
 
   @include mq(medium) {
     font-size: pxtorem(25px);
+    line-height: (30/25);
   }
 
   @include mq(large) {
     font-size: pxtorem(29px);
+    line-height: (36/29);
   }
 }
 
