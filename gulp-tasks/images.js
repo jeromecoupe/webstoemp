@@ -61,7 +61,7 @@ function resizeImages(done) {
   done();
 }
 
-// copy images
+// optimize images in place
 function optimiseImages() {
   return gulp
     .src("./src/assets/img/**/*", { base: "./src/assets/img" })

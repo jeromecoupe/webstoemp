@@ -14,7 +14,7 @@ const copy = require("./gulp-tasks/copy.js");
 function watchFiles() {
   gulp.watch("./src/assets/scss/**/*", css.build);
   gulp.watch("./src/assets/js/**/*", gulp.series(js.lint, js.build));
-  gulp.watch("./src/assets/img/**/*", gulp.series(img.resize, copy.assets));
+  gulp.watch("./src/assets/img/**/*", gulp.parallel(img.resize, copy.assets));
   gulp.watch("./src/assets/fonts/**/*", copy.assets);
   gulp.watch(
     [
@@ -35,7 +35,6 @@ function watchFiles() {
 const watch = gulp.parallel(watchFiles, server.init);
 const build = gulp.series(
   clean.dist,
-  img.optimise,
   gulp.parallel(
     copy.assets,
     css.build,
@@ -46,6 +45,7 @@ const build = gulp.series(
 );
 
 // expose tasks to CLI
-exports.build = build;
+exports.images = img.optimise;
 exports.watch = watch;
+exports.build = build;
 exports.default = build;
