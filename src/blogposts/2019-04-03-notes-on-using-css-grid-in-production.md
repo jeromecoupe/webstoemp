@@ -2,7 +2,7 @@
 title: "Notes on using CSS Grid in production"
 excerpt: "For the last 10 months or so, I have been building all new clients projects with CSS grid and flexbox as my main layout tools. Here is a quick rundown of the fallback tactics I use, in case it is useful for someone else."
 image: "cssgrid.jpg"
-imageAlt: "Photo by Calvin Ma"
+imageAlt: "Grid pattern - Photo by Calvin Ma"
 tags:
 - CSS Grid
 - CSS

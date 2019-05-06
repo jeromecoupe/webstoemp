@@ -2,7 +2,7 @@
 title: "Multilingual sites with Eleventy"
 excerpt: "Eleventy might not have multilingual and localisation capabilities out of the box, but you can build a pretty good setup using global data files, collections and Nunjucks as a templating language."
 image: "blahblahblah.jpg"
-imageAlt: "Photo by Nick Fewings"
+imageAlt: "Blah Blah Blah Neon sign - Photo by Nick Fewings"
 tags:
 - Multilingual
 - Localization
