@@ -1,6 +1,6 @@
 ---
-title: "Blazing fast image resizes with Sharp and Gulp"
-excerpt: "Generating thumbnails of images is a common build step for many applications and websites. It is also quite a resources intensive and time consuming one. By combining Sharp with Gulp, we can easily build a very fast thumbnails-generation task."
+title: "Blazing fast image transforms with Sharp and Gulp"
+excerpt: "In this responsive age, generating images thumbnails is a common build step for many applications and websites. It is also quite a resources intensive and time consuming one. By combining Sharp with Gulp, we can easily build a very fast thumbnails-generation task."
 image: "speed.jpg"
 imageAlt: " - Photo by Marc Sendra Martorell"
 tags:
@@ -23,7 +23,7 @@ For many projects I work on, especially [JAMstack](https://jamstack.org/) ones, 
 
 ## Sharp
 
-[Sharp](https://github.com/lovell/sharp) is a Node.js image processing library to which we can easily use in a Gulp task. It offers a wide range of options and oparations we can use and is a lot faster than alternatives like `gulp-image-resize` for example.
+[Sharp](https://github.com/lovell/sharp) is a Node.js image processing library to which we can easily use in a Gulp task. It offers a wide range of options and oparations we can use and is a whole lot faster and more flexible than alternatives like `gulp-image-resize` for example.
 
 Let's first install `sharp` as a dependency
 
@@ -107,7 +107,7 @@ const transforms = [
 
 Using such an object makes it easy to add new image directories and transforms should we need them down the line. Copy one object, modify paths and options and you are good to go.
 
-### Gulp images resize task
+### Images resize task
 
 We then just need a gulp task to get the images we need to resize from our `src` directories, apply the specified image manipulations using `sharp` and save them in the `dist` directories specified in our object.
 
