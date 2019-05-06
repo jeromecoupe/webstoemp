@@ -1,5 +1,5 @@
 ---
-title: "Blazing fast images resizes with Sharp and Gulp"
+title: "Blazing fast image resizes with Sharp and Gulp"
 excerpt: "Generating thumbnails of images is a common build step for many applications and websites. It is also quite a resources intensive and time consuming one. By combining Sharp with Gulp, we can easily build a very fast thumbnails-generation task."
 image: "speed.jpg"
 imageAlt: " - Photo by Marc Sendra Martorell"
@@ -54,10 +54,10 @@ Let's move to creating our gulp task to resize our images.
 
 We will need a few Node packages:
 
-- **[fs](https://nodejs.org/api/fs.html)**: to interact with the file system
-- **[glob](https://www.npmjs.com/package/glob)**: use glob patterns to find files and return them
-- **[path](https://nodejs.org/api/path.html)**: node package to work with files and directories
-- **[sharp](https://github.com/lovell/sharp)**: sharp image manipulation package
+- [fs](https://nodejs.org/api/fs.html): to interact with the file system
+- [glob](https://www.npmjs.com/package/glob): use glob patterns to find files and return them
+- [path](https://nodejs.org/api/path.html): node package to work with files and directories
+- [sharp](https://github.com/lovell/sharp): sharp image manipulation package
 
 ```js
 const fs = require("fs");
@@ -117,7 +117,9 @@ function resizeImages(done) {
   transforms.forEach(function(transform) {
     // if dist folder does not exist, create it with all parent folders
     if (!fs.existsSync(transform.dist)) {
-      fs.mkdirSync(transform.dist, { recursive: true });
+      fs.mkdirSync(transform.dist, { recursive: true }, (err) => {
+        if (err) throw err;
+      });
     }
 
     // glob all files
