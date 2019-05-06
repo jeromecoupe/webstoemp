@@ -40,19 +40,20 @@ const transforms = [
 // resize images
 function resizeImages(done) {
   transforms.forEach(function(transform) {
-    let distDir = transform.dist;
-
-    if (!fs.existsSync(distDir)) {
-      fs.mkdirSync(distDir, { recursive: true });
+    // if folder does not exist create it with all above folders
+    if (!fs.existsSync(transform.dist)) {
+      fs.mkdirSync(transform.dist, { recursive: true });
     }
 
+    // glob all files
     let files = glob.sync(transform.src);
 
+    // for each file, apply transforms and save to file
     files.forEach(function(file) {
       let filename = path.basename(file);
       sharp(file)
         .resize(transform.options)
-        .toFile(`${distDir}/${filename}`)
+        .toFile(`${transform.dist}/${filename}`)
         .catch(err => {
           console.log(err);
         });
