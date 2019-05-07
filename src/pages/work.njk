@@ -49,7 +49,9 @@ permalink: work/index.html
                 <div class="c-project__description">
                   {{ project.templateContent | safe }}
                 </div>
+                {% if project.data.url and project.data.urlLabel %}
                 <p class="c-project__reference"><a class="c-project__link" href="{{ project.data.url }}">{{ project.data.urlLabel }}</a></p>
+                {% endif %}
               </div>
             </article>
 
