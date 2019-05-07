@@ -65,16 +65,17 @@
 }
 
 .c-project__reference {
-  margin-top: pxtorem(-6px);
   margin-bottom: 0;
+  margin-top: pxtorem(6px) * -1;
 }
 
 .c-project__link {
   display: inline-block;
+  padding-bottom: pxtorem(1px);
+
   color: $color-gray8;
   font-weight: 400;
   text-decoration: none;
-  padding-bottom: pxtorem(3px);
   border-bottom: 2px solid $color-brand3;
 
   transition: all 0.2s ease-in-out;
