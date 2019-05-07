@@ -1,10 +1,10 @@
 ---
-title: "Coding a design system to harmonize products"
+title: "A design system to harmonize products"
 client: "Stepstone"
-url: https://www.stepstone.be
-urlLabel: "Client's website"
+url: "http://www.stepstone.be"
+urlLabel: "Stepstone Belgium"
 image: stepstone.jpg
-tags: [Front-end, Styleguide]
+tags: ["Front-end", "Design System"]
 ---
 
-I worked with Central and StepStone's design team to create a library of responsive HTML/CSS/JS components. The new style guide created a common design language for all products, allowed development and design to collaborate more closely and to prototype and test new views and components in the browser.
+I worked with Central and StepStone's design team to create a library of responsive HTML/CSS/JS components. We created a common design language for all products and allowed design and development to collaborate more closely. The style guide has since been maintained and evolved by StepStone.
