@@ -68,9 +68,9 @@ const sharp = require("sharp");
 
 We now have everything we need.
 
-### Configuration object
+### Configuration array
 
-Let's now create a configuration object that will specify our source and destination folders for each transforms, along with our transform options for `sharp`.
+Let's now create a configuration array of objects that will specify our source and destination folders for each transforms, along with our transform options for `sharp`.
 
 ```js
 // specify transforms
@@ -105,15 +105,16 @@ const transforms = [
 ];
 ```
 
-Using such an object makes it easy to add new image directories and transforms should we need them down the line. Copy one object, modify paths and options and you are good to go.
+Using such an object makes it easy to add new image directories and transforms should we need them down the line. Copy one object, modify paths and options and you're good to go.
 
 ### Images resize task
 
-We then just need a gulp task to get the images we need to resize from our `src` directories, apply the specified image manipulations using `sharp` and save them in the `dist` directories specified in our object.
+We then just need a Gulp task to get the images we need to resize from our `src` directories, apply the specified image manipulations using `sharp` and save them in the `dist` directories specified in our object.
 
 ```js
 // resize images
 function resizeImages(done) {
+  // loop through configuration array of objects
   transforms.forEach(function(transform) {
     // if dist folder does not exist, create it with all parent folders
     if (!fs.existsSync(transform.dist)) {
@@ -155,12 +156,20 @@ const gulp = require("gulp");
 
 // import tasks
 const img = require("./gulp-tasks/images.js");
+const server = require("./gulp-tasks/browsersync.js");
 // import other tasks here
 
+// Watch files
+function watchFiles() {
+  gulp.watch("./src/assets/img/**/*", img.resize);
+}
+
 // compose tasks (massively simplified here)
+const watch = gulp.parallel(watchFiles, server.init);
 const build = img.resize;
 
 // export tasks
+exports.watch = watch;
 exports.build = build;
 ```
 
