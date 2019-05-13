@@ -27,7 +27,7 @@ For many projects I work on, especially [JAMstack](https://jamstack.org/) ones, 
 
 Let's first install `sharp` as a dependency
 
-```txt
+```
 npm install --save-dev sharp
 ```
 
@@ -35,7 +35,7 @@ npm install --save-dev sharp
 
 Whenever I deal with complex tasks, I tend to split them into their own external files. In this case, here is the structure we are going to use:
 
-```txt
+```
 +-- gulpfile.js
 +-- gulp_tasks
     +-- images.js

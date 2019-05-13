@@ -1,4 +1,5 @@
 const moment = require("moment");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
   // blogpost collection
@@ -20,6 +21,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("date", function(date, format) {
     return moment(date).format(format);
   });
+
+  // Syntax highlighting (prism)
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   // pass through
   eleventyConfig.addPassthroughCopy("./_redirects");
