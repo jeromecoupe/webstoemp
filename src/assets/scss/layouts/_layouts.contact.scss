@@ -5,20 +5,23 @@
 .l-contact {
   @include mq(medium) {
     display: grid;
-    grid-template-columns: 4fr 2fr;
-    grid-template-areas: "txt media";
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: pxtorem(42px);
   }
 
   @include mq(large) {
-    grid-template-columns: 6fr 4fr;
-    grid-gap: pxtorem(60px);
+    grid-template-columns: repeat(10, 1fr);
   }
 }
 
 .l-contact__content {
   @include mq(medium) {
-    grid-area: txt;
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+  }
+
+  @include mq(large) {
+    grid-column: 1 / 7;
   }
 }
 
@@ -26,10 +29,15 @@
   margin-bottom: pxtorem(36px);
 
   @include mq(medium) {
-    grid-area: media;
+    grid-row: 1 / 2;
+    grid-column: 5 / 7;
 
     @supports (display: grid) {
       margin-bottom: 0;
     }
+  }
+
+  @include mq(large) {
+    grid-column: 8 / 11;
   }
 }
