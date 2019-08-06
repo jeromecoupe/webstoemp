@@ -3,8 +3,7 @@ const gulp = require("gulp");
 // packages
 const eslint = require("gulp-eslint");
 const webpack = require("webpack");
-const webpackconfig = require("../webpack.config");
-const webpackstream = require("webpack-stream");
+const webpackConfig = require("../webpack.config.js");
 
 // Lint scripts
 function scriptsLint() {
@@ -21,13 +20,23 @@ function scriptsLint() {
 
 // Transpile, concatenate and minify scripts
 function scriptsBuild() {
-  return (
-    gulp
-      .src(["./src/assets/js/main.js"])
-      .pipe(webpackstream(webpackconfig, webpack))
-      // folder only, filename is specified in webpack
-      .pipe(gulp.dest("./dist/js/"))
-  );
+  return new Promise((resolve, reject) => {
+    webpack(webpackConfig, (err, stats) => {
+      // reject if errors
+      if (err) {
+        return reject(err);
+      }
+      // log as the CLI would
+      console.log(
+        stats.toString({
+          chunks: false, // Makes the build much quieter
+          colors: true // Shows colors in the console
+        })
+      );
+      // resolve
+      resolve();
+    });
+  });
 }
 
 // exports (Common JS)
