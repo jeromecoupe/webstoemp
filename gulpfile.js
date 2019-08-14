@@ -13,35 +13,17 @@ const copy = require("./gulp-tasks/copy.js");
 // Watch files
 function watchFiles() {
   gulp.watch("./src/assets/scss/**/*", css.build);
-  gulp.watch("./src/assets/js/**/*", gulp.series(js.lint, js.build));
+  gulp.watch("./src/assets/js/**/*", js.build);
   gulp.watch("./src/assets/img/**/*", gulp.parallel(img.resize, copy.assets));
   gulp.watch("./src/assets/fonts/**/*", copy.assets);
-  gulp.watch(
-    [
-      "./.eleventy.js",
-      "./.eleventyignore",
-      "./src/*",
-      "./src/_data/**/*",
-      "./src/_includes/**/*",
-      "./src/blogposts/**/*",
-      "./src/pages/**/*",
-      "./src/projects/**/*"
-    ],
-    eleventy.build
-  );
+  gulp.watch(["./.eleventy.js", "./src/**/*", "!./src/assets/**/*"], eleventy.build);
 }
 
 // define tasks
 const watch = gulp.parallel(watchFiles, server.init);
 const build = gulp.series(
   clean.dist,
-  gulp.parallel(
-    copy.assets,
-    css.build,
-    img.resize,
-    eleventy.build,
-    gulp.series(js.lint, js.build)
-  )
+  gulp.parallel(copy.assets, css.build, img.resize, eleventy.build, js.build)
 );
 
 // expose tasks to CLI

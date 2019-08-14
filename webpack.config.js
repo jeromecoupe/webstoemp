@@ -10,9 +10,15 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.js$/,
+        include: [path.resolve(__dirname, "./src/assets/js")],
+        loader: "eslint-loader"
+      },
+      {
         test: /\.js?$/,
         include: [path.resolve(__dirname, "./src/assets/js")],
-        loader: "babel-loader"
+        use: "babel-loader"
       }
     ]
   }
