@@ -4,12 +4,11 @@ const browsersync = require("browser-sync").create();
 // BrowserSync
 function init(done) {
   browsersync.init({
-    server: {
-      baseDir: "./dist/"
-    },
+    server: "./dist/",
     files: [
-      "./dist/css/main.min.css",
-      "./dist/js/main.bundle.js",
+      "./dist/css/*.css",
+      "./dist/js/*.js",
+      "./dist/*.{html, xml}",
       "./dist/**/*.{html, xml}"
     ],
     port: 3000,
@@ -18,14 +17,7 @@ function init(done) {
   done();
 }
 
-// BrowserSync Reload
-function reload(done) {
-  browsersync.reload();
-  done();
-}
-
 // exports
 module.exports = {
-  init: init,
-  reload: reload
+  init: init
 };

@@ -2,7 +2,7 @@
 title: "Blazing fast image transforms with Sharp and Gulp"
 excerpt: "In this responsive age, generating images thumbnails is a common build step for many applications and websites. It is also quite a resources intensive and time consuming one. By combining Sharp with Gulp, we can easily build a very fast thumbnails-generation task."
 image: "speed.jpg"
-imageAlt: " - Photo by Marc Sendra Martorell"
+imageAlt: "Speed - Photo by Marc Sendra Martorell"
 tags:
 - Sharp
 - Images
