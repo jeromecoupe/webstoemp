@@ -38,7 +38,7 @@ People I have met are proud, have a big heart, love good food and are always rea
 
 When close to mountains, maybe what you value most is everything that keeps you warm?
 
-## Where my love of mountains grew higher
+## My love of mountains
 
 Makhachkala is a big city laying by the sea: a chaotic mix of buildings from the Soviet era, new constructions popping up everywhere, modern luxury shops, a more traditional Grand Bazar, Ladas, Japanese and European cars along with utterly crazy drivers. The whole thing is powered by a seemingly anarchic network of cables that would be nightmare-inducing for any electrical engineer worth its salt.
 
