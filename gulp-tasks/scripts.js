@@ -1,24 +1,8 @@
-const gulp = require("gulp");
-
 // packages
-const eslint = require("gulp-eslint");
 const webpack = require("webpack");
 const webpackConfig = require("../webpack.config.js");
 
-// Lint scripts
-function scriptsLint() {
-  return gulp
-    .src([
-      "./src/assets/js/modules/**/*",
-      "./src/assets/js/main.js",
-      "./gulpfile.js"
-    ])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-}
-
-// Transpile, concatenate and minify scripts
+// Use webpack and config (lint, transpile, concat)
 function scriptsBuild() {
   return new Promise((resolve, reject) => {
     webpack(webpackConfig, (err, stats) => {
@@ -26,6 +10,20 @@ function scriptsBuild() {
       if (err) {
         return reject(err);
       }
+
+      // tranform info to JSON
+      const info = stats.toJson();
+
+      // reject if compilation errors
+      if (stats.hasErrors()) {
+        return reject(info.errors);
+      }
+
+      // reject if compilation warnings
+      if (stats.hasWarnings()) {
+        return reject(info.warnings);
+      }
+
       // log as the CLI would
       console.log(
         stats.toString({
@@ -33,6 +31,7 @@ function scriptsBuild() {
           colors: true // Shows colors in the console
         })
       );
+
       // resolve
       resolve();
     });
@@ -41,6 +40,5 @@ function scriptsBuild() {
 
 // exports (Common JS)
 module.exports = {
-  lint: scriptsLint,
   build: scriptsBuild
 };
