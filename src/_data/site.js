@@ -5,6 +5,6 @@ module.exports = {
   url: "https://www.webstoemp.com",
   baseUrl: "/",
   author: "Jerôme Coupé",
-  twitterHandle: "@jeromecoupe",
+  authorTwitter: "@jeromecoupe",
   buildTime: new Date()
 };
