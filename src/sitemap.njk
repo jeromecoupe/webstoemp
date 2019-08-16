@@ -9,7 +9,7 @@ permalink: sitemap.xml
   </url>
   <url>
     <loc>{{ site.url }}/contact/index.html</loc>
-    <priority>0.5</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>{{ site.url }}/blog/index.html</loc>
@@ -25,7 +25,7 @@ permalink: sitemap.xml
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       <lastmod>{{ post.date | date("YYYY-MM-DD[T]HH:mm:ssZ") }}</lastmod>
-      <priority>0.8</priority>
+      <priority>1.0</priority>
     </url>
   {% endfor %}
 </urlset>

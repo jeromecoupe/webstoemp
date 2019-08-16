@@ -20,7 +20,7 @@ So here we were, buying plane tickets, planning the trip, applying for visas and
 
 I don't quite know why, but Moscow always felt to me like it was some remote place of the world. In reality, it's just a three hours flight from Brussels. Large streets, relatively low buildings and loads of trees and parks make the city feel clean, calm and spacious.
 
-If you ever went to Berlin, that's what Moscow felt like to me: a rich history, apparent in the various layers of architectural styles and a beaming cultural scene. A lot of young people were speaking english and everybody I interacted with was quite friendly and eager to know what we thought of the city.
+If you ever went to Berlin, that's what Moscow felt like to me: a rich history, apparent in the various layers of architectural styles and a beaming cultural scene. A lot of young people were speaking English and everybody I interacted with was quite friendly and eager to know what we thought of the city.
 
 As a science-fiction fan (Metro 2033, anyone ?), I was adamant on spending time visiting the metro. The least I can say is that I was not disappointed at all! Not only is it quite stunning to go down 100 meters underneath the city, but most of the 200 or so stations each have their own personalities. Lights, tiles, decorations, art pieces and floor plans are all different. The stations in Brussels and London feel bland and bleak in comparison.
 
