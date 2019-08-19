@@ -10,7 +10,7 @@ tags:
 - Jamstack
 ---
 
-## The many flavors of headless CMSes
+## The many flavours of headless CMSes
 
 If you want to add [a headless CMS](https://headlesscms.org/) to a JAMstack website, you have the choice between two approaches: Git-backed or API driven.
 
@@ -31,7 +31,7 @@ API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](htt
 - content is consumed by various platforms
 - the project needs highly relational content models
 
-## Project goals and structure
+## Project structure
 
 [Eleventy](https://www.11ty.io/) (11ty), which is quickly becoming my static site generator of choice, can handle both approaches fairly elegantly and with a minimal amount of efforts. Querying a GraphQL API and using the returned data to generate static pages is actually a strightforward and simple process. Who knew?
 
