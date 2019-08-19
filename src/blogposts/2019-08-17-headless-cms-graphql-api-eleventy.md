@@ -22,24 +22,24 @@ Git-backed CMSes like [Netlify CMS](https://www.netlifycms.org/) or [Forestry](h
 
 - content and code share the same workflow
 - content is version controlled by git with a clear history
-- content in the form of text files (markdown, yaml, etc.) is highly portable
+- content in the form of text files (markdown, YAML, etc.) is highly portable
 
 ### API driven headless CMSes
 
-API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](https://www.datocms.com/) will save your content in a database in the cloud and make it available through an API. GraphQL is quickly a becoming popular way to query and consume those APIs. In my optinion this API driven approach is interesting when:
+API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](https://www.datocms.com/) will save your content in a database in the cloud and make it available through an API. GraphQL is quickly a becoming popular way to query and consume those APIs. In my opinion this approach is interesting when:
 
 - content is consumed by various platforms
 - the project needs highly relational content models
 
 ## Project structure
 
-[Eleventy](https://www.11ty.io/) (11ty), which is quickly becoming my static site generator of choice, can handle both approaches fairly elegantly and with a minimal amount of efforts. Querying a GraphQL API and using the returned data to generate static pages is actually a strightforward and simple process. Who knew?
+[Eleventy](https://www.11ty.io/) (11ty), which is quickly becoming my static site generator of choice, can handle both approaches fairly elegantly and with a minimal amount of efforts. Querying a GraphQL API and using the returned data to generate static pages is actually a straightforward and simple process. Who knew?
 
 [DatoCMS](https://www.datocms.com/) is a headless CMS I have recommended to clients in the past. Pricing and options are fair, it is very flexible, it handles locales elegantly and has good developer and user experiences.
 
 Although this blogpost is geared towards DatoCMS, this methodology is applicable with any headless CMS offering a GraphQL API.
 
-Here is the folder architecture we will be working with in Eleventy, which is a farly basic one:
+Here is the folder architecture we will be working with in Eleventy, which is a fairly basic one:
 
 ```text
 +-- src
@@ -84,7 +84,7 @@ Since that file is processed really early by [Eleventy](https://www.11ty.io/), o
 
 ## Using JavaScript data files
 
-Instead of getting our data using collections and markdown files with YAML front matters, we are going to use [Eleventy's Javascript data files](https://www.11ty.io/docs/data-js/). We will use `src/_data/blogposts.js` to connect to DatoCMS' [Content Delivery API](https://www.datocms.com/docs/content-delivery-api/) at build time and export a JSON file containing a list of all blogposts with all the fields we need. The content of that file will be availble in our templates under the `blogposts` key.
+Instead of getting our data using collections and markdown files with YAML front matters, we are going to use [Eleventy's Javascript data files](https://www.11ty.io/docs/data-js/). We will use `src/_data/blogposts.js` to connect to DatoCMS' [Content Delivery API](https://www.datocms.com/docs/content-delivery-api/) at build time and export a JSON file containing a list of all blogposts with all the fields we need. The content of that file will be available in our templates under the `blogposts` key.
 
 Eleventy will then be able to use that single JSON file to build all detail and list pages for our blog.
 
@@ -185,7 +185,7 @@ Instead of directly using data from the JSON response, I generally reformat it t
 
 ### Images and thumbnails
 
-Every file or image uplodaded to DatoCMS is stored on [Imgix](https://www.imgix.com/), which means we can simply [add some parameters to any image URL](https://docs.imgix.com/apis/url) to resize, crop, and manipulate them in various ways. These transformations happen on-the-fly and get cached on the CDN as well for future reuse.
+Every file or image uploaded to DatoCMS is stored on [Imgix](https://www.imgix.com/), which means we can simply [add some parameters to any image URL](https://docs.imgix.com/apis/url) to resize, crop, and manipulate them in various ways. These transformations happen on-the-fly and get cached on the CDN as well for future reuse.
 
 Most headless CMSes out there will offer you similar functionalities, either by integrating with third party services like [Cloudinary](https://cloudinary.com/) or [Uploadcare](https://uploadcare.com/) or by having their own images API.
 
@@ -197,7 +197,7 @@ DatoCMS' GraphQL API deals very well will deep data structures and will easily l
 - For relational fields, only get the IDs of related items
 - Use nested loops at the template level to get the data we need using IDs
 
-Since fast static sites geneators like [Hugo](https://gohugo.io/) or Eleventy have a very low performance penalty for loops at the template level, I never encountered major performance problems with this solution. It gives you a lot of flexibility and keeps your queries simple and flat.
+Since fast static sites generators like [Hugo](https://gohugo.io/) or Eleventy have a very low performance penalty for loops at the template level, I never encountered major performance problems with this solution. It gives you a lot of flexibility and keeps your queries simple and flat.
 
 ## Generate a paginated list of blogposts with 11ty
 
@@ -248,7 +248,7 @@ permalink: blog{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber +
 
 ## Generate individual posts with 11ty
 
-Using the same pagination feature, we can also easily generate all our indivisual pages. The only trick here is to use pagination with a size of 1, combined with dynamic permalinks. Here is the full code for `src/blogposts/entry.njk`:
+Using the same pagination feature, we can also easily generate all our individual pages. The only trick here is to use pagination with a size of 1, combined with dynamic permalinks. Here is the full code for `src/blogposts/entry.njk`:
 
 ```twig
 {% raw %}
