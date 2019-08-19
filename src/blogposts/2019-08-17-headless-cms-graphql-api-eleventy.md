@@ -181,7 +181,7 @@ function getAllBlogposts() {
 module.exports = getAllBlogposts;
 ```
 
-Instead of directly using data from the JSON response, I generally reformat it to future proof my templates a little. If something changes at the CMS level, I know I only have to fiddle with the data files, not with all the templates that are using it.
+Instead of directly using data from the JSON response, I generally reformat it to future proof my templates a little. If something changes at the CMS level, I know I only have to fiddle with data files, not with all the templates that are using them.
 
 ### Images and thumbnails
 
