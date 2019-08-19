@@ -1,6 +1,6 @@
 ---
 title: "Consuming a headless CMS GraphQL API with Eleventy"
-excerpt: "Although I generally use git-based CMSes for Jamstack projects, Eleventy makes it trivial to generate a static site using data coming from a GraphQL API if you need the option."
+excerpt: "To generate a static site, Eleventy can process Markdown files with YAML front matter, and it can just as easily consume data coming from any GraphQL API."
 image: "eleventy-graphql.jpg"
 imageAlt: "Eleventy and GraphQL logos"
 tags:
@@ -10,17 +10,36 @@ tags:
 - Jamstack
 ---
 
-## API based headless CMS
+## The many flavors of headless CMSes
 
-I generally go with a git-based CMS like [Netlify CMS](https://www.netlifycms.org/) or [Forestry](https://forestry.io/) for JAMstack projects. That being said, there are cases where, in my opinion, an API-based headless CMS makes more sense. For example, if your data needs to be consumed by various platforms or if your data models are highly relational, using text files might not be ideal.
+If you want to add [a headless CMS](https://headlesscms.org/) to a JAMstack website, you have the choice between two approaches: Git-backed or API driven.
 
-[A whole bunch of API driven headless CMSes](https://headlesscms.org/) are available on the market, and a lot of them offer GraphQL as a query language. [DatoCMS](https://www.datocms.com/) is a solution I have recommended to clients in the past. Pricing and options are fair, it is very flexible, it handles locales elegantly and has good developer and user experiences.
+Both will present content creators with a familiar graphical interface, but what happens behind the scene when content is created, modified or deleted is quite different.
 
-That being said, this methodology is applicable with any headless CMS offering a GraphQL API.
+### Git-backed headless CMSes
 
-## Project structure
+Git-backed CMSes like [Netlify CMS](https://www.netlifycms.org/) or [Forestry](https://forestry.io/) will save your content in text files and commit them to your git repository. This is my favourite approach for the following reasons:
 
-Here is the folder architecture we will be working with:
+- content and code share the same workflow
+- content is version controlled by git with a clear history
+- content in the form of text files (markdown, yaml, etc.) is highly portable
+
+### API driven headless CMSes
+
+API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](https://www.datocms.com/) will save your content in a database in the cloud and make it available through an API. GraphQL is quickly a becoming popular way to query and consume those APIs. In my optinion this API driven approach is interesting when:
+
+- content is consumed by various platforms
+- the project needs highly relational content models
+
+## Project goals and structure
+
+[Eleventy](https://www.11ty.io/) (11ty), which is quickly becoming my static site generator of choice, can handle both approaches fairly elegantly and with a minimal amount of efforts. Querying a GraphQL API and using the returned data to generate static pages is actually a strightforward and simple process. Who knew?
+
+[DatoCMS](https://www.datocms.com/) is a headless CMS I have recommended to clients in the past. Pricing and options are fair, it is very flexible, it handles locales elegantly and has good developer and user experiences.
+
+Although this blogpost is geared towards DatoCMS, this methodology is applicable with any headless CMS offering a GraphQL API.
+
+Here is the folder architecture we will be working with in Eleventy, which is a farly basic one:
 
 ```text
 +-- src
@@ -41,13 +60,13 @@ Here is the folder architecture we will be working with:
 
 ## DatoCMS configuration
 
-After getting a DatoCMS account, create a data model and some entries in DatoCMS. For this example, I created a data model called `blogposts` with a series of fields and a few entries.
+After getting a DatoCMS account, we need a data model and some entries in DatoCMS. For this example, I created a data model called `blogposts` with a series of fields and a few entries.
 
 We can then use our [API token](https://www.datocms.com/docs/content-delivery-api/authentication) to connect to the [GraphQL API Explorer](https://cda-explorer.datocms.com/) and see what queries and options are available and what JSON is returned.
 
 Again, most headless CMSes with a GraphQL API offer this functionality in some form or fashion.
 
-## 11ty configuration
+## Eleventy configuration
 
 We will need our [API token](https://www.datocms.com/docs/content-delivery-api/authentication) to authenticate with the DatoCMS GraphQL server. We can use [`dotenv`](https://www.npmjs.com/package/dotenv) to store it in a `.env` file that we add to our `.gitignore` so it does not end up in our repository. After installing the package, we create a `.env` file at the root of the project and add our DatoCMS API token to it:
 
@@ -63,7 +82,7 @@ require("dotenv").config();
 
 Since that file is processed really early by [Eleventy](https://www.11ty.io/), our token will be available anywhere in our templates using `process.env.DATOCMS_TOKEN`.
 
-## Retrieve data with JavaScript data files
+## Using JavaScript data files
 
 Instead of getting our data using collections and markdown files with YAML front matters, we are going to use [Eleventy's Javascript data files](https://www.11ty.io/docs/data-js/). We will use `src/_data/blogposts.js` to connect to DatoCMS' [Content Delivery API](https://www.datocms.com/docs/content-delivery-api/) at build time and export a JSON file containing a list of all blogposts with all the fields we need. The content of that file will be availble in our templates under the `blogposts` key.
 
@@ -129,11 +148,11 @@ function getAllBlogposts() {
         throw new Error("DatoCMS errors");
       }
 
-      // get blogposts data
-      let blogpostsData = res.data.allBlogposts;
+      // get blogposts data from response
+      const blogpostsData = res.data.allBlogposts;
 
       // format data
-      let blogpostsFormatted = blogpostsData.map(item => {
+      const blogpostsFormatted = blogpostsData.map(item => {
         return {
           id: item.id,
           date: item._createdAt,
@@ -178,7 +197,7 @@ DatoCMS' GraphQL API deals very well will deep data structures and will easily l
 - For relational fields, only get the IDs of related items
 - Use nested loops at the template level to get the data we need using IDs
 
-Since fast static sites geneators like [Hugo](https://gohugo.io/) or Eleventy have a very low performance penalty for loops at the template level, I never encountered major performance problems with this solution. It gives you a lot of flexibility and keeps your data structures simple and flat.
+Since fast static sites geneators like [Hugo](https://gohugo.io/) or Eleventy have a very low performance penalty for loops at the template level, I never encountered major performance problems with this solution. It gives you a lot of flexibility and keeps your queries simple and flat.
 
 ## Generate a paginated list of blogposts with 11ty
 
@@ -229,7 +248,7 @@ permalink: blog{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber +
 
 ## Generate individual posts with 11ty
 
-Using the same pagination feature, we can also easily generate all our indivisual pages. Here is the full code for `src/blogposts/entry.njk`:
+Using the same pagination feature, we can also easily generate all our indivisual pages. The only trick here is to use pagination with a size of 1, combined with dynamic permalinks. Here is the full code for `src/blogposts/entry.njk`:
 
 ```twig
 {% raw %}
