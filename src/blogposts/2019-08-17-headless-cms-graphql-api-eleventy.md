@@ -268,7 +268,7 @@ permalink: blog/{{ blogpost.slug }}/index.html
        srcset="{{ blogpost.image }}?fit=crop&amp;w=600&amp;h=338 600w,
                {{ blogpost.image }}?fit=crop&amp;w=800&amp;h=450 800w,
                {{ blogpost.image }}?fit=crop&amp;w=1024&amp;h=576 1024w"
-       sizes="100 vw"
+       sizes="100vw"
        class="u-fluidimg"
        alt="{{ blogpost.imageAlt }}">
 
