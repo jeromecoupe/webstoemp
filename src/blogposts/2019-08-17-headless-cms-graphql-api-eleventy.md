@@ -1,6 +1,6 @@
 ---
 title: "Consuming a headless CMS GraphQL API with Eleventy"
-excerpt: "To generate a static site, Eleventy can process Markdown files with YAML front matter, and it can just as easily consume data coming from any GraphQL API."
+excerpt: "With Eleventy, consuming data coming from a GraphQL API to generate static pages is as easy as using Markdown files."
 image: "eleventy-graphql.jpg"
 imageAlt: "Eleventy and GraphQL logos"
 tags:
