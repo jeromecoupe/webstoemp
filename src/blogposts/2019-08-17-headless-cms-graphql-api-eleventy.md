@@ -2,7 +2,7 @@
 title: "Consuming a headless CMS GraphQL API with Eleventy"
 excerpt: "With Eleventy, consuming data coming from a GraphQL API to generate static pages is as easy as using Markdown files."
 image: "eleventy-graphql.jpg"
-imageAlt: "Eleventy and GraphQL logos"
+imageAlt: "Eleventy and GraphQL sitting in a tree"
 tags:
 - GraphQL
 - Eleventy
@@ -37,7 +37,7 @@ API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](htt
 
 [DatoCMS](https://www.datocms.com/) is a headless CMS I have recommended to clients in the past. Pricing and options are fair, it is very flexible, it handles locales elegantly and has good developer and user experiences.
 
-Although this blogpost is geared towards DatoCMS, this methodology is applicable with any headless CMS offering a GraphQL API.
+Although this blogpost is geared towards DatoCMS, this methodology is applicable to any headless CMS offering a GraphQL API.
 
 Here is the folder architecture we will be working with in Eleventy, which is a fairly basic one:
 
@@ -92,6 +92,8 @@ Here is the full file required to retrieve all our blogposts. The code is based 
 
 I went with `node-fetch` rather than Apollo and friends to minimise dependencies.
 
+We will eventually have to make multiple queries because the GraphQL API from DatoCMS has a maxiumum limit of 100 records per query. If we have a large blog, we need to make multiple queries and concatenate the results to have everything (thanks to [Dan Fascia](https://twitter.com/danfascia) for pointing that out).
+
 ```js
 // required packages
 const fetch = require("node-fetch");
@@ -99,82 +101,91 @@ const fetch = require("node-fetch");
 // DatoCMS token
 const token = process.env.DATOCMS_TOKEN;
 
-// GraphQL query
-const blogpostsQuery = `
-  {
-    allBlogposts(orderBy: _createdAt_DESC, filter: {_status: {eq: published}}) {
-      id
-      title
-      slug
-      intro
-      body(markdown: true)
-      _createdAt
-      image {
-        url
-        alt
-      }
-      relatedBlogs {
-        id
-      }
-    }
-  }
-`;
-
 // get blogposts
 // see https://www.datocms.com/docs/content-delivery-api/first-request#vanilla-js-example
-function getAllBlogposts() {
-  // fetch data
-  const data = fetch("https://graphql.datocms.com/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify({
-      query: blogpostsQuery
-    })
-  })
-    // parse as JSON
-    .then(res => res.json())
+async function getAllBlogposts() {
+  // max number of records to fetch per query
+  const recordsPerQuery = 100;
 
-    // Handle JSON data
-    .then(res => {
-      // handle Dato CMS errors if in response
-      if (res.errors) {
-        res.errors.forEach(error => {
-          console.log(error.message);
-        });
-        throw new Error("DatoCMS errors");
-      }
+  // number of records to skip (we start at 0)
+  let recordsToSkip = 0;
 
-      // get blogposts data from response
-      const blogpostsData = res.data.allBlogposts;
+  // keep querying
+  let makeNewQuery = true;
 
-      // format data
-      const blogpostsFormatted = blogpostsData.map(item => {
-        return {
-          id: item.id,
-          date: item._createdAt,
-          title: item.title,
-          slug: item.slug,
-          image: item.image.url,
-          imageAlt: item.image.alt,
-          summary: item.intro,
-          body: item.body,
-          relatedBlogs: item.relatedBlogs
-        };
-      });
+  // Blogposts array
+  let blogposts = [];
 
-      // return formatted data
-      return blogpostsFormatted;
-    })
-    .catch(error => {
-      console.log(error);
+  while (makeNewQuery) {
+    // initiate fetch
+    const dato = await fetch("https://graphql.datocms.com/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        query: `{
+            allBlogposts(
+              first: ${recordsPerQuery},
+              skip: ${recordsToSkip},
+              orderBy: _createdAt_ASC,
+              filter: {
+                _status: {eq: published}
+              }
+            )
+            {
+              id
+              title
+              slug
+              intro
+              body(markdown: true)
+              _createdAt
+              image {
+                url
+                alt
+              }
+              relatedBlogs {
+                id
+              }
+            }
+          }`
+      })
     });
 
-  // return data
-  return data;
+    // store the JSON response when promise resolves
+    const response = await dato.json();
+
+    // update our blogpost array with the data from the JSON response
+    blogposts = blogposts.concat(response.data.allBlogposts);
+
+    // prepare for next query
+    recordsToSkip += recordsPerQuery;
+
+    // check if we are got back less than the records we fetch per query
+    // if yes, stop querying
+    if (response.data.allBlogposts.length < recordsPerQuery) {
+      makeNewQuery = false;
+    }
+  }
+
+  // format blogposts objects
+  const blogpostsFormatted = blogposts.map(item => {
+    return {
+      id: item.id,
+      date: item._createdAt,
+      title: item.title,
+      slug: item.slug,
+      image: item.image.url,
+      imageAlt: item.image.alt,
+      summary: item.intro,
+      body: item.body,
+      relatedBlogs: item.relatedBlogs
+    };
+  });
+
+  return blogpostsFormatted;
 }
 
 // export for 11ty
@@ -201,14 +212,16 @@ Since fast static sites generators like [Hugo](https://gohugo.io/) or Eleventy h
 
 ## Generate a paginated list of blogposts with 11ty
 
-Using the [pagination feature](https://www.11ty.io/docs/pagination/) of Eleventy, we can easily walk through our JSON file and generate a paginated list of blogposts. Here is the full code for `src/blogposts/list.njk`:
+Using the [pagination feature](https://www.11ty.io/docs/pagination/) of Eleventy, we can easily walk through our JSON file (accessible via the `blogposts` key) and generate a paginated list of blogposts. In this case, we are going to generate a paginated list with 12 items on each page, as specified by the `size` key.
+
+Here is the full code for `src/blogposts/list.njk`:
 
 ```twig
 {% raw %}
 ---
 pagination:
   data: blogposts
-  size: 2
+  size: 12
 permalink: blog{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
