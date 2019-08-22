@@ -186,6 +186,7 @@ async function getAllBlogposts() {
     };
   });
 
+  // return formatted blogposts
   return blogpostsFormatted;
 }
 
