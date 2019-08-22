@@ -92,7 +92,7 @@ Here is the full file required to retrieve all our blogposts. The code is based 
 
 I went with `node-fetch` rather than Apollo and friends to minimise dependencies.
 
-We will eventually have to make multiple queries because the GraphQL API from DatoCMS has a maxiumum limit of 100 records per query. If we have a large blog, we need to make multiple queries and concatenate the results to have everything (thanks to [Dan Fascia](https://twitter.com/danfascia) for pointing that out).
+The GraphQL API from DatoCMS has a hard limit: you can only get 100 records per query (thanks to [Dan Fascia](https://twitter.com/danfascia) for pointing that out to me initially). If we have a large blog of more than 100 posts, we just have to make multiple queries and concatenate the results to make sure we get all blogposts.
 
 ```js
 // required packages
@@ -116,8 +116,9 @@ async function getAllBlogposts() {
   // Blogposts array
   let blogposts = [];
 
+  // query while we have to
   while (makeNewQuery) {
-    // initiate fetch
+    // fetch from DatoCMS
     const dato = await fetch("https://graphql.datocms.com/", {
       method: "POST",
       headers: {
@@ -130,7 +131,7 @@ async function getAllBlogposts() {
             allBlogposts(
               first: ${recordsPerQuery},
               skip: ${recordsToSkip},
-              orderBy: _createdAt_ASC,
+              orderBy: _createdAt_DESC,
               filter: {
                 _status: {eq: published}
               }
@@ -157,13 +158,13 @@ async function getAllBlogposts() {
     // store the JSON response when promise resolves
     const response = await dato.json();
 
-    // update our blogpost array with the data from the JSON response
+    // merge the data from the JSON response with our blogpost array (aggregate results from multiple queries)
     blogposts = blogposts.concat(response.data.allBlogposts);
 
-    // prepare for next query
+    // update recordsToSkip to get next batch of records in next query
     recordsToSkip += recordsPerQuery;
 
-    // check if we are got back less than the records we fetch per query
+    // check if we got back less than the records we fetch per query
     // if yes, stop querying
     if (response.data.allBlogposts.length < recordsPerQuery) {
       makeNewQuery = false;
