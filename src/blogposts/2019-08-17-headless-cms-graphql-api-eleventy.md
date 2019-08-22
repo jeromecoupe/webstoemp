@@ -158,6 +158,15 @@ async function getAllBlogposts() {
     // store the JSON response when promise resolves
     const response = await dato.json();
 
+    // handle DatoCMS errors
+    if (response.errors) {
+      let errors = response.errors;
+      errors.map(error => {
+        console.log(error.message);
+      });
+      throw new Error("Aborting: DatoCMS errors");
+    }
+
     // merge the data from the JSON response with our blogpost array (aggregate results from multiple queries)
     blogposts = blogposts.concat(response.data.allBlogposts);
 
