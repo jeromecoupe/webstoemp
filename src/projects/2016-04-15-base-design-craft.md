@@ -1,5 +1,5 @@
 ---
-title: "Craft workshop for developers"
+title: "Craft CMS workshop for developers"
 client: "Base Design"
 url: "http://www.basedesign.com"
 urlLabel: "Base Design"
