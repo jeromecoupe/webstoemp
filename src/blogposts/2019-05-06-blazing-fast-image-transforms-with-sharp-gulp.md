@@ -35,7 +35,7 @@ npm install --save-dev sharp
 
 Whenever I deal with complex tasks, I tend to split them into their own external files. In this case, here is the structure we are going to use:
 
-```
+```text
 +-- gulpfile.js
 +-- gulp_tasks
     +-- images.js
