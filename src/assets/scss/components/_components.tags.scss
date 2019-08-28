@@ -17,16 +17,16 @@
 .c-tags__item {
   font-size: pxtorem(15px);
   font-weight: 400;
-  color: $color-gray6;
+  color: $color-gray7;
 }
 
 .c-tags__item:not(:last-child) {
-  margin-right: 24px;
+  margin-right: 6px;
 }
 
-.c-tags__link:before {
+.c-tags__item:before {
   content: "#";
   display: inline-block;
-  color: $color-brand5;
+  color: $color-brand4;
   margin-right: pxtorem(3px);
 }
