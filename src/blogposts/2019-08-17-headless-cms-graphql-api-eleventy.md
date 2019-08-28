@@ -110,73 +110,77 @@ async function getAllBlogposts() {
   // number of records to skip (we start at 0)
   let recordsToSkip = 0;
 
-  // keep querying
+  // do we make a query ?
   let makeNewQuery = true;
 
   // Blogposts array
   let blogposts = [];
 
-  // query while we have to
+  // make queries until makeNewQuery is set to false
   while (makeNewQuery) {
-    // fetch from DatoCMS
-    const dato = await fetch("https://graphql.datocms.com/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify({
-        query: `{
-            allBlogposts(
-              first: ${recordsPerQuery},
-              skip: ${recordsToSkip},
-              orderBy: _createdAt_DESC,
-              filter: {
-                _status: {eq: published}
-              }
-            )
-            {
-              id
-              title
-              slug
-              intro
-              body(markdown: true)
-              _createdAt
-              image {
-                url
-                alt
-              }
-              relatedBlogs {
-                id
-              }
-            }
-          }`
-      })
-    });
-
-    // store the JSON response when promise resolves
-    const response = await dato.json();
-
-    // handle DatoCMS errors
-    if (response.errors) {
-      let errors = response.errors;
-      errors.map(error => {
-        console.log(error.message);
+    try {
+      // initiate fetch
+      const dato = await fetch("https://graphql.datocms.com/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          query: `{
+                allBlogposts(
+                  first: ${recordsPerQuery},
+                  skip: ${recordsToSkip},
+                  orderBy: _createdAt_DESC,
+                  filter: {
+                    _status: {eq: published}
+                  }
+                )
+                {
+                  id
+                  title
+                  slug
+                  intro
+                  body(markdown: true)
+                  _createdAt
+                  image {
+                    url
+                    alt
+                  }
+                  relatedBlogs {
+                    id
+                  }
+                }
+              }`
+        })
       });
-      throw new Error("Aborting: DatoCMS errors");
-    }
 
-    // merge the data from the JSON response with our blogpost array (aggregate results from multiple queries)
-    blogposts = blogposts.concat(response.data.allBlogposts);
+      // store the JSON response when promise resolves
+      const response = await dato.json();
 
-    // update recordsToSkip to get next batch of records in next query
-    recordsToSkip += recordsPerQuery;
+      // handle DatoCMS errors
+      if (response.errors) {
+        let errors = response.errors;
+        errors.map(error => {
+          console.log(error.message);
+        });
+        throw new Error("Aborting: DatoCMS errors");
+      }
 
-    // check if we got back less than the records we fetch per query
-    // if yes, stop querying
-    if (response.data.allBlogposts.length < recordsPerQuery) {
-      makeNewQuery = false;
+      // update our blogpost array with the data from the JSON response
+      blogposts = blogposts.concat(response.data.allBlogposts);
+
+      // prepare for next query
+      recordsToSkip += recordsPerQuery;
+
+      // check if we are got back less than the records we fetch per query
+      // if yes, stop querying
+      if (response.data.allBlogposts.length < recordsPerQuery) {
+        makeNewQuery = false;
+      }
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
