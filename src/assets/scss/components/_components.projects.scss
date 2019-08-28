@@ -3,10 +3,22 @@
 // -------------------------------------
 
 .c-project {
+  margin: 0;
+  padding: 0;
+}
+
+.c-project__link {
+  display: block;
+  text-decoration: none;
+
   @include mq(medium) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 42px;
+  }
+
+  @include mq(large) {
+    grid-gap: 60px;
   }
 }
 
@@ -41,6 +53,16 @@
   }
 }
 
+.c-project__client {
+  margin-bottom: pxtorem(12px);
+  font-weight: 600;
+  font-size: pxtorem(15px);
+  line-height: (18/15);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $color-gray7;
+}
+
 .c-project__title {
   font-weight: 600;
   font-size: pxtorem(23px);
@@ -48,6 +70,12 @@
   line-height: (30/23);
   color: $color-gray8;
   margin-bottom: pxtorem(18px);
+
+  transition: color 0.2s ease-in-out;
+
+  a:hover & {
+    color: $color-brand5;
+  }
 
   @include mq(medium) {
     font-size: pxtorem(25px);
@@ -62,27 +90,4 @@
 
 .c-project__description {
   color: $color-gray7;
-}
-
-.c-project__reference {
-  margin-bottom: 0;
-  margin-top: pxtorem(6px) * -1;
-}
-
-.c-project__link {
-  display: inline-block;
-  padding-bottom: pxtorem(1px);
-
-  color: $color-gray8;
-  font-weight: 400;
-  text-decoration: none;
-  border-bottom: 2px solid $color-brand3;
-
-  transition: all 0.2s ease-in-out;
-
-  &:hover,
-  &:focus {
-    color: $color-brand5;
-    border-color: $color-gray3;
-  }
 }
