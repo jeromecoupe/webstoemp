@@ -5,7 +5,7 @@
 .c-txtintro {
   font-weight: 400;
   font-size: pxtorem(18px);
-  color: $color-gray6;
+  color: $color-gray4;
 
   @include mq(medium) {
     font-size: pxtorem(20px);
