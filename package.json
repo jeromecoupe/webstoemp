@@ -13,27 +13,27 @@
     "not ie < 11"
   ],
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "acorn": "^6.2.1",
+    "acorn": "^7.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
-    "del": "^5.0.0",
-    "eslint": "^6.1.0",
-    "eslint-loader": "^2.2.1",
+    "del": "^5.1.0",
+    "eslint": "^6.2.2",
+    "eslint-loader": "^3.0.0",
     "glob": "^7.1.4",
     "gulp": "^4.0.2",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-imagemin": "^6.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "moment": "^2.24.0",
     "sharp": "^0.23.0",
-    "webpack": "^4.39.1"
+    "webpack": "^4.39.3"
   }
 }
