@@ -26,7 +26,7 @@ Git-backed CMSes like [Netlify CMS](https://www.netlifycms.org/) or [Forestry](h
 
 ### API driven headless CMSes
 
-API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](https://www.datocms.com/) will save your content in a database in the cloud and make it available through an API. GraphQL is quickly a becoming popular way to query and consume those APIs. In my opinion this approach is interesting when:
+API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](https://www.datocms.com/) will save your content in a database in the cloud and make it available through an API. If you want to host your own data, [Craft CMS](https://craftcms.com/) and [its new first party GraphQL API](https://docs.craftcms.com/v3/graphql.html) makes it a great option, too. GraphQL is quickly a becoming popular way to query and consume those APIs. In my opinion this approach is interesting when:
 
 - content is consumed by various platforms
 - the project needs highly relational content models
