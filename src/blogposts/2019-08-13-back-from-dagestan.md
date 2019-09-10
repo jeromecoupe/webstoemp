@@ -44,7 +44,7 @@ Makhachkala is a big city laying by the sea: a chaotic mix of buildings from the
 
 As soon as you leave the capital, unless you are following the coast, you quickly enter the mountains. The diversity of landscapes is astounding: from dry and rocky, to bright green with rivers and lakes ... and everything in between.
 
-Villages are surrounded by terrasses made for agriculture, apricot and peach trees are everywhere. Higher in the mountains, roads become tracks. Yellow pipes carrying natural gaz to remote villages zig and zag up the slopes. Our drivers often ask locals for the road ahead and thank them with a resounding "Barkala" before driving off.
+Villages are surrounded by terrasses made for agriculture, apricot and peach trees are everywhere. Higher in the mountains, roads become tracks. Yellow pipes carrying natural gas to remote villages zig and zag up the slopes. Our drivers often ask locals for the road ahead and thank them with a resounding "Barkala" before driving off.
 
 We went on a boat trip in a canyon, walked a bit, ate and laughed a lot, saw impressive hydroelectric power plants, visited a cave, sanatoriums, a waterfall and abandoned villages built centuries ago, where rocks seem to transform into houses and eagles flew above our heads.
 
