@@ -278,6 +278,10 @@ Then, in `./src/_includes/partials/footer.njk`, we just rely on the value of our
 
 Just like that, we now have a footer with automatic translations.
 
+## Language switcher
+
+If you need to build a simple language switcher, [here is a straightforward approach](/blog/language-switcher-multilingual-jamstack-sites/) using this setup.
+
 ## Flexible by design
 
 Static sites generators are very flexible in terms of the data structures you can create with them. Eleventy is one of the most flexible SSG I have used so far, which makes it quite a good fit to create a multilingual data structure that can work for pretty much any project.
