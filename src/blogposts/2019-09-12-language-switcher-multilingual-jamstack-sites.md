@@ -135,4 +135,4 @@ Here is an outline of what we are going to do with that short piece of code:
 {% endraw %}
 ```
 
-There we go, job done with a minimum amount of effort.
+There we go, job done with a minimum amount of effort. Those loops will happen on every page of the site but, since Eleventy is already creating `collections.all` anyway and has very fast IO, the impact on build time should be pretty minimal, even with large sites.
