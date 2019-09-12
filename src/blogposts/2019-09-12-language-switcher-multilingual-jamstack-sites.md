@@ -21,7 +21,7 @@ We will be using Eleventy (11ty) but the general approach is usable with most ot
 2. Make sure each piece of content has a `locale` key with its value set to the language code of that content. Here is a refresher about [how to do it with Eleventy directory data files](/blog/multilingual-sites-eleventy/) if you need one.
 3. Set a common unique `translationKey` to create a relation between the same content in various languages
 
-## Set site languages
+## Site languages
 
 The first thing we need is an array of all the languages the site uses. I usually store that in my `./src/_data/site.js` file under a `languages` key.
 
@@ -50,7 +50,7 @@ module.exports = {
 
 Using this array, we will be able to loop through our site languages and match the value of the `code` key against the value of the `locale` variable available in all our content files.
 
-## Setup a translation key
+## Setup translation keys
 
 We now need an explicit relation between the same pieces of content in various languages. With a static site generator storing data as files, we can rely on using the same translation key in the YAML front matters of all those files. That translation key can be any string, provided that it is unique for each piece of content.
 
