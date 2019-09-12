@@ -106,7 +106,7 @@ We now have an explicit relationship between the same content pieces in all lang
 
 ## Coding our simple language switcher
 
-Here is an outline of what we are going to do in that short piece of code:
+Here is an outline of what we are going to do with that short piece of code:
 
 1. Loop through all languages declared for the site.
 2. By default, set `translatedUrl` to the homepage of the language we are looping though. This will be overridden in step 4 if a match is found
