@@ -127,10 +127,14 @@ Here is an outline of what we are going to do with that short piece of code:
 
   {# loop through all the content of the site #}
   {% for item in collections.all %}
-    {# check matches #}
+
+    {# for each item in the loop, check if
+    - its translationKey matches the current item translationKey
+    - its locale matches the code of the language we are looping through #}
     {% if item.data.translationKey == translationKey and item.data.locale == lgg.code %}
       {% set translatedUrl = item.url %}
     {% endif %}
+
   {% endfor%}
 
   <li class="c-lggnav__item">
