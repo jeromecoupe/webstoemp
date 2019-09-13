@@ -1,5 +1,5 @@
 ---
-title: "Building a design system framemork"
+title: "Building a design system framework"
 client: "Little Miss Robot"
 url: "https://littlemissrobot.com"
 urlLabel: "Little Miss Robot"
