@@ -67,7 +67,7 @@ translationKey: "aboutPage"
 `./src/fr/pages/about.njk`
 ```text
 ---
-permalink: "{%raw%}/{{ locale }}/about/index.html{%endraw%}"
+permalink: "{%raw%}/{{ locale }}/a-propos/index.html{%endraw%}"
 translationKey: "aboutPage"
 ---
 ```
