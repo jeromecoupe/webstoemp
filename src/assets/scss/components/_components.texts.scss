@@ -7,6 +7,16 @@
   font-size: pxtorem(18px);
   color: $color-gray4;
 
+  a {
+    color: $color-brand5;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $color-brand5;
+    text-decoration: none;
+  }
+
   @include mq(medium) {
     font-size: pxtorem(20px);
   }
