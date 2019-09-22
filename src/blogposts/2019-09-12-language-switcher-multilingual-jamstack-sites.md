@@ -4,9 +4,9 @@ excerpt: "Following my blogpost on multilingual websites with Eleventy, I had se
 image: "languages-choices.jpg"
 imageAlt: "Roadsign with various choices - By Javier Allegue Barros"
 tags:
-- Eleventy
-- 11ty
-- Jamstack
+  - Eleventy
+  - 11ty
+  - Jamstack
 ---
 
 ## Set the stage
@@ -54,9 +54,10 @@ Using this array, we will be able to loop through our site languages and match t
 
 We now need an explicit relation between the same pieces of content in various languages. With a static site generator storing data as files, we can rely on using the same translation key in the YAML front matters of all those files. That translation key can be any string, provided that it is unique for each piece of content.
 
-For example, we could use the following  to link together our contact pages in various languages.
+For example, we could use the following to link together our contact pages in various languages.
 
 `./src/en/pages/about.njk`
+
 ```twig
 ---
 permalink: "{%raw%}/{{ locale }}/about/index.html{%endraw%}"
@@ -65,6 +66,7 @@ translationKey: "aboutPage"
 ```
 
 `./src/fr/pages/about.njk`
+
 ```text
 ---
 permalink: "{%raw%}/{{ locale }}/a-propos/index.html{%endraw%}"
@@ -75,6 +77,7 @@ translationKey: "aboutPage"
 The same principle can apply to our collection items, for example blogposts.
 
 `./src/en/bogposts/2019-09-12-my-awesome-blogpost.njk`
+
 ```twig
 ---
 title: "My awesome blogpost"
@@ -83,6 +86,7 @@ translationKey: "awesome-blogpost"
 ```
 
 `./src/fr/bogposts/2019-09-12-mon-magnifique-blogpost.njk`
+
 ```twig
 ---
 title: "Mon magnifique blogpost"
