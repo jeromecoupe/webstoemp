@@ -1,10 +1,13 @@
 const moment = require("moment");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const now = new Date();
 
 module.exports = function(eleventyConfig) {
   // blogpost collection
   eleventyConfig.addCollection("blogposts", function(collection) {
-    return collection.getFilteredByGlob("./src/blogposts/*.md");
+    return collection.getFilteredByGlob("./src/blogposts/*.md").filter((item) => {
+      return item.data.draft !== true && item.date <= now;
+    });
   });
 
   // projects collection
