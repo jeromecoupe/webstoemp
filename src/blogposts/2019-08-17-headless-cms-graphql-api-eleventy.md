@@ -4,10 +4,10 @@ excerpt: "With Eleventy, consuming data coming from a GraphQL API to generate st
 image: "eleventy-graphql.jpg"
 imageAlt: "Eleventy and GraphQL sitting in a tree"
 tags:
-- GraphQL
-- Eleventy
-- 11ty
-- Jamstack
+  - GraphQL
+  - Eleventy
+  - 11ty
+  - Jamstack
 ---
 
 ## The many flavours of headless CMSes
@@ -162,7 +162,7 @@ async function getAllBlogposts() {
       // handle DatoCMS errors
       if (response.errors) {
         let errors = response.errors;
-        errors.map(error => {
+        errors.map((error) => {
           console.log(error.message);
         });
         throw new Error("Aborting: DatoCMS errors");
@@ -185,7 +185,7 @@ async function getAllBlogposts() {
   }
 
   // format blogposts objects
-  const blogpostsFormatted = blogposts.map(item => {
+  const blogpostsFormatted = blogposts.map((item) => {
     return {
       id: item.id,
       date: item._createdAt,
@@ -231,8 +231,7 @@ Using the [pagination feature](https://www.11ty.io/docs/pagination/) of Eleventy
 
 Here is the full code for `src/blogposts/list.njk`:
 
-```twig
-{% raw %}
+```twig{% raw %}
 ---
 pagination:
   data: blogposts
@@ -278,8 +277,7 @@ permalink: blog{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber +
 
 Using the same pagination feature, we can also easily generate all our individual pages. The only trick here is to use pagination with a size of 1, combined with dynamic permalinks. Here is the full code for `src/blogposts/entry.njk`:
 
-```twig
-{% raw %}
+```twig{% raw %}
 ---
 pagination:
   data: blogposts
