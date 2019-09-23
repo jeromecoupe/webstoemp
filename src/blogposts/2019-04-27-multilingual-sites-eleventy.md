@@ -4,11 +4,11 @@ excerpt: "Eleventy might not have multilingual and localisation capabilities out
 image: "blahblahblah.jpg"
 imageAlt: "Blah Blah Blah Neon sign - Photo by Nick Fewings"
 tags:
-- Multilingual
-- Localization
-- Eleventy
-- 11ty
-- Jamstack
+  - Multilingual
+  - Localization
+  - Eleventy
+  - 11ty
+  - Jamstack
 ---
 
 In order to have a simple project to work with, let's build a fairly straight forward multilingual blog.
@@ -89,7 +89,7 @@ Now that our dates are automatically localized, let's move to collections.
 
 ## Localized collections
 
-We can also use our directory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can easily accomplish that using the [`getFilteredByGlob`](https://www.11ty.io/docs/collections/#getfilteredbyglob(-glob-)) method in our `.eleventy.js` file.
+We can also use our directory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can easily accomplish that using the [`getFilteredByGlob`](<https://www.11ty.io/docs/collections/#getfilteredbyglob(-glob-)>) method in our `.eleventy.js` file.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -112,7 +112,7 @@ Instead of adding a `permalink` variable in each front-matter, we can simply add
 ```js
 {% raw %}
 {
-  permalink: "/{{ locale }}/blog/{{ page.fileslug }}/index.html"
+  permalink: "/{{ locale }}/blog/{{ page.fileSlug }}/index.html"
 }
 {% endraw %}
 ```
