@@ -16,12 +16,12 @@ module.exports = function(eleventyConfig) {
   });
 
   // limit filter
-  eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
+  eleventyConfig.addFilter("limit", function(array, limit) {
     return array.slice(0, limit);
   });
 
   // date filter
-  eleventyConfig.addNunjucksFilter("date", function(date, format) {
+  eleventyConfig.addFilter("date", function(date, format) {
     return moment(date).format(format);
   });
 
