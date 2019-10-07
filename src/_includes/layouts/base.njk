@@ -1,5 +1,3 @@
-{% set metaUrl = site.url ~ page.url %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +15,7 @@
   <!-- Twitter + Open Graph -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="{{ site.authorTwitter }}" />
-  <meta property="og:url" content="{{ metaUrl }}" />
+  <meta property="og:url" content="{{ site.url ~ page.url }}" />
   <meta property="og:title" content="{{ metaTitle }}" />
   <meta property="og:description" content="{{ metaDescription }}" />
   <meta property="og:image" content="{{ metaImage }}" />
@@ -43,6 +41,6 @@
   {% block content %}{% endblock %}
 
   {% include "partials/sitefooter.njk" %}
-  <script src="/js/main.bundle.js"></script>
+  <script src="/js/main.bundle.js?ref={{ site.buildTime | date('X') }}"></script>
 </body>
 </html>
