@@ -2,12 +2,12 @@
   {
     "title": "Strategy and discovery",
     "icon": "icon-service-strategy.svg",
-    "description": "Getting to know your team, your business and your users. I'll be asking a lot of questions and expecting a lot of answers to thoroughly define the scope."
+    "description": "Getting to know your team, your business and your users. I will ask a lot of questions and help you answer them to thoroughly define the scope of your project."
   },
   {
     "title": "Design systems",
     "icon": "icon-service-systems.svg",
-    "description": "Design systems are one of the best tools I know to document design patterns and principles, so you don’t have to reinvent the wheel for every feature or view."
+    "description": "Design systems are one of the best tools I know to document design patterns and principles and bridge the gap between design and development."
   },
   {
     "title": "Front-end code",
@@ -15,9 +15,9 @@
     "description": "HTML, CSS and JavaScript are my bread and butter. I like to move to code as soon as possible to materialise responsive layouts, typography and interactivity."
   },
   {
-    "title": "Responsive web design",
+    "title": "UX and design",
     "icon": "icon-service-design.svg",
-    "description": "Responsive web design is baked in. In the words of the late Donald Rumsfeld, web design is all about acccounting for those \"unknown unknowns\"."
+    "description": "I design websites and interfaces that are consistent, maintainable, accessible and take performance into account, while also delivering a great user experience on all platforms."
   },
   {
     "title": "Content management",
