@@ -16,7 +16,10 @@ function watchFiles() {
   gulp.watch("./src/assets/js/**/*", js.build);
   gulp.watch("./src/assets/img/**/*", gulp.parallel(img.resize, copy.assets));
   gulp.watch("./src/assets/fonts/**/*", copy.assets);
-  gulp.watch(["./.eleventy.js", "./src/**/*", "!./src/assets/**/*"], eleventy.build);
+  gulp.watch(
+    ["./.eleventy.js", "./src/**/*", "!./src/assets/**/*"],
+    eleventy.build
+  );
 }
 
 // define tasks
