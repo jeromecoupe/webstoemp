@@ -26,7 +26,7 @@ function sanitizePath(filepath) {
 
 // copy assets
 function copyAssets(done) {
-  assetsDirs.forEach(dir => {
+  assetsDirs.forEach((dir) => {
     // src and dist
     let sourceDir = sanitizePath(dir.src);
     let distDir = sanitizePath(dir.dist);
@@ -45,7 +45,7 @@ function copyAssets(done) {
       }
 
       if (!fs.existsSync(distFile)) {
-        fs.copyFile(srcFile, distFile, err => {
+        fs.copyFile(srcFile, distFile, (err) => {
           if (err) throw err;
         });
       }
