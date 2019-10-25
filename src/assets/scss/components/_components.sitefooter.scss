@@ -4,7 +4,6 @@
 
 .c-sitefooter {
   background-color: $color-gray8;
-  color: $color-gray7;
   font-size: pxtorem(16px);
 }
 
@@ -30,6 +29,7 @@
 }
 
 .c-sitefooter__copyright {
+  color: $color-gray6;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: pxtorem(24px) 0;
 }
