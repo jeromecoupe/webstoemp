@@ -1,6 +1,6 @@
 <header class="c-siteheader">
   <div class="l-container  c-siteheader__inner">
-    <p class="c-siteheader__logo"><a href="/">{% include "svg/logo.svg" %}</a></p>
+    <p class="c-siteheader__logo"><a aria-label="Go to homepage" href="/">{% include "svg/logo.svg" %}</a></p>
     <nav class="c-siteheader__nav">
       {% for item in nav %}
         {% if loop.first %}<ul class="c-mainnav">{% endif %}
