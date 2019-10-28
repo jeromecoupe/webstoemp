@@ -1,6 +1,6 @@
 [build]
   command = "gulp build"
-  publish = "dist"
+  publish = "dist/"
 
 [[redirects]]
   from = "/about"
