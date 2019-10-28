@@ -1,3 +1,0 @@
-# 301 redirect
-/about      /contact           301
-/work/*     /work/index.html   301
