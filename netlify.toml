@@ -1,0 +1,14 @@
+[build]
+  command = "gulp build"
+  publish = "dist/"
+
+[[redirects]]
+  from = "/about"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/work/*"
+  to = "/work/index.html"
+  status = 301
+  force = true
