@@ -8,7 +8,7 @@ function init() {
     let el = elNavLinks[i];
     el.addEventListener(
       "click",
-      event => {
+      (event) => {
         event.preventDefault();
         elBody.classList.toggle(classActive);
       },
