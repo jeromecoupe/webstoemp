@@ -360,4 +360,4 @@ And here is the CSS (well, the Sass actually):
 
 ## Not too bad
 
-Despite being longing for the day we don't have to support old IE, I generally don't find it too hard to handle this new world of layout, while supporting legacy browsers.
+Despite longing for the day we don't have to support old IE, I generally don't find it too hard to handle this new world of layout, while supporting legacy browsers.
