@@ -9,6 +9,6 @@
 
 [[redirects]]
   from = "/work/*"
-  to = "/work/index.html"
+  to = "/work/"
   status = 301
   force = true
