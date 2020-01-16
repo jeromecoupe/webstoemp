@@ -13,7 +13,7 @@ tags:
 
 Static site generators have gained a lot of traction lately, thanks to the pervasiveness of API, Git based workflows, powerful javascript frameworks, headless CMS and unified data layers powered by GraphQL. They have become a sensible choice for all kinds of websites.
 
-Webstoemp was previously running on Jekyll, which I liked because of its ease of use and flexibility. However, it was a bit slow compared to other options and forced me to keep a Ruby environment up to date. I experimented with several other contenders and eventually ended up with [Hugo](https://gohugo.io/) and [Eleventy](https://www.11ty.io/) in my shortlist.
+Webstoemp was previously running on Jekyll, which I liked because of its ease of use and flexibility. However, it was a bit slow compared to other options and forced me to keep a Ruby environment up to date. I experimented with several other contenders and eventually ended up with [Hugo](https://gohugo.io/) and [Eleventy](https://www.11ty.dev/) in my shortlist.
 
 ### Hugo
 
@@ -25,7 +25,7 @@ Its only downsides for me were [the go templating language](https://gohugo.io/te
 
 Which brings me to Eleventy. Being written in Node, it gives you access to the NPM ecosystem to extend it, is easy to use, and is quite a lot faster than Jekyll (albeit not being as fast as Hugo).
 
-Eleventy also works with [several template languages](https://www.11ty.io/docs/languages/), which was an added bonus.
+Eleventy also works with [several template languages](https://www.11ty.dev/docs/languages/), which was an added bonus.
 
 ## Setting things up
 
@@ -233,7 +233,7 @@ As you have seen above, I use a dedicated template to display the detail of each
 
 ### Projects
 
-The same logic is used for displaying projects, with a little caveat. Because we don't have a dedicated template for projects, we just have to use [`templateContent`](https://www.11ty.io/docs/collections/#collection-item-data-structure) to display the content of markdown files. Here is a simplified version of the code.
+The same logic is used for displaying projects, with a little caveat. Because we don't have a dedicated template for projects, we just have to use [`templateContent`](https://www.11ty.dev/docs/collections/#collection-item-data-structure) to display the content of markdown files. Here is a simplified version of the code.
 
 ```twig
 {% raw %}

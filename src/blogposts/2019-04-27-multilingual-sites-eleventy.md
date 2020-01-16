@@ -13,7 +13,7 @@ tags:
 
 In order to have a simple project to work with, let's build a fairly straight forward multilingual blog.
 
-Here is the folder architecture we will be working with. It is quite a standard [Eleventy](https://www.11ty.io) architecture and a pretty simple project. However, I believe the principles and techniques can easily be applied to bigger ones.
+Here is the folder architecture we will be working with. It is quite a standard [Eleventy](https://www.11ty.dev) architecture and a pretty simple project. However, I believe the principles and techniques can easily be applied to bigger ones.
 
 ```text
 +-- src
@@ -50,7 +50,7 @@ Here is the folder architecture we will be working with. It is quite a standard 
 
 ## Set locales
 
-The first step is to create our locales using [directory data files](https://www.11ty.io/docs/data-template-dir/).
+The first step is to create our locales using [directory data files](https://www.11ty.dev/docs/data-template-dir/).
 
 We simply add `en.json` and `fr.json` in the root of our language directories. In each of them, we specify a `locale` key. That will make the corresponding values accessible in all template files living in those languages directories and subdirectories.
 
@@ -88,7 +88,7 @@ Now that our dates are automatically localized, let's move to collections.
 
 ## Localized collections
 
-We can also use our directory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can easily accomplish that using the [`getFilteredByGlob`](<https://www.11ty.io/docs/collections/#getfilteredbyglob(-glob-)>) method in our `.eleventy.js` file.
+We can also use our directory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can easily accomplish that using the [`getFilteredByGlob`](<https://www.11ty.dev/docs/collections/#getfilteredbyglob(-glob-)>) method in our `.eleventy.js` file.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -148,7 +148,7 @@ We could make use of our `locale` variable to call our collections too. We would
 
 Although duplicating our pages and posts is quite logical, we don't want to duplicate our layouts and partials.
 
-Luckily, we can avoid it by feeding them localised strings. In order to do that, we only need to create multilingual [global data files](https://www.11ty.io/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
+Luckily, we can avoid it by feeding them localised strings. In order to do that, we only need to create multilingual [global data files](https://www.11ty.dev/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
 
 ### Layouts
 

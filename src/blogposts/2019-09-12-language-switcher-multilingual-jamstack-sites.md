@@ -102,7 +102,7 @@ Here is an outline of what we are going to do with that short piece of code:
 
 1. Loop through all languages declared for the site.
 2. By default, set `translatedUrl` to the homepage of the language we are looping though. This will be overridden in step 4 if a match is found
-3. Inside that, loop through all the content pieces in the site. With Eleventy, we can use the handy [`collections.all`](https://www.11ty.io/docs/collections/#the-special-all-collection) shortcut.
+3. Inside that, loop through all the content pieces in the site. With Eleventy, we can use the handy [`collections.all`](https://www.11ty.dev/docs/collections/#the-special-all-collection) shortcut.
 4. For each content piece we loop through, check if its `translationKey` matches the current item's `translationKey` and if its `locale` matches the `code` of the language we are looping through. If we find a match, set `translatedUrl` to the url of that content item.
 5. Use the value of `translatedUrl` to create the links in our language switcher.
 
