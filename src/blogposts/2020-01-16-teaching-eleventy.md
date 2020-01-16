@@ -25,7 +25,7 @@ By contrast, [Eleventy](https://www.11ty.dev/) is built on Node, which is a lot 
 
 Working within a familiar environment and being able to extend and configure Eleventy using a language students already know and understand is truly a game changer.
 
-Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https://www.11ty.dev/docs/shortcodes/) ? Use Javascript. [Ordering or filtering your data](https://www.11ty.dev/docs/collections/) before using it within your templates ? Same deal. Want to use NPM packages to help you build the functionalities your project needs ? You're already in Node.
+Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https://www.11ty.dev/docs/shortcodes/) ? Use Javascript. [Order or filter your data](https://www.11ty.dev/docs/collections/) before using it within your templates ? Same deal. Use NPM packages to help you build the functionalities your project needs ? You're already in Node.
 
 For students, this is truly invaluable. Granted, Eleventy might feel a bit closer to the metal compared to Jekyll but the increased flexibility, extensibility and familiarity is definitely worth it.
 
@@ -33,9 +33,9 @@ For students, this is truly invaluable. Granted, Eleventy might feel a bit close
 
 With React, Vue or Svelte being all the rage these days, SSG like [Gatsby](https://www.gatsbyjs.org/) or [Gridsome](https://gridsome.org/) were also on my radar.
 
-Personally, I feel that those solutions, while extremely valuable when you have to deal with app-like functionlities and / or state-based UI, come with a lot of bagage and are a bit overkill when building content-driven websites.
+Personally, I feel that those solutions, while extremely valuable when you have to deal with app-like functionalities and / or state-based UI, come with a lot of bagage and are a bit overkill when building content-driven websites.
 
-By comparaison, Eleventy is a lot simpler and looks a lot less like a black box to me (if I am being completely honest). [Fetching data from a GraphQL API](/blog/headless-cms-graphql-api-eleventy/) is quite trivial and students can still use what they learned with my colleagues teaching them Vue or Node if the project requires it.
+By comparison, Eleventy is a lot simpler and looks a lot less like a black box to me (if I am being completely honest). [Fetching data from a GraphQL API](/blog/headless-cms-graphql-api-eleventy/) is quite trivial and students can still use what they learned with my colleagues teaching them Vue or Node if the project requires it.
 
 ## Teaching in the open: workshop course and sample website
 
