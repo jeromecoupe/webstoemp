@@ -27,7 +27,7 @@ Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https:
 
 For students, this is truly invaluable. Granted, Eleventy might feel a bit closer to the metal compared to Jekyll but the increased flexibility, extensibility and familiarity is definitely worth it.
 
-## Elephants in the room
+## Simplicity
 
 With React, Vue or Svelte being all the rage these days, SSG like [Gatsby](https://www.gatsbyjs.org/) or [Gridsome](https://gridsome.org/) were also on my radar.
 
