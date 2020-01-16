@@ -80,7 +80,7 @@
   transition: transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
-.js-menu-isactive {
+.js-menu-is-active {
   @include mq(under-medium) {
     overflow-y: hidden;
   }
