@@ -25,7 +25,7 @@ By contrast, [Eleventy](https://www.11ty.dev/) is built on Node, which is a lot 
 
 Working within a familiar environment and being able to extend and configure Eleventy using a language students already know and understand is truly a game changer.
 
-Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https://www.11ty.dev/docs/shortcodes/) ? Use Javascript. [Order or filter your data](https://www.11ty.dev/docs/collections/) before using it within your templates ? Same deal. Use NPM packages to help you build the functionalities your project needs ? You're already in Node.
+Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https://www.11ty.dev/docs/shortcodes/)? Use Javascript. [Order or filter your data](https://www.11ty.dev/docs/collections/) before using it within your templates? Same deal. Use NPM packages to help you build the functionalities your project needs? You're already in Node.
 
 For students, this is truly invaluable. Granted, Eleventy might feel a bit closer to the metal compared to Jekyll but the increased flexibility, extensibility and familiarity is definitely worth it.
 
