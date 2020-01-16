@@ -33,7 +33,7 @@ API driven CMSes like [Contentful](https://www.contentful.com/) or [DatoCMS](htt
 
 ## Project structure
 
-[Eleventy](https://www.11ty.io/) (11ty), which is quickly becoming my static site generator of choice, can handle both approaches fairly elegantly and with a minimal amount of efforts. Querying a GraphQL API and using the returned data to generate static pages is actually a straightforward and simple process. Who knew?
+[Eleventy](https://www.11ty.dev/) (11ty), which is quickly becoming my static site generator of choice, can handle both approaches fairly elegantly and with a minimal amount of efforts. Querying a GraphQL API and using the returned data to generate static pages is actually a straightforward and simple process. Who knew?
 
 [DatoCMS](https://www.datocms.com/) is a headless CMS I have recommended to clients in the past. Pricing and options are fair, it is very flexible, it handles locales elegantly and has good developer and user experiences.
 
@@ -80,11 +80,11 @@ Then, we just need to add the following line at the top of our `.eleventy.js` fi
 require("dotenv").config();
 ```
 
-Since that file is processed really early by [Eleventy](https://www.11ty.io/), our token will be available anywhere in our templates using `process.env.DATOCMS_TOKEN`.
+Since that file is processed really early by [Eleventy](https://www.11ty.dev/), our token will be available anywhere in our templates using `process.env.DATOCMS_TOKEN`.
 
 ## Using JavaScript data files
 
-Instead of getting our data using collections and markdown files with YAML front matters, we are going to use [Eleventy's Javascript data files](https://www.11ty.io/docs/data-js/). We will use `src/_data/blogposts.js` to connect to DatoCMS' [Content Delivery API](https://www.datocms.com/docs/content-delivery-api/) at build time and export a JSON file containing a list of all blogposts with all the fields we need. The content of that file will be available in our templates under the `blogposts` key.
+Instead of getting our data using collections and markdown files with YAML front matters, we are going to use [Eleventy's Javascript data files](https://www.11ty.dev/docs/data-js/). We will use `src/_data/blogposts.js` to connect to DatoCMS' [Content Delivery API](https://www.datocms.com/docs/content-delivery-api/) at build time and export a JSON file containing a list of all blogposts with all the fields we need. The content of that file will be available in our templates under the `blogposts` key.
 
 Eleventy will then be able to use that single JSON file to build all detail and list pages for our blog.
 
@@ -227,7 +227,7 @@ Since fast static sites generators like [Hugo](https://gohugo.io/) or Eleventy h
 
 ## Generate a paginated list of blogposts with 11ty
 
-Using the [pagination feature](https://www.11ty.io/docs/pagination/) of Eleventy, we can easily walk through our JSON file (accessible via the `blogposts` key) and generate a paginated list of blogposts. In this case, we are going to generate a paginated list with 12 items on each page, as specified by the `size` key.
+Using the [pagination feature](https://www.11ty.dev/docs/pagination/) of Eleventy, we can easily walk through our JSON file (accessible via the `blogposts` key) and generate a paginated list of blogposts. In this case, we are going to generate a paginated list with 12 items on each page, as specified by the `size` key.
 
 Here is the full code for `src/blogposts/list.njk`:
 

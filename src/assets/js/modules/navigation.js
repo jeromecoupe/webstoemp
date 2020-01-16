@@ -1,6 +1,6 @@
 const elNavLinks = document.querySelectorAll(".js-navtrigger");
 const elBody = document.querySelector("body");
-const classActive = "js-menu-isactive";
+const classActive = "js-menu-is-active";
 
 // init
 function init() {
@@ -8,7 +8,7 @@ function init() {
     let el = elNavLinks[i];
     el.addEventListener(
       "click",
-      (event) => {
+      event => {
         event.preventDefault();
         elBody.classList.toggle(classActive);
       },
