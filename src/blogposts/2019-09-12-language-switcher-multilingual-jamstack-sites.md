@@ -106,7 +106,8 @@ Here is an outline of what we are going to do with that short piece of code:
 4. For each content piece we loop through, check if its `translationKey` matches the current item's `translationKey` and if its `locale` matches the `code` of the language we are looping through. If we find a match, set `translatedUrl` to the url of that content item.
 5. Use the value of `translatedUrl` to create the links in our language switcher.
 
-```twig{% raw %}
+```twig
+{%- raw %}
 {# loop though site.languages #}
 {% for lgg in site.languages %}
   {% if loop.first %}<ul class="c-lggnav">{% endif %}
