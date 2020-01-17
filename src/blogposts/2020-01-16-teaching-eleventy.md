@@ -1,6 +1,6 @@
 ---
 title: "Teaching in the open: Eleventy"
-excerpt: "Content Management Systems and structured data are part of my teaching duties. From the get go, I decided to cover both a database-driven CMS and a Static Site Generator. As far as the latter goes, I switched from Jekyll to Eleventy this year. Here is why."
+excerpt: "Content Management Systems and structured data are part of my teaching duties. From the get go, I decided to cover both a database-driven CMS and a Static Site Generator. As far as the latter goes, I switched from Jekyll to Eleventy this year."
 image: "eleventy-possum.jpg"
 imageAlt: "Eleventy possum floating under a red balloon"
 tags:
@@ -21,11 +21,11 @@ Students (and myself) also have to install and maintain a Ruby environment to be
 
 ## Extensibility
 
-Working within a familiar environment and being able to extend and configure Eleventy using a language students already know and understand is truly a game changer.
+Working within a familiar environment and being able to extend and configure Eleventy using a language students already know and understand is a game changer.
 
-Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https://www.11ty.dev/docs/shortcodes/)? Use Javascript. [Order or filter your data](https://www.11ty.dev/docs/collections/) before using it within your templates? Same deal. Use NPM packages to help you build the functionalities your project needs? You're already in Node.
+Need custom [filters](https://www.11ty.dev/docs/filters/) or [shortcodes](https://www.11ty.dev/docs/shortcodes/)? Use Javascript. Create custom [order or filters for your collections](https://www.11ty.dev/docs/collections/) before using them in your templates? Same deal. Use NPM packages to help you build the functionalities your project needs? You're already in Node.
 
-For students, this is truly invaluable. Granted, Eleventy might feel a bit closer to the metal compared to Jekyll but the increased flexibility, extensibility and familiarity is definitely worth it.
+For students, this is invaluable. Granted, Eleventy might feel a bit closer to the metal compared to Jekyll but the increased flexibility, extensibility and familiarity is definitely worth it.
 
 ## Simplicity
 
@@ -37,9 +37,8 @@ By comparison, Eleventy is a lot simpler and looks a lot less like a black box t
 
 ## Workshop course and sample website
 
-All things considered, the course went really well this year and students seemed to enjoy it and got a hang of it pretty quickly. I am quite happy with how it went.
-
-As I have [said in the past](/blog/teaching-in-the-open-craft-jekyll-workshops/), teaching in the open is part of my attempt to stay relevant while teaching front-end design in this ever-moving, ever-changing messy web of ours.
+All things considered, I am really happy with how the course went this year. Students seemed to enjoy it and got the hang of it pretty quickly.
 
 My "introduction to Eleventy" course is available [on Github](https://github.com/jeromecoupe/iad_eleventy_introduction) in French and English, along with a [sample website](https://github.com/jeromecoupe/sample-11ty-blog) hosted on [Netlify](https://www.netlify.com/). Feel free to check both out and to give feedback, open issues or make pull requests if you think something could be improved.
 
+As I have [said in the past](/blog/teaching-in-the-open-craft-jekyll-workshops/), teaching in the open is part of my attempt to stay relevant while teaching front-end design in this ever-moving, ever-changing messy web of ours.
