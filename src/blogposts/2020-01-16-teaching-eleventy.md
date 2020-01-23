@@ -39,6 +39,6 @@ By comparison, Eleventy is a lot simpler and looks a lot less like a black box t
 
 All things considered, I am really happy with how the course went this year. Students seemed to enjoy it and got the hang of it pretty quickly.
 
-My "introduction to Eleventy" course is available [on Github](https://github.com/jeromecoupe/iad_eleventy_introduction) in French and English, along with a [sample website](https://github.com/jeromecoupe/sample-11ty-blog) hosted on [Netlify](https://www.netlify.com/). Feel free to check both out and to give feedback, open issues or make pull requests if you think something could be improved.
+My "[introduction to Eleventy](https://github.com/jeromecoupe/iad_eleventy_introduction)" course is available on Github in French and English, along with a [sample website](https://github.com/jeromecoupe/sample-11ty-blog) hosted on [Netlify](https://www.netlify.com/). Feel free to check both out and to give feedback, open issues or make pull requests if you think something could be improved.
 
 As I have [said in the past](/blog/teaching-in-the-open-craft-jekyll-workshops/), teaching in the open is part of my attempt to stay relevant while teaching front-end design in this ever-moving, ever-changing messy web of ours.
