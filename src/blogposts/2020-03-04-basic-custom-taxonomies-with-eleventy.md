@@ -11,7 +11,7 @@ tags:
 
 ## Native approach using tags
 
-Eleventy comes with a native tag system allowing you to group content items into collections automatically by specifying a `tags` key in their front matters. For example, a post about mikshakes tagged as "foods" and "drinks" will appear in both `collections.foods` and `collections.drinks`.
+Eleventy comes with [a native tag system](https://www.11ty.dev/docs/collections/) allowing you to group content items into collections automatically by specifying a `tags` key in their front matters. For example, a post about milkshakes tagged as "foods" and "drinks" will appear in both `collections.foods` and `collections.drinks`.
 
 You can then use pagination with a `size` of `1` to [automatically generate tag pages](https://www.11ty.dev/docs/quicktips/tag-pages/) that will list all content items belonging to that tag's collection. Paginating the posts listed on those tag pages is another story, but we'll get to that.
 
@@ -19,7 +19,7 @@ You can then use pagination with a `size` of `1` to [automatically generate tag 
 
 I generally don't use tags to create my collections. I prefer to folders and the `getFilteredByGlob( glob )` API method to do so, but I often need basic custom taxonomies to categorise my content.
 
-Eleventy being the flexible tool that it is, creating simple custom taxonomies is relatively straightforward.
+Eleventy being the flexible tool that it is, creating basic custom taxonomies is relatively straightforward.
 
 Here is what we would need to create a custom "categories" taxonomy for our blogposts:
 
@@ -150,7 +150,7 @@ module.exports = function(eleventyConfig) {
 
 ### Filter blogposts by categories
 
-We can now create our theme pages by paginating the `blogCategories` collection. In that template, we will use a custom `includes` filter to get only the blogposts containing the category we are interested in from the `blogposts` collection. That filter compares values without taking accentuated characters or capitalisation into account. I also uses `lodash`.
+We can now create our categories pages by paginating the `blogCategories` collection. In that template, we will use a custom `includes` filter to get only the blogposts containing the category we are interested in from the `blogposts` collection. That filter compares values without taking accentuated characters or capitalisation into account. It also uses `lodash`.
 
 ```js
 const lodash = require("lodash");
@@ -176,7 +176,7 @@ module.exports = function(arr, path, value) {
 };
 ```
 
-And here is a bare-bones template using pagination with a `size` of `1` to create our categories pages as well as that `includes` filter.
+And here is a bare-bones template using pagination with a `size` of `1` and that `includes` filter to create our categories pages.
 
 ```twig
 {% raw %}
@@ -216,9 +216,9 @@ permalink: /blog/category/{{ category.slug }}/index.html
 {% endraw %}
 ```
 
-As a first step, we replicated the native tag-based solution using our own custom category system.
+As a first step, we replicated the native tag-based functionality using our own custom category system.
 
-Since we already used pagination to create our categories pages, we cannot use it in the same template to paginate our posts. That being said, [Zach Leatherman's answer to this issue](https://github.com/11ty/eleventy/issues/332#issuecomment-445236776) points to a way to format our data to get around that current limitation of Eleventy.
+Since we already used pagination to create our categories pages, we cannot use it in the same template to paginate our posts. That being said, [Zach Leatherman's answer to this issue on Github](https://github.com/11ty/eleventy/issues/332#issuecomment-445236776) points to a way to format our data to get around that current limitation of Eleventy.
 
 ## Two levels of pagination
 
@@ -387,6 +387,6 @@ From my perspective, paginating posts on tag or category pages is a relatively c
 1. It can be used to generate single pages from data/collections and to paginate arrays and objects, which can make it confusing for newcomers.
 2. Since it lives in the front-matter of templates, it can only be used once per template instead of being usable in context with any iterable.
 
-If most use cases are limited to two levels of depth, then simply distinguishing pagination from single pages generation would fit the bill, since we could then combine both usages. Maybe something like a `generatePages()` collection method would be enough.
+If most use cases are limited to two levels of depth, then distinguishing pagination from single pages generation would probably fit the bill, since we could then combine both usages. Maybe something like a `generatePages()` collection method would be a good candidate.
 
-If what’s needed is unlimited levels of depth, most other systems I have used (SSG/CMS) have something like a filter or tag that paginates any iterable a template where needed. They return a chunked nested array of items and variables needed to create pagination interfaces. The closest thing I can think about in Eleventy today is [the navigation plugin](https://www.11ty.dev/docs/plugins/navigation/), but that’s a bigger departure from what currently exists.
+If what’s needed is unlimited levels of depth, most other systems I have used (SSG/CMS) have something like a filter or tag that paginates any iterable in a template where needed. They return a chunked nested array of items, along with variables needed to create pagination interfaces. The closest thing I can think about in Eleventy today is [the navigation plugin](https://www.11ty.dev/docs/plugins/navigation/), but a pagination plugin is a big departure from what currently exists.
