@@ -119,17 +119,15 @@ module.exports = function(eleventyConfig) {
 
   // create blog categories collection
   eleventyConfig.addCollection("blogCategories", function(collection) {
-    const allCategories = getAllKeyValues(
+    let allCategories = getAllKeyValues(
       collection.getFilteredByGlob("./src/blogposts/*.md"),
       "categories"
     );
-    const blogCategories = [];
-    allCategories.forEach(category => {
-      blogCategories.push({
-        title: category,
-        slug: strToSlug(category)
-      });
-    });
+
+    let blogCategories = allCategories.map(category => ({
+      title: category,
+      slug: strToSlug(category)
+    }));
 
     return blogCategories;
   });
@@ -277,61 +275,59 @@ Using some array manipulation, we can create such a collection in our `.eleventy
 
 ```js
 // create flattened paginated blogposts per categories collection
-  // based on Zach Leatherman's solution - https://github.com/11ty/eleventy/issues/332
-  eleventyConfig.addCollection("blogpostsByCategories", function(collection) {
-    const itemsPerPage = 2;
-    const blogpostsByCategories = [];
-    const allBlogposts = collection
-      .getFilteredByGlob("./src/blogposts/*.md")
-      .reverse();
-    const blogpostsCategories = getAllKeyValues(allBlogposts, "categories");
+// based on Zach Leatherman's solution - https://github.com/11ty/eleventy/issues/332
+eleventyConfig.addCollection("blogpostsByCategories", function(collection) {
+  const itemsPerPage = 2;
+  let blogpostsByCategories = [];
+  let allBlogposts = collection
+    .getFilteredByGlob("./src/blogposts/*.md")
+    .reverse();
+  let blogpostsCategories = getAllKeyValues(allBlogposts, "categories");
 
-    // walk over each unique category
-    blogpostsCategories.forEach(category => {
-      let sanitizedCategory = lodash.deburr(category).toLowerCase();
-      // create array of posts in that category
-      let postsInCategory = allBlogposts.filter(post => {
-        let postCategories = post.data.categories ? post.data.categories : [];
-        let sanitizedPostCategories = postCategories.map(item => {
-          return lodash.deburr(item).toLowerCase();
-        });
-        return sanitizedPostCategories.includes(sanitizedCategory);
-      });
-
-      // chunck the array of posts
-      let chunkedPostsInCategory = lodash.chunk(postsInCategory, itemsPerPage);
-
-      // create array of page slugs
-      let pagesSlugs = [];
-      for (let i = 0; i < chunkedPostsInCategory.length; i++) {
-        let categorySlug = strToSlug(category);
-        let pageSlug = i > 0 ? `${categorySlug}/${i + 1}` : `${categorySlug}`;
-        pagesSlugs.push(pageSlug);
-      }
-
-      // create array of objects
-      chunkedPostsInCategory.forEach((posts, index) => {
-        blogpostsByCategories.push({
-          title: category,
-          slug: pagesSlugs[index],
-          pageNumber: index,
-          totalPages: pagesSlugs.length,
-          pageSlugs: {
-            all: pagesSlugs,
-            next: pagesSlugs[index + 1] || null,
-            previous: pagesSlugs[index - 1] || null,
-            first: pagesSlugs[0] || null,
-            last: pagesSlugs[pagesSlugs.length - 1] || null
-          },
-          items: posts
-        });
-      });
+  // walk over each unique category
+  blogpostsCategories.forEach(category => {
+    let sanitizedCategory = lodash.deburr(category).toLowerCase();
+    // create array of posts in that category
+    let postsInCategory = allBlogposts.filter(post => {
+      let postCategories = post.data.categories ? post.data.categories : [];
+      let sanitizedPostCategories = postCategories.map(item =>
+        lodash.deburr(item).toLowerCase()
+      );
+      return sanitizedPostCategories.includes(sanitizedCategory);
     });
 
-    // console.log(blogpostsByCategories);
+    // chunck the array of posts
+    let chunkedPostsInCategory = lodash.chunk(postsInCategory, itemsPerPage);
 
-    return blogpostsByCategories;
+    // create array of page slugs
+    let pagesSlugs = [];
+    for (let i = 0; i < chunkedPostsInCategory.length; i++) {
+      let categorySlug = strToSlug(category);
+      let pageSlug = i > 0 ? `${categorySlug}/${i + 1}` : `${categorySlug}`;
+      pagesSlugs.push(pageSlug);
+    }
+
+    // create array of objects
+    chunkedPostsInCategory.forEach((posts, index) => {
+      blogpostsByCategories.push({
+        title: category,
+        slug: pagesSlugs[index],
+        pageNumber: index,
+        totalPages: pagesSlugs.length,
+        pageSlugs: {
+          all: pagesSlugs,
+          next: pagesSlugs[index + 1] || null,
+          previous: pagesSlugs[index - 1] || null,
+          first: pagesSlugs[0] || null,
+          last: pagesSlugs[pagesSlugs.length - 1] || null
+        },
+        items: posts
+      });
+    });
   });
+
+  return blogpostsByCategories;
+});
 ```
 
 Now, by using the following template with a pagination `size` of `1`, we will get paginated blogposts for our categories pages.
