@@ -56,11 +56,11 @@ module.exports = function(eleventyConfig) {
 
 Once we have done that, we need a collection of all categories used in all of our blogposts, so we can use it to generate our categories archive pages. Here are the steps we will follow:
 
-1. loop over every item our `blogposts` collection, collect all arrays of categories and flatten them in one big array
-2. remove capitalisation
-3. remove duplicates
-4. sort categories alphabetically
-5. create a slug for each category using the slugify package
+1. Loop over every item in our `blogposts` collection, collect all arrays of categories and flatten them in one big array.
+2. Remove capitalisation.
+3. Remove duplicates.
+4. Sort categories alphabetically.
+5. Create a slug for each category using the slugify package.
 
 We will use `lodash` to flatten the nested array and for some other tasks, so we need to install and import that as well.
 
@@ -80,7 +80,7 @@ function getAllKeyValues(collectionArray, key) {
     let values = item.data[key] ? item.data[key] : [];
     return values;
   });
-  console.log(allValues);
+
   // flatten values array
   allValues = lodash.flattenDeep(allValues);
   // to lowercase
@@ -389,4 +389,6 @@ From my perspective, paginating posts on tag or category pages is a relatively c
 
 If most use cases are limited to two levels of depth, then simply distinguishing pagination from single pages generation would fit the bill, since we could then combine both usages. Maybe something like a `generatePages()` collection method would be enough.
 
-If what’s needed is unlimited levels of depth, most other systems I have used (SSG/CMS) have something like a filter or tag that paginates any iterable a template where needed. They return a chunked nested array of items and variables needed to create pagination interfaces. The closest thing I can think about in 11ty today is the navigation plugin, but that’s a bigger departure from what currently exists.
+If what’s needed is unlimited levels of depth, most other systems I have used (SSG/CMS) have something like a filter or tag that paginates any iterable a template where needed. They return a chunked nested array of items and variables needed to create pagination interfaces. The closest thing I can think about in 11ty today is [the navigation plugin](https://www.11ty.dev/docs/plugins/navigation/), but that’s a bigger departure from what currently exists.
+
+What are your thoughts on pagination with Eleventy ?
