@@ -3,8 +3,6 @@ const fs = require("fs");
 const glob = require("glob");
 const path = require("path");
 const sharp = require("sharp");
-const imagemin = require("gulp-imagemin");
-const gulp = require("gulp");
 
 // specify transforms
 const transforms = [
@@ -64,25 +62,7 @@ function resizeImages(done) {
   done();
 }
 
-// optimize images in place
-function optimiseImages() {
-  return gulp
-    .src("./src/assets/img/**/*", { base: "./src/assets/img" })
-    .pipe(
-      imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: false }, { collapseGroups: true }]
-        })
-      ])
-    )
-    .pipe(gulp.dest("./src/assets/img/"));
-}
-
 // exports (Common JS)
 module.exports = {
-  resize: resizeImages,
-  optimise: optimiseImages
+  resize: resizeImages
 };

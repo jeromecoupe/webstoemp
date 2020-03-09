@@ -1,7 +1,7 @@
 ---
 title: "From Jekyll to Eleventy"
 excerpt: "Jekyll is still a static site generator I like, use and follow. Nevertheless, when I finally had the time to update this site, I chose to go with Eleventy."
-image: "eleventy-logo.png"
+image: "eleventy-logo.jpg"
 imageAlt: "Eleventy logo"
 tags:
 - Static site generators
