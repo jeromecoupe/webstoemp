@@ -1,5 +1,5 @@
 ---
-title: "Using custom taxonomies with Eleventy"
+title: "Basic custom taxonomies with Eleventy"
 excerpt: "Eleventy comes with a built-in tagging system. For a recent project, I wanted to use my own category system, which led me to dive a bit deeper into extending and configuring Eleventy."
 image: "metal-drawers.jpg"
 imageAlt: "Multiple metal drawers - Jesse Orico"
@@ -389,6 +389,4 @@ From my perspective, paginating posts on tag or category pages is a relatively c
 
 If most use cases are limited to two levels of depth, then simply distinguishing pagination from single pages generation would fit the bill, since we could then combine both usages. Maybe something like a `generatePages()` collection method would be enough.
 
-If what’s needed is unlimited levels of depth, most other systems I have used (SSG/CMS) have something like a filter or tag that paginates any iterable a template where needed. They return a chunked nested array of items and variables needed to create pagination interfaces. The closest thing I can think about in 11ty today is [the navigation plugin](https://www.11ty.dev/docs/plugins/navigation/), but that’s a bigger departure from what currently exists.
-
-What are your thoughts on pagination with Eleventy ?
+If what’s needed is unlimited levels of depth, most other systems I have used (SSG/CMS) have something like a filter or tag that paginates any iterable a template where needed. They return a chunked nested array of items and variables needed to create pagination interfaces. The closest thing I can think about in Eleventy today is [the navigation plugin](https://www.11ty.dev/docs/plugins/navigation/), but that’s a bigger departure from what currently exists.
