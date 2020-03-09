@@ -30,7 +30,6 @@ const build = gulp.series(
 );
 
 // expose tasks to CLI
-exports.images = img.optimise;
 exports.watch = watch;
 exports.build = build;
 exports.default = build;
