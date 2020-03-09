@@ -3,8 +3,6 @@ const fs = require("fs");
 const glob = require("glob");
 const path = require("path");
 const sharp = require("sharp");
-const imagemin = require("gulp-imagemin");
-const gulp = require("gulp");
 
 // specify transforms
 const transforms = [
