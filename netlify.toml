@@ -6,6 +6,7 @@
   from = "/about"
   to = "/contact"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/work/*"
