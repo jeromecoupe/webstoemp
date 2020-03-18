@@ -2,5 +2,13 @@
 // Fonts
 // -------------------------------------
 
-$fontstack-main: ("Open Sans", "Helvetica", "Arial", sans-serif);
+$fontstack-main: (
+  system-ui,
+  "Segoe UI",
+  "Open Sans",
+  "Roboto",
+  "Helvetica",
+  "Arial",
+  sans-serif
+);
 $fontstack-alt: ("Spectral", "Georgia", "Times", serif);
