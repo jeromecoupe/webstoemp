@@ -11,9 +11,8 @@ function stylesBuild() {
   return gulp
     .src("./src/assets/scss/**/*.scss")
     .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(gulp.dest("./dist/css/"))
-    .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest("./dist/css/"));
 }
 
