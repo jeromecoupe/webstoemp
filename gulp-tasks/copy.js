@@ -12,6 +12,11 @@ const assetsDirs = [
   {
     src: "./src/assets/fonts/",
     dist: "./dist/fonts/"
+  },
+  {
+    src: "./src/assets/js/",
+    dist: "./dist/js/",
+    force: true
   }
 ];
 
@@ -26,7 +31,7 @@ function sanitizePath(filepath) {
 
 // copy assets
 function copyAssets(done) {
-  assetsDirs.forEach((dir) => {
+  assetsDirs.forEach(dir => {
     // src and dist
     let sourceDir = sanitizePath(dir.src);
     let distDir = sanitizePath(dir.dist);
@@ -44,8 +49,8 @@ function copyAssets(done) {
         fs.mkdirSync(distDirname, { recursive: true });
       }
 
-      if (!fs.existsSync(distFile)) {
-        fs.copyFile(srcFile, distFile, (err) => {
+      if (!fs.existsSync(distFile) || dir.force === true) {
+        fs.copyFile(srcFile, distFile, err => {
           if (err) throw err;
         });
       }
