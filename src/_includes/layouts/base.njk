@@ -41,6 +41,6 @@
   {% block content %}{% endblock %}
 
   {% include "partials/sitefooter.njk" %}
-  <script src="/js/main.bundle.js?ref={{ site.buildTime | date('X') }}"></script>
+  <script src="/js/main.js?ref={{ site.buildTime | date('X') }}" type="module"></script>
 </body>
 </html>
