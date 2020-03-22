@@ -23,6 +23,9 @@
   <!-- Apple icon (minimal) -->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+  <!-- defer scripts -->
+  <script src="/js/main.js?ref={{ site.buildTime | date('X') }}" type="module" defer></script>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55680384-1"></script>
   <script>
@@ -41,6 +44,5 @@
   {% block content %}{% endblock %}
 
   {% include "partials/sitefooter.njk" %}
-  <script src="/js/main.js?ref={{ site.buildTime | date('X') }}" type="module"></script>
 </body>
 </html>
