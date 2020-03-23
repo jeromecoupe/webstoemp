@@ -7,6 +7,13 @@
   <title>{{ metaTitle }} - Webstoemp</title>
   <meta name="description" content="{{ metaDescription }}">
 
+  <!-- Preload -->
+  <link rel="preload" as="font" crossorigin type="font/woff" href="/fonts/spectral-600.woff">
+  <link rel="preload" as="font" crossorigin type="font/woff2" href="/fonts/spectral-600.woff2">
+  <link rel="modulepreload" href="/js/modules/navigation.js">
+  <link rel="modulepreload" href="/js/main.js">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="/css/main.min.css?ref={{ site.buildTime | date('X') }}">
 
   <!-- Feed -->
