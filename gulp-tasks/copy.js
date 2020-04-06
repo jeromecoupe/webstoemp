@@ -7,17 +7,12 @@ const path = require("path");
 const assetsDirs = [
   {
     src: "./src/assets/img/",
-    dist: "./dist/img/"
+    dist: "./dist/img/",
   },
   {
     src: "./src/assets/fonts/",
-    dist: "./dist/fonts/"
+    dist: "./dist/fonts/",
   },
-  {
-    src: "./src/assets/js/",
-    dist: "./dist/js/",
-    force: true
-  }
 ];
 
 // make sure paths do not end with slash
@@ -31,7 +26,7 @@ function sanitizePath(filepath) {
 
 // copy assets
 function copyAssets(done) {
-  assetsDirs.forEach(dir => {
+  assetsDirs.forEach((dir) => {
     // src and dist
     let sourceDir = sanitizePath(dir.src);
     let distDir = sanitizePath(dir.dist);
@@ -40,7 +35,7 @@ function copyAssets(done) {
     let files = glob.sync(`${sourceDir}/**/*`, { nodir: true });
 
     // copy each file to dist dir
-    files.forEach(function(file) {
+    files.forEach(function (file) {
       let srcFile = file;
       let distFile = srcFile.replace(sourceDir, distDir);
       let distDirname = path.dirname(distFile);
@@ -50,7 +45,7 @@ function copyAssets(done) {
       }
 
       if (!fs.existsSync(distFile) || dir.force === true) {
-        fs.copyFile(srcFile, distFile, err => {
+        fs.copyFile(srcFile, distFile, (err) => {
           if (err) throw err;
         });
       }
@@ -61,5 +56,5 @@ function copyAssets(done) {
 
 // exports
 module.exports = {
-  assets: copyAssets
+  assets: copyAssets,
 };
