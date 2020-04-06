@@ -8,13 +8,10 @@
   <meta name="description" content="{{ metaDescription }}">
 
   <!-- Preload -->
-  <link rel="preload" as="font" crossorigin type="font/woff" href="/fonts/spectral-600.woff">
   <link rel="preload" as="font" crossorigin type="font/woff2" href="/fonts/spectral-600.woff2">
-  <link rel="modulepreload" href="/js/modules/navigation.js">
-  <link rel="modulepreload" href="/js/main.js">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/main.min.css?ref={{ site.buildTime | date('X') }}">
+  <link rel="stylesheet" href="/css/main.min.css">
 
   <!-- Feed -->
   <link rel="alternate" href="/feed.xml" title="Webstoemp blog feed, by Jérôme Coupé" type="application/atom+xml">
@@ -31,7 +28,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- defer scripts -->
-  <script src="/js/main.js?ref={{ site.buildTime | date('X') }}" type="module" defer></script>
+  <script src="/js/main.bundle.js" defer></script>
 
 </head>
 <body>

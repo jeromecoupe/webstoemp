@@ -9,8 +9,7 @@
 
 @font-face {
   font-family: "Spectral";
-  src: url("../fonts/spectral-600.woff2") format("woff2"),
-    url("../fonts/spectral-600.woff") format("woff");
+  src: url("../fonts/spectral-600.woff2") format("woff2");
   font-weight: 600;
-  font-display: fallback;
+  font-display: swap;
 }
