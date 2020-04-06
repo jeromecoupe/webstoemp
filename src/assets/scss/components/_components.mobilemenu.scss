@@ -78,14 +78,32 @@
 .c-mobilemenu {
   transform: translate3d(-100%, 0, 0);
   transition: transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-}
 
-.js-menu-is-active {
-  @include mq(under-medium) {
-    overflow-y: hidden;
-  }
-
-  .c-mobilemenu {
+  .js-menu-is-active & {
     transform: translate3d(0, 0, 0);
   }
+}
+
+// -------------------------------------
+// Animations
+// -------------------------------------
+
+.c-mobilenav__item {
+  transform: translate3d(0, -12px, 0);
+  opacity: 0;
+
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+@for $i from 1 through 4 {
+  .js-menu-is-active .c-mobilenav__item:nth-child(#{$i}) {
+    transition-delay: 0.25s + (0.05s * $i);
+  }
+}
+
+.js-menu-is-active .c-mobilenav__item {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
 }
