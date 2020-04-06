@@ -224,7 +224,7 @@ I then pipe in [Autoprefixer](https://github.com/postcss/autoprefixer). That too
 
 The first line encodes my SVG as base64. This will save some http requests. Make sure you have a .png fallback using Modernizr. I generally use this only for icons. Depending on the project, I might change this and have Gulp do the Base 64 encoding only on one or two of my sass files for more granularity.
 
-I am considering moving to an inline SVG workflow using `<symbol>` in an external file to create SVG spritemaps for my next project. Chris Coyier has a [couple](http://css-tricks.com/svg-sprites-use-better-icon-fonts/) of [nice articles](css-tricks.com/svg-symbol-good-choice-icons/) detailing the process and [SVG for Everybody](https://github.com/jonathantneal/svg4everybody) is a polyfill by Jonathan Neal you can use to make it work across the board.
+I am considering moving to an inline SVG workflow using `<symbol>` in an external file to create SVG spritemaps for my next project. Chris Coyier has a [couple](https://css-tricks.com/svg-sprites-use-better-icon-fonts/) of [nice articles](https://css-tricks.com/svg-symbol-good-choice-icons/) detailing the process and [SVG for Everybody](https://github.com/jonathantneal/svg4everybody) is a polyfill by Jonathan Neal you can use to make it work across the board.
 
 If that's what you want to do, [there is a gulp plugin for that](https://www.npmjs.org/package/gulp-svg-sprites).
 
