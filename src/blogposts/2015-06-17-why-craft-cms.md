@@ -9,7 +9,7 @@ tags:
 - Freelancing
 ---
 
-When a project calls for a database-driven CMS, I usually turn to [Craft](buildwithcraft.com) these days. In Belgium, Craft is not a well known CMS (yet) and I find myself having to explain why I recommend it as a solution instead of other (more popular) products.
+When a project calls for a database-driven CMS, I usually turn to [Craft](https://craftcms.com) these days. In Belgium, Craft is not a well known CMS (yet) and I find myself having to explain why I recommend it as a solution instead of other (more popular) products.
 
 If you are a Craft developer, I am genuinely interested in what your sales pitch for Craft is. Here is the one I currently use.
 
