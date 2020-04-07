@@ -12,8 +12,8 @@ const transforms = [
     options: {
       width: 1024,
       height: 576,
-      fit: "cover"
-    }
+      fit: "cover",
+    },
   },
   {
     src: "./src/assets/img/blogposts/*",
@@ -21,8 +21,8 @@ const transforms = [
     options: {
       width: 600,
       height: 600,
-      fit: "cover"
-    }
+      fit: "cover",
+    },
   },
   {
     src: "./src/assets/img/projects/*",
@@ -30,17 +30,17 @@ const transforms = [
     options: {
       width: 800,
       height: 600,
-      fit: "cover"
-    }
-  }
+      fit: "cover",
+    },
+  },
 ];
 
 // resize images
 function resizeImages(done) {
-  transforms.forEach(function(transform) {
+  transforms.forEach(function (transform) {
     // if folder does not exist create it with all above folders
     if (!fs.existsSync(transform.dist)) {
-      fs.mkdirSync(transform.dist, { recursive: true }, err => {
+      fs.mkdirSync(transform.dist, { recursive: true }, (err) => {
         if (err) throw err;
       });
     }
@@ -49,12 +49,12 @@ function resizeImages(done) {
     let files = glob.sync(transform.src);
 
     // for each file, apply transforms and save to file
-    files.forEach(function(file) {
+    files.forEach(function (file) {
       let filename = path.basename(file);
       sharp(file)
         .resize(transform.options)
         .toFile(`${transform.dist}/${filename}`)
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     });
@@ -64,5 +64,5 @@ function resizeImages(done) {
 
 // exports (Common JS)
 module.exports = {
-  resize: resizeImages
+  resize: resizeImages,
 };

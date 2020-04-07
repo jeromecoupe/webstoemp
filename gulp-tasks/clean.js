@@ -8,5 +8,5 @@ function cleanDist() {
 
 // exports
 module.exports = {
-  dist: cleanDist
+  dist: cleanDist,
 };

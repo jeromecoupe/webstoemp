@@ -18,5 +18,5 @@ function stylesBuild() {
 
 // exports
 module.exports = {
-  build: stylesBuild
+  build: stylesBuild,
 };
