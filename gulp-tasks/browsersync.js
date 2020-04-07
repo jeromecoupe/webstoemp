@@ -9,15 +9,15 @@ function init(done) {
       "./dist/css/*.css",
       "./dist/js/*.js",
       "./dist/*.{html, xml}",
-      "./dist/**/*.{html, xml}"
+      "./dist/**/*.{html, xml}",
     ],
     port: 3000,
-    open: false
+    open: false,
   });
   done();
 }
 
 // exports
 module.exports = {
-  init: init
+  init: init,
 };
