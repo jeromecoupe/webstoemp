@@ -6,7 +6,7 @@
 
   <div class="l-container">
 
-    <div class="c-sitefooter__main">
+    <div class="c-sitefooter__main" aria-label="footer navigation">
       <nav class="c-sitefooter__nav">
         {% for item in nav %}
           {% if loop.first %}<ul class="c-footernav" id="footernav">{% endif %}
@@ -15,7 +15,7 @@
         {% endfor %}
       </nav>
 
-      <nav class="c-sitefooter__social">
+      <nav class="c-sitefooter__social" aria-label="social media">
         <ul class="c-socialmedia">
           <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="https://dribbble.com/jeromecoupe">{% include "svg/icon-dribbble.svg" %}</a></li>
           <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="https://github.com/jeromecoupe/">{% include "svg/icon-github.svg" %}</a></li>

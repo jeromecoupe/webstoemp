@@ -1,7 +1,7 @@
 <header class="c-siteheader">
   <div class="l-container  c-siteheader__inner">
     <p class="c-siteheader__logo"><a aria-label="Go to homepage" href="/">{% include "svg/logo.svg" %}</a></p>
-    <nav class="c-siteheader__nav">
+    <nav class="c-siteheader__nav" aria-label="header navigation">
       {% for item in nav %}
         {% if loop.first %}<ul class="c-mainnav">{% endif %}
           <li class="c-mainnav__item"><a class="c-mainnav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>

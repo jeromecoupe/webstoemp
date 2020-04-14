@@ -11,6 +11,7 @@ permalink: work/index.html
 {% set metaImage = site.url ~ "/img/me-600.jpg" %}
 
 {% block content %}
+<main>
 
   <div class="c-pageintro">
     <div class="l-container">
@@ -26,7 +27,7 @@ permalink: work/index.html
 
   <div class="c-banner  c-banner--work"></div>
 
-  <main class="c-pagecontent">
+  <div class="c-pagecontent">
     <div class="l-container">
 
       {% for project in collections.projects | reverse %}
@@ -65,6 +66,7 @@ permalink: work/index.html
       {% endfor %}
 
     </div>
-  </main>
+  </div>
 
+</main>
 {% endblock %}
