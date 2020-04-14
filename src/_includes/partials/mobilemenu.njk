@@ -1,8 +1,10 @@
 <div class="c-mobilemenu">
-  <p class="c-mobilemenu__close"><a class="js-navtrigger" href="#">{% include "svg/icon-close.svg" %}</a></p>
-  {% for item in nav %}
-    {% if loop.first %}<ul class="c-mobilenav">{% endif %}
-      <li class="c-mobilenav__item"><a class="c-mobilenav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
-    {% if loop.last %}</ul>{% endif %}
-  {% endfor %}
+  <nav aria-label="mobile navigation">
+    <p class="c-mobilemenu__close"><a class="js-navtrigger" href="#">{% include "svg/icon-close.svg" %}</a></p>
+    {% for item in nav %}
+      {% if loop.first %}<ul class="c-mobilenav">{% endif %}
+        <li class="c-mobilenav__item"><a class="c-mobilenav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+      {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+  </nav>
 </div>
