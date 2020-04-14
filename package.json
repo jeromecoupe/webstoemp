@@ -16,7 +16,7 @@
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "acorn": "^7.1.1",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
