@@ -18,7 +18,7 @@ module.exports = {
       {
         test: /\.js?$/,
         include: [path.resolve(__dirname, "./src/assets/js")],
-        use: "babel-loader",
+        loader: "babel-loader",
       },
     ],
   },
