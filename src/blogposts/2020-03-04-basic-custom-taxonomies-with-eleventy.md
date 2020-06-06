@@ -11,13 +11,13 @@ tags:
 
 ## Native approach using tags
 
-Eleventy comes with [a native tag system](https://www.11ty.dev/docs/collections/) allowing you to group content items into collections automatically by specifying a `tags` key in their front matters. For example, a post about milkshakes tagged as "foods" and "drinks" will appear in both `collections.foods` and `collections.drinks`.
+The [tag system](https://www.11ty.dev/docs/collections/) Eleventy comes with allows you to group content items into collections automatically by specifying a `tags` key in those content items' front matters. For example, a post about milkshakes tagged as "foods" and "drinks" will appear in both `collections.foods` and `collections.drinks`.
 
 You can then use pagination with a `size` of `1` to [automatically generate tag pages](https://www.11ty.dev/docs/quicktips/tag-pages/) that will list all content items belonging to that tag's collection. Paginating the posts listed on those tag pages is another story, but we'll get to that.
 
 ## Using custom categories
 
-I generally don't use tags to create my collections. I prefer to folders and the `getFilteredByGlob( glob )` API method to do so, but I often need basic custom taxonomies to categorise my content.
+I generally don't use tags to create my collections. I prefer to use folders and the `getFilteredByGlob( glob )` API method to do so, but I often need basic custom taxonomies to categorise my content.
 
 Eleventy being the flexible tool that it is, creating basic custom taxonomies is relatively straightforward.
 
@@ -46,9 +46,9 @@ categories:
 The easiest route here is to use the collections API in `.eleventy.js`. As a first step, we'll create a collection of all our blogposts.
 
 ```js
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // blogposts collection
-  eleventyConfig.addCollection("blogposts", function(collection) {
+  eleventyConfig.addCollection("blogposts", function (collection) {
     return collection.getFilteredByGlob("./src/blogposts/*.md").reverse();
   });
 };
@@ -76,7 +76,7 @@ const slugify = require("slugify");
  */
 function getAllKeyValues(collectionArray, key) {
   // get all values from collection
-  let allValues = collectionArray.map(item => {
+  let allValues = collectionArray.map((item) => {
     let values = item.data[key] ? item.data[key] : [];
     return values;
   });
@@ -84,11 +84,11 @@ function getAllKeyValues(collectionArray, key) {
   // flatten values array
   allValues = lodash.flattenDeep(allValues);
   // to lowercase
-  allValues = allValues.map(item => item.toLowerCase());
+  allValues = allValues.map((item) => item.toLowerCase());
   // remove duplicates
   allValues = [...new Set(allValues)];
   // order alphabetically
-  allValues = allValues.sort(function(a, b) {
+  allValues = allValues.sort(function (a, b) {
     return a.localeCompare(b, "en", { sensitivity: "base" });
   });
   // return
@@ -105,28 +105,28 @@ function strToSlug(str) {
   const options = {
     replacement: "-",
     remove: /[&,+()$~%.'":*?<>{}]/g,
-    lower: true
+    lower: true,
   };
 
   return slugify(str, options);
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // create blog collection
-  eleventyConfig.addCollection("blogposts", function(collection) {
+  eleventyConfig.addCollection("blogposts", function (collection) {
     return collection.getFilteredByGlob("./src/blogposts/*.md").reverse();
   });
 
   // create blog categories collection
-  eleventyConfig.addCollection("blogCategories", function(collection) {
+  eleventyConfig.addCollection("blogCategories", function (collection) {
     let allCategories = getAllKeyValues(
       collection.getFilteredByGlob("./src/blogposts/*.md"),
       "categories"
     );
 
-    let blogCategories = allCategories.map(category => ({
+    let blogCategories = allCategories.map((category) => ({
       title: category,
-      slug: strToSlug(category)
+      slug: strToSlug(category),
     }));
 
     return blogCategories;
@@ -140,8 +140,8 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "./src",
-      output: "./dist"
-    }
+      output: "./dist",
+    },
   };
 };
 ```
@@ -164,9 +164,9 @@ const lodash = require("lodash");
  * @return {Array} - new array
  */
 
-module.exports = function(arr, path, value) {
+module.exports = function (arr, path, value) {
   value = lodash.deburr(value).toLowerCase();
-  return arr.filter(item => {
+  return arr.filter((item) => {
     let pathValue = lodash.get(item, path);
     pathValue = lodash.deburr(pathValue).toLowerCase();
     return pathValue.includes(value);
@@ -177,7 +177,7 @@ module.exports = function(arr, path, value) {
 And here is a bare-bones template using pagination with a `size` of `1` and that `includes` filter to create our categories pages.
 
 ```twig
-{% raw %}
+{%- raw -%}
 ---
 pagination:
   data: collections.blogCategories
@@ -204,14 +204,17 @@ permalink: /blog/category/{{ category.slug }}/index.html
 
   <h3>Categories</h3>
   {% for category in collections.blogCategories %}
-    {% if loop.first %}
-      <p><a href="/blog/">All</a></p>
-    {% endif %}
-    <p><a href="/blog/category/{{ category.slug }}">{{ category.title }}</a></p>
+    {% if loop.first %}<ul><li><a href="/blog/">All</a></li>{% endif %}
+
+    <li>
+      <a href="/blog/category/{{ category.slug }}">{{ category.title }}</a>
+    </li>
+
+    {% if loop.last %}</ul>{% endif %}
   {% endfor %}
 
 {% endblock %}
-{% endraw %}
+{%- endraw -%}
 ```
 
 As a first step, we replicated the native tag-based functionality using our own custom category system.
@@ -220,7 +223,7 @@ Since we already used pagination to create our categories pages, we cannot use i
 
 ## Two levels of pagination
 
-In order to use Zach's solution, we need to massage our data into a collection where each item is a page of the paginated results we want for each theme. We can then use pagination with a `size` of `1` to create theme pages with paginated posts.
+In order to use Zach's solution, we need to massage our data into a collection where each item is a page of the paginated results we want for each theme. We can then use pagination with a `size` of `1` to create category pages with paginated posts.
 
 If we have three blogposts in the "travel" category and one in the "awesomeness" category and we want two posts per page, we will need data in the following format:
 
@@ -276,7 +279,7 @@ Using some array manipulation, we can create such a collection in our `.eleventy
 ```js
 // create flattened paginated blogposts per categories collection
 // based on Zach Leatherman's solution - https://github.com/11ty/eleventy/issues/332
-eleventyConfig.addCollection("blogpostsByCategories", function(collection) {
+eleventyConfig.addCollection("blogpostsByCategories", function (collection) {
   const itemsPerPage = 2;
   let blogpostsByCategories = [];
   let allBlogposts = collection
@@ -285,12 +288,12 @@ eleventyConfig.addCollection("blogpostsByCategories", function(collection) {
   let blogpostsCategories = getAllKeyValues(allBlogposts, "categories");
 
   // walk over each unique category
-  blogpostsCategories.forEach(category => {
+  blogpostsCategories.forEach((category) => {
     let sanitizedCategory = lodash.deburr(category).toLowerCase();
     // create array of posts in that category
-    let postsInCategory = allBlogposts.filter(post => {
+    let postsInCategory = allBlogposts.filter((post) => {
       let postCategories = post.data.categories ? post.data.categories : [];
-      let sanitizedPostCategories = postCategories.map(item =>
+      let sanitizedPostCategories = postCategories.map((item) =>
         lodash.deburr(item).toLowerCase()
       );
       return sanitizedPostCategories.includes(sanitizedCategory);
@@ -319,9 +322,9 @@ eleventyConfig.addCollection("blogpostsByCategories", function(collection) {
           next: pagesSlugs[index + 1] || null,
           previous: pagesSlugs[index - 1] || null,
           first: pagesSlugs[0] || null,
-          last: pagesSlugs[pagesSlugs.length - 1] || null
+          last: pagesSlugs[pagesSlugs.length - 1] || null,
         },
-        items: posts
+        items: posts,
       });
     });
   });
@@ -333,7 +336,7 @@ eleventyConfig.addCollection("blogpostsByCategories", function(collection) {
 Now, by using the following template with a pagination `size` of `1`, we will get paginated blogposts for our categories pages.
 
 ```twig
-{% raw %}
+{%- raw -%}
 ---
 pagination:
   data: collections.blogpostsByCategories
@@ -373,7 +376,7 @@ permalink: /blog/category/{{ category.slug }}/index.html
   {% endfor %}
 
 {% endblock %}
-{% endraw %}
+{%- endraw -%}
 ```
 
 ## My two cents on pagination

@@ -4,9 +4,9 @@ excerpt: "Jekyll is still a static site generator I like, use and follow. Nevert
 image: "eleventy-logo.jpg"
 imageAlt: "Eleventy logo"
 tags:
-- Static site generators
-- Eleventy
-- Jekyll
+  - Static site generators
+  - Eleventy
+  - Jekyll
 ---
 
 ## Choosing a static site generator
@@ -37,12 +37,12 @@ Nunjucks lacks date and limit filters so I just went ahead and added them in `el
 const moment = require("moment");
 
 // limit filter
-eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
+eleventyConfig.addNunjucksFilter("limit", function (array, limit) {
   return array.slice(0, limit);
 });
 
 // date filter
-eleventyConfig.addNunjucksFilter("date", function(date, format) {
+eleventyConfig.addNunjucksFilter("date", function (date, format) {
   return moment(date).format(format);
 });
 ```
@@ -90,29 +90,29 @@ Projects do not need their own detail pages, so I use a `projects.json` file in 
 }
 ```
 
-To create both collections and allow Eleventy to process them, I simply used the `getFilteredByGlob( glob )` method.
+To create both collections and allow Eleventy to process them, I used the `getFilteredByGlob( glob )` method.
 
 ```js
 const moment = require("moment");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // blogpost collection
-  eleventyConfig.addCollection("blogposts", function(collection) {
+  eleventyConfig.addCollection("blogposts", function (collection) {
     return collection.getFilteredByGlob("./src/blogposts/*.md");
   });
 
   // projects collection
-  eleventyConfig.addCollection("projects", function(collection) {
+  eleventyConfig.addCollection("projects", function (collection) {
     return collection.getFilteredByGlob("./src/projects/*.md");
   });
 
   // limit filter
-  eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
+  eleventyConfig.addNunjucksFilter("limit", function (array, limit) {
     return array.slice(0, limit);
   });
 
   // date filter
-  eleventyConfig.addNunjucksFilter("date", function(date, format) {
+  eleventyConfig.addNunjucksFilter("date", function (date, format) {
     return moment(date).format(format);
   });
 
@@ -120,27 +120,28 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "dist"
-    }
+      output: "dist",
+    },
   };
 };
 ```
 
 ### Data files
 
-Eleventy lets you easily work with JSON or JS data files located in a  `./src/_data` folder by default.
+Eleventy lets you easily work with JSON or JS data files located in a `./src/_data` folder by default.
 
 For example, I use a `./src/_data/site.js` file to define site-wide variables that I can access easily access in any template by using the name of the file and one of the object keys.
 
 ```js
 module.exports = {
   title: "Webstoemp",
-  description: "Webstoemp is the portfolio and blog of Jérôme Coupé, a designer and front-end developer from Brussels, Belgium.",
+  description:
+    "Webstoemp is the portfolio and blog of Jérôme Coupé, a designer and front-end developer from Brussels, Belgium.",
   url: "https://www.webstoemp.com",
   baseUrl: "/",
   author: "Jerôme Coupé",
   authorTwitter: "@jeromecoupe",
-  buildTime: new Date()
+  buildTime: new Date(),
 };
 ```
 
@@ -179,7 +180,7 @@ Looping through the blogposts collection to display titles and publication dates
 {% endraw %}
 ```
 
-As you have seen above, I use a dedicated template to display the detail of each blogpost. `_includes/layouts/blogpost.nkj` simply calls my main layout and adds the blogpost image and the content of the markdown file to the `content` block.
+As you have seen above, I use a dedicated template to display the detail of each blogpost. `_includes/layouts/blogpost.nkj` calls my main layout and adds the blogpost image and the content of the markdown file to the `content` block.
 
 ```twig
 {%- raw %}

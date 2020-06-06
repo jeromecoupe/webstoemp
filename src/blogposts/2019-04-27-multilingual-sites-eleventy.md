@@ -52,7 +52,7 @@ Here is the folder architecture we will be working with. It is quite a standard 
 
 The first step is to create our locales using [directory data files](https://www.11ty.dev/docs/data-template-dir/).
 
-We simply add `en.json` and `fr.json` in the root of our language directories. In each of them, we specify a `locale` key. That will make the corresponding values accessible in all template files living in those languages directories and subdirectories.
+In order to do that, we add `en.json` and `fr.json` in the root of our language directories. In each of them, we specify a `locale` key. That will make the corresponding values accessible in all template files living in those languages directories and subdirectories.
 
 Here what our `fr.json` file would contain:
 
@@ -62,7 +62,7 @@ Here what our `fr.json` file would contain:
 }
 ```
 
-`{%- raw  %}{{ locale }}{% endraw %}` will now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
+`{%- raw %}{{ locale }}{% endraw %}` will now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
 
 ## Localised date filter
 
@@ -70,18 +70,18 @@ Nunjucks does not have a date filter. We can create one using `moment.js` and pa
 
 ```js
 // date filter (localized)
-eleventyConfig.addNunjucksFilter("date", function(date, format, locale) {
+eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
   locale = locale ? locale : "en";
   moment.locale(locale);
   return moment(date).format(format);
 });
 ```
 
-Now, we can just call that filter in our templates and pass it a `locale` parameter. Note that, since we set the locale to "en" by default, we can use our filter without a `locale` parameter for our purely numeric dates. Here is a small example.
+Now, we can call that filter in our templates and pass it a `locale` parameter. Note that, since we set the locale to "en" by default, we can use our filter without a `locale` parameter for our purely numeric dates. Here is a small example.
 
 ```twig
 {%- raw  %}
-<p><time datetime="{{ post.date | date('Y-MM-DD') }}">{{ post.item|date("DD MMMM Y", locale) }}</time></p>
+<p><time datetime="{{ post.date | date('YYYY-MM-DD') }}">{{ post.item|date("DD MMMM YYYY", locale) }}</time></p>
 {% endraw %}
 ```
 
@@ -92,14 +92,14 @@ Now that our dates are automatically localized, let's move to collections.
 We can also use our directory structure to create collections in Eleventy. The simplest way to go about it is to create collections per language. We can accomplish that using the [`getFilteredByGlob`](<https://www.11ty.dev/docs/collections/#getfilteredbyglob(-glob-)>) method in our `.eleventy.js` file.
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addCollection("posts_en", function(collection) {
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addCollection("posts_en", function (collection) {
     return collection.getFilteredByGlob("./src/en/posts/*.md");
   });
 };
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addCollection("posts_fr", function(collection) {
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addCollection("posts_fr", function (collection) {
     return collection.getFilteredByGlob("./src/fr/posts/*.md");
   });
 };
@@ -168,12 +168,12 @@ module.exports = {
   twitter: "@handle",
   en: {
     metaTitle: "Title in english",
-    metaDescription: "Description in english"
+    metaDescription: "Description in english",
   },
   fr: {
     metaTitle: "Titre en français",
-    metaDescription: "Description en français"
-  }
+    metaDescription: "Description en français",
+  },
 };
 ```
 
@@ -231,7 +231,7 @@ Since our page template extends `./src/_includes/layouts/base.njk`, Nunjucks var
 </body>
 </html>
 {% endraw %}
-````
+```
 
 ### Partials
 
@@ -248,7 +248,7 @@ module.exports = {
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Bruxelles",
-    directionsLabel: "Itinéraire"
+    directionsLabel: "Itinéraire",
   },
   en: {
     addressTitle: "Address",
@@ -256,8 +256,8 @@ module.exports = {
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Brussels",
-    directionsLabel: "Directions"
-  }
+    directionsLabel: "Directions",
+  },
 };
 ```
 
