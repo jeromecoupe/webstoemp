@@ -6,6 +6,8 @@ const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 
+sass.compiler = require("node-sass");
+
 // CSS task
 function stylesBuild() {
   return gulp
