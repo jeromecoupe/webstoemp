@@ -1,6 +1,6 @@
 ---
 title: "Consuming a headless CMS GraphQL API with Eleventy"
-excerpt: "With Eleventy, consuming data coming from a GraphQL API to generate static pages is as easy as using Markdown files."
+excerpt: "With Eleventy, consuming data coming from a GraphQL API to generate static pages is as straightforward as using Markdown files."
 image: "eleventy-graphql.jpg"
 imageAlt: "Eleventy and GraphQL sitting in a tree"
 tags:
@@ -12,7 +12,7 @@ tags:
 
 ## The many flavours of headless CMSes
 
-If you want to add [a headless CMS](https://headlesscms.org/) to a JAMstack website, you have the choice between two approaches: Git-backed or API driven.
+If you want to add [a headless CMS](https://headlesscms.org/) to a JAMstack website, you have the choice between two main approaches: Git-backed or API driven.
 
 Both will present content creators with a familiar graphical interface, but what happens behind the scene when content is created, modified or deleted is quite different.
 
@@ -125,7 +125,7 @@ async function getAllBlogposts() {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           query: `{
@@ -152,8 +152,8 @@ async function getAllBlogposts() {
                 id
               }
             }
-          }`
-        })
+          }`,
+        }),
       });
 
       // store the JSON response when promise resolves
@@ -174,8 +174,7 @@ async function getAllBlogposts() {
       // prepare for next query
       recordsToSkip += recordsPerQuery;
 
-      // check if we are geting back less than the records we fetch per query
-      // if yes, stop querying
+      // stop querying if we are getting back less than the records we fetch per query
       if (response.data.allBlogposts.length < recordsPerQuery) {
         makeNewQuery = false;
       }
@@ -195,7 +194,7 @@ async function getAllBlogposts() {
       imageAlt: item.image.alt,
       summary: item.intro,
       body: item.body,
-      relatedBlogs: item.relatedBlogs
+      relatedBlogs: item.relatedBlogs,
     };
   });
 
