@@ -4,8 +4,8 @@ excerpt: "This summer, I found myself planning a holiday to a little known part 
 image: "dagestan.jpg"
 imageAlt: "Green mountains in Dagestan - Photo by Jérôme Coupé"
 tags:
-- Life
-- Travel
+  - Life
+  - Travel
 ---
 
 ## How it all started
@@ -52,6 +52,6 @@ Being in contact with such raw nature felt great. I promised myself that, next t
 
 ## See you soon
 
-The kindness of the people, the beauty of landscapes, the diversity of the food and cultures all contributed to 16 unforgettable days. I have only been back for a month and a part of me already thinks about going back.
+The kindness of the people, the beauty of landscapes, the diversity of the food and cultures all contributed to 16 unforgettable days. I have only been back in Brussels for a month and a part of me already thinks about going back.
 
 See you soon, Dagestan!

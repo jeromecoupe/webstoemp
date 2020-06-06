@@ -1,14 +1,14 @@
 ---
 title: "Blazing fast image transforms with Sharp and Gulp"
-excerpt: "In this responsive age, generating images thumbnails is a common build step for many applications and websites. It is also quite a resources intensive and time consuming one. By combining Sharp with Gulp, we can easily build a very fast thumbnails-generation task."
+excerpt: "In this responsive age, generating images thumbnails is a common build step for many applications and websites. It is also quite a resources intensive and time consuming one. By combining Sharp with Gulp, we can build a very fast thumbnails-generation task."
 image: "speed.jpg"
 imageAlt: "Speed - Photo by Marc Sendra Martorell"
 tags:
-- Sharp
-- Images
-- Resize
-- Thumbnails
-- Jamstack
+  - Sharp
+  - Images
+  - Resize
+  - Thumbnails
+  - Jamstack
 ---
 
 ## Requirements
@@ -81,8 +81,8 @@ const transforms = [
     options: {
       width: 1024,
       height: 576,
-      fit: "cover"
-    }
+      fit: "cover",
+    },
   },
   {
     src: "./src/assets/img/blogposts/*",
@@ -90,8 +90,8 @@ const transforms = [
     options: {
       width: 600,
       height: 600,
-      fit: "cover"
-    }
+      fit: "cover",
+    },
   },
   {
     src: "./src/assets/img/projects/*",
@@ -99,9 +99,9 @@ const transforms = [
     options: {
       width: 800,
       height: 600,
-      fit: "cover"
-    }
-  }
+      fit: "cover",
+    },
+  },
 ];
 ```
 
@@ -109,13 +109,13 @@ Using such an object makes it easy to add new image directories and transforms s
 
 ### Images resize task
 
-We then just need a Gulp task to get the images we need to resize from our `src` directories, apply the specified image manipulations using `sharp` and save them in the `dist` directories specified in our object.
+We then need a Gulp task to get the images we need to resize from our `src` directories, apply the specified image manipulations using `sharp` and save them in the `dist` directories specified in our object.
 
 ```js
 // resize images
 function resizeImages(done) {
   // loop through configuration array of objects
-  transforms.forEach(function(transform) {
+  transforms.forEach(function (transform) {
     // if dist folder does not exist, create it with all parent folders
     if (!fs.existsSync(transform.dist)) {
       fs.mkdirSync(transform.dist, { recursive: true }, (err) => {
@@ -127,12 +127,12 @@ function resizeImages(done) {
     let files = glob.sync(transform.src);
 
     // for each file, apply transforms and save to file
-    files.forEach(function(file) {
+    files.forEach(function (file) {
       let filename = path.basename(file);
       sharp(file)
         .resize(transform.options)
         .toFile(`${transform.dist}/${filename}`)
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     });
@@ -142,13 +142,13 @@ function resizeImages(done) {
 
 // exports (Common JS)
 module.exports = {
-  resize: resizeImages
+  resize: resizeImages,
 };
 ```
 
 ### Main Gulp file
 
-Our main `gulpfile.js` will then use that task in watchers and expose it to Gulp CLI, as part of a more complex task or not.
+Our main `gulpfile.js` will use that task in watchers and expose it to Gulp CLI, as part of a more complex task or not.
 
 ```js
 // Packages
@@ -177,4 +177,4 @@ exports.build = build;
 
 For any project I have worked on lately, Sharp has proven to be the fastest and most flexible option available. If you like numbers, check out the [performance benchmarks available on their website](https://sharp.pixelplumbing.com/en/stable/performance/).
 
-Just to give you an idea, all image thumbnails for this website get generated in 38 milliseconds only. Depending on your requirements and the scale of your project, that `resizeImages` task could easily be made incremental, which would make it even faster.
+Just to give you an idea, all images and thumbnails for this website get generated in 38 milliseconds only. Depending on your requirements and the scale of your project, that `resizeImages` task could easily be made incremental, which would make it even faster.

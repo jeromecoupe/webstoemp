@@ -1,6 +1,6 @@
 ---
 title: "Language switcher for multilingual JAMstack sites"
-excerpt: "Following my blogpost on multilingual websites with Eleventy, I had several questions about how to build a language switcher. Here is the simple approach I generally use."
+excerpt: "Following my blogpost on multilingual websites with Eleventy, I had several questions about how to build a language switcher. Here is the approach I generally use."
 image: "languages-choices.jpg"
 imageAlt: "Roadsign with various choices - By Javier Allegue Barros"
 tags:
@@ -38,13 +38,13 @@ module.exports = {
   languages: [
     {
       label: "english",
-      code: "en"
+      code: "en",
     },
     {
       label: "français",
-      code: "fr"
-    }
-  ]
+      code: "fr",
+    },
+  ],
 };
 ```
 
@@ -96,18 +96,18 @@ translationKey: "awesome-blogpost"
 
 We now have an explicit relation between the same content pieces in all languages.
 
-## Coding our simple language switcher
+## Coding our language switcher
 
 Here is an outline of what we are going to do with that short piece of code:
 
-1. Loop through all languages declared for the site.
+1. Loop through all languages declared for the site in `./src/_data/site.js`
 2. By default, set `translatedUrl` to the homepage of the language we are looping though. This will be overridden in step 4 if a match is found
-3. Inside that, loop through all the content pieces in the site. With Eleventy, we can use the handy [`collections.all`](https://www.11ty.dev/docs/collections/#the-special-all-collection) shortcut.
-4. For each content piece we loop through, check if its `translationKey` matches the current item's `translationKey` and if its `locale` matches the `code` of the language we are looping through. If we find a match, set `translatedUrl` to the url of that content item.
+3. Within our first loop, we will loop through all the content pieces in the site. With Eleventy, we can use the handy [`collections.all`](https://www.11ty.dev/docs/collections/#the-special-all-collection) shortcut.
+4. For each content piece we loop through, check if its `translationKey` matches the current item's `translationKey` and if its `locale` matches the `code` of the language we are looping through in our first loop. If we find a match, set `translatedUrl` to the url of that content item.
 5. Use the value of `translatedUrl` to create the links in our language switcher.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 {# loop though site.languages #}
 {% for lgg in site.languages %}
   {% if loop.first %}<ul class="c-lggnav">{% endif %}
@@ -128,7 +128,7 @@ Here is an outline of what we are going to do with that short piece of code:
       {% set translatedUrl = item.url %}
     {% endif %}
 
-  {% endfor%}
+  {% endfor %}
 
   <li class="c-lggnav__item">
     <a class="c-lggnav__link  {{ activeClass }}" href="{{ translatedUrl }}">{{ lgg.label }}</a>
@@ -136,7 +136,7 @@ Here is an outline of what we are going to do with that short piece of code:
 
   {% if loop.last %}</ul>{% endif %}
 {% endfor %}
-{% endraw %}
+{%- endraw -%}
 ```
 
 There we go, job done with a minimal amount of effort. Those loops will happen on every page of the site but, since Eleventy is already creating `collections.all` anyway and has very fast IO, the impact on build time should be pretty low, even with large sites.
