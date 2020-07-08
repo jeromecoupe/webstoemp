@@ -20,7 +20,7 @@ Retrieveing all records from an API that at build time is a pretty common use ca
 
 Here is a rough outline of how to deal with this use case in a performant manner:
 
-1. Make a first request to the API to retrieve a first batch of data as well as the total number of itens to retrieve
+1. Make a first request to the API to retrieve a first batch of data as well as the total number of items to retrieve
 2. Calculate the number of additional API requests we need to retrieve all data
 3. If we need to make more calls, store those additional requests as promises
 4. Use `Promise.all` to execute all addtional requests in parallel
@@ -139,6 +139,6 @@ module.exports = getAllPosts;
 
 Data from our API is now available in our templates under the `blogposts` key. We can create our list of blogposts and, [using `pagination` with a `size` of `1`](https://www.11ty.dev/docs/pages-from-data/), we can also create all our blogposts detail pages.
 
-By having requests running in parallel, we fetched our data in a performant manner. When comparing this approach to the more sequential one used in my previous blogpost with the same API, performance is eight to ten times faster.
+By having requests running in parallel, we fetch our data in a performant manner. When comparing this approach to the more sequential one used in my previous blogpost with the same API, performance is eight to ten times faster.
 
-Storing that data in a static cache allows us to not constantly hit the API during development. I usually delete that cache as part of my build process, so I'm certain that I get fresh data from the API or from the headless CMS every time the site is built. If you need your caching to be more versatile and configurable, check out the [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets) plugin by Zach himself.
+Storing that data in a static cache allows us to not constantly hit the API during development. I usually delete that cache as part of my build process. That way, I am sure that to get fresh data from the API or from the headless CMS every time the site is built. If you need your caching to be more versatile and configurable, check out the [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets) plugin by Zach himself.
