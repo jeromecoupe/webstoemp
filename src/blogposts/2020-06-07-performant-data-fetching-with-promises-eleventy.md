@@ -10,13 +10,15 @@ tags:
   - Promises
 ---
 
-## Do not use async / await in loops
+## Do not use await in loops
 
-One of my older post is about [fetching data from a GraphQL API](/blog/headless-cms-graphql-api-eleventy/). While the example code I give works, it does not retrieve data in a very performant way. Part of the problem is that I use async / await in a while loop. The direct consequence of this is that the API calls happen sequentially, as [brilliantly explained by Jason Lengstorf](https://www.learnwithjason.dev/blog/keep-async-await-from-blocking-execution/). Each call has to wait for the previous one to finish. Instead, they could be running in parallel.
+One of my older post is about [fetching data from a GraphQL API with Eleventy](/blog/headless-cms-graphql-api-eleventy/). While the example code I wrote works, it does not retrieve data in a very performant way.
 
-Since retrieveing all records from an API at build time is a pretty common use case with static site generators and headless CMSes, I wanted to illustrate a more performant way to do it.
+The problem is that I use await in a while loop (like a dummy). The direct consequence of this is that the API calls happen sequentially, as [brilliantly explained by Jason Lengstorf](https://www.learnwithjason.dev/blog/keep-async-await-from-blocking-execution/). Each call has to wait for the previous one to finish instead of running in parallel.
 
-Here is the plan:
+Retrieveing all records from an API that at build time is a pretty common use case with static site generators and headless CMSes. Generally, such APIs are limiting the number of records you can get in one single query and will make you use pagination.
+
+Here is a rough outline of how to deal with this use case in a performant manner:
 
 1. Make a first request to the API to retrieve a first batch of data as well as the total number of itens to retrieve
 2. Calculate the number of additional API requests we need to retrieve all data
@@ -25,11 +27,11 @@ Here is the plan:
 5. Sort our data if needed
 6. Store all data in a cache file
 
-## Using promise.all() and caching
+## Using promises and caching
 
 We will use [Axios](https://github.com/axios/axios) and pagination with a limit of 1 on the [JSON Placeholder API](https://jsonplaceholder.typicode.com/) in this example. That will allow us to make 99 API calls in parallel. We will also use the [flat-cache NPM package](https://www.npmjs.com/package/flat-cache) to store our data for speedier local development.
 
-Now, on with the code! In our Eleventy install, we create a `/blogposts.js` file in our `_data` folder and export API data so we can use it in our templates.
+Now, on with the code! In our Eleventy install, we create a `blogposts.js` file in our `_data` folder.
 
 ```js
 // required packages
@@ -135,8 +137,8 @@ async function getAllPosts() {
 module.exports = getAllPosts;
 ```
 
-Data from our API is now available in our templates by using the `blogposts` key. We can create our list of blogposts and, by using a pagination with a size of 1, we can also create all our blogposts detail pages.
+Data from our API is now available in our templates under the `blogposts` key. We can create our list of blogposts and, [using `pagination` with a `size` of `1`](https://www.11ty.dev/docs/pages-from-data/), we can also create all our blogposts detail pages.
 
-By using requests running in parallel, we fetched our data in a performant manner. When comparing this approach to the more sequential one used in my previous blogpost with the same API, performance is eight to ten times faster.
+By having requests running in parallel, we fetched our data in a performant manner. When comparing this approach to the more sequential one used in my previous blogpost with the same API, performance is eight to ten times faster.
 
-Storing that data in a static cache allows us to not constantly hit an API during development. I usually delete that cache as part of my build process, so I'm certain that I get fresh data from the API or from the headless CMS every time the site is built. If you need your caching to be more versatile and configurable, check out the [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets) plugin by Zach himself.
+Storing that data in a static cache allows us to not constantly hit the API during development. I usually delete that cache as part of my build process, so I'm certain that I get fresh data from the API or from the headless CMS every time the site is built. If you need your caching to be more versatile and configurable, check out the [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets) plugin by Zach himself.
