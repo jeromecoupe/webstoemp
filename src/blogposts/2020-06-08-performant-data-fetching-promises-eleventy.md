@@ -43,12 +43,12 @@ const flatCache = require("flat-cache");
 // Config
 const ITEMS_PER_REQUEST = 1;
 const BASE_API_URL = "https://jsonplaceholder.typicode.com";
-const CACHE_KEY = "posts";
+const CACHE_KEY = "blogposts";
 const CACHE_FOLDER = path.resolve("./.cache");
-const CACHE_FILE = "posts.json";
+const CACHE_FILE = "blogposts.json";
 
 /**
- * Request posts
+ * Request blogposts
  * @param {Int} skipRecords - number or records to skip
  * @return {Object} - Total number of items and API data
  */
@@ -57,13 +57,10 @@ async function requestPosts(skipRecords = 0) {
     const url = `${BASE_API_URL}/posts?_start=${skipRecords}&_limit=${ITEMS_PER_REQUEST}`;
     const response = await axios.get(url);
 
-    const data = response.data;
-    const total = response.headers["x-total-count"];
-
     // return the total number of items to fetch and the data
     return {
-      total: parseInt(total, 10),
-      data: data,
+      total: parseInt(response.headers["x-total-count"], 10),
+      data: response.data,
     };
   } catch (err) {
     console.error(chalk.red("API not responding, no data returned"));
@@ -87,19 +84,19 @@ async function getAllPosts() {
 
   // if we have a cache, return cached data
   if (cachedItems) {
-    console.log(chalk.blue("Posts from cache"));
+    console.log(chalk.blue("Blogposts from cache"));
     return cachedItems;
   }
 
   // if we do not, make queries
-  console.log(chalk.blue("Posts from API"));
+  console.log(chalk.blue("Blogposts from API"));
 
   // variables
   let requests = [];
   let apiData = [];
   let additionalRequests = 0;
 
-  // make first request and marge results
+  // make first request and marge results with array
   const request = await requestPosts();
   apiData.push(...request.data);
   // calculate how many additional requests we need
