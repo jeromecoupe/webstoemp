@@ -12,7 +12,7 @@ tags:
 
 ## Don't use await in loops
 
-One of my older post is about [fetching data from a GraphQL API with Eleventy](/blog/headless-cms-graphql-api-eleventy/). While the example code I wrote works, it does not retrieve data in a very performant way.
+One of my older post is about [fetching data from a GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/). While the example code I wrote works, it does not retrieve data in a very performant way.
 
 The problem is that I use await in a while loop (like a dummy). The direct consequence of this is that the API calls happen sequentially, as [brilliantly explained by Jason Lengstorf](https://www.learnwithjason.dev/blog/keep-async-await-from-blocking-execution/). Each call has to wait for the previous one to finish instead of running in parallel.
 
@@ -60,13 +60,13 @@ async function requestPosts(skipRecords = 0) {
     // return the total number of items to fetch and the data
     return {
       total: parseInt(response.headers["x-total-count"], 10),
-      data: response.data,
+      data: response.data
     };
   } catch (err) {
     console.error(chalk.red("API not responding, no data returned"));
     return {
       total: 0,
-      data: [],
+      data: []
     };
   }
 }

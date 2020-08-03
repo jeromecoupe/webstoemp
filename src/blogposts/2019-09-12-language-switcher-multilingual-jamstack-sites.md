@@ -11,14 +11,14 @@ tags:
 
 ## Set the stage
 
-With most static sites generators supporting a templating languages, structured data and URL control, building a multilingual website is a relatively easy task. I wrote a small [blogpost on how to do it with Eleventy](/blog/multilingual-sites-eleventy/). Other systems like Hugo and Jekyll have either [clear documentation](https://gohugo.io/content-management/multilingual/) or [numerous](https://www.sylvaindurand.org/making-jekyll-multilingual/) [articles](https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/) on the topic.
+With most static sites generators supporting a templating languages, structured data and URL control, building a multilingual website is a relatively easy task. I wrote a small [blogpost on how to do it with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/). Other systems like Hugo and Jekyll have either [clear documentation](https://gohugo.io/content-management/multilingual/) or [numerous](https://www.sylvaindurand.org/making-jekyll-multilingual/) [articles](https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/) on the topic.
 
 What we want here is to redirect users that are on a certain piece of content in one language to the same one in other languages. If such a piece of content is not available, we will redirect users to the homepage of the site in the language they chose.
 
 We will be using Eleventy (11ty) but the general approach is usable with most other SSGs. Here is what we will need:
 
 1. A way to loop through all languages used in the site
-2. Make sure each piece of content has a `locale` key with its value set to the language code of that content. Here is a refresher about [how to do it with Eleventy directory data files](/blog/multilingual-sites-eleventy/) if you need one.
+2. Make sure each piece of content has a `locale` key with its value set to the language code of that content. Here is a refresher about [how to do it with Eleventy directory data files](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) if you need one.
 3. Set a common unique `translationKey` to create a relation between the same content in various languages
 
 ## Site languages
@@ -38,13 +38,13 @@ module.exports = {
   languages: [
     {
       label: "english",
-      code: "en",
+      code: "en"
     },
     {
       label: "français",
-      code: "fr",
-    },
-  ],
+      code: "fr"
+    }
+  ]
 };
 ```
 

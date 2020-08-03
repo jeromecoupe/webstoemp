@@ -33,7 +33,7 @@ With React, Vue or Svelte being all the rage these days, SSG like [Gatsby](https
 
 Personally, I feel that those solutions, while extremely valuable when you have to deal with app-like functionalities and / or state-based UI, come with a lot of bagage and are a bit overkill when building content-driven websites.
 
-By comparison, Eleventy is a lot simpler and looks a lot less like a black box to me (if I am being completely honest). [Fetching data from a GraphQL API](/blog/headless-cms-graphql-api-eleventy/) is quite trivial and students can still use what they learned with my colleagues teaching them Vue or Node if the project requires it.
+By comparison, Eleventy is a lot simpler and looks a lot less like a black box to me (if I am being completely honest). [Fetching data from a GraphQL API](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) is quite trivial and students can still use what they learned with my colleagues teaching them Vue or Node if the project requires it.
 
 ## Workshop course and sample website
 
@@ -41,4 +41,4 @@ All things considered, I am really happy with how the course went this year. Stu
 
 My "[introduction to Eleventy](https://github.com/jeromecoupe/iad_eleventy_introduction)" course is available on Github in French and English, along with a [sample website](https://github.com/jeromecoupe/sample-11ty-blog) hosted on [Netlify](https://www.netlify.com/). Feel free to check both out and to give feedback, open issues or make pull requests if you think something could be improved.
 
-As I have [said in the past](/blog/teaching-in-the-open-craft-jekyll-workshops/), teaching in the open is part of my attempt to stay relevant while teaching front-end design in this ever-moving, ever-changing messy web of ours.
+As I have [said in the past](https://www.webstoemp.com/blog/teaching-in-the-open-craft-jekyll-workshops/), teaching in the open is part of my attempt to stay relevant while teaching front-end design in this ever-moving, ever-changing messy web of ours.
