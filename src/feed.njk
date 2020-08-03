@@ -18,7 +18,10 @@ permalink: feed.xml
         <link>{{ site.url }}{{ post.url }}</link>
         <pubDate>{{ post.date | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</pubDate>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
-        <description><![CDATA[{{ post.data.excerpt }}]]></description>
+        <description><![CDATA[
+          <p>{{ post.data.excerpt }}</p>
+          {{ post.templateContent | safe }}
+        ]]></description>
       </item>
     {% endfor %}
   </channel>
