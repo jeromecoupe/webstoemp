@@ -168,12 +168,12 @@ module.exports = {
   twitter: "@handle",
   en: {
     metaTitle: "Title in english",
-    metaDescription: "Description in english",
+    metaDescription: "Description in english"
   },
   fr: {
     metaTitle: "Titre en français",
-    metaDescription: "Description en français",
-  },
+    metaDescription: "Description en français"
+  }
 };
 ```
 
@@ -248,7 +248,7 @@ module.exports = {
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Bruxelles",
-    directionsLabel: "Itinéraire",
+    directionsLabel: "Itinéraire"
   },
   en: {
     addressTitle: "Address",
@@ -256,8 +256,8 @@ module.exports = {
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Brussels",
-    directionsLabel: "Directions",
-  },
+    directionsLabel: "Directions"
+  }
 };
 ```
 
@@ -280,7 +280,7 @@ Hurrah! We now have a footer with automatic translations.
 
 ## Language switcher
 
-If you need to build a language switcher, [here is a straightforward approach](/blog/language-switcher-multilingual-jamstack-sites/) using this setup.
+If you need to build a language switcher, [here is a straightforward approach](https://www.webstoemp.com/blog/language-switcher-multilingual-jamstack-sites/) using this setup.
 
 ## Flexible by design
 

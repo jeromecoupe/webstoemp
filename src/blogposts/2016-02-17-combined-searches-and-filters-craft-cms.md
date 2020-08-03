@@ -4,12 +4,12 @@ excerpt: "In a recent project, I had to create combined searches and filters wit
 image: "mixer.jpg"
 imageAlt: "Audio mixer - Photo by chuttersnap"
 tags:
-- Craft
-- Filters
-- Search
+  - Craft
+  - Filters
+  - Search
 ---
 
-[As already mentioned in another post](/blog/manipulating-craft-elementcriteriamodel-with-twig/), Twig's ability to handle and manipulate data in the form of objects, combined with Craft's `ElementCriteriaModel` allows us to build complex queries. Searches and filters are just another application of the same principles.
+[As already mentioned in another post](https://www.webstoemp.com/blog/manipulating-craft-elementcriteriamodel-with-twig/), Twig's ability to handle and manipulate data in the form of objects, combined with Craft's `ElementCriteriaModel` allows us to build complex queries. Searches and filters are just another application of the same principles.
 
 Let's get coding.
 
@@ -17,7 +17,7 @@ Let's get coding.
 
 We start with a classic paginated list of blogposts. Our hypothetical client wants us to create a series of filters (year of publication, blogpost type category, blogpost topic category) and a search box that should allow users to filter blogposts on the list page.
 
-Here is the twist: those filters and the search should allow the users to perform cumulative searches and filtering. For example, users should be able to only display the posts published in 2015 *and* belonging to the "geek stuff" theme *and* belonging to the "cms" topic *and* containing the word "Brad" in their titles.
+Here is the twist: those filters and the search should allow the users to perform cumulative searches and filtering. For example, users should be able to only display the posts published in 2015 _and_ belonging to the "geek stuff" theme _and_ belonging to the "cms" topic _and_ containing the word "Brad" in their titles.
 
 Of course, the list should remain properly paginated whatever the query.
 
@@ -100,7 +100,7 @@ Our form will generate four parameters in a query string: `year`, `theme`, `topi
 </form>{% endraw %}
 ```
 
-When that form gets submitted, we now have a query string at the end of our URL that has the following format:  `/blog?year=&theme=&topic=&q=`.
+When that form gets submitted, we now have a query string at the end of our URL that has the following format: `/blog?year=&theme=&topic=&q=`.
 
 These parameters might not be the prettiest in our URLs but at least users are able to bookmark searches and are not asked to resend data when they reload a page. This method would work with POST data, but the pagination part will be harder to pull off. Sure, you can resort to AJAX for it, at which point a full-blown JSON / [Vue.js](http://vuejs.org) solution is likely a better option.
 

@@ -4,11 +4,11 @@ excerpt: "I have been working with static site generators a lot lately. One thin
 image: "images-pipeline.jpg"
 imageAlt: "Big pipe - Photo by Erlend Ekseth"
 tags:
-- Front-end
-- Gulp
-- Images
-- Static
-- Responsive web design
+  - Front-end
+  - Gulp
+  - Images
+  - Static
+  - Responsive web design
 ---
 
 Over the last year or so, I have really become a fan of using static site generators for prototyping or even for full blown websites. This [JAMstack](https://jamstack.org/) thing is growing on me, but I wanted a way to deal with responsive images and thumbnails generation as part of the build process.
@@ -91,12 +91,18 @@ We'll come back to that `img:clean` task we specify as a dependency a bit later.
  */
 
 gulp.task("img:copy", ["img:clean"], () => {
-  return gulp.src("./assets/img/**/*", { nodir: true })
+  return gulp
+    .src("./assets/img/**/*", { nodir: true })
     .pipe(gulpNewer("./public/assets/img/"))
-    .pipe(gulpImagemin({
-      progressive: true,
-      svgoPlugins: [{ removeViewBox: false }, { removeUselessStrokeAndFill: false }]
-    }))
+    .pipe(
+      gulpImagemin({
+        progressive: true,
+        svgoPlugins: [
+          { removeViewBox: false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      })
+    )
     .pipe(gulp.dest("./public/assets/img/"));
 });
 ```
@@ -120,39 +126,59 @@ That's what `merge2` is used for. It merges multiple streams into one and, when 
  */
 
 gulp.task("img:thumbnails", ["img:clean"], () => {
-
   // create empty streams array for merge2
   const streams = [];
 
   // loop through transforms and add to streams array
   transforms.map((transform) => {
-
     // create a stream for each transform
     streams.push(
-      gulp.src(transform.src)
-        .pipe(gulpNewer(transform.dist + "thumbs_" + transform.params.width + "x" + transform.params.height))
-        .pipe(gulpImageresize({
-          imageMagick: true,
-          width: transform.params.width,
-          height: transform.params.height,
-          crop: transform.params.crop
-        }))
-        .pipe(gulpImagemin({
-          progressive: true,
-          svgoPlugins: [{ removeViewBox: false }, { removeUselessStrokeAndFill: false }]
-        }))
-        .pipe(gulp.dest(transform.dist + "thumbs_" + transform.params.width + "x" + transform.params.height))
+      gulp
+        .src(transform.src)
+        .pipe(
+          gulpNewer(
+            transform.dist +
+              "thumbs_" +
+              transform.params.width +
+              "x" +
+              transform.params.height
+          )
+        )
+        .pipe(
+          gulpImageresize({
+            imageMagick: true,
+            width: transform.params.width,
+            height: transform.params.height,
+            crop: transform.params.crop
+          })
+        )
+        .pipe(
+          gulpImagemin({
+            progressive: true,
+            svgoPlugins: [
+              { removeViewBox: false },
+              { removeUselessStrokeAndFill: false }
+            ]
+          })
+        )
+        .pipe(
+          gulp.dest(
+            transform.dist +
+              "thumbs_" +
+              transform.params.width +
+              "x" +
+              transform.params.height
+          )
+        )
     );
-
   });
 
   // merge streams
   return merge2(streams);
-
 });
 ```
 
-Our thumbnails have the same filenames as the original images and we store them in subfolders named after the following pattern: "thumbs_[width]x[height]".
+Our thumbnails have the same filenames as the original images and we store them in subfolders named after the following pattern: "thumbs\_[width]x[height]".
 
 For example, if we configure a transform to generate "800" per "600" thumbnails for images in `src/assets/images/blogposts`, the generated thumbnails will be stored in `dist/assets/images/blogposts/thumbs_800x600/`.
 
@@ -160,7 +186,7 @@ For example, if we configure a transform to generate "800" per "600" thumbnails 
 
 Here comes the trickier part. Whenever an image in `src` is deleted, moved or renamed, we need to get rid of both the base image and the relevant generated thumbnails in `dist`.
 
-Because every image in our `dist` folder is generated or copied programatically, we can easily write a few lines of code to  compare their filepaths with the filepaths of original images in our `src` folder. If we don't find a match, we know we can safely delete those files from `dist`.
+Because every image in our `dist` folder is generated or copied programatically, we can easily write a few lines of code to compare their filepaths with the filepaths of original images in our `src` folder. If we don't find a match, we know we can safely delete those files from `dist`.
 
 Looping over a large amount of files and filtering paths can take quite a few miliseconds (which is a long time in Gulp world). We make sure we wait for that process to happen before carrying on by using `globby` and promises.
 
@@ -177,53 +203,43 @@ Looping over a large amount of files and filtering paths can take quite a few mi
  */
 
 gulp.task("img:clean", ["img:clean:directories"], () => {
-
   // get arrays of src and dist filepaths (returns array of arrays)
   return Promise.all([
-
     globby("./assets/img/**/*", { nodir: true }),
     globby("./public/assets/img/**/*", { nodir: true })
-
   ])
-  .then((paths) => {
+    .then((paths) => {
+      // create arrays of filepaths from array of arrays returned by promise
+      const srcFilepaths = paths[0];
+      const distFilepaths = paths[1];
 
-    // create arrays of filepaths from array of arrays returned by promise
-    const srcFilepaths = paths[0];
-    const distFilepaths = paths[1];
+      // empty array of files to delete
+      const distFilesToDelete = [];
 
-    // empty array of files to delete
-    const distFilesToDelete = [];
+      // diffing
+      distFilepaths.map((distFilepath) => {
+        // sdistFilepathFiltered: remove dist root folder and thumbs folders names for comparison
+        const distFilepathFiltered = distFilepath
+          .replace(/\/public/, "")
+          .replace(/thumbs_[0-9]+x[0-9]+\//, "");
 
-    // diffing
-    distFilepaths.map((distFilepath) => {
+        // check if simplified dist filepath is in array of src simplified filepaths
+        // if not, add the full path to the distFilesToDelete array
+        if (srcFilepaths.indexOf(distFilepathFiltered) === -1) {
+          distFilesToDelete.push(distFilepath);
+        }
+      });
 
-      // sdistFilepathFiltered: remove dist root folder and thumbs folders names for comparison
-      const distFilepathFiltered = distFilepath.replace(/\/public/, "").replace(/thumbs_[0-9]+x[0-9]+\//, "");
-
-      // check if simplified dist filepath is in array of src simplified filepaths
-      // if not, add the full path to the distFilesToDelete array
-      if ( srcFilepaths.indexOf(distFilepathFiltered) === -1 ) {
-        distFilesToDelete.push(distFilepath);
-      }
-
+      // return array of files to delete
+      return distFilesToDelete;
+    })
+    .then((distFilesToDelete) => {
+      // delete files
+      del.sync(distFilesToDelete);
+    })
+    .catch((error) => {
+      console.log(error);
     });
-
-    // return array of files to delete
-    return distFilesToDelete;
-
-  })
-  .then((distFilesToDelete) => {
-
-    // delete files
-    del.sync(distFilesToDelete);
-
-  })
-  .catch((error) => {
-
-    console.log(error);
-
-  });
-
 });
 ```
 
@@ -251,40 +267,42 @@ For good measure, we also get rid of all empty thumbnails directories lying arou
 gulp.task("img:clean:directories", () => {
   globby("./public/assets/img/**/thumbs_+([0-9])x+([0-9])/")
     .then((paths) => {
-
       console.log("All thumbs folders: " + paths);
 
       // existing thumbs directories in dist
       const distThumbsDirs = paths;
 
       // create array of dirs that should exist by walking transforms map
-      const srcThumbsDirs = transforms.map((transform) => transform.dist + "thumbs_" + transform.params.width + "x" + transform.params.height + "/");
+      const srcThumbsDirs = transforms.map(
+        (transform) =>
+          transform.dist +
+          "thumbs_" +
+          transform.params.width +
+          "x" +
+          transform.params.height +
+          "/"
+      );
 
       // array of dirs to delete
-      const todeleteThumbsDirs = distThumbsDirs.filter((el) => srcThumbsDirs.indexOf(el) === -1);
+      const todeleteThumbsDirs = distThumbsDirs.filter(
+        (el) => srcThumbsDirs.indexOf(el) === -1
+      );
 
       console.log("To delete thumbs folders: " + todeleteThumbsDirs);
 
       // pass array to next step
       return todeleteThumbsDirs;
-
     })
     .then((todeleteThumbsDirs) => {
-
       // deleted diff thumbnails directories
       del.sync(todeleteThumbsDirs);
-
     })
     .then(() => {
-
       // delete empty directories in dist images
       deleteEmpty.sync("./public/assets/img/");
-
     })
     .catch((error) => {
-
       console.log(error);
-
     });
 });
 ```
@@ -312,7 +330,7 @@ gulp.task("watch", ["browser-sync"], () => {
 
 ## A nice little image pipeline
 
-With a few line of JS, we have a small but powerfull image pipeline built with Gulp and Node that can be used with pretty much any static site generator on the market. Sure, services like [Cloudinary](https://cloudinary.com) and [imgIX](https://www.imgix.com/) are great but they are overkill for most of the projects I work on, and it also introduces another dependency. This small project also gave me the opportunity to write some ES6, to work with Promises and to prove once more than, indeed, [front-end is not programming](/blog/front-end-not-programming/).
+With a few line of JS, we have a small but powerfull image pipeline built with Gulp and Node that can be used with pretty much any static site generator on the market. Sure, services like [Cloudinary](https://cloudinary.com) and [imgIX](https://www.imgix.com/) are great but they are overkill for most of the projects I work on, and it also introduces another dependency. This small project also gave me the opportunity to write some ES6, to work with Promises and to prove once more than, indeed, [front-end is not programming](https://www.webstoemp.com/blog/front-end-not-programming/).
 
 This series of Gulp tasks should be able to deal with even a large amount of images and is pretty easy to customise to suit your needs if you feel so inclined.
 
