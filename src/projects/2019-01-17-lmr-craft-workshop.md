@@ -2,7 +2,6 @@
 title: "Craft CMS workshop for designers and developers"
 client: Little Miss Robot
 url: "https://littlemissrobot.com"
-urlLabel: "Little Miss Robot"
 image: "lmr-craft.jpg"
 tags: ["Craft CMS", "Workshop"]
 ---

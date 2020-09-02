@@ -2,7 +2,6 @@
 title: "Event website: Arctic Futures Symposium"
 client: "International Polar Foundation"
 url: "https://www.arcticfutures.org"
-urlLabel: "Arctic Futures Symposium"
 image: "arctic-futures-symposium.jpg"
 tags: ["Design", "Front-end", "Craft CMS", "Gulp"]
 ---

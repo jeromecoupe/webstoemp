@@ -5,11 +5,6 @@
 .c-project {
   margin: 0;
   padding: 0;
-}
-
-.c-project__link {
-  display: block;
-  text-decoration: none;
 
   @include mq(medium) {
     display: grid;
@@ -55,9 +50,9 @@
 
 .c-project__client {
   margin-bottom: pxtorem(12px);
-  font-weight: 600;
-  font-size: pxtorem(15px);
-  line-height: (18/15);
+  font-weight: 400;
+  font-size: pxtorem(12px);
+  line-height: (18/12);
   text-transform: uppercase;
   letter-spacing: 1px;
   color: $color-gray7;

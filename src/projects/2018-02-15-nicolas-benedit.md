@@ -2,7 +2,6 @@
 title: "Micro website for an industrial designer"
 client: "Nicolas Benedit"
 url: "http://www.nicolasbenedit.com"
-urlLabel: "Nicolas Benedit"
 image: nicolas-benedit.jpg
 tags: ["Design", "Front-end", "Jekyll", "Netlify"]
 ---
