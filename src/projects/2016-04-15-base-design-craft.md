@@ -2,7 +2,6 @@
 title: "Craft CMS workshop for developers"
 client: "Base Design"
 url: "http://www.basedesign.com"
-urlLabel: "Base Design"
 image: "base-craft.jpg"
 tags: ["Craft CMS", "Workshop"]
 ---

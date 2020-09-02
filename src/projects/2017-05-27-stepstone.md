@@ -2,7 +2,6 @@
 title: "A design system to harmonize StepStone's online presence"
 client: "Stepstone"
 url: "http://www.stepstone.be"
-urlLabel: "Stepstone Belgium"
 image: stepstone.jpg
 tags: ["Front-end", "Design System", "Gulp", "Node"]
 ---

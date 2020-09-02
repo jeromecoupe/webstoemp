@@ -35,8 +35,8 @@ permalink: work/index.html
           <li>
 
             <article class="c-project">
-              <a class="c-project__link" href="{{ project.data.url }}">
-                <p class="c-project__image">
+              <p class="c-project__image">
+                <a href="{{ project.data.url }}">
                   <img src="/img/projects/_800x600/{{ project.data.image }}"
                       srcset="/img/projects/_800x600/{{ project.data.image }} 800w,
                               /img/projects/{{ project.data.image }} 1024w"
@@ -45,20 +45,20 @@ permalink: work/index.html
                               100vw"
                       loading="lazy"
                       class="o-fluidimage" alt="{{ project.data.title }}">
-                </p>
-                <div class="c-project__body">
-                  <p class="c-project__client">{{ project.data.client }}</p>
-                  <h2 class="c-project__title">{{ project.data.title }}</h2>
-                  <div class="c-project__description">
-                    {{ project.templateContent | safe }}
-                  </div>
-                  {% for tag in project.data.tags %}
-                    {% if loop.first %}<ul class="c-tags">{% endif %}
-                      <li class="c-tags__item">{{ tag }}</li>
-                    {% if loop.last %}</ul>{% endif %}
-                  {% endfor %}
+                </a>
+              </p>
+              <div class="c-project__body">
+                <p class="c-project__client">{{ project.data.client }}</p>
+                <h2 class="c-project__title"><a href="{{ project.data.url }}">{{ project.data.title }}</a></h2>
+                <div class="c-project__description">
+                  {{ project.templateContent | safe }}
                 </div>
-              </a>
+                {% for tag in project.data.tags %}
+                  {% if loop.first %}<ul class="c-tags">{% endif %}
+                    <li class="c-tags__item">{{ tag }}</li>
+                  {% if loop.last %}</ul>{% endif %}
+                {% endfor %}
+              </div>
             </article>
 
           </li>
