@@ -3,7 +3,6 @@ title: "Front-end design system for ABVV/FGTB"
 client: "Cronos Group"
 image: "abvv-fgtb.jpg"
 url: http://www.fgtb.be
-urlLabel: "FGTB / ABVV"
 tags: ["Design System", "Front-end", "Gulp", "Node"]
 ---
 

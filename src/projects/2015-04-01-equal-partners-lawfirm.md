@@ -2,7 +2,6 @@
 title: "Present a new breed of law firm"
 client: "Equal partners"
 url: "http://www.equal-partners.eu"
-urlLabel: "Equal Partners"
 image: "equal-partners.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]
 ---

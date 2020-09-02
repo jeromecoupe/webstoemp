@@ -2,7 +2,6 @@
 title: "Modular online case studies for a communication agency"
 client: "Tramway 21"
 url: "http://www.tramway21.be"
-urlLabel: "Tramway 21"
 image: tramway21.jpg
 tags: ["Design", "Front-end", "Craft CMS"]
 ---

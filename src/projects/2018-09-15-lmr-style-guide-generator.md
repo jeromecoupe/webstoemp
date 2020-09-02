@@ -2,7 +2,6 @@
 title: "Building a design system framework"
 client: "Little Miss Robot"
 url: "https://littlemissrobot.com"
-urlLabel: "Little Miss Robot"
 image: "lmr-design-system-framework.jpg"
 tags: ["Node", "Express", "Nunjucks", "Gulp"]
 ---
