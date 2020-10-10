@@ -4,10 +4,10 @@ excerpt: "Style guides are a great tool to present responsive design systems. Mo
 image: "design-blocks.jpg"
 imageAlt: "Design Blocks - Photo by Sharon McCutcheon"
 tags:
-- Front-end
-- Jekyll
-- Style Guides
-- Liquid
+  - Front-end
+  - Jekyll
+  - Style Guides
+  - Liquid
 ---
 
 ## Style guides and prototypes
@@ -43,24 +43,27 @@ In the `_include` folder I have a single file called `component.html` which cont
 
 A very common option for displaying a style guide is to present it as a single page listing all your components. That's the approach favoured by [Code for America](http://codeforamerica.clearleft.com/) for example. It's easily taken care of using a simple `{% raw %}{% for %}{% endraw %}` loop.
 
-```liquid{% raw %}
+```liquid
+{%- raw -%}
 {% assign entries = site.components %}
 {% for entry in entries %}
   {% include component.html %}
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 Alternatively, you can group your components by type using a straightforward `group_by` filter:
 
 ```liquid
-{% raw %}
+{%- raw -%}
 {% assign componentsByType = site.components | group_by:"type" %}
 {% for type in componentsByType %}
   <h3 class="sg-h2">{{ type.name | capitalize }}</h3>
     {% for entry in type.items %}
       {% include component.html %}
     {% endfor %}
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 ### Option 2: a more complex style guide
@@ -70,10 +73,12 @@ Some style guides, like [Rizzo from Lonely Planet](http://rizzo.lonelyplanet.com
 The only thing left to do is include all components belonging to one type on the corresponding page. That's where the `type` variable in each of our components YAML Front Matter combined with the `where` filter come in handy. On the buttons page for example, you will just have to add:
 
 ```liquid
-{% raw %}{% assign entries = site.components | where:"type","buttons" %}
+{%- raw -%}
+{% assign entries = site.components | where:"type","buttons" %}
 {% for entry in entries %}
   {% include component.html %}
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 I really like the simplicity and flexibility of Jekyll to create style guides. What tool do you use ?

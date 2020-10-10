@@ -125,7 +125,7 @@ async function getAllBlogposts() {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({
           query: `{
@@ -152,8 +152,8 @@ async function getAllBlogposts() {
                 id
               }
             }
-          }`,
-        }),
+          }`
+        })
       });
 
       // store the JSON response when promise resolves
@@ -194,7 +194,7 @@ async function getAllBlogposts() {
       imageAlt: item.image.alt,
       summary: item.intro,
       body: item.body,
-      relatedBlogs: item.relatedBlogs,
+      relatedBlogs: item.relatedBlogs
     };
   });
 
@@ -231,7 +231,7 @@ Using the [pagination feature](https://www.11ty.dev/docs/pagination/) of Elevent
 Here is the full code for `src/blogposts/list.njk`:
 
 ```twig
-{%- raw %}
+{%- raw -%}
 ---
 pagination:
   data: blogposts
@@ -278,7 +278,7 @@ permalink: blog{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber +
 Using the same pagination feature, we can also easily generate all our individual pages. The only trick here is to use pagination with a size of 1, combined with dynamic permalinks. Here is the full code for `src/blogposts/entry.njk`:
 
 ```twig
-{%- raw %}
+{%- raw -%}
 ---
 pagination:
   data: blogposts
