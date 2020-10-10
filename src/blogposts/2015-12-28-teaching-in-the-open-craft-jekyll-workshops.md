@@ -4,11 +4,11 @@ excerpt: "As a teacher, I want to stay current and not bore my students with out
 image: "school.jpg"
 imageAlt: "Coding session at school - Photo by Jérôme Coupé"
 tags:
-- Teaching
-- Front-end
-- Jekyll
-- Craft
-- Workshops
+  - Teaching
+  - Front-end
+  - Jekyll
+  - Craft
+  - Workshops
 ---
 
 ## Teaching in the open

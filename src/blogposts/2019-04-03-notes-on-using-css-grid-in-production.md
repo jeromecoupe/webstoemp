@@ -4,9 +4,9 @@ excerpt: "For the last 10 months or so, I have been building all new clients pro
 image: "cssgrid.jpg"
 imageAlt: "Grid pattern - Photo by Calvin Ma"
 tags:
-- CSS Grid
-- CSS
-- Front-end
+  - CSS Grid
+  - CSS
+  - Front-end
 ---
 
 CSS Grid and flexbox are the new tools web designers can work with for creating layouts. flexbox is well supported across the board and CSS grid support is great amongst evergreen desktop browsers, but less so with legacy ones.
@@ -220,7 +220,9 @@ $grid-gap: 2rem !default;
 In your HTML you can just use the following and enjoy good cross-browser support:
 
 ```html
-<ul class="l-grid  l-grid--2cols@small  l-grid--3cols@medium  l-grid--4cols@large">
+<ul
+  class="l-grid  l-grid--2cols@small  l-grid--3cols@medium  l-grid--4cols@large"
+>
   <li class="l-grid__unit"><!-- content --></li>
   <!-- [ other list items ] -->
   <li class="l-grid__unit"><!-- content --></li>
@@ -236,18 +238,10 @@ Here is the HTML code:
 ```html
 <footer class="c-sitefooter">
   <div class="c-sitefooter__grid  o-container">
-    <div class="c-sitefooter__about">
-      about
-    </div>
-    <div class="c-sitefooter__nav">
-      nav
-    </div>
-    <div class="c-sitefooter__social">
-      social
-    </div>
-    <div class="c-sitefooter__copyright">
-      copyright
-    </div>
+    <div class="c-sitefooter__about">about</div>
+    <div class="c-sitefooter__nav">nav</div>
+    <div class="c-sitefooter__social">social</div>
+    <div class="c-sitefooter__copyright">copyright</div>
   </div>
 </footer>
 ```

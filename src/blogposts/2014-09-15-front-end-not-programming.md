@@ -4,10 +4,10 @@ excerpt: "Recently, a fellow teacher dismissively stated that front-end developm
 image: "angry-ostrich.jpg"
 imageAlt: "Angry ostrich - Photo by Ruth Caron"
 tags:
-- Teaching
-- Life
-- Gulp
-- Front-end
+  - Teaching
+  - Life
+  - Gulp
+  - Front-end
 ---
 
 ## Fast-paced & ever-changing environment
