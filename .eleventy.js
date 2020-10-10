@@ -28,7 +28,9 @@ module.exports = function (eleventyConfig) {
   });
 
   // Syntax highlighting (prism)
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    trim: true
+  });
 
   // pass through
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
