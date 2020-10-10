@@ -59,19 +59,23 @@ For example, we could use the following to link together our contact pages in va
 `./src/en/pages/about.njk`
 
 ```twig
+{%- raw -%}
 ---
-permalink: "{%raw%}/{{ locale }}/about/index.html{%endraw%}"
+permalink: "/{{ locale }}/about/index.html"
 translationKey: "aboutPage"
 ---
+{% endraw %}
 ```
 
 `./src/fr/pages/about.njk`
 
-```text
+```twig
+{%- raw -%}
 ---
-permalink: "{%raw%}/{{ locale }}/a-propos/index.html{%endraw%}"
+permalink: "/{{ locale }}/a-propos/index.html"
 translationKey: "aboutPage"
 ---
+{% endraw %}
 ```
 
 The same principle can apply to our collection items, for example blogposts.
@@ -136,7 +140,7 @@ Here is an outline of what we are going to do with that short piece of code:
 
   {% if loop.last %}</ul>{% endif %}
 {% endfor %}
-{%- endraw -%}
+{% endraw %}
 ```
 
 There we go, job done with a minimal amount of effort. Those loops will happen on every page of the site but, since Eleventy is already creating `collections.all` anyway and has very fast IO, the impact on build time should be pretty low, even with large sites.

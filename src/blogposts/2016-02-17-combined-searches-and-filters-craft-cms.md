@@ -33,7 +33,8 @@ The first step is to build the form. Here are the four pieces we need:
 Our form will generate four parameters in a query string: `year`, `theme`, `topic` and `q`. We will then be able to use those parameters to build our Craft query.
 
 ```twig
-{% raw %}<form action="{{ url('blog/') }}" method="get">
+{%- raw -%}
+<form action="{{ url('blog/') }}" method="get">
 
   {# years
   - get first entry ever and grab year
@@ -97,7 +98,8 @@ Our form will generate four parameters in a query string: `year`, `theme`, `topi
   <input type="search" name="q">
   <input type="submit" value="search">
 
-</form>{% endraw %}
+</form>
+{% endraw %}
 ```
 
 When that form gets submitted, we now have a query string at the end of our URL that has the following format: `/blog?year=&theme=&topic=&q=`.
@@ -118,7 +120,8 @@ Here is the plan for this step:
 When this is ready, we will have a modular query object with various parameters and values depending on the user input. We can then feed that object to `craft.entries` and retrieve what we need from the database.
 
 ```twig
-{% raw %}{# build our query object
+{%- raw -%}
+{# build our query object
 - Default parameters
 - If a year has been chosen: add 'before' and 'after' parameters to the query
 - If one or more categories have been chosen: build an empty array and use it to build a 'relatedTo' parameter that we can add to the query
@@ -209,7 +212,8 @@ When this is ready, we will have a modular query object with various parameters 
 
   <p>No blogpost found</p>
 
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 ## Taking care of pagination
@@ -217,10 +221,12 @@ When this is ready, we will have a modular query object with various parameters 
 Since this is a paginated list, we need to take care of the pagination interface so that our query parameters are also available in the pagination URLs built by Craft. In order to do that, we will simply use `craft.request` again, and specifically `getQueryStringWithoutPath()`.
 
 ```twig
-{% raw %}{% set queryString = craft.request.getQueryStringWithoutPath() %}
+{%- raw -%}
+{% set queryString = craft.request.getQueryStringWithoutPath() %}
 {% set queryStringFull = (queryString is not empty) ? '?' ~ queryString : '' %}
 {% if paginateInfo.prevUrl %}<a href="{{ paginateInfo.prevUrl ~ queryStringFull }}">Previous Page</a>{% endif %}
-{% if paginateInfo.nextUrl %}<a href="{{ paginateInfo.nextUrl ~ queryStringFull }}">Next Page</a>{% endif %}{% endraw %}
+{% if paginateInfo.nextUrl %}<a href="{{ paginateInfo.nextUrl ~ queryStringFull }}">Next Page</a>{% endif %}
+{% endraw %}
 ```
 
 That ensures that the various parameters now come along for the ride whenever a user clicks our pagination links.

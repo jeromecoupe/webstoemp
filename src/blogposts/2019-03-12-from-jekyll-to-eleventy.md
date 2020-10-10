@@ -74,7 +74,7 @@ For this simple website, I only needed two collections (blogposts and projects) 
 Eleventy has a neat little feature allowing you to use JSON files with the same name as your directory to declare common front matter values for all files in that directory. For example, I use a `blogposts.json` file in my `blogposts` directory to specify a layout and a permalink structure for all blogposts.
 
 ```json
-{%- raw %}
+{%- raw -%}
 {
   "layout": "layouts/blogpost.njk",
   "permalink": "blog/{{ page.fileSlug }}/index.html"
@@ -120,8 +120,8 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "dist",
-    },
+      output: "dist"
+    }
   };
 };
 ```
@@ -141,14 +141,14 @@ module.exports = {
   baseUrl: "/",
   author: "Jerôme Coupé",
   authorTwitter: "@jeromecoupe",
-  buildTime: new Date(),
+  buildTime: new Date()
 };
 ```
 
 `site.buildTime` key can then be used in the footer of the website:
 
 ```twig
-{%- raw %}
+{%- raw -%}
 <div class="c-sitefooter__copyright">
   <p class="u-margin-all-none">&copy; Webstoemp {{ site.buildTime | date("Y") }}</p>
 </div>
@@ -164,7 +164,7 @@ I chose Nunjucks mainly because of its template inheritance mechanism. I can def
 Looping through the blogposts collection to display titles and publication dates is quite simple.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 {% for post in collections.blogposts | reverse %}
   {% if loop.first %}<ul class="c-list-ui">{% endif %}
   <li>
@@ -183,7 +183,7 @@ Looping through the blogposts collection to display titles and publication dates
 As you have seen above, I use a dedicated template to display the detail of each blogpost. `_includes/layouts/blogpost.nkj` calls my main layout and adds the blogpost image and the content of the markdown file to the `content` block.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 {% extends "layouts/base.njk" %}
 {% set activeSection = "blog" %}
 
@@ -237,7 +237,7 @@ As you have seen above, I use a dedicated template to display the detail of each
 The same logic is used for displaying projects, with a little caveat. Because we don't have a dedicated template for projects, we just have to use [`templateContent`](https://www.11ty.dev/docs/collections/#collection-item-data-structure) to display the content of markdown files. Here is a simplified version of the code.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 {% for project in collections.projects | reverse %}
     {{ project.templateContent | safe }}
 {% endfor %}

@@ -2,7 +2,7 @@
 title: "Performant data fetching with promises and Eleventy"
 excerpt: "Fetching a whole bunch of data from APIs at build time can be an intensive process. Getting that data in a performant way and caching it locally is an important part of Jamstack projects."
 image: "dogs-fetching.jpg"
-imageAlt: "Two dogs swimming back after fetching"
+imageAlt: "Two dogs swimming back with a red tire in their mouths - Photo by Yuki Dog"
 tags:
   - Eleventy
   - 11ty

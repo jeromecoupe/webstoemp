@@ -4,9 +4,9 @@ excerpt: "When building this website, I had an in depth look at the latest versi
 image: "jekyll-logo.jpg"
 imageAlt: "Jekyll static site generator"
 categories:
-- CMS
-- Jekyll
-- Collections
+  - CMS
+  - Jekyll
+  - Collections
 ---
 
 ## In the beginning
@@ -57,15 +57,13 @@ With a growing number of collections or post types, [Front Matter Defaults](http
 
 ```yaml
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "blogpost"
       current_nav: "blog"
-  -
-    scope:
+  - scope:
       path: "work"
       type: "projects"
     values:
@@ -80,7 +78,8 @@ Those [filters](http://jekyllrb.com/docs/templates/#filters) help you filter, so
 For this blog, I wanted an archive of blogposts grouped by year and, since Github pages do not support them, I didn't want to use plugins. All I had to do was to create a `publication_year` variable in the YAML front matter of all my blogposts and use the group filter. Easy.
 
 ```liquid
-{% raw %}{% assign postsByYear = site.posts | group_by:"publication_year" %}
+{%- raw -%}
+{% assign postsByYear = site.posts | group_by:"publication_year" %}
 
 {% for postsInYear in postsByYear %}
   {% if forloop.first %}<ul class="yearlyarchive">{% endif %}
