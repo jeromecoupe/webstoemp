@@ -4,8 +4,8 @@ excerpt: "Front-end developers gravitate more and more towards using components 
 image: "components.jpg"
 imageAlt: "Wood blocks - Photo by Marcello Gennari"
 tags:
-- Craft
-- Twig
+  - Craft
+  - Twig
 ---
 
 As developers, we always want to be as lean as possible and not repeat ourselves. As a flexible CMS, Craft lends itself very well to a component based approach. Basically, whenever I am reusing the same views in a website, I create a component handling the display of it so I can have a single source of truth and manage everything in a centralised way.
@@ -17,7 +17,8 @@ A very simple example of this approach would be a blog where you have a simple c
 Here is what it might look like:
 
 ```twig
-{% raw %}{# get all Blogposts #}
+{%- raw -%}
+{# get all Blogposts #}
 {% set latestBlogposts = craft.entries()
       .section("blog")
       .orderBy("postDate desc")
@@ -51,7 +52,8 @@ If you work like this, you will need to repeat that little `blogpost` view every
 Using a component-based approach, our code becomes:
 
 ```twig
-{% raw %}{# get all Blogposts #}
+{%- raw -%}
+{# get all Blogposts #}
 {% set latestBlogposts = craft.entries()
     .section("blog")
     .orderBy("postDate desc")
@@ -71,7 +73,8 @@ Using a component-based approach, our code becomes:
   {% if loop.last %}</ul>{% endif %}
 {% else %}
   <p>No blogpost found</p>
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 Adding the `only` keywords means that this component will only get the variables that you are passing to it and will not inherit all the variables available in the context of other templates in the inheritance stack.
@@ -79,7 +82,8 @@ Adding the `only` keywords means that this component will only get the variables
 Then, you can simply create a component in your newly created `templates/_components` folder.
 
 ```twig
-{% raw %}{#
+{%- raw -%}
+{#
   Blogposts
   Displays basic information about a blogpost
 
@@ -109,7 +113,8 @@ Then, you can simply create a component in your newly created `templates/_compon
   <p class="c-blogpost__meta"><time datetime="{{ datehelpers.dateMachine(blogpost.postDate) }}">{{ datehelpers.dateLong(blogpost.postDate) }}</time></p>
   <h2 class="c-blogpost__title"><a href="{{ blogpost.url }}">{{ blogpost.blogpostTitle }}</a></h2>
   <p>{{ blogpost.blogpostIntro }}</p>
-</article>{% endraw %}
+</article>
+{% endraw %}
 ```
 
 That way, you can always load the same component template whenever you need to display a blogpost card, be it on the homepage, on your blog archive page or in your related blogposts section in your detail page.
@@ -125,7 +130,8 @@ A good example of this is a navigation interface. Maybe you need to display your
 Time for a contextual `mainnav.twig` component that we will again write in our `templates/_components` folder.
 
 ```twig
-{% raw %}{#
+{%- raw -%}
+{#
  # Mainnav
  # Displays main navigation based on entries in a structure section
  #
@@ -179,15 +185,18 @@ Time for a contextual `mainnav.twig` component that we will again write in our `
     <li class="{{ itemClass }}"><a href="{{ linkedEntry.getUrl() }}" class="{{ linkClass }}  {{ currentClass }}">{{ label }}</a></li>
 
   {% if loop.last %}</ul>{% endif %}
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 We can then simply call our component in our footer and pass it a context like so:
 
 ```twig
-{% raw %}{% include "_components/mainnav.twig" with {
+{%- raw -%}
+{% include "_components/mainnav.twig" with {
   context: "footer"
-}%}{% endraw %}
+}%}
+{% endraw %}
 ```
 
 We don't use the `only` keyword here because we need more than our `context` variable. In this case we need `entry` and possibly `currentSection` to be available from the global context.

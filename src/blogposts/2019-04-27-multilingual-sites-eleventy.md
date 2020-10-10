@@ -62,7 +62,7 @@ Here what our `fr.json` file would contain:
 }
 ```
 
-`{%- raw %}{{ locale }}{% endraw %}` will now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
+`{% raw %}{{ locale }}{% endraw %}` will now output "fr" or "en" for any of our template files, depending on where that template file is located in our folder architecture.
 
 ## Localised date filter
 
@@ -80,7 +80,7 @@ eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
 Now, we can call that filter in our templates and pass it a `locale` parameter. Note that, since we set the locale to "en" by default, we can use our filter without a `locale` parameter for our purely numeric dates. Here is a small example.
 
 ```twig
-{%- raw  %}
+{%- raw -%}
 <p><time datetime="{{ post.date | date('YYYY-MM-DD') }}">{{ post.item|date("DD MMMM YYYY", locale) }}</time></p>
 {% endraw %}
 ```
@@ -110,7 +110,7 @@ Because they live in subdirectories of our language directories, all those markd
 Instead of adding a `permalink` variable in each front-matter, we can simply add a `posts.js` or `posts.json` directory data file in each of our three `posts` folders with the following content:
 
 ```js
-{%- raw %}
+{%- raw -%}
 {
   permalink: "/{{ locale }}/blog/{{ page.fileSlug }}/index.html"
 }
@@ -120,7 +120,7 @@ Instead of adding a `permalink` variable in each front-matter, we can simply add
 Now that we have localised detail pages for all of our posts, we can go into all three of our `blog.njk` pages and loop over our language-specific collections.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 {% for post in collections.posts_en | reverse %}
   {% if loop.first %}<ul>{% endif %}
     <li>
@@ -140,7 +140,7 @@ Now that we have localised detail pages for all of our posts, we can go into all
 We could make use of our `locale` variable to call our collections too. We would just have to switch to a square brackets notation instead.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 {% set posts = collections["posts_" + locale] %}
 {% for post in posts %}
   {# loop content #}
@@ -180,7 +180,7 @@ module.exports = {
 We can use those variables in our `./src/fr/pages/index.njk` file. In this case, we assign some of them to Nunjucks variables instead of using them directly because those are values we might want to override for specific pages. We could use the same logic for a posts specific template.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 ---
 permalink: /{{ locale }}/index.html
 ---
@@ -194,13 +194,13 @@ permalink: /{{ locale }}/index.html
 {% block content %}
   {# page content #}
 {% endblock %}
-{%- endraw %}
+{% endraw %}
 ```
 
 Since our page template extends `./src/_includes/layouts/base.njk`, Nunjucks variables declared in the child template as well as our Eleventy global variables are going to be available in that layout too.
 
 ```twig
-{%- raw %}
+{%- raw -%}
 <!DOCTYPE html>
 <html lang="{{ locale }}">
 <head>
@@ -264,7 +264,7 @@ module.exports = {
 Then, in `./src/_includes/partials/footer.njk`, we just rely on the value of our `locale` variable to access those keys using brackets notation:
 
 ```twig
-{%- raw  %}
+{%- raw -%}
 <footer>
   <h2>{{ footer[locale].addressTitle }}</h2>
   <p>

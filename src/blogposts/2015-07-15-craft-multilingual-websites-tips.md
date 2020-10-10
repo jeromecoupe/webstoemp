@@ -87,19 +87,23 @@ For the english version, a date might be "April 1, 2015" where in french it woul
 We can easily create a macro that outputs localised dates from a date object. We are simply going to use the `currentLgg` variable we created earlier.
 
 ```twig
-{% raw %}{% macro localizeDate(date) %}
+{%- raw -%}
+{% macro localizeDate(date) %}
   {% if craft.config.currentLgg[craft.locale] == 'fr' %}
     {{ date|date('j F Y') }}
   {% else %}
     {{ date|date('F j, Y') }}
   {% endif %}
-{% endmacro %}{% endraw %}
+{% endmacro %}
+{% endraw %}
 ```
 
 After importing the macro in our template, we can use it like this:
 
 ```twig
-{% raw %}<p class="text-meta"><time datetime="{{ item.postDate|date('Y-m-d') }}">{{ siteMacros.localizeDate(item.postDate) }}</time>{% endraw %}
+{%- raw -%}
+<p class="text-meta"><time datetime="{{ item.postDate|date('Y-m-d') }}">{{ siteMacros.localizeDate(item.postDate) }}</time>
+{% endraw %}
 ```
 
 The same principles can be applied to a wide variety of use cases and simplify your life as a Craft developer working on a multilingual project.
@@ -115,7 +119,8 @@ Back to our language switcher. If an entry in another locale exists, we want to 
 Here is an example of the code I use. I've added comments so that it is documented.
 
 ```twig
-{% raw %}{# loop through all site locales #}
+{%- raw -%}
+{# loop through all site locales #}
 {% for locale in craft.i18n.getSiteLocales() %}
   {% if loop.first %}<ul class="lggnav">{% endif %}
 
@@ -141,7 +146,8 @@ Here is an example of the code I use. I've added comments so that it is document
   <li class="lggnav__item{{ current }}"><a href="{{ linkUrl }}">{{ craft.config.currentLgg[locale.id]|upper }}</a></li>
 
   {% if loop.last %}</ul>{% endif %}
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 This simple language switcher does not take categories into account. When on the blog list page with a category selected, the user would be redirected to that blog list page without any selected categories upon switching language.

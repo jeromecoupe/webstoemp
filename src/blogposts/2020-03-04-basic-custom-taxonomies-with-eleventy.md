@@ -105,7 +105,7 @@ function strToSlug(str) {
   const options = {
     replacement: "-",
     remove: /[&,+()$~%.'":*?<>{}]/g,
-    lower: true,
+    lower: true
   };
 
   return slugify(str, options);
@@ -126,7 +126,7 @@ module.exports = function (eleventyConfig) {
 
     let blogCategories = allCategories.map((category) => ({
       title: category,
-      slug: strToSlug(category),
+      slug: strToSlug(category)
     }));
 
     return blogCategories;
@@ -140,8 +140,8 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "./src",
-      output: "./dist",
-    },
+      output: "./dist"
+    }
   };
 };
 ```
@@ -214,7 +214,7 @@ permalink: /blog/category/{{ category.slug }}/index.html
   {% endfor %}
 
 {% endblock %}
-{%- endraw -%}
+{% endraw %}
 ```
 
 As a first step, we replicated the native tag-based functionality using our own custom category system.
@@ -322,9 +322,9 @@ eleventyConfig.addCollection("blogpostsByCategories", function (collection) {
           next: pagesSlugs[index + 1] || null,
           previous: pagesSlugs[index - 1] || null,
           first: pagesSlugs[0] || null,
-          last: pagesSlugs[pagesSlugs.length - 1] || null,
+          last: pagesSlugs[pagesSlugs.length - 1] || null
         },
-        items: posts,
+        items: posts
       });
     });
   });
@@ -376,7 +376,7 @@ permalink: /blog/category/{{ category.slug }}/index.html
   {% endfor %}
 
 {% endblock %}
-{%- endraw -%}
+{% endraw %}
 ```
 
 ## My two cents on pagination
