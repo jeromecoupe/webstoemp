@@ -4,9 +4,9 @@ excerpt: "As digital products are increasingly integrating the fabric of all typ
 image: "journey-ux.jpg"
 imageAlt: "Country Road - Photo by Fritz Bielmeier"
 tags:
-- Front-end
-- Gulp
-- Build scripts
+  - Front-end
+  - Gulp
+  - Build scripts
 ---
 
 What I see happening is that UX has moved towards a fuller, end-to-end kind of product design, and is now coming closer to the more general approach of service design.
@@ -51,7 +51,6 @@ With service design, UX is now starting to look at all the parts of a service th
 
 [Nielsen Norman Group](https://www.nngroup.com/articles/service-design-101/) defines service design as, "The activity of planning and organizing a business’s resources (people, products, and processes) in order to directly improve the employee’s experience, and indirectly the customer’s experience."
 
-
 - People: focus not only on the customers of a service but also on employees and partners that are running it: great tools, sound decision processes, clear career paths.
 - Products: focus not only on the digital products and channels, but also on in-store experience, swag, analog communication tools, billing, etc. They all contribute to the user experience and support your product.
 - Processes: focus not only on the code base, design deliverables and processes, but also on onboarding new team members, knowledge management, customer care and support processes, company culture, etc.
@@ -66,4 +65,4 @@ With end-to-end product design the mission of a UX team now includes breaking do
 
 By meeting with service design, UX continues its journey and starts to apply a user-centered approach to processes and functions supporting employees, the product and its customer experience, thereby shaping the very culture of a company.
 
-*This blogpost was originally written when working with [Central](https://central.team), a design consultancy that helps organizations create successful digital products.*
+_This blogpost was originally written when working with [Central](https://central.team), a design consultancy that helps organizations create successful digital products._

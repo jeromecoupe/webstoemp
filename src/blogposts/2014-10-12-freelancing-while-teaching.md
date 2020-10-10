@@ -4,9 +4,9 @@ excerpt: "I have been teaching front-end developement for the last 7 years. Last
 image: "shoes.jpg"
 imageAlt: "Relaxing in the veranda"
 tags:
-- Teaching
-- Life
-- Freelancing
+  - Teaching
+  - Life
+  - Freelancing
 ---
 
 ## Feeding the teacher

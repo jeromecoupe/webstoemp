@@ -4,8 +4,8 @@ excerpt: "I recently turned 42 and questions about my professional life started 
 image: "old-man.jpg"
 imageAlt: "Old man - Photo by Andrés Gómez"
 tags:
-- Work
-- Front-end
+  - Work
+  - Front-end
 ---
 
 Writing this down is an attempt at making sense of the myriad of thoughts and ideas swirling in my head. Turning them into a blogpost might help giving them some substance and clarity. Hell, I might even come up with ideas for a new course to set myself on.

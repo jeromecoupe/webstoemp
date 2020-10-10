@@ -4,9 +4,9 @@ excerpt: "As we reach the end of the year, it's time for good resolutions: one o
 image: "to-hell.jpg"
 imageAlt: "Animal Skull - Photo by Annie Spratt"
 tags:
-- Work
-- Front-end
-- Process
+  - Work
+  - Front-end
+  - Process
 ---
 
 ## Aiming for conversations

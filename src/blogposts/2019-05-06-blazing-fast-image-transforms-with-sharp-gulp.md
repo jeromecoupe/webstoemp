@@ -81,8 +81,8 @@ const transforms = [
     options: {
       width: 1024,
       height: 576,
-      fit: "cover",
-    },
+      fit: "cover"
+    }
   },
   {
     src: "./src/assets/img/blogposts/*",
@@ -90,8 +90,8 @@ const transforms = [
     options: {
       width: 600,
       height: 600,
-      fit: "cover",
-    },
+      fit: "cover"
+    }
   },
   {
     src: "./src/assets/img/projects/*",
@@ -99,9 +99,9 @@ const transforms = [
     options: {
       width: 800,
       height: 600,
-      fit: "cover",
-    },
-  },
+      fit: "cover"
+    }
+  }
 ];
 ```
 
@@ -142,7 +142,7 @@ function resizeImages(done) {
 
 // exports (Common JS)
 module.exports = {
-  resize: resizeImages,
+  resize: resizeImages
 };
 ```
 

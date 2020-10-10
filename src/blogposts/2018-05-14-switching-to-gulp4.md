@@ -4,9 +4,9 @@ excerpt: "Although I also use NPM scripts on some projects, I have a soft spot f
 image: "gulp4.jpg"
 imageAlt: "Gulp 4 logo"
 tags:
-- Front-end
-- Gulp
-- Build scripts
+  - Front-end
+  - Gulp
+  - Build scripts
 ---
 
 ## The good and the bad with Gulp 3

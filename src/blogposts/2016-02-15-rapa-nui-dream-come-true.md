@@ -4,9 +4,9 @@ excerpt: "Ten years ago, the missus and myself backpacked through Chile, Peru an
 image: "rapa-nui.jpg"
 imageAlt: "Rano Raraku, Easter Island - Photo by Jérôme Coupé"
 tags:
-- Travel
-- Easter Island
-- Rapa Nui
+  - Travel
+  - Easter Island
+  - Rapa Nui
 ---
 
 ## An opportunity like no other

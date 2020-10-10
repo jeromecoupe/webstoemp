@@ -4,10 +4,10 @@ excerpt: "Lately, a few events drastically changed my views on what it means to 
 image: "rain.jpg"
 imageAlt: "Rain - Photo by Jose Fontano"
 tags:
-- Life
-- Loss
-- Void
-- Lessons
+  - Life
+  - Loss
+  - Void
+  - Lessons
 ---
 
 ## A first taste
