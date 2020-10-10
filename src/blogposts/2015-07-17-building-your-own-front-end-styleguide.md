@@ -4,9 +4,9 @@ excerpt: "In a world where you can download popular UI toolkits like Bootstrap o
 image: "toolset.jpg"
 imageAlt: "Toolset - Photo by Cesar Carlevarino Aragon"
 tags:
-- Front-end
-- Style guides
-- Workflow
+  - Front-end
+  - Style guides
+  - Workflow
 ---
 
 If the proliferation and popularity of UI toolkits like [Bootstrap](http://getbootstrap.com/) or [Foundation](http://foundation.zurb.com/) have taught us one thing, it's that [front-end styleguides are a thing](http://styleguides.io/) in modern front-end development.

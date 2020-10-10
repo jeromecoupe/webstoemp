@@ -4,9 +4,9 @@ excerpt: "My brother is a gardener and tree surgeon. We recently had a conversat
 image: "soil-in-hands.jpg"
 imageAlt: "Soil in your hands - Photo by Kyle Ellefson"
 tags:
-- Work
-- Front-end
-- Business
+  - Work
+  - Front-end
+  - Business
 ---
 
 ## Gardening as a service

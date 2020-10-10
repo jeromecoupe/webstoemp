@@ -4,8 +4,8 @@ excerpt: "SVG is certainly the new hotness to get to grips with in the front-end
 image: "svg.jpg"
 imageAlt: "Vectors and bezier curves"
 tags:
-- Front-end
-- SVG
+  - Front-end
+  - SVG
 ---
 
 Given the multi-devices, multi-screen-resolutions web we currently live in, the SVG format has gained a lot of traction. Browser support has also reached a point where it becomes realistic to use it in producton. Here is a quick rundown of the various use cases I have encountered and how I deal with them in the framework of a CMS or static site generator environment.
@@ -20,8 +20,8 @@ Then, I just use the `<picture>` element and the source-swapping capabilities it
 
 ```html
 <picture>
-  <source type="image/svg+xml" srcset="svgimage.svg">
-  <img src="pngimage.png" class="fluidimg" alt="alt text for image">
+  <source type="image/svg+xml" srcset="svgimage.svg" />
+  <img src="pngimage.png" class="fluidimg" alt="alt text for image" />
 </picture>
 ```
 
@@ -30,9 +30,9 @@ Browsers that do not support SVG will fallback to the PNG image. For the moment,
 ```html
 <picture>
   <!--[if IE 9]><video style="display: none;"><![endif]-->
-  <source type="image/svg+xml" srcset="svgimage.svg">
+  <source type="image/svg+xml" srcset="svgimage.svg" />
   <!--[if IE 9]></video><![endif]-->
-  <img src="pngimage.png" class="fluidimg" alt="alt text for image">
+  <img src="pngimage.png" class="fluidimg" alt="alt text for image" />
 </picture>
 ```
 
@@ -45,12 +45,13 @@ For those, I currently use external SVG spritemaps that will get cached by brows
 Workflow-wise, this is a very simple technique if you already use some kind of build tool (I currently use Gulp). The only thing you have to do is to use a plugin called [svg-store](https://github.com/w0rm/gulp-svgstore) and to configure a task similar to this one for the magic to happen.
 
 ```javascript
-gulp.task('spritesvg', function () {
-  return gulp.src('./public/img/svg/sprite_sources/*.svg')
-  .pipe(svgstore())
-  .pipe(rename("svgsprite.svg"))
-  .pipe(gulp.dest('./public/img/svg/sprite/'))
-  .pipe(notify({ message: 'SVG sprite created' }));
+gulp.task("spritesvg", function () {
+  return gulp
+    .src("./public/img/svg/sprite_sources/*.svg")
+    .pipe(svgstore())
+    .pipe(rename("svgsprite.svg"))
+    .pipe(gulp.dest("./public/img/svg/sprite/"))
+    .pipe(notify({ message: "SVG sprite created" }));
 });
 ```
 
@@ -59,7 +60,9 @@ This plugin will take the svg files you have exported from Sketch or Illustrator
 You can then refer to those IDs when you use the SVG spritemap in your HTML code and the corresponding part of the spritemap will be displayed. You have to specify a width and a height in your HTML but you can change those values using CSS in a responsive project without any problem.
 
 ```html
-<svg width="12" height="10" role="img" title="Email icon"><use xlink:href="/img/svg/sprite/svgsprite.svg#icon_email"></use></svg>
+<svg width="12" height="10" role="img" title="Email icon">
+  <use xlink:href="/img/svg/sprite/svgsprite.svg#icon_email"></use>
+</svg>
 ```
 
 The only thing left to do is to add the handy [SVG for Everybody](https://github.com/jonathantneal/svg4everybody) by Jonathan Neal to your templates to enjoy full support in IE9 through IE11. I don't generally bother that much with IE8 anymore but supporting it is easy enough, provided that you export PNG versions of your assets as well.
@@ -71,14 +74,20 @@ Next up are more complex icons or UI elements where you want to use CSS animatio
 After exorting the SVG from Sketch, I use SVGO (part of gulp-imagemin) with the following settings to clean them up:
 
 ```javascript
-gulp.task('img', function() {
-  return gulp.src('./img/**/*')
-  .pipe(imagemin({
-    progressive: true,
-    svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
-  }))
-  .pipe(gulp.dest('./img/'))
-  .pipe(notify({ message: 'Images task done' }));
+gulp.task("img", function () {
+  return gulp
+    .src("./img/**/*")
+    .pipe(
+      imagemin({
+        progressive: true,
+        svgoPlugins: [
+          { removeViewBox: false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      })
+    )
+    .pipe(gulp.dest("./img/"))
+    .pipe(notify({ message: "Images task done" }));
 });
 ```
 
@@ -89,30 +98,25 @@ Using CSS animations and transitions with inline SVGs is trivial. All it takes i
 Here is a small example of what you would write in your CSS / Sass
 
 ```scss
-.icon
-{
+.icon {
   display: inline-block;
 }
 
-.icon__background
-{
+.icon__background {
   stroke: black;
   fill: transparent;
   transition: all 0.2s linear;
 
-  a:hover &
-  {
+  a:hover & {
     stroke: red;
   }
 }
 
-.icon__content
-{
+.icon__content {
   fill: black;
   transition: all 0.2s linear;
 
-  a:hover &
-  {
+  a:hover & {
     fill: red;
   }
 }

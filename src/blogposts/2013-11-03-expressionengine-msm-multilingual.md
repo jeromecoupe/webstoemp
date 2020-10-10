@@ -4,9 +4,9 @@ excerpt: "When developing mulilingual websites with ExpressionEngine, I would ar
 image: "expressionengine.jpg"
 imageAlt: "Expressionengine logo"
 tags:
-- CMS
-- ExpressionEngine
-- Multilingual
+  - CMS
+  - ExpressionEngine
+  - Multilingual
 ---
 
 There have been [many](http://eeinsider.com/articles/multi-language-solutions-for-expressionengine/) [talks](http://cwcrawley.co.uk/2010/01/multi-lingual-websites-in-expressionengine/), at [conferences](https://speakerdeck.com/stevieg_83/intro-to-multi-lingual-sites-in-expressionengine) and [elsewhere](http://www.slideshare.net/vinnyio/multilanguage-websites-in-expressionengine), about developing multilingual websites with [ExpressionEngine](http://ellislab.com/expressionengine/). Because of the very flexible nature of the CMS, multiple solutions are always mentioned:

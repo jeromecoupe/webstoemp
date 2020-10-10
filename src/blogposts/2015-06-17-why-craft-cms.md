@@ -1,12 +1,12 @@
 ---
 title: "Why Craft?"
-excerpt: "\"Why Craft?\" is a question I have to answer often in sales pitches or in the proposals I write. So often, in fact, that I thought a quick blogpost about it might be in order."
+excerpt: '"Why Craft?" is a question I have to answer often in sales pitches or in the proposals I write. So often, in fact, that I thought a quick blogpost about it might be in order.'
 image: "craft-logo.jpg"
 imageAlt: "Craft logo - Pixel and Tonic"
 tags:
-- Business
-- Craft
-- Freelancing
+  - Business
+  - Craft
+  - Freelancing
 ---
 
 When a project calls for a database-driven CMS, I usually turn to [Craft](https://craftcms.com) these days. In Belgium, Craft is not a well known CMS (yet) and I find myself having to explain why I recommend it as a solution instead of other (more popular) products.
@@ -64,4 +64,4 @@ The price of your Craft license funds the development of the software. As long a
 
 That is a very straightforward and transparent model, which is not the case of the freemium model used by other CMSes on the market.
 
-The [modular pricing model](https://buildwithcraft.com/pricing) Craft uses is very simple: you only pay for what you need. Even the 300$ of a full-blown pro license are a small amount of money when compared to the gains in terms of developement and maintenance time for me and my clients.
+The [modular pricing model](https://buildwithcraft.com/pricing) Craft uses is very simple: you only pay for what you need. Even the 300\$ of a full-blown pro license are a small amount of money when compared to the gains in terms of developement and maintenance time for me and my clients.

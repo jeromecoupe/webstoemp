@@ -4,9 +4,9 @@ excerpt: "I have switched from Grunt to Gulp to handle my build process. I love 
 image: "gulp.jpg"
 imageAlt: "Gulp logo"
 tags:
-- Tooling
-- Gulp
-- BrowserSync
+  - Tooling
+  - Gulp
+  - BrowserSync
 ---
 
 I use Gulp to compile Sass, add vendor prefixes to my CSS, optimise images and SVG, combine my Javascript files and optimise them, toast bread and make coffee in the morning, etc. If you want to [get started with it](http://travismaynard.com/writing/getting-started-with-gulp), I can only recommend you take a look at a [couple](http://markgoodyear.com/2014/01/getting-started-with-gulp/) of [articles](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/).
@@ -16,49 +16,49 @@ For now, I just wanted to share my default gulpfile.js file with you.
 ## Full file
 
 ```javascript
-'use strict';
+"use strict";
 
 // Load plugins
-var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var jshint = require('gulp-jshint');
-var stripdebug = require('gulp-strip-debug');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var replace = require('gulp-replace');
-var concat = require('gulp-concat');
-var notify = require('gulp-notify');
-var minifycss = require('gulp-minify-css');
-var plumber = require('gulp-plumber');
-var gutil = require('gulp-util');
-var base64 = require('gulp-base64');
-var imagemin = require('gulp-imagemin');
-var browsersync = require('browser-sync');
+var gulp = require("gulp");
+var sass = require("gulp-ruby-sass");
+var autoprefixer = require("gulp-autoprefixer");
+var jshint = require("gulp-jshint");
+var stripdebug = require("gulp-strip-debug");
+var uglify = require("gulp-uglify");
+var rename = require("gulp-rename");
+var replace = require("gulp-replace");
+var concat = require("gulp-concat");
+var notify = require("gulp-notify");
+var minifycss = require("gulp-minify-css");
+var plumber = require("gulp-plumber");
+var gutil = require("gulp-util");
+var base64 = require("gulp-base64");
+var imagemin = require("gulp-imagemin");
+var browsersync = require("browser-sync");
 
 // error function for plumber
 var onError = function (err) {
   gutil.beep();
   console.log(err);
-  this.emit('end');
+  this.emit("end");
 };
 
 // Browser definitions for autoprefixer
 var AUTOPREFIXER_BROWSERS = [
-  'last 3 versions',
-  'ie >= 8',
-  'ios >= 7',
-  'android >= 4.4',
-  'bb >= 10'
+  "last 3 versions",
+  "ie >= 8",
+  "ios >= 7",
+  "android >= 4.4",
+  "bb >= 10"
 ];
 
 // Datestamp for cache busting
-var getStamp = function() {
+var getStamp = function () {
   var myDate = new Date();
 
   var myYear = myDate.getFullYear().toString();
-  var myMonth = ('0' + (myDate.getMonth() + 1)).slice(-2);
-  var myDay = ('0' + myDate.getDate()).slice(-2);
+  var myMonth = ("0" + (myDate.getMonth() + 1)).slice(-2);
+  var myDay = ("0" + myDate.getDate()).slice(-2);
   var mySeconds = myDate.getSeconds().toString();
 
   var myFullDate = myYear + myMonth + myDay + mySeconds;
@@ -67,85 +67,101 @@ var getStamp = function() {
 };
 
 // BrowserSync proxy
-gulp.task('browser-sync', function() {
+gulp.task("browser-sync", function () {
   browsersync({
-    proxy: 'www.webstoemp.dev',
+    proxy: "www.webstoemp.dev",
     port: 3000
   });
 });
 
 // BrowserSync reload all Browsers
-gulp.task('browsersync-reload', function () {
-    browsersync.reload();
+gulp.task("browsersync-reload", function () {
+  browsersync.reload();
 });
 
 // Optimize Images task
-gulp.task('images', function() {
-  return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
-    .pipe(imagemin({
+gulp.task("images", function () {
+  return gulp
+    .src("./public_html/assets/img/**/*.{gif,jpg,png}")
+    .pipe(
+      imagemin({
         progressive: true,
         interlaced: true,
-        svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
-    }))
-    .pipe(gulp.dest('./public_html/assets/img/'))
+        svgoPlugins: [
+          { removeViewBox: false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      })
+    )
+    .pipe(gulp.dest("./public_html/assets/img/"));
 });
 
 // CSS task
-gulp.task('css', function() {
-  return gulp.src('./public_html/assets/scss/*.scss')
+gulp.task("css", function () {
+  return gulp
+    .src("./public_html/assets/scss/*.scss")
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass({ style: 'expanded', }))
-    .pipe(gulp.dest('./public_html/assets/css/'))
+    .pipe(sass({ style: "expanded" }))
+    .pipe(gulp.dest("./public_html/assets/css/"))
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(base64({ extensions:['svg'] }))
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(base64({ extensions: ["svg"] }))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(minifycss())
-    .pipe(gulp.dest('./public_html/assets/css/'))
-    .pipe(browsersync.reload({ stream:true }))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest("./public_html/assets/css/"))
+    .pipe(browsersync.reload({ stream: true }))
+    .pipe(notify({ message: "Styles task complete" }));
 });
 
 // Lint JS task
-gulp.task('jslint', function() {
-  return gulp.src('./public_html/assets/js/modules/*.js')
+gulp.task("jslint", function () {
+  return gulp
+    .src("./public_html/assets/js/modules/*.js")
     .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter('fail'))
-    .pipe(notify({ message: 'Lint task complete' }));
+    .pipe(jshint.reporter("default"))
+    .pipe(jshint.reporter("fail"))
+    .pipe(notify({ message: "Lint task complete" }));
 });
 
 //Concatenate and Minify JS task
-gulp.task('scripts', function() {
-  return gulp.src('./public_html/assets/js/modules/*.js')
-    .pipe(concat('webstoemp.js'))
-    .pipe(gulp.dest('./public_html/assets/js/build'))
-    .pipe(rename('webstoemp.min.js'))
+gulp.task("scripts", function () {
+  return gulp
+    .src("./public_html/assets/js/modules/*.js")
+    .pipe(concat("webstoemp.js"))
+    .pipe(gulp.dest("./public_html/assets/js/build"))
+    .pipe(rename("webstoemp.min.js"))
     .pipe(stripdebug())
     .pipe(uglify())
-    .pipe(gulp.dest('./public_html/assets/js/build'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(gulp.dest("./public_html/assets/js/build"))
+    .pipe(notify({ message: "Scripts task complete" }));
 });
 
 // Cache busting task
-gulp.task('cachebust', function() {
-  return gulp.src('./craft/templates/_layouts/*.html')
-    .pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
-    .pipe(replace(/print.min.css\?([0-9]*)/g, 'print.min.css?' + getStamp()))
-    .pipe(replace(/webstoemp.min.js\?([0-9]*)/g, 'webstoemp.min.js?' + getStamp()))
-    .pipe(gulp.dest('./craft/templates/_layouts/'))
-    .pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+gulp.task("cachebust", function () {
+  return gulp
+    .src("./craft/templates/_layouts/*.html")
+    .pipe(replace(/screen.min.css\?([0-9]*)/g, "screen.min.css?" + getStamp()))
+    .pipe(replace(/print.min.css\?([0-9]*)/g, "print.min.css?" + getStamp()))
+    .pipe(
+      replace(/webstoemp.min.js\?([0-9]*)/g, "webstoemp.min.js?" + getStamp())
+    )
+    .pipe(gulp.dest("./craft/templates/_layouts/"))
+    .pipe(notify({ message: "CSS/JS Cachebust task complete" }));
 });
 
 // Watch task
-gulp.task('watch', ['browser-sync'], function () {
-  gulp.watch('./public_html/assets/scss/**/*', ['css']);
-  gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
-  gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
+gulp.task("watch", ["browser-sync"], function () {
+  gulp.watch("./public_html/assets/scss/**/*", ["css"]);
+  gulp.watch("./public_html/assets/js/modules/**/*", [
+    "jslint",
+    "scripts",
+    "browsersync-reload"
+  ]);
+  gulp.watch("./craft/templates/**/*", ["browsersync-reload"]);
 });
 
 // Generic tasks
-gulp.task('default', ['css', 'jslint', 'scripts', 'cachebust']);
-gulp.task('images', ['img']);
+gulp.task("default", ["css", "jslint", "scripts", "cachebust"]);
+gulp.task("images", ["img"]);
 ```
 
 ## Gulp plugins
@@ -162,16 +178,22 @@ You can find all of the plugins I am using on the [npm website](https://www.npmj
 
 I use the gulp-imagemin plugin for optimising my images. It comes bundled with plugins to optimise jpg, gif and png so it suits most of my needs perfectly. The only options I use are for making progressive JPEG, interlaced GIFs and optimise SVG. Setting `removeViewBox` and `removeUselessStrokeAndFill` to `false` prevent SVGO from borking some complex SVG files.
 
-``` javascript
+```javascript
 // Optimize Images task
-gulp.task('images', function() {
-  return gulp.src('./public_html/assets/img/**/*.{gif,jpg,png}')
-    .pipe(imagemin({
+gulp.task("images", function () {
+  return gulp
+    .src("./public_html/assets/img/**/*.{gif,jpg,png}")
+    .pipe(
+      imagemin({
         progressive: true,
         interlaced: true,
-        svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
-    }))
-    .pipe(gulp.dest('./public_html/assets/img/'))
+        svgoPlugins: [
+          { removeViewBox: false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      })
+    )
+    .pipe(gulp.dest("./public_html/assets/img/"));
 });
 ```
 
@@ -185,18 +207,19 @@ Generally, may main Sass file is just a bunch of imports and my partials live in
 
 ```javascript
 // CSS task
-gulp.task('css', function() {
-  return gulp.src('./public_html/assets/scss/*.scss')
+gulp.task("css", function () {
+  return gulp
+    .src("./public_html/assets/scss/*.scss")
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass({ style: 'expanded', }))
-    .pipe(gulp.dest('./public_html/assets/css/'))
+    .pipe(sass({ style: "expanded" }))
+    .pipe(gulp.dest("./public_html/assets/css/"))
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(base64({ extensions:['svg'] }))
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(base64({ extensions: ["svg"] }))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(minifycss())
-    .pipe(gulp.dest('./public_html/assets/css/'))
-    .pipe(browsersync.reload({ stream:true }))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest("./public_html/assets/css/"))
+    .pipe(browsersync.reload({ stream: true }))
+    .pipe(notify({ message: "Styles task complete" }));
 });
 ```
 
@@ -239,13 +262,13 @@ I have gulp run all my modules through jshint and then concatenate and minify al
 If you set long browser cache expirations on your static files using expire headers, you will need some sort of cache busting method. The simplest one is to add query strings to every references to your CSS and JS files.
 
 ```html
-<link rel="stylesheet" media="screen" href="css/screen.css">
+<link rel="stylesheet" media="screen" href="css/screen.css" />
 ```
 
 becomes
 
 ```html
-<link rel="stylesheet" media="screen" href="css/screen.css?2014100345">
+<link rel="stylesheet" media="screen" href="css/screen.css?2014100345" />
 ```
 
 Generating that query string every time your CSS or JS files are modified, is an easy way to override the browser cache. It is worth noting that Steve Souders advises you not to rev your files using query strings but rather using filenames for various reasons detailed [in a good article](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/).
@@ -253,13 +276,16 @@ Generating that query string every time your CSS or JS files are modified, is an
 Nevertheless, I went with query string, constructed my own timestamp as a query string and applied it using using the gulp-replace plugin.
 
 ```javascript
-gulp.task('cachebust', function() {
-  return gulp.src('./craft/templates/_layouts/*.html')
-    .pipe(replace(/screen.min.css\?([0-9]*)/g, 'screen.min.css?' + getStamp()))
-    .pipe(replace(/print.min.css\?([0-9]*)/g, 'print.min.css?' + getStamp()))
-    .pipe(replace(/webstoemp.min.js\?([0-9]*)/g, 'webstoemp.min.js?' + getStamp()))
-    .pipe(gulp.dest('./craft/templates/_layouts/'))
-    .pipe(notify({ message: 'CSS/JS Cachebust task complete' }));
+gulp.task("cachebust", function () {
+  return gulp
+    .src("./craft/templates/_layouts/*.html")
+    .pipe(replace(/screen.min.css\?([0-9]*)/g, "screen.min.css?" + getStamp()))
+    .pipe(replace(/print.min.css\?([0-9]*)/g, "print.min.css?" + getStamp()))
+    .pipe(
+      replace(/webstoemp.min.js\?([0-9]*)/g, "webstoemp.min.js?" + getStamp())
+    )
+    .pipe(gulp.dest("./craft/templates/_layouts/"))
+    .pipe(notify({ message: "CSS/JS Cachebust task complete" }));
 });
 ```
 
@@ -273,9 +299,9 @@ It's quite easy to install and to integrate to your Gulp workflow:
 
 ```javascript
 // Browsersync server
-gulp.task('browser-sync', function() {
+gulp.task("browser-sync", function () {
   browsersync({
-    proxy: 'www.webstoemp.dev',
+    proxy: "www.webstoemp.dev",
     port: 3000
   });
 });
@@ -285,7 +311,7 @@ This wraps my virtual host (www.webstoemp.dev) with a proxy URL allowing me to v
 
 ```javascript
 // BrowserSync reload all Browsers
-gulp.task('browsersync-reload', function () {
+gulp.task("browsersync-reload", function () {
   browsersync.reload();
 });
 ```
@@ -294,10 +320,14 @@ Simple task to reload all browsers with BrowserSync (used when my HTML / Templat
 
 ```javascript
 // Watch task
-gulp.task('watch', ['browser-sync'], function () {
-  gulp.watch('./public_html/assets/scss/**/*', ['css']);
-  gulp.watch('./public_html/assets/js/modules/**/*', ['jslint', 'scripts', 'browsersync-reload']);
-  gulp.watch('./craft/templates/**/*', ['browsersync-reload']);
+gulp.task("watch", ["browser-sync"], function () {
+  gulp.watch("./public_html/assets/scss/**/*", ["css"]);
+  gulp.watch("./public_html/assets/js/modules/**/*", [
+    "jslint",
+    "scripts",
+    "browsersync-reload"
+  ]);
+  gulp.watch("./craft/templates/**/*", ["browsersync-reload"]);
 });
 ```
 
