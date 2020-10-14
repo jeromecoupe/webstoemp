@@ -110,8 +110,8 @@ jobs:
 
 By creating a `craftdeploy.yaml` file in `./.github/workflows/` and by setting the push event to the `master` branch, we ensure that this workflow will run every time we push code to the master branch of our repository.
 
-Granted, this is a very basic workflow and it can certainly be improved upon. Feel free to [hit me up on Twitter](https://twitter.com/jeromecoupe) if you have ideas.
-
 I have been testing it with a couple of Craft projects for a couple of months and have not experienced any issue so far. The workflow is consistenty taking between 1 and 3 minutes to run, which I find rather reasonable.
+
+Granted, this is a very basic workflow and it can certainly be improved upon. Feel free to [hit me up on Twitter](https://twitter.com/jeromecoupe) if you have ideas.
 
 While I will probably continue using Buddy and the likes for more complex needs, I am also quite happy with the convenient, cheap and reliable option Github Actions provides.
