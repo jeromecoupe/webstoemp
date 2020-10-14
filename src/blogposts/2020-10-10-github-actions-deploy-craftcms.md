@@ -1,6 +1,6 @@
 ---
 title: "Using Github actions to deploy Craft CMS websites"
-excerpt: "While I regularily use services like Buddy or DeployHQ to deploy Craft CMS websites, I wanted to experiment with Github Actions. Here is what I came up with and why."
+excerpt: "While I regularily use services like Buddy or DeployHQ to build and deploy Craft CMS websites, I wanted to experiment with Github Actions. Here is what I came up with and why."
 image: "walk-signal.jpg"
 imageAlt: "Walk signal - Photo by Ashim D'Silva"
 tags:
