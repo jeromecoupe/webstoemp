@@ -13,7 +13,7 @@ tags:
 
 Services like [Buddy](https://buddy.works/) or [DeployHQ](https://www.deployhq.com/) are really powerful. They allow you to setup complex build and deployment pipelines like [atomic deployments](https://nystudio107.com/blog/executing-atomic-deployments) using a nice GUI interface.
 
-That being said, that power and ease of use come with a price tag which, in my opinion, can become quite high. Some projects might not even need the provided complexity.
+That being said, that power and ease of use come with a price tag which, in my opinion, can become quite high for basic projects. Most of the small to medium websites I work on do not necessarily need that level of power and complexity.
 
 Since I generally use Github to host my repositories, being able to setup a basic deployment pipeline with a single YAML file for free seemed like an alternative worth investigating.
 
