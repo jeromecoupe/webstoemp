@@ -67,7 +67,7 @@ The [Twig documentation](https://twig.symfony.com/doc/3.x/tags/do.html) is quite
 
 Here is a slightly more advanced example involving categories, publication years and search.
 
-We want a paginated list of blogposts and the ability to filter them by publication year, by categories and also be able to search on titles. The search and filters should be cumulative. For example, we want to be able to search all blogposts published in 2016, belonging to the "Gardening" category and with "Brad" in the title.
+We want a paginated list of blogposts and the ability to filter them by publication year, by categories and also be able to search on titles. The search and filters should be cumulative. For example, we want to be able to search all blogposts published in 2016, belonging to the "Gardening" category and that have "Brad" in their title.
 
 in broad strokes, the approach can be sumarised as follows:
 
