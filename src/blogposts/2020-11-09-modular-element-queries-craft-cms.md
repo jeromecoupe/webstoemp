@@ -10,7 +10,7 @@ tags:
   - Twig
 ---
 
-## Then and Now
+## Then and now
 
 With Craft 2, [my go-to approach](/blog/manipulating-craft-elementcriteriamodel-with-twig/) to build [modular element queries](/blog/combined-searches-and-filters-craft-cms/) was to manipulate objects with Twig before passing them to element queries as parameters. Here is a basic example using categories and relations in Craft 2.
 
