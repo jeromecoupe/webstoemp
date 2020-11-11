@@ -1,6 +1,6 @@
 ---
 title: "Modular element queries with Craft"
-excerpt: "In Craft 3, elements queries parameters use dot syntax exclusively, which changed how I implement search and filters with modular element queries. Here is a quick rundown of how I approach it nowadays."
+excerpt: "In Craft 3, elements queries parameters use dot syntax exclusively, which changed how to implement search and filters with modular element queries. Here is a quick rundown of how I approach it nowadays."
 image: "cocktails.jpg"
 imageAlt: "Mixing cocktails - Photo by Mikey Harris"
 tags:
