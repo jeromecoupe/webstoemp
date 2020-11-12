@@ -1,5 +1,5 @@
 ---
-title: "Modular element queries with Craft"
+title: "Modular element queries with Craft CMS"
 excerpt: "In Craft 3, elements queries parameters use dot syntax exclusively, which changed how to implement search and filters with modular element queries. Here is a quick rundown of how I approach it nowadays."
 image: "cocktails.jpg"
 imageAlt: "Mixing cocktails - Photo by Mikey Harris"
@@ -63,7 +63,7 @@ The [Twig documentation](https://twig.symfony.com/doc/3.x/tags/do.html) is quite
 {% endraw %}
 ```
 
-## A more involved example
+## Cumulative filters and search
 
 Here is a slightly more advanced example involving categories, publication years and search.
 
@@ -229,6 +229,6 @@ template
 
 ## Mainly a shift in syntax
 
-In most cases, modular element queries can be as easily created using `{% raw %}{% do %}{% endraw %}` and dot syntax than by manipulating objects with Twig before feeding them to element queries as parameters. I would even argue that the code is a bit more legible.
+In most cases, modular element queries can be created using `{% raw %}{% do %}{% endraw %}` and dot syntax instead manipulating objects with Twig before feeding them to element queries as parameters. I would even argue that the code is a bit more legible.
 
 The most important thing for me is that, combined with Twig as a templating language, Craft remains a very flexible and, dare I say it, elegant tool to retrieve and display data as well as to structure it.
