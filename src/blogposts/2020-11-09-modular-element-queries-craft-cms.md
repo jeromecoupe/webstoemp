@@ -69,9 +69,9 @@ Here is a slightly more advanced example involving categories, publication years
 
 We want a paginated list of blogposts and the ability to filter them by publication year, by categories and also be able to search on titles. The search and filters should be cumulative. For example, we want to be able to search all blogposts published in 2016, belonging to the "Gardening" category and that have "Brad" in their title.
 
-in broad strokes, the approach can be sumarised as follows:
+Here is the plan:
 
-1. create a form using that will use `post` or `get` to set parameters and values
+1. create a form using `post` or `get` to set parameters and values (use `get` if you want the parameters and values to be visible in the URL)
 2. retrieve values using `craft.app.request.getParam()`
 3. create a base query
 4. add parameters to base query as needed using retrieved values
