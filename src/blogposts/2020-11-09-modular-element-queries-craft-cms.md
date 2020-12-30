@@ -229,6 +229,6 @@ template
 
 ## Mainly a shift in syntax
 
-In most cases, modular element queries can be created using `{% raw %}{% do %}{% endraw %}` and dot syntax instead manipulating objects with Twig before feeding them to element queries as parameters. I would even argue that the code is a bit more legible.
+In most cases, modular element queries can be created using `{% raw %}{% do %}{% endraw %}` and dot syntax instead of manipulating objects with Twig before feeding them to element queries as parameters. I would even argue that the code is a bit more legible.
 
 The most important thing for me is that, combined with Twig as a templating language, Craft remains a very flexible and, dare I say it, elegant tool to retrieve and display data as well as to structure it.
