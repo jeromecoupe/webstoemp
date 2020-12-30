@@ -6,6 +6,6 @@ Webstoemp is built with [Eleventy](https://www.11ty.dev/) and [Gulp](https://gul
 
 ## Copyright
 
-This is my personal website, not a starter kit to clone or copy. The code is open sourced and you are welcome to peek under the hood to see "how the ~~sausage~~ stoemp is made".
+This is my personal website, not a starter kit or template to clone or copy. The code is open sourced and you are welcome to peek under the hood to see "how the ~~sausage~~ stoemp is made".
 
 Please try to be original and do not just copy the design, the code and/or the content. Thank you.
