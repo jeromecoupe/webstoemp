@@ -14,15 +14,15 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "autoprefixer": "^10.0.1",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.13",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
     "del": "^6.0.0",
-    "eslint": "^7.13.0",
+    "eslint": "^7.20.0",
     "eslint-loader": "^4.0.2",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
@@ -30,9 +30,9 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "moment": "^2.29.1",
-    "node-sass": "5.0.0",
-    "postcss": "^8.1.6",
-    "sharp": "^0.26.2",
-    "webpack": "^5.4.0"
+    "postcss": "^8.2.6",
+    "sass": "^1.32.8",
+    "sharp": "^0.27.2",
+    "webpack": "^5.24.2"
   }
 }
