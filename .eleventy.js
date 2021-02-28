@@ -29,12 +29,14 @@ module.exports = function (eleventyConfig) {
 
   // Syntax highlighting (prism)
   eleventyConfig.addPlugin(syntaxHighlight, {
-    trim: true
+    trim: true,
   });
 
   // pass through
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy({ "./src/assets/img": "img" });
+  eleventyConfig.addPassthroughCopy({ "./src/assets/fonts": "fonts" });
 
   // base config
   return {
@@ -42,11 +44,11 @@ module.exports = function (eleventyConfig) {
       input: "src",
       output: "dist",
       includes: "_includes",
-      data: "_data"
+      data: "_data",
     },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   };
 };

@@ -36,7 +36,7 @@ const transforms = [
 ];
 
 // resize images
-function resizeImages(done) {
+function buildThumbs() {
   transforms.forEach(function (transform) {
     // if folder does not exist create it with all above folders
     if (!fs.existsSync(transform.dist)) {
@@ -59,10 +59,6 @@ function resizeImages(done) {
         });
     });
   });
-  done();
 }
 
-// exports (Common JS)
-module.exports = {
-  resize: resizeImages,
-};
+buildThumbs();
