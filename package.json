@@ -8,31 +8,35 @@
     "type": "git",
     "url": "https://github.com/jeromecoupe/jeromecoupe.github.io"
   },
-  "browserslist": [
-    "last 2 versions",
-    "not ie < 11"
-  ],
+  "scripts": {
+    "clean": "rimraf './dist'",
+    "styles": "sass --style=compressed './src/assets/scss':'./dist/css'",
+    "scripts:prod": "webpack --config './webpack.config.js' --mode production",
+    "scripts:dev": "webpack --config './webpack.config.js' --mode development",
+    "server": "browser-sync start --server './dist' --files './dist' --no-open --logLevel 'info'",
+    "eleventy": "npx eleventy --quiet",
+    "thumbnails": "node './build_tasks/thumbnails.js'",
+    "watch:eleventy": "onchange './src/**/*.{njk,md}' -- npm run eleventy",
+    "watch:scripts": "onchange './src/assets/js/**/*' -- npm run scripts:dev",
+    "watch:styles": "onchange './src/assets/scss/**/*' -- npm run styles",
+    "build": "npm-run-all clean --parallel thumbnails styles scripts:prod eleventy",
+    "watch": "npm-run-all --parallel server watch:*"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
-    "@babel/core": "^7.13.1",
-    "@babel/preset-env": "^7.13.5",
-    "autoprefixer": "^10.2.4",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
-    "browser-sync": "^2.26.14",
-    "cssnano": "^4.1.10",
-    "del": "^6.0.0",
-    "eslint": "^7.20.0",
-    "eslint-loader": "^4.0.2",
+    "browser-sync": "^2.26.13",
     "glob": "^7.1.6",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
     "moment": "^2.29.1",
-    "postcss": "^8.2.6",
-    "sass": "^1.32.8",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.2",
     "sharp": "^0.27.2",
-    "webpack": "^5.24.2"
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
   }
 }
