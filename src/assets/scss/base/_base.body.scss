@@ -5,8 +5,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: $color-white;
-  color: $color-gray8;
+  background-color: var(--color-white);
+  color: var(--color-gray8);
   font-size: pxtorem(16px);
 
   @include mq(medium) {

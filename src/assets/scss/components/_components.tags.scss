@@ -17,7 +17,7 @@
 .c-tags__item {
   font-size: pxtorem(15px);
   font-weight: 400;
-  color: $color-gray8;
+  color: var(--color-gray8);
 }
 
 .c-tags__item:not(:last-child) {
@@ -27,6 +27,6 @@
 .c-tags__item:before {
   content: "#";
   display: inline-block;
-  color: $color-brand4;
+  color: var(--color-brand4);
   margin-right: pxtorem(3px);
 }
