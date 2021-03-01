@@ -13,16 +13,16 @@
 .c-blogpost__media {
   background-image: linear-gradient(
     to bottom,
-    $color-gray8 0,
-    $color-gray8 50%,
-    rgba($color-gray8, 0) 50%,
-    rgba($color-gray8, 0) 100%
+    var(--color-gray8) 0,
+    var(--color-gray8) 50%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
 .c-blogpost__intro {
   font-size: pxtorem(18px);
-  color: $color-gray7;
+  color: var(--color-gray7);
 
   @include mq(medium) {
     font-size: pxtorem(20px);

@@ -3,11 +3,11 @@
 // -------------------------------------
 
 a {
-  color: $color-brand6;
+  color: var(--color-brand6);
   text-decoration: underline;
 
   &:hover {
-    color: $color-brand6;
+    color: var(--color-brand6);
     text-decoration: none;
   }
 }
@@ -29,7 +29,7 @@ h6 {
   }
 
   & > a:hover {
-    color: $color-brand5;
+    color: var(--color-brand5);
     text-decoration: none;
   }
 }

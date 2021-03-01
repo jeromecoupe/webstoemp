@@ -17,9 +17,9 @@
 .c-service__title {
   font-weight: 600;
   font-size: pxtorem(20px);
-  font-family: $fontstack-alt;
+  font-family: var(--fontstack-alt);
   line-height: 1.2;
-  color: $color-gray8;
+  color: var(--color-gray8);
   margin-bottom: pxtorem(12px);
 
   @include mq(large) {
@@ -29,5 +29,5 @@
 
 .c-service__text {
   margin-bottom: 0;
-  color: $color-gray7;
+  color: var(--color-gray7);
 }

@@ -13,10 +13,10 @@
 }
 
 .c-pagecontent--dark {
-  background-color: $color-gray8;
-  color: $color-gray6;
+  background-color: var(--color-gray8);
+  color: var(--color-gray6);
 
   a {
-    color: $color-brand5;
+    color: var(--color-brand5);
   }
 }

@@ -5,15 +5,15 @@
 .c-txtintro {
   font-weight: 400;
   font-size: pxtorem(18px);
-  color: $color-gray4;
+  color: var(--color-gray4);
 
   a {
-    color: $color-brand5;
+    color: var(--color-brand5);
     text-decoration: underline;
   }
 
   a:hover {
-    color: $color-brand5;
+    color: var(--color-brand5);
     text-decoration: none;
   }
 

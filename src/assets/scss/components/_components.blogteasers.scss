@@ -19,7 +19,7 @@
 
   font-weight: 400;
   font-size: pxtorem(16px);
-  color: $color-gray6;
+  color: var(--color-gray6);
 
   @include mq(large) {
     width: 300px;
@@ -36,8 +36,8 @@
   font-weight: 600;
   font-size: pxtorem(20px);
   line-height: (30/20);
-  font-family: $fontstack-alt;
-  color: $color-gray8;
+  font-family: var(--fontstack-alt);
+  color: var(--color-gray8);
 
   @include mq(medium) {
     font-size: pxtorem(23px);

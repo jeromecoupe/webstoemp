@@ -26,7 +26,7 @@
   font-size: pxtorem(13px);
   line-height: 1;
   text-decoration: none;
-  color: $color-gray4;
+  color: var(--color-gray4);
   text-transform: uppercase;
   letter-spacing: 1px;
 
@@ -34,7 +34,7 @@
 
   &:hover,
   &:focus {
-    color: $color-white;
+    color: var(--color-white);
   }
 }
 
@@ -42,7 +42,7 @@
 .c-mainnav__link.is-active:hover,
 .c-mainnav__link.is-active:focus {
   padding-bottom: pxtorem(16px);
-  border-bottom: 2px solid $color-brand4;
+  border-bottom: 2px solid var(--color-brand4);
   text-decoration: none;
 }
 
