@@ -23,7 +23,7 @@
     width: 42px;
     height: 1px;
     margin-left: 12px;
-    background-color: $color-brand4;
+    background-color: var(--color-brand4);
   }
 
   @supports (display: grid) {

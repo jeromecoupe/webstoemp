@@ -4,7 +4,7 @@
 
 .c-pageintro {
   padding-bottom: pxtorem(36px);
-  background-color: $color-gray8;
+  background-color: var(--color-gray8);
 
   @include mq(medium) {
     padding-bottom: pxtorem(72px);

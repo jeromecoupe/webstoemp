@@ -23,10 +23,10 @@
 }
 
 .c-socialmedia__link {
-  color: $color-gray7;
+  color: var(--color-gray7);
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: $color-gray6;
+    color: var(--color-gray6);
   }
 }

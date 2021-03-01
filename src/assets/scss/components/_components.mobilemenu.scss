@@ -13,7 +13,7 @@
 
   padding: pxtorem(42px) pxtorem(24px);
 
-  background-color: $color-brand5;
+  background-color: var(--color-brand5);
 
   @include mq(medium) {
     display: none;
@@ -53,22 +53,24 @@
   font-size: pxtorem(15px);
   line-height: 1;
   text-decoration: none;
-  color: $color-gray8;
+  color: var(--color-gray8);
   text-transform: uppercase;
   text-align: center;
 
-  transition: color 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 
   &:hover,
   &:focus {
-    color: mix($color-white, $color-gray8, 30%);
+    color: var(--color-gray8);
+    opacity: 0.66;
   }
 }
 
 .c-mobilenav__link.is-active,
 .c-mobilenav__link.is-active:hover,
 .c-mobilenav__link.is-active:focus {
-  color: $color-white;
+  color: var(--color-white);
+  opacity: 1;
 }
 
 // -------------------------------------

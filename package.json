@@ -13,7 +13,7 @@
     "styles": "sass --style=compressed './src/assets/scss':'./dist/css'",
     "scripts:prod": "webpack --config './webpack.config.js' --mode production",
     "scripts:dev": "webpack --config './webpack.config.js' --mode development",
-    "server": "browser-sync start --server './dist' --files './dist' --no-open --logLevel 'info'",
+    "server": "browser-sync start --server './dist' --files './dist' --no-open",
     "eleventy": "npx eleventy --quiet",
     "thumbnails": "node './build_tasks/thumbnails.js'",
     "watch:eleventy": "onchange './src/**/*.{njk,md}' -- npm run eleventy",
