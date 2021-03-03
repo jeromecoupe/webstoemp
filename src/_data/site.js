@@ -6,5 +6,5 @@ module.exports = {
   baseUrl: "/",
   author: "Jerôme Coupé",
   authorTwitter: "@jeromecoupe",
-  buildTime: new Date()
+  buildTime: new Date(),
 };

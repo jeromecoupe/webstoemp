@@ -38,13 +38,13 @@ module.exports = {
   languages: [
     {
       label: "english",
-      code: "en"
+      code: "en",
     },
     {
       label: "français",
-      code: "fr"
-    }
-  ]
+      code: "fr",
+    },
+  ],
 };
 ```
 

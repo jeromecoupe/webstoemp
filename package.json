@@ -10,17 +10,19 @@
   },
   "scripts": {
     "clean": "rimraf './dist'",
-    "styles": "sass --style=compressed './src/assets/scss':'./dist/css'",
+    "styles:prod": "sass --no-source-map --style=compressed './src/assets/scss':'./dist/css'",
+    "styles:dev": "sass './src/assets/scss':'./dist/css'",
     "scripts:prod": "webpack --config './webpack.config.js' --mode production",
     "scripts:dev": "webpack --config './webpack.config.js' --mode development",
     "server": "browser-sync start --server './dist' --files './dist' --no-open",
     "eleventy": "npx eleventy --quiet",
     "thumbnails": "node './build_tasks/thumbnails.js'",
-    "watch:eleventy": "onchange './src/**/*.{njk,md}' -- npm run eleventy",
+    "watch:eleventy": "npx eleventy --watch --quiet",
     "watch:scripts": "onchange './src/assets/js/**/*' -- npm run scripts:dev",
-    "watch:styles": "onchange './src/assets/scss/**/*' -- npm run styles",
-    "build": "npm-run-all clean --parallel thumbnails styles scripts:prod eleventy",
-    "watch": "npm-run-all --parallel server watch:*"
+    "watch:styles": "onchange './src/assets/scss/**/*' -- npm run styles:dev",
+    "build": "npm-run-all clean --parallel thumbnails styles:prod scripts:prod eleventy",
+    "watch": "npm-run-all --parallel server watch:*",
+    "dev": "npm run watch"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
