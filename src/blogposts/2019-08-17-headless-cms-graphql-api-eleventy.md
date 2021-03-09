@@ -94,6 +94,8 @@ I went with `node-fetch` rather than Apollo and friends to minimise dependencies
 
 The GraphQL API from DatoCMS has a hard limit: you can only get 100 records per query (thanks to [Dan Fascia](https://twitter.com/danfascia) for pointing that out to me initially). If we have a large blog of more than 100 posts, we just have to make multiple queries and concatenate the results to make sure we get all blogposts.
 
+_Update June 8th 2020: don't be a dummy like me and use await in a while loop. There are [more performant ways to fetch data from an API](/blog/performant-data-fetching-promises-eleventy/)_
+
 ```js
 // required packages
 const fetch = require("node-fetch");
@@ -125,7 +127,7 @@ async function getAllBlogposts() {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           query: `{
@@ -152,8 +154,8 @@ async function getAllBlogposts() {
                 id
               }
             }
-          }`
-        })
+          }`,
+        }),
       });
 
       // store the JSON response when promise resolves
@@ -194,7 +196,7 @@ async function getAllBlogposts() {
       imageAlt: item.image.alt,
       summary: item.intro,
       body: item.body,
-      relatedBlogs: item.relatedBlogs
+      relatedBlogs: item.relatedBlogs,
     };
   });
 
