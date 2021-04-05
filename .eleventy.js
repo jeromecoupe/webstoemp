@@ -3,7 +3,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const now = new Date();
 
 module.exports = function (eleventyConfig) {
-  // blogpost collection
+  // blogposts collection
   eleventyConfig.addCollection("blogposts", function (collection) {
     return collection
       .getFilteredByGlob("./src/blogposts/*.md")
