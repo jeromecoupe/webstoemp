@@ -5,7 +5,7 @@ const classActive = "js-menu-is-active";
 const classNoScroll = "u-noscroll";
 
 // init
-function init() {
+const init = () => {
   for (let i = 0; i < elNavLinks.length; i++) {
     let el = elNavLinks[i];
     el.addEventListener(
@@ -18,6 +18,7 @@ function init() {
       false
     );
   }
-}
+};
 
+// exports
 export { init };
