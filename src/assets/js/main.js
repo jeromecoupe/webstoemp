@@ -1,2 +1,2 @@
-import * as nav from "./modules/navigation.js";
-nav.init();
+import * as navigation from "./modules/navigation.js";
+navigation.init();
