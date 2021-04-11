@@ -1,10 +1,11 @@
 const moment = require("moment");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const now = new Date();
 
 module.exports = function (eleventyConfig) {
   // blogposts collection
   eleventyConfig.addCollection("blogposts", function (collection) {
+    const now = new Date();
+
     return collection
       .getFilteredByGlob("./src/blogposts/*.md")
       .filter((item) => {
@@ -31,6 +32,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
     trim: true,
   });
+
+  // deep merge
+  eleventyConfig.setDataDeepMerge(true);
 
   // pass through
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
