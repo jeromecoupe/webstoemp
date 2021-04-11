@@ -35,10 +35,34 @@ const transforms = [
   },
 ];
 
-// create resized images
-const makeThumbnails = () => {
+/**
+ * Walk array of filepaths to make
+ * thumbnaisla and write them to disk
+ *
+ * @param {array} filepaths - array of filepaths
+ * @param {object} transform - Sharp options and location of dist folder
+ */
+const makeThumbnails = (filepaths, transform) => {
+  filepaths.forEach((file) => {
+    let filename = path.basename(file);
+    sharp(file)
+      .resize(transform.options)
+      .toFile(`${transform.dist}/${filename}`)
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+};
+
+/**
+ * Init function
+ * For each specified transform
+ * - get src and glob filepaths
+ * - pass filepaths and transform object
+ */
+const init = () => {
   transforms.forEach((transform) => {
-    // if folder does not exist create it with all above folders
+    // if dist folder does not exist create it with all above folders
     if (!fs.existsSync(transform.dist)) {
       fs.mkdirSync(transform.dist, { recursive: true }, (err) => {
         if (err) throw err;
@@ -46,19 +70,11 @@ const makeThumbnails = () => {
     }
 
     // glob all files
-    let files = glob.sync(transform.src);
+    let filepaths = glob.sync(transform.src);
 
-    // for each file, apply transforms and save to file
-    files.forEach((file) => {
-      let filename = path.basename(file);
-      sharp(file)
-        .resize(transform.options)
-        .toFile(`${transform.dist}/${filename}`)
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+    // make thumbnails
+    makeThumbnails(filepaths, transform);
   });
 };
 
-makeThumbnails();
+init();
