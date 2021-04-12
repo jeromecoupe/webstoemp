@@ -36,9 +36,20 @@ const transforms = [
 ];
 
 /**
+ * Check folder exists, if not, make it (recursively)
+ * @param {string} path - path to folder
+ */
+const checkFolderExists = (path) => {
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(path, { recursive: true }, (err) => {
+      if (err) throw err;
+    });
+  }
+};
+
+/**
  * Walk array of filepaths to make
- * thumbnaisla and write them to disk
- *
+ * thumbnails and write them to disk
  * @param {array} filepaths - array of filepaths
  * @param {object} transform - Sharp options and location of dist folder
  */
@@ -62,19 +73,14 @@ const makeThumbnails = (filepaths, transform) => {
  */
 const init = () => {
   transforms.forEach((transform) => {
-    // if dist folder does not exist create it with all above folders
-    if (!fs.existsSync(transform.dist)) {
-      fs.mkdirSync(transform.dist, { recursive: true }, (err) => {
-        if (err) throw err;
-      });
-    }
+    // check dist folder exists
+    checkFolderExists(transform.dist);
 
-    // glob all files
+    // glob files and make thumbnails
     let filepaths = glob.sync(transform.src);
-
-    // make thumbnails
     makeThumbnails(filepaths, transform);
   });
 };
 
+// Initialise
 init();
