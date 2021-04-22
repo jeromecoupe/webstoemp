@@ -30,7 +30,7 @@ permalink: blog/index.html
   <div class="c-pagecontent">
     <div class="l-container">
 
-      {% for post in collections.blogposts | reverse %}
+      {% for post in collections.blogposts %}
         {% if loop.first %}<ul class="c-list-ui">{% endif %}
         <li>
           <article class="c-blogteaser">
