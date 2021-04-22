@@ -1,32 +1,20 @@
-const moment = require("moment");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   // blogposts collection
-  eleventyConfig.addCollection("blogposts", function (collection) {
-    const now = new Date();
-
-    return collection
-      .getFilteredByGlob("./src/blogposts/*.md")
-      .filter((item) => {
-        return item.data.draft !== true && item.date <= now;
-      });
-  });
-
+  eleventyConfig.addCollection(
+    "blogposts",
+    require("./eleventy/collections/blogposts.js")
+  );
   // projects collection
-  eleventyConfig.addCollection("projects", function (collection) {
-    return collection.getFilteredByGlob("./src/projects/*.md");
-  });
+  eleventyConfig.addCollection(
+    "projects",
+    require("./eleventy/collections/projects.js")
+  );
 
-  // limit filter
-  eleventyConfig.addFilter("limit", function (array, limit) {
-    return array.slice(0, limit);
-  });
-
-  // date filter
-  eleventyConfig.addFilter("date", function (date, format) {
-    return moment(date).format(format);
-  });
+  // filters
+  eleventyConfig.addFilter("limit", require("./eleventy/filters/limit.js"));
+  eleventyConfig.addFilter("date", require("./eleventy/filters/date.js"));
 
   // Syntax highlighting (prism)
   eleventyConfig.addPlugin(syntaxHighlight, {

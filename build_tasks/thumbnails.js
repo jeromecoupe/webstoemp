@@ -78,6 +78,11 @@ const init = () => {
 
     // glob files and make thumbnails
     let filepaths = glob.sync(transform.src);
+    if (filepaths.length === 0) {
+      throw new Error(
+        `THUMBNAILS TASK: ${transform.src} folder didn't return any file`
+      );
+    }
     makeThumbnails(filepaths, transform);
   });
 };
