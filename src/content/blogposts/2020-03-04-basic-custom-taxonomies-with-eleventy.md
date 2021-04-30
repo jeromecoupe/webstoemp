@@ -105,7 +105,7 @@ function strToSlug(str) {
   const options = {
     replacement: "-",
     remove: /[&,+()$~%.'":*?<>{}]/g,
-    lower: true
+    lower: true,
   };
 
   return slugify(str, options);
@@ -126,7 +126,7 @@ module.exports = function (eleventyConfig) {
 
     let blogCategories = allCategories.map((category) => ({
       title: category,
-      slug: strToSlug(category)
+      slug: strToSlug(category),
     }));
 
     return blogCategories;
@@ -140,15 +140,15 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "./src",
-      output: "./dist"
-    }
+      output: "./dist",
+    },
   };
 };
 ```
 
 ### Filter blogposts by categories
 
-We can now create our categories pages by paginating the `blogCategories` collection. In that template, we will use a custom `includes` filter to get only the blogposts containing the category we are interested in from the `blogposts` collection. That filter compares values without taking accentuated characters or capitalisation into account. It also uses `lodash`.
+We can now create our categories pages by paginating the `blogCategories` collection. In that template, we will use a custom `includes` filter to get only the blogposts containing the category we are interested in from the `blogposts` collection. That filter compares values without taking accentuated characters or capitalization into account. It also uses `lodash`.
 
 ```js
 const lodash = require("lodash");
@@ -322,9 +322,9 @@ eleventyConfig.addCollection("blogpostsByCategories", function (collection) {
           next: pagesSlugs[index + 1] || null,
           previous: pagesSlugs[index - 1] || null,
           first: pagesSlugs[0] || null,
-          last: pagesSlugs[pagesSlugs.length - 1] || null
+          last: pagesSlugs[pagesSlugs.length - 1] || null,
         },
-        items: posts
+        items: posts,
       });
     });
   });

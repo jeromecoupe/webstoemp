@@ -37,7 +37,7 @@ That approach has been [detailed on CSS Tricks](https://css-tricks.com/css-grid-
 - If you need support for `grid-gap`, it is recommended to use `grid-template-areas` and `grid-area` for explicit placement.
 - You only have access to a subset of CSS Grid features. You cannot use things like implicit grids, `repeat(auto-fit, ...)`, `repeat(auto-fill, ...)`, etc.
 
-I went down the Autoprefixer route but that's not the approach I personally favour. I find it too limiting because it inevitably has to be a middle ground between a complex modern spec and what PostCSS can fix for legacy browsers without having access to the DOM.
+I went down the Autoprefixer route but that's not the approach I personally favor. I find it too limiting because it inevitably has to be a middle ground between a complex modern spec and what PostCSS can fix for legacy browsers without having access to the DOM.
 
 ### Use flexbox as a fallback
 
@@ -64,18 +64,18 @@ $breakpoints-map: (
   small: (
     query: "all and (min-width: 500px)",
     generate-grids: true,
-    generate-helpers: true
+    generate-helpers: true,
   ),
   medium: (
     query: "all and (min-width: 750px)",
     generate-grids: true,
-    generate-helpers: true
+    generate-helpers: true,
   ),
   large: (
     query: "all and (min-width: 1100px)",
     generate-grids: true,
-    generate-helpers: true
-  )
+    generate-helpers: true,
+  ),
 ) !default;
 
 $grid-gap: 2rem !default;

@@ -31,7 +31,7 @@ For students, this is invaluable. Granted, Eleventy might feel a bit closer to t
 
 With React, Vue or Svelte being all the rage these days, SSG like [Gatsby](https://www.gatsbyjs.org/) or [Gridsome](https://gridsome.org/) were also on my radar.
 
-Personally, I feel that those solutions, while extremely valuable when you have to deal with app-like functionalities and / or state-based UI, come with a lot of bagage and are a bit overkill when building content-driven websites.
+Personally, I feel that those solutions, while extremely valuable when you have to deal with app-like functionalities and / or state-based UI, come with a lot of baggage and are a bit overkill when building content-driven websites.
 
 By comparison, Eleventy is a lot simpler and looks a lot less like a black box to me (if I am being completely honest). [Fetching data from a GraphQL API](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) is quite trivial and students can still use what they learned with my colleagues teaching them Vue or Node if the project requires it.
 

@@ -24,7 +24,7 @@ To help myself update my courses, [I have put them all on Github](https://github
 
 ## Make freelancing less crazy
 
-Because all of my income doesn't come from freelance gigs, I am more comfortable being a bit pickier with the projects and clients I take on. Hopefully, it will also allow me to cope with the endless sucession of feast and famine experienced by many freelancers I have talked to.
+Because all of my income doesn't come from freelance gigs, I am more comfortable being a bit pickier with the projects and clients I take on. Hopefully, it will also allow me to cope with the endless succession of feast and famine experienced by many freelancers I have talked to.
 
 Rather than working on a wide variety of small projects at the same time, I intend to try one of those two things:
 

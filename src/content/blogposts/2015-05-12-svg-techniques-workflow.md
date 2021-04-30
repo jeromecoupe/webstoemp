@@ -8,7 +8,7 @@ tags:
   - SVG
 ---
 
-Given the multi-devices, multi-screen-resolutions web we currently live in, the SVG format has gained a lot of traction. Browser support has also reached a point where it becomes realistic to use it in producton. Here is a quick rundown of the various use cases I have encountered and how I deal with them in the framework of a CMS or static site generator environment.
+Given the multi-devices, multi-screen-resolutions web we currently live in, the SVG format has gained a lot of traction. Browser support has also reached a point where it becomes realistic to use it in production. Here is a quick rundown of the various use cases I have encountered and how I deal with them in the framework of a CMS or static site generator environment.
 
 ## User uploaded SVG assets
 
@@ -82,8 +82,8 @@ gulp.task("img", function () {
         progressive: true,
         svgoPlugins: [
           { removeViewBox: false },
-          { removeUselessStrokeAndFill: false }
-        ]
+          { removeUselessStrokeAndFill: false },
+        ],
       })
     )
     .pipe(gulp.dest("./img/"))
@@ -91,7 +91,7 @@ gulp.task("img", function () {
 });
 ```
 
-For convenience's sake I usually keep the exported and optimised SVG around but store the SVG code as partials / includes in my CMS. That allows for easy inclusion anywhere in my code base, keeps the bloat of SVG files out of my templates and preserve the [accessibility-related enhancements](http://www.sitepoint.com/tips-accessible-svg/) I make when SVGO cleans the files. If I modify those, I just copy the paths and shapes from the cleaned up sources back to my partials.
+For convenience's sake I usually keep the exported and optimized SVG around but store the SVG code as partials / includes in my CMS. That allows for easy inclusion anywhere in my code base, keeps the bloat of SVG files out of my templates and preserve the [accessibility-related enhancements](http://www.sitepoint.com/tips-accessible-svg/) I make when SVGO cleans the files. If I modify those, I just copy the paths and shapes from the cleaned up sources back to my partials.
 
 Using CSS animations and transitions with inline SVGs is trivial. All it takes is adding some classes to svg paths, elements or groups and then referencing those classes in your CSS files, using SVG specific properties.
 
@@ -124,7 +124,7 @@ Here is a small example of what you would write in your CSS / Sass
 
 ## Bigger and more complex animations
 
-There are times when you will want to use SVG to create bigger, more complex animations. If those are purely decorative and you are ok with them not being supported by any flavour of Internet Explorer (which will get the static version of your SVG), then SMIL animations are a good option.
+There are times when you will want to use SVG to create bigger, more complex animations. If those are purely decorative and you are ok with them not being supported by any flavor of Internet Explorer (which will get the static version of your SVG), then SMIL animations are a good option.
 
 If you want to dabble into SMIL, [Sara Soueidan wrote a detailed guide for CSS-tricks](https://css-tricks.com/guide-svg-animations-smil/ "The SVG princess strikes again") that I cannot recommend enough. Worth it as well are the [SMIL guide by the fine folks at MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL) and, if you are feeling a bit more adventurous, [the SMIL spec at the W3C](http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AdditiveAnim).
 

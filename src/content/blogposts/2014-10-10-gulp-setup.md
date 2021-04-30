@@ -49,7 +49,7 @@ var AUTOPREFIXER_BROWSERS = [
   "ie >= 8",
   "ios >= 7",
   "android >= 4.4",
-  "bb >= 10"
+  "bb >= 10",
 ];
 
 // Datestamp for cache busting
@@ -70,7 +70,7 @@ var getStamp = function () {
 gulp.task("browser-sync", function () {
   browsersync({
     proxy: "www.webstoemp.dev",
-    port: 3000
+    port: 3000,
   });
 });
 
@@ -89,8 +89,8 @@ gulp.task("images", function () {
         interlaced: true,
         svgoPlugins: [
           { removeViewBox: false },
-          { removeUselessStrokeAndFill: false }
-        ]
+          { removeUselessStrokeAndFill: false },
+        ],
       })
     )
     .pipe(gulp.dest("./public_html/assets/img/"));
@@ -154,7 +154,7 @@ gulp.task("watch", ["browser-sync"], function () {
   gulp.watch("./public_html/assets/js/modules/**/*", [
     "jslint",
     "scripts",
-    "browsersync-reload"
+    "browsersync-reload",
   ]);
   gulp.watch("./craft/templates/**/*", ["browsersync-reload"]);
 });
@@ -176,7 +176,7 @@ You can find all of the plugins I am using on the [npm website](https://www.npmj
 
 ## Images
 
-I use the gulp-imagemin plugin for optimising my images. It comes bundled with plugins to optimise jpg, gif and png so it suits most of my needs perfectly. The only options I use are for making progressive JPEG, interlaced GIFs and optimise SVG. Setting `removeViewBox` and `removeUselessStrokeAndFill` to `false` prevent SVGO from borking some complex SVG files.
+I use the gulp-imagemin plugin for optimising my images. It comes bundled with plugins to optimize jpg, gif and png so it suits most of my needs perfectly. The only options I use are for making progressive JPEG, interlaced GIFs and optimize SVG. Setting `removeViewBox` and `removeUselessStrokeAndFill` to `false` prevent SVGO from borking some complex SVG files.
 
 ```javascript
 // Optimize Images task
@@ -189,15 +189,15 @@ gulp.task("images", function () {
         interlaced: true,
         svgoPlugins: [
           { removeViewBox: false },
-          { removeUselessStrokeAndFill: false }
-        ]
+          { removeUselessStrokeAndFill: false },
+        ],
       })
     )
     .pipe(gulp.dest("./public_html/assets/img/"));
 });
 ```
 
-In case you need something else, [have a look on nmpjs.org](https://www.npmjs.org/browse/keyword/imageminplugin), you are bound to find a plugin fulfilling your wildest dreams about image optimisation.
+In case you need something else, [have a look on nmpjs.org](https://www.npmjs.org/browse/keyword/imageminplugin), you are bound to find a plugin fulfilling your wildest dreams about image optimization.
 
 I consider this a one shot task and, as such, I don't include it in my watch task.
 
@@ -302,7 +302,7 @@ It's quite easy to install and to integrate to your Gulp workflow:
 gulp.task("browser-sync", function () {
   browsersync({
     proxy: "www.webstoemp.dev",
-    port: 3000
+    port: 3000,
   });
 });
 ```
@@ -325,7 +325,7 @@ gulp.task("watch", ["browser-sync"], function () {
   gulp.watch("./public_html/assets/js/modules/**/*", [
     "jslint",
     "scripts",
-    "browsersync-reload"
+    "browsersync-reload",
   ]);
   gulp.watch("./craft/templates/**/*", ["browsersync-reload"]);
 });
@@ -339,4 +339,4 @@ BrowserSync will inject any new styles in my pages when my CSS files are modifie
 .pipe(browsersync.reload({ stream:true }))
 ```
 
-Well, that's it. I just walked you through my current default setup for build automation with Gulp. I hope you found something useful in there. If you have suggestions or optimisations, don't hesitate to get in touch on twitter, I love to nerd out on such things.
+Well, that's it. I just walked you through my current default setup for build automation with Gulp. I hope you found something useful in there. If you have suggestions or optimizations, don't hesitate to get in touch on twitter, I love to nerd out on such things.

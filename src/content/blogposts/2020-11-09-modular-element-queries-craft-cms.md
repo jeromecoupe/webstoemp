@@ -38,7 +38,7 @@ With Craft 2, [my go-to approach](/blog/manipulating-craft-elementcriteriamodel-
 {% endraw %}
 ```
 
-Since version 3, Craft favours the use of dot syntax and chained functions, which means we have to change our approach slightly. However, we can essentially accomplish the same thing using Twig's `{% raw %}{% do %}{% endraw %}` tag.
+Since version 3, Craft favors the use of dot syntax and chained functions, which means we have to change our approach slightly. However, we can essentially accomplish the same thing using Twig's `{% raw %}{% do %}{% endraw %}` tag.
 
 The [Twig documentation](https://twig.symfony.com/doc/3.x/tags/do.html) is quite succinct and could probably be fleshed but a little bit. Essentially, `do` executes whatever is passed to it but does not print or return any value, which is exactly what we need.
 

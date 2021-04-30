@@ -73,6 +73,6 @@ If you want to use the images of a gallery you just uploaded in the French versi
 
 Configuration-wise, MSM is a little bit finicky. Getting your head around what needs to be in the various `index.php` files versus what needs to be in your main (and only) `config.php` file can prove to be difficult. While the big add-ons generally play nice with MSM, some add-ons do not.
 
-Be aware that, if you use a lot of custom fieldtypes you might be in for some raw MySQL data transfer. While MSM can duplicate "regular" entries easily when copying a site, everything outside of the `channel_data` and `channel_titles` tables will not be copied from one site to the other.
+Be aware that, if you use a lot of custom field types you might be in for some raw MySQL data transfer. While MSM can duplicate "regular" entries easily when copying a site, everything outside of the `channel_data` and `channel_titles` tables will not be copied from one site to the other.
 
 Despite those shortcomings, I still think MSM is a solution to be considered when developping a multilingual website with ExpressionEngine. I hope the few points I have made in this article will at least get some of you to think about it for your next multilingual project.
