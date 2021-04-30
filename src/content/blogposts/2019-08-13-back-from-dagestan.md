@@ -34,7 +34,7 @@ I don't speak Russian, apart from a few words, but certainly not enough to have 
 
 As many mountainous regions are, Dagestan is a mosaic of various ethnicities and tribes with their own languages and traditions. Russian is their lingua franca but, when asked where they are from, they will almost always reply with some variant of: "my mother is from (insert village or region), my father is from (insert village or region). I am (insert ethnicity)".
 
-People I have met are proud, have a big heart, love good food and are always ready to start a Shashlik (barbecue). They are warm and inclusive to the point where we, as Europeans, felt like blocks of ice at times. Their notion of family extends far beyond parents and children to include aunts, uncles as well as cousins, including distant ones. Even when travelling around, you always feel you are part of a tribe.
+People I have met are proud, have a big heart, love good food and are always ready to start a Shashlik (barbecue). They are warm and inclusive to the point where we, as Europeans, felt like blocks of ice at times. Their notion of family extends far beyond parents and children to include aunts, uncles as well as cousins, including distant ones. Even when traveling around, you always feel you are part of a tribe.
 
 When close to mountains, maybe what you value most is everything that keeps you warm?
 
@@ -44,7 +44,7 @@ Makhachkala is a big city laying by the sea: a chaotic mix of buildings from the
 
 As soon as you leave the capital, unless you are following the coast, you quickly enter the mountains. The diversity of landscapes is astounding: from dry and rocky, to bright green with rivers and lakes ... and everything in between.
 
-Villages are surrounded by terrasses made for agriculture, apricot and peach trees are everywhere. Higher in the mountains, roads become tracks. Yellow pipes carrying natural gas to remote villages zig and zag up the slopes. Our drivers often ask locals for the road ahead and thank them with a resounding "Barkala" before driving off.
+Villages are surrounded by terraces made for agriculture, apricot and peach trees are everywhere. Higher in the mountains, roads become tracks. Yellow pipes carrying natural gas to remote villages zig and zag up the slopes. Our drivers often ask locals for the road ahead and thank them with a resounding "Barkala" before driving off.
 
 We went on a boat trip in a canyon, walked a bit, ate and laughed a lot, saw impressive hydroelectric power plants, visited a cave, sanatoriums, a waterfall and abandoned villages built centuries ago, where rocks seem to transform into houses and eagles flew above our heads.
 

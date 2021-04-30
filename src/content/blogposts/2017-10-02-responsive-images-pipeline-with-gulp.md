@@ -17,8 +17,8 @@ Generating all these thumbnails on every build is time consuming, so I wanted so
 
 Here is what I wanted these Gulp tasks to do for me:
 
-1. Copy and optimise images form `src` to `dist` only if images in `src` are newer than images in `dist`.
-2. Use a simple configuration array of objects to generate and optimise image thumbnails for selected folders in `src` using ImageMagick.
+1. Copy and optimize images form `src` to `dist` only if images in `src` are newer than images in `dist`.
+2. Use a simple configuration array of objects to generate and optimize image thumbnails for selected folders in `src` using ImageMagick.
 3. Delete images and related thumbnails in my `dist` folder when images are deleted from the `src` folder or renamed.
 4. Delete unused folders in my `dist` folder when transform objects are modified in the configuration array or when images in `src` are moved around.
 
@@ -59,8 +59,8 @@ const transforms = [
     params: {
       width: 800,
       height: 600,
-      crop: true
-    }
+      crop: true,
+    },
   },
   {
     src: "./assets/img/banners/*",
@@ -68,9 +68,9 @@ const transforms = [
     params: {
       width: 1500,
       height: 844,
-      crop: true
-    }
-  }
+      crop: true,
+    },
+  },
 ];
 ```
 
@@ -99,8 +99,8 @@ gulp.task("img:copy", ["img:clean"], () => {
         progressive: true,
         svgoPlugins: [
           { removeViewBox: false },
-          { removeUselessStrokeAndFill: false }
-        ]
+          { removeUselessStrokeAndFill: false },
+        ],
       })
     )
     .pipe(gulp.dest("./public/assets/img/"));
@@ -111,7 +111,7 @@ gulp.task("img:copy", ["img:clean"], () => {
 
 Next, we want to create our thumbnails using ImageMagick. If we only had one image folder to deal with, it would be a trivial task: pipe the images through `gulp-newer`, then through `gulp-image-resize` and finally through `gulp-imagemin` before saving the output to our `dist` folder.
 
-Here, we have to walk over our configuration array and, for each transform, repeat these operations. If possible, we also want to do it in parallel to optimise our build process.
+Here, we have to walk over our configuration array and, for each transform, repeat these operations. If possible, we also want to do it in parallel to optimize our build process.
 
 That's what `merge2` is used for. It merges multiple streams into one and, when fed an array of streams, processes them in parallel.
 
@@ -149,7 +149,7 @@ gulp.task("img:thumbnails", ["img:clean"], () => {
             imageMagick: true,
             width: transform.params.width,
             height: transform.params.height,
-            crop: transform.params.crop
+            crop: transform.params.crop,
           })
         )
         .pipe(
@@ -157,8 +157,8 @@ gulp.task("img:thumbnails", ["img:clean"], () => {
             progressive: true,
             svgoPlugins: [
               { removeViewBox: false },
-              { removeUselessStrokeAndFill: false }
-            ]
+              { removeUselessStrokeAndFill: false },
+            ],
           })
         )
         .pipe(
@@ -186,9 +186,9 @@ For example, if we configure a transform to generate "800" per "600" thumbnails 
 
 Here comes the trickier part. Whenever an image in `src` is deleted, moved or renamed, we need to get rid of both the base image and the relevant generated thumbnails in `dist`.
 
-Because every image in our `dist` folder is generated or copied programatically, we can easily write a few lines of code to compare their filepaths with the filepaths of original images in our `src` folder. If we don't find a match, we know we can safely delete those files from `dist`.
+Because every image in our `dist` folder is generated or copied programmatically, we can easily write a few lines of code to compare their file paths with the file paths of original images in our `src` folder. If we don't find a match, we know we can safely delete those files from `dist`.
 
-Looping over a large amount of files and filtering paths can take quite a few miliseconds (which is a long time in Gulp world). We make sure we wait for that process to happen before carrying on by using `globby` and promises.
+Looping over a large amount of files and filtering paths can take quite a few milliseconds (which is a long time in Gulp world). We make sure we wait for that process to happen before carrying on by using `globby` and promises.
 
 ```js
 /**
@@ -206,7 +206,7 @@ gulp.task("img:clean", ["img:clean:directories"], () => {
   // get arrays of src and dist filepaths (returns array of arrays)
   return Promise.all([
     globby("./assets/img/**/*", { nodir: true }),
-    globby("./public/assets/img/**/*", { nodir: true })
+    globby("./public/assets/img/**/*", { nodir: true }),
   ])
     .then((paths) => {
       // create arrays of filepaths from array of arrays returned by promise
@@ -330,7 +330,7 @@ gulp.task("watch", ["browser-sync"], () => {
 
 ## A nice little image pipeline
 
-With a few line of JS, we have a small but powerfull image pipeline built with Gulp and Node that can be used with pretty much any static site generator on the market. Sure, services like [Cloudinary](https://cloudinary.com) and [imgIX](https://www.imgix.com/) are great but they are overkill for most of the projects I work on, and it also introduces another dependency. This small project also gave me the opportunity to write some ES6, to work with Promises and to prove once more than, indeed, [front-end is not programming](https://www.webstoemp.com/blog/front-end-not-programming/).
+With a few line of JS, we have a small but powerful image pipeline built with Gulp and Node that can be used with pretty much any static site generator on the market. Sure, services like [Cloudinary](https://cloudinary.com) and [imgIX](https://www.imgix.com/) are great but they are overkill for most of the projects I work on, and it also introduces another dependency. This small project also gave me the opportunity to write some ES6, to work with Promises and to prove once more than, indeed, [front-end is not programming](https://www.webstoemp.com/blog/front-end-not-programming/).
 
 This series of Gulp tasks should be able to deal with even a large amount of images and is pretty easy to customise to suit your needs if you feel so inclined.
 

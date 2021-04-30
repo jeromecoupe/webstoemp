@@ -66,7 +66,7 @@ Here what our `fr.json` file would contain:
 
 ## Localised date filter
 
-Nunjucks does not have a date filter. We can create one using `moment.js` and pass it our `locale` value to localise dates for us, which is an important part of all multilingual projects. In order to do that, we use the following code in our `.eleventy.js` file:
+Nunjucks does not have a date filter. We can create one using `moment.js` and pass it our `locale` value to localize dates for us, which is an important part of all multilingual projects. In order to do that, we use the following code in our `.eleventy.js` file:
 
 ```js
 // date filter (localized)
@@ -152,7 +152,7 @@ We could make use of our `locale` variable to call our collections too. We would
 
 Although duplicating our pages and posts is quite logical, we don't want to duplicate our layouts and partials.
 
-Luckily, we can avoid it by feeding them localised strings. In order to do that, we need to create multilingual [global data files](https://www.11ty.dev/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
+Luckily, we can avoid it by feeding them localized strings. In order to do that, we need to create multilingual [global data files](https://www.11ty.dev/docs/data-global/) containing our locales as keys. We can then reference those keys dynamically in our layouts or partials using our trusty `locale` variable.
 
 ### Layouts
 
@@ -168,12 +168,12 @@ module.exports = {
   twitter: "@handle",
   en: {
     metaTitle: "Title in english",
-    metaDescription: "Description in english"
+    metaDescription: "Description in english",
   },
   fr: {
     metaTitle: "Titre en français",
-    metaDescription: "Description en français"
-  }
+    metaDescription: "Description en français",
+  },
 };
 ```
 
@@ -248,7 +248,7 @@ module.exports = {
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Bruxelles",
-    directionsLabel: "Itinéraire"
+    directionsLabel: "Itinéraire",
   },
   en: {
     addressTitle: "Address",
@@ -256,8 +256,8 @@ module.exports = {
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Brussels",
-    directionsLabel: "Directions"
-  }
+    directionsLabel: "Directions",
+  },
 };
 ```
 

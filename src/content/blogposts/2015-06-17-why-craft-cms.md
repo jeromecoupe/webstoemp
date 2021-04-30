@@ -34,9 +34,9 @@ Some CMS need many third party add-ons to be fully functional. These add-ons can
 
 ## Multilingual by default
 
-Craft's capabilities in terms of [localisation](https://buildwithcraft.com/features/localization) are second to none. That's very important in a country with three official languages. Multilingual websites are complex beasts and, if they are not integrated in the core, localisation features can rapidly become problematic.
+Craft's capabilities in terms of [localization](https://buildwithcraft.com/features/localization) are second to none. That's very important in a country with three official languages. Multilingual websites are complex beasts and, if they are not integrated in the core, localization features can rapidly become problematic.
 
-Craft is developed on [Yii](http://www.yiiframework.com/), a PHP framework with an impeccable reputation in terms of internationalisation and localisation.
+Craft is developed on [Yii](http://www.yiiframework.com/), a PHP framework with an impeccable reputation in terms of internationalization and localization.
 
 As of this writing, Craft's control panel is available in 18 different languages already.
 

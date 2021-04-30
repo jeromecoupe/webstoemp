@@ -84,7 +84,7 @@ There are a few things in multilingual websites where [the awesomeness called Tw
 
 For the english version, a date might be "April 1, 2015" where in french it would need to be "1 avril 2015". The order is different and there is a coma in English that's not there in the French version.
 
-We can easily create a macro that outputs localised dates from a date object. We are simply going to use the `currentLgg` variable we created earlier.
+We can easily create a macro that outputs localized dates from a date object. We are simply going to use the `currentLgg` variable we created earlier.
 
 ```twig
 {%- raw -%}

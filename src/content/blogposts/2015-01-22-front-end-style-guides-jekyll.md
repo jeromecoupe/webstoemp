@@ -14,7 +14,7 @@ tags:
 
 Since the advent of the multi-platform web and responsive web design, I try to move to code as quickly as possible. I find it easier to demonstrate the responsiveness of my designs, CSS animations and other light interactivity in the browser.
 
-While I don't go as far as working with a full on [atomic design approach](http://bradfrost.com/blog/post/atomic-web-design/), I am in favour of presenting clients with a design system rather than with full comps during the exploratory phases of a project.
+While I don't go as far as working with a full on [atomic design approach](http://bradfrost.com/blog/post/atomic-web-design/), I am in favor of presenting clients with a design system rather than with full comps during the exploratory phases of a project.
 
 Tools like [visual inventories](http://danielmall.com/articles/visual-inventory/), [style tiles](http://styletil.es/) and [elements collages](http://danielmall.com/articles/rif-element-collages/) are modular approaches I use during the [design process](http://vimeo.com/45915667). I usually complement those deliverables by [a style guide](http://styleguides.io/) or [pattern portfolio](http://clearleft.com/thinks/onpatternportfolios/) presenting the various building blocks of the design system in actual HTML/CSS/JS code.
 
