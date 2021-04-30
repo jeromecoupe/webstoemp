@@ -18,7 +18,7 @@ I design, write HTML, CSS and DOM related Javascript, know a few CMS like the ba
 
 However, I don't feel comfortable carrying on like this for three main reasons:
 
-- I would like to be **involved with web projects at a more strategic level**. How does that website fit with the overall communication strategy of the organisation ? How will the web presence we are building evolve over time?
+- I would like to be **involved with web projects at a more strategic level**. How does that website fit with the overall communication strategy of the organization ? How will the web presence we are building evolve over time?
 - I feel I am most valuable when I **work with clients on the long term**. So far though, most of my freelance gigs have been relatively short-term engagements (one to three months) where I have been tasked with the conception and implementation of a website.
 - I miss **working with a team**, sharing ideas, rubbing shoulders, etc. Twitter, Slack and a solid network of friends in the field can only go so far.
 

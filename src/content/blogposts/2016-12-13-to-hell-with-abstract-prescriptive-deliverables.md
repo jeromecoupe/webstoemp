@@ -48,7 +48,7 @@ We then take the reverse approach and try to come up with objectives we have tow
   <p><em>[verb]</em> <em>[user groups]</em> to <em>[something]</em> instead of <em>[something]</em> because <em>[something]</em></p>
 </blockquote>
 
-For example, working for a data visualisation company:
+For example, working for a data visualization company:
 
 <blockquote>
   <p>Reassure companies with big data needs that they can choose us instead of the big players because we will adapt to their needs instead of shoehorning them into our processes, we don't lock them in with proprietary formats and we have years of experience in the field.</p>
@@ -60,7 +60,7 @@ In my experience, those sentences and the discussions surrounding them will give
 
 We can then examine key pages and item types for the project at hand. The goal here is first to list all key pages and item types. For each of them, we want to have a precise data structure describing what chunks of content they contain. We want to be as granular as possible and establish priorities.
 
-Talking about it in a mobile context generally helps avoiding the "everything is of equal importance" syndrome. A 300 pixels wide "tube of content" is a great construct to force people to prioritise, be it at the macro level (screens), or at the micro level (content types).
+Talking about it in a mobile context generally helps avoiding the "everything is of equal importance" syndrome. A 300 pixels wide "tube of content" is a great construct to force people to prioritize, be it at the macro level (screens), or at the micro level (content types).
 
 Everybody around the table can have their say about what should be included. We then collectively vote to establish what the most important items are for each page or content type.
 
@@ -92,11 +92,11 @@ Having something concrete to look at will spawn other conversations. Using tools
 
 To tackle the visual design aspect of things, we need another deliverable alongside the content prototype. The inevitable Dan Mall has a fantastic post about what he calls "[element collages](http://danielmall.com/articles/rif-element-collages/)".
 
-Using Sketch or Photoshop, we can quickly create an advanced moodboard of sorts that will allow designers to showcase what the website will look like and how certain parts of it will function, without having to paint pretty pictures of all the pages in the site.
+Using Sketch or Photoshop, we can quickly create an advanced mood-board of sorts that will allow designers to showcase what the website will look like and how certain parts of it will function, without having to paint pretty pictures of all the pages in the site.
 
 Even though we are headed towards 2017, I still see web designers starting their explorations with desktop layouts. Element collages nudge designers into taking a more component-based approach and to leave the tyranny of the desktop page behind. Designing in the form of element collages is also an opportunity to focus on specific design challenges like complex responsive navigation, views of components at various screen sizes, etc.
 
-Again, because of its moodboard-esque nature, an element collage is far less prescriptive than static comps. It is a more dynamic artefact, one that allows for design conversations to happen and avoids the proverbial "Don Draper big reveal".
+Again, because of its mood-board nature, an element collage is far less prescriptive than static comps. It is a more dynamic artifact, one that allows for design conversations to happen and avoids the proverbial "Don Draper big reveal".
 
 ## Enrich and iterate
 

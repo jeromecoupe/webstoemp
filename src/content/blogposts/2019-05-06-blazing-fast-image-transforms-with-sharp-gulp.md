@@ -23,7 +23,7 @@ For many projects I work on, especially [JAMstack](https://jamstack.org/) ones, 
 
 ## Sharp
 
-[Sharp](https://github.com/lovell/sharp) is a Node.js image processing library to which we can easily use in a Gulp task. It offers a wide range of options and oparations we can use and is a whole lot faster and more flexible than alternatives like `gulp-image-resize` for example.
+[Sharp](https://github.com/lovell/sharp) is a Node.js image processing library to which we can easily use in a Gulp task. It offers a wide range of options and operations we can use and is a whole lot faster and more flexible than alternatives like `gulp-image-resize` for example.
 
 Let's first install `sharp` as a dependency
 
@@ -81,8 +81,8 @@ const transforms = [
     options: {
       width: 1024,
       height: 576,
-      fit: "cover"
-    }
+      fit: "cover",
+    },
   },
   {
     src: "./src/assets/img/blogposts/*",
@@ -90,8 +90,8 @@ const transforms = [
     options: {
       width: 600,
       height: 600,
-      fit: "cover"
-    }
+      fit: "cover",
+    },
   },
   {
     src: "./src/assets/img/projects/*",
@@ -99,9 +99,9 @@ const transforms = [
     options: {
       width: 800,
       height: 600,
-      fit: "cover"
-    }
-  }
+      fit: "cover",
+    },
+  },
 ];
 ```
 
@@ -142,7 +142,7 @@ function resizeImages(done) {
 
 // exports (Common JS)
 module.exports = {
-  resize: resizeImages
+  resize: resizeImages,
 };
 ```
 

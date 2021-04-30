@@ -16,14 +16,14 @@ One of my older post is about [fetching data from a GraphQL API with Eleventy](h
 
 The problem is that I use await in a while loop (like a dummy). The direct consequence of this is that the API calls happen sequentially, as [brilliantly explained by Jason Lengstorf](https://www.learnwithjason.dev/blog/keep-async-await-from-blocking-execution/). Each call has to wait for the previous one to finish instead of running in parallel.
 
-Retrieveing all records from an API at build time is a pretty common use case with static site generators and headless CMSes. Generally, such APIs are limiting the number of records you can get in one single query and will make you use pagination.
+Retrieving all records from an API at build time is a pretty common use case with static site generators and headless CMSes. Generally, such APIs are limiting the number of records you can get in one single query and will make you use pagination.
 
 Here is a rough outline of how to deal with this use case in a performant manner:
 
 1. Make a request to the API to retrieve a first batch of data as well as the total number of items to retrieve
 2. Calculate the number of additional API requests we need to retrieve all data
 3. If we need to make more calls, store those additional requests as promises
-4. Use `Promise.all` to execute all addtional requests in parallel
+4. Use `Promise.all` to execute all additional requests in parallel
 5. Sort our data if needed
 6. Store all data in a cache file
 
@@ -60,13 +60,13 @@ async function requestPosts(skipRecords = 0) {
     // return the total number of items to fetch and the data
     return {
       total: parseInt(response.headers["x-total-count"], 10),
-      data: response.data
+      data: response.data,
     };
   } catch (err) {
     console.error(chalk.red("API not responding, no data returned"));
     return {
       total: 0,
-      data: []
+      data: [],
     };
   }
 }
