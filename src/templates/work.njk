@@ -38,13 +38,16 @@ permalink: work/index.html
               <p class="c-project__image">
                 <a href="{{ project.data.url }}">
                   <img src="/img/projects/_800x600/{{ project.data.image }}"
-                      srcset="/img/projects/_800x600/{{ project.data.image }} 800w,
-                              /img/projects/{{ project.data.image }} 1024w"
-                      sizes="(min-width: 1140px) 550px,
-                              (min-width: 750px) 50vw,
-                              100vw"
-                      loading="lazy"
-                      class="o-fluidimage" alt="{{ project.data.title }}">
+                       srcset="/img/projects/_800x600/{{ project.data.image }} 800w,
+                               /img/projects/{{ project.data.image }} 1024w"
+                       sizes="(min-width: 1140px) 550px,
+                               (min-width: 750px) 50vw,
+                               100vw"
+                       width="1024"
+                       height="768"
+                       loading="lazy"
+                       class="o-fluidimage"
+                       alt="{{ project.data.title }}">
                 </a>
               </p>
               <div class="c-project__body">
