@@ -21,11 +21,10 @@
     "scripts:dev": "webpack --config webpack.config.js --mode development",
     "server": "browser-sync start --server \"dist\" --files \"dist\" --no-open",
     "eleventy": "npx eleventy --quiet",
-    "thumbnails": "node \"build_tasks/thumbnails.js\"",
     "watch:eleventy": "npx eleventy --watch --quiet",
     "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
     "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
-    "build": "npm-run-all clean --parallel thumbnails styles:prod scripts:prod eleventy",
+    "build": "npm-run-all clean --parallel styles:prod scripts:prod eleventy",
     "watch": "npm-run-all --parallel server watch:*",
     "dev": "npm run watch"
   },

@@ -16,7 +16,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("limit", require("./eleventy/filters/limit.js"));
   eleventyConfig.addFilter("date", require("./eleventy/filters/date.js"));
 
-  // Syntax highlighting (prism)
+  // shortcodes
+  eleventyConfig.addShortcode(
+    "transform",
+    require("./eleventy/shortcodes/transform-images.js")
+  );
+
+  // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {
     trim: true,
   });
