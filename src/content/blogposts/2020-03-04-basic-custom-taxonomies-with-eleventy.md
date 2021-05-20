@@ -17,7 +17,7 @@ You can then use pagination with a `size` of `1` to [automatically generate tag 
 
 ## Using custom categories
 
-I generally don't use tags to create my collections. I prefer to use folders and the `getFilteredByGlob( glob )` API method to do so, but I often need basic custom taxonomies to categorise my content.
+I generally don't use tags to create my collections. I prefer to use folders and the `getFilteredByGlob( glob )` API method to do so, but I often need basic custom taxonomies to categorize my content.
 
 Eleventy being the flexible tool that it is, creating basic custom taxonomies is relatively straightforward.
 
