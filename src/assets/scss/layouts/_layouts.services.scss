@@ -7,14 +7,14 @@
     @include mq(medium) {
       display: grid;
       grid-template-columns: 1fr 9fr;
-      grid-gap: pxtorem(42px);
+      grid-gap: calc(42 / 16 * 1rem);
       grid-template-areas: "heading services";
     }
   }
 }
 
 .l-services__title {
-  margin-bottom: pxtorem(42px);
+  margin-bottom: calc(42 / 16 * 1rem);
 
   &:after {
     content: "";
@@ -54,7 +54,7 @@
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: pxtorem(24px) pxtorem(42px);
+      grid-gap: calc(24 / 16 * 1rem) calc(42 / 16 * 1rem);
       grid-template-areas:
         "s1 ."
         "s2 s3"

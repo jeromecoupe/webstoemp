@@ -4,7 +4,7 @@
 
 .c-txtintro {
   font-weight: 400;
-  font-size: pxtorem(18px);
+  font-size: calc(18 / 16 * 1rem);
   color: var(--color-gray4);
 
   a {
@@ -18,7 +18,7 @@
   }
 
   @include mq(medium) {
-    font-size: pxtorem(20px);
+    font-size: calc(20 / 16 * 1rem);
   }
 }
 

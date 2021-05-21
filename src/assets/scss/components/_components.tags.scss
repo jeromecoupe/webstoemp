@@ -15,7 +15,7 @@
 }
 
 .c-tags__item {
-  font-size: pxtorem(15px);
+  font-size: calc(15 / 16 * 1rem);
   font-weight: 400;
   color: var(--color-gray8);
 }
@@ -28,5 +28,5 @@
   content: "#";
   display: inline-block;
   color: var(--color-brand4);
-  margin-right: pxtorem(3px);
+  margin-right: calc(3 / 16 * 1rem);
 }

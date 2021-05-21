@@ -6,7 +6,7 @@
   @include mq(medium) {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: pxtorem(42px);
+    grid-gap: calc(42 / 16 * 1rem);
   }
 
   @include mq(large) {
@@ -26,7 +26,7 @@
 }
 
 .l-contact__media {
-  margin-bottom: pxtorem(36px);
+  margin-bottom: calc(36 / 16 * 1rem);
 
   @include mq(medium) {
     grid-row: 1 / 2;

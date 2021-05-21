@@ -4,12 +4,12 @@
 
 .c-footercta {
   display: block;
-  padding: pxtorem(36px) pxtorem(24px);
+  padding: calc(36 / 16 * 1rem) calc(24 / 16 * 1rem);
   text-align: center;
   background-color: var(--color-brand3);
 
   font-weight: 600;
-  font-size: pxtorem(20px);
+  font-size: calc(20 / 16 * 1rem);
   line-height: 1.4;
   font-family: var(--fontstack-alt);
   text-decoration: none;
@@ -28,11 +28,11 @@
   }
 
   @include mq(small) {
-    font-size: pxtorem(20px);
+    font-size: calc(20 / 16 * 1rem);
   }
 
   @include mq(medium) {
-    font-size: pxtorem(26px);
-    padding: pxtorem(36px) pxtorem(42px);
+    font-size: calc(26 / 16 * 1rem);
+    padding: calc(36 / 16 * 1rem) calc(42 / 16 * 1rem);
   }
 }

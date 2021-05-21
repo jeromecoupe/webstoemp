@@ -3,11 +3,11 @@
 // -------------------------------------
 
 .c-service {
-  margin-bottom: pxtorem(24px);
+  margin-bottom: calc(24 / 16 * 1rem);
 }
 
 .c-service__icon {
-  margin-bottom: pxtorem(24px);
+  margin-bottom: calc(24 / 16 * 1rem);
 
   & svg {
     vertical-align: middle;
@@ -16,14 +16,14 @@
 
 .c-service__title {
   font-weight: 600;
-  font-size: pxtorem(20px);
+  font-size: calc(20 / 16 * 1rem);
   font-family: var(--fontstack-alt);
   line-height: 1.2;
   color: var(--color-gray8);
-  margin-bottom: pxtorem(12px);
+  margin-bottom: calc(12 / 16 * 1rem);
 
   @include mq(large) {
-    font-size: pxtorem(23px);
+    font-size: calc(23 / 16 * 1rem);
   }
 }
 
