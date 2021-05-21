@@ -19,7 +19,7 @@
 }
 
 .c-socialmedia__item:not(:last-child) {
-  margin-right: pxtorem(6px);
+  margin-right: calc(6 / 16 * 1rem);
 }
 
 .c-socialmedia__link {

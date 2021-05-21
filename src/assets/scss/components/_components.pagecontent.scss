@@ -3,12 +3,12 @@
 // -------------------------------------
 
 .c-pagecontent {
-  padding-top: pxtorem(60px);
-  padding-bottom: pxtorem(60px);
+  padding-top: calc(60 / 16 * 1rem);
+  padding-bottom: calc(60 / 16 * 1rem);
 
   @include mq(medium) {
-    padding-top: pxtorem(84px);
-    padding-bottom: pxtorem(84px);
+    padding-top: calc(84 / 16 * 1rem);
+    padding-bottom: calc(84 / 16 * 1rem);
   }
 }
 

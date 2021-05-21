@@ -18,7 +18,7 @@
 }
 
 .c-project__image {
-  margin-bottom: pxtorem(24px);
+  margin-bottom: calc(24 / 16 * 1rem);
 
   & > a {
     display: block;
@@ -38,21 +38,15 @@
   @include mq(medium) {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-
-    @supports (display: grid) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
+    align-self: center;
   }
 }
 
 .c-project__client {
-  margin-bottom: pxtorem(12px);
+  margin-bottom: calc(12 / 16 * 1rem);
   font-weight: 400;
-  font-size: pxtorem(12px);
-  line-height: (18/12);
+  font-size: calc(12 / 16 * 1rem);
+  line-height: calc(18 / 12);
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--color-gray7);
@@ -60,11 +54,11 @@
 
 .c-project__title {
   font-weight: 600;
-  font-size: pxtorem(23px);
+  font-size: calc(23 / 16 * 1rem);
   font-family: var(--fontstack-alt);
-  line-height: (30/23);
+  line-height: calc(30 / 23);
   color: var(--color-gray8);
-  margin-bottom: pxtorem(18px);
+  margin-bottom: calc(18 / 16 * 1rem);
 
   transition: color 0.2s ease-in-out;
 
@@ -73,13 +67,13 @@
   }
 
   @include mq(medium) {
-    font-size: pxtorem(25px);
-    line-height: (30/25);
+    font-size: calc(25 / 16 * 1rem);
+    line-height: calc(30 / 25);
   }
 
   @include mq(large) {
-    font-size: pxtorem(29px);
-    line-height: (36/29);
+    font-size: calc(29 / 16 * 1rem);
+    line-height: calc(36 / 29);
   }
 }
 

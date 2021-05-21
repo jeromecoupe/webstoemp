@@ -11,7 +11,7 @@
   width: 100%;
   min-height: 100vh;
 
-  padding: pxtorem(42px) pxtorem(24px);
+  padding: calc(42 / 16 * 1rem) calc(24 / 16 * 1rem);
 
   background-color: var(--color-brand5);
 
@@ -36,7 +36,7 @@
 
 .c-mobilenav {
   list-style: none;
-  margin: pxtorem(120px) 0 0;
+  margin: calc(120 / 16 * 1rem) 0 0;
   padding: 0;
 
   display: flex;
@@ -47,10 +47,10 @@
 
 .c-mobilenav__link {
   display: block;
-  padding: pxtorem(12px) 0;
+  padding: calc(12 / 16 * 1rem) 0;
 
   font-weight: 600;
-  font-size: pxtorem(15px);
+  font-size: calc(15 / 16 * 1rem);
   line-height: 1;
   text-decoration: none;
   color: var(--color-gray8);

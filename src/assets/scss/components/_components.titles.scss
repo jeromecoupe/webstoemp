@@ -4,18 +4,18 @@
 
 .c-h1 {
   font-weight: 600;
-  font-size: pxtorem(31px);
+  font-size: calc(31 / 16 * 1rem);
   font-family: var(--fontstack-alt);
   line-height: 1.2;
   color: var(--color-gray8);
-  margin-bottom: pxtorem(18px);
+  margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: pxtorem(39px);
+    font-size: calc(39 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: pxtorem(45px);
+    font-size: calc(45 / 16 * 1rem);
   }
 }
 
@@ -27,20 +27,20 @@
 
 .c-h2 {
   font-weight: 600;
-  font-size: pxtorem(29px);
+  font-size: calc(29 / 16 * 1rem);
   font-family: var(--fontstack-alt);
   line-height: 1.2;
   color: var(--color-gray8);
 
-  margin-top: pxtorem(36px);
-  margin-bottom: pxtorem(18px);
+  margin-top: calc(36 / 16 * 1rem);
+  margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: pxtorem(31px);
+    font-size: calc(31 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: pxtorem(36px);
+    font-size: calc(36 / 16 * 1rem);
   }
 }
 
@@ -52,19 +52,19 @@
 
 .c-h3 {
   font-weight: 600;
-  font-size: pxtorem(23px);
+  font-size: calc(23 / 16 * 1rem);
   font-family: var(--fontstack-alt);
   line-height: 1.2;
   color: var(--color-gray8);
-  margin-top: pxtorem(36px);
-  margin-bottom: pxtorem(18px);
+  margin-top: calc(36 / 16 * 1rem);
+  margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: pxtorem(25px);
+    font-size: calc(25 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: pxtorem(29px);
+    font-size: calc(29 / 16 * 1rem);
   }
 }
 
@@ -76,19 +76,19 @@
 
 .c-h4 {
   font-weight: 700;
-  font-size: pxtorem(20px);
+  font-size: calc(20 / 16 * 1rem);
   font-family: var(--fontstack-alt);
   line-height: 1.2;
   color: var(--color-gray8);
-  margin-top: pxtorem(36px);
-  margin-bottom: pxtorem(18px);
+  margin-top: calc(36 / 16 * 1rem);
+  margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: pxtorem(23px);
+    font-size: calc(23 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: pxtorem(25px);
+    font-size: calc(25 / 16 * 1rem);
   }
 }
 
@@ -100,14 +100,14 @@
 
 .c-h5 {
   font-weight: 600;
-  font-size: pxtorem(20px);
+  font-size: calc(20 / 16 * 1rem);
   font-family: var(--fontstack-alt);
   line-height: 1.2;
   color: var(--color-gray8);
-  margin-bottom: pxtorem(12px);
+  margin-bottom: calc(12 / 16 * 1rem);
 
   @include mq(large) {
-    font-size: pxtorem(23px);
+    font-size: calc(23 / 16 * 1rem);
   }
 }
 
@@ -117,12 +117,12 @@
 
 .c-suptitle {
   font-weight: 600;
-  font-size: pxtorem(13px);
+  font-size: calc(13 / 16 * 1rem);
   font-family: var(--fontstack-main);
   color: var(--color-brand4);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: pxtorem(12px);
+  margin-bottom: calc(12 / 16 * 1rem);
 }
 
 .c-suptitle--dark {
@@ -131,7 +131,7 @@
 
 .c-smalltitle {
   font-weight: 700;
-  font-size: pxtorem(13px);
+  font-size: calc(13 / 16 * 1rem);
   font-family: var(--fontstack-main);
   color: var(--color-gray8);
   text-transform: uppercase;

@@ -3,7 +3,7 @@
 // -------------------------------------
 
 .c-blogteaser {
-  padding: pxtorem(12px) 0;
+  padding: calc(12 / 16 * 1rem) 0;
 
   @include mq(large) {
     display: flex;
@@ -18,7 +18,7 @@
   padding: 0;
 
   font-weight: 400;
-  font-size: pxtorem(16px);
+  font-size: 1rem;
   color: var(--color-gray6);
 
   @include mq(large) {
@@ -34,16 +34,16 @@
   padding: 0;
 
   font-weight: 600;
-  font-size: pxtorem(20px);
-  line-height: (30/20);
+  font-size: calc(20 / 16 * 1rem);
+  line-height: calc(30 / 20);
   font-family: var(--fontstack-alt);
   color: var(--color-gray8);
 
   @include mq(medium) {
-    font-size: pxtorem(23px);
+    font-size: calc(23 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: pxtorem(25px);
+    font-size: calc(25 / 16 * 1rem);
   }
 }
