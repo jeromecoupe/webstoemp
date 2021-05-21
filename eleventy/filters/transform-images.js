@@ -27,6 +27,11 @@ function checkDirExists(path) {
 function transformImage(imagePath, sharpOptions) {
   checkDirExists(transformsPath);
 
+  if (!fs.existsSync(imagePath)) {
+    let message = `Image transform source does not exist: ${imagePath}`;
+    throw new Error(message);
+  }
+
   let inputFilename = path.parse(imagePath).name;
   let inputExtension = path.parse(imagePath).ext.replace(".", "");
   let format = sharpOptions.format ? sharpOptions.format : inputExtension;
@@ -38,7 +43,13 @@ function transformImage(imagePath, sharpOptions) {
   let outputUrl = path.normalize(`${transformsUrl}/${outputFilename}`);
 
   if (!fs.existsSync(outputPath)) {
-    sharp(imagePath).toFormat(format).resize(sharpOptions).toFile(outputPath);
+    sharp(imagePath)
+      .toFormat(format)
+      .resize(sharpOptions)
+      .toFile(outputPath)
+      .catch((err) => {
+        throw new Error(err);
+      });
   }
 
   return outputUrl;
