@@ -3,20 +3,23 @@
 
 {% set metaTitle = title %}
 {% set metaDescription = excerpt %}
-{% set metaImage = site.url ~ "/img/blogposts/_600x600/" ~ image %}
+
+{% set img = "./src/assets/img/blogposts/" ~ image %}
+{% set metaImage = site.url ~ img | transform({ width: 600, height: 600 }) %}
 
 {% block content %}
   <main>
     <article class="c-blogpost">
       <div class="c-blogpost__media">
         <div class="l-container">
+          {% set img = "./src/assets/img/blogposts/" ~ image %}
           <picture>
-              <source srcset="/img/blogposts/_1024x576/{{ image }} 1024w,
-                              /img/blogposts/{{ image }} 1500w"
+              <source srcset="{{ img | transform({ width: 1024, height: 576 }) }} 1024w,
+                              {{ img | transform({ width: 1500, height: 844 }) }} 1500w"
                       sizes="(min-width: 1140px) 1140px,
-                            100vw"
+                             100vw"
                       media="(min-width: 500px)">
-              <img src="/img/blogposts/_600x600/{{ image }}"
+              <img src="{{ img | transform({ width: 600, height: 600 }) }}"
                   class="o-fluidimage"
                   alt="{{ imageAlt }}">
           </picture>

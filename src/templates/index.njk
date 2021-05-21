@@ -29,18 +29,18 @@ permalink: index.html
   <div class="c-pagecontent">
     <div class="l-container  l-services">
 
-    <h2 class="c-smalltitle  l-services__title">Services à la carte</h2>
-    {% for service in services %}
-      {% if loop.first %}<ul class="l-services__grid">{% endif %}
-      <li>
-        <div class="c-service">
-          <p class="c-service__icon">{% include "svg/" ~ service.icon  %}</p>
-          <h3 class="c-h5">{{ service.title }}</h3>
-          <p class="c-service__text">{{ service.description }}</p>
-        </div>
-      </li>
-      {% if loop.last %}</ul>{% endif %}
-    {% endfor %}
+      <h2 class="c-smalltitle  l-services__title">Services à la carte</h2>
+      {% for service in services %}
+        {% if loop.first %}<ul class="l-services__grid">{% endif %}
+        <li>
+          <div class="c-service">
+            <p class="c-service__icon">{% include "svg/" ~ service.icon  %}</p>
+            <h3 class="c-h5">{{ service.title }}</h3>
+            <p class="c-service__text">{{ service.description }}</p>
+          </div>
+        </li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
 
     </div>
   </div>
