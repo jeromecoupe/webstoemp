@@ -12,7 +12,7 @@ permalink: feed.xml
     <pubDate>{{ site.buildTime | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</pubDate>
     <lastBuildDate>{{ site.buildTime | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</lastBuildDate>
     <generator>Eleventy</generator>
-    {% for post in collections.blogposts | reverse | limit(10) %}
+    {% for post in collections.blogposts | limit(10) %}
       <item>
         <title>{{ post.data.title }}</title>
         <link>{{ site.url }}{{ post.url }}</link>
