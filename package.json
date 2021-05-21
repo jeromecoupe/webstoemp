@@ -31,22 +31,22 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-    "@babel/core": "^7.13.14",
-    "@babel/preset-env": "^7.13.12",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
     "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
-    "cssnano": "^4.1.11",
-    "glob": "^7.1.6",
+    "cssnano": "^5.0.3",
+    "glob": "^7.1.7",
     "moment": "^2.29.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss": "^8.2.9",
+    "postcss": "^8.3.0",
     "postcss-cli": "^8.3.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.32.8",
-    "sharp": "^0.28.0",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0"
+    "sass": "^1.33.0",
+    "sharp": "^0.28.2",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
   }
 }
