@@ -21,7 +21,7 @@ permalink: sitemap.xml
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  {% for post in collections.blogposts | reverse %}
+  {% for post in collections.blogposts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       <lastmod>{{ post.date | date("YYYY-MM-DD[T]HH:mm:ssZ") }}</lastmod>
