@@ -4,13 +4,13 @@
 
 .c-sitefooter {
   background-color: var(--color-gray8);
-  font-size: pxtorem(16px);
+  font-size: 1rem;
 }
 
 .c-sitefooter__main {
-  padding-top: pxtorem(60px);
+  padding-top: calc(60 / 16 * 1rem);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: pxtorem(60px);
+  padding-bottom: calc(60 / 16 * 1rem);
 
   @include mq(medium) {
     display: grid;
@@ -31,5 +31,5 @@
 .c-sitefooter__copyright {
   color: var(--color-gray6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: pxtorem(24px) 0;
+  padding: calc(24 / 16 * 1rem) 0;
 }

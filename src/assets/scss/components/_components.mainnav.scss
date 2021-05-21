@@ -15,15 +15,15 @@
 }
 
 .c-mainnav__item:not(:last-child) {
-  margin-right: pxtorem(30px);
+  margin-right: calc(30 / 16 * 1rem);
 }
 
 .c-mainnav__link {
   display: block;
-  padding: pxtorem(18px) pxtorem(6px);
+  padding: calc(18 / 16 * 1rem) calc(6 / 16 * 1rem);
 
   font-weight: 700;
-  font-size: pxtorem(13px);
+  font-size: calc(13 / 16 * 1rem);
   line-height: 1;
   text-decoration: none;
   color: var(--color-gray4);
@@ -41,7 +41,7 @@
 .c-mainnav__link.is-active,
 .c-mainnav__link.is-active:hover,
 .c-mainnav__link.is-active:focus {
-  padding-bottom: pxtorem(16px);
+  padding-bottom: calc(16 / 16 * 1rem);
   border-bottom: 2px solid var(--color-brand4);
   text-decoration: none;
 }

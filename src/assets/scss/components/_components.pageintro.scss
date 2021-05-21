@@ -3,15 +3,15 @@
 // -------------------------------------
 
 .c-pageintro {
-  padding-bottom: pxtorem(36px);
+  padding-bottom: calc(36 / 16 * 1rem);
   background-color: var(--color-gray8);
 
   @include mq(medium) {
-    padding-bottom: pxtorem(72px);
+    padding-bottom: calc(72 / 16 * 1rem);
   }
 
   @include mq(large) {
-    padding-bottom: pxtorem(84px);
+    padding-bottom: calc(84 / 16 * 1rem);
   }
 }
 

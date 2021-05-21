@@ -5,55 +5,55 @@
 .c-wysiwyg {
   h2 {
     font-weight: 600;
-    font-size: pxtorem(29px);
+    font-size: calc(29 / 16 * 1rem);
     font-family: var(--fontstack-alt);
     line-height: 1.2;
     color: var(--color-gray8);
-    margin-top: pxtorem(30px);
-    margin-bottom: pxtorem(18px);
+    margin-top: calc(30 / 16 * 1rem);
+    margin-bottom: calc(18 / 16 * 1rem);
 
     @include mq(medium) {
-      font-size: pxtorem(31px);
+      font-size: calc(31 / 16 * 1rem);
     }
 
     @include mq(large) {
-      font-size: pxtorem(36px);
+      font-size: calc(36 / 16 * 1rem);
     }
   }
 
   h3 {
     font-weight: 600;
-    font-size: pxtorem(23px);
+    font-size: calc(23 / 16 * 1rem);
     font-family: var(--fontstack-alt);
     line-height: 1.2;
     color: var(--color-gray8);
-    margin-top: pxtorem(30px);
-    margin-bottom: pxtorem(18px);
+    margin-top: calc(30 / 16 * 1rem);
+    margin-bottom: calc(18 / 16 * 1rem);
 
     @include mq(medium) {
-      font-size: pxtorem(25px);
+      font-size: calc(25 / 16 * 1rem);
     }
 
     @include mq(large) {
-      font-size: pxtorem(29px);
+      font-size: calc(29 / 16 * 1rem);
     }
   }
 
   h4 {
     font-weight: 600;
-    font-size: pxtorem(20px);
+    font-size: calc(20 / 16 * 1rem);
     font-family: var(--fontstack-alt);
     line-height: 1.2;
     color: var(--color-gray8);
-    margin-top: pxtorem(30px);
-    margin-bottom: pxtorem(18px);
+    margin-top: calc(30 / 16 * 1rem);
+    margin-bottom: calc(18 / 16 * 1rem);
 
     @include mq(medium) {
-      font-size: pxtorem(23px);
+      font-size: calc(23 / 16 * 1rem);
     }
 
     @include mq(large) {
-      font-size: pxtorem(25px);
+      font-size: calc(25 / 16 * 1rem);
     }
   }
 }

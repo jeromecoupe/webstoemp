@@ -28,6 +28,6 @@
   padding: 0;
 
   & > li:not(:last-child) {
-    margin-bottom: pxtorem(66px);
+    margin-bottom: calc(66 / 16 * 1rem);
   }
 }

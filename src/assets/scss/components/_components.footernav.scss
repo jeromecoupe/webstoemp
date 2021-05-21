@@ -4,7 +4,7 @@
 
 .c-footernav {
   list-style: none;
-  margin: 0 0 pxtorem(42px);
+  margin: 0 0 calc(42 / 16 * 1rem);
   padding: 0;
 
   display: flex;
@@ -22,15 +22,15 @@
 
 .c-footernav__item:not(:last-child) {
   @include mq(medium) {
-    margin-right: pxtorem(36px);
+    margin-right: calc(36 / 16 * 1rem);
   }
 }
 
 .c-footernav__link {
   display: block;
-  padding: pxtorem(12px) 0;
+  padding: calc(12 / 16 * 1rem) 0;
   font-weight: 700;
-  font-size: pxtorem(13px);
+  font-size: calc(13 / 16 * 1rem);
   color: var(--color-gray6);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -44,7 +44,7 @@
   }
 
   @include mq(medium) {
-    padding: pxtorem(6px) 0;
+    padding: calc(6 / 16 * 1rem) 0;
   }
 }
 
