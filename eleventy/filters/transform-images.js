@@ -34,9 +34,9 @@ function transformImage(imagePath, sharpOptions) {
 
   let inputFilename = path.parse(imagePath).name;
   let inputExtension = path.parse(imagePath).ext.replace(".", "");
-  let format = sharpOptions.format ? sharpOptions.format : inputExtension;
-  let outputWidth = sharpOptions.width ? sharpOptions.width : "auto";
-  let outputHeight = sharpOptions.height ? sharpOptions.height : "auto";
+  let format = sharpOptions.format || inputExtension;
+  let outputWidth = sharpOptions.width || "auto";
+  let outputHeight = sharpOptions.height || "auto";
   let outputFilename = `${inputFilename}_${outputWidth}x${outputHeight}.${format}`;
 
   let outputPath = path.normalize(`${transformsPath}/${outputFilename}`);
