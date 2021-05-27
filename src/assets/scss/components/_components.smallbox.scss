@@ -22,12 +22,7 @@
 }
 
 .c-smallbox__body {
-  font-size: calc(14 / 16 * 1rem);
-  line-height: calc(18 / 14);
+  font-size: 1rem;
+  line-height: calc(24 / 16);
   color: var(--color-gray7);
-
-  @include mq(large) {
-    font-size: 1rem;
-    line-height: calc(24 / 16);
-  }
 }
