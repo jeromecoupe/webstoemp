@@ -53,7 +53,6 @@ function checkFormats(format) {
 /**
  * Create Directory recursively if not readable
  * @param {string} path - valid dir path
- * @returns
  */
 function createDir(path) {
   if (fs.existsSync(path)) return;
@@ -65,8 +64,8 @@ function createDir(path) {
 
 /**
  * Resize Image
- * @param {string} srcImage - path of src image
- * @param {string} distImage - path of dist image
+ * @param {string} scrPath - path of src image
+ * @param {string} distPath - path of dist image
  * @param {format} format - format of dist image
  * @param {object} resizeOptions - Sharp resize options
  */
