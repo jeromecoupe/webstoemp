@@ -5,41 +5,32 @@
 .c-project {
   margin: 0;
   padding: 0;
-
-  @include mq(medium) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 42px;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(36 / 16 * 1rem);
+  grid-template-areas:
+    "image"
+    "content";
 
   @include mq(large) {
-    grid-gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "image content";
+    gap: calc(60 / 16 * 1rem);
   }
 }
 
 .c-project__image {
-  margin-bottom: calc(24 / 16 * 1rem);
+  margin: 0;
+  grid-area: image;
 
   & > a {
     display: block;
   }
-
-  @include mq(medium) {
-    @supports (display: grid) {
-      margin-bottom: 0;
-    }
-
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-  }
 }
 
 .c-project__body {
-  @include mq(medium) {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    align-self: center;
-  }
+  grid-area: content;
+  align-self: center;
 }
 
 .c-project__client {

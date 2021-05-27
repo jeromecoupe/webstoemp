@@ -16,7 +16,7 @@
     display: grid;
     grid-template-columns: 6fr 4fr;
     grid-template-areas: "nav social";
-    grid-gap: 42px;
+    gap: 42px;
   }
 }
 
