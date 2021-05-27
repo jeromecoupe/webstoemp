@@ -8,7 +8,7 @@ permalink: contact/index.html
 
 {% set metaTitle = "Contact Jérôme Coupé" %}
 {% set metaDescription = "What a front-end designer can do for you and your business or agency" %}
-{% set metaImage = site.url ~ "/img/me-600.jpg" %}
+{% set metaImage = site.url ~ "/assets/img/me-600.jpg" %}
 
 {% block content %}
 <main>
@@ -17,14 +17,20 @@ permalink: contact/index.html
     <div class="l-container  l-contact">
 
       <div class="l-contact__media">
-        <img src="/img/me-600.jpg"
-             srcset="/img/me-600.jpg 600w,
-                     /img/me-1024.jpg 1024w"
+        {% set img600 = '/assets/img/contact/me-600.jpg' %}
+        {% set img1024 = '/assets/img/contact/me-1024.jpg' %}
+        <img src="{{ img600 }}"
+             srcset="{{ img600 }} 600w,
+                     {{ img1024 }} 1024w"
              sizes="(min-width: 1140pw) 320px
                     (min-width: 750pw) 33vw,
                     100vw"
              class="o-fluidimage"
-             alt="Jérôme Coupé">
+             alt="Jérôme Coupé"
+             width="1024"
+             height="1024"
+             loading="lazy"
+             decoding="async">
       </div>
       <div class="l-contact__content">
 

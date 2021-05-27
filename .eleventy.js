@@ -15,10 +15,6 @@ module.exports = function (eleventyConfig) {
   // filters
   eleventyConfig.addFilter("limit", require("./eleventy/filters/limit.js"));
   eleventyConfig.addFilter("date", require("./eleventy/filters/date.js"));
-  eleventyConfig.addFilter(
-    "transform",
-    require("./eleventy/filters/transform-images.js")
-  );
 
   // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {
@@ -31,8 +27,8 @@ module.exports = function (eleventyConfig) {
   // pass through
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
-  eleventyConfig.addPassthroughCopy({ "./src/assets/img": "img" });
-  eleventyConfig.addPassthroughCopy({ "./src/assets/fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy("./src/assets/img");
+  eleventyConfig.addPassthroughCopy("./src/assets/fonts");
 
   // base config
   return {
