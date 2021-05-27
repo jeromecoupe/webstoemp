@@ -8,7 +8,7 @@ permalink: work/index.html
 
 {% set metaTitle = "Work and projects" %}
 {% set metaDescription = "Selected projects my clients and I worked on together." %}
-{% set metaImage = site.url ~ "/img/me-600.jpg" %}
+{% set metaImage = site.url ~ "/assets/img/me-600.jpg" %}
 
 {% block content %}
 <main>
@@ -36,19 +36,21 @@ permalink: work/index.html
 
             <article class="c-project">
               <p class="c-project__image">
-                <a href="{{ project.data.url }}">
-                  {% set img = "./src/assets/img/projects/" ~ project.data.image %}
-                  <img src="{{ img | transform({ width: 800, height: 600 }) }}"
-                       srcset="{{ img | transform({ width: 800, height: 600 }) }} 800w,
-                               {{ img | transform({ width: 1024, height: 768 }) }} 1024w"
-                       sizes="(min-width: 1140px) 550px,
+                <a href="{{ project.data.url }}">-
+                  {% set img800 = '/assets/img/projects/800x600/' ~ project.data.image %}
+                  {% set img1024 = '/assets/img/projects/1024x768/' ~ project.data.image %}
+                  <img src="{{ img800 }}"
+                        srcset="{{ img800 }} 800w,
+                                {{ img1024 }} 1024w"
+                        sizes="(min-width: 1140px) 550px,
                               (min-width: 750px) 50vw,
                               100vw"
-                       width="1024"
-                       height="768"
-                       loading="lazy"
-                       class="o-fluidimage"
-                       alt="{{ project.data.title }}">
+                        class="o-fluidimage"
+                        alt=""
+                        width="1024"
+                        height="768"
+                        loading="lazy"
+                        decoding="async">
                 </a>
               </p>
               <div class="c-project__body">
