@@ -2,19 +2,23 @@
 // Services grid
 // -------------------------------------
 
-@supports (display: grid) {
-  .l-services {
-    @include mq(medium) {
-      display: grid;
-      grid-template-columns: 1fr 9fr;
-      grid-gap: calc(42 / 16 * 1rem);
-      grid-template-areas: "heading services";
-    }
+.l-services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(42 / 16 * 1rem);
+  grid-template-areas:
+    "heading"
+    "services";
+
+  @include mq(medium) {
+    grid-template-areas: "heading services";
   }
 }
 
 .l-services__title {
-  margin-bottom: calc(42 / 16 * 1rem);
+  grid-area: heading;
+  margin: 0;
+  padding: 0;
 
   &:after {
     content: "";
@@ -26,20 +30,15 @@
     background-color: var(--color-brand4);
   }
 
-  @supports (display: grid) {
-    @include mq(medium) {
-      grid-area: heading;
-      margin: 0;
-      padding: 0;
-      writing-mode: vertical-lr;
+  @include mq(medium) {
+    writing-mode: vertical-lr;
 
-      &:after {
-        width: 1px;
-        height: 42px;
-        margin-top: 12px;
-        margin-bottom: 0;
-        margin-left: 0;
-      }
+    &:after {
+      width: 1px;
+      height: 42px;
+      margin-top: 12px;
+      margin-bottom: 0;
+      margin-left: 0;
     }
   }
 }
@@ -48,38 +47,35 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  @supports (display: grid) {
-    @include mq(medium) {
-      grid-area: services;
+  grid-area: services;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(24 / 16 * 1rem);
 
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: calc(24 / 16 * 1rem) calc(42 / 16 * 1rem);
-      grid-template-areas:
-        "s1 ."
-        "s2 s3"
-        "s4 s5"
-        "s6 .";
-    }
+  @include mq(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(24 / 16 * 1rem) calc(42 / 16 * 1rem);
+    grid-template-areas:
+      "s1 ."
+      "s2 s3"
+      "s4 s5"
+      "s6 .";
+  }
 
-    @include mq(large) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "s1 s2 ."
-        "s3 s4 s5"
-        "s6 . .";
-    }
+  @include mq(large) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "s1 s2 ."
+      "s3 s4 s5"
+      "s6 . .";
   }
 }
 
 @for $i from 1 through 6 {
   .l-services__grid > li:nth-child(#{$i}) {
-    margin-bottom: 1rem;
-    @supports (display: grid) {
-      @include mq(medium) {
-        margin-bottom: 0;
-        grid-area: s#{$i};
-      }
+    @include mq(medium) {
+      margin-bottom: 0;
+      grid-area: s#{$i};
     }
   }
 }
