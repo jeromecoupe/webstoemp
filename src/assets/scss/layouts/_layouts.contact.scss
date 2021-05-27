@@ -7,24 +7,20 @@
   gap: calc(30 / 16 * 1rem);
   grid-template-columns: 1fr;
   grid-template-areas:
-    "media"
-    "content";
-
-  @include mq(medium) {
-    gap: calc(42 / 16 * 1rem);
-  }
+    "primary"
+    "secondary";
 
   @include mq(large) {
-    grid-template-columns: 6fr 4fr;
-    grid-template-areas: "content media";
-    gap: calc(72 / 16 * 1rem);
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas: "primary secondary";
+    gap: calc(42 / 16 * 1rem);
   }
 }
 
-.l-contact__content {
-  grid-area: content;
+.l-contact__primary {
+  grid-area: primary;
 }
 
-.l-contact__media {
-  grid-area: media;
+.l-contact__secondary {
+  grid-area: secondary;
 }

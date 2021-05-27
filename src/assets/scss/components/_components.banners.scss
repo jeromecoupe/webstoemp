@@ -43,3 +43,13 @@
     background-image: url(../img/banners/banner-blog-1500.jpg);
   }
 }
+
+.c-banner--contact {
+  background-image: url(../img/banners/banner-contact-800.jpg);
+  @include mq(medium) {
+    background-image: url(../img/banners/banner-contact-1024.jpg);
+  }
+  @include mq(large) {
+    background-image: url(../img/banners/banner-contact-1500.jpg);
+  }
+}
