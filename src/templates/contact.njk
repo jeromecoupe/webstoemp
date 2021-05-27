@@ -17,20 +17,22 @@ permalink: contact/index.html
     <div class="l-container  l-contact">
 
       <div class="l-contact__media">
-        {% set img600 = '/assets/img/contact/me-600.jpg' %}
-        {% set img1024 = '/assets/img/contact/me-1024.jpg' %}
-        <img src="{{ img600 }}"
-             srcset="{{ img600 }} 600w,
-                     {{ img1024 }} 1024w"
-             sizes="(min-width: 1140pw) 320px
-                    (min-width: 750pw) 33vw,
-                    100vw"
-             class="o-fluidimage"
-             alt="Jérôme Coupé"
-             width="1024"
-             height="1024"
-             loading="lazy"
-             decoding="async">
+        {% set img600x450 = '/assets/img/contact/jeromecoupe-600x450.jpg' %}
+        {% set img1024x768 = '/assets/img/contact/jeromecoupe-1024x768.jpg' %}
+        {% set img600x800 = '/assets/img/contact/jeromecoupe-600x800.jpg' %}
+        <picture>
+          <source srcset="{{ img600x800 }} 600w"
+                  media="(min-width: 1024px)"
+                  sizes="33vw">
+          <img src="{{ img600x450 }}"
+               srcset="{{ img600x450 }} 600w,
+                       {{ img1024x768 }} 1024w"
+               sizes="100vw"
+               class="o-fluidimage"
+               alt="Jérôme Coupé"
+               loading="lazy"
+               decoding="async">
+        </picture>
       </div>
       <div class="l-contact__content">
 

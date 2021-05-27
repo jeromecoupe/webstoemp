@@ -36,15 +36,15 @@ permalink: work/index.html
 
             <article class="c-project">
               <p class="c-project__image">
-                <a href="{{ project.data.url }}">-
+                <a href="{{ project.data.url }}">
                   {% set img800 = '/assets/img/projects/800x600/' ~ project.data.image %}
-                  {% set img1024 = '/assets/img/projects/1024x768/' ~ project.data.image %}
+                  {% set img1024 = '/assets/img/projects/' ~ project.data.image %}
                   <img src="{{ img800 }}"
                         srcset="{{ img800 }} 800w,
                                 {{ img1024 }} 1024w"
                         sizes="(min-width: 1140px) 550px,
-                              (min-width: 750px) 50vw,
-                              100vw"
+                               (min-width: 1024px) 50vw,
+                               100vw"
                         class="o-fluidimage"
                         alt=""
                         width="1024"

@@ -3,41 +3,28 @@
 // -------------------------------------
 
 .l-contact {
+  display: grid;
+  gap: calc(30 / 16 * 1rem);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "media"
+    "content";
+
   @include mq(medium) {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: calc(42 / 16 * 1rem);
+    gap: calc(42 / 16 * 1rem);
   }
 
   @include mq(large) {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "content media";
+    gap: calc(72 / 16 * 1rem);
   }
 }
 
 .l-contact__content {
-  @include mq(medium) {
-    grid-row: 1 / 2;
-    grid-column: 1 / 5;
-  }
-
-  @include mq(large) {
-    grid-column: 1 / 7;
-  }
+  grid-area: content;
 }
 
 .l-contact__media {
-  margin-bottom: calc(36 / 16 * 1rem);
-
-  @include mq(medium) {
-    grid-row: 1 / 2;
-    grid-column: 5 / 7;
-
-    @supports (display: grid) {
-      margin-bottom: 0;
-    }
-  }
-
-  @include mq(large) {
-    grid-column: 8 / 11;
-  }
+  grid-area: media;
 }
