@@ -68,7 +68,7 @@
 
   @include mq(medium) {
     font-size: calc(25 / 16 * 1rem);
-    line-height: calc(30 / 25);
+    line-height: calc(36 / 25);
   }
 
   @include mq(large) {
