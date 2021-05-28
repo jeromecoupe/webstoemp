@@ -6,8 +6,8 @@
 
   <div class="l-container">
 
-    <div class="c-sitefooter__main" aria-label="footer navigation">
-      <nav class="c-sitefooter__nav">
+    <div class="c-sitefooter__main">
+      <nav class="c-sitefooter__nav" aria-label="footer navigation">
         {% for item in nav %}
           {% if loop.first %}<ul class="c-footernav" id="footernav">{% endif %}
             <li class="c-footernav__item"><a class="c-footernav__link  {{ 'is-active' if activeSection ==  item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
