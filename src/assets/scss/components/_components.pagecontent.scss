@@ -10,6 +10,11 @@
     padding-top: calc(84 / 16 * 1rem);
     padding-bottom: calc(84 / 16 * 1rem);
   }
+
+  @include mq(large) {
+    padding-top: calc(96 / 16 * 1rem);
+    padding-bottom: calc(96 / 16 * 1rem);
+  }
 }
 
 .c-pagecontent--dark {
