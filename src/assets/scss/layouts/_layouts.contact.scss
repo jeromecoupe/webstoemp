@@ -13,7 +13,13 @@
   @include mq(large) {
     grid-template-columns: 7fr 3fr;
     grid-template-areas: "primary secondary";
-    gap: calc(60 / 16 * 1rem);
+    column-gap: calc(60 / 16 * 1rem);
+  }
+
+  @include mq(xlarge) {
+    grid-template-columns: 6fr 1fr 3fr;
+    grid-template-areas: "primary . secondary";
+    gap: 0;
   }
 }
 
