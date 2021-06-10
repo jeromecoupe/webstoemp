@@ -1,0 +1,49 @@
+---
+permalink: work/index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% set activeSection = "work" %}
+
+{% set metaTitle = "Work and projects" %}
+{% set metaDescription = "Selected projects my clients and I worked on together." %}
+{% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
+
+{% from "macros/project-card.njk" import projectCard %}
+
+{% block content %}
+<main>
+
+  <div class="c-pageintro">
+    <div class="l-container">
+      <div class="c-pageintro__inner">
+
+        <p class="c-suptitle">Clients, big and small</p>
+        <h1 class="c-h1  c-h1--invert">Selected projects</h1>
+        <p class="c-txtintro">Projects my clients and I worked on together. Some are fresh out the oven, while others are a bit older. I tried my best to give you a little bit of variety in terms of scopes and functionalities.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="c-banner  c-banner--work"></div>
+
+  <div class="c-pagecontent">
+    <div class="l-container">
+
+      {% for project in collections.projects %}
+        {% if loop.first %}<ul class="c-list-spaced">{% endif %}
+          <li>
+
+            {{ projectCard(project) }}
+
+          </li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
