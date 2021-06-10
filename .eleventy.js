@@ -4,17 +4,17 @@ module.exports = function (eleventyConfig) {
   // blogposts collection
   eleventyConfig.addCollection(
     "blogposts",
-    require("./eleventy/collections/blogposts.js")
+    require("./src/_11ty/collections/blogposts.js")
   );
   // projects collection
   eleventyConfig.addCollection(
     "projects",
-    require("./eleventy/collections/projects.js")
+    require("./src/_11ty/collections/projects.js")
   );
 
   // filters
-  eleventyConfig.addFilter("limit", require("./eleventy/filters/limit.js"));
-  eleventyConfig.addFilter("date", require("./eleventy/filters/date.js"));
+  eleventyConfig.addFilter("limit", require("./src/_11ty/filters/limit.js"));
+  eleventyConfig.addFilter("date", require("./src/_11ty/filters/date.js"));
 
   // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {

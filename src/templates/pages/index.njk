@@ -10,6 +10,8 @@ permalink: index.html
 {% set metaDescription = "Web design and code from Brussels, Belgium by Jérôme Coupé." %}
 {% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
 
+{% from "macros/service-card.njk" import serviceCard %}
+
 {% block content %}
 <main>
 
@@ -33,11 +35,7 @@ permalink: index.html
       {% for service in services %}
         {% if loop.first %}<ul class="l-services__grid">{% endif %}
         <li>
-          <div class="c-service">
-            <p class="c-service__icon">{% include "svg/" ~ service.icon  %}</p>
-            <h3 class="c-h5">{{ service.title }}</h3>
-            <p class="c-service__text">{{ service.description }}</p>
-          </div>
+          {{ serviceCard(service) }}
         </li>
         {% if loop.last %}</ul>{% endif %}
       {% endfor %}
