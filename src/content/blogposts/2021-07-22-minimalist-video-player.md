@@ -12,11 +12,11 @@ tags:
 
 ## Objectives
 
-The website I was working on could possibly have up to 12 video players on a single page. For performance reasons, I didn't want to load all these `iframe` upon loading the page. The client also wanted their videos to have a custom cover image and was using Vimeo and Youtube as video services.
+The website I was working on could potentially have up to 12 video players on a single page. For performance reasons, I didn't want to load all these `iframe` and their content on first load. The client also wanted their videos to have a custom cover image and was using Vimeo and Youtube as video services.
 
 On my side, I wanted to come up with something simple to maintain and that didn't depend on the ever-changing APIs of these services. I also wanted a fallback in the form of a link to these video services if the JavaScript didn't work or was not loaded.
 
-Since I was going for a progressively enhanced solution, I could get away with using JavaScript modules as my cut the mustard test and test for `template` tag support.
+Since I was going for a progressively enhanced solution, I settled on JavaScript modules as my cut the mustard test and checked for `template` tag support on top of that.
 
 ## HTML foundations
 
@@ -52,7 +52,7 @@ I also included that template inside every video player to make it more of a sel
 
 ## Add some CSS
 
-In terms of CSS, the player needed to always have an aspect ratio of 16 / 9. The link and `iframe` can then be absolutely positioned relative to the player to fill all the available space. I threw in a custom SVG "play" icon using generated content.
+In terms of CSS, the player needed to always have an aspect ratio of 16 by 9. The link and `iframe` can then be absolutely positioned relative to the player to fill all the available space. I threw in a custom SVG "play" icon using generated content.
 
 ```css
 /* --------------------------------
@@ -130,7 +130,7 @@ We can now add a layer of JavaScript to replace that link with a fully functiona
 
 ## Sprinkle some JS on top
 
-If we break down what our JS code needs to accomplish, we come up with  the following list:
+If we break down what our JS code needs to accomplish, here is what we come up with:
 
 - test if the browser supports the `template` element (and bail out if it does not)
 - use the values of the `data-video-service` and `data-video-id` attributes to create the relevant `src` value for the `iframe`
@@ -235,8 +235,8 @@ On the CMS or SSG side of things, we need the following pieces of data:
 - a string to identify the service used to host the video
 - the id of the video
 - the title of the video
-- a full URL to the video on Youtube or Vimeo
+- a full URL to the video on Youtube or Vimeo (can be inferred from the ID and service)
 
-We now have a highly customizable, maintainable minimal video player that falls back to a link wrapped around a responsive image. We can also have a page with many of those players without loading several `iframe` and their content when that page is loaded.
+We now have a minimalist customizable and maintainable video player falling back to a link wrapped around a responsive image. We can also have a page with many of those players without loading several `iframe` and their content when that page is initially loaded.
 
-The main "downside" of using this method is that, using mobile browsers, videos will not autoplay, which means users will need to make two clicks to play them. To me, that's a very reasonable tradeoff to make.
+The main downside of using this method is that, using mobile browsers, videos will not autoplay, which means users will need to make two clicks to play them. To me, that's a very reasonable tradeoff to make.
