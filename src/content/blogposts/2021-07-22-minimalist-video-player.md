@@ -50,9 +50,9 @@ I decided to have a `template` tag wrapped around the `iframe` to prevent it fro
 
 I also included that template inside every video player to make it more of a self-contained "component".
 
-## Add some CSS
+## Customize with CSS
 
-In terms of CSS, the player needed to always have an aspect ratio of 16 by 9. The link and `iframe` can then be absolutely positioned relative to the player to fill all the available space. I threw in a custom SVG "play" icon using generated content.
+In terms of styles, the player needed to always have an aspect ratio of 16 by 9. The link or the `iframe` could then be absolutely positioned relative to the player to fill all the available space. A custom SVG "play" icon can be thrown in using generated content.
 
 ```css
 /* --------------------------------
@@ -128,9 +128,9 @@ We now have a working baseline in the form of an humble anchor tag wrapped aroun
 
 We can now add a layer of JavaScript to replace that link with a fully functional `iframe` when the link is clicked.
 
-## Sprinkle some JS on top
+## Add a Sprinkle of JS
 
-If we break down what our JS code needs to accomplish, here is what we come up with:
+If we break down what our JavaScript code needs to accomplish, here is what we come up with:
 
 - test if the browser supports the `template` element (and bail out if it does not)
 - use the values of the `data-video-service` and `data-video-id` attributes to create the relevant `src` value for the `iframe`
