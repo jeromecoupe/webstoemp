@@ -52,7 +52,7 @@ I also included that template inside every video player to make it more of a sel
 
 ## Add some CSS
 
-In terms of CSS, the player needed to always have an aspect ratio of 16 / 9. The link and `iframe` can then be absolutely positioned relative to the player to fill all the available space. I threw in a custom "play" icon using generated content.
+In terms of CSS, the player needed to always have an aspect ratio of 16 / 9. The link and `iframe` can then be absolutely positioned relative to the player to fill all the available space. I threw in a custom SVG "play" icon using generated content.
 
 ```css
 /* --------------------------------
@@ -64,8 +64,10 @@ videoplayer
   background-color: black;
   aspect-ratio: 16 / 9;
   background: #000000;
+}
 
-  @supports not (aspect-ratio: 16 / 9) {
+@supports not (aspect-ratio: 16 / 9) {
+  .c-videoplayer {
     padding-top: 56.25%;
   }
 }
