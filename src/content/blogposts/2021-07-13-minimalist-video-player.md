@@ -1,5 +1,5 @@
 ---
-title: "Minimalist video player for video services"
+title: "Minimalist video player"
 excerpt: "For a recent project, I needed a minimalist video player for services like Youtube and Vimeo. The objectives were to wait for user interaction to load videos, have a custom cover image and build a straightforward and maintainable solution."
 image: "videoplayer.jpg"
 imageAlt: "Clap - Photo by Donovan Silva on Unsplash"
@@ -18,7 +18,7 @@ On my side, I wanted to come up with something simple to maintain and that didn'
 
 Since I was going for a progressively enhanced solution, I could get away with using JavaScript modules as my cut the mustard test and test for `template` tag support.
 
-## Start with the HTML foundation
+## HTML foundations
 
 I started with some (hopefully) semantic HTML code:
 
@@ -46,7 +46,7 @@ I started with some (hopefully) semantic HTML code:
 </div>
 ```
 
-I decided to have a `template` tag wrapped around the `iframe` to prevent it from rendering on page load. While it would have been possible to generate the `iframe` entirely in JavaScript, it made more sense to me to have as much of the markup as possible in the HTML.
+I decided to have a `template` tag wrapped around the `iframe` to prevent it from rendering on page load. While it is certainly possible to generate the `iframe` entirely in JavaScript, it made more sense to me to have as much of the markup as possible in the HTML.
 
 I also included that template inside every video player to make it more of a self-contained "component".
 
