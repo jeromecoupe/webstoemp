@@ -24,7 +24,7 @@ I started with some (hopefully) semantic HTML code:
 
 - a working link to the video on the relevant service
 - a responsive cover image
-- data attributes to store the id of the video and the video service (used to dynamically create the `iframe` relevant `src` value with JavaScript)
+- data attributes to store the ID of the video and the video service (used to dynamically create the `iframe` relevant `src` value with JavaScript)
 
 ```html
 <div class="c-videoplayer  js-video-player" data-video-service="vimeo" data-video-id="174919644">
@@ -215,7 +215,7 @@ function init() {
     const link = player.querySelector(SELECTORS.link);
 
     // when link is clicked,
-    // replace placeholder with template
+    // replace link (and image) with the template content
     link.addEventListener(
       "click",
       function (event) {
@@ -233,9 +233,9 @@ export default init;
 On the CMS or SSG side of things, we need the following pieces of data:
 
 - a string to identify the service used to host the video
-- the id of the video
+- the ID of the video
 - the title of the video
-- a full URL to the video on Youtube or Vimeo (can be inferred from the ID and service)
+- a full URL to the video on Youtube or Vimeo (can be built from the ID and service)
 
 We now have a minimalist customizable and maintainable video player falling back to a link wrapped around a responsive image. We can also have a page with many of those players without loading several `iframe` and their content when that page is initially loaded.
 
