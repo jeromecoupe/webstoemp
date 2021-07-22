@@ -168,7 +168,7 @@ function getIframeSrc(videoService, videoId) {
     iframeSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
   }
   if (videoService === "vimeo") {
-    iframeSrc = `https://player.vimeo.com/video/${videoId}?color=e76c34&title=0&byline=0&portrait=0&autoplay=1`;
+    iframeSrc = `https://player.vimeo.com/video/${videoId}?color=e76c34&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1`;
   }
   return iframeSrc;
 }
