@@ -1,0 +1,33 @@
+{% set img800 = '/assets/img/projects/800x600/' ~ project.data.image %}
+{% set img1024 = '/assets/img/projects/' ~ project.data.image %}
+
+<article class="c-project">
+  <p class="c-project__image">
+    <a href="{{ project.url }}">
+      <img src="{{ img800 }}"
+           srcset="{{ img800 }} 800w,
+                   {{ img1024 }} 1024w"
+           sizes="(min-width: 1140px) 550px,
+                 (min-width: 1024px) 50vw,
+                 100vw"
+           class="o-fluidimage"
+           alt=""
+           width="1024"
+           height="768"
+           loading="lazy"
+           decoding="async">
+    </a>
+  </p>
+  <div class="c-project__body">
+    <p class="c-project__client">{{ project.data.client }}</p>
+    <h2 class="c-project__title"><a href="{{ project.data.url }}">{{ project.data.title }}</a></h2>
+    <div class="c-project__description">
+      {{ project.templateContent | safe }}
+    </div>
+    {% for tag in project.data.tags %}
+      {% if loop.first %}<ul class="c-tags">{% endif %}
+        <li class="c-tags__item">{{ tag }}</li>
+      {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+  </div>
+</article>
