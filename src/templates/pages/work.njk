@@ -10,8 +10,6 @@ permalink: work/index.html
 {% set metaDescription = "Selected projects my clients and I worked on together." %}
 {% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
 
-{% from "macros/project-card.njk" import projectCard %}
-
 {% block content %}
 <main>
 
@@ -36,7 +34,7 @@ permalink: work/index.html
         {% if loop.first %}<ul class="c-list-spaced">{% endif %}
           <li>
 
-            {{ projectCard(project) }}
+            {% include "components/project-card.njk" %}
 
           </li>
         {% if loop.last %}</ul>{% endif %}
