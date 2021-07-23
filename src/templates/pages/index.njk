@@ -35,7 +35,9 @@ permalink: index.html
       {% for service in services %}
         {% if loop.first %}<ul class="l-services__grid">{% endif %}
         <li>
-          {{ serviceCard(service) }}
+
+          {% include "components/service-card.njk" %}
+
         </li>
         {% if loop.last %}</ul>{% endif %}
       {% endfor %}
