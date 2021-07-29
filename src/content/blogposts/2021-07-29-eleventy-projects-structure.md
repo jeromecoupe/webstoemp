@@ -16,7 +16,6 @@ In short, it was time for a minimal amount of structure and conventions. Here is
 ## Files and folders
 
 ```txt
-project_root/
 +-- build_tasks/
 +-- src/
   +-- _11ty/
@@ -45,7 +44,7 @@ project_root/
   +-- README.md
 ```
 
-- `build_tasks`: I generally use NPM scripts as an [assets pipeline](https://mxb.dev/blog/eleventy-asset-pipeline/). Occasionally, I need something more than a package and a one liner. Those slightly more involved build scripts go in this directory.
+- `build_tasks`: I generally use NPM scripts as my [asset pipeline](https://mxb.dev/blog/eleventy-asset-pipeline/). Occasionally, I need something more than an NPM package and a one liner. Those slightly more involved build scripts live in this directory.
 - `src/_11ty`: contains everything required by the `.eleventy.js` config file: collections, filters, shortcodes and utilities all go in their own directories. Reusing these in another project amounts to copying a file, installing dependencies if needed and requiring the file in `.eleventy.js`.
 - `src/_data`: data directory containing static or dynamic local data files. Pretty much standard in Eleventy projects.
 - `src/_includes`: I generally use Nunjucks extensively, along with [template inheritance](https://mozilla.github.io/nunjucks/templating.html#extends) and `extends`, which means layouts, includes and macros must live in that directory.
@@ -54,6 +53,6 @@ project_root/
 - `src/_includes/macros`: contains Nunjucks macros. Macros are locally scoped and allow for parameters to be passed to them. Used for standard components (cards, etc) and utilities (formatting dates, etc.).
 - `src/_includes/svg`: SVG code to be included inline in pages. SVG are optimized and [accessible](https://css-tricks.com/accessible-svgs/).
 - `src/assets`: static and processed assets. Typically contains `scss`, `img`, `fonts` and `js` directories. Most of these are handled by a build process, while others, like `fonts` are copied by 11ty.
-- `src/content`: the content of the site, be it Nunjucks or Markdown files. I generally make heavy use of directories and `getFilteredByGlob(Glob)` to define collections, rather than using tags. For [multilingual projects](/blog/multilingual-sites-eleventy/), I create subfolders containing directory data files to define locales as direct children of the `content` folder.
+- `src/content`: the content of the site, be it Nunjucks or Markdown files. I generally make heavy use of directories and `getFilteredByGlob(Glob)` to define collections, rather than using tags. For [multilingual projects](/blog/multilingual-sites-eleventy/), I create subfolders containing [directory data files](https://www.11ty.dev/docs/data-template-dir/) to define locales as direct children of the `content` folder.
 
 I am sure these conventions I have set for myself will still evolve (escaping entropy is an illusion) but, so far, this way of loosely structuring projects makes sense to me and allows me to be more productive.
