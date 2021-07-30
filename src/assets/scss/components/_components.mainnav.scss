@@ -45,38 +45,3 @@
   border-bottom: 2px solid var(--color-brand4);
   text-decoration: none;
 }
-
-// -------------------------------------
-// Hamburger menu
-// -------------------------------------
-
-.c-mainnav-compact {
-  margin: 0;
-  padding: 0;
-
-  & > a {
-    display: block;
-  }
-
-  & svg {
-    vertical-align: middle;
-  }
-}
-
-// -------------------------------------
-// Visibility toggle
-// -------------------------------------
-
-.c-mainnav {
-  display: none;
-
-  @include mq(medium) {
-    display: flex;
-  }
-}
-
-.c-mainnav-compact {
-  @include mq(medium) {
-    display: none;
-  }
-}
