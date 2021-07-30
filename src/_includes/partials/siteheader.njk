@@ -1,13 +1,9 @@
 <header class="c-siteheader">
   <div class="l-container  c-siteheader__inner">
-    <p class="c-siteheader__logo"><a aria-label="Go to homepage" href="/">{% include "svg/logo.svg" %}</a></p>
-    <nav class="c-siteheader__nav" aria-label="header navigation">
-      {% for item in nav %}
-        {% if loop.first %}<ul class="c-mainnav">{% endif %}
-          <li class="c-mainnav__item"><a class="c-mainnav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
-        {% if loop.last %}</ul>{% endif %}
-      {% endfor %}
-      <p class="c-mainnav-compact"><a class="js-navtrigger" href="#footernav">{% include "svg/icon-hamburger.svg" %}</a></p>
-    </nav>
+    <p class="c-siteheader__logo"><a aria-label="Homepage" href="/">{% include "svg/logo.svg" %}</a></p>
+    <div class="c-siteheader__nav">
+      {% include "partials/mainnav.njk" %}
+    </div>
+    <p class="c-siteheader__hamburger"><a class="js-navtrigger" href="#footernav">{% include "svg/icon-hamburger.svg" %}</a></p>
   </div>
 </header>
