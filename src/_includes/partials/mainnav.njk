@@ -1,0 +1,9 @@
+<nav aria-label="Main navigation">
+  {% for item in nav %}
+    {% if loop.first %}<ul class="c-mainnav">{% endif %}
+      <li class="c-mainnav__item">
+        <a href="{{ item.navUrl }}" class="c-mainnav__link  {{ 'is-active' if activeSection == item.navTrigger }}" {% if activeSection == item.navTrigger %}aria-current="page"{% endif %}>{{ item.navLabel }}</a>
+      </li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+</nav>

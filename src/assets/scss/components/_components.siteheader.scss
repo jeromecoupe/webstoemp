@@ -47,3 +47,33 @@
     vertical-align: middle;
   }
 }
+
+.c-siteheader__hamburger {
+  margin: 0;
+  padding: 0;
+
+  & > a,
+  & svg {
+    vertical-align: middle;
+  }
+}
+
+// -------------------------------------
+// visibility toggle
+// -------------------------------------
+
+.c-siteheader__nav {
+  display: none;
+
+  @include mq(medium) {
+    display: block;
+  }
+}
+
+.c-siteheader__hamburger {
+  display: block;
+
+  @include mq(medium) {
+    display: none;
+  }
+}
