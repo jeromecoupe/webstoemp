@@ -37,11 +37,11 @@ In short, it was time for a minimal amount of structure and conventions. Here is
   +-- content/
     +-- en/
     +-- fr/
-  +-- .eleventy.js
-  +-- .gitignore
-  +-- .package-lock.json
-  +-- .package.json
-  +-- README.md
++-- .eleventy.js
++-- .gitignore
++-- .package-lock.json
++-- .package.json
++-- README.md
 ```
 
 - `build_tasks`: I generally use NPM scripts as my [asset pipeline](https://mxb.dev/blog/eleventy-asset-pipeline/). Occasionally, I need something more than an NPM package and a one liner. Those slightly more involved build scripts live in this directory.
