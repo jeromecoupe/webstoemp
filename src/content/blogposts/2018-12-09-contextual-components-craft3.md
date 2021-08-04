@@ -44,7 +44,8 @@ Here is what it might look like:
   {% if loop.last %}</ul>{% endif %}
 {% else %}
   <p>No blogpost found</p>
-{% endfor %}{% endraw %}
+{% endfor %}
+{% endraw %}
 ```
 
 If you work like this, you will need to repeat that little `blogpost` view everywhere you use it, which flies in the face of the DRY principle. A better option is to use an include and pass it the object you want to display.
@@ -79,7 +80,7 @@ Using a component-based approach, our code becomes:
 
 Adding the `only` keywords means that this component will only get the variables that you are passing to it and will not inherit all the variables available in the context of other templates in the inheritance stack.
 
-Then, you can simply create a component in your newly created `templates/_components` folder.
+Then, you can create a component in your newly created `templates/_components` folder.
 
 ```twig
 {%- raw -%}
