@@ -1,0 +1,7 @@
+{% macro itemService(icon, title, description) %}
+  <article class="c-service">
+    <p class="c-service__icon">{% include "svg/" ~ icon  %}</p>
+    <h3 class="c-h5">{{ title }}</h3>
+    <p class="c-service__text">{{ description }}</p>
+  </article>
+{% endmacro %}

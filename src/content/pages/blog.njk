@@ -10,6 +10,8 @@ permalink: blog/index.html
 {% set metaDescription = "Blogposts by Jérôme Coupé: web design and development as well as other miscelaneous topics." %}
 {% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
 
+{% from "macros/itemBlogpost.njk" import itemBlogpost %}
+
 {% block content %}
 <main>
 
@@ -34,7 +36,11 @@ permalink: blog/index.html
         {% if loop.first %}<ul class="c-list-ui">{% endif %}
         <li>
 
-          {% include "partials/blogteaser.njk" %}
+          {{ itemBlogpost(
+            date = post.date,
+            title = post.data.title,
+            url = post.url
+          ) }}
 
         </li>
         {% if loop.last %}</ul>{% endif %}

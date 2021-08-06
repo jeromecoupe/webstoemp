@@ -1,0 +1,6 @@
+{% macro itemBlogpost(date, title, url) %}
+  <article class="c-blogteaser">
+    <p class="c-blogteaser__date"><time datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date("MMMM Do, Y") }}</time></p>
+    <h2 class="c-blogteaser__title"><a class="c-blogteaser__link" href="{{ url }}">{{ title }}</a></h2>
+  </article>
+{% endmacro %}
