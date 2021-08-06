@@ -1,5 +1,5 @@
 ---
-title: "Modular code with Eleventy and Nunjucks"
+title: "Modular code with Nunjucks and Eleventy"
 excerpt: "These days, web development and design are all about modularization and components. Template languages have a lot to offer and Eleventy itself has a few tricks up its sleeve. Is the SSG world moving to the single file component model popularized by JS frameworks?"
 image: "eleventy-components.jpg"
 imageAlt: "Child fiddling with electronic components - Photo by Kevin Jarrett on Unspash"
@@ -14,15 +14,15 @@ I personally use [Nunjucks](https://mozilla.github.io/nunjucks/) as my templatin
 
 Back to this rule of thumb: when modularizing your code, use all the tools offered by templating languages first. Only reach for custom filters and shortcodes when your use case calls for it.
 
-## Template inheritance
+## Layouts
 
 Among other things, I am quite fond of Nunjucks' [template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) concept. The combination of `extends` and `block` allows authors to chain multiple templates and to define blocks that extending templates can override or not. Nunjucks templates share the same scope or context, which means defined variables are available to other templates in that chain and can also be overridden.
 
-As a rule of thumb, I use Nunjucks template inheritance for layouts. I only use [Eleventy's layout system](https://www.11ty.dev/docs/layout-chaining/#addendum-about-existing-templating-features) when I need to specify a layout in a markdown file front matter. In that case, the called Nunjucks template has a `{% raw %}{{ content | safe }}{% endraw %}` tag where I want the content of my Markdown file to appear and Nunjucks takes over from then on.
+As a rule of thumb, I use Nunjucks template inheritance for layouts and only use [Eleventy's layout system](https://www.11ty.dev/docs/layout-chaining/#addendum-about-existing-templating-features) when I need to specify a layout in a markdown file front matter. In that case, the called Nunjucks template has a `{% raw %}{{ content | safe }}{% endraw %}` tag where I want the content of my Markdown file to appear and Nunjucks takes over from then on.
 
 ## Filters
 
-Most templating languages offer a bunch of [built-in filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters). If that's not enough, Eleventy allows you to create [custom filters](https://www.11ty.dev/docs/filters/) using all the power of JavaScript and Node, as well as the ecosystem of packages, modules and libraries coming along with it.
+Most templating languages offer a bunch of [built-in filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters). When they are not quite up to snuff, Eleventy allows you to create [custom filters](https://www.11ty.dev/docs/filters/) using all the power of JavaScript and Node, as well as the ecosystem of packages, modules and libraries coming along with it.
 
 Nunjucks has no filter to format dates? We can harness the power of [Luxon](https://moment.github.io/luxon/) and create one. How about localisation while we're at it?
 
@@ -232,7 +232,7 @@ module.exports = function (filePath) {
 };
 ```
 
-Again, we have to declare the shortcode in our Eleventy configuration, before we can use it in our Nunjucks templates.
+Again, we have to declare the shortcode in our Eleventy configuration (you know the drill by now), before we can use it in our Nunjucks templates.
 
 ```jinja2
 {%- raw %}
@@ -244,6 +244,6 @@ Again, we have to declare the shortcode in our Eleventy configuration, before we
 
 I am personally really fond of the HTML first approach taken by Nunjucks and Eleventy for server-side rendered components.
 
-However, it seems (server-side rendered first) JavaScript components are banging hard on the door of the SSG world lately. Projects like [eleventy-plugin-vue](https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/), [Slinkity](https://slinkity.dev/) and [Astro](https://astro.build/) all seem to be moving into that direction.
+However, it seems (server-side rendered first) JavaScript components are banging hard on the door of the SSG world lately. Projects like [eleventy-plugin-vue](https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/), [Slinkity](https://slinkity.dev/) and [Astro](https://astro.build/) are all moving in this direction.
 
-We will probably soon all write all-encompassing server-side rendered first, hydrated on demand components handling data, markup, styling and interactions. Blimey, that was a buzzwords-loaded last sentence of a blogpost if I ever wrote one ...
+I have a feeling we might soon all write all-encompassing server-side rendered first, hydrated on demand components handling data, markup, styling and interactions.
