@@ -1,6 +1,6 @@
 ---
 title: "Modular code with Nunjucks and Eleventy"
-excerpt: "These days, web development and design are all about modularization and components. Template languages have a lot to offer and Eleventy itself has a few tricks up its sleeve. Is the SSG world moving to the single file component model popularized by JS frameworks?"
+excerpt: "These days, web development and design are all about modularization and components. Template languages have a lot to offer and Eleventy itself has a few tricks up its sleeve."
 image: "eleventy-components.jpg"
 imageAlt: "Child fiddling with electronic components - Photo by Kevin Jarrett on Unspash"
 tags:
@@ -12,7 +12,7 @@ tags:
 
 I personally use [Nunjucks](https://mozilla.github.io/nunjucks/) as my templating language with Eleventy. On top of being powerful and simple to learn, its syntax is similar to Twig, which I have been using for a while in [Craft](https://craftcms.com/) projects. That being said, [LiquidJS](https://liquidjs.com/) looks more fully-featured than the version of Liquid I used back in the days with Jekyll ... but I digress.
 
-Back to this rule of thumb: when modularizing your code, use all the tools offered by templating languages first. Only reach for custom filters and shortcodes when your use case calls for it.
+Back to my rule of thumb: when modularizing code, use all the tools offered by templating languages first. Only reach for custom filters and shortcodes when your use case requires it.
 
 ## Layouts
 
