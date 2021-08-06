@@ -44,7 +44,7 @@ module.exports = function (date, format, locale = "en") {
 };
 ```
 
-We can then make our filter available in Nunjucks, Liquid, Handlebars and JavaScript by adding it to `.eleventy.js`. Luxon is included in Eleventy but let's add it to our `package.json` for good measure: `npm i -D luxon`.
+We make our filter available in Nunjucks, Liquid, Handlebars and JavaScript by adding it to `.eleventy.js`. Luxon is included in Eleventy but let's add it to our `package.json` for good measure: `npm i -D luxon`.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -52,6 +52,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("formatDate", require("./src/_11ty/filters/formatDate.js"));
   // ... more config ...
 };
+```
+
+Usage:
+
+```jinja2
+{%- raw %}
+<time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD") }}</time>
+<time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD", "fr") }}</time>
+{% endraw %}
 ```
 
 Another type of filters I see myself creating regularly are the ones allowing me to filter collections. Let's say we need to display only posts belonging to certain categories in our templates.
@@ -151,7 +160,7 @@ I use macros as soon as I need components with parameters and a small amount of 
 
 ```jinja2
 {%- raw %}
-{% macro itemPost(title, date, url, featured) -%}
+{% macro itemPost(title, date, url, featured, locale="en") -%}
 
   {% set classes = "" %}
   {% if featured %}
@@ -159,7 +168,7 @@ I use macros as soon as I need components with parameters and a small amount of 
   {% endif %}
 
   <article class="c-blogteaser {{ classes }}">
-    <p class="c-blogteaser__date"><time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD") }}</time></p>
+    <p class="c-blogteaser__date"><time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD", locale) }}</time></p>
     <h2 class="c-blogteaser__title"><a class="c-blogteaser__link" href="{{ url }}">{{ title }}</a></h2>
   </article>
 
