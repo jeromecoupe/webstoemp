@@ -222,6 +222,8 @@ const markdownIt = require("markdown-it");
 const md = new markdownIt();
 
 module.exports = function (filePath) {
+  filePath = path.resolve(filePath);
+
   if (path.extname(filePath) !== ".md") {
     throw new Error(`RenderMdFile expects Markdown files.`);
   }
