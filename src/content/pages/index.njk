@@ -10,6 +10,8 @@ permalink: index.html
 {% set metaDescription = "Web design and code from Brussels, Belgium by Jérôme Coupé." %}
 {% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
 
+{% from "macros/itemService.njk" import itemService %}
+
 {% block content %}
 <main>
 
@@ -35,7 +37,11 @@ permalink: index.html
         {% if loop.first %}<ul class="l-services__grid">{% endif %}
         <li>
 
-          {% include "partials/service.njk" %}
+          {{ itemService(
+            title=service.title,
+            icon=service.icon,
+            description=service.description
+          ) }}
 
         </li>
         {% if loop.last %}</ul>{% endif %}
