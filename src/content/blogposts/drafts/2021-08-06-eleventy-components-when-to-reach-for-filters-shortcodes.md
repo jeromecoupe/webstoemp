@@ -103,7 +103,7 @@ We can then use it like this in our templates:
 
 ```jinja2
 {%- raw %}
-{% set yummyPosts = collections.posts |  getByCategories(["meals", "desserts"]) %}
+{% set yummyPosts = collections.posts | getByCategories(["meals", "desserts"]) %}
 {% endraw %}
 ```
 
@@ -152,16 +152,16 @@ I use macros as soon as I need components with parameters and a small amount of 
 
 ```jinja2
 {%- raw %}
-{% macro itemPost(params) %}
+{% macro itemPost(title, date, url, featured) -%}
 
   {% set classes = "" %}
-  {% if params.featured %}
+  {% if featured %}
     {% set classes = classes + " c-blogteaser--featured" %}
   {% endif %}
 
   <article class="c-blogteaser {{ classes }}">
-    <p class="c-blogteaser__date"><time datetime="{{ params.date | formatDate('yyyy-MM-dd') }}">{{ params.date | formatDate("DDD") }}</time></p>
-    <h2 class="c-blogteaser__title"><a class="c-blogteaser__link" href="{{ params.url }}">{{ params.title }}</a></h2>
+    <p class="c-blogteaser__date"><time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD") }}</time></p>
+    <h2 class="c-blogteaser__title"><a class="c-blogteaser__link" href="{{ url }}">{{ title }}</a></h2>
   </article>
 
 {% endmacro %}
@@ -178,12 +178,12 @@ Now we can import it and use it.
 {% for item in posts %}
   {% if loop.first %}<ul>{% endif %}
     <li>
-      {{ itemPost({
-        title: item.data.title,
-        date: item.date,
-        url: item.data.url,
-        featured: item.data.featured
-      }) }}
+      {{ itemPost(
+        title = item.data.title,
+        date = item.date,
+        url = item.data.url,
+        featured = item.data.featured
+      ) }}
     </li>
   {% if loop.last %}</ul>{% endif %}
 {% else %}
@@ -192,7 +192,7 @@ Now we can import it and use it.
 {% endraw %}
 ```
 
-I tend to pass a single object to macros for flexibility (as [GovUK](https://github.com/alphagov/govuk-frontend) does), which prevents me from adding defaults easily without resorting to logic. A minor drawback of Nunjucks macros is that they need to be explicitly imported. In that regard, I feel that the [LiquidJS `render` tag](https://liquidjs.com/tags/render.html) is a bit more flexible. Then again, we are explicitly importing components in "React and friends" all day long.
+A minor drawback of Nunjucks macros is that they need to be explicitly imported. In that regard, I feel that the [LiquidJS `render` tag](https://liquidjs.com/tags/render.html) is a bit more flexible. Then again, we are explicitly importing components in "React and friends" all day long.
 
 ## Eleventy shortcodes
 
@@ -240,8 +240,8 @@ Again, we have to declare the shortcode in our Eleventy configuration, before we
 {% endraw %}
 ```
 
-## Last words
+## Famous last words
 
-I personally really fond of the HTML-first approach taken by Nunjucks and Eleventy for server-side rendered websites and applications.
+I am personally really fond of the HTML first approach taken by Nunjucks and Eleventy for server-side rendered components.
 
-However, it seems that JavaScript components are banging hard on the door of the SSG world lately. Projects like [eleventy-plugin-vue](https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/), [Slinkity](https://slinkity.dev/) and [Astro](https://astro.build/) all seem to be moving into that direction.
+However, it seems that (server-side rendered first) JavaScript components are banging hard on the door of the SSG world lately. Projects like [eleventy-plugin-vue](https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/), [Slinkity](https://slinkity.dev/) and [Astro](https://astro.build/) all seem to be moving into that direction.
