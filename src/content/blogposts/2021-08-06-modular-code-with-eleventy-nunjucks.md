@@ -1,6 +1,6 @@
 ---
-title: "Components with Eleventy: when to reach for custom filters and shortcodes"
-excerpt: "These days, web development and design are all about modularization and components. For server-side rendered websites, let's first use the tools template languages have to offer. When they are not up for the task at hand, we can supplement them with custom filters and shortcodes."
+title: "Modular code with Eleventy and Nunjucks"
+excerpt: "These days, web development and design are all about modularization and components. Template languages have a lot to offer and Eleventy itself has a few tricks up its sleeve. Is the SSG world moving to the single file component model popularized by JS frameworks?"
 image: "eleventy-components.jpg"
 imageAlt: "Child fiddling with electronic components - Photo by Kevin Jarrett on Unspash"
 tags:
@@ -12,17 +12,17 @@ tags:
 
 I personally use [Nunjucks](https://mozilla.github.io/nunjucks/) as my templating language with Eleventy. On top of being powerful and simple to learn, its syntax is similar to Twig, which I have been using for a while in [Craft](https://craftcms.com/) projects. That being said, [LiquidJS](https://liquidjs.com/) looks more fully-featured than the version of Liquid I used back in the days with Jekyll ... but I digress.
 
-Back to this rule of thumb: use all the tools offered by templating languages first, only reach for custom filters and shortcodes when your use case calls for it.
+Back to this rule of thumb: when modularizing your code, use all the tools offered by templating languages first. Only reach for custom filters and shortcodes when your use case calls for it.
 
 ## Template inheritance
 
-Among other things, I am quite fond of Nunjucks' [template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) concept. The combination of `extends` and `block` allows authors to chain multiple templates and to define blocks that extending templates can override or not. Nunjucks templates share the same scope or context, which means that defined variables are available to other templates in that chain and can also be overridden.
+Among other things, I am quite fond of Nunjucks' [template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) concept. The combination of `extends` and `block` allows authors to chain multiple templates and to define blocks that extending templates can override or not. Nunjucks templates share the same scope or context, which means defined variables are available to other templates in that chain and can also be overridden.
 
 As a rule of thumb, I use Nunjucks template inheritance for layouts. I only use [Eleventy's layout system](https://www.11ty.dev/docs/layout-chaining/#addendum-about-existing-templating-features) when I need to specify a layout in a markdown file front matter. In that case, the called Nunjucks template has a `{% raw %}{{ content | safe }}{% endraw %}` tag where I want the content of my Markdown file to appear and Nunjucks takes over from then on.
 
 ## Filters
 
-Most templating languages offer a bunch of built-in filters. If that's not enough, Eleventy allows you to create [custom filters](https://www.11ty.dev/docs/filters/) that can use all the power of JavaScript and Node, as well as the ecosystem of packages, modules and libraries than comes along with it.
+Most templating languages offer a bunch of [built-in filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters). If that's not enough, Eleventy allows you to create [custom filters](https://www.11ty.dev/docs/filters/) using all the power of JavaScript and Node, as well as the ecosystem of packages, modules and libraries coming along with it.
 
 Nunjucks has no filter to format dates? We can harness the power of [Luxon](https://moment.github.io/luxon/) and create one. How about localisation while we're at it?
 
@@ -111,7 +111,7 @@ We can then use it like this in our templates:
 
 [Nunjucks includes](https://mozilla.github.io/nunjucks/templating.html#include) do not have a separate scope and do not take parameters. However, they can be nested and have access to variables defined in the template context.
 
-My use cases for includes are partials only needing access to variables available in the Nunjucks template context: header, footer, html `<head>`, navigation, pagination, etc.
+My use cases for includes are static partials or the ones only needing access to variables available in the Nunjucks template context: header, footer, html `<head>`, navigation, pagination, etc.
 
 Here is an include for a navigation interface that is itself included in a header.
 
@@ -148,7 +148,7 @@ Here is an include for a navigation interface that is itself included in a heade
 
 [Macros](https://mozilla.github.io/nunjucks/templating.html#macro) are a bit more powerful and a bit more involved than includes. They have their own scope by default and can be passed positional or named parameters. They must also be imported using `{% raw %}{% from %}{% endraw %}` or `{% raw %}{% import %}{% endraw %}` before being used.
 
-I use macros as soon as I need components with parameters and a small amount of logic. Their main advantage is that they are very legible when you have a non trivial amount of HTML code to output.
+I use macros as soon as I need components with parameters and a small amount of logic. Their main advantage is their legibility when you need to output a non-trivial amount of HTML.
 
 ```jinja2
 {%- raw %}
@@ -192,7 +192,7 @@ Now we can import it and use it.
 {% endraw %}
 ```
 
-A minor drawback of Nunjucks macros is that they need to be explicitly imported. In that regard, I feel that the [LiquidJS `render` tag](https://liquidjs.com/tags/render.html) is a bit more flexible. Then again, we are explicitly importing components in "React and friends" all day long.
+A minor drawback of Nunjucks macros is that they need to be explicitly imported. In that regard, the [LiquidJS `render` tag](https://liquidjs.com/tags/render.html) appears to be a bit more flexible. Then again, we are explicitly importing components in "React and friends" all day long.
 
 ## Eleventy shortcodes
 
@@ -244,4 +244,6 @@ Again, we have to declare the shortcode in our Eleventy configuration, before we
 
 I am personally really fond of the HTML first approach taken by Nunjucks and Eleventy for server-side rendered components.
 
-However, it seems that (server-side rendered first) JavaScript components are banging hard on the door of the SSG world lately. Projects like [eleventy-plugin-vue](https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/), [Slinkity](https://slinkity.dev/) and [Astro](https://astro.build/) all seem to be moving into that direction.
+However, it seems (server-side rendered first) JavaScript components are banging hard on the door of the SSG world lately. Projects like [eleventy-plugin-vue](https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/), [Slinkity](https://slinkity.dev/) and [Astro](https://astro.build/) all seem to be moving into that direction.
+
+We will probably soon all write all-encompassing server-side rendered first, hydrated on demand components handling data, markup, styling and interactions. Blimey, that was a buzzwords-loaded last sentence of a blogpost if I ever wrote one ...
