@@ -1,6 +1,6 @@
 ---
 title: "Components with Eleventy: when to reach for custom filters and shortcodes"
-excerpt: "These days, web development and design are all about modularization and components. For server-side rendered websites, let's first use the tools template languages have to offer. When that's not enough, Eleventy complements them by with custom filters and shortcodes."
+excerpt: "These days, web development and design are all about modularization and components. For server-side rendered websites, let's first use the tools template languages have to offer. When they are not up for the task at hand, we can supplement them with custom filters and shortcodes."
 image: "eleventy-components.jpg"
 imageAlt: "Child fiddling with electronic components - Photo by Kevin Jarrett on Unspash"
 tags:
@@ -10,9 +10,9 @@ tags:
 
 ## Team Nunjucks
 
-I personally use [Nunjucks](https://mozilla.github.io/nunjucks/) as my templating language with Eleventy. On top of being powerful and simple to learn, its syntax is similar to Twig, which I have been using for a while in Craft projects. That being said, [LiquidJS](https://liquidjs.com/) looks more fully-featured than the version of Liquid I used back in the days with Jekyll ... but I digress.
+I personally use [Nunjucks](https://mozilla.github.io/nunjucks/) as my templating language with Eleventy. On top of being powerful and simple to learn, its syntax is similar to Twig, which I have been using for a while in [Craft](https://craftcms.com/) projects. That being said, [LiquidJS](https://liquidjs.com/) looks more fully-featured than the version of Liquid I used back in the days with Jekyll ... but I digress.
 
-Back to my rule of thumb: use all the tools offered by templating language first, reach for custom filters and shortcodes when your use case calls for it.
+Back to this rule of thumb: use all the tools offered by templating languages first, only reach for custom filters and shortcodes when your use case calls for it.
 
 ## Template inheritance
 
