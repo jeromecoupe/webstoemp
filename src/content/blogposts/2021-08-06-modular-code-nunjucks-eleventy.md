@@ -73,14 +73,13 @@ module.exports = function (collection, categories) {
   }
 
   categories.forEach((cat) => {
-    collection.forEach((item) => {
-      if (item.data["categories"].includes(cat)) {
-        results.add(item);
-      }
-    });
+    let matches = collection.filter((item) =>
+      item.data["categories"].includes(cat)
+    );
+    matches.forEach((item) => results.add(item));
   });
 
-  results = Array.from(results);
+  results = Array.from(results).sort((a, b) => a.date - b.date);
 
   return results;
 };
