@@ -58,8 +58,8 @@ Usage:
 
 ```jinja2
 {%- raw %}
-<time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD") }}</time>
-<time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD", "fr") }}</time>
+{{ "2021-08-06" | formatDate("DDD") }}
+<time datetime="{{ post.date | formatDate('yyyy-MM-dd') }}">{{ post.date | formatDate("DDD", "fr") }}</time>
 {% endraw %}
 ```
 
@@ -132,7 +132,7 @@ Here is an include for a navigation interface that is itself included in a heade
  # - display navUrl, navLabel for each item
 #}
 <nav aria-label="main navigation">
-  {% for item in nav %}
+  {% for item in mainnav %}
 
     {% set activeClass = "" %}
     {% set activeAria = "" %}
