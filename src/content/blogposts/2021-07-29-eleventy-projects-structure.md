@@ -39,8 +39,8 @@ In short, it was time for a minimal amount of structure and conventions. Here is
     +-- fr/
 +-- .eleventy.js
 +-- .gitignore
-+-- .package-lock.json
-+-- .package.json
++-- package-lock.json
++-- package.json
 +-- README.md
 ```
 
