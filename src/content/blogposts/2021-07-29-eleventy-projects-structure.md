@@ -49,8 +49,8 @@ In short, it was time for a minimal amount of structure and conventions. Here is
 - `src/_data`: data directory containing static or dynamic local data files. Pretty much standard in Eleventy projects.
 - `src/_includes`: I use Nunjucks extensively, along with [template inheritance](https://mozilla.github.io/nunjucks/templating.html#extends) and `extends`, which means layouts, includes and macros must live in this directory.
 - `src/_includes/layouts`: layouts used by the project. I use Nunjucks template inheritance whenever possible. [Blocks](https://mozilla.github.io/nunjucks/templating.html#block) makes it a superior layout system for me compared to the (simpler) Eleventy layout system.
-- `src/_includes/partials`: components that do not require any parameters other than those available in the global template context. Used for things like header, footer and SVGs.
-- `src/_includes/macros`: Nunjucks macros are locally scoped and accept parameters / arguments. Used for standard components (cards, etc) and utilities (formatting dates, etc.).
+- `src/_includes/partials`: components that do not require any parameters other than those available in the global template context. Used for things like header, footer, etc.
+- `src/_includes/macros`: Nunjucks macros are locally scoped and accept parameters / arguments. Used for standard components (cards, etc) and utilities (format dates, etc.).
 - `src/_includes/svg`: SVG code to be included inline in pages. SVG are optimized and [accessible](https://css-tricks.com/accessible-svgs/).
 - `src/assets`: static and processed assets. Typically contains `scss`, `img`, `fonts` and `js` directories. Most of these are handled by a build process, while others, like `fonts` are copied by 11ty.
 - `src/content`: the content of the site, be it Nunjucks or Markdown files. I generally use directories and `getFilteredByGlob(Glob)` to define collections, rather than using tags. For [multilingual projects](/blog/multilingual-sites-eleventy/), I create subdirectories containing [directory data files](https://www.11ty.dev/docs/data-template-dir/) to define locales as direct children of the `content` directory.
