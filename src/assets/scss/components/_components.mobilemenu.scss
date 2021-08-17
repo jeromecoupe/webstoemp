@@ -78,10 +78,13 @@
 // -------------------------------------
 
 .c-mobilemenu {
+  opacity: 0;
   transform: translate3d(-100%, 0, 0);
-  transition: transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: opacity 0.25s ease-out,
+    transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 
   .js-menu-is-active & {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
