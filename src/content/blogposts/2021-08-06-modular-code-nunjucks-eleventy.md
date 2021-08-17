@@ -227,8 +227,7 @@ Speaking of Nunjucks, here is a shortcode that will render the content of any ma
 
 const fs = require("fs");
 const path = require("path");
-const markdownIt = require("markdown-it");
-const md = new markdownIt();
+const md = require("markdown-it");
 
 module.exports = function (filePath) {
   filePath = path.resolve(filePath);
