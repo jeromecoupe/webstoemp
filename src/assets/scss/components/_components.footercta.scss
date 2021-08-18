@@ -9,8 +9,8 @@
   background-color: var(--color-brand3);
 
   font-weight: 600;
-  font-size: calc(20 / 16 * 1rem);
-  line-height: 1.4;
+  font-size: calc(22 / 16 * 1rem);
+  line-height: 1.36;
   font-family: var(--fontstack-alt);
   text-decoration: none;
   color: var(--color-gray8);
@@ -25,10 +25,6 @@
 
   & > span {
     color: var(--color-brand7);
-  }
-
-  @include mq(small) {
-    font-size: calc(20 / 16 * 1rem);
   }
 
   @include mq(medium) {

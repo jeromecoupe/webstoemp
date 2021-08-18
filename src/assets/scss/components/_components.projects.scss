@@ -34,7 +34,7 @@
 }
 
 .c-project__client {
-  margin-bottom: calc(12 / 16 * 1rem);
+  margin-bottom: calc(6 / 16 * 1rem);
   font-weight: 400;
   font-size: calc(12 / 16 * 1rem);
   line-height: calc(18 / 12);
@@ -45,9 +45,9 @@
 
 .c-project__title {
   font-weight: 600;
-  font-size: calc(23 / 16 * 1rem);
+  font-size: calc(26 / 16 * 1rem);
   font-family: var(--fontstack-alt);
-  line-height: calc(30 / 23);
+  line-height: calc(36 / 26);
   color: var(--color-gray8);
   margin-bottom: calc(18 / 16 * 1rem);
 
@@ -57,14 +57,9 @@
     color: var(--color-brand5);
   }
 
-  @include mq(medium) {
-    font-size: calc(25 / 16 * 1rem);
-    line-height: calc(36 / 25);
-  }
-
   @include mq(large) {
-    font-size: calc(29 / 16 * 1rem);
-    line-height: calc(36 / 29);
+    font-size: calc(31 / 16 * 1rem);
+    line-height: calc(42 / 31);
   }
 }
 
