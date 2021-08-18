@@ -2,16 +2,25 @@
 // Titles
 // -------------------------------------
 
-.c-h1 {
+// https://www.modularscale.com/?18&px&1.2
+
+.c-h1,
+.c-h2,
+.c-h3,
+.c-h4,
+.c-h5 {
   font-weight: 600;
-  font-size: calc(31 / 16 * 1rem);
-  font-family: var(--fontstack-alt);
   line-height: 1.2;
+  font-family: var(--fontstack-alt);
   color: var(--color-gray8);
+}
+
+.c-h1 {
+  font-size: calc(31 / 16 * 1rem);
   margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: calc(39 / 16 * 1rem);
+    font-size: calc(37 / 16 * 1rem);
   }
 
   @include mq(large) {
@@ -21,16 +30,10 @@
 
 .c-h1--invert {
   color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .c-h2 {
-  font-weight: 600;
-  font-size: calc(29 / 16 * 1rem);
-  font-family: var(--fontstack-alt);
-  line-height: 1.2;
-  color: var(--color-gray8);
+  font-size: calc(26 / 16 * 1rem);
   margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
@@ -38,72 +41,42 @@
   }
 
   @include mq(large) {
-    font-size: calc(36 / 16 * 1rem);
+    font-size: calc(37 / 16 * 1rem);
   }
-}
-
-.c-h2--invert {
-  color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .c-h3 {
-  font-weight: 600;
-  font-size: calc(23 / 16 * 1rem);
-  font-family: var(--fontstack-alt);
-  line-height: 1.2;
-  color: var(--color-gray8);
+  font-size: calc(22 / 16 * 1rem);
   margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: calc(25 / 16 * 1rem);
+    font-size: calc(26 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: calc(29 / 16 * 1rem);
+    font-size: calc(31 / 16 * 1rem);
   }
-}
-
-.c-h3--invert {
-  color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .c-h4 {
-  font-weight: 700;
-  font-size: calc(20 / 16 * 1rem);
-  font-family: var(--fontstack-alt);
-  line-height: 1.2;
-  color: var(--color-gray8);
+  font-size: calc(18 / 16 * 1rem);
   margin-bottom: calc(18 / 16 * 1rem);
 
   @include mq(medium) {
-    font-size: calc(23 / 16 * 1rem);
+    font-size: calc(22 / 16 * 1rem);
   }
 
   @include mq(large) {
-    font-size: calc(25 / 16 * 1rem);
+    font-size: calc(26 / 16 * 1rem);
   }
-}
-
-.c-h4--invert {
-  color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .c-h5 {
-  font-weight: 600;
-  font-size: calc(20 / 16 * 1rem);
-  font-family: var(--fontstack-alt);
-  line-height: 1.2;
-  color: var(--color-gray8);
+  font-size: calc(18 / 16 * 1rem);
   margin-bottom: calc(12 / 16 * 1rem);
 
   @include mq(large) {
-    font-size: calc(23 / 16 * 1rem);
+    font-size: calc(22 / 16 * 1rem);
   }
 }
 
@@ -112,9 +85,10 @@
 // -------------------------------------
 
 .c-suptitle {
-  font-weight: 600;
+  font-weight: 500;
   font-size: calc(13 / 16 * 1rem);
   font-family: var(--fontstack-main);
+  line-height: 1.2;
   color: var(--color-brand4);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -126,9 +100,10 @@
 }
 
 .c-smalltitle {
-  font-weight: 700;
+  font-weight: 500;
   font-size: calc(13 / 16 * 1rem);
   font-family: var(--fontstack-main);
+  line-height: 1.2;
   color: var(--color-gray8);
   text-transform: uppercase;
   letter-spacing: 1px;
