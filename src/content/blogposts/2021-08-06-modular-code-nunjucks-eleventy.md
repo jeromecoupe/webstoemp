@@ -162,12 +162,9 @@ I use macros as soon as I need components with parameters and a small amount of 
 {%- raw %}
 {% macro itemPost(title, date, url, featured, locale="en") -%}
 
-  {% set classes = "" %}
-  {% if featured %}
-    {% set classes = classes + " c-blogteaser--featured" %}
-  {% endif %}
+  {% set featuredClass = "c-blogteaser--featured" if featured %}
 
-  <article class="c-blogteaser {{ classes }}">
+  <article class="c-blogteaser {{ featuredClass }}">
     <p class="c-blogteaser__date"><time datetime="{{ date | formatDate('yyyy-MM-dd') }}">{{ date | formatDate("DDD", locale) }}</time></p>
     <h2 class="c-blogteaser__title"><a class="c-blogteaser__link" href="{{ url }}">{{ title }}</a></h2>
   </article>
