@@ -3,6 +3,8 @@
 // -------------------------------------
 
 .c-mobilemenu {
+  display: none;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -14,20 +16,27 @@
   padding: calc(42 / 16 * 1rem) calc(24 / 16 * 1rem);
 
   background-color: var(--color-brand5);
+}
+
+.c-mobilemenu.is-shown {
+  display: block;
 
   @include mq(medium) {
     display: none;
   }
 }
 
-.c-mobilemenu__close {
+.c-mobilemenu__actions {
   margin: 0;
   padding: 0;
   text-align: right;
+}
 
-  & > a {
-    display: inline-block;
-  }
+.c-mobilemenu__close {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  border: none;
 
   & svg {
     display: block;
@@ -47,15 +56,14 @@
 
 .c-mobilenav__link {
   display: block;
-  padding: calc(12 / 16 * 1rem) 0;
+  padding: calc(6 / 16 * 1rem) 0;
 
   font-weight: 600;
-  font-size: calc(15 / 16 * 1rem);
+  font-size: calc(22 / 16 * 1rem);
   line-height: 1.36;
+  font-family: var(--fontstack-alt);
   text-decoration: none;
   color: var(--color-gray8);
-  text-transform: uppercase;
-  text-align: center;
 
   transition: opacity 0.2s ease-in-out;
 
@@ -74,40 +82,22 @@
 }
 
 // -------------------------------------
-// Trigger visibility
+// Animations
 // -------------------------------------
 
-.c-mobilemenu {
-  opacity: 0;
-  transform: translate3d(-100%, 0, 0);
-  transition: transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-
-  .js-menu-is-active & {
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(48px, 0, 0);
+  }
+  100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
-// -------------------------------------
-// Animations
-// -------------------------------------
-
-.c-mobilenav__item {
-  transform: translate3d(0, -12px, 0);
-  opacity: 0;
-
-  transition-property: all;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-@for $i from 1 through 4 {
-  .js-menu-is-active .c-mobilenav__item:nth-child(#{$i}) {
-    transition-delay: 0.25s + (0.05s * $i);
+.c-mobilenav {
+  .is-shown & {
+    animation: slideFromLeft 0.2s ease-out both;
   }
-}
-
-.js-menu-is-active .c-mobilenav__item {
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
 }

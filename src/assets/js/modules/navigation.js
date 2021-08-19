@@ -1,7 +1,7 @@
 const elNavLinks = document.querySelectorAll(".js-navtrigger");
-const elBody = document.querySelector("body");
+const mobileMenu = document.querySelector(".js-mobilemenu");
 const elHtml = document.querySelector("html");
-const classActive = "js-menu-is-active";
+const classActive = "is-shown";
 const classNoScroll = "u-noscroll";
 
 // init
@@ -12,7 +12,7 @@ const init = () => {
       "click",
       (event) => {
         event.preventDefault();
-        elBody.classList.toggle(classActive);
+        mobileMenu.classList.toggle(classActive);
         elHtml.classList.toggle(classNoScroll);
       },
       false
