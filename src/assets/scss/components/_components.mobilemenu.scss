@@ -18,7 +18,7 @@
   background-color: var(--color-brand5);
 }
 
-.c-mobilemenu.is-shown {
+.c-mobilemenu.is-active {
   display: block;
 
   @include mq(medium) {
@@ -85,10 +85,10 @@
 // Animations
 // -------------------------------------
 
-@keyframes slideFromLeft {
+@keyframes slideIn {
   0% {
     opacity: 0;
-    transform: translate3d(48px, 0, 0);
+    transform: translate3d(-30px, 0, 0);
   }
   100% {
     opacity: 1;
@@ -97,7 +97,7 @@
 }
 
 .c-mobilenav {
-  .is-shown & {
-    animation: slideFromLeft 0.2s ease-out both;
+  .is-active & {
+    animation: slideIn 0.15s ease-out both;
   }
 }
