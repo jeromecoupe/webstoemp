@@ -1,7 +1,7 @@
 const elNavLinks = document.querySelectorAll(".js-navtrigger");
 const mobileMenu = document.querySelector(".js-mobilemenu");
 const elHtml = document.querySelector("html");
-const classActive = "is-shown";
+const classActive = "is-active";
 const classNoScroll = "u-noscroll";
 
 // init
