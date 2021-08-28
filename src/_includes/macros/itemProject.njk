@@ -1,11 +1,11 @@
-{% macro itemProject(image, title, client, url, content, tags) %}
+{% macro itemProject(image, title, client, url, text, tags) %}
 
   {% set img800 = '/assets/img/projects/800x600/' ~ image %}
   {% set img1024 = '/assets/img/projects/' ~ image %}
 
   <article class="c-project">
     <p class="c-project__image">
-      <a href="{{ project.url }}">
+      <a href="{{ url }}">
         <img src="{{ img800 }}"
               srcset="{{ img800 }} 800w,
                       {{ img1024 }} 1024w"
@@ -24,7 +24,7 @@
       <p class="c-project__client">{{ client }}</p>
       <h2 class="c-project__title"><a href="{{ url }}">{{ title }}</a></h2>
       <div class="c-project__description">
-        {{ content }}
+        {{ text }}
       </div>
       {% for tag in tags %}
         {% if loop.first %}<ul class="c-tags">{% endif %}
