@@ -1,8 +1,8 @@
 # Webstoemp
 
-Webstomep is the website of Jérôme Coupé, web designer, front-end developer and teacher from Brussels, Belgium.
+Webstoemp is the online space of Jérôme Coupé, web designer, front-end developer and teacher from Brussels, Belgium.
 
-Webstoemp is built with [Eleventy](https://www.11ty.dev/), NPM scripts and [esbuild](https://github.com/evanw/esbuild). It is deployed and hosted on [Netlify](https://www.netlify.com/).
+This website is built with [Eleventy](https://www.11ty.dev/), NPM scripts and [esbuild](https://github.com/evanw/esbuild). It is hosted on and deployed with [Netlify](https://www.netlify.com/).
 
 ## Copyright
 
