@@ -15,7 +15,7 @@
   "scripts": {
     "clean": "rimraf './dist'",
     "styles:prod": "sass --no-source-map --style=compressed src/assets/scss/main.scss dist/assets/css/main.css",
-    "styles:dev": "sass --source-map --embed-source-map --source-map-urls=absolute ./src/assets/scss/main.scss dist/assets/css/main.css",
+    "styles:dev": "sass --embed-source-map --source-map-urls=absolute ./src/assets/scss/main.scss dist/assets/css/main.css",
     "poststyles:prod": "postcss dist/assets/css/main.css --replace --no-map --use autoprefixer cssnano",
     "scripts:prod": "esbuild ./src/assets/js/main.js --target=es6 --bundle --minify --outfile=./dist/assets/js/main.bundle.js",
     "scripts:dev": "esbuild ./src/assets/js/main.js --target=es6 --bundle --outfile=./dist/assets/js/main.bundle.js",
