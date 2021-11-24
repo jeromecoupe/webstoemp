@@ -138,7 +138,7 @@ Here is an include for a navigation interface that is itself included in a heade
     {% set activeAria = "" %}
     {% if item.navTrigger == activeSection %}
       {% set activeClass = "is-active" %}
-      {% set activeAria = 'aria-current="page"' %}
+      {% set activeAria = 'aria-current="page"' | safe %}
     {% endif %}
 
     {% if loop.first %}<ul class="c-mainnav">{% endif %}
