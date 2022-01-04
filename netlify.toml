@@ -1,15 +1,4 @@
 [build]
   command = "npm run build"
   publish = "dist/"
-
-[[redirects]]
-  from = "/about"
-  to = "/contact"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/work/*"
-  to = "/work/"
-  status = 301
-  force = true
+  environment = { NODE_VERSION = "16.4.1" }
