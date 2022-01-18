@@ -14,7 +14,18 @@ module.exports = function (eleventyConfig) {
 
   // filters
   eleventyConfig.addFilter("limit", require("./src/_11ty/filters/limit.js"));
-  eleventyConfig.addFilter("date", require("./src/_11ty/filters/date.js"));
+  eleventyConfig.addFilter(
+    "dateISO",
+    require("./src/_11ty/filters/dateISO.js")
+  );
+  eleventyConfig.addFilter(
+    "dateFull",
+    require("./src/_11ty/filters/dateFull.js")
+  );
+  eleventyConfig.addFilter(
+    "dateFormat",
+    require("./src/_11ty/filters/dateFormat.js")
+  );
 
   // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {
