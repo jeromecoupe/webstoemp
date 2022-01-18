@@ -27,7 +27,7 @@
     </div>
 
     <div class="c-sitefooter__copyright">
-      <p class="u-margin-all-none">&copy; Webstoemp {{ site.buildTime | date("Y") }}</p>
+      <p class="u-margin-all-none">&copy; Webstoemp <time datetime="{{ site.buildTime | dateISO }}">{{ site.buildTime | dateFormat("yyyy") }}</time></p>
     </div>
 
   </div>

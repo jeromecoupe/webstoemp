@@ -9,19 +9,23 @@ permalink: feed.xml
     <description>{{ site.description }}</description>
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.buildTime | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</pubDate>
-    <lastBuildDate>{{ site.buildTime | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</lastBuildDate>
+    <managingEditor>{{ site.author }}</managingEditor>
+    <webMaster>{{ site.author }}</webMaster>
+    <pubDate>{{ site.buildTime | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</pubDate>
+    <lastBuildDate>{{ site.buildTime | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</lastBuildDate>
     <generator>Eleventy</generator>
     {% for post in collections.blogposts | limit(10) %}
       <item>
         <title>{{ post.data.title }}</title>
         <link>{{ site.url }}{{ post.url }}</link>
-        <pubDate>{{ post.date | date("ddd, D MMM YYYY HH:mm:ss ZZ") }}</pubDate>
+        <pubDate>{{ post.date | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</pubDate>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
-        <description><![CDATA[
+        <description>
+        <![CDATA[
           <p>{{ post.data.excerpt }}</p>
           {{ post.templateContent | safe }}
-        ]]></description>
+        ]]>
+        </description>
       </item>
     {% endfor %}
   </channel>
