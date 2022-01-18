@@ -10,7 +10,7 @@ permalink: feed.xml
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     <managingEditor>{{ site.authorEmail }}</managingEditor>
-    <webMaster>{{ site.author }}</webMaster>
+    <webMaster>{{ site.authorEmail }}</webMaster>
     <pubDate>{{ site.buildTime | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</pubDate>
     <lastBuildDate>{{ site.buildTime | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</lastBuildDate>
     <generator>Eleventy</generator>
