@@ -35,8 +35,8 @@ My goal was to use [Github Actions](https://docs.github.com/en/free-pro-team@lat
 Since this workflow needs to connect to servers using SSH, we have to create three [Github Secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) in the repository we want to deploy:
 
 - `SSH_HOST`: the IP address of the server we need to connect to
-- `SSH_USER`: the SSH use we need to use
-- `SSH_KEY`: the SSH key we will use. The recommended option here is to create a dedicated key pair for the repository rather than using your personal key. The public key will be stored on the server, while the private key will be stored in the Github Secret.
+- `SSH_USER`: the SSH user
+- `SSH_KEY`: the SSH key. The recommended option here is to create a dedicated key pair for the repository rather than using your personal key. The public key will be stored on the server, while the private key will be stored in the Github Secret.
 
 We will now be able to reference those secrets in our workflow using the following syntax: `{% raw %}${{ secrets.MYSECRET }}{% endraw %}`
 
@@ -85,9 +85,10 @@ jobs:
       - name: Build assets with Gulp
         run: npx gulp build
 
-      # rsync
-      # exclude web/uploads is there to avoid deleting user uploaded files
-      # Setting StrictHostKeyChecking=no will automatically add new host keys to the user known hosts files.
+      # RSYNC
+      # - rsync [options] ~/localdir ssh_user@ssh_host:destination_directory
+      # - exclude web/uploads is there to avoid deleting user uploaded files w/ --delete-after
+      # - StrictHostKeyChecking=no will automatically add new host keys to the user known hosts files.
       - name: Deploy with rsync
         run: |
           rsync -azh --delete-after --exclude={"/web/uploads/","/node_modules/","/.git/","/.github/"} -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/
@@ -110,7 +111,11 @@ jobs:
 
 By creating a `craftdeploy.yaml` file in `./.github/workflows/` and by setting the push event to the `master` branch, we ensure that this workflow will run every time we push code to the master branch of our repository.
 
-I have been testing it with a couple of Craft projects for a couple of months and have not experienced any issue so far. The workflow is consistently taking between 1 and 3 minutes to run, which I find rather reasonable.
+We use `rsync` to deploy files from the Github container to the production server. In the script above, we are copying files from the root of our local install to the root of a remote server we connect to via SSH.
+
+`rsync` is a very powerful tool and can be quite destructive if you mess up your command. If you are new to it (and event if you aren't), [consult the man page](https://linux.die.net/man/1/rsync) to see all available options and test it using the terminal. The `--dry-run` option, in particular, is very useful. It will not do anything and will print out the files that would have been transferred in your terminal.
+
+I have been testing this script with several Craft projects for a couple of months and have not experienced any issue so far. The workflow is consistently taking between 1 and 3 minutes to run, which I find rather reasonable.
 
 Granted, this is a very basic workflow and it can certainly be improved upon. Feel free to [hit me up on Twitter](https://twitter.com/jeromecoupe) if you have ideas.
 
