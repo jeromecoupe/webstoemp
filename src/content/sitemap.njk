@@ -24,7 +24,7 @@ permalink: sitemap.xml
   {% for post in collections.blogposts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
-      <lastmod>{{ post.date | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</lastmod>
+      <lastmod>{{ post.date | dateFeed }}</lastmod>
       <priority>1.0</priority>
     </url>
   {% endfor %}

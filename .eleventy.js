@@ -19,12 +19,21 @@ module.exports = function (eleventyConfig) {
     require("./src/_11ty/filters/dateISO.js")
   );
   eleventyConfig.addFilter(
+    "dateFeed",
+    require("./src/_11ty/filters/dateFeed.js")
+  );
+  eleventyConfig.addFilter(
     "dateFull",
     require("./src/_11ty/filters/dateFull.js")
   );
   eleventyConfig.addFilter(
     "dateFormat",
     require("./src/_11ty/filters/dateFormat.js")
+  );
+  
+  eleventyConfig.addFilter(
+    "dateYear",
+    require("./src/_11ty/filters/dateYear.js")
   );
 
   // plugins
