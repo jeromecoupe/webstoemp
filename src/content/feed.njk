@@ -2,24 +2,23 @@
 permalink: feed.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
     <language>en</language>
     <title>{{ site.title }} - Blogposts Feed</title>
     <description>{{ site.description }}</description>
     <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     <managingEditor>{{ site.authorEmail }} ({{ site.author }})</managingEditor>
     <webMaster>{{ site.authorEmail }} ({{ site.author }})</webMaster>
-    <pubDate>{{ site.buildTime | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</pubDate>
-    <lastBuildDate>{{ site.buildTime | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</lastBuildDate>
+    <pubDate>{{ site.buildTime | dateFeed }}</pubDate>
+    <lastBuildDate>{{ site.buildTime | dateFeed }}</lastBuildDate>
     <generator>Eleventy</generator>
     {% for post in collections.blogposts | limit(10) %}
       <item>
         <title>{{ post.data.title }}</title>
         <link>{{ site.url }}{{ post.url }}</link>
-        <pubDate>{{ post.date | dateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZ") }}</pubDate>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <pubDate>{{ post.date | dateFeed }}</pubDate>
+        <guid>{{ site.url }}{{ post.url }}</guid>
         <description>
         <![CDATA[
           <p>{{ post.data.excerpt }}</p>
