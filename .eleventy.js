@@ -1,40 +1,17 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
-  // blogposts collection
-  eleventyConfig.addCollection(
-    "blogposts",
-    require("./src/_11ty/collections/blogposts.js")
-  );
-  // projects collection
-  eleventyConfig.addCollection(
-    "projects",
-    require("./src/_11ty/collections/projects.js")
-  );
+  // collections
+  eleventyConfig.addCollection("blogposts", require("./src/_11ty/collections/blogposts.js"));
+  eleventyConfig.addCollection("projects", require("./src/_11ty/collections/projects.js"));
 
   // filters
   eleventyConfig.addFilter("limit", require("./src/_11ty/filters/limit.js"));
-  eleventyConfig.addFilter(
-    "dateISO",
-    require("./src/_11ty/filters/dateISO.js")
-  );
-  eleventyConfig.addFilter(
-    "dateFeed",
-    require("./src/_11ty/filters/dateFeed.js")
-  );
-  eleventyConfig.addFilter(
-    "dateFull",
-    require("./src/_11ty/filters/dateFull.js")
-  );
-  eleventyConfig.addFilter(
-    "dateFormat",
-    require("./src/_11ty/filters/dateFormat.js")
-  );
-  
-  eleventyConfig.addFilter(
-    "dateYear",
-    require("./src/_11ty/filters/dateYear.js")
-  );
+  eleventyConfig.addFilter("dateISO", require("./src/_11ty/filters/date.js").dateISO);
+  eleventyConfig.addFilter("dateFeed", require("./src/_11ty/filters/date.js").dateFeed);
+  eleventyConfig.addFilter("dateFull", require("./src/_11ty/filters/date.js").dateFull);
+  eleventyConfig.addFilter("dateFormat", require("./src/_11ty/filters/date.js").dateFormat);
+  eleventyConfig.addFilter("dateYear", require("./src/_11ty/filters/date.js").dateYear);
 
   // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {
@@ -61,7 +38,6 @@ module.exports = function (eleventyConfig) {
     },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    passthroughFileCopy: true,
+    markdownTemplateEngine: "njk"
   };
 };
