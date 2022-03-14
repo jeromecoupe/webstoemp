@@ -47,9 +47,12 @@ module.exports = function (date, format, locale = "en") {
 We make our filter available in Nunjucks, Liquid, Handlebars and JavaScript by adding it to `.eleventy.js`. Luxon is included in Eleventy but let's add it to our `package.json` for good measure: `npm i -D luxon`.
 
 ```js
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // ... more config ...
-  eleventyConfig.addFilter("formatDate", require("./src/_11ty/filters/formatDate.js"));
+  eleventyConfig.addFilter(
+    "formatDate",
+    require("./src/_11ty/filters/formatDate.js")
+  );
   // ... more config ...
 };
 ```
@@ -186,7 +189,7 @@ Now we can import it and use it.
       {{ itemPost(
         title = item.data.title,
         date = item.date,
-        url = item.data.url,
+        url = item.url,
         featured = item.data.featured
       ) }}
     </li>
