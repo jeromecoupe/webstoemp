@@ -2,3 +2,9 @@
   command = "npm run build"
   publish = "dist/"
   environment = { NODE_VERSION = "16.4.1" }
+
+[[redirects]]
+  from = /paulingrenade
+  to = https://www.paulingrenade.com/
+  status = 200
+  force = true
