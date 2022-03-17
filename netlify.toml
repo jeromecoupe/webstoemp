@@ -6,5 +6,5 @@
 [[redirects]]
   from = "/paulingrenade"
   to = "https://www.paulingrenade.com/"
-  status = 200
+  status = 301
   force = true
