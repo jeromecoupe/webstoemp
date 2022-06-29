@@ -2,19 +2,19 @@ const { DateTime } = require("luxon");
 
 /**
  * Format date: Feeds
- * 
+ *
  * @param {Date} date - JS date
  * @returns {String} - formatted date
  */
 const dateFeed = (date) => {
   const jsDate = new Date(date);
   const dt = DateTime.fromJSDate(jsDate);
-  return dt.toHTTP();
+  return dt.toRFC2822();
 };
 
 /**
  * Format date: Luxon format string
- * 
+ *
  * @param {Date} date - JS date
  * @param {String} format - Luxon format string
  * @param {String} locale - locale code
@@ -28,7 +28,7 @@ const dateFormat = (date, format, locale = "en") => {
 
 /**
  * Format date: human readable format
- * 
+ *
  * @param {Date} date - JS date
  * @param {String} locale - locale code
  * @returns {String} - formatted date
@@ -42,7 +42,7 @@ const dateFull = (date, locale = "en") => {
 /**
  * Format date: ISO
  * @param {Date} date - JS Date
- * @returns {String} - formatted date 
+ * @returns {String} - formatted date
  */
 const dateISO = (date) => {
   const jsDate = new Date(date);
@@ -52,9 +52,9 @@ const dateISO = (date) => {
 
 /**
  * Format date: year
- * 
+ *
  * @param {Date} date - js date
- * @returns {String} - formatted date 
+ * @returns {String} - formatted date
  */
 const dateYear = (date) => {
   const jsDate = new Date(date);
