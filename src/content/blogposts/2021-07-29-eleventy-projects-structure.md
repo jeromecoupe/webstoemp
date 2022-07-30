@@ -55,4 +55,6 @@ In short, it was time for a minimal amount of structure and conventions. Here is
 - `src/assets`: static and processed assets. Typically contains `scss`, `img`, `fonts` and `js` directories. Most of these are handled by a build process, while others, like `fonts` are copied by 11ty.
 - `src/content`: the content of the site, be it Nunjucks or Markdown files. I generally use directories and `getFilteredByGlob(Glob)` to define collections, rather than using tags. For [multilingual projects](/blog/multilingual-sites-eleventy/), I create subdirectories containing [directory data files](https://www.11ty.dev/docs/data-template-dir/) to define locales as direct children of the `content` directory.
 
+Head over to Youtube if you'd rather see [a video where I go through this](https://www.youtube.com/watch?v=boZiLtx8p3Q) while frantically moving my mouse cursor.
+
 I am sure these conventions I have set for myself will still evolve (escaping entropy is an illusion) but, so far, this way of loosely structuring projects makes sense to me and allows me to be more productive.
