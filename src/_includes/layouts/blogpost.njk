@@ -17,9 +17,13 @@
           <picture>
             <source srcset="{{ img1024 }} 1024w,
                             {{ img1500 }} 1500w"
+                    width="1500"
+                    height="844"
                     sizes="100vw"
                     media="(min-width: 500px)">
             <img src="{{ img600 }}"
+                 width="600"
+                 height="600"
                  class="o-fluidimage"
                  alt="{{ imageAlt }}"
                  decoding="async">
