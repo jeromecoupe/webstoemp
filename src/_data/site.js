@@ -7,6 +7,6 @@ module.exports = {
   author: "Jerôme Coupé",
   authorEmail: "jerome.coupe@webstoemp.com",
   authorTwitter: "@jeromecoupe",
-  authorMastodonUrl: "https://mastodon.social/@jeromecoupe",
+  authorMastodon: "https://mastodon.social/@jeromecoupe",
   buildTime: new Date(),
 };
