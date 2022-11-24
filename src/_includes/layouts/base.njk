@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ metaTitle }} - Webstoemp</title>
+  <meta name="author" content="{{ site.author }}">
   <meta name="description" content="{{ metaDescription }}">
   <meta name="generator" content="{{ eleventy.generator }}">
 
@@ -17,16 +18,15 @@
   <!-- Feed -->
   <link rel="alternate" href="/feed.xml" title="Webstoemp blog feed, by Jérôme Coupé" type="application/atom+xml">
 
-  <!-- Social (Mastodon) -->
-  <link rel="me" href="{{ site.authorMastodon }}">
+  <!-- Rel me -->
+  <link rel="me" href="{{ site.mastodon }}">
 
-  <!-- Social (Twitter + Open Graph) -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="{{ site.authorTwitter }}" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ site.url ~ page.url }}" />
   <meta property="og:title" content="{{ metaTitle }}" />
-  <meta property="og:description" content="{{ metaDescription }}" />
   <meta property="og:image" content="{{ metaImage }}" />
+  <meta property="og:description" content="{{ metaDescription }}" />
 
   <!-- Apple icon (minimal) -->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

@@ -9,8 +9,8 @@ eleventyExcludeFromCollections: true
     <title>{{ site.title }} - Blogposts Feed</title>
     <description>{{ site.description }}</description>
     <link>{{ site.url }}</link>
-    <managingEditor>{{ site.authorEmail }} ({{ site.author }})</managingEditor>
-    <webMaster>{{ site.authorEmail }} ({{ site.author }})</webMaster>
+    <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
+    <webMaster>{{ site.email }} ({{ site.author }})</webMaster>
     <pubDate>{{ site.buildTime | dateFeed }}</pubDate>
     <lastBuildDate>{{ site.buildTime | dateFeed }}</lastBuildDate>
     <generator>Eleventy</generator>
