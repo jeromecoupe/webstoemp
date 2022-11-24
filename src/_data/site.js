@@ -5,8 +5,7 @@ module.exports = {
   url: "https://www.webstoemp.com",
   baseUrl: "/",
   author: "Jerôme Coupé",
-  authorEmail: "jerome.coupe@webstoemp.com",
-  authorTwitter: "@jeromecoupe",
-  authorMastodon: "https://mastodon.social/@jeromecoupe",
+  email: "jerome.coupe@webstoemp.com",
+  mastodon: "https://mastodon.social/@jeromecoupe",
   buildTime: new Date(),
 };

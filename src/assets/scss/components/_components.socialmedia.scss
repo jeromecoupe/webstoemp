@@ -11,22 +11,23 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: nowrap;
+  gap: calc(6 / 16 * 1rem);
 
   @include mq(medium) {
     justify-content: flex-end;
   }
 }
 
-.c-socialmedia__item:not(:last-child) {
-  margin-right: calc(6 / 16 * 1rem);
-}
-
 .c-socialmedia__link {
+  display: block;
   color: var(--color-gray7);
   transition: color 0.2s ease-in-out;
 
   &:hover {
     color: var(--color-gray6);
   }
+}
+
+.c-socialmedia__link > svg {
+  display: block;
 }
