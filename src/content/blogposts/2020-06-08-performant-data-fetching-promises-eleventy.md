@@ -29,13 +29,14 @@ Here is a rough outline of how to deal with this use case in a performant manner
 
 ## Using promises and caching
 
-We will use `fetch` in Node (how daring) and pagination with a limit of 1 on the [JSON Placeholder API](https://jsonplaceholder.typicode.com/) in this example. That will allow us to make 99 API calls in parallel. We will also use the [flat-cache NPM package](https://www.npmjs.com/package/flat-cache) to store our data for speedier local development.
+We will use the [Axios](https://www.npmjs.com/package/axios) package and pagination with a limit of 1 on the [JSON Placeholder API](https://jsonplaceholder.typicode.com/) in this example. That will allow us to make 99 API calls in parallel. We will also use the [flat-cache NPM package](https://www.npmjs.com/package/flat-cache) to store our data for speedier local development.
 
 Now, on with the code! In our Eleventy install, we create a `blogposts.js` file in our `_data` folder.
 
 ```js
 // required packages
 const path = require("path");
+const axios = require("axios");
 const flatCache = require("flat-cache");
 
 // Config
@@ -52,13 +53,15 @@ const CACHE_FILE = "blogposts.json";
 async function requestPosts(skipRecords = 0) {
   try {
     const url = `https://jsonplaceholder.typicode.com/posts?_start=${skipRecords}&_limit=${ITEMS_PER_REQUEST}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await axios(url, {
+      method: "get",
+      headers: { "Accept-Encoding": "gzip,deflate,compress" },
+    });
 
     // return the total number of items to fetch and the data
     return {
-      total: parseInt(response.headers.get("x-total-count"), 10),
-      data: data,
+      total: parseInt(response.headers["x-total-count"], 10),
+      data: response.data,
     };
   } catch (err) {
     throw new Error(err);
@@ -93,6 +96,7 @@ async function getAllPosts() {
   // make first request and marge results with array
   const request = await requestPosts();
   apiData.push(...request.data);
+
   // calculate how many additional requests we need
   additionalRequests = Math.ceil(request.total / ITEMS_PER_REQUEST) - 1;
 
