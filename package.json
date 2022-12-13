@@ -19,30 +19,28 @@
     "poststyles:prod": "postcss dist/assets/css/main.css --replace --no-map --use autoprefixer cssnano",
     "scripts:prod": "esbuild ./src/assets/js/main.js --target=es6 --bundle --minify --outfile=./dist/assets/js/main.bundle.js",
     "scripts:dev": "esbuild ./src/assets/js/main.js --target=es6 --bundle --outfile=./dist/assets/js/main.bundle.js",
-    "server": "browser-sync start --server \"dist\" --files \"dist\" --no-open",
-    "eleventy": "npx eleventy --quiet",
+    "eleventy": "npx @11ty/eleventy --quiet",
     "images": "node \"./build_tasks/transform-images.js\"",
-    "watch:eleventy": "npx eleventy --watch --quiet",
+    "watch:eleventy": "npx @11ty/eleventy --port=3000 --serve --quiet",
     "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
     "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
     "build": "npm-run-all clean --parallel images styles:prod scripts:prod eleventy",
-    "dev": "npm-run-all --parallel server watch:*"
+    "dev": "npm-run-all --parallel watch:*"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "autoprefixer": "^10.4.8",
-    "browser-sync": "^2.27.10",
-    "cssnano": "^5.1.13",
-    "esbuild": "^0.15.5",
+    "@11ty/eleventy": "v2.0.0-canary.18",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "esbuild": "^0.16.4",
     "glob": "^8.0.3",
-    "luxon": "^3.0.1",
+    "luxon": "^3.1.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss": "^8.4.16",
-    "postcss-cli": "^10.0.0",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.54.5",
-    "sharp": "^0.30.7"
+    "sass": "^1.56.2",
+    "sharp": "^0.31.2"
   }
 }
