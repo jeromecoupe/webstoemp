@@ -1,7 +1,7 @@
 ---
 title: "Jekyll-powered agency website"
 client: "Central Design"
-url: "http://www.central.team"
+url: "https://v4.central.team/"
 image: central.jpg
 tags: ["Front-end", "Jekyll"]
 ---

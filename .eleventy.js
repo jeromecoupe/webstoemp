@@ -27,13 +27,23 @@ module.exports = function (eleventyConfig) {
     trim: true,
   });
 
+  // ignores
+  eleventyConfig.ignores.add("src/assets/**/*");
+
   // deep merge
   eleventyConfig.setDataDeepMerge(true);
 
   // pass through
-  eleventyConfig.addPassthroughCopy({"./src/static":"/"});
+  eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
   eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+
+  // watch targets
+  eleventyConfig.addWatchTarget("src/assets/scss/**/*");
+  eleventyConfig.addWatchTarget("src/assets/js/**/*");
+
+  // wait (make sure CSS and JS compile)
+  eleventyConfig.setWatchThrottleWaitTime(300);
 
   // base config
   return {
@@ -45,6 +55,6 @@ module.exports = function (eleventyConfig) {
     },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
   };
 };
