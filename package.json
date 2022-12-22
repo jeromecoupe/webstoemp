@@ -28,7 +28,7 @@
     "dev": "npm-run-all --parallel watch:*"
   },
   "devDependencies": {
-    "@11ty/eleventy": "v2.0.0-canary.18",
+    "@11ty/eleventy": "v2.0.0-canary.23",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
