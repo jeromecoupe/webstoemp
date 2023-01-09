@@ -34,7 +34,7 @@
     "cssnano": "^5.1.14",
     "esbuild": "^0.16.4",
     "glob": "^8.0.3",
-    "luxon": "^3.1.1",
+    "luxon": "^3.2.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "postcss": "^8.4.20",
