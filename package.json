@@ -1,7 +1,7 @@
 {
   "name": "webstoemp",
   "description": "Personal website of Jérôme Coupé",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Jérôme Coupé",
   "license": "UNLICENSED",
   "repository": {
@@ -13,6 +13,7 @@
     "not IE <= 11"
   ],
   "scripts": {
+    "server": "npx @11ty/eleventy --serve --quiet",
     "clean": "rimraf './dist'",
     "styles:prod": "sass --no-source-map --style=compressed src/assets/scss/main.scss dist/assets/css/main.css",
     "styles:dev": "sass --embed-source-map --source-map-urls=absolute ./src/assets/scss/main.scss dist/assets/css/main.css",
@@ -21,26 +22,25 @@
     "scripts:dev": "esbuild ./src/assets/js/main.js --target=es6 --bundle --outfile=./dist/assets/js/main.bundle.js",
     "eleventy": "npx @11ty/eleventy --quiet",
     "images": "node \"./build_tasks/transform-images.js\"",
-    "watch:eleventy": "npx @11ty/eleventy --port=3000 --serve --quiet",
     "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
     "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
     "build": "npm-run-all clean --parallel images styles:prod scripts:prod eleventy",
-    "dev": "npm-run-all --parallel watch:*"
+    "dev": "npm-run-all --parallel server watch:*"
   },
   "devDependencies": {
-    "@11ty/eleventy": "v2.0.0-canary.18",
+    "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
-    "esbuild": "^0.16.4",
-    "glob": "^8.0.3",
-    "luxon": "^3.1.1",
+    "esbuild": "^0.17.3",
+    "glob": "^8.1.0",
+    "luxon": "^3.2.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
-    "rimraf": "^3.0.2",
-    "sass": "^1.56.2",
-    "sharp": "^0.31.2"
+    "rimraf": "^4.1.1",
+    "sass": "^1.57.1",
+    "sharp": "^0.31.3"
   }
 }
