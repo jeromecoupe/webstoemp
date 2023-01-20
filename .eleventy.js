@@ -38,12 +38,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
 
-  // watch targets
-  eleventyConfig.addWatchTarget("src/assets/scss/**/*");
-  eleventyConfig.addWatchTarget("src/assets/js/**/*");
-
-  // wait (make sure CSS and JS compile)
-  eleventyConfig.setWatchThrottleWaitTime(300);
+  // server config
+  eleventyConfig.setServerOptions({
+    watch: ["./dist/assets/css/**/*.css", "./dist/assets/js/**/*.js"],
+    port: 3000,
+  });
 
   // base config
   return {
