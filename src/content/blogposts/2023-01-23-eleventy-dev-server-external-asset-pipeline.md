@@ -17,7 +17,7 @@ As outlined by Max Bock in [his infamous blogpost about asset pipelines](https:/
 
 Here is another [nice blogpost by Vadim Makeev](https://chriskirknielsen.com/blog/eleventy-asset-pipeline-precompiled-assets/) if you would rather like Eleventy to be in charge. As for me, I like the flexibility of an external build pipeline, mainly because I can easily use the same approach in non-Eleventy contexts.
 
-My default solution is to use NPM scripts and packages to compile assets directly to my output folder. Meanwhile, using packages like `npm-run-all`, I can have Eleventy do its thing. Running those processes in parallel is quite efficient and the separation of concerns appeals to me.
+My default solution is to use NPM scripts to compile assets directly to my output folder. Meanwhile, using a package like `npm-run-all`, I can have Eleventy do its thing. Running those processes in parallel is quite efficient and the separation of concerns appeals to me.
 
 Previously, you could essentially go down three different routes with this external approach:
 
@@ -33,7 +33,7 @@ I can keep building my assets with NPM scripts and run `npx eleventy --serve --q
 
 Any change to files in these directories will then trigger a server reload, even if those changes are the result of an external asset pipeline.
 
-Here is a bare bones sample of the kind of scripts I use in development.
+Here is a bare bones sample of the scripts I use in development. You could use `--watch` flags instead of the `onchange` package but again, I like the separation of concerns (and I also think it is easier to read and understand).
 
 ```json
 "scripts": {
