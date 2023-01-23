@@ -21,8 +21,8 @@ My default solution is to use NPM scripts and packages to compile assets directl
 
 Previously, you could essentially go down three different routes with this external approach:
 
-1. Use `addWatchTarget` in your configuration file to watch source files and trigger an Eleventy build when any file changes. Eleventy builds are fast, but triggering a whole build to reload my browser feels a bit wasteful. It also introduces a potenial race condition between your external asset pipeline and Eleventy.
-2. Generate compiled assets in a folderaded to `.gitignore` as well as to Eleventy ignore rules and use `addPassthroughCopy` to copy those generated assets to the output folder. No Eleventy build is triggered but your assets are now written twice to disc, which also seems a bit awkward.
+1. Use `addWatchTarget` in your configuration file to watch source files and trigger an Eleventy build when any file changes. Eleventy builds are fast, but triggering a whole build to reload my browser feels a bit wasteful. It also introduces a potential race condition between your external asset pipeline and Eleventy.
+2. Generate compiled assets in a folder added to `.gitignore` as well as to Eleventy ignore rules and use `addPassthroughCopy` to copy those generated assets to the output folder. No Eleventy build is triggered but your assets are now written twice to disc, which also seems a bit awkward.
 3. Use an external package like Browsersync as a local server to do the watching. Easy to manage via the CLI and the `--files` option allows you to watch your entire output directory to trigger browser reloads.
 
 ## A native performant solution
@@ -38,8 +38,10 @@ Here is a bare bones sample of the kind of scripts I use in development.
 ```json
 "scripts": {
   "server": "npx @11ty/eleventy --serve --quiet",
-  "styles:dev": "sass --watch --embed-source-map --source-map-urls=\"absolute\" \"./src/assets/scss/main.scss\" \"./dist/assets/css/main.css\"",
-  "scripts:dev": "esbuild --watch \"./src/assets/js/main.js\" --target=es6 --bundle --outfile=\"./dist/assets/js/main.bundle.js\"",
+  "styles:dev": "sass --embed-source-map --source-map-urls=\"absolute\" \"./src/assets/scss/main.scss\" \"./dist/assets/css/main.css\"",
+  "scripts:dev": "esbuild \"./src/assets/js/main.js\" --target=es2020 --bundle --outfile=\"./dist/assets/js/main.bundle.js\"",
+  "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
+  "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
   "dev": "npm-run-all --parallel server watch:*"
 },
 ```
@@ -66,4 +68,4 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-That's all there is to it, really. This very website uses the approach outlined above. So far, I am very happy with it and plan to use it for all my other projects once Eleventy 2.0 comes out of beta.
+That's all there is to it, really. [This very website](https://github.com/jeromecoupe/webstoemp) uses the approach outlined above. So far, I am very happy with it and plan to use it for all my other projects once Eleventy 2.0 comes out of beta.
