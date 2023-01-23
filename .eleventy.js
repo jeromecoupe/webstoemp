@@ -29,11 +29,10 @@ module.exports = function (eleventyConfig) {
 
   // ignores
   eleventyConfig.ignores.add("src/assets/**/*");
+  eleventyConfig.watchIgnores.add("src/assets/**/*");
 
-  // deep merge
-  eleventyConfig.setDataDeepMerge(true);
-
-  // pass through
+  // passthrough copy
+  eleventyConfig.setServerPassthroughCopyBehavior("copy");
   eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
   eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
