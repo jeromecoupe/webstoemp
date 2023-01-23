@@ -33,7 +33,7 @@ I can keep building my assets with NPM scripts and run `npx eleventy --serve --q
 
 Any change to files in these directories will then trigger a server reload, even if those changes are the result of an external asset pipeline.
 
-Here is a bare bones sample of the scripts I use in development. You could use `--watch` flags instead of the `onchange` package but again, I like the separation of concerns (and I also think it is easier to read and understand).
+Here is a bare bones example of the kind of scripts I use in development. You could use `--watch` flags with `sass` and `esbuild` instead of the `onchange` package but, again, I like the separation of concerns and I also find it easier to read and understand.
 
 ```json
 "scripts": {
