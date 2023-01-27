@@ -1,5 +1,5 @@
 ---
-title: "What living in a yurt has taught me"
+title: "Living in small spaces"
 excerpt: ""
 image: "yurt.jpg"
 imageAlt: "Building a yurt"
