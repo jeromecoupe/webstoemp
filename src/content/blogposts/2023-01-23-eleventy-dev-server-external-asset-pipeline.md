@@ -29,11 +29,11 @@ Previously, you could essentially go down three different routes with this exter
 
 With the 1.0 version of [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/), I can now use a native and elegant solution.
 
-I can keep building my assets with NPM scripts and run `npx eleventy --serve --quiet` in parallel. The trick here is to use the new `watch` to target the output directories used by your build process.
+I can keep building my assets with NPM scripts and run `npx @11ty/eleventy --serve --quiet` in parallel. The trick here is to use the new `watch` option in your config file to target the output directories used by your build process.
 
 Any change to files in these directories will then trigger a server reload, even if those changes are the result of an external asset pipeline.
 
-Here is a bare bones example of the kind of scripts I use in development. You could use `--watch` flags with `sass` and `esbuild` instead of the `onchange` package but, again, I like the separation of concerns and I also find it easier to read and understand.
+Here is a bare bones example of the scripts I use in development. You could use `--watch` flags with `sass` and `esbuild` instead of the `onchange` package but, again, I like the separation of concerns (and I also find it easier to read and understand).
 
 ```json
 "scripts": {
