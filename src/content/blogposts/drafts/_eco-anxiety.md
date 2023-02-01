@@ -11,7 +11,7 @@ Many reasons to be worried
 
 - Dwindling wildlife
 - Climate change
-- Resources shortage (including energy)
--
+- Resources overshoot
+- Energy overshoot
 
 Overarching theme: global overshoot
