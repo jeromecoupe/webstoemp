@@ -11,6 +11,7 @@ permalink: blog/index.html
 {% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
 
 {% from "macros/itemBlogpost.njk" import itemBlogpost %}
+{% from "macros/pageBanner.njk" import pageBanner %}
 
 {% block content %}
 <main>
@@ -27,7 +28,10 @@ permalink: blog/index.html
     </div>
   </div>
 
-  <div class="c-banner  c-banner--blog"></div>
+  {{ pageBanner(
+    img="banner-blog.jpg",
+    alt="A bar in Brussels"
+  ) }}
 
   <div class="c-pagecontent">
     <div class="l-container">

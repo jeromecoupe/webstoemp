@@ -10,6 +10,8 @@ permalink: contact/index.html
 {% set metaDescription = "Front-end development, UX and design for businesses or agencies" %}
 {% set metaImage = site.url ~ "/assets/img/metaimg.jpg" %}
 
+{% from "macros/pageBanner.njk" import pageBanner %}
+
 {% block content %}
 <main>
 
@@ -25,7 +27,10 @@ permalink: contact/index.html
     </div>
   </div>
 
-  <div class="c-banner  c-banner--contact"></div>
+  {{ pageBanner(
+    img="banner-contact.jpg",
+    alt="Jérôme Coupé"
+  ) }}
 
   <div class="c-pagecontent">
     <div class="l-container  l-contact">

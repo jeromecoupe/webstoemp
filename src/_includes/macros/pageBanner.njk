@@ -1,0 +1,12 @@
+{% macro pageBanner(img, alt) %}
+  <div class="c-banner">
+    <img src="/assets/img/banners/800x300/{{ img }}" 
+         srcset="/assets/img/banners/800x300/{{ img }} 800w,
+                 /assets/img/banners/1024x300/{{ img }} 1024w,
+                 /assets/img/banners/1500x300/{{ img }} 1500w"
+         sizes="100vw"
+         alt="{{ alt }}"
+         class="c-banner__img"
+         decoding="async">
+  </div>
+{% endmacro %}

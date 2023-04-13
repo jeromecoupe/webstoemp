@@ -5,13 +5,17 @@
 .c-banner {
   height: 300px;
   background-color: var(--color-brand2);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
 
   @include mq(large) {
     height: 240px;
   }
+}
+
+.c-banner__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .c-banner--home {
