@@ -21,7 +21,7 @@
     "scripts:prod": "esbuild \"./src/assets/js/main.js\" --target=\"es6\" --bundle --minify --outfile=\"./dist/assets/js/main.bundle.js\"",
     "scripts:dev": "esbuild \"./src/assets/js/main.js\" --target=es6 --bundle --outfile=\"./dist/assets/js/main.bundle.js\"",
     "eleventy": "npx @11ty/eleventy --quiet",
-    "images": "node \"./build_tasks/transform-images.js\"",
+    "images": "node \"./build_tasks/generate-images.js\"",
     "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
     "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
     "build": "npm-run-all clean --parallel images styles:prod scripts:prod eleventy",
