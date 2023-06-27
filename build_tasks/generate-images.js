@@ -16,7 +16,7 @@ const transforms = [
     options: {
       width: 1024,
       height: 576,
-      pouet: "cover",
+      fit: "cover",
     },
   },
   {
