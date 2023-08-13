@@ -1,4 +1,4 @@
-User-agent: *
-Allow: /
+User-agent: GPTBot
+Disallow: /
 
 Sitemap: https://www.webstoemp.com/sitemap.xml
