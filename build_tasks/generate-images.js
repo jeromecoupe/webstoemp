@@ -44,6 +44,20 @@ const transforms = [
 ];
 
 /**
+ * Create Directory recursively from path
+ */
+function createDir(path) {
+  // return if dir already exists
+  if (fs.existsSync(path)) return;
+  // create dir
+  try {
+    fs.mkdirSync(path, { recursive: true });
+  } catch (err) {
+    throw new Error(err);
+  }
+}
+
+/**
  * Generate images based on transforms object
  */
 async function init() {
@@ -51,7 +65,7 @@ async function init() {
   let sharpPromises = [];
 
   // loop through transforms
-  transforms.forEach((transform) => {
+  transforms.forEach(async (transform) => {
     let inputDir = transform.src;
     let outputDir = transform.dist;
     let formats = transform.formats;
@@ -78,10 +92,8 @@ async function init() {
     );
     let imagesFiles = globSync(imagesGlob);
 
-    // Create output dir if does not exists
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-    }
+    // Create output dir
+    createDir(outputDir);
 
     // loop through all images and create Sharp promises
     imagesFiles.forEach((file) => {
