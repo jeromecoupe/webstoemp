@@ -96,8 +96,6 @@
   }
 }
 
-.c-mobilenav {
-  .is-active & {
-    animation: slideIn 0.15s ease-out both;
-  }
+.c-mobilemenu.is-active .c-mobilenav__item {
+  animation: slideIn 0.1s calc(0.05s * var(--delay)) ease-out both;
 }

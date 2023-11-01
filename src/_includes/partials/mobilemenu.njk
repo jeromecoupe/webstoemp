@@ -3,7 +3,9 @@
   <nav aria-label="mobile navigation">
     {% for item in nav %}
       {% if loop.first %}<ul class="c-mobilenav">{% endif %}
-        <li class="c-mobilenav__item"><a class="c-mobilenav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a></li>
+        <li class="c-mobilenav__item" style="--delay: {{ loop.index }};">
+          <a class="c-mobilenav__link  {{ 'is-active' if activeSection == item.navTrigger }}" href="{{ item.navUrl }}">{{ item.navLabel }}</a>
+        </li>
       {% if loop.last %}</ul>{% endif %}
     {% endfor %}
   </nav>
