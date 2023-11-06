@@ -1,0 +1,19 @@
+---
+layout: false
+permalink: api/blogposts.json
+---
+
+[
+  {% for item in collections.blogposts %}
+    {
+      "date" : "{{ item.date | dateISO }}",
+      "title": "{{ item.data.title }}",
+      "url": "{{ item.url }}",
+      "image": "{{ item.data.image }}",
+      "imageAlt": "{{ item.data.imageAlt }}",
+      "tags": {{ item.data.tags | default([]) | json | safe }},
+      "excerpt": "{{ item.data.excerpt }}",
+      "content": {{ item.templateContent | json | safe }}
+    }{% if not loop.last %},{% endif %}
+  {% endfor %}
+]

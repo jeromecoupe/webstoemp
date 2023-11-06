@@ -1,0 +1,18 @@
+---
+layout: false
+permalink: api/projects.json
+---
+
+[
+  {% for item in collections.projects %}
+    {
+      "title": "{{ item.data.title }}",
+      "client": "{{ item.data.client }}",
+      "url": "{{ item.url }}",
+      "date": "{{ item.date | dateISO }}",
+      "image": "{{ item.data.image }}",
+      "tags": {{ item.data.tags | default([]) | json | safe }},
+      "content": {{ item.templateContent | json | safe }}
+    }{% if not loop.last %},{% endif %}
+  {% endfor %}
+]

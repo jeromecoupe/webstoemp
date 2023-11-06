@@ -8,6 +8,7 @@ const projects = require("./src/_11ty/collections/projects.js");
 // filters
 const limit = require("./src/_11ty/filters/limit.js");
 const dates = require("./src/_11ty/filters/dates.js");
+const json = require("./src/_11ty/filters/json.js");
 
 module.exports = function (eleventyConfig) {
   // collections
@@ -21,6 +22,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dateFull", dates.dateFull);
   eleventyConfig.addFilter("dateFormat", dates.dateFormat);
   eleventyConfig.addFilter("dateYear", dates.dateYear);
+  eleventyConfig.addFilter("json", json);
 
   // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {
