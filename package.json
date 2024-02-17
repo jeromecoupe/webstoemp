@@ -10,8 +10,10 @@
   },
   "browserslist": [
     "last 2 versions",
-    "not IE <= 11"
+    "> 0.5%",
+    "not dead"
   ],
+  "type": "module",
   "scripts": {
     "server": "npx @11ty/eleventy --serve --quiet",
     "clean": "rimraf './dist'",
@@ -28,7 +30,7 @@
     "dev": "npm-run-all --parallel server watch:*"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "3.0.0-alpha.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.1",

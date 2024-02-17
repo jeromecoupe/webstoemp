@@ -4,6 +4,8 @@
  * @returns {JSON} - JSON object
  */
 
-module.exports = (input) => {
+function json(input) {
   return JSON.stringify(input);
-};
+}
+
+export { json };

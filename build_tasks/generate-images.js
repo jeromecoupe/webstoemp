@@ -1,7 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const { globSync } = require("glob");
-const sharp = require("sharp");
+import fs from "fs";
+import path from "path";
+import { globSync } from "glob";
+import sharp from "sharp";
 
 const config = {
   allowedFormats: ["jpg", "jpeg", "webp", "avif", "png", "gif"],
@@ -131,4 +131,4 @@ async function init() {
   }
 }
 
-module.export = init();
+export default init();

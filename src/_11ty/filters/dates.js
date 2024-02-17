@@ -1,4 +1,4 @@
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
 /**
  * Format date: Feeds
@@ -6,11 +6,11 @@ const { DateTime } = require("luxon");
  * @param {Date} date - JS date
  * @returns {String} - formatted date
  */
-const dateFeed = (date) => {
+function dateFeed(date) {
   const jsDate = new Date(date);
   const dt = DateTime.fromJSDate(jsDate);
   return dt.toRFC2822();
-};
+}
 
 /**
  * Format date: Luxon format string
@@ -20,11 +20,11 @@ const dateFeed = (date) => {
  * @param {String} locale - locale code
  * @returns {String} - formatted date
  */
-const dateFormat = (date, format, locale = "en") => {
+function dateFormat(date, format, locale = "en") {
   const jsDate = new Date(date);
   const dt = DateTime.fromJSDate(jsDate);
   return dt.setLocale(locale).toFormat(format);
-};
+}
 
 /**
  * Format date: human readable format
@@ -33,22 +33,22 @@ const dateFormat = (date, format, locale = "en") => {
  * @param {String} locale - locale code
  * @returns {String} - formatted date
  */
-const dateFull = (date, locale = "en") => {
+function dateFull(date, locale = "en") {
   const jsDate = new Date(date);
   const dt = DateTime.fromJSDate(jsDate);
   return dt.setLocale(locale).toLocaleString(DateTime.DATE_FULL);
-};
+}
 
 /**
  * Format date: ISO
  * @param {Date} date - JS Date
  * @returns {String} - formatted date
  */
-const dateISO = (date) => {
+function dateISO(date) {
   const jsDate = new Date(date);
   const dt = DateTime.fromJSDate(jsDate);
   return dt.toISO();
-};
+}
 
 /**
  * Format date: year
@@ -56,10 +56,10 @@ const dateISO = (date) => {
  * @param {Date} date - js date
  * @returns {String} - formatted date
  */
-const dateYear = (date) => {
+function dateYear(date) {
   const jsDate = new Date(date);
   const fullYear = jsDate.getFullYear();
   return fullYear;
-};
+}
 
-module.exports = { dateFeed, dateFormat, dateFull, dateISO, dateYear };
+export { dateFeed, dateFormat, dateFull, dateISO, dateYear };

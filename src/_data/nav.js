@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     navLabel: "Home",
     navTrigger: "home",

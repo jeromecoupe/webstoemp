@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: "Webstoemp",
   description:
     "Webstoemp is the portfolio and blog of Jérôme Coupé, a designer and front-end developer from Brussels, Belgium.",
