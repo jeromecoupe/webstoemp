@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     title: "Strategy and discovery",
     icon: "icon-service-strategy.svg",
