@@ -1,6 +1,7 @@
 ---
-title: "School website: Institut des Arts de Diffusion"
+title: "Rebranding an Art School"
 client: "Institut des Arts de Diffusion"
+year: 2020
 url: "https://www.iad-arts.be"
 image: "iadarts.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]

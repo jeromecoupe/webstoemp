@@ -1,6 +1,7 @@
 ---
 title: "Modular online case studies for a communication agency"
 client: "Tramway 21"
+year: 2015
 url: "http://www.tramway21.be"
 image: tramway21.jpg
 tags: ["Design", "Front-end"]

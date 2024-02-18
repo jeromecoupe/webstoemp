@@ -1,6 +1,7 @@
 ---
 title: "Building a design system framework"
 client: "Little Miss Robot"
+year: 2018
 url: "https://littlemissrobot.com"
 image: "lmr-design-system-framework.jpg"
 tags: ["Node", "Express", "Nunjucks"]

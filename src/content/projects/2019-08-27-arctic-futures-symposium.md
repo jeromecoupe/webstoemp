@@ -1,6 +1,7 @@
 ---
-title: "Event website: Arctic Futures Symposium"
+title: "Annual Arctic Symposium"
 client: "International Polar Foundation"
+year: 2019
 url: "https://www.arcticfutures.org"
 image: "arctic-futures-symposium.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]

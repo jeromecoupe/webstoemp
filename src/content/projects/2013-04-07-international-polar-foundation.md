@@ -1,6 +1,7 @@
 ---
 title: "A website for an International NGO"
 client: "International Polar Foundation"
+year: 2013
 url: "http://www.polarfoundation.org"
 image: "international-polar-foundation.jpg"
 tags: ["Design", "Front-end", "CMS"]

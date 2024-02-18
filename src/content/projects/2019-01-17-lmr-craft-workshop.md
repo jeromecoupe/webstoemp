@@ -1,6 +1,7 @@
 ---
 title: "Craft CMS workshop for designers and developers"
 client: Little Miss Robot
+year: 2019
 url: "https://littlemissrobot.com"
 image: "lmr-craft.jpg"
 tags: ["Craft CMS", "Workshop"]

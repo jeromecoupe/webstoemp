@@ -1,6 +1,7 @@
 ---
 title: "Showcase the work of an outdoor photographer"
 client: "René Robert"
+year: 2014
 url: "http://www.renerobert.net"
 image: "rene-robert.jpg"
 tags: ["Design", "Front-end", "Eleventy (11ty)"]

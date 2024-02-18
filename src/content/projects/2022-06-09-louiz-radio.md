@@ -1,6 +1,7 @@
 ---
-title: "Louïz radio: Online FM radio and podcasts"
+title: "Online FM radio and podcasts"
 client: "Louïz Radio"
+year: 2022
 url: "https://www.louizradio.be"
 image: "louizradio.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]

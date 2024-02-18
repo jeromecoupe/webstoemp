@@ -1,6 +1,7 @@
 ---
 title: "Collapsology portal: scientific publications, books and links"
 client: "Raphaël Stevens"
+year: 2020
 url: "https://www.collapsology.info"
 image: "collapsology.jpg"
 tags: ["Design", "Front-end", "Eleventy (11ty)", "Petite-Vue"]

@@ -1,6 +1,7 @@
 ---
 title: "A design system to harmonize StepStone's online presence"
 client: "Stepstone"
+year: 2017
 url: "http://www.stepstone.be"
 image: stepstone.jpg
 tags: ["Front-end", "Design System", "Node"]

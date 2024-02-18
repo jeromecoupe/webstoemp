@@ -1,6 +1,7 @@
 ---
-title: "Students projects showcase: Médiadiffusion"
+title: "Showcasing audiovisual projects"
 client: "Médiadiffusion"
+year: 2021
 url: "https://www.mediadiffusion.eu"
 image: "mediadiffusion.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]

@@ -1,6 +1,7 @@
 ---
 title: "Craft CMS workshop for developers"
 client: "Base Design"
+year: 2016
 url: "http://www.basedesign.com"
 image: "base-craft.jpg"
 tags: ["Craft CMS", "Workshop"]

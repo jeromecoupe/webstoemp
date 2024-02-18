@@ -1,6 +1,7 @@
 ---
 title: "Micro website for an industrial designer"
 client: "Nicolas Benedit"
+year: 2018
 url: "http://www.nicolasbenedit.com"
 image: nicolas-benedit.jpg
 tags: ["Design", "Front-end", "Eleventy (11ty)", "Netlify"]
