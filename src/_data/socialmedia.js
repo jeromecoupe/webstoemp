@@ -24,9 +24,4 @@ export default [
     url: "https://www.linkedin.com/in/jcoupe/",
     icon: "icon-linkedin.svg",
   },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/jeromecoupe",
-    icon: "icon-twitter.svg",
-  },
 ];
