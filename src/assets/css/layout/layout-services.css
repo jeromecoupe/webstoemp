@@ -1,0 +1,81 @@
+/* ======================================
+=services
+====================================== */
+
+.l-services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(42 / 16 * 1rem);
+  grid-template-areas:
+    "heading"
+    "services";
+
+  @media (width >= 750px) {
+    grid-template-areas: "heading services";
+  }
+}
+
+.l-services__title {
+  grid-area: heading;
+  margin: 0;
+  padding: 0;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 1px;
+    margin-left: 12px;
+    background-color: var(--color-brand4);
+  }
+
+  @media (width >= 750px) {
+    writing-mode: vertical-lr;
+
+    &:after {
+      width: 1px;
+      height: 42px;
+      margin-top: 12px;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.l-services__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-area: services;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(24 / 16 * 1rem);
+
+  @media (width >= 750px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(24 / 16 * 1rem) calc(42 / 16 * 1rem);
+    grid-template-areas:
+      "s1 ."
+      "s2 s3"
+      "s4 s5"
+      "s6 .";
+  }
+
+  @media (width >= 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "s1 s2 ."
+      "s3 s4 s5"
+      "s6 . .";
+  }
+}
+
+@for $i from 1 through 6 {
+  .l-services__grid > li:nth-child(#{$i}) {
+    @media (width >= 750px) {
+      margin-bottom: 0;
+      grid-area: s#{$i};
+    }
+  }
+}

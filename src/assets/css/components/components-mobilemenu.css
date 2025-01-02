@@ -1,0 +1,101 @@
+/* ======================================
+=mobile menu
+====================================== */
+
+.c-mobilemenu {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: calc(42 / 16 * 1rem) calc(24 / 16 * 1rem);
+
+  background-color: var(--color-brand5);
+}
+
+.c-mobilemenu.is-active {
+  display: block;
+
+  @media (width >= 750px) {
+    display: none;
+  }
+}
+
+.c-mobilemenu__actions {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.c-mobilemenu__close {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  border: none;
+
+  & svg {
+    display: block;
+  }
+}
+
+.c-mobilenav {
+  list-style: none;
+  margin: calc(120 / 16 * 1rem) 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.c-mobilenav__link {
+  display: block;
+  padding: calc(6 / 16 * 1rem) 0;
+
+  font-weight: 600;
+  font-size: calc(22 / 16 * 1rem);
+  line-height: 1.36;
+  font-family: var(--fontstack-alt);
+  text-decoration: none;
+  color: var(--color-gray8);
+
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: var(--color-gray8);
+    opacity: 0.66;
+  }
+}
+
+.c-mobilenav__link.is-active,
+.c-mobilenav__link.is-active:hover,
+.c-mobilenav__link.is-active:focus {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+/* ======================================
+=mobile menu animations
+====================================== */
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.c-mobilemenu.is-active .c-mobilenav__item {
+  animation: slideIn 0.18s calc(0.05s * var(--delay)) ease-out both;
+}

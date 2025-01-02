@@ -1,0 +1,35 @@
+/* ======================================
+=site footer
+====================================== */
+
+.c-sitefooter {
+  background-color: var(--color-gray8);
+  font-size: 1rem;
+}
+
+.c-sitefooter__main {
+  padding-top: calc(60 / 16 * 1rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: calc(60 / 16 * 1rem);
+
+  @media (width >= 750px) {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "nav social";
+    gap: 42px;
+  }
+}
+
+.c-sitefooter__nav {
+  grid-area: nav;
+}
+
+.c-sitefooter__social {
+  grid-area: social;
+}
+
+.c-sitefooter__copyright {
+  color: var(--color-gray6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: calc(24 / 16 * 1rem) 0;
+}

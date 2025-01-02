@@ -1,0 +1,45 @@
+/* ======================================
+=blog teaser
+====================================== */
+
+.c-blogteaser {
+  padding: calc(12 / 16 * 1rem) 0;
+
+  @media (width >= 1024px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.c-blogteaser__date {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--color-gray6);
+
+  @media (width >= 1024px) {
+    width: 300px;
+    flex: 0 0 auto;
+  }
+}
+
+.c-blogteaser__title {
+  flex: 1 1 100%;
+
+  margin: 0;
+  padding: 0;
+
+  font-weight: 600;
+  font-size: calc(22 / 16 * 1rem);
+  line-height: 1.5;
+  font-family: var(--fontstack-alt);
+  color: var(--color-gray8);
+
+  @media (width >= 750px) {
+    font-size: calc(26 / 16 * 1rem);
+  }
+}

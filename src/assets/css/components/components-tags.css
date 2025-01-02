@@ -1,0 +1,32 @@
+/* ======================================
+=tags
+====================================== */
+
+.c-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.c-tags__item {
+  font-size: calc(15 / 16 * 1rem);
+  font-weight: 400;
+  color: var(--color-gray8);
+}
+
+.c-tags__item:not(:last-child) {
+  margin-right: 6px;
+}
+
+.c-tags__item:before {
+  content: "#";
+  display: inline-block;
+  color: var(--color-brand4);
+  margin-right: calc(3 / 16 * 1rem);
+}

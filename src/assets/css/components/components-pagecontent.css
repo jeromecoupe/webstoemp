@@ -1,0 +1,27 @@
+/* ======================================
+=page content
+====================================== */
+
+.c-pagecontent {
+  padding-top: calc(60 / 16 * 1rem);
+  padding-bottom: calc(60 / 16 * 1rem);
+
+  @media (width >= 750px) {
+    padding-top: calc(84 / 16 * 1rem);
+    padding-bottom: calc(84 / 16 * 1rem);
+  }
+
+  @media (width >= 1024px) {
+    padding-top: calc(96 / 16 * 1rem);
+    padding-bottom: calc(96 / 16 * 1rem);
+  }
+}
+
+.c-pagecontent--dark {
+  background-color: var(--color-gray8);
+  color: var(--color-gray6);
+
+  a {
+    color: var(--color-brand5);
+  }
+}

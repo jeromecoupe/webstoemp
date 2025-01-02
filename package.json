@@ -9,7 +9,6 @@
     "url": "https://github.com/jeromecoupe/jeromecoupe.github.io"
   },
   "browserslist": [
-    "last 2 versions",
     "> 0.5%",
     "not dead"
   ],
@@ -17,10 +16,9 @@
   "scripts": {
     "server": "npx @11ty/eleventy --serve --quiet",
     "clean": "rimraf './dist'",
-    "styles:prod": "sass --no-source-map --style=\"compressed\" \"./src/assets/scss/main.scss\" \"./dist/assets/css/main.css\"",
-    "styles:dev": "sass --embed-source-map --source-map-urls=\"absolute\" \"./src/assets/scss/main.scss\" \"./dist/assets/css/main.css\"",
-    "poststyles:prod": "postcss \"./dist/assets/css/main.css\" --replace --no-map --use autoprefixer cssnano",
-    "scripts:prod": "esbuild \"./src/assets/js/main.js\" --target=\"es6\" --bundle --minify --outfile=\"./dist/assets/js/main.bundle.js\"",
+    "styles:dev": "lightningcss --bundle --browserslist \"./src/assets/css/main.css\" -o \"./dist/assets/css/main.css\"",
+    "styles:prod": "lightningcss --bundle --minify --browserslist \"./src/assets/css/main.css\" -o \"./dist/assets/css/main.css\"",
+    "scripts:prod": "esbuild \"./src/assets/js/main.js\" --target=\"es2020\" --bundle --minify --outfile=\"./dist/assets/js/main.bundle.js\"",
     "scripts:dev": "esbuild \"./src/assets/js/main.js\" --target=es6 --bundle --outfile=\"./dist/assets/js/main.bundle.js\"",
     "eleventy": "npx @11ty/eleventy --quiet",
     "images": "node \"./build_tasks/generate-images.js\"",
@@ -32,17 +30,13 @@
   "devDependencies": {
     "@11ty/eleventy": "3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.6",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.24.2",
     "glob": "^11.0.0",
+    "lightningcss-cli": "^1.28.2",
     "luxon": "^3.5.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss": "^8.4.47",
-    "postcss-cli": "^11.0.0",
     "rimraf": "^6.0.1",
-    "sass": "^1.79.4",
     "sharp": "^0.33.5"
   }
 }

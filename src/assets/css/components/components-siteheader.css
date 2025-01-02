@@ -1,0 +1,79 @@
+/* ======================================
+=site header
+====================================== */
+
+.c-siteheader {
+  padding-top: calc(42 / 16 * 1rem);
+  padding-bottom: calc(42 / 16 * 1rem);
+  background-color: var(--color-gray8);
+  color: var(--color-gray3);
+
+  @media (width >= 750px) {
+    padding-top: calc(60 / 16 * 1rem);
+    padding-bottom: calc(60 / 16 * 1rem);
+  }
+
+  @media (width >= 1024px) {
+    padding-top: calc(84 / 16 * 1rem);
+    padding-bottom: calc(84 / 16 * 1rem);
+  }
+}
+
+.c-siteheader__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-siteheader__logo {
+  margin: 0;
+  padding: 0;
+
+  & > a {
+    display: block;
+    color: var(--color-white);
+    text-decoration: none;
+
+    transition: color 0.2s ease-in-out;
+  }
+
+  & > a:hover {
+    color: var(--color-brand3);
+    text-decoration: none;
+  }
+
+  & svg {
+    vertical-align: middle;
+  }
+}
+
+.c-siteheader__hamburger {
+  margin: 0;
+  padding: 0;
+
+  & > a,
+  & svg {
+    vertical-align: middle;
+  }
+}
+
+/* ======================================
+=visibility toggle
+====================================== */
+
+.c-siteheader__nav {
+  display: none;
+
+  @media (width >= 750px) {
+    display: block;
+  }
+}
+
+.c-siteheader__hamburger {
+  display: block;
+
+  @media (width >= 750px) {
+    display: none;
+  }
+}

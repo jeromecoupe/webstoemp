@@ -1,0 +1,10 @@
+/* ======================================
+=fluid images
+====================================== */
+
+.o-fluidimage {
+  display: block;
+  height: auto;
+  width: 100%;
+  background-color: var(--color-gray3);
+}

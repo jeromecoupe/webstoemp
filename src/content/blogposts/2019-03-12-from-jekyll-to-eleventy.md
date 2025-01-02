@@ -120,8 +120,8 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "dist"
-    }
+      output: "dist",
+    },
   };
 };
 ```
@@ -141,7 +141,7 @@ module.exports = {
   baseUrl: "/",
   author: "Jerôme Coupé",
   authorTwitter: "@jeromecoupe",
-  buildTime: new Date()
+  buildTime: new Date(),
 };
 ```
 
@@ -150,7 +150,7 @@ module.exports = {
 ```twig
 {%- raw -%}
 <div class="c-sitefooter__copyright">
-  <p class="u-margin-all-none">&copy; Webstoemp {{ site.buildTime | date("Y") }}</p>
+  <p class="u-mb-none u-mi-none">&copy; Webstoemp {{ site.buildTime | date("Y") }}</p>
 </div>
 {% endraw %}
 ```

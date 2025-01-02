@@ -1,0 +1,14 @@
+/* ======================================
+=margins
+====================================== */
+
+/**
+ * Unidirectional margins
+ * Remove all top margins and normalise bottom margins
+*/
+
+*,
+*::before,
+*::after {
+  margin-top: 0;
+}

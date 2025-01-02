@@ -1,0 +1,59 @@
+/* ======================================
+=banners
+====================================== */
+
+.c-banner {
+  height: 300px;
+  background-color: var(--color-brand2);
+
+  @media (width >= 1024px) {
+    height: 240px;
+  }
+}
+
+.c-banner__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c-banner--home {
+  background-image: url(../img/banners/banner-home-800.jpg);
+  @media (width >= 750px) {
+    background-image: url(../img/banners/banner-home-1024.jpg);
+  }
+  @media (width >= 1024px) {
+    background-image: url(../img/banners/banner-home-1500.jpg);
+  }
+}
+
+.c-banner--work {
+  background-image: url(../img/banners/banner-work-800.jpg);
+  @media (width >= 750px) {
+    background-image: url(../img/banners/banner-work-1024.jpg);
+  }
+  @media (width >= 1024px) {
+    background-image: url(../img/banners/banner-work-1500.jpg);
+  }
+}
+
+.c-banner--blog {
+  background-image: url(../img/banners/banner-blog-800.jpg);
+  @media (width >= 750px) {
+    background-image: url(../img/banners/banner-blog-1024.jpg);
+  }
+  @media (width >= 1024px) {
+    background-image: url(../img/banners/banner-blog-1500.jpg);
+  }
+}
+
+.c-banner--contact {
+  background-image: url(../img/banners/banner-contact-800.jpg);
+  @media (width >= 750px) {
+    background-image: url(../img/banners/banner-contact-1024.jpg);
+  }
+  @media (width >= 1024px) {
+    background-image: url(../img/banners/banner-contact-1500.jpg);
+  }
+}

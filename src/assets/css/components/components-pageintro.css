@@ -1,0 +1,20 @@
+/* ======================================
+=pages introductions
+====================================== */
+
+.c-pageintro {
+  padding-bottom: calc(36 / 16 * 1rem);
+  background-color: var(--color-gray8);
+
+  @media (width >= 750px) {
+    padding-bottom: calc(72 / 16 * 1rem);
+  }
+
+  @media (width >= 1024px) {
+    padding-bottom: calc(84 / 16 * 1rem);
+  }
+}
+
+.c-pageintro__inner {
+  max-width: 720px;
+}

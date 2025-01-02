@@ -1,0 +1,23 @@
+/* ======================================
+=Body
+====================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-white);
+  color: var(--color-gray8);
+  font-size: 1rem;
+
+  @media (width >= 750px) {
+    font-size: calc(18 / 16 * 1rem);
+  }
+}
+
+body.has-menu {
+  overflow-y: hidden;
+
+  @media (width >= 750px) {
+    overflow-y: auto;
+  }
+}

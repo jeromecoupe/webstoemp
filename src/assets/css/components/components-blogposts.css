@@ -1,0 +1,38 @@
+/* ======================================
+=blogposts
+====================================== */
+
+.c-blogpost {
+  padding-bottom: calc(60 / 16 * 1rem);
+
+  @media (width >= 750px) {
+    padding-bottom: calc(84 / 16 * 1rem);
+  }
+}
+
+.c-blogpost__media {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-gray8) 0,
+    var(--color-gray8) 50%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.c-blogpost__intro {
+  font-size: calc(18 / 16 * 1rem);
+  color: var(--color-gray7);
+
+  @media (width >= 750px) {
+    font-size: calc(20 / 16 * 1rem);
+  }
+}
+
+.c-blogpost__body {
+  padding-top: calc(60 / 16 * 1rem);
+
+  @media (width >= 750px) {
+    padding-top: calc(84 / 16 * 1rem);
+  }
+}

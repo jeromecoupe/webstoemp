@@ -1,0 +1,49 @@
+@layer settings, vendors, base, layout, components, objects, utilities;
+
+/* Settings and variables */
+@import "settings/settings-colors.css" layer(settings);
+@import "settings/settings-fonts.css" layer(settings);
+
+/* base */
+@import "vendors/vendors-normalize.css" layer(base);
+@import "base/base-fonts.css" layer(base);
+@import "base/base-html.css" layer(base);
+@import "base/base-body.css" layer(base);
+@import "base/base-links.css" layer(base);
+@import "base/base-margins.css" layer(base);
+
+/* objects */
+@import "objects/objects-fluidimages.css" layer(objects);
+
+/* layout */
+@import "layout/layout-containers.css" layer(layout);
+@import "layout/layout-services.css" layer(layout);
+@import "layout/layout-contact.css" layer(layout);
+
+/* components */
+@import "components/components-banners.css" layer(components);
+@import "components/components-blogposts.css" layer(components);
+@import "components/components-blogteasers.css" layer(components);
+@import "components/components-footercta.css" layer(components);
+@import "components/components-footernav.css" layer(components);
+@import "components/components-lists.css" layer(components);
+@import "components/components-mainnav.css" layer(components);
+@import "components/components-mobilemenu.css" layer(components);
+@import "components/components-pagecontent.css" layer(components);
+@import "components/components-pageintro.css" layer(components);
+@import "components/components-projects.css" layer(components);
+@import "components/components-service.css" layer(components);
+@import "components/components-sitefooter.css" layer(components);
+@import "components/components-siteheader.css" layer(components);
+@import "components/components-smallbox.css" layer(components);
+@import "components/components-socialmedia.css" layer(components);
+@import "components/components-tags.css" layer(components);
+@import "components/components-texts.css" layer(components);
+@import "components/components-titles.css" layer(components);
+@import "components/components-wysiwyg.css" layer(components);
+
+/* utilities */
+@import "utilities/utilities-spacing.css" layer(utilities);
+
+/* vendors */
+@import "vendors/vendors-prism.css" layer(vendors);
