@@ -50,17 +50,17 @@ export default function (eleventyConfig) {
     watch: ["./dist/assets/css/**/*.css", "./dist/assets/js/**/*.js"],
     port: 3000,
   });
-
-  // base config
-  return {
-    dir: {
-      input: "src",
-      output: "dist",
-      includes: "_includes",
-      data: "_data",
-    },
-    templateFormats: ["njk", "md"],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-  };
 }
+
+export const config = {
+  // base config
+  dir: {
+    input: "src",
+    output: "dist",
+    includes: "_includes",
+    data: "_data",
+  },
+  templateFormats: ["njk", "md"],
+  htmlTemplateEngine: "njk",
+  markdownTemplateEngine: "njk",
+};
