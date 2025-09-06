@@ -2,6 +2,7 @@
 title: "Jekyll-powered agency website"
 client: "Central Design"
 year: 2016
+archived: true
 url: "https://v4.central.team/"
 image: central.jpg
 tags: ["Front-end", "Jekyll"]

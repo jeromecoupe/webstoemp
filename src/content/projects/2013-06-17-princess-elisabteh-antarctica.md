@@ -2,6 +2,7 @@
 title: "Princess Elisabeth Antarctica station"
 client: "International Polar Foundation"
 year: 2013
+archived: true
 url: "http://www.antarcticstation.org"
 image: "princess-elisabeth-antarctica.jpg"
 tags: ["Design", "Front-end", "CMS"]

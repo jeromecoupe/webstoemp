@@ -2,6 +2,7 @@
 title: "Present a new breed of law firm"
 client: "Equal partners"
 year: 2015
+archived: true
 url: "http://www.equal-partners.eu"
 image: "equal-partners.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]

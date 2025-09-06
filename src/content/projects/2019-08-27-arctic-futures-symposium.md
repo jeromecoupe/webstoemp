@@ -2,6 +2,7 @@
 title: "Annual Arctic Symposium"
 client: "International Polar Foundation"
 year: 2019
+archived: true
 url: "https://www.arcticfutures.org"
 image: "arctic-futures-symposium.jpg"
 tags: ["Design", "Front-end", "Craft CMS"]

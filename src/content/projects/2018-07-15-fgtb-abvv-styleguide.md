@@ -2,6 +2,7 @@
 title: "Front-end design system for ABVV/FGTB"
 client: "Cronos Group"
 year: 2018
+archived: true
 image: "abvv-fgtb.jpg"
 url: http://www.fgtb.be
 tags: ["Design System", "Front-end", "Node"]
