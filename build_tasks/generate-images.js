@@ -1,6 +1,5 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { globSync } from "node:fs";
 import sharp from "sharp";
 
 const config = {
@@ -79,13 +78,18 @@ async function init() {
     // check formats are of allowed types
     formats.forEach((el) => {
       if (!config.allowedFormats.includes(el)) {
-        throw new Error(`Unknown format: "${el}". Allowed formats are: ${config.allowedFormats.toString()}`);
+        throw new Error(
+          `Unknown format: "${el}". Allowed formats are: ${config.allowedFormats.toString()}`,
+        );
       }
     });
 
     // Get image files in input directory
-    let imagesGlob = path.join(inputDir, `*.{${config.allowedFormats.toString()}}`);
-    let imagesFiles = globSync(imagesGlob);
+    let imagesGlob = path.join(
+      inputDir,
+      `*.{${config.allowedFormats.toString()}}`,
+    );
+    let imagesFiles = fs.globSync(imagesGlob);
 
     // Create output dir
     createDir(outputDir);
