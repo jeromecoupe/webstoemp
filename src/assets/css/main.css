@@ -1,16 +1,20 @@
-@layer settings, vendors, base, layout, components, objects, utilities;
+@layer settings, reset, vendors, base, layout, components, objects, utilities;
 
 /* Settings and variables */
 @import "settings/settings-colors.css" layer(settings);
 @import "settings/settings-fonts.css" layer(settings);
 
+/* reset */
+@import "reset/reset.css" layer(reset);
+
+/* vendors */
+@import "vendors/vendors-normalize.css" layer(vendors);
+
 /* base */
-@import "vendors/vendors-normalize.css" layer(base);
 @import "base/base-fonts.css" layer(base);
 @import "base/base-html.css" layer(base);
 @import "base/base-body.css" layer(base);
 @import "base/base-links.css" layer(base);
-@import "base/base-margins.css" layer(base);
 
 /* objects */
 @import "objects/objects-fluidimages.css" layer(objects);
