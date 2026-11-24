@@ -11,11 +11,12 @@
     font-family: var(--fontstack-alt);
     line-height: 1.2;
     color: var(--color-gray8);
+    margin-block-end: 0.5em;
+    margin-block-start: 0.75em;
   }
 
   h2 {
     font-size: calc(26 / 16 * 1rem);
-    margin-bottom: calc(18 / 16 * 1rem);
 
     @media (width >= 750px) {
       font-size: calc(31 / 16 * 1rem);
@@ -28,7 +29,6 @@
 
   h3 {
     font-size: calc(22 / 16 * 1rem);
-    margin-bottom: calc(18 / 16 * 1rem);
 
     @media (width >= 750px) {
       font-size: calc(26 / 16 * 1rem);
@@ -41,7 +41,6 @@
 
   h4 {
     font-size: calc(18 / 16 * 1rem);
-    margin-bottom: calc(18 / 16 * 1rem);
 
     @media (width >= 750px) {
       font-size: calc(22 / 16 * 1rem);
